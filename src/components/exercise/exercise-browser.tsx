@@ -158,8 +158,13 @@ function Group({ title, count, children }: { title: string; count: number; child
 function Row({ item, mode, onPick }: { item: ExerciseListItem; mode: "browse" | "pick"; onPick?: (i: ExerciseListItem) => void }) {
   const content = (
     <>
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-subtle text-muted">
-        <EquipmentIcon equipment={item.equipment} className="h-5 w-5" strokeWidth={1.7} />
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-subtle text-muted">
+        {item.image_url ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={item.image_url} alt="" loading="lazy" decoding="async" className="h-full w-full bg-white object-contain p-0.5" />
+        ) : (
+          <EquipmentIcon equipment={item.equipment} className="h-5 w-5" strokeWidth={1.7} />
+        )}
       </div>
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-medium text-fg">{item.name}</p>

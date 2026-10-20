@@ -5,7 +5,7 @@ import { formatDate, formatVolume, formatWeight } from "@/lib/utils/format";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, SectionLabel } from "@/components/ui/card";
 import { PageHeader } from "@/components/ui/page-header";
-import { MuscleMap } from "@/components/muscle-map/muscle-map";
+import { MuscleList, MuscleMap } from "@/components/muscle-map/muscle-map";
 import { GripIcon } from "@/components/exercise/grip-icon";
 import { EquipmentIcon } from "@/components/exercise/equipment-icon";
 import { ExerciseVisual } from "@/components/exercise/exercise-visual";
@@ -32,38 +32,28 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
 
       {exercise.description ? <p className="text-sm leading-relaxed text-muted">{exercise.description}</p> : null}
 
-      {/* Muskelkarte */}
+      {/* Muskelkarte, Gerätefoto, Muskeln */}
       <Card>
         <CardContent className="pt-5">
-          <MuscleMap primary={exercise.primary_muscles} secondary={exercise.secondary_muscles} />
-          <div className="mt-5 grid grid-cols-2 gap-4">
-            <div>
-              <SectionLabel>Primär</SectionLabel>
-              <ul className="mt-1.5 space-y-1">
-                {exercise.primary_muscles.map((m) => (
-                  <li key={m} className="text-sm font-medium">
-                    {muscleLabel(m)}
-                  </li>
-                ))}
-              </ul>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+            <div className="flex-1">
+              <MuscleMap primary={exercise.primary_muscles} secondary={exercise.secondary_muscles} />
             </div>
-            <div>
-              <SectionLabel>Sekundär</SectionLabel>
-              {exercise.secondary_muscles.length === 0 ? (
-                <p className="mt-1.5 text-sm text-muted">–</p>
-              ) : (
-                <ul className="mt-1.5 space-y-1">
-                  {exercise.secondary_muscles.map((m) => (
-                    <li key={m} className="text-sm text-muted">
-                      {muscleLabel(m)}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
+            {exercise.image_url ? (
+              <div className="flex shrink-0 flex-col items-center gap-1.5 self-center sm:self-start">
+                <div className="flex h-36 w-36 items-center justify-center overflow-hidden rounded-xl border border-border bg-white/95 p-1.5 sm:h-40 sm:w-40">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={exercise.image_url} alt={`${exercise.name} – Gerät`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                </div>
+                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Gerät im Studio</p>
+              </div>
+            ) : null}
+          </div>
+          <div className="mt-5">
+            <MuscleList primary={exercise.primary_muscles} secondary={exercise.secondary_muscles} label={muscleLabel} />
           </div>
           {showForearmHint ? (
-            <p className="mt-4 text-xs text-faint">Unterarme sekundär beteiligt (Griffkraft).</p>
+            <p className="mt-3 text-xs text-faint">Unterarme sekundär beteiligt (Griffkraft).</p>
           ) : null}
         </CardContent>
       </Card>
@@ -80,15 +70,6 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
           />
         </div>
       ) : null}
-      <div className="space-y-2">
-        {exercise.image_url ? <SectionLabel className="px-1">Gerät im Studio</SectionLabel> : null}
-        <ExerciseVisual
-          name={exercise.name}
-          imageUrl={exercise.image_url}
-          equipment={exercise.equipment}
-          category={exercise.category}
-        />
-      </div>
 
       {/* Equipment + Griff */}
       <Card>

@@ -116,7 +116,39 @@ interface MuscleMapProps {
   compact?: boolean;
 }
 
-/** Anatomische Muskelkarte mit primär (rot) und sekundär (hell) hervorgehobenen Muskeln. */
+/** Strukturierte Liste der beteiligten Muskeln (rot = primär, gelb = sekundär). */
+export function MuscleList({ primary, secondary, label }: { primary: string[]; secondary: string[]; label: (id: string) => string }) {
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      <MuscleGroupColumn title="Primär" color="var(--muscle-primary)" items={primary.map(label)} emphasis />
+      <MuscleGroupColumn title="Sekundär" color="var(--muscle-secondary)" items={secondary.map(label)} />
+    </div>
+  );
+}
+
+function MuscleGroupColumn({ title, color, items, emphasis }: { title: string; color: string; items: string[]; emphasis?: boolean }) {
+  return (
+    <div className="rounded-xl border border-border bg-subtle/60 px-3.5 py-3">
+      <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-faint">
+        <span className="h-2.5 w-2.5 rounded-sm" style={{ background: color }} /> {title}
+      </p>
+      {items.length === 0 ? (
+        <p className="mt-2 text-sm text-faint">–</p>
+      ) : (
+        <ul className="mt-2 space-y-1.5">
+          {items.map((m) => (
+            <li key={m} className={cn("flex items-center gap-2 text-sm", emphasis ? "font-medium text-fg" : "text-muted")}>
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: color }} />
+              {m}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+/** Anatomische Muskelkarte mit primär (rot) und sekundär (gelb) hervorgehobenen Muskeln. */
 export function MuscleMap({ primary, secondary, views = ["front", "back"], className, showLegend = true, compact = false }: MuscleMapProps) {
   return (
     <div className={cn("flex flex-col items-center", className)}>
