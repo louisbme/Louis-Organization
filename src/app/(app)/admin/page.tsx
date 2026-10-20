@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import { BookOpen, ChevronRight, ExternalLink } from "lucide-react";
 import { requireUser } from "@/lib/auth/require-user";
 import { adminListUsers } from "@/lib/services/admin";
@@ -11,7 +11,7 @@ export const metadata = { title: "Verwaltung" };
 
 export default async function AdminPage() {
   const { supabase, profile } = await requireUser();
-  if (profile.role !== "admin") notFound();
+  if (profile.role !== "admin") redirect("/dashboard");
   const users = await adminListUsers(supabase);
 
   return (
