@@ -102,7 +102,7 @@ export function AppShell({ activeSession, children }: AppShellProps) {
 
       {/* Mobile Bottom Navigation */}
       {!isWorkoutScreen ? (
-        <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-bg/95 backdrop-blur safe-bottom lg:hidden">
+        <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-bg safe-bottom lg:hidden">
           <ul className="grid h-16 grid-cols-6">
             {MOBILE_NAV.map((item) => {
               const active = isActivePath(pathname, item.href);
