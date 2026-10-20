@@ -7,7 +7,7 @@ Private Fitness-Tracking-Web-App für eine kleine Gruppe. Trainingspläne, satzg
 | Bereich | Technologie |
 |---|---|
 | Frontend | Next.js 15 (App Router), React 19, TypeScript (strict) |
-| Styling | Tailwind CSS 4, eigene Design-Tokens (Dark/Light) |
+| Styling | Tailwind CSS 4, eigene Design-Tokens (Dark/Light), Montserrat, monochrome Gestaltung |
 | Backend / DB / Auth | Supabase (Postgres, Auth, Row Level Security, optional Storage) |
 | Charts | Recharts |
 | Deployment | Vercel |
@@ -23,7 +23,7 @@ Keine OpenAI-/Claude-API, keine Analytics, keine Payments, keine externen Bildda
 - **Aktives Training**: große +/- Eingaben für Gewicht und Wiederholungen, optional RIR, Aufwärmsätze, vorherige Werte, Double-Progression-Vorschlag („Gewicht erhöhen/halten“), Trainingsdauer, Rest Timer (60/90/120/180 s oder eigene Zeit), Übung spontan hinzufügen, lokaler Zwischenstand (localStorage) mit Synchronisierung nach Verbindungsabbruch.
 - **Historie**: Liste mit Filtern (Zeitraum, Training, Übung), Detailansicht mit allen Sätzen und Volumen, Notizen.
 - **Fortschritt**: Zeiträume 1 W / 1 M / 6 M / 12 M / Gesamt; Volumen, Trainingsanzahl, Dauer, Körpergewicht (optional), Kraftentwicklung je Übung (Top-Satz, Wiederholungen, geschätztes 1RM, Volumen), Bestleistungen.
-- **Übungsdatenbank**: 50 Standardübungen mit Setup, Ausführung, Bewegungsradius, Atmung, Fehlern, Tipps; Kabelübungen mit konkretem Griff (Griff-Icons oder eigene Griff-Fotos) und vollständigem Kabel-Setup; anatomische SVG-Muskelkarte (Front/Rück, primär rot, sekundär gelb) als einzige Visualisierung; optionale Ausführungs-Animation (GIF, WebP oder MP4) je Übung; Favoriten; eigene Übungen.
+- **Übungsdatenbank**: 50 Standardübungen mit Setup, Ausführung, Bewegungsradius, Atmung, Fehlern, Tipps; Kabelübungen mit konkretem Griff (Griff-Icons oder eigene Griff-Fotos) und vollständigem Kabel-Setup; anatomische SVG-Muskelkarte (Front/Rück, primär rot, sekundär gelb); je Übung "So triffst du den Muskel" (sportwissenschaftlich begründet) und "Das brauchst du" (konkrete Ausstattung); Kabelübungen mit expliziter Rollenhöhe, empfohlenem Griff und Griff-Alternativen (eigene Griff-Illustrationen); optionales Gerätefoto nur auf der Detailseite und nur wo gewünscht; optionale Ausführungs-Animation; Favoriten; eigene Übungen.
 - **Kalender**: Monatsansicht, ±10 Jahre, Tage als Training / Rest Day / Freizeit / Party / Anderer Tag markieren, Notizen; abgeschlossene Trainings werden automatisch eingetragen.
 - **Stats**: private Übersicht aller Mitglieder (Nickname, Gesamtvolumen, Trainings, Zeit, letztes Training) mit Mitglieder-Detailansicht („Mehr sehen“): abgeschlossene Trainings nach Monat, Detail mit Übungen und Sätzen; nur lesend, nur für angemeldete Benutzer.
 - **Profil & Einstellungen**: Nickname, E-Mail, Passwort, Gewichtseinheit, Gewichtsschritt, Rest-Timer-Standard, RIR anzeigen, Theme.
@@ -84,7 +84,8 @@ Migrationen:
 | `0007_media_and_storage.sql` | Griff-Bilder, Animationen, Storage-Bucket |
 | `0008_member_sessions.sql` | RPCs für die Mitglieder-Detailansicht in den Stats (`get_member_sessions`, `get_member_session_detail`) |
 | `0009_categories_cardio_hips.sql` | Kategorien Cardio und Ad-/Abduktoren, Equipment Cardio, neue Muskelgruppen |
-| `0010_remove_machine_images.sql` | Entfernt frühere Gerätefoto-Zuordnungen (nur Muskelkarte) |
+| `0010_remove_machine_images.sql` | Entfernt frühere Gerätefoto-Zuordnungen |
+| `0011_focus_requirements_grips.sql` | Muskelfokus, benötigte Ausstattung, Griff-Alternativen, Griff "Handschlaufe" |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 
@@ -125,7 +126,7 @@ Die Standard-Templates funktionieren ebenfalls (Route `/auth/callback`), dann mu
 
 ### 4. Bilder, Animationen und Storage
 
-- Übungen zeigen bewusst keine Gerätefotos, nur die Muskelkarte (Migration `0010` entfernt frühere Zuordnungen). Das Feld `exercises.image_url` bleibt für spätere Nutzung erhalten.
+- Gerätefotos (`public/exercises/`) werden nur auf der Detailseite angezeigt und nur bei Übungen, für die `exercises.image_url` ausdrücklich gesetzt ist (Orientierung, welches Gerät gemeint ist). In Listen erscheinen keine Fotos.
 - Ausführungs-Animationen (GIF, WebP, MP4) werden über `exercises.animation_url` eingebunden und auf der Detailseite als Schleife abgespielt. Jede Übung funktioniert auch ohne Bild und ohne Animation (Placeholder).
 - Griff-Fotos: `grips.image_url` setzen, dann erscheint das Foto statt des Icons.
 - Migration `0007` legt den öffentlichen Storage-Bucket `exercise-assets` an (lesen für alle, schreiben für angemeldete Benutzer im eigenen Ordner `<user_id>/…`). Dateien dort hochladen und die öffentliche URL in `image_url`, `animation_url` oder `grips.image_url` eintragen, zum Beispiel per SQL:
