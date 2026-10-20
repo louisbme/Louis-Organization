@@ -40,10 +40,10 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  // Wichtig: getUser() validiert das Token serverseitig (nicht getSession()).
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  // getClaims() prüft die Signatur lokal über die JWKS des Projekts (gecacht) und
+  // erneuert abgelaufene Sessions; so entfällt ein Netzwerkaufruf pro Request.
+  const { data: claims } = await supabase.auth.getClaims();
+  const user = claims?.claims?.sub ? { id: claims.claims.sub } : null;
 
   const isPublic = isPublicPath(pathname);
 
