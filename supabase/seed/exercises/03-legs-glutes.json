@@ -59,7 +59,8 @@
     "machine_name": "Hack Squat, Plate Loaded",
     "alternative_exercises": [
       "beinpresse-45-grad",
-      "multipresse-kniebeuge"
+      "multipresse-kniebeuge",
+      "wadenheben-hackenschmidt"
     ]
   },
   {
@@ -630,6 +631,66 @@
     "alternative_exercises": []
   },
   {
+    "slug": "wadenheben-hackenschmidt",
+    "name": "Wadenheben Hackenschmidt",
+    "category": "calves",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Schulterpolster tragen die Last, Hände an den Haltegriffen. Kein Zug mit den Armen.",
+    "primary_muscles": [
+      "calves"
+    ],
+    "secondary_muscles": [],
+    "description": "Wadenheben stehend auf der Fußplatte der Hackenschmidt-Maschine. Die Schulterpolster übernehmen die Last, die Fußballen stehen auf der unteren Kante der Platte, die Fersen hängen frei über den Rand.",
+    "setup": [
+      "Hackenschmidt wie für Kniebeugen beladen, deutlich leichter als beim Beugen beginnen.",
+      "Unter die Schulterpolster stellen, Rücken flächig am Polster.",
+      "Fußballen auf die untere Kante der Fußplatte setzen, Fersen hängen frei über den Rand, Füße hüftbreit und parallel.",
+      "Beine fast gestreckt, Knie leicht weich, nicht durchgedrückt.",
+      "Sicherung lösen und die Last mit den Schultern übernehmen."
+    ],
+    "execution": [
+      "Fersen so tief wie möglich unter die Plattenkante absenken, bis die Waden deutlich gedehnt sind.",
+      "In der gedehnten Position eine Sekunde halten.",
+      "Über den Fußballen so hoch wie möglich nach oben drücken, Knie bleiben leicht gebeugt und ruhig.",
+      "Oben kurz anspannen, Gewicht liegt auf dem Großzehenballen.",
+      "Langsam und kontrolliert wieder in die Dehnung absenken.",
+      "Nächste Wiederholung ohne Federn aus der unteren Position beginnen."
+    ],
+    "range_of_motion": "Voller Bewegungsradius von tiefer Dehnung unter der Plattenkante bis zum maximalen Zehenstand. Die Knie bleiben während der gesamten Bewegung in gleicher, leicht gebeugter Stellung.",
+    "breathing": "Beim Hochdrücken ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Federn aus der unteren Position statt kontrollierter Dehnung mit Pause.",
+      "Knie beugen und strecken während der Wiederholung, dadurch arbeiten Oberschenkel statt Waden.",
+      "Nur halber Bewegungsradius, vor allem oben zu früh gestoppt.",
+      "Fersen stehen auf der Platte, die Dehnung fehlt.",
+      "Zu viel Gewicht, die Bewegung wird kurz und ruckartig."
+    ],
+    "tips": [
+      "Zwei bis drei Sekunden Exzentrik und eine Sekunde Pause in der Dehnung, das wirkt mehr als hohes Gewicht.",
+      "Die Sicherung vor dem Satz lösen und nach dem Satz wieder einhängen, die Fußplatte ist beim Wadenheben voll belastet.",
+      "Mit gestreckten Beinen arbeitet vor allem der Gastrocnemius; für den Soleus zusätzlich Wadenheben sitzend."
+    ],
+    "muscle_focus": [
+      "Die gestreckte Beinposition belastet vor allem den Gastrocnemius, den sichtbaren oberen Wadenmuskel.",
+      "Die tiefe, kurz gehaltene Dehnung unter der Plattenkante ist der wichtigste Reiz; dort entscheidet sich der Trainingseffekt.",
+      "Kontrollierte Exzentrik über zwei bis drei Sekunden statt Federn aus der Achillessehne.",
+      "Gewicht so wählen, dass der volle Bewegungsradius sauber möglich ist."
+    ],
+    "requirements": [
+      "Hackenschmidt-Maschine mit Schulterpolstern und Fußplatte",
+      "Hantelscheiben"
+    ],
+    "grip_alternatives": [],
+    "cable_setup": null,
+    "image_url": "/exercises/hack-squat.jpg",
+    "machine_name": "Hack Squat, Plate Loaded (Wadenheben auf der Fußplatte)",
+    "alternative_exercises": [
+      "wadenheben-stehend",
+      "wadenheben-sitzend"
+    ]
+  },
+  {
     "slug": "wadenheben-stehend",
     "name": "Wadenheben stehend",
     "category": "calves",
@@ -685,7 +746,8 @@
     "image_url": "/exercises/standing-calf-raise.jpg",
     "machine_name": "DHZ Standing Calf Raise, Plate Loaded",
     "alternative_exercises": [
-      "wadenheben-sitzend"
+      "wadenheben-sitzend",
+      "wadenheben-hackenschmidt"
     ]
   },
   {
@@ -741,7 +803,8 @@
     ],
     "grip_alternatives": [],
     "alternative_exercises": [
-      "wadenheben-stehend"
+      "wadenheben-stehend",
+      "wadenheben-hackenschmidt"
     ]
   }
 ]

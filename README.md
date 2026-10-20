@@ -90,6 +90,7 @@ Migrationen:
 | `0012_machine_info.sql` | Gerätebezeichnung und alternative Geräte je Übung |
 | `0013_admin_bootstrap.sql` | Rollenschutz erlaubt direkte Datenbankänderungen (erster Admin) |
 | `0014_admin.sql` | Verwaltungsfunktionen für Admins (Nutzer listen, Rolle setzen, löschen) |
+| `0015_row_variants.sql` | Rudern Hebel in breit/eng aufgeteilt, Brustgestütztes Rudern entfernt |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 

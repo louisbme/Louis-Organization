@@ -222,7 +222,9 @@
     "grip_alternatives": [
       "neutral_parallel"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [
+      "rudern-hebel-eng"
+    ]
   },
   {
     "slug": "breites-rudern",
@@ -296,71 +298,8 @@
     "grip_alternatives": [
       "neutral_parallel"
     ],
-    "alternative_exercises": []
-  },
-  {
-    "slug": "brustgestuetztes-rudern",
-    "name": "Brustgestütztes Rudern",
-    "category": "back",
-    "equipment": "machine",
-    "grip_id": null,
-    "grip_notes": "Neutrale oder pronierte Griffe, je nach Maschine. Neutraler Griff mit Ellenbogen nah am Körper betont eher den Latissimus, pronierter Griff mit Ellenbogen weiter außen eher den oberen Rücken. Handgelenke gerade halten.",
-    "primary_muscles": [
-      "mid_back",
-      "lats"
-    ],
-    "secondary_muscles": [
-      "upper_back",
-      "rear_delts",
-      "biceps",
-      "forearms"
-    ],
-    "description": "Horizontale Zugübung an einer Rudermaschine mit Brustpolster, das den Oberkörper stabilisiert und den unteren Rücken entlastet. Geeignet, um den Rücken ohne Ausweichbewegungen des Rumpfes zu trainieren.",
-    "setup": [
-      "Sitz so einstellen, dass die Griffe etwa auf Höhe der unteren Brust liegen.",
-      "Brust fest an das Polster legen, Füße flach auf den Boden oder die Fußplatten stellen.",
-      "Griffe fassen, Handgelenke gerade, Arme gestreckt.",
-      "Schultern bewusst nach unten ziehen, Brust bleibt am Polster.",
-      "Rumpf anspannen, bevor die Bewegung beginnt."
-    ],
-    "execution": [
-      "Griffe kontrolliert nach hinten ziehen, Ellenbogen führen die Bewegung.",
-      "Schulterblätter zusammen ziehen, Brust bleibt die ganze Zeit am Polster.",
-      "In der Endposition kurz halten, Ellenbogen befinden sich etwa auf Höhe des Rumpfes oder leicht dahinter.",
-      "Gewicht langsam zurückführen, Arme kontrolliert strecken.",
-      "Am Ende die Schulterblätter leicht nach vorne kommen lassen, um den Rücken zu dehnen.",
-      "Ohne Schwung die nächste Wiederholung beginnen."
-    ],
-    "range_of_motion": "Von gestreckten Armen mit leicht nach vorne gezogenen Schulterblättern bis die Ellenbogen etwa auf Höhe des Rumpfes oder leicht dahinter sind. Die Brust löst sich dabei nicht vom Polster.",
-    "breathing": "Beim Ziehen ausatmen, beim Strecken der Arme einatmen.",
-    "common_mistakes": [
-      "Brust löst sich vom Polster, um das Gewicht mit dem Oberkörper zu bewegen.",
-      "Schultern ziehen nach oben zu den Ohren.",
-      "Bewegung kommt vor allem aus den Armen, Schulterblätter bleiben vorne.",
-      "Sitz zu niedrig oder zu hoch, Griffe liegen auf Schulterhöhe oder Bauchhöhe.",
-      "Gewicht wird in der exzentrischen Phase einfach nach vorne gelassen."
-    ],
-    "tips": [
-      "In der Endposition eine Sekunde halten, um die Kontraktion im Rücken zu spüren.",
-      "Die exzentrische Phase zwei bis drei Sekunden lang kontrollieren.",
-      "Gut geeignet als Alternative zum Kabelrudern, wenn der untere Rücken entlastet werden soll."
-    ],
-    "cable_setup": null,
-    "muscle_focus": [
-      "Vorne die Arme vollständig strecken und die Schulterblätter nach vorne gleiten lassen, damit der mittlere Rücken in der gedehnten Position belastet wird; die Brust bleibt dabei am Polster.",
-      "Bewegung über die Ellenbogen einleiten und die Schulterblätter nach hinten-unten ziehen; die Hände nur als Haken verstehen.",
-      "Ellenbogen nah am Körper betonen den Latissimus, Ellenbogen weiter außen den oberen Rücken; Griffwahl entsprechend anpassen.",
-      "Rückführung zwei bis drei Sekunden kontrollieren, das Gewicht nicht in die Dehnung fallen lassen."
-    ],
-    "requirements": [
-      "Rudermaschine mit Brustpolster (Hebel- oder Seilzugmaschine)"
-    ],
-    "grip_alternatives": [],
-    "image_url": "/exercises/chest-supported-row.jpg",
-    "machine_name": "DHZ Flex Mid Row (A704L)",
     "alternative_exercises": [
-      "rudern-hebel-sitzend",
-      "enges-rudern"
+      "rudern-hebel-breit"
     ]
   },
   {

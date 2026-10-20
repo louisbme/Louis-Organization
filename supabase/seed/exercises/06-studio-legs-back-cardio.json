@@ -67,12 +67,76 @@
     ]
   },
   {
-    "slug": "rudern-hebel-sitzend",
-    "name": "Rudern Hebel sitzend",
+    "slug": "rudern-hebel-breit",
+    "name": "Rudern Hebel breit",
     "category": "back",
     "equipment": "machine",
     "grip_id": null,
-    "grip_notes": "Neutrale Griffe (Handflächen zeigen zueinander) an den Hebelarmen. Handgelenke gerade, Griffe nicht verkrampft umschließen.",
+    "grip_notes": "Äußere Griffe der Hebelmaschine (breit, Handflächen nach unten oder leicht gedreht). Ellenbogen laufen weiter außen, dadurch mehr Betonung von oberem Rücken und hinterer Schulter.",
+    "primary_muscles": [
+      "upper_back",
+      "mid_back"
+    ],
+    "secondary_muscles": [
+      "lats",
+      "rear_delts",
+      "biceps",
+      "forearms"
+    ],
+    "description": "Rudern an der scheibenbeladenen Hebelmaschine mit Brustpolster, äußere (breite) Griffe. Betont oberen Rücken, hintere Schulter und mittleren Rücken; die Brust liegt am Polster, der Rumpf bleibt stabil.",
+    "setup": [
+      "Sitzhöhe so einstellen, dass die Brust mittig am Polster anliegt und die Griffe etwa auf Höhe der unteren Brust liegen.",
+      "Füße fest auf die Fußplatte stellen, leichte Beugung in den Knien.",
+      "Äußere Griffe fassen, Arme gestreckt, Schulterblätter nach vorne kommen lassen (Dehnung).",
+      "Brust bleibt während des gesamten Satzes am Polster."
+    ],
+    "execution": [
+      "Griffe nach hinten ziehen, Ellenbogen etwa 45 bis 60 Grad vom Körper weg führen.",
+      "Schulterblätter aktiv zusammenziehen, Brust bleibt am Polster.",
+      "In der Endposition kurz halten, Ellenbogen hinter der Körperlinie.",
+      "Gewicht langsam zurückführen, Arme vollständig strecken.",
+      "Schulterblätter am Ende nach vorne gleiten lassen, ohne den Rumpf vom Polster zu lösen.",
+      "Nächste Wiederholung ohne Schwung aus dem Rumpf beginnen."
+    ],
+    "range_of_motion": "Von vollständig gestreckten Armen mit nach vorne gleitenden Schulterblättern bis zu Ellenbogen hinter der Körperlinie und zusammengezogenen Schulterblättern.",
+    "breathing": "Beim Ziehen ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Brust löst sich vom Polster, der Zug kommt aus dem unteren Rücken.",
+      "Ellenbogen werden eng am Körper geführt, dann wird daraus die enge Variante.",
+      "Schultern ziehen zu den Ohren.",
+      "Gewicht fällt nach vorne zurück, keine Kontrolle in der Exzentrik."
+    ],
+    "tips": [
+      "Vorstellen, die Ellenbogen weit nach hinten-außen zu führen, nicht die Hände.",
+      "Exzentrik zwei bis drei Sekunden lang kontrollieren.",
+      "Die enge Variante an den inneren Griffen setzt mehr Reiz auf den Latissimus."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Breite Griffposition mit abgespreizten Ellenbogen verlagert die Arbeit auf oberen Rücken, Rhomboiden und hintere Schulter.",
+      "Volle Streckung mit nach vorne gleitenden Schulterblättern am Anfang jeder Wiederholung bringt die gedehnte Position, die für den Muskelaufbau besonders wirksam ist.",
+      "Am Ende die Schulterblätter bewusst zusammenziehen und kurz halten, ohne den Rumpf vom Polster zu lösen.",
+      "Gewicht so wählen, dass die Bewegung aus Rücken und Ellenbogen kommt und nicht aus dem Schwung des Oberkörpers."
+    ],
+    "requirements": [
+      "Scheibenbeladene Rudermaschine mit Brustpolster (Hebel), äußere Griffe",
+      "Hantelscheiben"
+    ],
+    "grip_alternatives": [],
+    "image_url": "/exercises/seated-row-lever.jpg",
+    "machine_name": "DHZ Low Row, Plate Loaded",
+    "alternative_exercises": [
+      "rudern-hebel-eng",
+      "breites-rudern"
+    ]
+  },
+  {
+    "slug": "rudern-hebel-eng",
+    "name": "Rudern Hebel eng",
+    "category": "back",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Innere Griffe der Hebelmaschine (eng, neutral, Handflächen zueinander). Ellenbogen laufen nah am Körper, dadurch mehr Betonung des Latissimus.",
     "primary_muscles": [
       "lats",
       "mid_back"
@@ -83,55 +147,50 @@
       "forearms",
       "upper_back"
     ],
-    "description": "Scheibenbeladene Rudermaschine mit Brustpolster und zwei unabhängigen Hebelarmen. Horizontale Zugübung für Latissimus und mittleren Rücken, bei der der Rumpf durch das Polster abgestützt wird.",
+    "description": "Rudern an der scheibenbeladenen Hebelmaschine mit Brustpolster, innere (enge, neutrale) Griffe. Betont den Latissimus und den mittleren Rücken; die Brust liegt am Polster, der Rumpf bleibt stabil.",
     "setup": [
-      "Gewichtsscheiben auf beiden Hebelarmen gleich beladen und sichern.",
-      "Sitzhöhe so einstellen, dass die Griffe etwa auf Höhe der unteren Brust liegen.",
-      "Hinsetzen, Brust fest an das Polster legen, Füße flach auf die Fußstützen stellen.",
-      "Neutrale Griffe fassen, Arme gestreckt, Schulterblätter leicht nach vorne kommen lassen.",
-      "Rumpf anspannen, Blick geradeaus."
+      "Sitzhöhe so einstellen, dass die Brust mittig am Polster anliegt und die Griffe etwa auf Höhe des unteren Brustbeins liegen.",
+      "Füße fest auf die Fußplatte stellen, leichte Beugung in den Knien.",
+      "Innere Griffe neutral fassen, Arme gestreckt, Schulterblätter nach vorne kommen lassen (Dehnung).",
+      "Brust bleibt während des gesamten Satzes am Polster."
     ],
     "execution": [
-      "Beide Griffe gleichzeitig zum Körper ziehen, Ellenbogen nah am Körper nach hinten führen.",
-      "Schulterblätter am Ende der Bewegung zusammen ziehen.",
-      "Brust bleibt während der gesamten Bewegung am Polster.",
-      "In der Endposition kurz halten.",
-      "Hebelarme langsam zurückführen, Arme kontrolliert strecken.",
-      "Schulterblätter am vorderen Ende leicht lösen, um den Rücken zu dehnen.",
-      "Nächste Wiederholung ohne Schwung beginnen."
+      "Griffe nach hinten ziehen, Ellenbogen nah am Körper in Richtung Hüfte führen.",
+      "Schulterblätter nach hinten-unten ziehen, Brust bleibt am Polster.",
+      "In der Endposition kurz halten, Ellenbogen hinter der Körperlinie.",
+      "Gewicht langsam zurückführen, Arme vollständig strecken.",
+      "Schulterblätter am Ende nach vorne gleiten lassen, Latissimus dehnen.",
+      "Nächste Wiederholung ohne Schwung aus dem Rumpf beginnen."
     ],
-    "range_of_motion": "Von gestreckten Armen mit leicht vorgeschobenen Schulterblättern bis die Ellenbogen etwa auf Höhe des Rumpfes sind. Nicht weiter ziehen, wenn dafür die Brust vom Polster abhebt.",
+    "range_of_motion": "Von vollständig gestreckten Armen mit gedehntem Latissimus bis zu Ellenbogen hinter der Körperlinie und nach hinten-unten gezogenen Schulterblättern.",
     "breathing": "Beim Ziehen ausatmen, beim Zurückführen einatmen.",
     "common_mistakes": [
-      "Brust löst sich vom Polster und der Oberkörper lehnt sich nach hinten.",
-      "Schultern ziehen beim Rudern nach oben in Richtung Ohr.",
-      "Bewegung kommt aus den Armen statt aus den Schulterblättern.",
-      "Gewicht wird nach vorne fallen gelassen.",
-      "Sitz zu hoch oder zu niedrig, Zugrichtung passt nicht zur Brusthöhe."
+      "Brust löst sich vom Polster, der Zug kommt aus dem unteren Rücken.",
+      "Ellenbogen weichen nach außen aus, dann wird daraus die breite Variante.",
+      "Schultern ziehen zu den Ohren.",
+      "Gewicht fällt nach vorne zurück, keine Kontrolle in der Exzentrik."
     ],
     "tips": [
-      "Vorstellen, die Ellenbogen nach hinten zu ziehen statt die Griffe zur Brust.",
-      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
-      "Einseitige Ausführung ist durch die unabhängigen Hebelarme möglich und hilft bei Seitenunterschieden.",
-      "Griffe mit den Fingern haken statt fest zu umschließen, um die Unterarme zu entlasten."
+      "Vorstellen, die Ellenbogen in die Hosentaschen zu ziehen.",
+      "Exzentrik zwei bis drei Sekunden lang kontrollieren.",
+      "Die breite Variante an den äußeren Griffen setzt mehr Reiz auf oberen Rücken und hintere Schulter."
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Ellenbogen nah am Körper nach hinten ziehen, Brust bleibt am Polster; so arbeiten Latissimus und mittlerer Rücken statt der Arme.",
-      "Vorne die Arme vollständig strecken und die Schulterblätter nach vorne gleiten lassen, damit der Rücken in der gedehnten Position unter Last ist.",
-      "Am Ende die Schulterblätter zusammenziehen, kurz halten und die Exzentrik etwa zwei Sekunden lang kontrollieren.",
-      "Gewicht so wählen, dass der Rücken den Satz begrenzt und die Brust nicht vom Polster abhebt."
+      "Enge, neutrale Griffposition mit körpernahen Ellenbogen verlagert die Arbeit auf den Latissimus.",
+      "Volle Streckung mit nach vorne gleitenden Schulterblättern am Anfang jeder Wiederholung bringt die gedehnte Position des Latissimus.",
+      "Am Ende die Ellenbogen hinter die Körperlinie bringen und die Schulterblätter nach hinten-unten ziehen, kurz halten.",
+      "Gewicht so wählen, dass die Bewegung aus Rücken und Ellenbogen kommt und nicht aus dem Schwung des Oberkörpers."
     ],
     "requirements": [
-      "Scheibenbeladene Rudermaschine (Hebelmaschine) mit Brustpolster und zwei unabhängigen Hebelarmen",
-      "Gewichtsscheiben und Scheibenverschlüsse",
-      "Höhenverstellbarer Sitz mit Fußstützen"
+      "Scheibenbeladene Rudermaschine mit Brustpolster (Hebel), innere neutrale Griffe",
+      "Hantelscheiben"
     ],
     "grip_alternatives": [],
     "image_url": "/exercises/seated-row-lever.jpg",
     "machine_name": "DHZ Low Row, Plate Loaded",
     "alternative_exercises": [
-      "brustgestuetztes-rudern",
+      "rudern-hebel-breit",
       "enges-rudern"
     ]
   },
