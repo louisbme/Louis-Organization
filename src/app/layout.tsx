@@ -12,7 +12,13 @@ export const metadata: Metadata = {
   applicationName: "Trainingslog",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Trainingslog" },
-  icons: { icon: "/icons/icon.svg", apple: "/icons/apple-touch-icon.png" },
+  icons: {
+    icon: [
+      { url: "/icons/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icons/apple-touch-icon.png",
+  },
 };
 
 export const viewport: Viewport = {
