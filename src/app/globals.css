@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------
+   Design Tokens – Dark ist Standard, Light über data-theme="light"
+   ------------------------------------------------------------ */
+:root {
+  --bg: #0a0a0b;
+  --bg-card: #121214;
+  --bg-subtle: #1a1a1d;
+  --bg-hover: #202024;
+  --border: #26262b;
+  --border-strong: #3a3a41;
+  --fg: #f4f4f5;
+  --fg-muted: #a1a1aa;
+  --fg-subtle: #6b6b75;
+  --accent: #34d399;
+  --accent-strong: #10b981;
+  --accent-fg: #06251a;
+  --accent-soft: rgba(52, 211, 153, 0.12);
+  --danger: #f87171;
+  --danger-soft: rgba(248, 113, 113, 0.12);
+  --warning: #fbbf24;
+  --warning-soft: rgba(251, 191, 36, 0.12);
+  --info: #60a5fa;
+  --info-soft: rgba(96, 165, 250, 0.12);
+  --chart-1: #34d399;
+  --chart-2: #60a5fa;
+  --chart-3: #a78bfa;
+  --chart-4: #fbbf24;
+  --muscle-primary: #34d399;
+  --muscle-secondary: #2a7a5c;
+  --muscle-base: #26262b;
+  --muscle-outline: #3a3a41;
+  --ring: rgba(52, 211, 153, 0.45);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f6f6f7;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f1f3;
+  --bg-hover: #e9e9ec;
+  --border: #e4e4e7;
+  --border-strong: #cfcfd4;
+  --fg: #121214;
+  --fg-muted: #52525b;
+  --fg-subtle: #8a8a94;
+  --accent: #059669;
+  --accent-strong: #047857;
+  --accent-fg: #ffffff;
+  --accent-soft: rgba(5, 150, 105, 0.1);
+  --danger: #dc2626;
+  --danger-soft: rgba(220, 38, 38, 0.08);
+  --warning: #d97706;
+  --warning-soft: rgba(217, 119, 6, 0.1);
+  --info: #2563eb;
+  --info-soft: rgba(37, 99, 235, 0.1);
+  --chart-1: #059669;
+  --chart-2: #2563eb;
+  --chart-3: #7c3aed;
+  --chart-4: #d97706;
+  --muscle-primary: #059669;
+  --muscle-secondary: #86d4b4;
+  --muscle-base: #e4e4e7;
+  --muscle-outline: #cfcfd4;
+  --ring: rgba(5, 150, 105, 0.35);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--bg-card);
+  --color-subtle: var(--bg-subtle);
+  --color-hover: var(--bg-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-faint: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --radius-card: 16px;
+  --shadow-card: 0 1px 0 0 rgba(255, 255, 255, 0.02) inset;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  min-height: 100dvh;
+  overscroll-behavior-y: none;
+}
+
+* {
+  border-color: var(--border);
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* Zahlen gleich breit (Tracking, Statistiken) */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dezente Fokus-Ringe für Tastatur */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Eingabefelder: kein Spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Scrollbars dezent */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 999px;
+    border: 3px solid var(--bg);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Safe-Area für iOS Bottom Navigation */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Sheet-Animation (subtil) */
+@keyframes sheet-in {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-sheet-in {
+  animation: sheet-in 180ms ease-out;
+}
+.animate-fade-in {
+  animation: fade-in 150ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sheet-in,
+  .animate-fade-in {
+    animation: none;
+  }
+}
+
+/* Recharts: Schriftfarbe */
+.recharts-text {
+  fill: var(--fg-subtle);
+  font-size: 11px;
+}
+.recharts-cartesian-grid line {
+  stroke: var(--border);
+}
