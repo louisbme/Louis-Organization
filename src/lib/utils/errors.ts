@@ -28,6 +28,9 @@ export function friendlyError(error: unknown, fallback = "Etwas ist schiefgelauf
   if (m.includes("violates foreign key") && m.includes("workout_session_exercises")) {
     return "Diese Übung wurde bereits in Trainings verwendet und kann nicht gelöscht werden.";
   }
+  if (m.includes("keine berechtigung")) return "Keine Berechtigung für diese Aktion.";
+  if (m.includes("eigene admin-rolle")) return "Die eigene Admin-Rolle kann nicht entfernt werden.";
+  if (m.includes("eigene konto")) return "Das eigene Konto kann hier nicht gelöscht werden.";
   if (m.includes("row-level security") || m.includes("permission denied")) {
     return "Keine Berechtigung für diese Aktion.";
   }

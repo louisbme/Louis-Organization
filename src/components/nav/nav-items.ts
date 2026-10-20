@@ -10,6 +10,7 @@ import {
   User,
   Settings,
   MoreHorizontal,
+  ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -35,6 +36,9 @@ export const SECONDARY_NAV: NavItem[] = [
   { href: "/settings", label: "Einstellungen", icon: Settings },
 ];
 
+/** Nur für Admins */
+export const ADMIN_NAV: NavItem[] = [{ href: "/admin", label: "Verwaltung", icon: ShieldCheck }];
+
 /** Mobile Bottom Navigation: 4 Hauptziele + "Mehr" */
 export const MOBILE_NAV: NavItem[] = [
   { href: "/dashboard", label: "Start", icon: LayoutGrid },
@@ -55,7 +59,7 @@ export const MORE_NAV: NavItem[] = [
 
 export function isActivePath(pathname: string, href: string): boolean {
   if (href === "/more") {
-    return MORE_NAV.some((i) => pathname === i.href || pathname.startsWith(i.href + "/"));
+    return [...MORE_NAV, ...ADMIN_NAV].some((i) => pathname === i.href || pathname.startsWith(i.href + "/"));
   }
   return pathname === href || pathname.startsWith(href + "/");
 }

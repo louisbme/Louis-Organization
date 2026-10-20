@@ -27,6 +27,7 @@ Keine OpenAI-/Claude-API, keine Analytics, keine Payments, keine externen Bildda
 - **Kalender**: Monatsansicht, ±10 Jahre, Tage als Training / Rest Day / Freizeit / Party / Anderer Tag markieren, Notizen; abgeschlossene Trainings werden automatisch eingetragen.
 - **Stats**: private Übersicht aller Mitglieder (Nickname, Gesamtvolumen, Trainings, Zeit, letztes Training) mit Mitglieder-Detailansicht („Mehr sehen“): abgeschlossene Trainings nach Monat, Detail mit Übungen und Sätzen; nur lesend, nur für angemeldete Benutzer.
 - **Profil & Einstellungen**: Nickname, E-Mail, Passwort, Gewichtseinheit, Gewichtsschritt, Rest-Timer-Standard, RIR anzeigen, Theme.
+- **Verwaltung (nur Admins)**: Nutzerliste mit E-Mail, Registrierung, letztem Login, Trainings und Volumen; Rolle setzen; Nutzer löschen; Standardübungen über das Bearbeiten-Formular pflegen. Umgesetzt über abgesicherte Datenbankfunktionen (`admin_list_users`, `admin_set_role`, `admin_delete_user`), ohne Service-Key.
 
 ## Lokale Installation
 
@@ -88,6 +89,7 @@ Migrationen:
 | `0011_focus_requirements_grips.sql` | Muskelfokus, benötigte Ausstattung, Griff-Alternativen, Griff "Handschlaufe" |
 | `0012_machine_info.sql` | Gerätebezeichnung und alternative Geräte je Übung |
 | `0013_admin_bootstrap.sql` | Rollenschutz erlaubt direkte Datenbankänderungen (erster Admin) |
+| `0014_admin.sql` | Verwaltungsfunktionen für Admins (Nutzer listen, Rolle setzen, löschen) |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 
@@ -145,7 +147,7 @@ update grips set image_url = '/grips/neutral-parallel.jpg' where id = 'neutral_p
 3. Dashboard → Training starten → Sätze speichern → Training abschließen.
 4. Historie, Fortschritt, Kalender und Stats füllen sich automatisch.
 
-Der erste Admin wird per SQL gesetzt (SQL-Editor): `update profiles set role = 'admin' where nickname = '…';` Admins dürfen Standardübungen pflegen und Rollen anderer Nutzer ändern. Nutzer anlegen, sperren, Passwörter zurücksetzen und löschen läuft über das Supabase-Dashboard unter Authentication → Users.
+Der erste Admin wird per SQL gesetzt (SQL-Editor): `update profiles set role = 'admin' where nickname = '…';` Admins sehen in der App den Bereich "Verwaltung" (Nutzer, Rollen, Löschen, Standardübungen bearbeiten). Einladungen, Sperren und Passwort-Resets laufen über das Supabase-Dashboard unter Authentication → Users.
 
 ## Tests und Qualität
 

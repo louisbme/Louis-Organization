@@ -7,7 +7,7 @@ import { LogOut, Play } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { useUser } from "@/lib/context/user-context";
 import { Wordmark } from "@/components/brand/logo";
-import { MOBILE_NAV, PRIMARY_NAV, SECONDARY_NAV, isActivePath } from "@/components/nav/nav-items";
+import { ADMIN_NAV, MOBILE_NAV, PRIMARY_NAV, SECONDARY_NAV, isActivePath } from "@/components/nav/nav-items";
 import { PageTransition } from "@/components/theme/page-transition";
 
 interface AppShellProps {
@@ -38,6 +38,9 @@ export function AppShell({ activeSession, children }: AppShellProps) {
           {SECONDARY_NAV.map((item) => (
             <SidebarLink key={item.href} item={item} active={isActivePath(pathname, item.href)} />
           ))}
+          {profile.role === "admin"
+            ? ADMIN_NAV.map((item) => <SidebarLink key={item.href} item={item} active={isActivePath(pathname, item.href)} />)
+            : null}
         </nav>
         <div className="border-t border-border p-3">
           <div className="flex items-center justify-between gap-2 rounded-xl px-2 py-2">

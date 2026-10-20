@@ -16,9 +16,11 @@ interface Props {
   exercise: ExerciseDetailType;
   records: ExerciseRecordsRow | null;
   backHref?: string;
+  /** Admin darf Standardübungen bearbeiten */
+  canEditStandard?: boolean;
 }
 
-export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: Props) {
+export function ExerciseDetail({ exercise, records, backHref = "/exercises", canEditStandard = false }: Props) {
   const showForearmHint =
     exercise.secondary_muscles.includes("forearms") && !exercise.primary_muscles.includes("forearms");
   const isCable = exercise.equipment === "cable";
@@ -253,6 +255,11 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
       <div className="space-y-3 pt-2">
         <AddToPlanButton exerciseId={exercise.id} exerciseName={exercise.name} />
         {exercise.is_custom ? <CustomExerciseActions exerciseId={exercise.id} slug={exercise.slug} /> : null}
+        {canEditStandard ? (
+          <Link href={`/exercises/${exercise.slug}/edit`} className="press flex h-11 items-center justify-center gap-2 rounded-full border border-border-strong text-sm font-medium hover:bg-subtle">
+            Standardübung bearbeiten (Admin)
+          </Link>
+        ) : null}
       </div>
       {exercise.is_custom ? <Badge>Eigene Übung</Badge> : null}
     </div>

@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function ExerciseDetailPage({ params }: { params: Params }) {
   const { slug } = await params;
-  const { supabase, user } = await requireUser();
+  const { supabase, user, profile } = await requireUser();
   const exercise = await getExerciseBySlug(supabase, user.id, slug);
   if (!exercise) notFound();
   const records = await getExerciseRecords(supabase, exercise.id).catch(() => null);
-  return <ExerciseDetail exercise={exercise} records={records} />;
+  return <ExerciseDetail exercise={exercise} records={records} canEditStandard={profile.role === "admin" && !exercise.is_custom} />;
 }

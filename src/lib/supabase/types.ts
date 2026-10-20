@@ -426,6 +426,9 @@ export type Database = {
         Args: { p_exercise_id: string; p_from?: string | null };
         Returns: ExerciseHistoryRow[];
       };
+      admin_list_users: { Args: Record<string, never>; Returns: AdminUserRow[] };
+      admin_set_role: { Args: { p_user_id: string; p_role: UserRole }; Returns: undefined };
+      admin_delete_user: { Args: { p_user_id: string }; Returns: undefined };
       get_member_sessions: {
         Args: { p_user_id: string; p_limit?: number };
         Returns: MemberSessionRow[];
@@ -494,6 +497,17 @@ export type ExerciseRecordsRow = {
   max_session_volume: number | null;
   max_session_volume_at: string | null;
   total_sessions: number;
+};
+
+export type AdminUserRow = {
+  user_id: string;
+  nickname: string;
+  email: string;
+  role: UserRole;
+  created_at: string;
+  last_sign_in_at: string | null;
+  total_workouts: number;
+  total_volume: number;
 };
 
 export type ExerciseHistoryRow = {

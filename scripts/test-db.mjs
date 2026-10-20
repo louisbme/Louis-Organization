@@ -45,7 +45,8 @@ await db.exec(`
     id uuid primary key,
     email text,
     raw_user_meta_data jsonb default '{}'::jsonb,
-    created_at timestamptz default now()
+    created_at timestamptz default now(),
+    last_sign_in_at timestamptz
   );
   create or replace function auth.uid() returns uuid language sql stable as $$
     select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid
@@ -327,6 +328,40 @@ await test("Kalender: Eintrag anlegen/ändern, Duplikat je Tag verhindert", asyn
     const r = await db.query("select entry_type, note from calendar_entries where user_id = $1 and entry_date = '2026-10-21'", [USER_A]);
     assert(r.rows[0].entry_type === "party" && r.rows[0].note === "Pause");
   });
+});
+
+await test("Verwaltung: nur Admins dürfen Nutzer listen, Rolle setzen, löschen", async () => {
+  let blocked = false;
+  await asUser(USER_B, async () => {
+    try { await db.query("select * from admin_list_users()"); } catch { blocked = true; }
+  });
+  // Nicht-Admin sieht keine Zeilen oder bekommt einen Fehler
+  if (!blocked) {
+    const r = await asUser(USER_B, async () => db.query("select count(*)::int as n from admin_list_users()"));
+    assert(r.rows[0].n === 0, "Nicht-Admin sieht Nutzerliste");
+  }
+  let setBlocked = false;
+  await asUser(USER_B, async () => { try { await db.query("select admin_set_role($1, 'admin')", [USER_B]); } catch { setBlocked = true; } });
+  assert(setBlocked, "Nicht-Admin konnte Rolle setzen");
+  // USER_A per SQL (ohne auth.uid) zum Admin machen – wie beim ersten Admin im Dashboard
+  await db.query("update profiles set role = 'admin' where id = $1", [USER_A]);
+  await asUser(USER_A, async () => {
+    const list = await db.query("select nickname, email, role::text from admin_list_users() order by created_at");
+    assert(list.rows.length === 2 && list.rows[0].email === "a@example.com", JSON.stringify(list.rows));
+    await db.query("select admin_set_role($1, 'admin')", [USER_B]);
+    const b = await db.query("select role::text from admin_list_users() where user_id = $1", [USER_B]);
+    assert(b.rows[0]?.role === "admin", "Rolle nicht gesetzt");
+    await db.query("select admin_set_role($1, 'user')", [USER_B]);
+    let selfBlocked = false;
+    try { await db.query("select admin_set_role($1, 'user')", [USER_A]); } catch { selfBlocked = true; }
+    assert(selfBlocked, "eigene Admin-Rolle konnte entfernt werden");
+    let selfDelete = false;
+    try { await db.query("select admin_delete_user($1)", [USER_A]); } catch { selfDelete = true; }
+    assert(selfDelete, "eigenes Konto konnte gelöscht werden");
+    await db.query("select admin_delete_user($1)", [USER_B]);
+  });
+  const gone = await db.query("select count(*)::int as n from profiles where id = $1", [USER_B]);
+  assert(gone.rows[0].n === 0, "Profil von USER_B nicht gelöscht");
 });
 
 await test("Training abbrechen entfernt aktive Session", async () => {
