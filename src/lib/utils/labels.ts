@@ -96,11 +96,11 @@ export const CALENDAR_TYPE_LABELS: Record<CalendarEntryType, string> = {
 
 export const CALENDAR_TYPE_ORDER: CalendarEntryType[] = ["training", "rest", "leisure", "party", "other"];
 
-/** Monochrome Kennzeichnung je Kalendertyp: eine Farbe, Unterscheidung über Füllung und Helligkeit */
+/** Farbige Kennzeichnung je Kalendertyp (Farben als CSS-Variablen in globals.css) */
 export const CALENDAR_TYPE_STYLES: Record<CalendarEntryType, { dot: string; chip: string }> = {
-  training: { dot: "bg-fg", chip: "bg-accent-soft text-fg" },
-  rest: { dot: "border border-fg bg-transparent", chip: "bg-subtle text-fg" },
-  leisure: { dot: "bg-muted", chip: "bg-subtle text-muted" },
-  party: { dot: "bg-faint ring-2 ring-border-strong", chip: "bg-subtle text-muted" },
-  other: { dot: "bg-border-strong", chip: "bg-subtle text-faint" },
+  training: { dot: "bg-[var(--cal-training)]", chip: "bg-subtle text-fg" },
+  rest: { dot: "bg-[var(--cal-rest)]", chip: "bg-subtle text-fg" },
+  leisure: { dot: "bg-[var(--cal-leisure)]", chip: "bg-subtle text-fg" },
+  party: { dot: "bg-[var(--cal-party)]", chip: "bg-subtle text-fg" },
+  other: { dot: "bg-[var(--cal-other)]", chip: "bg-subtle text-muted" },
 };

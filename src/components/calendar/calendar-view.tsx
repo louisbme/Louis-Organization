@@ -219,9 +219,6 @@ export function CalendarView({ initialMonth, initialEntries, initialSessions }: 
             <span className={cn("h-2.5 w-2.5 rounded-full", CALENDAR_TYPE_STYLES[t].dot)} /> {CALENDAR_TYPE_LABELS[t]}
           </span>
         ))}
-        <span className="inline-flex items-center gap-1.5">
-          <span className="h-1.5 w-1.5 rounded-full bg-faint" /> Notiz
-        </span>
       </div>
 
       <Sheet

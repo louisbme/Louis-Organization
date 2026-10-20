@@ -35,6 +35,12 @@
   --muscle-structural: #3d4858;
   --muscle-outline: #1c2230;
   --ring: rgba(245, 245, 246, 0.35);
+  /* Kalender-Markierungen */
+  --cal-training: #22c55e;
+  --cal-rest: #facc15;
+  --cal-leisure: #f97316;
+  --cal-party: #ef4444;
+  --cal-other: #66666f;
   color-scheme: dark;
 }
 
@@ -70,6 +76,11 @@
   --muscle-structural: #b8c1cf;
   --muscle-outline: #ffffff;
   --ring: rgba(18, 18, 20, 0.25);
+  --cal-training: #16a34a;
+  --cal-rest: #eab308;
+  --cal-leisure: #ea580c;
+  --cal-party: #dc2626;
+  --cal-other: #8a8a94;
   color-scheme: light;
 }
 
