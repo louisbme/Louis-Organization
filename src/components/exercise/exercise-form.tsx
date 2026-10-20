@@ -67,6 +67,8 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
   const [breathing, setBreathing] = React.useState(existing?.breathing ?? "");
   const [mistakes, setMistakes] = React.useState((existing?.common_mistakes ?? []).join("\n"));
   const [tips, setTips] = React.useState((existing?.tips ?? []).join("\n"));
+  const [focus, setFocus] = React.useState((existing?.muscle_focus ?? []).join("\n"));
+  const [requirements, setRequirements] = React.useState((existing?.requirements ?? []).join("\n"));
   const [animationUrl, setAnimationUrl] = React.useState(existing?.animation_url ?? "");
 
   const onCategoryChange = (next: ExerciseCategory) => {
@@ -110,6 +112,8 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
       breathing: breathing.trim() || null,
       common_mistakes: linesToArray(mistakes),
       tips: linesToArray(tips),
+      muscle_focus: linesToArray(focus),
+      requirements: linesToArray(requirements),
       image_url: existing?.image_url ?? null,
       animation_url: animationUrl.trim() || null,
     };
@@ -221,6 +225,12 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
           </Field>
           <Field label="Hinweise / Tipps (optional)" htmlFor="tips" hint="Ein Punkt pro Zeile">
             <Textarea id="tips" value={tips} onChange={(e) => setTips(e.target.value)} rows={3} />
+          </Field>
+          <Field label="Muskelfokus (optional)" htmlFor="focus" hint="Wie der Muskel am besten getroffen wird, ein Punkt pro Zeile">
+            <Textarea id="focus" value={focus} onChange={(e) => setFocus(e.target.value)} rows={3} />
+          </Field>
+          <Field label="Das brauchst du (optional)" htmlFor="requirements" hint="Ausstattung, ein Punkt pro Zeile">
+            <Textarea id="requirements" value={requirements} onChange={(e) => setRequirements(e.target.value)} rows={2} />
           </Field>
           <Field label="Animations-URL (optional)" htmlFor="animationUrl" error={errors.animationUrl} hint="GIF, WebP oder MP4 der Ausführung">
             <Input id="animationUrl" type="url" value={animationUrl} onChange={(e) => setAnimationUrl(e.target.value)} invalid={!!errors.animationUrl} />

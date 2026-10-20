@@ -44,7 +44,17 @@
       "Sicherungen vor dem Satz prüfen und erst nach dem letzten Satz wieder einrasten lassen.",
       "Erst dann Gewicht erhöhen, wenn die Tiefe über alle Wiederholungen gleich bleibt."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Tief absenken, soweit das Becken am Polster bleibt; der Quadrizeps arbeitet in der tiefen, gedehnten Kniebeugung am stärksten.",
+      "Fersen auf der Plattform lassen und die Knie in Richtung Fußspitzen führen, dann bleibt die Last auf dem Oberschenkel statt auf dem Kniegelenk.",
+      "Füße eher mittig bis tief auf der Plattform betonen den Quadrizeps; höher platziert verlagert sich die Arbeit zu Gesäß und hinteren Oberschenkeln.",
+      "Exzentrische Phase zwei bis drei Sekunden kontrollieren und oben kurz vor der Kniestreckung stoppen, damit die Spannung erhalten bleibt."
+    ],
+    "requirements": [
+      "Hackenschmidt-Maschine (Hack Squat) mit Schulterpolstern und Sicherungen"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "beinpresse",
@@ -91,7 +101,17 @@
       "Höhere Fußposition auf der Platte verlagert die Belastung mehr auf Gesäß und hintere Oberschenkel, tiefere Position mehr auf den Quadrizeps.",
       "Sicherungen vor dem Satz prüfen und erst nach dem letzten Satz einrasten lassen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "So tief absenken, wie das Becken am Polster bleibt; die tiefe Kniebeugung belastet den Quadrizeps in der gedehnten Position.",
+      "Über die ganze Fußsohle drücken und die Knie in Richtung Fußspitzen führen, nicht nach innen fallen lassen.",
+      "Fußposition bestimmt den Fokus: tiefer auf der Platte betont den Quadrizeps, höher Gesäß und hintere Oberschenkel.",
+      "Exzentrische Phase etwa zwei Sekunden kontrollieren, oben nicht durchstrecken."
+    ],
+    "requirements": [
+      "45-Grad- oder horizontale Beinpresse mit verstellbarer Rückenlehne und Sicherungen"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "beinstrecker",
@@ -135,7 +155,17 @@
       "Einbeinige Ausführung, um Seitenunterschiede auszugleichen.",
       "Mit moderatem Gewicht und höheren Wiederholungszahlen beginnen, dann schrittweise steigern."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Drehachse der Maschine auf Kniehöhe und das Polster knapp über dem Sprunggelenk einstellen, damit der Widerstand über den ganzen Hebel auf den Quadrizeps wirkt.",
+      "Rückenlehne eher nach hinten geneigt einstellen, so wird der gerade Oberschenkelmuskel über die Hüfte vorgedehnt und arbeitet stärker mit.",
+      "Unten bis etwa 90 Grad oder tiefer zurückführen, soweit die Knie beschwerdefrei bleiben, oben ein bis zwei Sekunden halten; das Becken bleibt am Polster.",
+      "Exzentrische Phase zwei bis drei Sekunden kontrollieren, kein Schwung aus der unteren Position."
+    ],
+    "requirements": [
+      "Beinstrecker-Maschine mit verstellbarer Rückenlehne und Beinpolster"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "bulgarian-split-squat",
@@ -184,7 +214,19 @@
       "Leichte Vorlage des Oberkörpers betont das Gesäß, aufrechte Haltung mehr den Quadrizeps.",
       "Bei Gleichgewichtsproblemen mit einer Hand leicht an einem Rack abstützen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Tief absenken, bis das hintere Knie knapp über dem Boden ist; das vordere Bein trägt die Last, die tiefe Position belastet Quadrizeps und Gesäß in der Dehnung.",
+      "Vorderes Knie in Richtung Fußspitze führen und die Ferse am Boden lassen; aufrechter Oberkörper betont den Quadrizeps, leichte Vorlage das Gesäß.",
+      "Hinteres Bein nur zum Ausbalancieren nutzen, nicht aktiv mitdrücken.",
+      "Exzentrische Phase etwa zwei Sekunden kontrollieren, oben kurz vor der Kniestreckung stoppen."
+    ],
+    "requirements": [
+      "Kurzhanteln",
+      "Flachbank für den hinteren Fuß",
+      "Optional: Rack oder Wand zum Abstützen bei Gleichgewichtsproblemen"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "kniebeuge",
@@ -234,7 +276,19 @@
       "Bei eingeschränkter Sprunggelenkbeweglichkeit Fersen leicht erhöhen oder Schuhe mit erhöhter Ferse nutzen.",
       "Gewicht in kleinen Schritten steigern, wenn Tiefe und Rückenposition stabil bleiben."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "So tief gehen, wie der Rücken neutral bleibt, in der Regel bis die Oberschenkel mindestens parallel stehen; die tiefe Position belastet Quadrizeps und Gesäß in der gedehnten Stellung.",
+      "Knie in Richtung Fußspitzen führen und das Gewicht über dem Mittelfuß halten; die Fersen bleiben am Boden.",
+      "Hüfte und Schultern gemeinsam anheben; steigt die Hüfte zuerst, wandert die Last vom Quadrizeps in Rücken und Hüfte.",
+      "Absenken etwa zwei Sekunden kontrollieren und unten nicht abfedern."
+    ],
+    "requirements": [
+      "Langhantel und Rack mit Sicherheitsstangen",
+      "Hantelscheiben mit Verschlüssen",
+      "Optional: Schuhe mit erhöhter Ferse"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "ausfallschritte",
@@ -282,7 +336,19 @@
       "Exzentrische Phase kontrolliert ausführen, nicht in die untere Position fallen.",
       "Bei Gleichgewichtsproblemen Ausfallschritte auf der Stelle statt gehend ausführen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Großen Schritt wählen und das Becken gerade absenken, bis das hintere Knie knapp über dem Boden ist; so werden Gesäß und Quadrizeps des vorderen Beins in der gedehnten Position belastet.",
+      "Über die ganze Fußsohle des vorderen Fußes hochdrücken, Knie in Richtung Fußspitze; leichte Vorlage des Oberkörpers betont das Gesäß.",
+      "Rumpf stabil und Oberkörper ruhig halten, kein Eindrehen oder Pendeln.",
+      "Absenken kontrolliert ausführen und nicht in die untere Position fallen."
+    ],
+    "requirements": [
+      "Kurzhanteln",
+      "Bank oder Ablage zum Aufnehmen und Abstellen der Kurzhanteln",
+      "Ausreichend Platz nach vorne, besonders bei gehender Ausführung"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "beinbeuger",
@@ -329,7 +395,17 @@
       "Einbeinige Ausführung, um Seitenunterschiede auszugleichen.",
       "Fußspitzen gestreckt halten, um den Anteil der Waden zu verringern und die hinteren Oberschenkel stärker zu betonen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Startposition mit fast gestreckten Beinen einnehmen und die gedehnte Position bewusst mitnehmen; sitzend lässt sich die Dehnung durch einen leicht nach vorne geneigten Oberkörper verstärken.",
+      "Drehachse auf Kniehöhe und Polster knapp über der Ferse einstellen, dann wirkt der Widerstand sauber auf die hintere Oberschenkelmuskulatur.",
+      "Becken stabil auf bzw. am Polster lassen; Anheben der Hüfte oder Schwung verlagert die Arbeit in den unteren Rücken.",
+      "Fußspitzen eher gestreckt halten, um den Wadenanteil zu verringern, und die Rückführung zwei bis drei Sekunden kontrollieren."
+    ],
+    "requirements": [
+      "Beinbeuger-Maschine, liegend oder sitzend, mit verstellbarer Drehachse und Beinpolster"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "rumaenisches-kreuzheben",
@@ -378,7 +454,18 @@
       "Zughilfen nutzen, wenn die Griffkraft vor den hinteren Oberschenkeln nachlässt.",
       "Alternativ mit Kurzhanteln ausführen, wenn keine Langhantel verfügbar ist."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Hüfte aktiv nach hinten schieben und die Stange nah an den Oberschenkeln absenken, bis eine deutliche Dehnung in den hinteren Oberschenkeln spürbar ist; dieser gedehnte Bereich ist der wichtigste Teil der Bewegung.",
+      "Kniewinkel leicht gebeugt und über die ganze Bewegung konstant halten; stärkere Kniebeugung verlagert die Arbeit auf den Quadrizeps.",
+      "Rücken neutral und Schulterblätter leicht zurückgezogen; die Tiefe wird durch die neutrale Wirbelsäule begrenzt, nicht durch den Boden.",
+      "Absenken zwei bis drei Sekunden kontrollieren, oben über das Gesäß aufrichten und den unteren Rücken nicht überstrecken."
+    ],
+    "requirements": [
+      "Langhantel mit Hantelscheiben und Verschlüssen; alternativ Kurzhanteln",
+      "Optional: Zughilfen bei nachlassender Griffkraft"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "hip-thrust",
@@ -425,7 +512,18 @@
       "Gewichtsscheiben mit Stoppern gegen Verrutschen sichern und Bank gegen Wegrutschen fixieren.",
       "Zu Beginn Technik ohne Zusatzgewicht oder nur mit der Stange üben."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Oberen Rücken unterhalb der Schulterblätter auf die Bankkante legen und die Füße so platzieren, dass die Unterschenkel oben senkrecht stehen; so trägt das Gesäß die Hauptlast.",
+      "Hüfte vollständig strecken und oben ein bis zwei Sekunden bewusst anspannen; das Gesäß arbeitet in der gestreckten Endposition am stärksten.",
+      "Rippen unten und Kinn leicht eingezogen halten, damit die Streckung aus der Hüfte und nicht aus der Lendenwirbelsäule kommt.",
+      "Absenken kontrolliert, bis die Hüfte knapp über dem Boden ist, ohne das Gewicht abzusetzen."
+    ],
+    "requirements": [
+      "Stabile Bank, Höhe etwa Kniehöhe, gegen Wegrutschen gesichert",
+      "Langhantel mit Polster (Hip-Thrust-Pad) und Hantelscheiben mit Verschlüssen; alternativ Hip-Thrust-Maschine"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "kabel-kickback",
@@ -472,8 +570,8 @@
       "Höhere Wiederholungszahlen (12 bis 20) sind bei dieser Übung sinnvoll."
     ],
     "cable_setup": {
-      "cable": "Kabelturm oder Doppelkabelzug, einarmig mit einem Kabel",
-      "height": "Rolle ganz unten",
+      "cable": "Kabelturm mit unterer Rolle, ein Kabel (eine Seite des Doppelkabelzugs)",
+      "height": "ganz unten, damit der Zug von vorne-unten kommt und das Gesäß über die gesamte Hüftstreckung belastet wird",
       "grip_width": "Keine Griffarbeit, Fußschlaufe am Sprunggelenk; Hände stützen sich am Turm ab",
       "body_position": "Stehend mit dem Gesicht zum Turm, Oberkörper leicht nach vorne geneigt, Rücken neutral, Rumpf angespannt, Hände am Turm",
       "foot_position": "Standbein leicht gebeugt, Fuß flach auf dem Boden; Arbeitsbein mit Schlaufe leicht vor dem Körper",
@@ -481,7 +579,18 @@
       "elbow_position": "Arme leicht gebeugt am Turm, dienen nur der Stabilisierung",
       "end_position": "Bein hinter dem Körper, Hüfte vollständig gestreckt, Gesäß angespannt, Becken stabil",
       "return": "Langsam und kontrolliert über etwa zwei Sekunden, bis das Bein leicht vor dem Körper ist, ohne dass das Gewicht aufsetzt"
-    }
+    },
+    "muscle_focus": [
+      "Arbeitsbein in der Startposition leicht vor dem Körper führen, damit das Gesäß in leichter Hüftbeugung, also in der gedehnten Position, unter Last steht.",
+      "Bewegung ausschließlich aus der Hüfte: Knie fast gestreckt und Becken stabil; die Endposition ist die volle Hüftstreckung, nicht ein möglichst hohes Bein.",
+      "Oberkörper leicht nach vorne geneigt und Rumpf angespannt; Überstrecken des unteren Rückens verlagert die Arbeit weg vom Gesäß.",
+      "Oben ein bis zwei Sekunden halten, Rückführung etwa zwei Sekunden kontrollieren."
+    ],
+    "requirements": [
+      "Kabelturm mit unterer Rolle",
+      "Fußschlaufe (Ankle Strap) oder gepolsterte Manschette"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "wadenheben-stehend",
@@ -524,7 +633,18 @@
       "Einbeinige Ausführung, um Seitenunterschiede auszugleichen.",
       "Ohne Maschine: Stufe mit Kurzhantel in einer Hand, andere Hand stützt sich ab."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Fersen tief unter die Plattformkante absenken und die Dehnung unten ein bis zwei Sekunden halten; in dieser gedehnten Position reagiert die Wade am stärksten auf das Training.",
+      "Knie fast gestreckt und den Kniewinkel konstant halten, so arbeitet vor allem der zweigelenkige Gastrocnemius; das sitzende Wadenheben betont dagegen den Soleus.",
+      "Oben auf den Fußballen hochdrücken und kurz halten, dann langsam über zwei bis drei Sekunden absenken, nicht federn.",
+      "Oberkörper aufrecht und ruhig halten, kein Mitschwingen aus Hüfte oder Knie."
+    ],
+    "requirements": [
+      "Stehende Wadenmaschine mit Schulterpolstern; alternativ Multipresse mit Stufe oder Kurzhanteln in den Händen auf einer Stufe",
+      "Stufe oder Plattformkante, damit die Fersen frei absinken können"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "wadenheben-sitzend",
@@ -543,14 +663,16 @@
       "Fußballen auf die Kante der Plattform stellen, Fersen frei, Füße hüftbreit.",
       "Knie etwa im rechten Winkel, Oberkörper aufrecht.",
       "Haltegriffe fassen und die Sicherung der Maschine lösen.",
-      "Fersen kontrolliert absenken, um die Startposition in der Dehnung einzunehmen."
+      "Fersen kontrolliert absenken, um die Startposition in der Dehnung einzunehmen.",
+      "Ohne Maschine: Auf Flachbank oder Hocker setzen, Fußballen auf die Kante einer Stufe oder Hantelscheibe stellen, Fersen tief, Kurzhanteln oder Langhantel mit Polster auf den Oberschenkeln nahe den Knien ablegen."
     ],
     "execution": [
       "Fersen so hoch wie möglich anheben, auf die Fußballen drücken.",
       "In der oberen Position ein bis zwei Sekunden halten.",
       "Fersen langsam absenken, bis eine deutliche Dehnung in der Wade spürbar ist.",
       "Unten kurz halten, ohne zu federn.",
-      "Nächste Wiederholung ohne Schwung beginnen."
+      "Nächste Wiederholung ohne Schwung beginnen.",
+      "Bei der Hantelvariante die Last mit den Händen auf den Oberschenkeln nahe den Knien sichern und die Fersen unten bewusst tief unter die Kante absenken."
     ],
     "range_of_motion": "Volle Dehnung unten bis zum höchsten Punkt auf den Fußballen. Der Kniewinkel bleibt während der gesamten Bewegung gleich, damit der Soleus gezielt arbeitet.",
     "breathing": "Beim Anheben der Fersen ausatmen, beim Absenken einatmen.",
@@ -565,6 +687,16 @@
       "Höhere Wiederholungszahlen (12 bis 20) mit vollem Bewegungsradius sind hier sinnvoll.",
       "Mit stehendem Wadenheben kombinieren, um Gastrocnemius und Soleus gemeinsam zu trainieren."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Fersen tief absenken und die Dehnung unten ein bis zwei Sekunden halten; die gedehnte Position ist der wirksamste Teil der Bewegung.",
+      "Knie etwa im rechten Winkel halten; durch die Kniebeugung ist der Gastrocnemius entlastet und der Soleus übernimmt die Arbeit.",
+      "Last nahe an den Knien auf den Oberschenkeln, oben auf den Fußballen hochdrücken und kurz halten, Absenken über zwei bis drei Sekunden kontrollieren.",
+      "Oberkörper ruhig lassen, nicht mit dem Rücken oder durch Federn mithelfen."
+    ],
+    "requirements": [
+      "Sitzende Wadenmaschine; alternativ Flachbank oder Hocker, Kurzhanteln auf den Knien oder Langhantel mit Polster auf den Oberschenkeln, Stufe oder Hantelscheibe unter den Fußballen"
+    ],
+    "grip_alternatives": []
   }
 ]

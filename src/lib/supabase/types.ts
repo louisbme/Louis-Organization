@@ -121,6 +121,9 @@ export type ExerciseRow = Timestamps & {
   cable_setup: Json | null;
   image_url: string | null;
   animation_url: string | null;
+  muscle_focus: string[];
+  requirements: string[];
+  grip_alternatives: string[];
   is_custom: boolean;
   owner_id: string | null;
 };
@@ -289,6 +292,9 @@ export type Database = {
           | "cable_setup"
           | "image_url"
           | "animation_url"
+          | "muscle_focus"
+          | "requirements"
+          | "grip_alternatives"
           | "is_custom"
           | "owner_id"
           | "created_at"

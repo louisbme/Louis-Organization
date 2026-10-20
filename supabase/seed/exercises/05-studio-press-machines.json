@@ -43,7 +43,18 @@
       "Sitzhöhe einmal festlegen und für Vergleichbarkeit notieren, da sie die Belastung deutlich verschiebt.",
       "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Die Sitzhöhe bestimmt den Zielmuskel: Griffe auf Höhe der oberen Brust belasten die Brust, Griffe auf Schulterhöhe die vordere Schulter. Einmal festlegen und für alle Sätze beibehalten.",
+      "Schulterblätter nach hinten und unten am Polster halten, Ellenbogen etwa 45 Grad vom Rumpf abgewinkelt; so bleibt die Last auf Brust und vorderer Schulter statt auf dem Schultergelenk.",
+      "Vollen Bewegungsradius nutzen und die untere, gedehnte Position bewusst mitnehmen, ohne den Gewichtsblock aufzusetzen; dort entsteht ein großer Teil des Trainingsreizes.",
+      "Exzentrik etwa zwei Sekunden lang kontrollieren und das Gewicht so wählen, dass Brust oder Schulter den Satz begrenzen, nicht der Trizeps."
+    ],
+    "requirements": [
+      "Multipresse mit Steckgewichtsblock (Hebel-Druckmaschine mit über Schulterhöhe gelagerten Griffen)",
+      "Höhenverstellbarer Sitz mit Rückenpolster"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "brustpresse-hebel-sitzend",
@@ -89,7 +100,19 @@
       "Nach dem letzten Satz die Hebelarme über die Fußplatte kontrolliert ablegen.",
       "Beim Beladen beide Seiten gleich bestücken, um eine einseitige Belastung zu vermeiden."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Griffe auf Höhe der mittleren Brust, Schulterblätter nach hinten und unten am Polster fixiert, Ellenbogen etwa 45 Grad vom Rumpf abgewinkelt; so arbeitet die Brust statt der vorderen Schulter.",
+      "Hebelarme so weit zurückführen, dass die Brust in der hinteren Position spürbar gedehnt ist; die gedehnte Position liefert einen großen Teil des Wachstumsreizes.",
+      "Exzentrik etwa zwei Sekunden lang kontrollieren und vorne kurz vor der Armstreckung stoppen, damit die Spannung in der Brust bleibt.",
+      "Gewicht so wählen, dass die Brust den Satz begrenzt und die Schultern nicht nach vorne rollen."
+    ],
+    "requirements": [
+      "Scheibenbeladene Brustpresse (Hebelmaschine) mit Fußplatte zum Vorlegen der Hebelarme",
+      "Gewichtsscheiben und Scheibenverschlüsse",
+      "Höhenverstellbarer Sitz mit Rückenpolster"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "brustpresse-hebel",
@@ -136,7 +159,19 @@
       "Die Übung lässt sich auch einarmig ausführen, dann die freie Hand am Rahmen abstützen.",
       "Beide Seiten gleich beladen, damit die Belastung symmetrisch bleibt."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Schulterblätter nach hinten und unten am Polster halten, Ellenbogen etwa 45 Grad vom Rumpf abgewinkelt; die Brust führt die Oberarme nach vorne-innen, die Schultern bleiben hinten.",
+      "Vollen Bewegungsradius nutzen und die gedehnte hintere Position bewusst mitnehmen, ohne das Gewicht aufzusetzen; dort ist der Reiz auf die Brust am größten.",
+      "Beide Hebelarme gleich schnell führen und die Exzentrik etwa zwei Sekunden lang kontrollieren; die unabhängigen Arme decken Seitenunterschiede auf.",
+      "Gewicht so wählen, dass die Brust den Satz begrenzt und nicht Trizeps oder vordere Schulter übernehmen."
+    ],
+    "requirements": [
+      "Scheibenbeladene Iso-Lateral-Brustpresse mit zwei unabhängigen Hebelarmen und senkrechten sowie waagerechten Griffen",
+      "Gewichtsscheiben und Scheibenverschlüsse",
+      "Höhenverstellbarer Sitz mit Rückenpolster"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "brustpresse-vertikal",
@@ -182,7 +217,18 @@
       "In der vorderen Position kurz halten, um die Kontraktion der Brust zu nutzen.",
       "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Griffe auf Höhe der mittleren Brust einstellen, Schulterblätter nach hinten und unten am Polster halten, Ellenbogen etwa 45 Grad vom Rumpf abgewinkelt.",
+      "Der zusammenlaufenden Bahn vorne folgen und die Brust dort kurz anspannen; hinten so weit zurückführen, dass die Brust spürbar gedehnt ist.",
+      "Exzentrik etwa zwei Sekunden lang kontrollieren und den Gewichtsblock nicht aufsetzen lassen, damit die Spannung in der gedehnten Position erhalten bleibt.",
+      "Gewicht so wählen, dass die Brust den Satz begrenzt, nicht die Handgelenke oder der Trizeps."
+    ],
+    "requirements": [
+      "Brustpresse mit Steckgewichtsblock und konvergierender Griffbahn",
+      "Höhenverstellbarer Sitz mit aufrechtem Rückenpolster"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "schraegbankdruecken-hebelmaschine",
@@ -229,7 +275,19 @@
       "Beide Seiten gleich beladen, damit die Belastung symmetrisch bleibt.",
       "Wenn die Schultern unangenehm belastet sind, Sitz etwas höher stellen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Griffe auf Höhe der oberen Brust einstellen, Schulterblätter nach hinten und unten am geneigten Polster halten, Ellenbogen etwa 45 Grad vom Rumpf abgewinkelt; die Druckrichtung nach vorne-oben betont die obere Brust.",
+      "Hebelarme bis in die gedehnte hintere Position zurückführen, ohne das Gewicht aufzusetzen; die gedehnte Position ist der wirksamste Teil der Bewegung.",
+      "Exzentrik etwa zwei Sekunden lang kontrollieren und vorne kurz vor der Armstreckung stoppen, damit die Brust unter Spannung bleibt.",
+      "Gewicht so wählen, dass die obere Brust den Satz begrenzt und die Schultern nicht nach vorne rollen; bei Bedarf den Sitz etwas höher stellen."
+    ],
+    "requirements": [
+      "Scheibenbeladene Schrägdruckmaschine (Hebelmaschine) mit auf etwa 30 bis 45 Grad geneigtem Rückenpolster",
+      "Gewichtsscheiben und Scheibenverschlüsse",
+      "Höhenverstellbarer Sitz"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "schraegbankdruecken-hebel-liegend",
@@ -276,7 +334,19 @@
       "Nach dem letzten Satz den Hebelarm kontrolliert in die Ablage zurückführen.",
       "Die geführte Bahn eignet sich, um die Druckbewegung ohne Balancearbeit mit höherer Last zu trainieren."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Schulterblätter nach hinten und unten auf dem Polster fixieren, Ellenbogen etwa 45 Grad vom Rumpf abgewinkelt; die Stange trifft die obere Brust, nicht den Hals.",
+      "Stange bis knapp über die obere Brust absenken, damit die Brust in der gedehnten Position unter Last arbeitet; oben kurz vor der Armstreckung stoppen.",
+      "Exzentrik etwa zwei Sekunden lang kontrollieren; Gesäß und Schultern bleiben auf dem Polster, die Füße stabilisieren über den Boden.",
+      "Gewicht so wählen, dass die obere Brust den Satz begrenzt und nicht Trizeps oder vordere Schulter übernehmen."
+    ],
+    "requirements": [
+      "Schrägbank mit hinter dem Kopf gelagertem, scheibenbeladenem Hebelarm (Hebel-Schrägdruckbank)",
+      "Gewichtsscheiben und Scheibenverschlüsse",
+      "Ablage beziehungsweise Haken für den Hebelarm"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "schraegbankdruecken-hebel-flex",
@@ -323,7 +393,19 @@
       "Griffposition pro Trainingseinheit festlegen und notieren, damit Gewichte vergleichbar bleiben.",
       "Bei Schulterbeschwerden die engere Griffposition verwenden."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Gewählte Griffposition auf Höhe der oberen Brust bringen, Schulterblätter nach hinten und unten am Polster halten, Ellenbogen etwa 45 Grad vom Rumpf abgewinkelt.",
+      "Die äußere Griffposition verlängert den Weg in die gedehnte Position und setzt dort den stärkeren Reiz auf die Brust; die innere Position ist schulterfreundlicher.",
+      "Bogenbahn bis in die gedehnte hintere Position nutzen, vorne die Brust kurz anspannen und die Exzentrik etwa zwei Sekunden lang kontrollieren.",
+      "Gewicht so wählen, dass die obere Brust den Satz begrenzt und die Schultern nicht nach vorne rollen."
+    ],
+    "requirements": [
+      "Scheibenbeladene Schrägdruckmaschine mit Bogenbahn und zwei Griffpositionen (FLEX-Bauart)",
+      "Gewichtsscheiben und Scheibenverschlüsse",
+      "Höhenverstellbarer Sitz mit Rückenpolster"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "bankdruecken-langhantel",
@@ -371,7 +453,19 @@
       "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden.",
       "Füße fest in den Boden drücken, um den Rumpf zu stabilisieren."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Schulterblätter nach hinten und unten in die Bank drücken und dort halten; Ellenbogen etwa 45 bis 60 Grad vom Rumpf abgewinkelt, damit die Brust die Last trägt und das Schultergelenk nicht überlastet wird.",
+      "Stange bis zur mittleren Brust absenken und die gedehnte Position bewusst mitnehmen, ohne die Stange abprallen zu lassen; dort ist der Reiz auf die Brust am größten.",
+      "Exzentrik etwa zwei Sekunden lang kontrollieren, oben kurz vor der Armstreckung stoppen; Gesäß bleibt auf der Bank, Füße fest am Boden.",
+      "Griff etwas weiter als schulterbreit; ein engerer Griff verschiebt die Arbeit zum Trizeps. Gewicht so wählen, dass die Brust den Satz begrenzt."
+    ],
+    "requirements": [
+      "Flachbank mit Hantelablage (Bankdrückstation)",
+      "Langhantel mit Gewichtsscheiben und Verschlüssen",
+      "Sicherheitsablagen oder Trainingspartner zum Absichern"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "schraegbankdruecken-langhantel",
@@ -419,7 +513,19 @@
       "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
       "Mit einer geringeren Last als beim flachen Bankdrücken starten, da die Schrägposition weniger Kraft zulässt."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Schulterblätter nach hinten und unten am Polster halten, Ellenbogen etwa 45 bis 60 Grad vom Rumpf abgewinkelt; die Stange zur oberen Brust führen, nicht zum Hals.",
+      "Ein Bankwinkel um 30 Grad betont die obere Brust; steilere Winkel verlagern die Arbeit zunehmend auf die vordere Schulter.",
+      "Gedehnte Position mit der Stange an der oberen Brust bewusst mitnehmen, Exzentrik etwa zwei Sekunden lang kontrollieren und oben kurz vor der Armstreckung stoppen.",
+      "Gewicht so wählen, dass die obere Brust den Satz begrenzt; mit weniger Last als beim flachen Bankdrücken starten."
+    ],
+    "requirements": [
+      "Schrägbank (etwa 30 Grad) mit Hantelablage",
+      "Langhantel mit Gewichtsscheiben und Verschlüssen",
+      "Sicherheitsablagen oder Trainingspartner zum Absichern"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "schulterpresse-maschine",
@@ -466,7 +572,18 @@
       "Bei Schulterbeschwerden neutrale Griffe wählen, falls vorhanden.",
       "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Griffe in der Ausgangsposition auf Schulterhöhe, Schultern aktiv nach unten gezogen; so arbeiten vordere und seitliche Schulter statt des Trapezmuskels.",
+      "Vollen Bewegungsradius nutzen: unten bis zu etwa waagerechten Oberarmen, damit die Schulter in der gedehnten Position unter Last ist; oben kurz vor der Armstreckung stoppen.",
+      "Exzentrik etwa zwei Sekunden lang kontrollieren und den Gewichtsblock nicht aufsetzen lassen.",
+      "Gewicht so wählen, dass die Schulter den Satz begrenzt und nicht der Trizeps; Rücken bleibt ohne Hohlkreuz am Polster."
+    ],
+    "requirements": [
+      "Schulterpresse mit Steckgewichtsblock",
+      "Höhenverstellbarer Sitz mit Rückenpolster"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "scott-curl",
@@ -512,6 +629,18 @@
       "Bei Beschwerden in den Handgelenken auf die SZ-Hantel wechseln.",
       "Nach dem letzten Satz die Hantel kontrolliert in die Ablage legen oder reichen lassen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Oberarme flächig auf dem Polster, Achseln an der Polsterkante; so kann die Schulter nicht mithelfen und der Bizeps trägt die gesamte Last.",
+      "Untere, gedehnte Position bis fast zur Armstreckung nutzen; am Scott-Pult trägt der Bizeps dort hohe Last, deshalb die Ellenbogen nicht hart durchdrücken.",
+      "Exzentrik etwa zwei bis drei Sekunden lang kontrollieren, oben kurz anspannen; Handgelenke gerade halten und nicht einrollen.",
+      "Gewicht so wählen, dass der Bizeps den Satz begrenzt und nicht Unterarme oder Handgelenke."
+    ],
+    "requirements": [
+      "Scott-Pult (Preacher-Bank) mit Hantelablage",
+      "SZ-Stange oder kurze Langhantel",
+      "Gewichtsscheiben und Verschlüsse"
+    ],
+    "grip_alternatives": []
   }
 ]

@@ -46,7 +46,19 @@
       "Scheiben auf beiden Seiten in kleinen Schritten erhöhen, erst wenn alle Sätze sauber sind.",
       "Daumen auf die Griffe legen statt zu umschließen, um weniger mit den Unterarmen zu arbeiten."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Ellenbogen zur Hüfte ziehen, nicht die Hände zur Brust; Schulterblätter nach unten und zusammen, Brust angehoben. So übernimmt der Latissimus statt des Bizeps.",
+      "Oben die Arme vollständig strecken und die Schultern leicht nach oben kommen lassen; die gedehnte Position ist der wirksamste Teil der Bewegung.",
+      "Exzentrik zwei bis drei Sekunden lang kontrollieren und die Scheiben oben nicht aufsetzen lassen.",
+      "Gewicht so wählen, dass der Latissimus den Satz begrenzt und der Oberkörper nicht mit Schwung nach hinten arbeitet."
+    ],
+    "requirements": [
+      "Scheibenbeladener Iso-Lateral-Latzug (Hebelmaschine) mit zwei unabhängigen Hebelarmen",
+      "Gewichtsscheiben und Scheibenverschlüsse",
+      "Einstellbares Oberschenkelpolster"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "rudern-hebel-sitzend",
@@ -97,7 +109,19 @@
       "Einseitige Ausführung ist durch die unabhängigen Hebelarme möglich und hilft bei Seitenunterschieden.",
       "Griffe mit den Fingern haken statt fest zu umschließen, um die Unterarme zu entlasten."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Ellenbogen nah am Körper nach hinten ziehen, Brust bleibt am Polster; so arbeiten Latissimus und mittlerer Rücken statt der Arme.",
+      "Vorne die Arme vollständig strecken und die Schulterblätter nach vorne gleiten lassen, damit der Rücken in der gedehnten Position unter Last ist.",
+      "Am Ende die Schulterblätter zusammenziehen, kurz halten und die Exzentrik etwa zwei Sekunden lang kontrollieren.",
+      "Gewicht so wählen, dass der Rücken den Satz begrenzt und die Brust nicht vom Polster abhebt."
+    ],
+    "requirements": [
+      "Scheibenbeladene Rudermaschine (Hebelmaschine) mit Brustpolster und zwei unabhängigen Hebelarmen",
+      "Gewichtsscheiben und Scheibenverschlüsse",
+      "Höhenverstellbarer Sitz mit Fußstützen"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "beinpresse-45-grad",
@@ -145,7 +169,19 @@
       "Höhere Fußposition belastet Gesäß und hintere Oberschenkel stärker, tiefere Fußposition die Oberschenkelvorderseite.",
       "Gewicht in kleinen Schritten erhöhen, erst wenn die Tiefe in allen Sätzen gleich bleibt."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Tiefe nur so weit, wie das Becken am Polster bleibt; sobald es abrollt, verlagert sich die Last auf den unteren Rücken statt auf Oberschenkel und Gesäß.",
+      "Innerhalb dieser Grenze die volle Beugung bis 90 Grad oder etwas tiefer nutzen; die gedehnte Position der Oberschenkelvorderseite setzt den stärksten Reiz.",
+      "Die Fußposition steuert den Schwerpunkt: tief und schulterbreit für die Oberschenkelvorderseite, höher auf der Platte für Gesäß und hintere Oberschenkel.",
+      "Exzentrik zwei bis drei Sekunden lang kontrollieren, oben kurz vor der Kniestreckung stoppen und das Gewicht so wählen, dass die Beine den Satz begrenzen."
+    ],
+    "requirements": [
+      "Scheibenbeladene 45-Grad-Beinpresse mit Sicherheitsriegeln",
+      "Gewichtsscheiben und Scheibenverschlüsse",
+      "Einstellbare Rückenlehne"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "multipresse-kniebeuge",
@@ -194,7 +230,18 @@
       "Füße weiter nach vorne stellen, um Gesäß und hintere Oberschenkel stärker einzubeziehen.",
       "Gewicht erst erhöhen, wenn Tiefe und Technik in allen Sätzen gleich bleiben."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Füße leicht vor der Stange aufstellen, damit der Oberkörper aufrecht bleibt und die Last auf Oberschenkelvorderseite und Gesäß liegt.",
+      "So tief gehen, wie der untere Rücken neutral bleibt; die tiefe, gedehnte Position setzt den stärksten Reiz auf Oberschenkel und Gesäß.",
+      "Knie in Richtung der Zehen führen, Fersen am Boden, Exzentrik etwa zwei Sekunden lang kontrollieren; oben kurz vor der Kniestreckung stoppen.",
+      "Füße weiter vorne verschieben die Arbeit zu Gesäß und hinteren Oberschenkeln; Gewicht so wählen, dass die Beine den Satz begrenzen."
+    ],
+    "requirements": [
+      "Multipresse (Smith Machine) mit einstellbaren Sicherheitsstopps",
+      "Gewichtsscheiben und Scheibenverschlüsse"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "adduktoren-maschine",
@@ -236,7 +283,18 @@
       "Moderate Gewichte und höhere Wiederholungszahlen sind hier sinnvoll.",
       "Als Ergänzung zu Kniebeuge und Beinpresse einsetzen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Startweite so wählen, dass die Innenseite der Oberschenkel spürbar gedehnt ist, aber kein Zug in der Leiste entsteht; die gedehnte Position ist der wirksamste Teil der Bewegung.",
+      "Beine kontrolliert zusammenführen, am Ende kurz anspannen und das Gewicht nicht aufsetzen lassen, damit die Spannung in der Dehnung erhalten bleibt.",
+      "Becken und Rücken bleiben am Polster; jedes Kippen nimmt den Adduktoren Last ab.",
+      "Exzentrik zwei bis drei Sekunden lang kontrollieren und das Gewicht so wählen, dass die Adduktoren den Satz begrenzen."
+    ],
+    "requirements": [
+      "Adduktoren-Maschine mit Steckgewichtsblock und Innenpolstern",
+      "Einstellhebel für die Startweite"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "abduktoren-maschine",
@@ -280,7 +338,18 @@
       "Moderate Gewichte und höhere Wiederholungszahlen sind hier sinnvoll.",
       "Als Ergänzung zu Hip Thrust und Kniebeuge einsetzen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Becken fest am Polster, Beine gegen die Außenpolster drücken; so arbeiten Abduktoren und seitliches Gesäß statt des unteren Rückens.",
+      "Leichte Vorneigung mit geradem Rücken verlagert die Last stärker auf das seitliche Gesäß (Gluteus medius); aufrechtes Sitzen betont die Abduktoren.",
+      "Bewegung über den vollen Radius bis zu der Öffnung, bei der das Becken ruhig bleibt; am Ende kurz anspannen und das Gewicht nicht aufsetzen lassen.",
+      "Exzentrik zwei bis drei Sekunden lang kontrollieren und das Gewicht so wählen, dass die Abduktoren den Satz begrenzen."
+    ],
+    "requirements": [
+      "Abduktoren-Maschine mit Steckgewichtsblock und Außenpolstern",
+      "Einstellhebel für die Startposition"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "air-bike",
@@ -328,7 +397,18 @@
       "Für reines Beintraining die festen Griffe nutzen und die Armhebel ruhen lassen.",
       "Progression über längere Dauer oder mehr Distanz beziehungsweise Kalorien bei gleicher Zeit."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Der Widerstand steigt mit dem Tempo; Belastung über die Trittfrequenz steuern, nicht über Wippen im Sattel.",
+      "Beine arbeiten über die ganze Pedalumdrehung, Armhebel aus Schulter und Rumpf drücken und ziehen; so verteilt sich die Belastung auf Ober- und Unterkörper.",
+      "Sattelhöhe mit leicht gebeugtem Knie im unteren Punkt hält die Oberschenkelvorderseite im arbeitsfähigen Bereich.",
+      "Für reines Beintraining die festen Griffe nutzen; bei Intervallen Belastung und Erholung klar trennen und das Tempo so wählen, dass es über die geplante Dauer haltbar ist."
+    ],
+    "requirements": [
+      "Air Bike mit Luftwiderstand und beweglichen Armhebeln",
+      "Verstellbarer Sattel (Höhe und Länge)"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "rudergeraet",
@@ -378,7 +458,18 @@
       "Progression über längere Dauer oder eine bessere Zeit pro 500 Meter bei gleicher Schlagfrequenz.",
       "Für Intervalle Zugphasen von ein bis zwei Minuten mit lockeren Erholungsphasen abwechseln."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Reihenfolge Beine, Rumpf, Arme einhalten: erst die Beine strecken, dann den Oberkörper leicht zurücklehnen, zuletzt den Griff zur unteren Brust ziehen. So kommt der größte Teil der Kraft aus den Beinen.",
+      "Schlagzahl moderat halten, etwa 20 bis 28 Schläge pro Minute; Intensität über die Kraft pro Zug steuern, nicht über die Frequenz.",
+      "Rückweg in umgekehrter Reihenfolge und etwa doppelt so lang wie der Zug; der untere Rücken bleibt dabei gerade.",
+      "Widerstandsstufe mittel wählen; eine hohe Stufe macht den Zug schwerfällig und verschiebt die Belastung auf den Rücken."
+    ],
+    "requirements": [
+      "Rudergerät mit Magnet- oder Luftwiderstand (Rollsitz, Fußschalen mit Riemen)",
+      "Konsole für Zeit, Distanz oder Intervall"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "ski-erg",
@@ -426,7 +517,18 @@
       "Progression über längere Dauer oder mehr Distanz bei gleicher Zeit.",
       "Für Intervalle 30 bis 60 Sekunden zügiger Zug mit lockeren Erholungsphasen abwechseln."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Der Zug kommt aus der Hüftbeuge mit dem Rumpf: Oberkörper aus der Hüfte nach vorne beugen, Latissimus und Bauch ziehen die Griffe nach unten, die Arme übertragen die Kraft.",
+      "Hüfte und Knie leicht mitbeugen, Rücken gerade; ein runder Rücken nimmt Latissimus und Bauch die Arbeit ab.",
+      "Oben die Arme gestreckt über Kopf bringen, ohne ins Hohlkreuz zu fallen; so arbeitet der Latissimus aus der gedehnten Position.",
+      "Zug zügig, Rückführung ruhiger; Intensität über die Kraft pro Zug steuern, Widerstandsstufe mittel."
+    ],
+    "requirements": [
+      "Ski-Ergometer mit Griffen über Kopf (Luft- oder Magnetwiderstand)",
+      "Etwa eine Armlänge Platz vor dem Gerät"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "laufband",
@@ -474,6 +576,17 @@
       "Steigung von ein bis zwei Prozent beim Laufen gleicht den fehlenden Luftwiderstand aus.",
       "Für Intervalle etwa eine Minute schnelleres Tempo mit ein bis zwei Minuten lockerem Gehen oder Laufen abwechseln."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Für Gesäß und Waden Steigung statt Tempo erhöhen; schon 5 bis 10 Prozent Steigung im zügigen Gehen belasten Gesäß und Waden deutlich stärker als flaches Laufen.",
+      "Fuß unter dem Körper aufsetzen, Schritte kurz und schnell; lange Schritte vor dem Körper bremsen und belasten die Knie.",
+      "Hände frei lassen und nicht an den Griffen festhalten; Festhalten nimmt die Belastung aus Beinen und Gesäß.",
+      "Ein bis zwei Prozent Steigung beim Laufen gleichen den fehlenden Luftwiderstand aus; nur eine Größe gleichzeitig steigern: Dauer, Tempo oder Steigung."
+    ],
+    "requirements": [
+      "Laufband mit einstellbarer Geschwindigkeit und Steigung",
+      "Not-Stopp-Clip"
+    ],
+    "grip_alternatives": []
   }
 ]

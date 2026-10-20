@@ -33,6 +33,7 @@ insert into public.grips (id, name_de, description, sort_order) values
   ('close_v_grip', 'Enger V-Griff', 'Kompakter V-förmiger Doppelgriff, Handflächen zueinander. Für enges Rudern und engen Latzug.', 30),
   ('rope', 'Seil', 'Seil mit zwei Endknäufen. Erlaubt neutrale Handstellung und das Auseinanderziehen am Ende der Bewegung.', 40),
   ('single_handle', 'Einzelgriff', 'Einzelner D-Griff für einarmige Übungen. Erlaubt freie Handstellung und großen Bewegungsradius.', 50),
+  ('strap_handle', 'Handschlaufe', 'Weiche Schlaufe mit Karabiner, die um die Hand gelegt wird. Entlastet den Griff und eignet sich für Seitheben, Kickbacks und einarmige Zugübungen.', 55),
   ('straight_bar', 'Gerade Stange', 'Kurze gerade Stange für pronierten oder supinierten Griff. Für Curls, Trizepsdrücken und Pulldowns.', 60),
   ('ez_bar', 'EZ-Stange', 'Gewellte Stange, die eine leicht gedrehte Handstellung erlaubt. Entlastet die Handgelenke bei Curls.', 70),
   ('v_bar_triceps', 'Trizeps-V-Stange', 'V-förmige Stange mit neutralem Griff. Für Trizepsdrücken am oberen Kabel.', 80),

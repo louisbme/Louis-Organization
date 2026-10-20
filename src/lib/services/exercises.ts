@@ -29,6 +29,7 @@ export interface ExerciseDetail extends ExerciseRow {
   primary_muscles: string[];
   secondary_muscles: string[];
   grip: GripRow | null;
+  alternative_grips: GripRow[];
   cable: CableSetup | null;
   is_favorite: boolean;
 }
@@ -86,13 +87,18 @@ export async function getExerciseBySlug(db: DbClient, userId: string, slug: stri
     .overrideTypes<ExerciseDetailRaw, { merge: false }>();
   if (error) throw error;
   if (!data) return null;
-  const { data: fav } = await db
-    .from("favorites")
-    .select("exercise_id")
-    .eq("user_id", userId)
-    .eq("exercise_id", data.id)
-    .maybeSingle();
-  return toDetail(data, !!fav);
+  const [{ data: fav }, alternatives] = await Promise.all([
+    db.from("favorites").select("exercise_id").eq("user_id", userId).eq("exercise_id", data.id).maybeSingle(),
+    loadGrips(db, data.grip_alternatives),
+  ]);
+  return toDetail(data, !!fav, alternatives);
+}
+
+async function loadGrips(db: DbClient, ids: string[]): Promise<GripRow[]> {
+  if (!ids || ids.length === 0) return [];
+  const { data, error } = await db.from("grips").select("*").in("id", ids);
+  if (error) throw error;
+  return ids.map((id) => (data ?? []).find((g) => g.id === id)).filter((g): g is GripRow => !!g);
 }
 
 export async function getExerciseById(db: DbClient, userId: string, id: string): Promise<ExerciseDetail | null> {
@@ -104,22 +110,21 @@ export async function getExerciseById(db: DbClient, userId: string, id: string):
     .overrideTypes<ExerciseDetailRaw, { merge: false }>();
   if (error) throw error;
   if (!data) return null;
-  const { data: fav } = await db
-    .from("favorites")
-    .select("exercise_id")
-    .eq("user_id", userId)
-    .eq("exercise_id", data.id)
-    .maybeSingle();
-  return toDetail(data, !!fav);
+  const [{ data: fav }, alternatives] = await Promise.all([
+    db.from("favorites").select("exercise_id").eq("user_id", userId).eq("exercise_id", data.id).maybeSingle(),
+    loadGrips(db, data.grip_alternatives),
+  ]);
+  return toDetail(data, !!fav, alternatives);
 }
 
-function toDetail(raw: ExerciseDetailRaw, isFavorite: boolean): ExerciseDetail {
+function toDetail(raw: ExerciseDetailRaw, isFavorite: boolean, alternatives: GripRow[]): ExerciseDetail {
   const { exercise_muscles, grips, ...rest } = raw;
   const cable = isCableSetup(rest.cable_setup) ? rest.cable_setup : null;
   return {
     ...rest,
     ...splitMuscles(exercise_muscles),
     grip: grips ?? null,
+    alternative_grips: alternatives,
     cable,
     is_favorite: isFavorite,
   };
@@ -151,6 +156,8 @@ export interface CustomExerciseInput {
   tips: string[];
   image_url: string | null;
   animation_url: string | null;
+  muscle_focus: string[];
+  requirements: string[];
 }
 
 export function slugify(name: string): string {
@@ -189,6 +196,8 @@ export async function createCustomExercise(db: DbClient, userId: string, input: 
       tips: input.tips,
       image_url: input.image_url,
       animation_url: input.animation_url,
+      muscle_focus: input.muscle_focus,
+      requirements: input.requirements,
       is_custom: true,
       owner_id: userId,
     })
@@ -216,6 +225,8 @@ export async function updateCustomExercise(db: DbClient, id: string, input: Cust
       tips: input.tips,
       image_url: input.image_url,
       animation_url: input.animation_url,
+      muscle_focus: input.muscle_focus,
+      requirements: input.requirements,
     })
     .eq("id", id);
   if (error) throw error;

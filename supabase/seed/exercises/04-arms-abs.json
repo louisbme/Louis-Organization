@@ -38,7 +38,18 @@
       "Eher leichteres Gewicht wählen als bei stehenden Curls, da die gedehnte Position mehr fordert.",
       "Wenn die Schulter in der gedehnten Position unangenehm ist, Bank etwas steiler stellen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Oberarme seitlich und leicht hinter der Körperlinie hängen lassen, damit der lange Bizepskopf in der gedehnten Position arbeitet; diese Position liefert nach aktuellem Stand einen hohen Reiz.",
+      "Nur den Unterarm bewegen, Oberarme bleiben über den gesamten Satz an ihrer Position; wandern die Ellenbogen nach vorne, geht die Vordehnung verloren.",
+      "Unten bis fast zur vollen Streckung absenken und zwei bis drei Sekunden lang kontrollieren, ohne in die Ellenbogen zu fallen.",
+      "Schultern hinten an der Lehne lassen und ein Gewicht wählen, bei dem der Bizeps und nicht der Oberkörper limitiert."
+    ],
+    "requirements": [
+      "Verstellbare Schrägbank (45–60 Grad)",
+      "Kurzhanteln"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "incline-curl-hinterm-koerper",
@@ -80,27 +91,38 @@
       "Vorstellen, die Ellenbogen während der ganzen Wiederholung nach hinten zu drücken.",
       "Bei Beschwerden in der vorderen Schulter die Bank etwas flacher stellen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Bank auf 60 bis 75 Grad stellen und die Oberarme bewusst hinter die Körperlinie bringen; so wird der lange Bizepskopf über Schulter und Ellenbogen gleichzeitig gedehnt.",
+      "Ellenbogen über den gesamten Satz hinten lassen, auch wenn der Bewegungsradius oben dadurch kürzer bleibt; nach vorne wandernde Ellenbogen heben den Effekt auf.",
+      "Unten fast vollständig strecken und die Dehnung zwei bis drei Sekunden lang kontrolliert zulassen, nicht fallen lassen.",
+      "Deutlich leichteres Gewicht als beim stehenden Curl wählen, damit der Bizeps in der gedehnten Position limitiert und die Schulter nicht ausweicht."
+    ],
+    "requirements": [
+      "Verstellbare Schrägbank (60–75 Grad)",
+      "Leichte Kurzhanteln"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "hammercurl-kabel",
     "name": "Hammercurl Kabel",
     "category": "biceps",
     "equipment": "cable",
-    "grip_id": "rope",
-    "grip_notes": "Neutraler Griff am Seil (Daumen zeigen nach oben), Seilenden etwa schulterbreit fassen. Alternativ: einzelner Griff mit neutraler Handstellung einarmig.",
+    "grip_id": "neutral_parallel",
+    "grip_notes": "Neutraler Parallelgriff (Handflächen zeigen zueinander, Daumen nach oben), Griffe etwa schulterbreit. Alternativ Seil oder einarmig mit Handschlaufe bzw. Einzelgriff in neutraler Handstellung.",
     "primary_muscles": ["biceps", "forearms"],
     "secondary_muscles": [],
-    "description": "Curl am Kabelzug mit neutralem Griff am Seil, der neben dem Bizeps vor allem den Brachialis und den Brachioradialis belastet. Durch das Kabel bleibt die Spannung über den gesamten Bewegungsradius erhalten.",
+    "description": "Curl am Kabelzug mit neutralem Parallelgriff (Handflächen zueinander), der neben dem Bizeps vor allem den Brachialis und den Brachioradialis belastet. Durch das Kabel bleibt die Spannung über den gesamten Bewegungsradius erhalten.",
     "setup": [
-      "Seil am unteren Kabel einhängen und Gewicht einstellen.",
-      "Seilenden mit neutralem Griff fassen, Daumen zeigen nach oben.",
+      "Parallelgriff am unteren Kabel einhängen und Gewicht einstellen.",
+      "Griffe mit neutraler Handstellung fassen, Handflächen zeigen zueinander, Daumen nach oben.",
       "Einen Schritt vom Turm zurücktreten, bis das Gewicht leicht angehoben ist.",
       "Aufrecht stehen, Füße etwa hüftbreit, Knie leicht gebeugt.",
       "Ellenbogen seitlich am Körper, Schultern nach hinten und unten."
     ],
     "execution": [
-      "Seil kontrolliert nach oben curlen, Handstellung bleibt neutral.",
+      "Griff kontrolliert nach oben curlen, Handstellung bleibt neutral.",
       "Ellenbogen bleiben am Körper und wandern nicht nach vorne.",
       "In der oberen Position kurz halten und Oberarm anspannen.",
       "Gewicht langsam absenken, bis die Arme fast gestreckt sind.",
@@ -118,20 +140,31 @@
     ],
     "tips": [
       "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
-      "Für mehr Betonung des Brachioradialis die Seilenden am Ende leicht auseinanderziehen.",
+      "Mit dem Seil als Alternative lassen sich die Seilenden am Ende leicht auseinanderziehen, das betont den Brachioradialis zusätzlich.",
       "Wenn der Oberkörper mitschwingt, Gewicht reduzieren oder mit dem Rücken an eine Stütze stellen."
     ],
     "cable_setup": {
       "cable": "Kabelturm oder Doppelkabelzug, einzelnes Kabel",
-      "height": "Rolle ganz unten",
-      "grip_width": "Neutral am Seil, etwa schulterbreit, Daumen zeigen nach oben",
+      "height": "ganz unten, damit das Kabel in der Startposition senkrecht nach unten zieht und die Armbeuger bereits bei fast gestrecktem Arm unter Spannung stehen",
+      "grip_width": "Neutraler Parallelgriff, etwa schulterbreit, Handflächen zeigen zueinander, Daumen nach oben",
       "body_position": "Aufrecht stehend, etwa einen Schritt vom Turm entfernt, leichte Vorlage, Rumpf stabil",
       "foot_position": "Füße hüftbreit, parallel oder leichte Schrittstellung, Knie leicht gebeugt",
       "movement_direction": "Von unten nach oben in Richtung Schultern, Unterarm rotiert um den Ellenbogen",
       "elbow_position": "Ellenbogen seitlich am Körper, bleiben während der Bewegung an ihrer Position",
       "end_position": "Hände etwa auf Höhe der Schultern, Unterarme vollständig gebeugt, Oberarm angespannt",
       "return": "Langsam und kontrolliert bis fast zur vollen Streckung, Gewicht bleibt in der Luft"
-    }
+    },
+    "muscle_focus": [
+      "Neutrale Handstellung über den gesamten Satz beibehalten; so übernehmen Brachialis und Brachioradialis einen großen Teil der Arbeit, beim Drehen in die Supination verschiebt sich der Fokus zum Bizeps.",
+      "Unten bis fast zur vollen Streckung absenken, damit die Armbeuger in der gedehnten Position unter Spannung stehen; das Gewicht dabei nicht aufsetzen lassen.",
+      "Ellenbogen seitlich am Körper lassen und nicht nach vorne wandern, sonst arbeitet die vordere Schulter mit.",
+      "Zwei Sekunden lang absenken, Oberkörper ruhig halten und das Gewicht so wählen, dass die Arme und nicht der Rumpf limitieren."
+    ],
+    "requirements": [
+      "Kabelturm mit verstellbarer Rolle",
+      "Neutraler Parallelgriff (alternativ Seil oder Handschlaufe)"
+    ],
+    "grip_alternatives": ["rope", "strap_handle"]
   },
   {
     "slug": "kabelcurl",
@@ -175,7 +208,7 @@
     ],
     "cable_setup": {
       "cable": "Kabelturm oder Doppelkabelzug, einzelnes Kabel",
-      "height": "Rolle ganz unten",
+      "height": "ganz unten, damit das Kabel senkrecht nach unten zieht und der Bizeps auch bei fast gestreckten Armen unter Spannung steht",
       "grip_width": "Schulterbreit, supiniert (Handflächen nach oben), an gerader Stange oder EZ-Stange",
       "body_position": "Aufrecht stehend, etwa einen Schritt vom Turm entfernt, Rumpf angespannt, Oberkörper ruhig",
       "foot_position": "Füße hüftbreit, parallel, Knie leicht gebeugt",
@@ -183,7 +216,18 @@
       "elbow_position": "Ellenbogen seitlich am Körper, bleiben während der Bewegung an ihrer Position",
       "end_position": "Stange etwa auf Höhe der oberen Brust, Unterarme vollständig gebeugt, Bizeps angespannt",
       "return": "Langsam und kontrolliert bis fast zur vollen Streckung, Gewicht bleibt in der Luft"
-    }
+    },
+    "muscle_focus": [
+      "Unten bis fast zur vollen Streckung absenken, damit der Bizeps in der gedehnten Position unter Spannung steht; das Kabel hält die Spannung dort, wo die Hantel sie verliert.",
+      "Oberarme seitlich am Körper fixieren und nur den Unterarm bewegen; wandern die Ellenbogen nach vorne, übernimmt die vordere Schulter.",
+      "Handgelenke gerade und supiniert halten, oben kurz anspannen und nicht die Ellenbogen anheben, um die Stange höher zu bringen.",
+      "Zwei bis drei Sekunden lang absenken, Oberkörper ruhig und das Gewicht so wählen, dass der Bizeps und nicht die Hüfte limitiert."
+    ],
+    "requirements": [
+      "Kabelturm mit verstellbarer Rolle",
+      "Gerade kurze Stange (alternativ SZ-Stange)"
+    ],
+    "grip_alternatives": ["ez_bar"]
   },
   {
     "slug": "kurzhantelcurl",
@@ -225,7 +269,18 @@
       "Beim Curl im Wechsel den ruhenden Arm leicht gebeugt und unter Spannung halten.",
       "Erst Gewicht erhöhen, wenn alle Sätze ohne Schwung ausgeführt werden."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Arme unten bis fast zur vollen Streckung bringen und die Dehnung im Bizeps zulassen; der untere Bereich der Bewegung trägt nach aktuellem Stand stark zum Muskelaufbau bei.",
+      "Oberarme nah am Rumpf und leicht vor der Körpermitte halten, nur der Unterarm bewegt sich; Ellenbogen, die nach vorne wandern, lassen die vordere Schulter übernehmen.",
+      "Handflächen beim Curlen vollständig nach oben drehen (Supination), oben kurz anspannen, ohne das Handgelenk einzuknicken.",
+      "Zwei Sekunden lang absenken, Oberkörper ruhig halten; wenn der Rumpf mitschwingt, ist das Gewicht zu schwer."
+    ],
+    "requirements": [
+      "Kurzhanteln",
+      "Optional: Bank mit aufrechter Lehne für die sitzende Ausführung"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "trizepsdruecken-kabel",
@@ -268,7 +323,7 @@
     ],
     "cable_setup": {
       "cable": "Kabelturm oder Doppelkabelzug, einzelnes Kabel",
-      "height": "Rolle ganz oben",
+      "height": "ganz oben, damit das Kabel von oben in Verlängerung des Unterarms zieht und der Trizeps über den gesamten Bewegungsradius Widerstand hat",
       "grip_width": "Neutral an der V-förmigen Trizepsstange, Hände eng beieinander",
       "body_position": "Stehend, leichte Vorlage von etwa 10 bis 20 Grad, Rumpf angespannt, Oberkörper ruhig",
       "foot_position": "Füße hüftbreit oder leichte Schrittstellung, Knie leicht gebeugt",
@@ -276,7 +331,18 @@
       "elbow_position": "Ellenbogen seitlich am Körper fixiert, bleiben während der Bewegung an ihrer Position",
       "end_position": "Arme vollständig gestreckt, Stange etwa auf Höhe der Oberschenkel, Trizeps angespannt",
       "return": "Langsam und kontrolliert, bis die Unterarme etwa waagerecht sind, Gewicht bleibt in der Luft"
-    }
+    },
+    "muscle_focus": [
+      "Oben so weit zurückführen, dass die Unterarme mindestens waagerecht sind, damit der Trizeps in der gedehnten Position arbeitet; das Gewicht nicht aufsetzen lassen.",
+      "Ellenbogen seitlich an den Rippen fixieren und nur den Unterarm bewegen; wandern die Ellenbogen nach vorne, drückt die Schulter mit.",
+      "Unten vollständig strecken und den Trizeps kurz anspannen, Handgelenke gerade halten.",
+      "Zwei Sekunden lang zurückführen, Oberkörper ruhig halten und das Gewicht so wählen, dass der Trizeps und nicht der Rumpf limitiert."
+    ],
+    "requirements": [
+      "Kabelturm mit verstellbarer Rolle",
+      "Trizeps-V-Stange (alternativ gerade kurze Stange)"
+    ],
+    "grip_alternatives": ["straight_bar"]
   },
   {
     "slug": "trizepsdruecken-stange",
@@ -320,7 +386,7 @@
     ],
     "cable_setup": {
       "cable": "Kabelturm oder Doppelkabelzug, einzelnes Kabel",
-      "height": "Rolle ganz oben",
+      "height": "ganz oben, damit das Kabel von oben in Verlängerung des Unterarms zieht und der Trizeps auch in der gebeugten Position unter Spannung steht",
       "grip_width": "Schulterbreit, proniert (Handflächen nach unten), an gerader Stange oder EZ-Stange",
       "body_position": "Stehend, leichte Vorlage von etwa 10 bis 20 Grad, Rumpf angespannt, Oberkörper ruhig",
       "foot_position": "Füße hüftbreit oder leichte Schrittstellung, Knie leicht gebeugt",
@@ -328,7 +394,18 @@
       "elbow_position": "Ellenbogen seitlich am Körper fixiert, bleiben während der Bewegung an ihrer Position",
       "end_position": "Arme vollständig gestreckt, Stange etwa auf Höhe der Oberschenkel, Trizeps angespannt",
       "return": "Langsam und kontrolliert, bis die Unterarme etwa waagerecht sind, Gewicht bleibt in der Luft"
-    }
+    },
+    "muscle_focus": [
+      "Oben bis mindestens waagerechte Unterarme zurückführen, sodass der Trizeps in der gedehnten Position arbeitet und das Gewicht in der Luft bleibt.",
+      "Ellenbogen seitlich am Körper fixieren, Griff etwa schulterbreit; bei zu breitem Griff weichen die Ellenbogen nach außen aus und die Schulter arbeitet mit.",
+      "Unten vollständig strecken, Trizeps kurz anspannen und die Handgelenke gerade halten, nicht nach unten abknicken.",
+      "Zwei Sekunden lang zurückführen und ein Gewicht wählen, bei dem der Trizeps und nicht der Oberkörper limitiert."
+    ],
+    "requirements": [
+      "Kabelturm mit verstellbarer Rolle",
+      "Gerade kurze Stange (alternativ Trizeps-V-Stange oder SZ-Stange)"
+    ],
+    "grip_alternatives": ["v_bar_triceps"]
   },
   {
     "slug": "trizepsdruecken-seil",
@@ -371,7 +448,7 @@
     ],
     "cable_setup": {
       "cable": "Kabelturm oder Doppelkabelzug, einzelnes Kabel",
-      "height": "Rolle ganz oben",
+      "height": "ganz oben, damit das Kabel von oben zieht und die Seilenden am Ende der Bewegung nach außen geführt werden können",
       "grip_width": "Neutral am Seil, Hände oben eng beieinander, unten auseinandergezogen",
       "body_position": "Stehend, leichte Vorlage von etwa 10 bis 20 Grad, Rumpf angespannt, Oberkörper ruhig",
       "foot_position": "Füße hüftbreit oder leichte Schrittstellung, Knie leicht gebeugt",
@@ -379,22 +456,33 @@
       "elbow_position": "Ellenbogen seitlich am Körper fixiert, bleiben während der Bewegung an ihrer Position",
       "end_position": "Arme vollständig gestreckt, Seilenden seitlich neben den Oberschenkeln, Trizeps angespannt",
       "return": "Hände zusammenführen, langsam und kontrolliert zurück bis die Unterarme etwa waagerecht sind"
-    }
+    },
+    "muscle_focus": [
+      "Oben bis mindestens waagerechte Unterarme zurückführen, damit der Trizeps in der gedehnten Position arbeitet; das Gewicht dabei nicht aufsetzen lassen.",
+      "Ellenbogen an den Rippen fixieren und nur den Unterarm bewegen; die Seilenden erst kurz vor der vollen Streckung auseinanderziehen.",
+      "Unten vollständig strecken und kurz anspannen, Handrücken zeigen nach außen; so wird die Endkontraktion betont.",
+      "Zwei Sekunden lang zurückführen, Oberkörper ruhig halten und das Gewicht so wählen, dass der Trizeps und nicht der Rumpf limitiert."
+    ],
+    "requirements": [
+      "Kabelturm mit verstellbarer Rolle",
+      "Seilgriff"
+    ],
+    "grip_alternatives": ["v_bar_triceps", "straight_bar"]
   },
   {
     "slug": "ueberkopf-trizeps-extension",
     "name": "Überkopf Trizeps Extension",
     "category": "triceps",
     "equipment": "cable",
-    "grip_id": "rope",
-    "grip_notes": "Neutraler Griff am Seil, Seilenden fest umschließen, Handgelenke gerade. Alternativ: einzelner Griff für die einarmige Ausführung.",
+    "grip_id": "straight_bar",
+    "grip_notes": "Gerade kurze Stange etwa schulterbreit mit proniertem Griff fassen, Handgelenke gerade. Alternativ SZ-Stange, wenn die Handgelenke bei gerader Stange unangenehm belastet werden, oder Seil.",
     "primary_muscles": ["triceps"],
     "secondary_muscles": [],
-    "description": "Trizepsstreckung über dem Kopf am Kabelzug, bei der die Oberarme neben dem Kopf gehalten werden. Durch die gestreckte Schulterposition wird vor allem der lange Trizepskopf belastet.",
+    "description": "Trizepsstreckung über dem Kopf am Kabelzug mit gerader Stange, bei der die Oberarme neben dem Kopf gehalten werden. Durch die gestreckte Schulterposition wird vor allem der lange Trizepskopf belastet.",
     "setup": [
-      "Seil am Kabel einhängen und Rolle unten oder auf Hüfthöhe einstellen.",
-      "Seil fassen, sich mit dem Rücken zum Turm drehen und in Schrittstellung gehen.",
-      "Hände mit dem Seil hinter den Kopf bringen, Ellenbogen zeigen nach vorne-oben.",
+      "Gerade Stange am Kabel einhängen und Rolle ganz unten einstellen.",
+      "Stange fassen, sich mit dem Rücken zum Turm drehen und in Schrittstellung gehen.",
+      "Stange hinter den Kopf absenken, Hände schulterbreit, Ellenbogen zeigen nach vorne-oben.",
       "Oberkörper leicht nach vorne neigen, Rumpf anspannen, Rücken gerade.",
       "Oberarme neben dem Kopf ruhig halten, Schultern nach unten ziehen."
     ],
@@ -402,7 +490,7 @@
       "Arme kontrolliert nach vorne-oben strecken, Oberarme bleiben an ihrer Position.",
       "Nur die Unterarme bewegen sich, Ellenbogen zeigen weiter nach vorne-oben.",
       "In der gestreckten Position den Trizeps kurz anspannen.",
-      "Gewicht langsam zurückführen und die Dehnung im Trizeps zulassen.",
+      "Stange langsam hinter den Kopf absenken und die Dehnung im Trizeps zulassen.",
       "Hinten stoppen, wenn die Unterarme etwa parallel zum Oberarm sind.",
       "Nächste Wiederholung ohne Schwung beginnen."
     ],
@@ -423,15 +511,26 @@
     ],
     "cable_setup": {
       "cable": "Kabelturm oder Doppelkabelzug, einzelnes Kabel",
-      "height": "Rolle ganz unten oder auf Hüfthöhe",
-      "grip_width": "Neutral am Seil, Hände eng beieinander, Daumen zeigen nach oben",
+      "height": "ganz unten, damit das Kabel von unten-hinten zieht und der lange Trizepskopf hinter dem Kopf in der gedehnten Position unter Spannung steht; bei Schulterbeschwerden Hüfthöhe",
+      "grip_width": "Gerade Stange, schulterbreit, pronierter Griff, Handgelenke gerade",
       "body_position": "Mit dem Rücken zum Turm stehend, Oberkörper leicht nach vorne geneigt, Rumpf angespannt, Rücken gerade",
       "foot_position": "Schrittstellung, vorderes Bein leicht gebeugt, hinteres Bein gestreckt für Stabilität",
       "movement_direction": "Von hinter dem Kopf nach vorne-oben, Unterarm rotiert um den Ellenbogen",
       "elbow_position": "Ellenbogen neben dem Kopf, zeigen nach vorne-oben, bleiben an ihrer Position",
       "end_position": "Arme vollständig gestreckt nach vorne-oben, Trizeps angespannt, Oberarme weiter neben dem Kopf",
       "return": "Langsam und kontrolliert, bis die Unterarme hinter dem Kopf etwa parallel zu den Oberarmen sind"
-    }
+    },
+    "muscle_focus": [
+      "Oberarme neben dem Kopf nach oben gestreckt halten, so wird der lange Trizepskopf über die Schulter vorgedehnt; genau diese gedehnte Position macht die Übung wirksam.",
+      "Stange hinter dem Kopf absenken, bis die Unterarme etwa parallel zu den Oberarmen sind, und die Dehnung zwei bis drei Sekunden lang kontrolliert zulassen.",
+      "Ellenbogen nach vorne-oben gerichtet lassen und nicht nach außen ausweichen; sinken die Oberarme beim Strecken ab, wird aus der Übung ein Drücken.",
+      "Rumpf anspannen, kein Hohlkreuz, und ein eher leichtes Gewicht wählen, damit der Trizeps und nicht der untere Rücken limitiert."
+    ],
+    "requirements": [
+      "Kabelturm mit verstellbarer Rolle",
+      "Gerade kurze Stange (alternativ SZ-Stange oder Seil)"
+    ],
+    "grip_alternatives": ["ez_bar", "rope"]
   },
   {
     "slug": "kabel-extension-einarmig",
@@ -439,7 +538,7 @@
     "category": "triceps",
     "equipment": "cable",
     "grip_id": "single_handle",
-    "grip_notes": "Einzelner Griff mit neutraler oder pronierter Handstellung, je nach Komfort. Alternativ: Seil mit nur einer Hand fassen oder ohne Griff direkt am Kabelende greifen.",
+    "grip_notes": "Einzelner Griff mit neutraler oder pronierter Handstellung, je nach Komfort. Alternativ Handschlaufe, um den Griff zu entlasten, oder ohne Griff direkt am Kabelende greifen.",
     "primary_muscles": ["triceps"],
     "secondary_muscles": [],
     "description": "Einarmiges Trizepsdrücken am oberen Kabelzug, bei dem die freie Hand am Turm stützt. Erlaubt eine gezielte Arbeit pro Seite und den Ausgleich von Kraftunterschieden.",
@@ -474,7 +573,7 @@
     ],
     "cable_setup": {
       "cable": "Kabelturm oder Doppelkabelzug, einzelnes Kabel",
-      "height": "Rolle ganz oben",
+      "height": "ganz oben, damit das Kabel von oben in Verlängerung des Unterarms zieht und der Trizeps über den gesamten Bewegungsradius Widerstand hat",
       "grip_width": "Einzelner Griff, neutral oder proniert, Handgelenk gerade",
       "body_position": "Stehend, leichte Vorlage von etwa 10 bis 20 Grad, freie Hand am Turm abgestützt, Rumpf angespannt",
       "foot_position": "Füße hüftbreit oder leichte Schrittstellung, Knie leicht gebeugt",
@@ -482,7 +581,18 @@
       "elbow_position": "Ellenbogen seitlich am Körper fixiert, bleibt während der Bewegung an seiner Position",
       "end_position": "Arm vollständig gestreckt, Griff etwa auf Höhe des Oberschenkels, Trizeps angespannt",
       "return": "Langsam und kontrolliert, bis der Unterarm etwa waagerecht ist, Gewicht bleibt in der Luft"
-    }
+    },
+    "muscle_focus": [
+      "Oben bis mindestens waagerechten Unterarm zurückführen, damit der Trizeps in der gedehnten Position arbeitet; das Gewicht nicht aufsetzen lassen.",
+      "Ellenbogen seitlich an den Rippen fixieren und nur den Unterarm bewegen, der Oberkörper dreht sich nicht zur arbeitenden Seite.",
+      "Unten vollständig strecken und kurz anspannen; mit der freien Hand am Turm stützen, damit der Rumpf nicht mitarbeitet.",
+      "Zwei Sekunden lang zurückführen und ein Gewicht wählen, bei dem der Trizeps limitiert; mit der schwächeren Seite beginnen."
+    ],
+    "requirements": [
+      "Kabelturm mit verstellbarer Rolle",
+      "Einzelgriff (D-Griff) oder Handschlaufe"
+    ],
+    "grip_alternatives": ["strap_handle"]
   },
   {
     "slug": "crunch-maschine",
@@ -524,59 +634,81 @@
       "Lieber leichtes Gewicht mit vollem Bewegungsradius als schweres Gewicht mit kurzer Bewegung.",
       "Vorstellen, die Rippen in Richtung Becken zu ziehen."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Drehachse der Maschine auf Höhe des unteren Brustkorbs einstellen, damit das Einrollen aus der Brustwirbelsäule kommt und nicht aus der Hüfte.",
+      "Oben leicht gestreckt starten, sodass die Bauchmuskulatur in der gedehnten Position arbeitet; dann Brustbein in Richtung Becken ziehen und den Rücken rund werden lassen.",
+      "Griffe oder Polster nur locker halten, nicht mit den Armen ziehen; kommt die Bewegung aus der Hüfte, übernehmen die Hüftbeuger.",
+      "Beim Einrollen ausatmen, zwei Sekunden lang zurückführen und lieber leichtes Gewicht mit vollem Bewegungsradius wählen."
+    ],
+    "requirements": [
+      "Bauchmaschine (Crunch-Maschine) mit Gewichtsstapel und verstellbarem Sitz"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "kabel-crunch",
-    "name": "Kabel Crunch",
+    "name": "Seated Cable Crunch",
     "category": "abs",
     "equipment": "cable",
     "grip_id": "rope",
-    "grip_notes": "Seil mit neutralem Griff fassen und die Hände seitlich am Kopf oder im Nacken halten. Alternativ: Griff an der Stirn abstützen, Position während des Satzes nicht verändern.",
+    "grip_notes": "Seil mit neutralem Griff fassen und die Seilenden beidhändig vor der Brust bzw. an den Schultern halten, Position während des Satzes nicht verändern. Alternativ Handschlaufen (eine pro Hand), wenn das Seil stört.",
     "primary_muscles": ["abs"],
     "secondary_muscles": ["obliques"],
-    "description": "Kniender Crunch am oberen Kabelzug, bei dem der Oberkörper gegen den Widerstand des Kabels eingerollt wird. Erlaubt eine gut steuerbare Belastung der Bauchmuskulatur mit Zusatzgewicht.",
+    "description": "Sitzender Crunch auf der Matte mit dem Rücken zum Kabelturm, bei dem das Seil vor der Brust gehalten und der Oberkörper gegen den Zug von hinten-oben eingerollt wird. Erlaubt eine gut steuerbare Belastung der Bauchmuskulatur mit Zusatzgewicht, ohne Druck auf die Knie.",
     "setup": [
-      "Seil am oberen Kabel einhängen und Gewicht einstellen.",
-      "Seil fassen und sich mit dem Gesicht zum Turm hinknien, etwa eine Armlänge entfernt.",
-      "Hände mit dem Seil seitlich am Kopf oder im Nacken halten.",
-      "Hüfte in einer stabilen Position fixieren, Oberschenkel etwa senkrecht.",
-      "Oberkörper aufrecht, leichte Vorspannung im Bauch."
+      "Rolle am Kabelturm auf Hüft- bis Brusthöhe einstellen und Seil einhängen.",
+      "Matte vor den Turm legen und sich mit dem Rücken zum Turm hinsetzen, etwa eine halbe bis eine Armlänge entfernt.",
+      "Beine angewinkelt nach vorne aufstellen, Füße flach auf dem Boden.",
+      "Seil über die Schultern nach vorne führen und die Seilenden beidhändig vor der Brust bzw. an den Schultern halten.",
+      "Oberkörper aufrecht, leichte Vorspannung im Bauch, Becken stabil auf der Matte."
     ],
     "execution": [
-      "Oberkörper kontrolliert nach unten einrollen, Bewegung aus der Brustwirbelsäule.",
-      "Ellenbogen in Richtung Oberschenkel führen, der Rücken wird dabei rund.",
-      "Hüfte bleibt während der Bewegung an ihrer Position.",
+      "Oberkörper kontrolliert nach vorne-unten einrollen, Bewegung aus der Brustwirbelsäule.",
+      "Brustbein in Richtung Becken ziehen, der Rücken wird dabei rund.",
+      "Becken bleibt stabil auf der Matte, die Hüfte beugt sich nicht aktiv mit.",
       "In der Endposition den Bauch kurz bewusst anspannen.",
       "Oberkörper langsam wieder aufrichten, Spannung im Bauch halten.",
-      "Oben stoppen, bevor das Gewicht auf dem Stapel aufsetzt."
+      "Oben stoppen, bevor der Rücken ins Hohlkreuz fällt und das Gewicht aufsetzt."
     ],
-    "range_of_motion": "Von einem aufrechten, leicht vorgespannten Oberkörper bis zum vollständig eingerollten Rumpf. Die Hüfte bleibt stabil, nur die Wirbelsäule rollt ein.",
+    "range_of_motion": "Von einem aufrechten, leicht vorgespannten Oberkörper bis zum vollständig eingerollten Rumpf. Das Becken bleibt stabil, nur die Wirbelsäule rollt ein; oben nicht über die aufrechte Position hinaus ins Hohlkreuz.",
     "breathing": "Beim Einrollen ausatmen, beim Aufrichten einatmen.",
     "common_mistakes": [
-      "Hüfte bewegt sich nach hinten, die Bewegung kommt aus den Hüftbeugern.",
+      "Oberkörper kippt mit geradem Rücken nach vorne, statt sich einzurollen; die Hüftbeuger übernehmen.",
       "Mit den Armen am Seil gezogen statt mit dem Bauch eingerollt.",
-      "Hände verändern während des Satzes ihre Position am Kopf.",
-      "Gewicht fällt oben unkontrolliert zurück.",
-      "Rücken bleibt gerade, der Oberkörper wird nur nach vorne gekippt."
+      "Hände verändern während des Satzes ihre Position vor der Brust.",
+      "Beim Aufrichten ins Hohlkreuz gefallen, der Zug zieht den Oberkörper nach hinten.",
+      "Gewicht fällt unkontrolliert zurück, keine Kontrolle in der exzentrischen Phase."
     ],
     "tips": [
       "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
       "Vorstellen, die Rippen in Richtung Becken zu ziehen.",
       "Lieber leichtes Gewicht mit vollem Bewegungsradius als schweres Gewicht mit kurzer Bewegung.",
-      "Eine Matte unter die Knie legen."
+      "Abstand zum Turm so wählen, dass das Kabel bereits in der aufrechten Position unter Spannung steht."
     ],
     "cable_setup": {
-      "cable": "Kabelturm oder Doppelkabelzug, einzelnes Kabel",
-      "height": "Rolle ganz oben",
-      "grip_width": "Neutral am Seil, Hände seitlich am Kopf oder im Nacken, eng beieinander",
-      "body_position": "Kniend mit dem Gesicht zum Turm, etwa eine Armlänge entfernt, Oberkörper aufrecht, Hüfte stabil",
-      "foot_position": "Knie hüftbreit auf dem Boden, Fußrücken oder Zehen abgelegt",
-      "movement_direction": "Einrollen von oben nach unten, Brustbein in Richtung Becken",
-      "elbow_position": "Ellenbogen zeigen nach unten und bleiben nah am Kopf, keine aktive Armbewegung",
-      "end_position": "Rumpf vollständig eingerollt, Ellenbogen in Richtung Oberschenkel, Bauch angespannt",
-      "return": "Langsam und kontrolliert aufrichten, bis der Oberkörper fast aufrecht ist, Gewicht bleibt in der Luft"
-    }
+      "cable": "Kabelturm, einzelnes Kabel",
+      "height": "Hüfthöhe bis Brusthöhe, damit der Zug im Sitzen etwa auf Kopf- bis Schulterhöhe schräg von hinten-oben kommt",
+      "grip_width": "Neutral am Seil, Seilenden beidhändig vor der Brust bzw. an den Schultern, eng beieinander",
+      "body_position": "Sitzend auf der Matte mit dem Rücken zum Turm, etwa eine halbe bis eine Armlänge entfernt, Oberkörper aufrecht, Becken stabil",
+      "foot_position": "Beine angewinkelt nach vorne aufgestellt, Füße flach auf dem Boden, etwa hüftbreit",
+      "movement_direction": "Einrollen nach vorne-unten, Brustbein in Richtung Becken, gegen den Zug von hinten-oben",
+      "elbow_position": "Ellenbogen zeigen nach unten und bleiben nah am Körper, keine aktive Armbewegung",
+      "end_position": "Rumpf vollständig eingerollt, Brustbein in Richtung Becken, Bauch angespannt",
+      "return": "Langsam und kontrolliert aufrichten, bis der Oberkörper aufrecht ist, nicht ins Hohlkreuz, Gewicht bleibt in der Luft"
+    },
+    "muscle_focus": [
+      "Rolle so einstellen, dass der Zug schräg von hinten-oben kommt; dann steht die Bauchmuskulatur schon in der aufrechten, leicht gestreckten Position unter Spannung.",
+      "Einrollen aus der Brustwirbelsäule, Brustbein in Richtung Becken; das Becken bleibt auf der Matte stabil, sonst übernehmen die Hüftbeuger.",
+      "Seil nur fixieren, nicht mit den Armen ziehen; die Ellenbogen bleiben während des Satzes an derselben Stelle.",
+      "Beim Einrollen ausatmen, zwei Sekunden lang aufrichten und oben nicht ins Hohlkreuz fallen; leichtes Gewicht mit vollem Bewegungsradius bevorzugen."
+    ],
+    "requirements": [
+      "Kabelturm mit verstellbarer Rolle",
+      "Seilgriff (alternativ Handschlaufen)",
+      "Matte"
+    ],
+    "grip_alternatives": ["strap_handle"]
   },
   {
     "slug": "hanging-knee-raise",
@@ -617,7 +749,17 @@
       "Als Progression die Beine zunehmend gestreckt halten oder die Bewegung langsamer ausführen.",
       "Wenn die Griffkraft vor dem Bauch ermüdet, Armschlaufen verwenden."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Entscheidend ist das Einrollen des Beckens am Ende der Bewegung; reines Anheben der Beine kommt überwiegend aus den Hüftbeugern.",
+      "Beine unten fast gestreckt hängen lassen, sodass die Bauchmuskulatur in der gedehnten Position arbeitet, und jede Wiederholung aus dem ruhigen Hang starten.",
+      "Schultern aktiv nach unten ziehen und den Rumpf anspannen, damit kein Schwung entsteht.",
+      "Zwei Sekunden lang absenken; wenn die Griffkraft vor dem Bauch ermüdet, Armschlaufen verwenden."
+    ],
+    "requirements": [
+      "Klimmzugstange oder Armschlaufen (Ab Straps) an einem stabilen Gestell"
+    ],
+    "grip_alternatives": []
   },
   {
     "slug": "plank",
@@ -659,6 +801,16 @@
       "Als Progression die Haltedauer schrittweise verlängern oder die Füße enger stellen.",
       "Gesäß bewusst anspannen, das stabilisiert das Becken."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "muscle_focus": [
+      "Becken leicht nach hinten kippen und Gesäß anspannen; so arbeitet die Bauchmuskulatur gegen das Hohlkreuz und hält die Spannung.",
+      "Ellenbogen unter den Schultern und aktiv in den Boden drücken, damit der obere Rücken nicht einsackt.",
+      "Gerade Linie von Kopf bis Fersen halten, ohne das Gesäß anzuheben; ruhig weiteratmen und die Spannung bei jeder Ausatmung beibehalten.",
+      "Lieber kürzer und sauber halten als lange mit abgesenkter Hüfte."
+    ],
+    "requirements": [
+      "Matte oder weicher Untergrund für die Unterarme"
+    ],
+    "grip_alternatives": []
   }
 ]

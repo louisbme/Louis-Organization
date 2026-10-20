@@ -11,7 +11,7 @@ Die Daten werden per Skript in eine SQL-Migration übersetzt. Halte dich EXAKT a
 | name | string | ja | Deutscher Anzeigename, z. B. "Schrägbankdrücken Maschine" |
 | category | enum | ja | chest, back, shoulders, biceps, triceps, quads, hamstrings, glutes, calves, abs, forearms, adductors, cardio |
 | equipment | enum | ja | machine, cable, barbell, dumbbell, bodyweight, smith_machine, bench, cardio, other |
-| grip_id | enum/null | ja | Nur bei Kabelübungen (Kabelzug-Anbau): neutral_parallel, wide_lat_bar, close_v_grip, rope, single_handle, straight_bar, ez_bar, v_bar_triceps, ankle_strap. Sonst null. |
+| grip_id | enum/null | ja | Nur bei Kabelübungen (Kabelzug-Anbau): neutral_parallel, wide_lat_bar, close_v_grip, rope, single_handle, strap_handle, straight_bar, ez_bar, v_bar_triceps, ankle_strap. Sonst null. Empfohlener (einfachster) Griff. |
 | grip_notes | string/null | ja | Freitext zum Griff bei Maschinen/Hanteln/Körpergewicht, z. B. "Neutrale oder pronierte Griffe, je nach Maschine; Handgelenke gerade". Bei Kabelübungen Empfehlung zur Griffbreite/Alternativgriff. null wenn nicht sinnvoll. |
 | primary_muscles | string[] | ja | 1–2 IDs aus der Muskel-Liste |
 | secondary_muscles | string[] | ja | 0–4 IDs aus der Muskel-Liste |
@@ -23,14 +23,23 @@ Die Daten werden per Skript in eine SQL-Migration übersetzt. Halte dich EXAKT a
 | common_mistakes | string[] | ja | 3–5 typische Fehler, jeweils ein kurzer Satz. |
 | tips | string[] | ja | 2–4 Hinweise (Tempo, Fokus, Progression, Alternativen). |
 | cable_setup | object/null | ja | NUR bei equipment = "cable" (sonst null). Felder siehe unten. |
-| image_url | string/null | nein | Optional: Pfad zum Gerätefoto, z. B. "/exercises/hack-squat.jpg" |
+| image_url | string/null | nein | Optional: Pfad zum Gerätefoto (nur auf Anweisung setzen) |
+| muscle_focus | string[] | ja | 2–4 Punkte "So triffst du den Muskel": nach aktuellem sportwissenschaftlichem Stand (Bewegungsradius, gedehnte Position, Ellenbogen-/Schulterführung, Tempo, typische Ausweichbewegung). Sachlich, keine Heilsversprechen. |
+| requirements | string[] | ja | 1–4 Einträge "Das brauchst du": konkrete Ausstattung (Gerät, Hantelart, Bank, Griff, Stufe, Polster). Bei freien Übungen eindeutig, z. B. "Flachbank oder Hocker", "Kurzhanteln auf den Knien oder Langhantel mit Polster". |
+| grip_alternatives | string[] | ja | Nur bei Kabelübungen: 0–3 alternative Griff-IDs (aus der grip_id-Liste), die ebenfalls gut funktionieren, z. B. statt Seil eine Stange. Bei Nicht-Kabelübungen leeres Array []. |
+
+### Griffe (grip_id / grip_alternatives)
+
+neutral_parallel (Neutraler Parallelgriff / MAG-Griff), wide_lat_bar (Latzugstange, breit), close_v_grip (enger V-Griff / Triangelgriff), rope (Seil), single_handle (Einzelgriff / D-Griff), strap_handle (Handschlaufe, weicher Schlaufengriff), straight_bar (gerade kurze Stange, Bizeps-Trizeps-Stange), ez_bar (SZ-Stange), v_bar_triceps (Trizeps-V-Stange), ankle_strap (Fußschlaufe).
+
+Grundsatz: Als grip_id den Griff eintragen, der am einfachsten und schulterfreundlichsten ist; das Seil nur dort als Standard, wo es klar überlegen ist (Face Pull). Alternativen in grip_alternatives.
 
 ### cable_setup (nur bei Kabelübungen, alle Felder Strings)
 
 ```
 {
   "cable": "Welcher Kabelzug (z. B. Kabelturm / Doppelkabelzug / integrierter Latzug / Kabelzug einarmig)",
-  "height": "Rollenhöhe (z. B. oben / Schulterhöhe / Hüfthöhe / unten)",
+  "height": "Rollenhöhe EXPLIZIT: eines von \"ganz oben\", \"über Kopfhöhe\", \"Schulterhöhe\", \"Brusthöhe\", \"Hüfthöhe\", \"Kniehöhe\", \"ganz unten\" – plus kurzer Begründung",
   "grip_width": "Griffbreite / Handposition",
   "body_position": "Körperposition (Stand, Sitz, Abstand, Neigung, Rumpfspannung)",
   "foot_position": "Fußposition",
