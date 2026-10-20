@@ -1,5 +1,5 @@
 import type { ExerciseDetail as ExerciseDetailType } from "@/lib/services/exercises";
-import type { ExerciseRecordsRow } from "@/lib/supabase/types";
+import type { ExerciseRecordsRow, GripRow } from "@/lib/supabase/types";
 import { CATEGORY_LABELS, EQUIPMENT_LABELS, muscleLabel } from "@/lib/utils/labels";
 import { formatDate, formatVolume, formatWeight } from "@/lib/utils/format";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +20,7 @@ interface Props {
 export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: Props) {
   const showForearmHint =
     exercise.secondary_muscles.includes("forearms") && !exercise.primary_muscles.includes("forearms");
+  const isCable = exercise.equipment === "cable";
 
   return (
     <div className="stagger space-y-5">
@@ -32,82 +33,55 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
 
       {exercise.description ? <p className="text-sm leading-relaxed text-muted">{exercise.description}</p> : null}
 
-      {/* Muskelkarte, Gerätefoto, Muskeln */}
+      {/* Muskelkarte + Primär/Sekundär */}
       <Card>
         <CardContent className="pt-5">
           <MuscleMap primary={exercise.primary_muscles} secondary={exercise.secondary_muscles} />
           <div className="mt-5">
             <MuscleList primary={exercise.primary_muscles} secondary={exercise.secondary_muscles} label={muscleLabel} />
           </div>
-          {showForearmHint ? (
-            <p className="mt-3 text-xs text-faint">Unterarme sekundär beteiligt (Griffkraft).</p>
-          ) : null}
+          {showForearmHint ? <p className="mt-3 text-xs text-faint">Unterarme sekundär beteiligt (Griffkraft).</p> : null}
         </CardContent>
       </Card>
 
-      {exercise.animation_url ? (
-        <div className="space-y-2">
-          <SectionLabel className="px-1">Ausführung</SectionLabel>
-          <ExerciseVisual
-            name={exercise.name}
-            imageUrl={null}
-            animationUrl={exercise.animation_url}
-            equipment={exercise.equipment}
-            category={exercise.category}
-          />
-        </div>
-      ) : null}
-
-      {/* Equipment + Griff */}
-      <Card>
-        <CardContent className="space-y-5 pt-5">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-subtle text-muted">
-              <EquipmentIcon equipment={exercise.equipment} strokeWidth={1.7} />
-            </div>
-            <div>
-              <SectionLabel>Equipment</SectionLabel>
-              <p className="text-sm font-medium">{EQUIPMENT_LABELS[exercise.equipment]}</p>
-            </div>
-          </div>
-
-          {exercise.grip || exercise.grip_notes ? (
-            <div className="border-t border-border pt-5">
-              <SectionLabel>Griff</SectionLabel>
-              {exercise.grip ? (
-                <div className="mt-2 flex items-start gap-3">
-                  <div className="flex h-16 w-24 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-subtle text-fg">
-                    {exercise.grip.image_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={exercise.grip.image_url} alt={exercise.grip.name_de} loading="lazy" className="h-full w-full object-cover" />
-                    ) : (
-                      <GripIcon gripId={exercise.grip.id} />
-                    )}
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium">{exercise.grip.name_de}</p>
-                    <p className="mt-0.5 text-xs leading-relaxed text-muted">{exercise.grip.description}</p>
-                  </div>
-                </div>
-              ) : null}
-              {exercise.grip_notes ? (
-                <p className="mt-3 text-sm leading-relaxed text-muted">{exercise.grip_notes}</p>
-              ) : null}
-            </div>
-          ) : null}
-        </CardContent>
-      </Card>
-
-      {/* Kabel-Setup */}
-      {exercise.cable ? (
+      {/* Kabelturm: Höhe und Griff zuerst */}
+      {isCable && exercise.cable ? (
         <Card>
           <CardContent className="pt-5">
-            <SectionLabel>Kabel-Setup</SectionLabel>
-            <dl className="mt-3 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+            <SectionLabel>Kabelturm</SectionLabel>
+            <div className="mt-3 flex items-start gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-border bg-subtle text-fg">
+                <CableHeightIcon height={exercise.cable.height} />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Rollenhöhe</p>
+                <p className="text-lg font-semibold">{heightLabel(exercise.cable.height)}</p>
+                <p className="mt-0.5 text-sm text-muted">{heightNote(exercise.cable.height)}</p>
+              </div>
+            </div>
+
+            {exercise.grip ? (
+              <div className="mt-5 border-t border-border pt-5">
+                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Empfohlener Griff</p>
+                <GripRowView grip={exercise.grip} highlight />
+                {exercise.grip_notes ? <p className="mt-2 text-sm leading-relaxed text-muted">{exercise.grip_notes}</p> : null}
+              </div>
+            ) : null}
+
+            {exercise.alternative_grips.length > 0 ? (
+              <div className="mt-5 border-t border-border pt-5">
+                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Alternative Griffe</p>
+                <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {exercise.alternative_grips.map((g) => (
+                    <GripRowView key={g.id} grip={g} />
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            <dl className="mt-5 grid grid-cols-1 gap-x-6 gap-y-3 border-t border-border pt-5 sm:grid-cols-2">
               {(
                 [
-                  ["Kabel", exercise.cable.cable],
-                  ["Höhe", exercise.cable.height],
                   ["Griffbreite", exercise.cable.grip_width],
                   ["Körperposition", exercise.cable.body_position],
                   ["Fußposition", exercise.cable.foot_position],
@@ -127,8 +101,57 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
         </Card>
       ) : null}
 
+      {/* Das brauchst du + Gerät (Foto nur, wenn ausdrücklich hinterlegt) */}
+      <Card>
+        <CardContent className="pt-5">
+          <div className="flex items-start gap-4">
+            <div className="min-w-0 flex-1">
+              <SectionLabel>Das brauchst du</SectionLabel>
+              <div className="mt-2 flex items-center gap-2 text-sm font-medium">
+                <EquipmentIcon equipment={exercise.equipment} className="h-5 w-5 text-muted" strokeWidth={1.7} />
+                {EQUIPMENT_LABELS[exercise.equipment]}
+              </div>
+              {exercise.requirements.length > 0 ? (
+                <ul className="mt-2 space-y-1.5">
+                  {exercise.requirements.map((r, i) => (
+                    <li key={i} className="flex gap-2 text-sm leading-relaxed text-muted">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint" />
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              {!isCable && (exercise.grip || exercise.grip_notes) ? (
+                <div className="mt-4 border-t border-border pt-4">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Griff</p>
+                  {exercise.grip ? <GripRowView grip={exercise.grip} /> : null}
+                  {exercise.grip_notes ? <p className="mt-2 text-sm leading-relaxed text-muted">{exercise.grip_notes}</p> : null}
+                </div>
+              ) : null}
+            </div>
+            {exercise.image_url ? (
+              <div className="flex shrink-0 flex-col items-center gap-1.5">
+                <div className="flex h-28 w-28 items-center justify-center overflow-hidden rounded-xl border border-border bg-white/95 p-1 sm:h-32 sm:w-32">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={exercise.image_url} alt={`${exercise.name} – Gerät`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                </div>
+                <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-faint">Gerät</p>
+              </div>
+            ) : null}
+          </div>
+        </CardContent>
+      </Card>
+
+      {exercise.animation_url ? (
+        <div className="space-y-2">
+          <SectionLabel className="px-1">Ausführung</SectionLabel>
+          <ExerciseVisual name={exercise.name} imageUrl={null} animationUrl={exercise.animation_url} equipment={exercise.equipment} category={exercise.category} />
+        </div>
+      ) : null}
+
       <StepsCard title="Ausführung" steps={exercise.execution} numbered />
       <StepsCard title="Setup / Startposition" steps={exercise.setup} numbered />
+      <StepsCard title="So triffst du den Muskel" steps={exercise.muscle_focus} />
 
       {exercise.range_of_motion || exercise.breathing ? (
         <Card>
@@ -175,6 +198,47 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
   );
 }
 
+function GripRowView({ grip, highlight = false }: { grip: GripRow; highlight?: boolean }) {
+  return (
+    <div className={`mt-2 flex items-center gap-3 rounded-xl border px-3 py-2.5 ${highlight ? "border-border-strong bg-subtle" : "border-border"}`}>
+      <div className="flex h-14 w-[5.5rem] shrink-0 items-center justify-center overflow-hidden rounded-lg bg-card text-fg">
+        {grip.image_url ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={grip.image_url} alt={grip.name_de} loading="lazy" className="h-full w-full object-contain p-1" />
+        ) : (
+          <GripIcon gripId={grip.id} className="p-1.5" />
+        )}
+      </div>
+      <div className="min-w-0">
+        <p className="text-sm font-medium">{grip.name_de}</p>
+        <p className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-muted">{grip.description}</p>
+      </div>
+    </div>
+  );
+}
+
+/** Höhenangabe aus cable_setup.height: erster Begriff vor Komma/Klammer */
+function heightLabel(height: string): string {
+  return height.split(/[,(–-]/)[0].trim();
+}
+function heightNote(height: string): string {
+  const rest = height.slice(heightLabel(height).length).replace(/^[\s,(–-]+/, "").replace(/\)$/, "");
+  return rest;
+}
+
+/** Kleines Icon: Kabelturm mit markierter Rollenhöhe */
+function CableHeightIcon({ height }: { height: string }) {
+  const h = height.toLowerCase();
+  const y = h.startsWith("ganz oben") ? 8 : h.startsWith("über kopf") ? 14 : h.startsWith("schulter") ? 20 : h.startsWith("brust") ? 24 : h.startsWith("hüft") ? 30 : h.startsWith("knie") ? 36 : 42;
+  return (
+    <svg viewBox="0 0 48 48" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden>
+      <path d="M16 4v40M32 4v40M12 44h24" strokeOpacity="0.5" />
+      <circle cx="24" cy={y} r="4" fill="currentColor" />
+      <path d={`M28 ${y}h10`} />
+    </svg>
+  );
+}
+
 function StepsCard({ title, steps, numbered = false }: { title: string; steps: string[]; numbered?: boolean }) {
   if (!steps || steps.length === 0) return null;
   return (
@@ -184,9 +248,7 @@ function StepsCard({ title, steps, numbered = false }: { title: string; steps: s
         <ol className="mt-3 space-y-2.5">
           {steps.map((s, i) => (
             <li key={i} className="flex gap-3 text-sm leading-relaxed">
-              <span className="tnum mt-0.5 w-5 shrink-0 text-xs font-semibold text-faint">
-                {numbered ? `${i + 1}.` : "–"}
-              </span>
+              <span className="tnum mt-0.5 w-5 shrink-0 text-xs font-semibold text-faint">{numbered ? `${i + 1}.` : "–"}</span>
               <span>{s}</span>
             </li>
           ))}
