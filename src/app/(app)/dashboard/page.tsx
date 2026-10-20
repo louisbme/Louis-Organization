@@ -45,7 +45,7 @@ export default async function DashboardPage() {
     <div className="stagger space-y-5">
       <header>
         <p className="text-sm text-muted">Hallo {profile.nickname}</p>
-        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Dashboard</h1>
+        <h1 className="text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">Dashboard</h1>
       </header>
 
       {/* Nächstes Training / Aktives Training */}

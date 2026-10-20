@@ -4,29 +4,29 @@
    Design Tokens – Dark ist Standard, Light über data-theme="light"
    ------------------------------------------------------------ */
 :root {
-  --bg: #0a0a0b;
+  --bg: #0b0b0c;
   --bg-card: #121214;
-  --bg-subtle: #1a1a1d;
+  --bg-subtle: #19191c;
   --bg-hover: #202024;
-  --border: #26262b;
-  --border-strong: #3a3a41;
-  --fg: #f4f4f5;
-  --fg-muted: #a1a1aa;
-  --fg-subtle: #6b6b75;
-  --accent: #34d399;
-  --accent-strong: #10b981;
-  --accent-fg: #06251a;
-  --accent-soft: rgba(52, 211, 153, 0.12);
+  --border: #232327;
+  --border-strong: #35353b;
+  --fg: #f5f5f6;
+  --fg-muted: #9a9aa3;
+  --fg-subtle: #66666f;
+  --accent: #f5f5f6;
+  --accent-strong: #ffffff;
+  --accent-fg: #0b0b0c;
+  --accent-soft: rgba(245, 245, 246, 0.1);
   --danger: #f87171;
   --danger-soft: rgba(248, 113, 113, 0.12);
   --warning: #fbbf24;
   --warning-soft: rgba(251, 191, 36, 0.12);
   --info: #60a5fa;
   --info-soft: rgba(96, 165, 250, 0.12);
-  --chart-1: #34d399;
-  --chart-2: #60a5fa;
-  --chart-3: #a78bfa;
-  --chart-4: #fbbf24;
+  --chart-1: #f5f5f6;
+  --chart-2: #9a9aa3;
+  --chart-3: #66666f;
+  --chart-4: #ffcc1f;
   --muscle-primary: #ff2a2a;
   --muscle-primary-light: #ff6a5c;
   --muscle-secondary: #ffcc1f;
@@ -34,7 +34,7 @@
   --muscle-base-light: #66778f;
   --muscle-structural: #3d4858;
   --muscle-outline: #1c2230;
-  --ring: rgba(52, 211, 153, 0.45);
+  --ring: rgba(245, 245, 246, 0.35);
   color-scheme: dark;
 }
 
@@ -48,20 +48,20 @@
   --fg: #121214;
   --fg-muted: #52525b;
   --fg-subtle: #8a8a94;
-  --accent: #059669;
-  --accent-strong: #047857;
+  --accent: #121214;
+  --accent-strong: #000000;
   --accent-fg: #ffffff;
-  --accent-soft: rgba(5, 150, 105, 0.1);
+  --accent-soft: rgba(18, 18, 20, 0.08);
   --danger: #dc2626;
   --danger-soft: rgba(220, 38, 38, 0.08);
   --warning: #d97706;
   --warning-soft: rgba(217, 119, 6, 0.1);
   --info: #2563eb;
   --info-soft: rgba(37, 99, 235, 0.1);
-  --chart-1: #059669;
-  --chart-2: #2563eb;
-  --chart-3: #7c3aed;
-  --chart-4: #d97706;
+  --chart-1: #121214;
+  --chart-2: #52525b;
+  --chart-3: #8a8a94;
+  --chart-4: #d9a400;
   --muscle-primary: #e81e1e;
   --muscle-primary-light: #ff5a4d;
   --muscle-secondary: #f5b800;
@@ -69,7 +69,7 @@
   --muscle-base-light: #9aa8bd;
   --muscle-structural: #b8c1cf;
   --muscle-outline: #ffffff;
-  --ring: rgba(5, 150, 105, 0.35);
+  --ring: rgba(18, 18, 20, 0.25);
   color-scheme: light;
 }
 
@@ -95,7 +95,7 @@
   --color-info-soft: var(--info-soft);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --radius-card: 16px;
+  --radius-card: 18px;
   --shadow-card: 0 1px 0 0 rgba(255, 255, 255, 0.02) inset;
 }
 
@@ -109,9 +109,23 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
-  font-feature-settings: "cv11", "ss01";
+  font-weight: 400;
+  letter-spacing: -0.005em;
   min-height: 100dvh;
   overscroll-behavior-y: none;
+}
+
+/* Überschriften: kräftig, eng, wie bei modernen Fitness-Marken */
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* Fließtext in dezentem Grau, leicht */
+p {
+  font-weight: 400;
 }
 
 * {

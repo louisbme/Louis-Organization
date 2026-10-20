@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { APP_DESCRIPTION, APP_NAME } from "@/lib/config";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const montserrat = Montserrat({ variable: "--font-geist-sans", subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${montserrat.variable} ${geistMono.variable} antialiased`}>
         {children}
         <Toaster />
       </body>
