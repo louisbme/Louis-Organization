@@ -1,25 +1,17 @@
 import { cn } from "@/lib/utils/cn";
-import { APP_MONOGRAM, APP_NAME } from "@/lib/config";
+import { APP_NAME } from "@/lib/config";
 
-/** Monogramm: nur der Anfangsbuchstabe, klar und typografisch. */
+/** Logo: Foto (public/brand/logo.jpg), rund maskiert. */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 64 64" className={cn("h-8 w-8", className)} aria-hidden>
-      <rect width="64" height="64" rx="16" className="fill-fg" />
-      <text
-        x="50%"
-        y="50%"
-        dominantBaseline="central"
-        textAnchor="middle"
-        fontFamily="var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif"
-        fontWeight="700"
-        fontSize="38"
-        letterSpacing="-1"
-        className="fill-bg"
-      >
-        {APP_MONOGRAM}
-      </text>
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/brand/logo.jpg"
+      alt={APP_NAME}
+      width={32}
+      height={32}
+      className={cn("h-8 w-8 rounded-lg object-cover ring-1 ring-border", className)}
+    />
   );
 }
 
