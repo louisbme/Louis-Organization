@@ -13,11 +13,41 @@ import {
   YAxis,
 } from "recharts";
 
+import { formatDecimal, formatVolume, formatWeight } from "@/lib/utils/format";
+import type { WeightUnit } from "@/lib/supabase/types";
+
 export interface TrendPoint {
   x: string;
   label: string;
   y: number;
   extra?: string;
+}
+
+/**
+ * Serialisierbare Formatangabe – damit auch Server Components die Chart-Komponente
+ * nutzen können (Funktionen dürfen nicht an Client Components übergeben werden).
+ */
+export type ValueFormat =
+  | { kind: "volume"; unit: WeightUnit }
+  | { kind: "weight"; unit: WeightUnit }
+  | { kind: "decimal"; suffix?: string }
+  | { kind: "integer"; suffix?: string }
+  | { kind: "count"; singular: string; plural: string };
+
+function makeFormatter(format: ValueFormat | undefined, unit: string): (v: number) => string {
+  if (!format) return (v) => `${Math.round(v)}${unit ? ` ${unit}` : ""}`;
+  switch (format.kind) {
+    case "volume":
+      return (v) => formatVolume(v, format.unit);
+    case "weight":
+      return (v) => formatWeight(v, format.unit);
+    case "decimal":
+      return (v) => `${formatDecimal(v)}${format.suffix ? ` ${format.suffix}` : ""}`;
+    case "integer":
+      return (v) => `${Math.round(v)}${format.suffix ? ` ${format.suffix}` : ""}`;
+    case "count":
+      return (v) => `${Math.round(v)} ${Math.round(v) === 1 ? format.singular : format.plural}`;
+  }
 }
 
 interface TrendChartProps {
@@ -26,6 +56,9 @@ interface TrendChartProps {
   unit?: string;
   height?: number;
   color?: string;
+  /** Serialisierbar, auch aus Server Components nutzbar */
+  format?: ValueFormat;
+  /** Nur aus Client Components (Funktion) */
   formatValue?: (v: number) => string;
   emptyLabel?: string;
 }
@@ -36,10 +69,11 @@ export function TrendChart({
   unit = "",
   height = 180,
   color = "var(--chart-1)",
+  format,
   formatValue,
   emptyLabel = "Noch keine Daten",
 }: TrendChartProps) {
-  const fmt = formatValue ?? ((v: number) => `${Math.round(v)}${unit ? ` ${unit}` : ""}`);
+  const fmt = formatValue ?? makeFormatter(format, unit);
 
   if (data.length === 0) {
     return (

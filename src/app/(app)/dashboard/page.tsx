@@ -141,7 +141,7 @@ export default async function DashboardPage() {
             </Link>
           </div>
           <div className="mt-3">
-            <TrendChart data={chartData} type="bar" height={150} formatValue={(v) => formatVolume(v, unit)} emptyLabel="Nach dem ersten Training erscheint hier dein Volumenverlauf." />
+            <TrendChart data={chartData} type="bar" height={150} format={{ kind: "volume", unit }} emptyLabel="Nach dem ersten Training erscheint hier dein Volumenverlauf." />
           </div>
         </CardContent>
       </Card>
