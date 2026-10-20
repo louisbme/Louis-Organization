@@ -231,7 +231,7 @@ export function CalendarView({ initialMonth, initialEntries, initialSessions }: 
         footer={
           <div className="flex gap-2">
             {selected && entryByDate.has(selected) ? (
-              <Button variant="danger" onClick={remove} loading={busy} aria-label="Markierung entfernen">
+              <Button variant="secondary" onClick={remove} loading={busy} aria-label="Markierung entfernen" title="Markierung entfernen">
                 <Trash2 className="h-4 w-4" />
               </Button>
             ) : null}
