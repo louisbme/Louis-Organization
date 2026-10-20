@@ -39,10 +39,11 @@ export const SECONDARY_NAV: NavItem[] = [
 /** Nur für Admins */
 export const ADMIN_NAV: NavItem[] = [{ href: "/admin", label: "Verwaltung", icon: ShieldCheck }];
 
-/** Mobile Bottom Navigation: 4 Hauptziele + "Mehr" */
+/** Mobile Bottom Navigation: 5 Hauptziele + "Mehr" */
 export const MOBILE_NAV: NavItem[] = [
   { href: "/dashboard", label: "Start", icon: LayoutGrid },
   { href: "/workout", label: "Training", icon: Dumbbell },
+  { href: "/exercises", label: "Übungen", icon: BookOpen },
   { href: "/history", label: "Historie", icon: History },
   { href: "/progress", label: "Fortschritt", icon: TrendingUp },
   { href: "/more", label: "Mehr", icon: MoreHorizontal },
@@ -50,7 +51,6 @@ export const MOBILE_NAV: NavItem[] = [
 
 export const MORE_NAV: NavItem[] = [
   { href: "/plans", label: "Trainingspläne", icon: ClipboardList },
-  { href: "/exercises", label: "Übungen", icon: BookOpen },
   { href: "/calendar", label: "Kalender", icon: CalendarDays },
   { href: "/stats", label: "Stats", icon: Users },
   { href: "/profile", label: "Profil", icon: User },

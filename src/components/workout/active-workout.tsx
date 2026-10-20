@@ -123,7 +123,7 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
   return (
     <div className="pb-24">
       {/* Kopfzeile */}
-      <div className="sticky top-0 z-20 -mx-4 mb-4 border-b border-border bg-bg/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+      <div className="safe-top sticky top-0 z-20 -mx-4 mb-4 border-b border-border bg-bg/95 px-4 pb-3 pt-3 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
         <div className="mx-auto flex max-w-5xl items-center gap-2">
           <Link href="/workout" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-muted hover:bg-subtle" aria-label="Zur Übersicht">
             <ChevronLeft className="h-5 w-5" />

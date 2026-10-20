@@ -11,7 +11,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         style={{ backgroundImage: "url(/images/gym-hero.jpg)" }}
       />
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/80 to-bg" />
-      <div className="relative mx-auto flex w-full max-w-md flex-1 flex-col px-5 py-10 sm:py-16">
+      <div className="safe-top relative mx-auto flex w-full max-w-md flex-1 flex-col px-5 py-10 sm:py-16">
         <Link href="/login" className="mb-2 self-start animate-fade-up">
           <Wordmark />
         </Link>

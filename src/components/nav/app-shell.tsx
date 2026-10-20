@@ -66,8 +66,9 @@ export function AppShell({ activeSession, children }: AppShellProps) {
       <div className="lg:pl-60">
         <main
           className={cn(
-            "mx-auto w-full max-w-5xl px-4 pt-5 sm:px-6 lg:px-8 lg:pt-8",
-            isWorkoutScreen ? "pb-6" : "pb-28 lg:pb-12",
+            "mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 lg:pt-8",
+            // Auf dem Trainingsbildschirm trägt der klebende Kopf die Safe-Area selbst
+            isWorkoutScreen ? "pt-0 pb-6" : "safe-top pt-5 pb-28 lg:pb-12",
             showBanner && "pb-40 lg:pb-24"
           )}
         >
@@ -102,7 +103,7 @@ export function AppShell({ activeSession, children }: AppShellProps) {
       {/* Mobile Bottom Navigation */}
       {!isWorkoutScreen ? (
         <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-bg/95 backdrop-blur safe-bottom lg:hidden">
-          <ul className="grid h-16 grid-cols-5">
+          <ul className="grid h-16 grid-cols-6">
             {MOBILE_NAV.map((item) => {
               const active = isActivePath(pathname, item.href);
               const Icon = item.icon;
@@ -123,7 +124,7 @@ export function AppShell({ activeSession, children }: AppShellProps) {
                       )}
                     />
                     <Icon className={cn("h-5 w-5 transition-transform duration-200", active && "-translate-y-px")} strokeWidth={active ? 2.2 : 1.8} />
-                    {item.label}
+                    <span className="text-[10px] leading-none">{item.label}</span>
                   </Link>
                 </li>
               );

@@ -185,9 +185,12 @@ input[type="number"] {
   }
 }
 
-/* Safe-Area für iOS Bottom Navigation */
+/* Safe-Area für iOS (Home-Bildschirm-App): oben Statusleiste, unten Home-Indikator */
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
 }
 
 /* ------------------------------------------------------------
