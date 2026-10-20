@@ -6,8 +6,13 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Haltegriffe neben den Schulterpolstern fassen, Hände bleiben locker. Füße mittig auf der Plattform, etwa schulterbreit, Fußspitzen leicht nach außen.",
-    "primary_muscles": ["quads"],
-    "secondary_muscles": ["glutes", "hamstrings"],
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "hamstrings"
+    ],
     "description": "Geführte Kniebeuge an der Hackenschmidt-Maschine, bei der der Rücken am Schlitten anliegt und die Bewegung in einer festen Bahn verläuft. Gut geeignet, um den Quadrizeps mit hoher Kontrolle und ohne freie Stabilisation zu belasten.",
     "setup": [
       "Rücken und Schultern vollständig an das Rückenpolster und die Schulterpolster anlegen.",
@@ -48,8 +53,13 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Haltegriffe seitlich am Sitz fassen, um das Becken stabil zu halten. Füße mittig auf der Platte, etwa schulterbreit, Fußspitzen leicht nach außen.",
-    "primary_muscles": ["quads"],
-    "secondary_muscles": ["glutes", "hamstrings"],
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "hamstrings"
+    ],
     "description": "Geführte Druckübung an der 45-Grad- oder horizontalen Beinpresse, bei der der Oberkörper fixiert ist und die Beine das Gewicht wegdrücken. Gut geeignet, um Quadrizeps und Gesäß mit hoher Last und geringer Stabilisationsanforderung zu trainieren.",
     "setup": [
       "Rückenlehne so einstellen, dass unterer Rücken und Becken vollständig am Polster anliegen.",
@@ -90,7 +100,9 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Haltegriffe seitlich am Sitz fassen, um das Becken im Sitz zu halten. Keine Griffarbeit nötig, Hände bleiben locker.",
-    "primary_muscles": ["quads"],
+    "primary_muscles": [
+      "quads"
+    ],
     "secondary_muscles": [],
     "description": "Isolationsübung an der Maschine, bei der die Knie gegen Widerstand gestreckt werden. Gut geeignet, um den Quadrizeps gezielt und ohne Belastung von Hüfte und Rücken zu trainieren.",
     "setup": [
@@ -132,8 +144,14 @@
     "equipment": "dumbbell",
     "grip_id": null,
     "grip_notes": "Kurzhanteln neutral an den Seiten halten, Arme hängen locker, Handgelenke gerade. Alternativ eine Kurzhantel vor der Brust halten (Goblet-Position) für mehr Rumpfstabilität.",
-    "primary_muscles": ["quads", "glutes"],
-    "secondary_muscles": ["hamstrings", "abs"],
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "abs"
+    ],
     "description": "Einbeinige Kniebeuge mit dem hinteren Fuß auf einer Bank, bei der das vordere Bein die Hauptlast trägt. Gut geeignet, um Quadrizeps und Gesäß einseitig zu belasten und Seitenunterschiede auszugleichen.",
     "setup": [
       "Bank hinter sich aufstellen, Kurzhanteln an den Seiten halten.",
@@ -175,8 +193,15 @@
     "equipment": "barbell",
     "grip_id": null,
     "grip_notes": "Pronierter Griff etwas weiter als schulterbreit, Stange liegt auf dem oberen Trapez (High Bar) oder etwas tiefer auf den hinteren Schultern (Low Bar). Handgelenke möglichst gerade, Ellenbogen zeigen nach unten.",
-    "primary_muscles": ["quads", "glutes"],
-    "secondary_muscles": ["hamstrings", "lower_back", "abs"],
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "lower_back",
+      "abs"
+    ],
     "description": "Freie Kniebeuge mit der Langhantel im Nacken, bei der Knie und Hüfte gemeinsam gebeugt und gestreckt werden. Grundübung für Quadrizeps und Gesäß, die zusätzlich Rumpf und unteren Rücken fordert.",
     "setup": [
       "Stange im Rack etwa auf Höhe des oberen Brustbeins ablegen, Sicherheitsstangen knapp unterhalb der tiefsten Position einstellen.",
@@ -218,8 +243,14 @@
     "equipment": "dumbbell",
     "grip_id": null,
     "grip_notes": "Kurzhanteln neutral an den Seiten halten, Arme hängen locker, Schultern hinten. Handgelenke gerade.",
-    "primary_muscles": ["glutes", "quads"],
-    "secondary_muscles": ["hamstrings", "abs"],
+    "primary_muscles": [
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "abs"
+    ],
     "description": "Schrittbewegung mit Kurzhanteln, bei der ein Bein nach vorne gesetzt und das Becken abgesenkt wird, entweder gehend (Walking Lunges) oder auf der Stelle. Gut geeignet für Gesäß und Oberschenkel sowie für Gleichgewicht und einseitige Stabilität.",
     "setup": [
       "Kurzhanteln an den Seiten halten, Füße hüftbreit, Oberkörper aufrecht.",
@@ -260,8 +291,13 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Haltegriffe fassen, um Becken und Oberkörper stabil zu halten. Liegend: Griffe vorne unter dem Polster, Hüfte bleibt auf dem Polster. Sitzend: Griffe seitlich, Rücken am Polster, Oberschenkelpolster fest fixiert.",
-    "primary_muscles": ["hamstrings"],
-    "secondary_muscles": ["calves", "glutes"],
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "secondary_muscles": [
+      "calves",
+      "glutes"
+    ],
     "description": "Isolationsübung an der Maschine, bei der die Knie gegen Widerstand gebeugt werden, liegend oder sitzend. Gut geeignet, um die hintere Oberschenkelmuskulatur gezielt zu trainieren.",
     "setup": [
       "Maschine so einstellen, dass die Drehachse auf Höhe des Kniegelenks liegt.",
@@ -302,8 +338,15 @@
     "equipment": "barbell",
     "grip_id": null,
     "grip_notes": "Pronierter Griff etwa schulterbreit, Stange nah an den Oberschenkeln. Bei nachlassender Griffkraft Zughilfen nutzen.",
-    "primary_muscles": ["hamstrings", "glutes"],
-    "secondary_muscles": ["lower_back", "forearms", "upper_back"],
+    "primary_muscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "lower_back",
+      "forearms",
+      "upper_back"
+    ],
     "description": "Hüftdominante Beugebewegung mit der Langhantel, bei der die Knie leicht gebeugt bleiben und die Stange nah am Körper abgesenkt wird. Gut geeignet, um hintere Oberschenkel und Gesäß über eine Dehnung zu belasten.",
     "setup": [
       "Stange aus dem Rack oder vom Boden in den aufrechten Stand bringen, Füße hüftbreit.",
@@ -344,8 +387,13 @@
     "equipment": "barbell",
     "grip_id": null,
     "grip_notes": "Stange mit proniertem Griff etwa schulterbreit außen am Polster halten, nur zum Stabilisieren, nicht ziehen. Alternativ: Hip-Thrust-Maschine mit Gurt oder Polster über der Hüfte, Haltegriffe seitlich.",
-    "primary_muscles": ["glutes"],
-    "secondary_muscles": ["hamstrings", "quads"],
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "quads"
+    ],
     "description": "Hüftstreckung gegen Widerstand mit dem oberen Rücken auf einer Bank und der Langhantel auf der Hüfte. Gut geeignet, um das Gesäß in der gestreckten Endposition stark zu belasten.",
     "setup": [
       "Stabile Bank quer hinter sich stellen, Höhe etwa Kniehöhe.",
@@ -386,8 +434,12 @@
     "equipment": "cable",
     "grip_id": "ankle_strap",
     "grip_notes": "Fußschlaufe am Sprunggelenk des Arbeitsbeins befestigen, fest, aber nicht einschnürend. Hände stützen sich am Kabelturm ab. Alternativ eine gepolsterte Manschette nutzen, wenn vorhanden.",
-    "primary_muscles": ["glutes"],
-    "secondary_muscles": ["hamstrings"],
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
     "description": "Einbeinige Hüftstreckung am unteren Kabelzug mit Fußschlaufe, bei der das Bein nach hinten-oben geführt wird. Gut geeignet als Isolationsübung für das Gesäß mit leichtem bis moderatem Gewicht.",
     "setup": [
       "Fußschlaufe am unteren Kabel einhängen und am Sprunggelenk des Arbeitsbeins befestigen.",
@@ -438,7 +490,9 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Haltegriffe oder Schulterpolster der stehenden Wadenmaschine nutzen, Hände bleiben locker. Alternativ: Smith-Maschine mit Stange im Nacken oder Stufe mit Kurzhantel in einer Hand und Abstützen mit der anderen.",
-    "primary_muscles": ["calves"],
+    "primary_muscles": [
+      "calves"
+    ],
     "secondary_muscles": [],
     "description": "Plantarflexion im Stand gegen Widerstand, bei der die gesamte Wadenmuskulatur einschließlich des zweigelenkigen Gastrocnemius belastet wird. Gut geeignet als Grundübung für die Waden.",
     "setup": [
@@ -470,7 +524,8 @@
       "Einbeinige Ausführung, um Seitenunterschiede auszugleichen.",
       "Ohne Maschine: Stufe mit Kurzhantel in einer Hand, andere Hand stützt sich ab."
     ],
-    "cable_setup": null
+    "cable_setup": null,
+    "image_url": "/exercises/standing-calf-raise.jpg"
   },
   {
     "slug": "wadenheben-sitzend",
@@ -479,7 +534,9 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Haltegriffe am Oberschenkelpolster fassen, um das Polster zu sichern und den Oberkörper stabil zu halten. Hände bleiben locker, keine Zugarbeit.",
-    "primary_muscles": ["calves"],
+    "primary_muscles": [
+      "calves"
+    ],
     "secondary_muscles": [],
     "description": "Plantarflexion im Sitzen gegen Widerstand mit gebeugten Knien, bei der vor allem der Soleus belastet wird, weil der Gastrocnemius durch die Kniebeugung entlastet ist. Sinnvolle Ergänzung zum stehenden Wadenheben.",
     "setup": [

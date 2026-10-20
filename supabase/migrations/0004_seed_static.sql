@@ -22,7 +22,9 @@ insert into public.muscle_groups (id, name_de, region, sort_order) values
   ('quads', 'Quadrizeps', 'front', 60),
   ('hamstrings', 'Hamstrings', 'back', 61),
   ('glutes', 'Gluteus', 'back', 62),
-  ('calves', 'Waden', 'back', 63)
+  ('calves', 'Waden', 'back', 63),
+  ('adductors', 'Adduktoren', 'front', 64),
+  ('abductors', 'Abduktoren', 'both', 65)
 on conflict (id) do update set name_de = excluded.name_de, region = excluded.region, sort_order = excluded.sort_order;
 
 insert into public.grips (id, name_de, description, sort_order) values

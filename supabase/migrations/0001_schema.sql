@@ -10,10 +10,10 @@
 -- ------------------------------------------------------------
 create type public.muscle_role as enum ('primary', 'secondary');
 create type public.equipment_type as enum (
-  'machine', 'cable', 'barbell', 'dumbbell', 'bodyweight', 'smith_machine', 'bench', 'other'
+  'machine', 'cable', 'barbell', 'dumbbell', 'bodyweight', 'smith_machine', 'bench', 'other', 'cardio'
 );
 create type public.exercise_category as enum (
-  'chest', 'back', 'shoulders', 'biceps', 'triceps', 'quads', 'hamstrings', 'glutes', 'calves', 'abs', 'forearms'
+  'chest', 'back', 'shoulders', 'biceps', 'triceps', 'quads', 'hamstrings', 'glutes', 'calves', 'abs', 'forearms', 'adductors', 'cardio'
 );
 create type public.session_status as enum ('active', 'completed', 'cancelled');
 create type public.calendar_entry_type as enum ('training', 'rest', 'leisure', 'party', 'other');

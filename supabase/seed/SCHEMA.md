@@ -9,8 +9,8 @@ Die Daten werden per Skript in eine SQL-Migration übersetzt. Halte dich EXAKT a
 |---|---|---|---|
 | slug | string | ja | kebab-case, nur a-z, 0-9, "-" (ä→ae, ö→oe, ü→ue, ß→ss). Eindeutig. |
 | name | string | ja | Deutscher Anzeigename, z. B. "Schrägbankdrücken Maschine" |
-| category | enum | ja | chest, back, shoulders, biceps, triceps, quads, hamstrings, glutes, calves, abs, forearms |
-| equipment | enum | ja | machine, cable, barbell, dumbbell, bodyweight, smith_machine, bench, other |
+| category | enum | ja | chest, back, shoulders, biceps, triceps, quads, hamstrings, glutes, calves, abs, forearms, adductors, cardio |
+| equipment | enum | ja | machine, cable, barbell, dumbbell, bodyweight, smith_machine, bench, cardio, other |
 | grip_id | enum/null | ja | Nur bei Kabelübungen (Kabelzug-Anbau): neutral_parallel, wide_lat_bar, close_v_grip, rope, single_handle, straight_bar, ez_bar, v_bar_triceps, ankle_strap. Sonst null. |
 | grip_notes | string/null | ja | Freitext zum Griff bei Maschinen/Hanteln/Körpergewicht, z. B. "Neutrale oder pronierte Griffe, je nach Maschine; Handgelenke gerade". Bei Kabelübungen Empfehlung zur Griffbreite/Alternativgriff. null wenn nicht sinnvoll. |
 | primary_muscles | string[] | ja | 1–2 IDs aus der Muskel-Liste |
@@ -23,6 +23,7 @@ Die Daten werden per Skript in eine SQL-Migration übersetzt. Halte dich EXAKT a
 | common_mistakes | string[] | ja | 3–5 typische Fehler, jeweils ein kurzer Satz. |
 | tips | string[] | ja | 2–4 Hinweise (Tempo, Fokus, Progression, Alternativen). |
 | cable_setup | object/null | ja | NUR bei equipment = "cable" (sonst null). Felder siehe unten. |
+| image_url | string/null | nein | Optional: Pfad zum Gerätefoto, z. B. "/exercises/hack-squat.jpg" |
 
 ### cable_setup (nur bei Kabelübungen, alle Felder Strings)
 
@@ -43,7 +44,9 @@ Die Daten werden per Skript in eine SQL-Migration übersetzt. Halte dich EXAKT a
 ## Muskel-IDs (nur diese verwenden)
 
 chest, upper_chest, front_delts, side_delts, rear_delts, traps, lats, upper_back, mid_back, lower_back,
-biceps, triceps, forearms, abs, obliques, quads, hamstrings, glutes, calves
+biceps, triceps, forearms, abs, obliques, quads, hamstrings, glutes, calves, adductors, abductors
+
+Hinweise für Cardio-Geräte (category "cardio", equipment "cardio"): Dauer wird in der App als Wiederholungen (Minuten) eingetragen, Gewicht bleibt 0 bzw. steht für Widerstandsstufe; das in den Tipps erwähnen. cable_setup = null, grip_id = null.
 
 Hinweise:
 - Bei Zugübungen (Latzug, Rudern, Curls) `forearms` als sekundär aufnehmen.

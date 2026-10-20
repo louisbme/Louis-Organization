@@ -13,6 +13,11 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const migrationsDir = join(root, "supabase", "migrations");
+const seedDir = join(root, "supabase", "seed", "exercises");
+/** Erwartete Anzahl Standardübungen aus den Seed-Dateien */
+const EXPECTED_EXERCISES = readdirSync(seedDir)
+  .filter((f) => f.endsWith(".json"))
+  .reduce((n, f) => n + JSON.parse(readFileSync(join(seedDir, f), "utf8")).length, 0);
 
 const db = new PGlite();
 let failures = 0;
@@ -83,9 +88,9 @@ const USER_B = "22222222-2222-4222-8222-222222222222";
 
 console.log("\nTests:");
 
-await test("Seed: 50 Standardübungen mit Muskeln, 3 Vorlagen, Zitate", async () => {
+await test(`Seed: ${EXPECTED_EXERCISES} Standardübungen mit Muskeln, 3 Vorlagen, Zitate`, async () => {
   const ex = await db.query("select count(*)::int as n from exercises where owner_id is null");
-  assert(ex.rows[0].n === 50, `erwartet 50, erhalten ${ex.rows[0].n}`);
+  assert(ex.rows[0].n === EXPECTED_EXERCISES, `erwartet ${EXPECTED_EXERCISES}, erhalten ${ex.rows[0].n}`);
   const noMuscles = await db.query(
     "select count(*)::int as n from exercises e where not exists (select 1 from exercise_muscles m where m.exercise_id = e.id and m.role = 'primary')"
   );
@@ -136,7 +141,7 @@ await test("RLS: Benutzer sieht nur eigene Pläne, fremde Daten unsichtbar", asy
     const r = await db.query("select count(*)::int as n from workout_plans");
     assert(r.rows[0].n === 3, `erwartet 3, erhalten ${r.rows[0].n}`);
     const ex = await db.query("select count(*)::int as n from exercises");
-    assert(ex.rows[0].n === 50);
+    assert(ex.rows[0].n === EXPECTED_EXERCISES);
     const prof = await db.query("select count(*)::int as n from profiles");
     assert(prof.rows[0].n === 1, "fremde Profile sichtbar");
   });
@@ -158,7 +163,7 @@ await test("RLS: Standardübungen können nicht gelöscht/geändert werden", asy
   await asUser(USER_A, async () => {
     await db.query("delete from exercises where owner_id is null");
     const n = await db.query("select count(*)::int as n from exercises where owner_id is null");
-    assert(n.rows[0].n === 50, "Standardübungen wurden gelöscht");
+    assert(n.rows[0].n === EXPECTED_EXERCISES, "Standardübungen wurden gelöscht");
     await db.query("update exercises set name = 'x' where owner_id is null");
     const changed = await db.query("select count(*)::int as n from exercises where name = 'x'");
     assert(changed.rows[0].n === 0, "Standardübung wurde geändert");

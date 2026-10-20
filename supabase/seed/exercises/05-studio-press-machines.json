@@ -1,0 +1,469 @@
+[
+  {
+    "slug": "multi-press-maschine",
+    "name": "Multi Press Maschine",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierte Griffe (Handflächen nach vorne) an den beiden Hebelarmen. Handgelenke gerade halten, Griffe mittig in der Handfläche.",
+    "primary_muscles": ["chest", "front_delts"],
+    "secondary_muscles": ["triceps"],
+    "description": "Steckgewicht-Multipresse mit verstellbarem Sitz, bei der die Griffe in der Ausgangsposition über Schulterhöhe liegen. Je nach Sitzhöhe lässt sich die Übung als Brustdrücken oder als Schulterdrücken ausführen.",
+    "setup": [
+      "Gewicht am Steckgewichtsblock wählen und den Stift vollständig einstecken.",
+      "Für Brustdrücken den Sitz so hoch stellen, dass die Griffe auf Höhe der oberen Brust liegen; für Schulterdrücken den Sitz tiefer stellen, sodass die Griffe etwa auf Schulterhöhe sind.",
+      "Rücken und Kopf an das Rückenpolster anlehnen, Füße flach auf den Boden stellen.",
+      "Griffe fassen, Handgelenke gerade, Ellenbogen unterhalb der Griffe.",
+      "Schulterblätter nach hinten und unten ziehen und Rumpf anspannen."
+    ],
+    "execution": [
+      "Griffe kontrolliert nach oben beziehungsweise nach vorne-oben drücken, je nach Sitzhöhe.",
+      "Ellenbogen am Ende nicht hart durchstrecken.",
+      "Spannung in Brust und vorderer Schulter halten, Schulterblätter bleiben am Polster.",
+      "Gewicht langsam zurückführen, bis die Oberarme etwa waagerecht sind.",
+      "Gewichtsblock in der unteren Position nicht aufsetzen lassen.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Vom unteren Umkehrpunkt mit etwa waagerechten Oberarmen bis kurz vor die Armstreckung. Nicht tiefer gehen, als die Schultern schmerzfrei zulassen.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Sitzhöhe passt nicht zum gewünschten Ziel, Griffe liegen zu hoch oder zu tief.",
+      "Rücken hebt sich beim Drücken vom Polster ab.",
+      "Schultern wandern beim Drücken Richtung Ohren.",
+      "Gewicht wird mit Schwung aus der unteren Position gedrückt.",
+      "Ellenbogen werden am Ende hart durchgestreckt."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Sitzhöhe einmal festlegen und für Vergleichbarkeit notieren, da sie die Belastung deutlich verschiebt.",
+      "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/multi-press.jpg"
+  },
+  {
+    "slug": "brustpresse-hebel-sitzend",
+    "name": "Brustpresse Hebel sitzend",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierte Griffe (Handflächen nach vorne) auf Brusthöhe. Handgelenke gerade halten, Griffe fest in der Handfläche.",
+    "primary_muscles": ["chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Scheibenbeladene Hebelmaschine für die horizontale Druckbewegung im Sitzen mit Griffen auf Brusthöhe. Die Fußplatte vorne hilft, die Hebelarme in die Startposition zu bringen.",
+    "setup": [
+      "Gewichtsscheiben gleichmäßig auf beide Seiten laden und mit Verschlüssen sichern.",
+      "Sitz so einstellen, dass die Griffe auf Höhe der mittleren Brust liegen.",
+      "Rücken und Kopf an das Rückenpolster anlehnen.",
+      "Mit dem Fuß auf die Fußplatte drücken, um die Hebelarme nach vorne zu bringen, und die Griffe fassen.",
+      "Fuß von der Platte nehmen, Füße flach auf den Boden stellen, Schulterblätter nach hinten und unten ziehen."
+    ],
+    "execution": [
+      "Griffe kontrolliert nach vorne drücken.",
+      "Ellenbogen am Ende nicht hart durchstrecken.",
+      "Brust gespannt halten, Schulterblätter bleiben am Polster.",
+      "Hebelarme langsam zurückführen, bis die Hände etwa auf Brusthöhe neben dem Körper sind.",
+      "Gewicht nicht in der Endstellung ablegen, sondern Spannung halten.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer leichten Dehnung der Brust in der hinteren Position bis kurz vor die Armstreckung. Die Griffe nicht weiter hinter die Brustlinie führen, als die Schultern schmerzfrei zulassen.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Sitz zu hoch oder zu tief, Griffe liegen nicht auf Brusthöhe.",
+      "Schultern rollen beim Drücken nach vorne.",
+      "Rücken löst sich vom Polster.",
+      "Hebelarme fallen in der exzentrischen Phase unkontrolliert zurück.",
+      "Ellenbogen werden am Ende hart durchgestreckt."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Nach dem letzten Satz die Hebelarme über die Fußplatte kontrolliert ablegen.",
+      "Beim Beladen beide Seiten gleich bestücken, um eine einseitige Belastung zu vermeiden."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/chest-press-lever-seated.jpg"
+  },
+  {
+    "slug": "brustpresse-hebel",
+    "name": "Brustpresse Hebel",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Waagerechte Griffe (proniert) für die klassische Druckbewegung, senkrechte Griffe (neutral) für eine schulterfreundlichere Variante. Handgelenke gerade halten.",
+    "primary_muscles": ["chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Scheibenbeladene Iso-Lateral-Brustpresse mit zwei unabhängig beweglichen Hebelarmen und jeweils senkrechten und waagerechten Griffen. Beide Seiten arbeiten getrennt, sodass eine Seite die andere nicht ausgleichen kann.",
+    "setup": [
+      "Gewichtsscheiben auf beiden Seiten gleich laden und mit Verschlüssen sichern.",
+      "Sitz so einstellen, dass die gewählten Griffe auf Höhe der mittleren Brust liegen.",
+      "Rücken und Kopf an das Rückenpolster anlehnen, Füße flach auf den Boden stellen.",
+      "Entweder die waagerechten oder die senkrechten Griffe fassen, Handgelenke gerade.",
+      "Schulterblätter nach hinten und unten ziehen und Rumpf anspannen."
+    ],
+    "execution": [
+      "Beide Hebelarme gleichzeitig und gleichmäßig nach vorne drücken.",
+      "Ellenbogen am Ende nicht hart durchstrecken.",
+      "Brust gespannt halten, Schulterblätter bleiben am Polster.",
+      "Hebelarme langsam und kontrolliert zurückführen.",
+      "In der hinteren Position leichte Dehnung der Brust spüren, Gewicht nicht aufsetzen lassen.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer leichten Dehnung der Brust in der hinteren Position bis kurz vor die Armstreckung. Beide Arme über den gleichen Weg führen.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Eine Seite läuft der anderen voraus, die Hebelarme bewegen sich ungleichmäßig.",
+      "Schultern rollen beim Drücken nach vorne.",
+      "Rücken löst sich vom Polster.",
+      "Hebelarme fallen in der exzentrischen Phase unkontrolliert zurück.",
+      "Griffe werden mit den Fingern statt mit der ganzen Hand gehalten."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Bei Schulterbeschwerden auf die senkrechten Griffe wechseln.",
+      "Die Übung lässt sich auch einarmig ausführen, dann die freie Hand am Rahmen abstützen.",
+      "Beide Seiten gleich beladen, damit die Belastung symmetrisch bleibt."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/chest-press-lever.jpg"
+  },
+  {
+    "slug": "brustpresse-vertikal",
+    "name": "Brustpresse vertikal",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierte Griffe (Handflächen nach vorne), die der Maschine folgend leicht nach innen laufen. Handgelenke gerade halten, nicht abknicken.",
+    "primary_muscles": ["chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Steckgewicht-Brustpresse mit aufrechtem Rückenpolster, bei der die Griffe während der Druckbewegung leicht nach vorne zusammenlaufen. Die konvergierende Bahn unterstützt die Kontraktion der Brust am Ende der Bewegung.",
+    "setup": [
+      "Gewicht am Steckgewichtsblock wählen und den Stift vollständig einstecken.",
+      "Sitz so einstellen, dass die Griffe auf Höhe der mittleren Brust liegen.",
+      "Rücken und Kopf vollständig an das Rückenpolster anlehnen.",
+      "Füße flach auf den Boden stellen.",
+      "Griffe fassen, Schulterblätter nach hinten und unten ziehen."
+    ],
+    "execution": [
+      "Griffe kontrolliert nach vorne drücken und der leicht zusammenlaufenden Bahn folgen.",
+      "In der vorderen Position Brust kurz anspannen, Ellenbogen nicht hart durchstrecken.",
+      "Schulterblätter bleiben während der gesamten Bewegung am Polster.",
+      "Gewicht langsam zurückführen, bis die Hände etwa auf Brusthöhe neben dem Körper sind.",
+      "Gewichtsblock nicht aufsetzen lassen, Spannung halten.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer leichten Dehnung der Brust in der hinteren Position bis kurz vor die Armstreckung. Nicht weiter zurückführen, als die Schultern schmerzfrei zulassen.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Sitz zu niedrig, Griffe liegen auf Schulterhöhe.",
+      "Schultern rollen beim Drücken nach vorne.",
+      "Rücken löst sich vom Polster.",
+      "Gewicht wird mit Schwung aus der hinteren Position gedrückt.",
+      "Handgelenke knicken beim Zusammenlaufen der Griffe ab."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "In der vorderen Position kurz halten, um die Kontraktion der Brust zu nutzen.",
+      "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/chest-press-vertical.jpg"
+  },
+  {
+    "slug": "schraegbankdruecken-hebelmaschine",
+    "name": "Schrägbankdrücken Hebelmaschine",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierte Griffe (Handflächen nach vorne) an den Hebelarmen, etwas weiter als schulterbreit. Handgelenke gerade halten.",
+    "primary_muscles": ["upper_chest", "chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Scheibenbeladene Hebelmaschine mit einem auf etwa 30 bis 45 Grad geneigten Rückenpolster, die die Druckbewegung nach vorne-oben führt. Belastet vor allem den oberen Anteil der Brust.",
+    "setup": [
+      "Gewichtsscheiben auf beiden Seiten gleich laden und mit Verschlüssen sichern.",
+      "Sitz so einstellen, dass die Griffe auf Höhe der oberen Brust liegen.",
+      "Rücken und Kopf an das geneigte Polster anlehnen, Füße flach auf den Boden stellen.",
+      "Griffe fassen, Handgelenke gerade, Ellenbogen unterhalb der Griffe.",
+      "Schulterblätter nach hinten und unten ziehen und Rumpf anspannen."
+    ],
+    "execution": [
+      "Hebelarme kontrolliert nach vorne-oben drücken.",
+      "Ellenbogen am Ende nicht hart durchstrecken.",
+      "Spannung in der oberen Brust halten, Schulterblätter bleiben am Polster.",
+      "Hebelarme langsam zurückführen, bis die Hände etwa auf Höhe der oberen Brust sind.",
+      "In der hinteren Position leichte Dehnung spüren, Gewicht nicht aufsetzen lassen.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer leichten Dehnung der Brust in der hinteren Position bis kurz vor die Armstreckung. Nicht tiefer gehen, als die Schultern schmerzfrei zulassen.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Sitz zu niedrig, Griffe liegen auf Schulterhöhe statt auf Höhe der oberen Brust.",
+      "Schultern rollen beim Drücken nach vorne.",
+      "Rücken löst sich vom Polster, Lendenwirbelsäule wird überstreckt.",
+      "Hebelarme fallen in der exzentrischen Phase unkontrolliert zurück.",
+      "Ellenbogen werden am Ende hart durchgestreckt."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Beide Seiten gleich beladen, damit die Belastung symmetrisch bleibt.",
+      "Wenn die Schultern unangenehm belastet sind, Sitz etwas höher stellen."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/incline-press-lever.jpg"
+  },
+  {
+    "slug": "schraegbankdruecken-hebel-liegend",
+    "name": "Schrägbankdrücken Hebel liegend",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierter Griff (Handflächen nach vorne) an der Stange des Hebelarms, etwas weiter als schulterbreit. Handgelenke gerade halten, Stange in der Handwurzel ablegen.",
+    "primary_muscles": ["upper_chest", "chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Schrägbank mit einem hinter dem Kopf gelagerten, scheibenbeladenen Hebelarm, dessen Stange auf einer festen Bogenbahn nach oben gedrückt wird. Geführte Alternative zum Schrägbankdrücken mit freier Langhantel.",
+    "setup": [
+      "Gewichtsscheiben auf den Hebelarm laden und mit Verschlüssen sichern.",
+      "Auf die Schrägbank legen, Kopf, Schultern und Gesäß liegen auf dem Polster.",
+      "Füße flach auf den Boden stellen und Rumpf anspannen.",
+      "Stange etwas weiter als schulterbreit fassen, Handgelenke gerade.",
+      "Schulterblätter nach hinten und unten ziehen, Hebelarm aus der Ablage lösen."
+    ],
+    "execution": [
+      "Stange kontrolliert nach oben drücken und der Bahn des Hebelarms folgen.",
+      "Ellenbogen am Ende nicht hart durchstrecken.",
+      "Spannung in der oberen Brust halten, Schulterblätter bleiben auf dem Polster.",
+      "Stange langsam zurückführen, bis sie etwa auf Höhe der oberen Brust ist.",
+      "Hebelarm nicht auf der Brust ablegen, Spannung halten.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von der Stange knapp über der oberen Brust bis kurz vor die Armstreckung. Nicht tiefer gehen, als die Schultern schmerzfrei zulassen.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Gesäß hebt sich beim Drücken vom Polster ab.",
+      "Schultern rollen beim Drücken nach vorne.",
+      "Ellenbogen stehen zu weit vom Körper ab.",
+      "Stange fällt in der exzentrischen Phase unkontrolliert zurück.",
+      "Handgelenke knicken unter der Stange nach hinten ab."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Nach dem letzten Satz den Hebelarm kontrolliert in die Ablage zurückführen.",
+      "Die geführte Bahn eignet sich, um die Druckbewegung ohne Balancearbeit mit höherer Last zu trainieren."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/incline-press-lever-bench.jpg"
+  },
+  {
+    "slug": "schraegbankdruecken-hebel-flex",
+    "name": "Schrägbankdrücken Hebel FLEX",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Zwei Griffpositionen an den Hebelarmen: die äußere, weitere Position für mehr Dehnung der Brust, die innere, engere Position für eine schulterfreundlichere Bahn. Handgelenke gerade halten.",
+    "primary_muscles": ["upper_chest", "chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Scheibenbeladene Schrägdruckmaschine, deren Hebelarme auf einer Bogenbahn nach vorne-oben laufen und zwei Griffpositionen bieten. Die Bogenbahn bringt die Hände am Ende der Bewegung leicht zusammen.",
+    "setup": [
+      "Gewichtsscheiben auf beiden Seiten gleich laden und mit Verschlüssen sichern.",
+      "Sitz so einstellen, dass die gewählte Griffposition auf Höhe der oberen Brust liegt.",
+      "Rücken und Kopf an das Rückenpolster anlehnen, Füße flach auf den Boden stellen.",
+      "Eine der beiden Griffpositionen wählen und mit beiden Händen gleich fassen.",
+      "Schulterblätter nach hinten und unten ziehen und Rumpf anspannen."
+    ],
+    "execution": [
+      "Hebelarme kontrolliert nach vorne-oben drücken und der Bogenbahn folgen.",
+      "In der vorderen Position Brust kurz anspannen, Ellenbogen nicht hart durchstrecken.",
+      "Schulterblätter bleiben während der gesamten Bewegung am Polster.",
+      "Hebelarme langsam zurückführen, bis die Hände etwa auf Höhe der oberen Brust sind.",
+      "In der hinteren Position leichte Dehnung spüren, Gewicht nicht aufsetzen lassen.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer leichten Dehnung der Brust in der hinteren Position bis kurz vor die Armstreckung. Die Bogenbahn vollständig nutzen, soweit die Schultern schmerzfrei bleiben.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Beide Hände fassen unterschiedliche Griffpositionen.",
+      "Schultern rollen beim Drücken nach vorne.",
+      "Rücken löst sich vom Polster.",
+      "Hebelarme fallen in der exzentrischen Phase unkontrolliert zurück.",
+      "Ellenbogen werden am Ende hart durchgestreckt."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Griffposition pro Trainingseinheit festlegen und notieren, damit Gewichte vergleichbar bleiben.",
+      "Bei Schulterbeschwerden die engere Griffposition verwenden."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/incline-press-flex.jpg"
+  },
+  {
+    "slug": "bankdruecken-langhantel",
+    "name": "Bankdrücken Langhantel",
+    "category": "chest",
+    "equipment": "barbell",
+    "grip_id": null,
+    "grip_notes": "Pronierter Griff (Handflächen nach vorne), etwas weiter als schulterbreit, Daumen umschließen die Stange. Stange in der Handwurzel ablegen, Handgelenke gerade.",
+    "primary_muscles": ["chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Freie Druckübung auf der Flachbank mit Langhantel und Ablage, die Brust, vordere Schulter und Trizeps belastet. Grundübung für den Oberkörper, bei der Stabilität und Technik gleichermaßen gefordert sind.",
+    "setup": [
+      "Sicherheitsablagen so einstellen, dass die Stange knapp über der Brust abgefangen wird, wenn sie abgelegt werden muss.",
+      "Ablage so einstellen, dass die Stange mit fast gestreckten Armen erreichbar ist.",
+      "Gewichtsscheiben beidseitig gleich laden und mit Verschlüssen sichern.",
+      "Auf die Bank legen, Augen etwa unter der Stange, Füße flach auf den Boden stellen.",
+      "Schulterblätter nach hinten und unten ziehen, Stange etwas weiter als schulterbreit fassen.",
+      "Stange aus der Ablage heben und über der Schulter stabilisieren."
+    ],
+    "execution": [
+      "Stange kontrolliert zur mittleren Brust absenken.",
+      "Ellenbogen etwa 45 bis 60 Grad vom Körper abgewinkelt halten.",
+      "Stange leicht die Brust berühren lassen, ohne sie abzulegen.",
+      "Stange nach oben drücken, bis die Arme fast gestreckt sind.",
+      "Schulterblätter und Gesäß bleiben während der gesamten Bewegung auf der Bank.",
+      "Nach dem letzten Satz die Stange kontrolliert in die Ablage zurückführen."
+    ],
+    "range_of_motion": "Von der Stange an der mittleren Brust bis kurz vor die Armstreckung. Wenn die Schultern in der tiefen Position unangenehm belastet sind, Griffweite verringern.",
+    "breathing": "Beim Drücken ausatmen, beim Absenken einatmen. Bei höheren Lasten kurz vor dem Absenken einatmen und die Luft bis zum Drücken halten.",
+    "common_mistakes": [
+      "Sicherheitsablagen nicht eingestellt oder zu niedrig.",
+      "Gesäß hebt sich beim Drücken von der Bank ab.",
+      "Ellenbogen stehen 90 Grad vom Körper ab.",
+      "Stange prallt von der Brust ab.",
+      "Handgelenke knicken unter der Stange nach hinten ab."
+    ],
+    "tips": [
+      "Bei schweren Sätzen einen Trainingspartner zum Absichern bitten, der die Stange im Zweifel mit anheben kann.",
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden.",
+      "Füße fest in den Boden drücken, um den Rumpf zu stabilisieren."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/flat-bench-rack.jpg"
+  },
+  {
+    "slug": "schraegbankdruecken-langhantel",
+    "name": "Schrägbankdrücken Langhantel",
+    "category": "chest",
+    "equipment": "barbell",
+    "grip_id": null,
+    "grip_notes": "Pronierter Griff (Handflächen nach vorne), etwas weiter als schulterbreit, Daumen umschließen die Stange. Stange in der Handwurzel ablegen, Handgelenke gerade.",
+    "primary_muscles": ["upper_chest", "chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Freie Druckübung auf der etwa 30 Grad geneigten Schrägbank mit Langhantel und Ablage, die vor allem den oberen Anteil der Brust belastet. Ergänzung zum flachen Bankdrücken.",
+    "setup": [
+      "Sicherheitsablagen so einstellen, dass die Stange knapp über der oberen Brust abgefangen wird, wenn sie abgelegt werden muss.",
+      "Ablage so einstellen, dass die Stange mit fast gestreckten Armen erreichbar ist.",
+      "Gewichtsscheiben beidseitig gleich laden und mit Verschlüssen sichern.",
+      "Auf die Schrägbank setzen, Rücken und Kopf anlehnen, Füße flach auf den Boden stellen.",
+      "Schulterblätter nach hinten und unten ziehen, Stange etwas weiter als schulterbreit fassen.",
+      "Stange aus der Ablage heben und über der Schulter stabilisieren."
+    ],
+    "execution": [
+      "Stange kontrolliert zur oberen Brust absenken.",
+      "Ellenbogen etwa 45 bis 60 Grad vom Körper abgewinkelt halten.",
+      "Stange leicht die obere Brust berühren lassen, ohne sie abzulegen.",
+      "Stange nach oben drücken, bis die Arme fast gestreckt sind.",
+      "Rücken und Gesäß bleiben während der gesamten Bewegung am Polster.",
+      "Nach dem letzten Satz die Stange kontrolliert in die Ablage zurückführen."
+    ],
+    "range_of_motion": "Von der Stange an der oberen Brust bis kurz vor die Armstreckung. Nicht tiefer gehen, als die Schultern schmerzfrei zulassen.",
+    "breathing": "Beim Drücken ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Sicherheitsablagen nicht eingestellt oder zu niedrig.",
+      "Stange wird zu weit Richtung Hals abgesenkt.",
+      "Ellenbogen stehen 90 Grad vom Körper ab.",
+      "Rücken löst sich vom Polster, Lendenwirbelsäule wird überstreckt.",
+      "Stange prallt von der Brust ab."
+    ],
+    "tips": [
+      "Bei schweren Sätzen einen Trainingspartner zum Absichern bitten.",
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Mit einer geringeren Last als beim flachen Bankdrücken starten, da die Schrägposition weniger Kraft zulässt."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/incline-bench-rack.jpg"
+  },
+  {
+    "slug": "schulterpresse-maschine",
+    "name": "Schulterpresse Maschine",
+    "category": "shoulders",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierte Griffe (Handflächen nach vorne) oder neutrale Griffe, je nach Griffwahl an der Maschine. Handgelenke gerade halten.",
+    "primary_muscles": ["front_delts", "side_delts"],
+    "secondary_muscles": ["triceps", "traps"],
+    "description": "Steckgewicht-Schulterpresse mit Rückenpolster, bei der die Griffe in der Ausgangsposition auf Schulterhöhe liegen und senkrecht nach oben gedrückt werden. Geführte Druckübung für die vordere und seitliche Schulter.",
+    "setup": [
+      "Gewicht am Steckgewichtsblock wählen und den Stift vollständig einstecken.",
+      "Sitz so einstellen, dass die Griffe in der Ausgangsposition etwa auf Schulterhöhe liegen.",
+      "Rücken und Kopf an das Rückenpolster anlehnen, Füße flach auf den Boden stellen.",
+      "Griffe fassen, Handgelenke gerade, Ellenbogen unterhalb der Griffe.",
+      "Schultern bewusst nach unten ziehen und Rumpf anspannen."
+    ],
+    "execution": [
+      "Griffe kontrolliert nach oben drücken.",
+      "Ellenbogen am Ende nicht hart durchstrecken.",
+      "Schultern unten lassen, nicht Richtung Ohren ziehen.",
+      "Gewicht langsam zurückführen, bis die Oberarme etwa waagerecht sind.",
+      "Gewichtsblock nicht aufsetzen lassen, Spannung halten.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von etwa waagerechten Oberarmen bis kurz vor die Armstreckung. Nicht tiefer gehen, als die Schultern schmerzfrei zulassen.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Sitz zu niedrig, Griffe liegen deutlich über Schulterhöhe.",
+      "Rücken löst sich vom Polster, Lendenwirbelsäule wird überstreckt.",
+      "Schultern wandern beim Drücken Richtung Ohren.",
+      "Gewicht wird mit Schwung aus der unteren Position gedrückt.",
+      "Ellenbogen werden am Ende hart durchgestreckt."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Bei Schulterbeschwerden neutrale Griffe wählen, falls vorhanden.",
+      "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/shoulder-press-selectorized.jpg"
+  },
+  {
+    "slug": "scott-curl",
+    "name": "Scott Curl",
+    "category": "biceps",
+    "equipment": "barbell",
+    "grip_id": null,
+    "grip_notes": "Supinierter Griff (Handflächen nach oben) an der SZ-Hantel oder Langhantel, etwa schulterbreit. Die SZ-Hantel entlastet die Handgelenke, die gerade Langhantel betont die Supination.",
+    "primary_muscles": ["biceps"],
+    "secondary_muscles": ["forearms"],
+    "description": "Bizepscurl am Scott-Pult, bei dem die Oberarme flächig auf dem geneigten Polster aufliegen und dadurch kein Schwung aus Schulter oder Rumpf möglich ist. Betont die Bizepsarbeit über einen klar begrenzten Bewegungsweg.",
+    "setup": [
+      "Sitz so einstellen, dass die Achseln oben an der Polsterkante anliegen und die Oberarme flächig auf dem Polster liegen.",
+      "SZ-Hantel oder Langhantel beidseitig gleich laden und mit Verschlüssen sichern.",
+      "Hantel aus der Ablage nehmen oder reichen lassen, Griff etwa schulterbreit, Handflächen nach oben.",
+      "Oberkörper aufrecht, Brust an das Polster, Füße flach auf den Boden stellen.",
+      "Arme kontrolliert strecken, ohne die Ellenbogen am Ende zu überstrecken."
+    ],
+    "execution": [
+      "Hantel kontrolliert nach oben curlen, Oberarme bleiben auf dem Polster.",
+      "In der oberen Position den Bizeps kurz anspannen, Unterarme etwa senkrecht.",
+      "Handgelenke während der gesamten Bewegung gerade halten.",
+      "Hantel langsam absenken, bis die Arme fast gestreckt sind.",
+      "In der unteren Position Spannung halten, nicht in die Ellenbogen fallen lassen.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von fast gestreckten Armen bis zur Position mit etwa senkrechten Unterarmen. Die Ellenbogen unten nicht vollständig durchdrücken, da der Bizeps in dieser Position unter Dehnung hohe Last trägt.",
+    "breathing": "Beim Curlen ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Ellenbogen heben sich beim Curlen vom Polster ab.",
+      "Hantel wird in der exzentrischen Phase fallen gelassen.",
+      "Ellenbogen werden in der unteren Position hart durchgestreckt.",
+      "Handgelenke knicken beim Curlen nach innen ab.",
+      "Oberkörper richtet sich auf und löst sich vom Polster."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Mit einer geringeren Last als beim stehenden Curl starten, da kein Schwung möglich ist.",
+      "Bei Beschwerden in den Handgelenken auf die SZ-Hantel wechseln.",
+      "Nach dem letzten Satz die Hantel kontrolliert in die Ablage legen oder reichen lassen."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/preacher-curl-bench.jpg"
+  }
+]

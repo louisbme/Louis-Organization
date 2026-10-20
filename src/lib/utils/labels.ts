@@ -12,6 +12,8 @@ export const CATEGORY_LABELS: Record<ExerciseCategory, string> = {
   calves: "Waden",
   abs: "Bauch",
   forearms: "Unterarme",
+  adductors: "Ad-/Abduktoren",
+  cardio: "Cardio",
 };
 
 export const CATEGORY_ORDER: ExerciseCategory[] = [
@@ -25,7 +27,9 @@ export const CATEGORY_ORDER: ExerciseCategory[] = [
   "hamstrings",
   "glutes",
   "calves",
+  "adductors",
   "abs",
+  "cardio",
 ];
 
 export const EQUIPMENT_LABELS: Record<EquipmentType, string> = {
@@ -37,6 +41,7 @@ export const EQUIPMENT_LABELS: Record<EquipmentType, string> = {
   smith_machine: "Multipresse",
   bench: "Bank",
   other: "Sonstiges",
+  cardio: "Cardiogerät",
 };
 
 export const EQUIPMENT_ORDER: EquipmentType[] = [
@@ -47,6 +52,7 @@ export const EQUIPMENT_ORDER: EquipmentType[] = [
   "bodyweight",
   "smith_machine",
   "bench",
+  "cardio",
   "other",
 ];
 
@@ -70,6 +76,8 @@ export const MUSCLE_LABELS: Record<MuscleId, string> = {
   hamstrings: "Hamstrings",
   glutes: "Gluteus",
   calves: "Waden",
+  adductors: "Adduktoren",
+  abductors: "Abduktoren",
 };
 
 export const MUSCLE_IDS = Object.keys(MUSCLE_LABELS) as MuscleId[];

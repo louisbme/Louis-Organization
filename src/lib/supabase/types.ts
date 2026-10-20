@@ -14,7 +14,8 @@ export type EquipmentType =
   | "bodyweight"
   | "smith_machine"
   | "bench"
-  | "other";
+  | "other"
+  | "cardio";
 export type ExerciseCategory =
   | "chest"
   | "back"
@@ -26,7 +27,9 @@ export type ExerciseCategory =
   | "glutes"
   | "calves"
   | "abs"
-  | "forearms";
+  | "forearms"
+  | "adductors"
+  | "cardio";
 export type SessionStatus = "active" | "completed" | "cancelled";
 export type CalendarEntryType = "training" | "rest" | "leisure" | "party" | "other";
 export type WeightUnit = "kg" | "lb";
@@ -52,7 +55,9 @@ export type MuscleId =
   | "quads"
   | "hamstrings"
   | "glutes"
-  | "calves";
+  | "calves"
+  | "adductors"
+  | "abductors";
 
 export type CableSetup = {
   cable: string;

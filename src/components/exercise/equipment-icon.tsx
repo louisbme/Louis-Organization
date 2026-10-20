@@ -76,6 +76,12 @@ export function EquipmentIcon({
           <path d="M12 28v12M36 28v12M6 40h12M30 40h12" />
         </svg>
       );
+    case "cardio":
+      return (
+        <svg {...common}>
+          <path d="M4 26h8l4-10 6 20 6-16 4 6h12" />
+        </svg>
+      );
     default:
       return (
         <svg {...common}>

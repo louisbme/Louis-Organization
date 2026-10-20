@@ -38,6 +38,8 @@ const DEFAULT_PRIMARY: Record<ExerciseCategory, MuscleId> = {
   calves: "calves",
   abs: "abs",
   forearms: "forearms",
+  adductors: "adductors",
+  cardio: "quads",
 };
 
 const linesToArray = (s: string) =>

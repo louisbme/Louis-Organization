@@ -1,0 +1,430 @@
+[
+  {
+    "slug": "latzug-hebel",
+    "name": "Latzug Hebel",
+    "category": "back",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierte oder neutrale Griffe an den Hebelarmen, je nach gewählter Griffposition. Beide Hebelarme sind unabhängig, daher beide Seiten gleichmäßig ziehen. Handgelenke gerade halten.",
+    "primary_muscles": ["lats"],
+    "secondary_muscles": ["biceps", "upper_back", "forearms", "rear_delts"],
+    "description": "Scheibenbeladener Iso-Lateral-Latzug mit zwei unabhängigen Hebelarmen, die den Zug in einer festen Bahn führen. Vertikale Zugübung für den Latissimus, die sich auch einseitig ausführen lässt.",
+    "setup": [
+      "Gewichtsscheiben auf beiden Hebelarmen gleich beladen und sichern.",
+      "Oberschenkelpolster so einstellen, dass die Beine fest fixiert sind.",
+      "Hinsetzen, Füße flach auf den Boden, Oberschenkel unter das Polster bringen.",
+      "Griffe fassen, Arme gestreckt, Oberkörper aufrecht und leicht nach hinten geneigt.",
+      "Schultern vor der ersten Wiederholung bewusst nach unten ziehen."
+    ],
+    "execution": [
+      "Beide Hebelarme gleichzeitig nach unten ziehen, die Ellenbogen führen die Bewegung.",
+      "Schulterblätter nach unten und zusammen ziehen, Brust bleibt angehoben.",
+      "In der Endposition kurz halten, Griffe befinden sich etwa auf Höhe der oberen Brust.",
+      "Hebelarme langsam zurückführen, Arme kontrolliert strecken.",
+      "Oben die Schultern leicht nach oben kommen lassen, um den Lat zu dehnen.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von vollständig gestreckten Armen bis die Griffe etwa auf Höhe der oberen Brust sind. Der Bewegungsradius ist durch die Hebelbahn vorgegeben; die Scheiben sollen oben nicht aufsetzen.",
+    "breathing": "Beim Ziehen ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Oberkörper lehnt sich stark nach hinten und zieht mit Schwung.",
+      "Schultern bleiben während des Zugs am Ohr.",
+      "Beide Hebelarme werden ungleich beladen oder ungleich schnell bewegt.",
+      "Gewicht fällt nach oben zurück, keine Kontrolle in der exzentrischen Phase.",
+      "Griffe werden mit den Armen statt mit den Ellenbogen geführt."
+    ],
+    "tips": [
+      "Exzentrische Phase bewusst zwei bis drei Sekunden lang ausführen.",
+      "Einseitige Ausführung nutzen, um Unterschiede zwischen beiden Seiten auszugleichen.",
+      "Scheiben auf beiden Seiten in kleinen Schritten erhöhen, erst wenn alle Sätze sauber sind.",
+      "Daumen auf die Griffe legen statt zu umschließen, um weniger mit den Unterarmen zu arbeiten."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/lat-pulldown-lever.jpg"
+  },
+  {
+    "slug": "rudern-hebel-sitzend",
+    "name": "Rudern Hebel sitzend",
+    "category": "back",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Neutrale Griffe (Handflächen zeigen zueinander) an den Hebelarmen. Handgelenke gerade, Griffe nicht verkrampft umschließen.",
+    "primary_muscles": ["lats", "mid_back"],
+    "secondary_muscles": ["biceps", "rear_delts", "forearms", "upper_back"],
+    "description": "Scheibenbeladene Rudermaschine mit Brustpolster und zwei unabhängigen Hebelarmen. Horizontale Zugübung für Latissimus und mittleren Rücken, bei der der Rumpf durch das Polster abgestützt wird.",
+    "setup": [
+      "Gewichtsscheiben auf beiden Hebelarmen gleich beladen und sichern.",
+      "Sitzhöhe so einstellen, dass die Griffe etwa auf Höhe der unteren Brust liegen.",
+      "Hinsetzen, Brust fest an das Polster legen, Füße flach auf die Fußstützen stellen.",
+      "Neutrale Griffe fassen, Arme gestreckt, Schulterblätter leicht nach vorne kommen lassen.",
+      "Rumpf anspannen, Blick geradeaus."
+    ],
+    "execution": [
+      "Beide Griffe gleichzeitig zum Körper ziehen, Ellenbogen nah am Körper nach hinten führen.",
+      "Schulterblätter am Ende der Bewegung zusammen ziehen.",
+      "Brust bleibt während der gesamten Bewegung am Polster.",
+      "In der Endposition kurz halten.",
+      "Hebelarme langsam zurückführen, Arme kontrolliert strecken.",
+      "Schulterblätter am vorderen Ende leicht lösen, um den Rücken zu dehnen.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von gestreckten Armen mit leicht vorgeschobenen Schulterblättern bis die Ellenbogen etwa auf Höhe des Rumpfes sind. Nicht weiter ziehen, wenn dafür die Brust vom Polster abhebt.",
+    "breathing": "Beim Ziehen ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Brust löst sich vom Polster und der Oberkörper lehnt sich nach hinten.",
+      "Schultern ziehen beim Rudern nach oben in Richtung Ohr.",
+      "Bewegung kommt aus den Armen statt aus den Schulterblättern.",
+      "Gewicht wird nach vorne fallen gelassen.",
+      "Sitz zu hoch oder zu niedrig, Zugrichtung passt nicht zur Brusthöhe."
+    ],
+    "tips": [
+      "Vorstellen, die Ellenbogen nach hinten zu ziehen statt die Griffe zur Brust.",
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Einseitige Ausführung ist durch die unabhängigen Hebelarme möglich und hilft bei Seitenunterschieden.",
+      "Griffe mit den Fingern haken statt fest zu umschließen, um die Unterarme zu entlasten."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/seated-row-lever.jpg"
+  },
+  {
+    "slug": "beinpresse-45-grad",
+    "name": "Beinpresse 45°",
+    "category": "quads",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Hände an den seitlichen Haltegriffen, um Rücken und Becken am Polster zu halten. Griffe nicht zum Mitdrücken nutzen.",
+    "primary_muscles": ["quads", "glutes"],
+    "secondary_muscles": ["hamstrings"],
+    "description": "Scheibenbeladene Beinpresse, bei der der Schlitten auf einer 45-Grad-Schiene geführt wird. Grundübung für die Beine mit hoher Belastbarkeit, bei der kein Gleichgewicht gehalten werden muss.",
+    "setup": [
+      "Gewichtsscheiben beidseitig gleich beladen und sichern.",
+      "Rückenlehne so einstellen, dass das Becken in der unteren Position am Polster bleibt.",
+      "Hinsetzen, Rücken und Gesäß vollständig an das Polster legen.",
+      "Füße etwa schulterbreit mittig auf der Fußplatte, Zehen leicht nach außen.",
+      "Schlitten mit gestreckten Beinen leicht anheben und Sicherheitsriegel nach außen klappen.",
+      "Hände an die seitlichen Haltegriffe legen."
+    ],
+    "execution": [
+      "Schlitten langsam absenken, Knie in Richtung der Zehen beugen.",
+      "So tief absenken, wie das Becken am Polster bleibt.",
+      "Über die ganze Fußsohle nach oben drücken, Fersen bleiben auf der Platte.",
+      "Knie oben nicht vollständig durchstrecken.",
+      "Knie während der Bewegung in Linie mit den Füßen halten.",
+      "Nächste Wiederholung ohne Abfedern in der unteren Position beginnen."
+    ],
+    "range_of_motion": "Beine bis etwa 90 Grad oder etwas tiefer beugen, solange das Becken nicht vom Polster abhebt. Oben kurz vor der vollen Kniestreckung stoppen.",
+    "breathing": "Beim Drücken ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Becken rollt in der unteren Position vom Polster ab und der untere Rücken rundet sich.",
+      "Knie werden oben hart durchgestreckt.",
+      "Knie fallen beim Drücken nach innen.",
+      "Fersen heben von der Fußplatte ab.",
+      "Sicherheitsriegel werden vor dem Satz nicht geöffnet oder danach nicht wieder eingeklappt."
+    ],
+    "tips": [
+      "Sicherheitsriegel nach jedem Satz wieder einklappen, bevor die Beine entlastet werden.",
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Höhere Fußposition belastet Gesäß und hintere Oberschenkel stärker, tiefere Fußposition die Oberschenkelvorderseite.",
+      "Gewicht in kleinen Schritten erhöhen, erst wenn die Tiefe in allen Sätzen gleich bleibt."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/leg-press-45.jpg"
+  },
+  {
+    "slug": "multipresse-kniebeuge",
+    "name": "Multipresse Kniebeuge",
+    "category": "quads",
+    "equipment": "smith_machine",
+    "grip_id": null,
+    "grip_notes": "Stange etwas breiter als schulterbreit mit pronierten Händen fassen, die Hände sichern die Stange auf dem oberen Rücken. Ellenbogen unter der Stange, Handgelenke gerade.",
+    "primary_muscles": ["quads", "glutes"],
+    "secondary_muscles": ["hamstrings", "abs"],
+    "description": "Kniebeuge an der geführten Stange der Multipresse, bei der die Stange in einer festen Bahn läuft. Geeignet, um die Beuge ohne Balanceanteil zu trainieren und die Bewegung mit Sicherheitsstopps abzusichern.",
+    "setup": [
+      "Sicherheitsstopps knapp unterhalb der tiefsten Position der Beuge einstellen.",
+      "Stange auf Höhe der oberen Brust einhängen, Scheiben beidseitig gleich beladen und sichern.",
+      "Unter die Stange treten und die Stange auf dem oberen Rücken ablegen, nicht auf dem Nacken.",
+      "Füße etwa schulterbreit und leicht vor der Stange aufstellen, Zehen leicht nach außen.",
+      "Stange durch Drehen aus den Haken lösen, Rumpf anspannen."
+    ],
+    "execution": [
+      "Hüfte und Knie gleichzeitig beugen und kontrolliert nach unten gehen.",
+      "Knie folgen der Richtung der Zehen.",
+      "Oberkörper bleibt aufrecht, Blick geradeaus.",
+      "Tiefe erreichen, bei der der untere Rücken neutral bleibt.",
+      "Über die ganze Fußsohle nach oben drücken, Fersen bleiben am Boden.",
+      "Oben kurz vor der vollen Kniestreckung stoppen.",
+      "Nach dem letzten Satz die Stange wieder in die Haken drehen."
+    ],
+    "range_of_motion": "Bis die Oberschenkel etwa parallel zum Boden sind oder so tief, wie der untere Rücken neutral bleibt. Oben nicht hart durchstrecken.",
+    "breathing": "Beim Absenken einatmen, beim Hochdrücken ausatmen.",
+    "common_mistakes": [
+      "Füße stehen direkt unter der Stange, dadurch kippt der Oberkörper nach vorne.",
+      "Knie fallen nach innen.",
+      "Unterer Rücken rundet sich in der tiefen Position.",
+      "Sicherheitsstopps werden nicht eingestellt.",
+      "Fersen heben beim Hochdrücken vom Boden ab."
+    ],
+    "tips": [
+      "Vor dem ersten Arbeitssatz mit leerer Stange prüfen, ob die Sicherheitsstopps passend eingestellt sind.",
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Füße weiter nach vorne stellen, um Gesäß und hintere Oberschenkel stärker einzubeziehen.",
+      "Gewicht erst erhöhen, wenn Tiefe und Technik in allen Sätzen gleich bleiben."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/smith-machine.jpg"
+  },
+  {
+    "slug": "adduktoren-maschine",
+    "name": "Adduktoren Maschine",
+    "category": "adductors",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Hände an den seitlichen Haltegriffen, um das Becken ruhig am Polster zu halten.",
+    "primary_muscles": ["adductors"],
+    "secondary_muscles": [],
+    "description": "Steckgewichtmaschine, bei der die Beine gegen Polster an den Innenseiten der Oberschenkel zusammengeführt werden. Isolierte Übung für die Adduktoren.",
+    "setup": [
+      "Gewicht am Steckgewicht wählen.",
+      "Hinsetzen, Rücken an die Lehne, Oberschenkel innen an die Polster legen.",
+      "Startweite über den Einstellhebel so wählen, dass die Dehnung spürbar, aber angenehm ist.",
+      "Füße auf die Fußstützen stellen, Hände an die Haltegriffe.",
+      "Becken und Rücken fest am Polster, Rumpf anspannen."
+    ],
+    "execution": [
+      "Beine kontrolliert zusammenführen, bis sich die Polster fast berühren.",
+      "In der Endposition kurz anspannen.",
+      "Beine langsam wieder nach außen führen.",
+      "Bewegung an der eingestellten Startweite stoppen, ohne dass das Gewicht aufsetzt.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer angenehm gedehnten Startposition bis die Polster fast zusammen sind. Die Startweite in kleinen Schritten vergrößern, nicht in die maximale Dehnung gehen.",
+    "breathing": "Beim Zusammenführen ausatmen, beim Öffnen einatmen.",
+    "common_mistakes": [
+      "Startweite zu groß gewählt, dadurch Zug in der Leiste.",
+      "Beine schnellen zusammen und das Gewicht wird nach außen fallen gelassen.",
+      "Becken kippt oder der Rücken löst sich vom Polster.",
+      "Gewicht setzt in der offenen Position auf und die Spannung geht verloren."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Startweite erst vergrößern, wenn sich der aktuelle Bewegungsradius sauber ausführen lässt.",
+      "Moderate Gewichte und höhere Wiederholungszahlen sind hier sinnvoll.",
+      "Als Ergänzung zu Kniebeuge und Beinpresse einsetzen."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/adductor-machine.jpg"
+  },
+  {
+    "slug": "abduktoren-maschine",
+    "name": "Abduktoren Maschine",
+    "category": "adductors",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Hände an den seitlichen Haltegriffen, um das Becken ruhig am Polster zu halten.",
+    "primary_muscles": ["abductors", "glutes"],
+    "secondary_muscles": [],
+    "description": "Steckgewichtmaschine, bei der die Beine gegen Polster an den Außenseiten der Oberschenkel nach außen gedrückt werden. Isolierte Übung für die Abduktoren und die seitlichen Gesäßmuskeln.",
+    "setup": [
+      "Gewicht am Steckgewicht wählen.",
+      "Hinsetzen, Rücken an die Lehne, Oberschenkel außen an die Polster legen.",
+      "Polster über den Einstellhebel so stellen, dass die Beine in der Startposition geschlossen sind.",
+      "Füße auf die Fußstützen stellen, Hände an die Haltegriffe.",
+      "Becken und Rücken fest am Polster, Rumpf anspannen."
+    ],
+    "execution": [
+      "Beine kontrolliert gegen die Polster nach außen drücken.",
+      "So weit öffnen, wie das Becken ruhig am Polster bleibt.",
+      "In der Endposition kurz anspannen.",
+      "Beine langsam wieder zusammenführen.",
+      "Bewegung stoppen, bevor das Gewicht aufsetzt.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von geschlossenen Beinen bis zu einer Öffnung, bei der Becken und Rücken am Polster bleiben. Nicht mit Schwung in die Endposition gehen.",
+    "breathing": "Beim Öffnen ausatmen, beim Zusammenführen einatmen.",
+    "common_mistakes": [
+      "Oberkörper lehnt sich nach vorne oder das Becken kippt, um mehr Weite zu erreichen.",
+      "Beine schnellen nach außen und fallen danach zurück.",
+      "Gewicht setzt in der geschlossenen Position auf.",
+      "Füße verlieren den Kontakt zu den Fußstützen."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Leichte Vorneigung des Oberkörpers mit geradem Rücken verschiebt die Belastung stärker auf das Gesäß.",
+      "Moderate Gewichte und höhere Wiederholungszahlen sind hier sinnvoll.",
+      "Als Ergänzung zu Hip Thrust und Kniebeuge einsetzen."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/abductor-machine.jpg"
+  },
+  {
+    "slug": "air-bike",
+    "name": "Air Bike",
+    "category": "cardio",
+    "equipment": "cardio",
+    "grip_id": null,
+    "grip_notes": "Hände an den beweglichen Armhebeln, Griffe locker umschließen. Alternativ die festen Griffe in der Mitte nutzen, wenn nur die Beine arbeiten sollen.",
+    "primary_muscles": ["quads"],
+    "secondary_muscles": ["hamstrings", "calves", "triceps", "front_delts"],
+    "description": "Fahrrad mit Luftwiderstand und beweglichen Armhebeln, bei dem Beine und Arme gleichzeitig arbeiten. Der Widerstand steigt mit dem Tempo; geeignet für Aufwärmen, Intervalle und Ausdauertraining.",
+    "setup": [
+      "Sattelhöhe so einstellen, dass das Knie in der unteren Pedalstellung leicht gebeugt bleibt.",
+      "Sattel in der Länge so stellen, dass die Armhebel mit leicht gebeugten Ellenbogen erreichbar sind.",
+      "Füße mittig auf die Pedale stellen, Riemen falls vorhanden schließen.",
+      "Aufrecht sitzen, Rumpf anspannen, Griffe fassen.",
+      "Mit niedrigem Tempo starten und die Konsole bei Bedarf auf Zeit oder Intervall stellen."
+    ],
+    "execution": [
+      "Gleichmäßig in die Pedale treten, Beine arbeiten über die ganze Umdrehung.",
+      "Armhebel abwechselnd drücken und ziehen, Bewegung aus Schulter und Rumpf.",
+      "Oberkörper bleibt stabil, kein Wippen im Sattel.",
+      "Tempo steigern, um den Widerstand zu erhöhen; Tempo senken, um ihn zu verringern.",
+      "Bei Intervallen Belastungs- und Erholungsphasen klar voneinander trennen.",
+      "Zum Schluss ein bis zwei Minuten locker austreten."
+    ],
+    "range_of_motion": "Volle Pedalumdrehung mit leichter Kniebeugung im unteren Punkt. Armhebel über den vollen Hebelweg drücken und ziehen, ohne die Ellenbogen am Ende hart durchzustrecken.",
+    "breathing": "Gleichmäßig und tief atmen, Atemrhythmus an das Tempo anpassen. Nicht die Luft anhalten.",
+    "common_mistakes": [
+      "Sattel zu niedrig, dadurch sind die Knie stark gebeugt.",
+      "Oberkörper rundet sich und zieht nur noch mit den Armen.",
+      "Tempo zu Beginn zu hoch, die Belastung lässt sich nicht über die geplante Dauer halten.",
+      "Füße rutschen von den Pedalen, weil die Riemen nicht geschlossen sind."
+    ],
+    "tips": [
+      "Dauer in Minuten im Feld Wiederholungen eintragen; Gewicht bleibt 0 oder kann als Widerstandsstufe genutzt werden, falls das Gerät eine hat.",
+      "Für Intervalle etwa 20 bis 40 Sekunden hohes Tempo mit ein bis zwei Minuten lockerem Treten abwechseln.",
+      "Für reines Beintraining die festen Griffe nutzen und die Armhebel ruhen lassen.",
+      "Progression über längere Dauer oder mehr Distanz beziehungsweise Kalorien bei gleicher Zeit."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/air-bike.jpg"
+  },
+  {
+    "slug": "rudergeraet",
+    "name": "Rudergerät",
+    "category": "cardio",
+    "equipment": "cardio",
+    "grip_id": null,
+    "grip_notes": "Griff mit beiden Händen etwa schulterbreit von oben fassen, Handgelenke gerade. Griff locker halten, die Finger haken, nicht verkrampfen.",
+    "primary_muscles": ["quads", "lats"],
+    "secondary_muscles": ["hamstrings", "glutes", "biceps", "mid_back"],
+    "description": "Rudergerät mit Magnet- oder Luftwiderstand, bei dem Beine, Rumpf und Arme nacheinander arbeiten. Ganzkörper-Ausdauerübung, die sich für Aufwärmen, Intervalle und Dauerbelastung eignet.",
+    "setup": [
+      "Widerstandsstufe am Gerät einstellen, für den Einstieg eine mittlere Stufe wählen.",
+      "Auf den Rollsitz setzen, Füße in die Fußschalen stellen und Riemen über dem Fußballen schließen.",
+      "Griff fassen, Knie beugen und mit aufrechtem Oberkörper nach vorne rollen.",
+      "Schienbeine etwa senkrecht, Arme gestreckt, Rumpf angespannt.",
+      "Konsole bei Bedarf auf Zeit, Distanz oder Intervall stellen."
+    ],
+    "execution": [
+      "Zuerst die Beine strecken und den Sitz nach hinten schieben, Arme bleiben gestreckt.",
+      "Dann den Oberkörper leicht nach hinten lehnen, etwa auf elf Uhr.",
+      "Zuletzt den Griff zum unteren Brustbereich ziehen, Ellenbogen nah am Körper.",
+      "Rückweg in umgekehrter Reihenfolge: Arme strecken, Oberkörper nach vorne, dann Knie beugen.",
+      "Kontrolliert nach vorne rollen, nicht mit Schwung in die Startposition fallen.",
+      "Schlagfrequenz gleichmäßig halten, etwa 20 bis 28 Schläge pro Minute für Dauerbelastung."
+    ],
+    "range_of_motion": "Vom eingerollten Start mit senkrechten Schienbeinen bis zu gestreckten Beinen, leichter Rücklage und Griff am unteren Brustbereich. Der Zug ist etwa doppelt so schnell wie die Rückführung.",
+    "breathing": "Beim Zug ausatmen, beim Vorrollen einatmen. Atmung gleichmäßig an den Schlagrhythmus koppeln.",
+    "common_mistakes": [
+      "Arme ziehen zu früh, bevor die Beine gestreckt sind.",
+      "Oberkörper lehnt sich zu weit nach hinten oder rundet sich beim Vorrollen.",
+      "Knie werden auf dem Rückweg zu früh gebeugt und kommen dem Griff in die Quere.",
+      "Griff wird zum Hals statt zur unteren Brust gezogen.",
+      "Schlagfrequenz zu hoch, dadurch wird der Zug unkontrolliert."
+    ],
+    "tips": [
+      "Dauer in Minuten im Feld Wiederholungen eintragen; im Feld Gewicht kann die Widerstandsstufe notiert werden, sonst bleibt es 0.",
+      "Reihenfolge Beine, Rumpf, Arme bei langsamem Tempo einüben, bevor die Intensität steigt.",
+      "Progression über längere Dauer oder eine bessere Zeit pro 500 Meter bei gleicher Schlagfrequenz.",
+      "Für Intervalle Zugphasen von ein bis zwei Minuten mit lockeren Erholungsphasen abwechseln."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/rowing-machine.jpg"
+  },
+  {
+    "slug": "ski-erg",
+    "name": "Ski Erg",
+    "category": "cardio",
+    "equipment": "cardio",
+    "grip_id": null,
+    "grip_notes": "Beide Griffe von oben fassen, Handflächen zeigen nach unten beziehungsweise zueinander. Griffe locker halten, der Zug kommt aus Rumpf und Latissimus, nicht aus den Fingern.",
+    "primary_muscles": ["lats", "abs"],
+    "secondary_muscles": ["triceps", "hamstrings", "glutes"],
+    "description": "Ski-Ergometer, bei dem die Griffe von oben nach unten gezogen werden, ähnlich dem Doppelstockschub beim Skilanglauf. Belastet Latissimus und Bauch über die Rumpfbeuge; geeignet für Aufwärmen, Intervalle und Ausdauertraining.",
+    "setup": [
+      "Widerstandsstufe am Gerät einstellen, für den Einstieg eine mittlere Stufe wählen.",
+      "Etwa eine Armlänge vor dem Gerät stehen, Füße hüftbreit.",
+      "Griffe fassen und mit gestreckten Armen über Kopf in die Startposition bringen.",
+      "Knie leicht gebeugt, Rumpf angespannt, Blick nach vorne.",
+      "Konsole bei Bedarf auf Zeit, Distanz oder Intervall stellen."
+    ],
+    "execution": [
+      "Griffe zügig nach unten ziehen, der Oberkörper beugt sich dabei aus der Hüfte nach vorne.",
+      "Hüfte und Knie leicht mitbeugen, Rücken bleibt gerade.",
+      "Griffe an den Oberschenkeln vorbei nach hinten führen, Arme am Ende fast gestreckt.",
+      "Oberkörper wieder aufrichten und die Arme kontrolliert nach oben in die Startposition bringen.",
+      "Der Zug ist zügig und kräftig, die Rückführung ruhiger.",
+      "Rhythmus gleichmäßig halten."
+    ],
+    "range_of_motion": "Von gestreckten Armen über Kopf bis die Griffe hinter den Oberschenkeln sind, mit Rumpfbeuge aus der Hüfte. Rückführung bis zur Streckung über Kopf, ohne ins Hohlkreuz zu fallen.",
+    "breathing": "Beim Zug nach unten ausatmen, beim Aufrichten einatmen. Atmung gleichmäßig an den Rhythmus koppeln.",
+    "common_mistakes": [
+      "Rücken rundet sich beim Zug nach unten.",
+      "Zug kommt nur aus den Armen, Rumpf und Hüfte bleiben steif.",
+      "Zu nah am Gerät gestanden, dadurch fehlt Platz für die Rumpfbeuge.",
+      "Griffe werden oben zu weit nach hinten geführt und der untere Rücken überstreckt."
+    ],
+    "tips": [
+      "Dauer in Minuten im Feld Wiederholungen eintragen; im Feld Gewicht kann die Widerstandsstufe notiert werden, sonst bleibt es 0.",
+      "Bewegung bei niedrigem Tempo einüben, bevor die Intensität steigt.",
+      "Progression über längere Dauer oder mehr Distanz bei gleicher Zeit.",
+      "Für Intervalle 30 bis 60 Sekunden zügiger Zug mit lockeren Erholungsphasen abwechseln."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/ski-erg.jpg"
+  },
+  {
+    "slug": "laufband",
+    "name": "Laufband",
+    "category": "cardio",
+    "equipment": "cardio",
+    "grip_id": null,
+    "grip_notes": "Hände frei und locker mitschwingen lassen. Haltegriffe nur zum Aufsteigen, Absteigen oder kurzen Abstützen nutzen.",
+    "primary_muscles": ["quads", "calves"],
+    "secondary_muscles": ["hamstrings", "glutes"],
+    "description": "Laufband mit einstellbarer Geschwindigkeit und Steigung für Gehen, zügiges Gehen und Laufen. Geeignet für Aufwärmen, Dauerbelastung und Intervalle.",
+    "setup": [
+      "Beidbeinig auf die seitlichen Trittflächen stellen, nicht auf das stehende Band.",
+      "Not-Stopp-Clip an der Kleidung befestigen.",
+      "Band mit niedriger Geschwindigkeit starten und auf das Band treten.",
+      "Geschwindigkeit und Steigung schrittweise auf das geplante Niveau erhöhen.",
+      "Aufrecht laufen oder gehen, Blick nach vorne, nicht auf die Füße."
+    ],
+    "execution": [
+      "Tempo und Steigung über die geplante Dauer gleichmäßig halten.",
+      "Mit dem Fuß unter dem Körper aufsetzen, Schritte kurz und locker halten.",
+      "Arme locker mitschwingen lassen, Schultern entspannt.",
+      "Bei Steigung den Oberkörper leicht nach vorne neigen, nicht an den Griffen festhalten.",
+      "Bei Intervallen die Geschwindigkeit stufenweise erhöhen und senken, nicht abrupt.",
+      "Zum Schluss zwei bis drei Minuten im Gehen auslaufen, dann Band stoppen und absteigen."
+    ],
+    "range_of_motion": "Natürliche Schrittlänge bei aufrechtem Oberkörper. Schrittfrequenz lieber erhöhen, als die Schritte zu verlängern.",
+    "breathing": "Gleichmäßig und tief atmen, Atemrhythmus an die Schritte koppeln. Nicht die Luft anhalten.",
+    "common_mistakes": [
+      "Dauerhaftes Festhalten an den Griffen, besonders bei Steigung.",
+      "Schritte zu lang, der Fuß setzt weit vor dem Körper auf.",
+      "Blick nach unten auf die Füße oder zur Seite.",
+      "Not-Stopp-Clip nicht befestigt.",
+      "Abstieg vom laufenden Band ohne vorheriges Abbremsen."
+    ],
+    "tips": [
+      "Dauer in Minuten im Feld Wiederholungen eintragen; Gewicht bleibt 0 oder kann als Widerstandsstufe genutzt werden, zum Beispiel für die Steigung in Prozent.",
+      "Progression über längere Dauer, höhere Geschwindigkeit oder mehr Steigung, jeweils nur eine Größe gleichzeitig erhöhen.",
+      "Steigung von ein bis zwei Prozent beim Laufen gleicht den fehlenden Luftwiderstand aus.",
+      "Für Intervalle etwa eine Minute schnelleres Tempo mit ein bis zwei Minuten lockerem Gehen oder Laufen abwechseln."
+    ],
+    "cable_setup": null,
+    "image_url": "/exercises/treadmill.jpg"
+  }
+]
