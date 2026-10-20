@@ -1,5 +1,12 @@
 import type { DbClient } from "@/lib/supabase/db";
-import type { ExerciseHistoryRow, ExerciseRecordsRow, GroupStatsRow, UserStatsRow } from "@/lib/supabase/types";
+import type {
+  ExerciseHistoryRow,
+  ExerciseRecordsRow,
+  GroupStatsRow,
+  MemberSessionDetail,
+  MemberSessionRow,
+  UserStatsRow,
+} from "@/lib/supabase/types";
 
 export async function getUserStats(db: DbClient): Promise<UserStatsRow> {
   const { data, error } = await db.rpc("get_user_stats");
@@ -24,6 +31,31 @@ export async function getGroupStats(db: DbClient): Promise<GroupStatsRow[]> {
     total_duration_seconds: Number(r.total_duration_seconds),
     total_volume: Number(r.total_volume),
   }));
+}
+
+/** Abgeschlossene Trainings eines Mitglieds (Stats-Detailansicht, nur lesend). */
+export async function listMemberSessions(db: DbClient, userId: string, limit = 200): Promise<MemberSessionRow[]> {
+  const { data, error } = await db.rpc("get_member_sessions", { p_user_id: userId, p_limit: limit });
+  if (error) throw error;
+  return (data ?? []).map((r) => ({
+    ...r,
+    total_volume: Number(r.total_volume),
+    exercise_names: r.exercise_names ?? [],
+  }));
+}
+
+/** Detail eines abgeschlossenen Trainings eines Mitglieds; null, wenn nicht vorhanden oder nicht abgeschlossen. */
+export async function getMemberSessionDetail(db: DbClient, sessionId: string): Promise<MemberSessionDetail | null> {
+  const { data, error } = await db.rpc("get_member_session_detail", { p_session_id: sessionId });
+  if (error) throw error;
+  if (!data) return null;
+  return {
+    session: { ...data.session, total_volume: Number(data.session.total_volume) },
+    exercises: (data.exercises ?? []).map((ex) => ({
+      ...ex,
+      sets: (ex.sets ?? []).map((s) => ({ ...s, weight: Number(s.weight) })),
+    })),
+  };
 }
 
 export async function getExerciseRecords(db: DbClient, exerciseId: string): Promise<ExerciseRecordsRow | null> {

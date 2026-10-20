@@ -251,6 +251,49 @@ await test("Letzte Leistung + Statistiken + Bestleistungen", async () => {
   });
 });
 
+await test("Mitglieder-Detail: fremde Trainings lesbar, ohne Anmeldung gesperrt", async () => {
+  await asUser(USER_B, async () => {
+    const list = await db.query("select * from get_member_sessions($1)", [USER_A]);
+    assert(list.rows.length === 1, `erwartet 1 Training, erhalten ${list.rows.length}`);
+    assert(Number(list.rows[0].total_volume) === 2100, `Volumen ${list.rows[0].total_volume}`);
+    assert(list.rows[0].session_id === sessionId, "falsche Session");
+    const names = list.rows[0].exercise_names;
+    assert(Array.isArray(names) && names.length === 1, `erwartet 1 Übungsnamen, erhalten ${JSON.stringify(names)}`);
+
+    const detail = await db.query("select get_member_session_detail($1) as d", [sessionId]);
+    const d = detail.rows[0].d;
+    assert(d && d.session.nickname === "Louis", `Nickname ${d?.session?.nickname}`);
+    assert(d.session.id === sessionId && Number(d.session.total_volume) === 2100, "Session-Daten");
+    assert(d.exercises.length === 1, `erwartet 1 Übung, erhalten ${d.exercises.length}`);
+    assert(d.exercises[0].sets.length === 4, `erwartet 4 Sätze, erhalten ${d.exercises[0].sets.length}`);
+    assert(d.exercises[0].exercise.slug, "Übungs-Slug fehlt");
+
+    const missing = await db.query("select get_member_session_detail($1) as d", ["33333333-3333-4333-8333-333333333333"]);
+    assert(missing.rows[0].d === null, "unbekannte Session sollte null liefern");
+  });
+
+  // Ohne Anmeldung (Rolle anon, kein JWT-Claim) müssen beide Funktionen eine Exception werfen
+  let blockedList = false;
+  let blockedDetail = false;
+  await db.exec("set role anon; select set_config('request.jwt.claim.sub', '', false);");
+  try {
+    try {
+      await db.query("select * from get_member_sessions($1)", [USER_A]);
+    } catch {
+      blockedList = true;
+    }
+    try {
+      await db.query("select get_member_session_detail($1)", [sessionId]);
+    } catch {
+      blockedDetail = true;
+    }
+  } finally {
+    await db.exec("reset role;");
+  }
+  assert(blockedList, "get_member_sessions ohne Anmeldung nicht blockiert");
+  assert(blockedDetail, "get_member_session_detail ohne Anmeldung nicht blockiert");
+});
+
 await test("Eigene Übung: anlegen, in Plan verwenden, fremd unsichtbar", async () => {
   await asUser(USER_A, async () => {
     const r = await db.query(
