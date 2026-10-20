@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import { Timer, X, Plus } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { formatClock } from "@/lib/utils/format";
@@ -14,11 +15,12 @@ type Timer = ReturnType<typeof useRestTimer>;
 export function RestTimerBar({ timer }: { timer: Timer }) {
   const [open, setOpen] = React.useState(false);
   const [custom, setCustom] = React.useState(String(timer.duration));
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
 
   const progress = timer.running && timer.duration > 0 ? 1 - timer.remaining / timer.duration : 0;
 
-  return (
-    <>
+  const bar = (
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-bg/95 backdrop-blur safe-bottom lg:left-60">
         <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
           {timer.running ? (
@@ -59,6 +61,11 @@ export function RestTimerBar({ timer }: { timer: Timer }) {
           )}
         </div>
       </div>
+  );
+
+  return (
+    <>
+      {mounted ? createPortal(bar, document.body) : null}
 
       <Sheet open={open} onClose={() => setOpen(false)} title="Rest Timer" description="Preset wählen oder eigene Zeit in Sekunden.">
         <div className="grid grid-cols-4 gap-2">

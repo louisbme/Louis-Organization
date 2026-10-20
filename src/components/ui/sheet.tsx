@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
@@ -15,9 +16,15 @@ interface SheetProps {
   footer?: React.ReactNode;
 }
 
-/** Modal / Bottom Sheet ohne externe Abhängigkeit. */
+/**
+ * Modal / Bottom Sheet ohne externe Abhängigkeit.
+ * Wird per Portal direkt in <body> gerendert, damit position: fixed immer den Viewport meint
+ * (auch wenn ein Vorfahr ein transform trägt, z. B. durch Animationen).
+ */
 export function Sheet({ open, onClose, title, description, children, size = "md", footer }: SheetProps) {
   const panelRef = React.useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
 
   React.useEffect(() => {
     if (!open) return;
@@ -33,9 +40,9 @@ export function Sheet({ open, onClose, title, description, children, size = "md"
     };
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!open || !mounted) return null;
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-4"
       role="dialog"
@@ -71,6 +78,7 @@ export function Sheet({ open, onClose, title, description, children, size = "md"
         <div className="flex-1 overflow-y-auto px-5 pb-5">{children}</div>
         {footer ? <div className="border-t border-border bg-card px-5 py-4 safe-bottom">{footer}</div> : null}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
