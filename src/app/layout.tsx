@@ -1,17 +1,18 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
+import { APP_DESCRIPTION, APP_NAME } from "@/lib/config";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: { default: "Trainingslog", template: "%s · Trainingslog" },
-  description: "Privates Fitness-Tracking: Trainingspläne, Sätze, Historie und Fortschritt.",
-  applicationName: "Trainingslog",
+  title: { default: APP_NAME, template: `%s · ${APP_NAME}` },
+  description: APP_DESCRIPTION,
+  applicationName: APP_NAME,
   manifest: "/manifest.webmanifest",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Trainingslog" },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: APP_NAME },
   icons: {
     icon: [
       { url: "/icons/icon-192.png", type: "image/png", sizes: "192x192" },

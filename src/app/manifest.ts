@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { APP_NAME } from "@/lib/config";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Trainingslog",
-    short_name: "Trainingslog",
+    name: APP_NAME,
+    short_name: APP_NAME,
     description: "Privates Fitness-Tracking",
     start_url: "/dashboard",
     display: "standalone",

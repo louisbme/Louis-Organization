@@ -44,11 +44,11 @@ const withTemplates = process.argv.includes("--with-templates");
 
 const link = (type, next) => `<p><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=${type}&next=${next}">`;
 const templates = {
-  mailer_subjects_confirmation: "Trainingslog: E-Mail bestätigen",
-  mailer_templates_confirmation_content: `<h2>Willkommen bei Trainingslog</h2><p>Bitte bestätige deine E-Mail-Adresse:</p>${link("email", "/dashboard")}E-Mail bestätigen</a></p>`,
-  mailer_subjects_recovery: "Trainingslog: Passwort zurücksetzen",
+  mailer_subjects_confirmation: "FORM: E-Mail bestätigen",
+  mailer_templates_confirmation_content: `<h2>Willkommen bei FORM</h2><p>Bitte bestätige deine E-Mail-Adresse:</p>${link("email", "/dashboard")}E-Mail bestätigen</a></p>`,
+  mailer_subjects_recovery: "FORM: Passwort zurücksetzen",
   mailer_templates_recovery_content: `<h2>Passwort zurücksetzen</h2><p>Klicke auf den Link, um ein neues Passwort zu vergeben:</p>${link("recovery", "/reset-password")}Neues Passwort festlegen</a></p>`,
-  mailer_subjects_email_change: "Trainingslog: E-Mail-Änderung bestätigen",
+  mailer_subjects_email_change: "FORM: E-Mail-Änderung bestätigen",
   mailer_templates_email_change_content: `<h2>E-Mail-Adresse ändern</h2><p>Bestätige die Änderung deiner E-Mail-Adresse auf {{ .NewEmail }}:</p>${link("email_change", "/settings")}Änderung bestätigen</a></p>`,
 };
 
