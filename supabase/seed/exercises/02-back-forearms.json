@@ -1,0 +1,518 @@
+[
+  {
+    "slug": "neutraler-latzug",
+    "name": "Neutraler Latzug",
+    "category": "back",
+    "equipment": "cable",
+    "grip_id": "neutral_parallel",
+    "grip_notes": "Neutraler Parallelgriff (Handflächen zeigen zueinander), etwa schulterbreit. Alternativ: breiter Latzuggriff für mehr Betonung der äußeren Lat-Anteile.",
+    "primary_muscles": ["lats"],
+    "secondary_muscles": ["biceps", "upper_back", "forearms", "rear_delts"],
+    "description": "Vertikale Zugübung am Latzug mit neutralem Griff, die den Latissimus über einen großen Bewegungsradius belastet. Schulterfreundliche Variante des Latzugs.",
+    "setup": [
+      "Oberschenkelpolster so einstellen, dass die Beine fest fixiert sind.",
+      "Neutralen Parallelgriff am oberen Kabel einhängen.",
+      "Griff fassen, hinsetzen und Oberschenkel unter das Polster bringen.",
+      "Oberkörper aufrecht, leicht nach hinten geneigt, Brust leicht angehoben.",
+      "Arme gestreckt, Schultern bewusst nach unten ziehen, bevor die Bewegung beginnt."
+    ],
+    "execution": [
+      "Griff in Richtung obere Brust ziehen, Ellenbogen führen die Bewegung nach unten.",
+      "Schulterblätter nach unten und zusammen ziehen.",
+      "In der Endposition kurz halten, Griff befindet sich etwa auf Höhe des Kinns bis der oberen Brust.",
+      "Gewicht langsam zurückführen, Arme kontrolliert strecken.",
+      "Schultern am oberen Ende leicht nach oben kommen lassen, um den Lat zu dehnen.",
+      "Ohne Schwung die nächste Wiederholung beginnen."
+    ],
+    "range_of_motion": "Von vollständig gestreckten Armen bis der Griff etwa auf Höhe des Kinns bzw. der oberen Brust ist. Nicht bis zum Bauch ziehen.",
+    "breathing": "Beim Ziehen ausatmen, beim Strecken der Arme einatmen.",
+    "common_mistakes": [
+      "Oberkörper wird stark nach hinten gelehnt und die Bewegung mit Schwung ausgeführt.",
+      "Schultern bleiben während des Zugs oben am Ohr.",
+      "Griff wird mit den Armen statt mit den Ellenbogen geführt.",
+      "Gewicht fällt nach oben zurück, keine Kontrolle in der exzentrischen Phase.",
+      "Ellenbogen weichen weit nach hinten aus, sodass der Rücken rund wird."
+    ],
+    "tips": [
+      "Daumen auf die Griffe legen statt zu umschließen, um weniger mit den Unterarmen zu arbeiten.",
+      "Vorstellen, die Ellenbogen in die Hosentaschen zu ziehen.",
+      "Die exzentrische Phase bewusst zwei bis drei Sekunden lang ausführen."
+    ],
+    "cable_setup": {
+      "cable": "Kabelturm mit Latzug-Station oder integrierter Latzug",
+      "height": "Rolle ganz oben",
+      "grip_width": "Schulterbreit, neutral (Handflächen zueinander)",
+      "body_position": "Aufrecht sitzend, leichte Rücklage von etwa 10 bis 20 Grad, Brust angehoben, Rumpf stabil",
+      "foot_position": "Füße flach auf dem Boden, Oberschenkel unter dem Polster fixiert",
+      "movement_direction": "Vertikal von oben nach unten in Richtung obere Brust",
+      "elbow_position": "Ellenbogen zeigen nach unten und leicht nach vorne, bleiben nah am Körper",
+      "end_position": "Griff auf Höhe des Kinns bis der oberen Brust, Schulterblätter nach unten und zusammengezogen",
+      "return": "Langsam und kontrolliert bis zur vollen Armstreckung, Schultern am Ende leicht nach oben kommen lassen"
+    }
+  },
+  {
+    "slug": "breiter-latzug",
+    "name": "Breiter Latzug",
+    "category": "back",
+    "equipment": "cable",
+    "grip_id": "wide_lat_bar",
+    "grip_notes": "Breite Latzugstange, pronierter Griff (Handflächen nach vorne), Hände deutlich weiter als schulterbreit an den gebogenen Enden der Stange. Alternativ: etwas enger greifen, wenn die Schultern in der gestreckten Position unangenehm belastet sind.",
+    "primary_muscles": ["lats"],
+    "secondary_muscles": ["upper_back", "biceps", "forearms", "rear_delts"],
+    "description": "Vertikale Zugübung am Latzug mit breitem, proniertem Griff, die den Latissimus und den oberen Rücken belastet. Klassische Übung für die Rückenbreite.",
+    "setup": [
+      "Breite Latzugstange am oberen Kabel einhängen.",
+      "Oberschenkelpolster so einstellen, dass die Beine fest fixiert sind.",
+      "Stange deutlich weiter als schulterbreit mit proniertem Griff fassen, hinsetzen und Oberschenkel unter das Polster bringen.",
+      "Oberkörper aufrecht mit leichter Rücklage, Brust angehoben, Blick nach vorne.",
+      "Arme gestreckt, Schultern bewusst nach unten ziehen, bevor die Bewegung beginnt."
+    ],
+    "execution": [
+      "Stange in Richtung obere Brust ziehen, Ellenbogen führen die Bewegung nach unten und leicht nach außen.",
+      "Schulterblätter nach unten und zusammen ziehen, Brust bleibt angehoben.",
+      "In der Endposition kurz halten, Stange befindet sich etwa auf Höhe der oberen Brust.",
+      "Gewicht langsam zurückführen, Arme kontrolliert strecken.",
+      "Am oberen Ende die Schultern leicht nach oben kommen lassen, um den Lat zu dehnen.",
+      "Ohne Schwung die nächste Wiederholung beginnen."
+    ],
+    "range_of_motion": "Von vollständig gestreckten Armen bis die Stange etwa auf Höhe der oberen Brust ist. Nicht bis zum Bauch ziehen und nicht hinter den Nacken.",
+    "breathing": "Beim Ziehen ausatmen, beim Strecken der Arme einatmen.",
+    "common_mistakes": [
+      "Oberkörper wird stark nach hinten gelehnt und die Stange mit Schwung gezogen.",
+      "Stange wird hinter den Nacken gezogen.",
+      "Schultern bleiben während des Zugs oben am Ohr.",
+      "Bewegung kommt vor allem aus den Armen statt aus den Ellenbogen und Schulterblättern.",
+      "Gewicht fällt nach oben zurück, keine Kontrolle in der exzentrischen Phase."
+    ],
+    "tips": [
+      "Die Ellenbogen bewusst nach unten in Richtung Hüfte führen, nicht nach hinten.",
+      "Die exzentrische Phase zwei bis drei Sekunden lang kontrollieren.",
+      "Wenn die Schultern bei sehr breitem Griff unangenehm belastet sind, etwas enger greifen oder auf den neutralen Latzug wechseln."
+    ],
+    "cable_setup": {
+      "cable": "Kabelturm mit Latzug-Station oder integrierter Latzug",
+      "height": "Rolle ganz oben",
+      "grip_width": "Deutlich weiter als schulterbreit, proniert (Handflächen nach vorne)",
+      "body_position": "Aufrecht sitzend, leichte Rücklage von etwa 10 bis 20 Grad, Brust angehoben, Rumpf stabil",
+      "foot_position": "Füße flach auf dem Boden, Oberschenkel unter dem Polster fixiert",
+      "movement_direction": "Vertikal von oben nach unten in Richtung obere Brust",
+      "elbow_position": "Ellenbogen zeigen nach unten und leicht nach außen, bleiben etwa in der Ebene des Oberkörpers",
+      "end_position": "Stange auf Höhe der oberen Brust, Schulterblätter nach unten und zusammengezogen",
+      "return": "Langsam und kontrolliert bis zur vollen Armstreckung, Schultern am Ende leicht nach oben kommen lassen"
+    }
+  },
+  {
+    "slug": "enges-rudern",
+    "name": "Enges Rudern",
+    "category": "back",
+    "equipment": "cable",
+    "grip_id": "close_v_grip",
+    "grip_notes": "Enger V-Griff, neutral (Handflächen zeigen zueinander). Alternativ: neutraler Parallelgriff in Schulterbreite, wenn der enge Griff die Handgelenke unangenehm belastet.",
+    "primary_muscles": ["lats", "mid_back"],
+    "secondary_muscles": ["biceps", "forearms", "rear_delts"],
+    "description": "Horizontale Zugübung am sitzenden Kabelzug mit engem V-Griff, die den Latissimus und den mittleren Rücken belastet. Geeignet als Grundübung für die Rückendicke.",
+    "setup": [
+      "V-Griff am unteren Kabel der Ruderstation einhängen.",
+      "Hinsetzen, Füße auf die Fußplatten stellen, Knie leicht gebeugt.",
+      "Griff mit beiden Händen fassen und den Oberkörper aufrichten.",
+      "Brust angehoben, Rücken gerade, Schultern nach unten ziehen.",
+      "Arme gestreckt, Gewicht leicht abheben, sodass von Beginn an Spannung auf dem Kabel ist."
+    ],
+    "execution": [
+      "Griff in Richtung unterer Bauch bzw. Nabel ziehen, Ellenbogen führen die Bewegung nah am Körper nach hinten.",
+      "Schulterblätter zusammen ziehen, Oberkörper bleibt aufrecht.",
+      "In der Endposition kurz halten, Griff berührt beinahe den Bauch.",
+      "Gewicht langsam zurückführen, Arme kontrolliert strecken.",
+      "Am Ende die Schulterblätter leicht nach vorne kommen lassen, um den Rücken zu dehnen.",
+      "Ohne Schwung aus dem Oberkörper die nächste Wiederholung beginnen."
+    ],
+    "range_of_motion": "Von gestreckten Armen mit leicht nach vorne gezogenen Schulterblättern bis der Griff den unteren Bauch fast berührt. Der Oberkörper bewegt sich dabei nur wenige Grad.",
+    "breathing": "Beim Ziehen ausatmen, beim Strecken der Arme einatmen.",
+    "common_mistakes": [
+      "Oberkörper pendelt stark vor und zurück, Bewegung kommt aus dem unteren Rücken.",
+      "Schultern ziehen während des Zugs nach oben zu den Ohren.",
+      "Ellenbogen weichen nach außen aus, Griff wird zur Brust statt zum Bauch gezogen.",
+      "Rücken wird in der gestreckten Position stark gerundet.",
+      "Gewicht wird in der exzentrischen Phase einfach nach vorne gelassen."
+    ],
+    "tips": [
+      "Vorstellen, die Ellenbogen nach hinten in die Hosentaschen zu ziehen.",
+      "In der Endposition eine Sekunde halten, um die Kontraktion im Rücken zu spüren.",
+      "Die exzentrische Phase zwei bis drei Sekunden lang ausführen.",
+      "Bei Beschwerden im unteren Rücken leichter beginnen und den Oberkörper bewusst stabil halten."
+    ],
+    "cable_setup": {
+      "cable": "Sitzende Ruderstation oder Kabelturm mit unterer Rolle",
+      "height": "Rolle unten, etwa auf Höhe des unteren Bauchs in sitzender Position",
+      "grip_width": "Eng, neutral (Handflächen zueinander) am V-Griff",
+      "body_position": "Aufrecht sitzend, Brust angehoben, Rumpf stabil, Oberkörper nahezu senkrecht",
+      "foot_position": "Füße auf den Fußplatten, Knie leicht gebeugt",
+      "movement_direction": "Horizontal von vorne nach hinten in Richtung unterer Bauch",
+      "elbow_position": "Ellenbogen eng am Körper, zeigen nach hinten",
+      "end_position": "Griff am unteren Bauch, Schulterblätter zusammengezogen, Oberkörper aufrecht",
+      "return": "Langsam und kontrolliert bis zur Armstreckung, Schulterblätter am Ende leicht nach vorne kommen lassen"
+    }
+  },
+  {
+    "slug": "breites-rudern",
+    "name": "Breites Rudern",
+    "category": "back",
+    "equipment": "cable",
+    "grip_id": "wide_lat_bar",
+    "grip_notes": "Breite Latzugstange, pronierter Griff (Handrücken nach oben), Hände deutlich weiter als schulterbreit. Alternativ: gerade Stange in etwas engerer Griffweite.",
+    "primary_muscles": ["upper_back", "mid_back"],
+    "secondary_muscles": ["lats", "rear_delts", "biceps", "forearms"],
+    "description": "Horizontale Zugübung am sitzenden Kabelzug mit breiter Stange und proniertem Griff, die vor allem den oberen und mittleren Rücken belastet. Gute Ergänzung zum engen Rudern.",
+    "setup": [
+      "Breite Latzugstange am unteren Kabel der Ruderstation einhängen.",
+      "Hinsetzen, Füße auf die Fußplatten stellen, Knie leicht gebeugt.",
+      "Stange deutlich weiter als schulterbreit mit proniertem Griff fassen.",
+      "Oberkörper aufrichten, Brust angehoben, Schultern nach unten ziehen.",
+      "Arme gestreckt, Gewicht leicht abheben, sodass Spannung auf dem Kabel ist."
+    ],
+    "execution": [
+      "Stange in Richtung untere Brust bzw. oberer Bauch ziehen.",
+      "Ellenbogen führen die Bewegung etwas weiter außen als beim engen Rudern, etwa 45 Grad vom Körper abgespreizt.",
+      "Schulterblätter zusammen ziehen, Oberkörper bleibt aufrecht.",
+      "In der Endposition kurz halten, Stange befindet sich nah an der unteren Brust.",
+      "Gewicht langsam zurückführen, Arme kontrolliert strecken.",
+      "Am Ende die Schulterblätter leicht nach vorne kommen lassen, ohne den Rücken rund zu machen.",
+      "Ohne Schwung die nächste Wiederholung beginnen."
+    ],
+    "range_of_motion": "Von gestreckten Armen mit leicht nach vorne gezogenen Schulterblättern bis die Stange die untere Brust fast berührt. Der Oberkörper bleibt dabei nahezu senkrecht.",
+    "breathing": "Beim Ziehen ausatmen, beim Strecken der Arme einatmen.",
+    "common_mistakes": [
+      "Oberkörper pendelt stark nach hinten, um das Gewicht zu bewegen.",
+      "Ellenbogen fliegen weit nach außen auf Schulterhöhe, Schultern rollen nach vorne.",
+      "Stange wird zum Bauch gezogen, dadurch verlagert sich die Belastung vom oberen Rücken weg.",
+      "Schultern ziehen nach oben zu den Ohren.",
+      "Keine Kontrolle in der exzentrischen Phase."
+    ],
+    "tips": [
+      "Fokus auf das Zusammenziehen der Schulterblätter, nicht auf die Arme.",
+      "Gewicht etwas leichter wählen als beim engen Rudern, da die Hebelverhältnisse ungünstiger sind.",
+      "Die exzentrische Phase zwei bis drei Sekunden lang kontrollieren."
+    ],
+    "cable_setup": {
+      "cable": "Sitzende Ruderstation oder Kabelturm mit unterer Rolle",
+      "height": "Rolle unten, etwa auf Höhe des Bauchs in sitzender Position",
+      "grip_width": "Deutlich weiter als schulterbreit, proniert (Handrücken nach oben)",
+      "body_position": "Aufrecht sitzend, Brust angehoben, Rumpf stabil, Oberkörper nahezu senkrecht",
+      "foot_position": "Füße auf den Fußplatten, Knie leicht gebeugt",
+      "movement_direction": "Horizontal von vorne nach hinten in Richtung untere Brust bzw. oberer Bauch",
+      "elbow_position": "Ellenbogen etwa 45 Grad vom Körper abgespreizt, zeigen nach hinten-außen",
+      "end_position": "Stange nah an der unteren Brust, Schulterblätter zusammengezogen, Oberkörper aufrecht",
+      "return": "Langsam und kontrolliert bis zur Armstreckung, Schulterblätter am Ende leicht nach vorne kommen lassen"
+    }
+  },
+  {
+    "slug": "brustgestuetztes-rudern",
+    "name": "Brustgestütztes Rudern",
+    "category": "back",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Neutrale oder pronierte Griffe, je nach Maschine. Neutraler Griff mit Ellenbogen nah am Körper betont eher den Latissimus, pronierter Griff mit Ellenbogen weiter außen eher den oberen Rücken. Handgelenke gerade halten.",
+    "primary_muscles": ["mid_back", "lats"],
+    "secondary_muscles": ["upper_back", "rear_delts", "biceps", "forearms"],
+    "description": "Horizontale Zugübung an einer Rudermaschine mit Brustpolster, das den Oberkörper stabilisiert und den unteren Rücken entlastet. Geeignet, um den Rücken ohne Ausweichbewegungen des Rumpfes zu trainieren.",
+    "setup": [
+      "Sitz so einstellen, dass die Griffe etwa auf Höhe der unteren Brust liegen.",
+      "Brust fest an das Polster legen, Füße flach auf den Boden oder die Fußplatten stellen.",
+      "Griffe fassen, Handgelenke gerade, Arme gestreckt.",
+      "Schultern bewusst nach unten ziehen, Brust bleibt am Polster.",
+      "Rumpf anspannen, bevor die Bewegung beginnt."
+    ],
+    "execution": [
+      "Griffe kontrolliert nach hinten ziehen, Ellenbogen führen die Bewegung.",
+      "Schulterblätter zusammen ziehen, Brust bleibt die ganze Zeit am Polster.",
+      "In der Endposition kurz halten, Ellenbogen befinden sich etwa auf Höhe des Rumpfes oder leicht dahinter.",
+      "Gewicht langsam zurückführen, Arme kontrolliert strecken.",
+      "Am Ende die Schulterblätter leicht nach vorne kommen lassen, um den Rücken zu dehnen.",
+      "Ohne Schwung die nächste Wiederholung beginnen."
+    ],
+    "range_of_motion": "Von gestreckten Armen mit leicht nach vorne gezogenen Schulterblättern bis die Ellenbogen etwa auf Höhe des Rumpfes oder leicht dahinter sind. Die Brust löst sich dabei nicht vom Polster.",
+    "breathing": "Beim Ziehen ausatmen, beim Strecken der Arme einatmen.",
+    "common_mistakes": [
+      "Brust löst sich vom Polster, um das Gewicht mit dem Oberkörper zu bewegen.",
+      "Schultern ziehen nach oben zu den Ohren.",
+      "Bewegung kommt vor allem aus den Armen, Schulterblätter bleiben vorne.",
+      "Sitz zu niedrig oder zu hoch, Griffe liegen auf Schulterhöhe oder Bauchhöhe.",
+      "Gewicht wird in der exzentrischen Phase einfach nach vorne gelassen."
+    ],
+    "tips": [
+      "In der Endposition eine Sekunde halten, um die Kontraktion im Rücken zu spüren.",
+      "Die exzentrische Phase zwei bis drei Sekunden lang kontrollieren.",
+      "Gut geeignet als Alternative zum Kabelrudern, wenn der untere Rücken entlastet werden soll."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "kabelrudern-einarmig",
+    "name": "Kabelrudern einarmig",
+    "category": "back",
+    "equipment": "cable",
+    "grip_id": "single_handle",
+    "grip_notes": "Einzelgriff, neutral (Handfläche zeigt zum Körper). Alternativ: Griff während des Zugs leicht eindrehen, sodass die Handfläche am Ende nach innen-oben zeigt.",
+    "primary_muscles": ["lats", "mid_back"],
+    "secondary_muscles": ["biceps", "forearms", "rear_delts"],
+    "description": "Einarmige horizontale Zugübung am Kabelzug, die den Latissimus und den mittleren Rücken belastet. Geeignet, um Seitenunterschiede auszugleichen und den Bewegungsradius pro Seite zu vergrößern.",
+    "setup": [
+      "Einzelgriff am Kabelzug einhängen, Rolle etwa auf Bauchhöhe einstellen.",
+      "Sitzend an der Ruderstation oder stehend in Schrittstellung vor dem Kabelturm positionieren.",
+      "Griff mit einer Hand fassen, die freie Hand stützt sich am Gerät oder auf dem vorderen Oberschenkel ab.",
+      "Oberkörper aufrecht, Brust angehoben, Rumpf anspannen.",
+      "Arm gestreckt, Schulter nach unten ziehen, Gewicht leicht abheben, sodass Spannung auf dem Kabel ist."
+    ],
+    "execution": [
+      "Griff in Richtung Hüfte bzw. unterer Bauch ziehen, Ellenbogen führt die Bewegung nah am Körper nach hinten.",
+      "Schulterblatt der arbeitenden Seite nach hinten und unten ziehen.",
+      "In der Endposition kurz halten, Ellenbogen befindet sich leicht hinter dem Rumpf.",
+      "Gewicht langsam zurückführen, Arm kontrolliert strecken.",
+      "Am Ende das Schulterblatt leicht nach vorne kommen lassen, ohne den Oberkörper zu verdrehen.",
+      "Alle Wiederholungen auf einer Seite ausführen, dann die Seite wechseln."
+    ],
+    "range_of_motion": "Von gestrecktem Arm mit leicht nach vorne gezogenem Schulterblatt bis der Ellenbogen leicht hinter dem Rumpf ist. Der Oberkörper bleibt dabei stabil und dreht sich nur minimal mit.",
+    "breathing": "Beim Ziehen ausatmen, beim Strecken des Arms einatmen.",
+    "common_mistakes": [
+      "Oberkörper dreht sich stark mit, um das Gewicht zu bewegen.",
+      "Schulter zieht während des Zugs nach oben zum Ohr.",
+      "Ellenbogen weicht nach außen aus, Griff wird zur Brust statt zur Hüfte gezogen.",
+      "Zu schweres Gewicht, Bewegung wird aus dem Bizeps statt aus dem Rücken ausgeführt.",
+      "Keine Kontrolle in der exzentrischen Phase."
+    ],
+    "tips": [
+      "Mit der schwächeren Seite beginnen und die Wiederholungszahl auf der stärkeren Seite daran anpassen.",
+      "Vorstellen, den Ellenbogen nach hinten in die Hosentasche zu ziehen.",
+      "Die exzentrische Phase zwei bis drei Sekunden lang kontrollieren."
+    ],
+    "cable_setup": {
+      "cable": "Kabelturm oder Doppelkabelzug, eine Seite; alternativ sitzende Ruderstation",
+      "height": "Rolle etwa auf Bauchhöhe (sitzend) bzw. auf Hüft- bis Bauchhöhe (stehend)",
+      "grip_width": "Einzelgriff, eine Hand, neutral (Handfläche zum Körper)",
+      "body_position": "Sitzend aufrecht oder stehend in Schrittstellung mit leicht nach vorne geneigtem Oberkörper, Rumpf stabil, freie Hand stützt",
+      "foot_position": "Sitzend: Füße auf den Fußplatten; stehend: Schrittstellung, gegenüberliegendes Bein vorne",
+      "movement_direction": "Horizontal von vorne nach hinten in Richtung Hüfte bzw. unterer Bauch",
+      "elbow_position": "Ellenbogen eng am Körper, zeigt nach hinten",
+      "end_position": "Griff an der Hüfte, Ellenbogen leicht hinter dem Rumpf, Schulterblatt nach hinten und unten gezogen",
+      "return": "Langsam und kontrolliert bis zur Armstreckung, Schulterblatt am Ende leicht nach vorne kommen lassen"
+    }
+  },
+  {
+    "slug": "reverse-fly-kurzhantel",
+    "name": "Reverse Fly Kurzhantel",
+    "category": "back",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": "Neutraler Griff (Handflächen zeigen zueinander) oder pronierter Griff (Handrücken nach oben). Hanteln locker in den Händen halten, Ellenbogen während der gesamten Bewegung leicht gebeugt.",
+    "primary_muscles": ["rear_delts", "upper_back"],
+    "secondary_muscles": ["traps", "mid_back"],
+    "description": "Seitliches Anheben der Arme in vorgebeugter Position, das die hintere Schulter und den oberen Rücken belastet. Geeignet als Ergänzung zu Zugübungen und als Ausgleich zu Druckübungen.",
+    "setup": [
+      "Leichte Kurzhanteln wählen.",
+      "Oberkörper etwa 45 Grad bis fast parallel zum Boden nach vorne neigen, Knie leicht gebeugt, Rücken gerade.",
+      "Alternativ bäuchlings auf eine Schrägbank legen, Brust auf dem Polster.",
+      "Hanteln unter der Brust hängen lassen, Arme fast gestreckt, Ellenbogen leicht gebeugt.",
+      "Rumpf anspannen, Nacken in Verlängerung der Wirbelsäule, Blick nach unten.",
+      "Schultern nach unten ziehen, bevor die Bewegung beginnt."
+    ],
+    "execution": [
+      "Arme seitlich nach außen-oben anheben, Ellenbogen bleiben leicht gebeugt.",
+      "Bewegung aus den Schultern und Schulterblättern führen, nicht aus den Armen.",
+      "Anheben, bis die Oberarme etwa auf Höhe des Rückens sind.",
+      "In der Endposition kurz halten, Schulterblätter leicht zusammen ziehen.",
+      "Hanteln langsam und kontrolliert wieder absenken.",
+      "Unten die Spannung halten, Hanteln nicht zusammenschlagen lassen."
+    ],
+    "range_of_motion": "Von hängenden Armen bis die Oberarme etwa auf Höhe des Rückens sind. Höher als die Rückenlinie ist nicht notwendig.",
+    "breathing": "Beim Anheben ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Oberkörper richtet sich beim Anheben auf, um Schwung zu holen.",
+      "Zu schweres Gewicht, Ellenbogen werden stark gebeugt und die Bewegung wird zum Rudern.",
+      "Schultern ziehen nach oben zu den Ohren.",
+      "Rücken wird in der vorgebeugten Position rund.",
+      "Hanteln werden einfach fallen gelassen, keine Kontrolle beim Absenken."
+    ],
+    "tips": [
+      "Deutlich leichter beginnen als bei Ruderübungen, die hintere Schulter ist ein kleiner Muskel.",
+      "Daumen leicht nach unten drehen, um die hintere Schulter stärker zu betonen.",
+      "Die Variante auf der Schrägbank nimmt den unteren Rücken aus der Übung.",
+      "Höhere Wiederholungszahlen mit sauberer Technik sind hier sinnvoller als schweres Gewicht."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "straight-arm-pulldown",
+    "name": "Straight Arm Pulldown",
+    "category": "back",
+    "equipment": "cable",
+    "grip_id": "straight_bar",
+    "grip_notes": "Gerade Stange, pronierter Griff etwa schulterbreit. Alternativ: Seil mit neutralem Griff (Handflächen zueinander), erlaubt am Ende etwas mehr Bewegung an der Hüfte vorbei.",
+    "primary_muscles": ["lats"],
+    "secondary_muscles": ["triceps", "rear_delts", "abs"],
+    "description": "Zugübung am oberen Kabel mit fast gestreckten Armen, bei der der Latissimus ohne nennenswerte Beteiligung des Bizeps arbeitet. Geeignet als Isolations- oder Vorermüdungsübung für den Rücken.",
+    "setup": [
+      "Gerade Stange am oberen Kabel einhängen.",
+      "Etwa einen Schritt vom Kabelturm entfernt aufstellen, Füße hüftbreit, Knie leicht gebeugt.",
+      "Stange schulterbreit mit proniertem Griff fassen, Arme nach vorne-oben gestreckt.",
+      "Oberkörper leicht nach vorne neigen, Rücken gerade, Rumpf anspannen.",
+      "Schultern nach unten ziehen, Ellenbogen leicht gebeugt und in dieser Position fixieren."
+    ],
+    "execution": [
+      "Stange in einem Bogen nach unten zu den Oberschenkeln ziehen, Arme bleiben fast gestreckt.",
+      "Bewegung aus den Schultern führen, Ellenbogenwinkel bleibt unverändert.",
+      "Schulterblätter nach unten ziehen, Oberkörper bleibt stabil.",
+      "In der Endposition kurz halten, Stange berührt beinahe die Oberschenkel.",
+      "Stange langsam und kontrolliert wieder nach oben führen.",
+      "Oben die Dehnung im Latissimus spüren, ohne den Rücken zu überstrecken.",
+      "Ohne Schwung aus dem Oberkörper die nächste Wiederholung beginnen."
+    ],
+    "range_of_motion": "Von Armen etwa auf Höhe des Kopfes oder leicht darüber bis die Stange die Oberschenkel fast berührt. Oben nur so weit, wie der Rücken gerade bleibt.",
+    "breathing": "Beim Ziehen nach unten ausatmen, beim Zurückführen nach oben einatmen.",
+    "common_mistakes": [
+      "Ellenbogen werden während des Zugs gebeugt, die Übung wird zum Trizepsdrücken.",
+      "Oberkörper pendelt mit, um das Gewicht zu bewegen.",
+      "Schultern rollen nach vorne und ziehen nach oben.",
+      "Zu schweres Gewicht, die Bewegung wird kurz und ruckartig.",
+      "Rücken wird in der oberen Position stark überstreckt."
+    ],
+    "tips": [
+      "Leichtes Gewicht wählen und die Spannung im Latissimus über den gesamten Bewegungsradius halten.",
+      "Vorstellen, die Stange mit den Ellenbogen statt mit den Händen nach unten zu drücken.",
+      "Die exzentrische Phase zwei bis drei Sekunden lang ausführen.",
+      "Mit dem Seil lässt sich die Endposition etwas weiter an der Hüfte vorbei führen."
+    ],
+    "cable_setup": {
+      "cable": "Kabelturm oder Doppelkabelzug mit oberer Rolle",
+      "height": "Rolle ganz oben",
+      "grip_width": "Schulterbreit, proniert (Handrücken nach oben) an der geraden Stange",
+      "body_position": "Stehend, etwa einen Schritt vom Turm entfernt, Oberkörper leicht nach vorne geneigt, Rücken gerade, Rumpf angespannt",
+      "foot_position": "Hüftbreit, Knie leicht gebeugt, Gewicht gleichmäßig auf beiden Füßen",
+      "movement_direction": "Bogenförmig von vorne-oben nach unten zu den Oberschenkeln",
+      "elbow_position": "Leicht gebeugt und während der gesamten Bewegung unverändert",
+      "end_position": "Stange an den Oberschenkeln, Schulterblätter nach unten gezogen, Oberkörper stabil",
+      "return": "Langsam und kontrolliert nach oben bis etwa auf Kopfhöhe, Dehnung im Latissimus, Rücken bleibt gerade"
+    }
+  },
+  {
+    "slug": "hyperextensions",
+    "name": "Hyperextensions",
+    "category": "back",
+    "equipment": "bodyweight",
+    "grip_id": null,
+    "grip_notes": "Arme vor der Brust verschränkt oder Hände an den Schläfen. Mit Zusatzgewicht: Hantelscheibe oder Kurzhantel vor der Brust halten.",
+    "primary_muscles": ["lower_back", "glutes"],
+    "secondary_muscles": ["hamstrings"],
+    "description": "Rumpfstreckung an der 45-Grad-Rückenstrecker-Bank, die den unteren Rücken, das Gesäß und die hintere Oberschenkelmuskulatur belastet. Geeignet als Ergänzung im Rücken- oder Beintraining und zur Kräftigung der Rumpfrückseite.",
+    "setup": [
+      "Hüftpolster so einstellen, dass die Oberkante knapp unterhalb des Hüftknochens liegt und die Hüfte frei beugen kann.",
+      "Fersen fest gegen die Fußplatte stellen, Füße hüftbreit.",
+      "Oberkörper auf dem Polster ablegen, Arme vor der Brust verschränken.",
+      "Rumpf anspannen, Nacken in Verlängerung der Wirbelsäule.",
+      "Oberkörper aufrichten, bis der Körper eine gerade Linie von Kopf bis Ferse bildet."
+    ],
+    "execution": [
+      "Oberkörper langsam aus der Hüfte nach unten absenken, Wirbelsäule bleibt neutral.",
+      "So weit absenken, wie der Rücken gerade bleibt, etwa bis der Oberkörper senkrecht ist.",
+      "Gesäß und hintere Oberschenkel anspannen und den Oberkörper kontrolliert wieder anheben.",
+      "Anheben, bis Oberkörper und Beine eine gerade Linie bilden.",
+      "In der Endposition kurz halten, ohne weiter nach oben zu überstrecken.",
+      "Nächste Wiederholung kontrolliert beginnen."
+    ],
+    "range_of_motion": "Von der geraden Linie zwischen Oberkörper und Beinen bis der Oberkörper etwa senkrecht hängt. In der Endposition nicht über die gerade Linie hinaus überstrecken.",
+    "breathing": "Beim Absenken einatmen, beim Anheben ausatmen.",
+    "common_mistakes": [
+      "Oberkörper wird in der Endposition über die gerade Linie hinaus überstreckt.",
+      "Rücken wird beim Absenken rund, Bewegung kommt aus der Wirbelsäule statt aus der Hüfte.",
+      "Polster zu hoch eingestellt, Hüfte kann nicht frei beugen.",
+      "Bewegung wird mit Schwung ausgeführt.",
+      "Kopf wird in den Nacken gelegt."
+    ],
+    "tips": [
+      "Zunächst mit Körpergewicht beginnen, Zusatzgewicht erst dann, wenn die Technik stabil ist.",
+      "Für mehr Betonung des Gesäßes die Füße leicht nach außen drehen und bewusst aus der Hüfte arbeiten.",
+      "Die exzentrische Phase zwei bis drei Sekunden lang kontrollieren."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "wrist-curl",
+    "name": "Wrist Curl",
+    "category": "forearms",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": "Supinierter Griff (Handflächen nach oben), Kurzhantel locker in den Fingern. Alternativ: Langhantel mit beiden Händen, etwa schulterbreit.",
+    "primary_muscles": ["forearms"],
+    "secondary_muscles": [],
+    "description": "Isolierte Beugung des Handgelenks mit der Kurzhantel, die die Beugemuskulatur des Unterarms belastet. Geeignet als Ergänzung am Ende des Arm- oder Rückentrainings.",
+    "setup": [
+      "Leichte Kurzhantel wählen, sitzend auf einer Bank Platz nehmen.",
+      "Unterarm auf dem Oberschenkel oder auf der Bank ablegen, Handfläche zeigt nach oben.",
+      "Handgelenk ragt über das Knie bzw. die Bankkante hinaus, sodass es sich frei bewegen kann.",
+      "Hantel locker greifen, Finger leicht geöffnet.",
+      "Unterarm bleibt während der gesamten Bewegung auf der Unterlage."
+    ],
+    "execution": [
+      "Handgelenk langsam nach unten beugen, Hantel in die Finger rollen lassen.",
+      "In der unteren Position die Dehnung im Unterarm kurz halten.",
+      "Hantel mit den Fingern wieder greifen und das Handgelenk nach oben beugen.",
+      "In der oberen Position kurz halten, Unterarm bleibt auf der Unterlage.",
+      "Hantel langsam und kontrolliert wieder absenken.",
+      "Nach allen Wiederholungen die Seite wechseln."
+    ],
+    "range_of_motion": "Von der vollständig gestreckten Position mit geöffneten Fingern bis zur vollen Beugung des Handgelenks nach oben. Der Unterarm bewegt sich dabei nicht.",
+    "breathing": "Beim Beugen nach oben ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Unterarm hebt sich von der Unterlage ab, die Bewegung kommt aus dem Ellenbogen.",
+      "Zu schweres Gewicht, der Bewegungsradius wird sehr klein.",
+      "Hantel wird mit Schwung nach oben geworfen.",
+      "Keine Kontrolle beim Absenken."
+    ],
+    "tips": [
+      "Leichtes Gewicht und höhere Wiederholungszahlen wählen, die Unterarmmuskulatur reagiert gut darauf.",
+      "Die Hantel bewusst bis in die Finger rollen lassen, um den vollen Bewegungsradius zu nutzen.",
+      "Tempo langsam halten, etwa zwei Sekunden pro Phase."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "reverse-wrist-curl",
+    "name": "Reverse Wrist Curl",
+    "category": "forearms",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": "Pronierter Griff (Handflächen nach unten), Hantel fest umschlossen. Alternativ: Langhantel oder EZ-Stange mit beiden Händen, etwa schulterbreit.",
+    "primary_muscles": ["forearms"],
+    "secondary_muscles": [],
+    "description": "Isolierte Streckung des Handgelenks mit der Kurzhantel, die die Streckmuskulatur des Unterarms belastet. Geeignet als Ausgleich zum Wrist Curl und zur Kräftigung der Unterarmaußenseite.",
+    "setup": [
+      "Deutlich leichtere Kurzhantel als beim Wrist Curl wählen, sitzend auf einer Bank Platz nehmen.",
+      "Unterarm auf dem Oberschenkel oder auf der Bank ablegen, Handfläche zeigt nach unten.",
+      "Handgelenk ragt über das Knie bzw. die Bankkante hinaus, sodass es sich frei bewegen kann.",
+      "Hantel fest umschließen, Handgelenk in neutraler Ausgangsposition.",
+      "Unterarm bleibt während der gesamten Bewegung auf der Unterlage."
+    ],
+    "execution": [
+      "Handgelenk langsam nach unten beugen, Handrücken bewegt sich in Richtung Boden.",
+      "In der unteren Position die Dehnung an der Unterarmaußenseite kurz halten.",
+      "Handgelenk kontrolliert nach oben strecken, Handrücken bewegt sich in Richtung Unterarm.",
+      "In der oberen Position kurz halten, Unterarm bleibt auf der Unterlage.",
+      "Hantel langsam und kontrolliert wieder absenken.",
+      "Nach allen Wiederholungen die Seite wechseln."
+    ],
+    "range_of_motion": "Von der vollständig gebeugten Position nach unten bis zur vollen Streckung des Handgelenks nach oben. Der Unterarm bewegt sich dabei nicht.",
+    "breathing": "Beim Strecken nach oben ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Zu schweres Gewicht, die Streckmuskulatur ist deutlich schwächer als die Beugemuskulatur.",
+      "Unterarm hebt sich von der Unterlage ab, die Bewegung kommt aus dem Ellenbogen.",
+      "Bewegungsradius wird sehr klein, nur das obere Drittel wird genutzt.",
+      "Hantel wird mit Schwung nach oben geworfen."
+    ],
+    "tips": [
+      "Mit etwa der Hälfte des Gewichts vom Wrist Curl beginnen und bei Bedarf anpassen.",
+      "Leichtes Gewicht und höhere Wiederholungszahlen wählen.",
+      "Tempo langsam halten, etwa zwei Sekunden pro Phase.",
+      "Bei Beschwerden im Ellenbogen das Gewicht reduzieren oder den Bewegungsradius verkleinern."
+    ],
+    "cable_setup": null
+  }
+]

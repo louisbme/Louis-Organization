@@ -1,0 +1,514 @@
+[
+  {
+    "slug": "hackenschmidt",
+    "name": "Hackenschmidt",
+    "category": "quads",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Haltegriffe neben den Schulterpolstern fassen, Hände bleiben locker. Füße mittig auf der Plattform, etwa schulterbreit, Fußspitzen leicht nach außen.",
+    "primary_muscles": ["quads"],
+    "secondary_muscles": ["glutes", "hamstrings"],
+    "description": "Geführte Kniebeuge an der Hackenschmidt-Maschine, bei der der Rücken am Schlitten anliegt und die Bewegung in einer festen Bahn verläuft. Gut geeignet, um den Quadrizeps mit hoher Kontrolle und ohne freie Stabilisation zu belasten.",
+    "setup": [
+      "Rücken und Schultern vollständig an das Rückenpolster und die Schulterpolster anlegen.",
+      "Füße mittig und etwa schulterbreit auf der Plattform platzieren, Fußspitzen leicht nach außen.",
+      "Haltegriffe fassen und die Sicherungen der Maschine lösen.",
+      "Rumpf anspannen, unterer Rücken bleibt am Polster.",
+      "Knie in der Startposition leicht gebeugt lassen, nicht durchgestreckt."
+    ],
+    "execution": [
+      "Schlitten kontrolliert absenken, Knie beugen sich in Richtung Fußspitzen.",
+      "Fersen bleiben während der gesamten Bewegung auf der Plattform.",
+      "So tief absenken, wie Beweglichkeit und Becken am Polster es zulassen.",
+      "Kurz in der unteren Position stoppen, ohne das Gewicht abzusetzen.",
+      "Über die ganze Fußsohle nach oben drücken, bis die Knie fast gestreckt sind.",
+      "Knie oben nicht durchdrücken, Spannung im Oberschenkel halten."
+    ],
+    "range_of_motion": "Absenken, bis die Oberschenkel etwa parallel zur Plattform stehen oder so weit, wie das Becken am Polster bleibt. Oben kurz vor der vollen Kniestreckung stoppen.",
+    "breathing": "Beim Hochdrücken ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Fersen heben sich in der unteren Position von der Plattform ab.",
+      "Knie fallen nach innen, statt in Richtung Fußspitzen zu zeigen.",
+      "Becken kippt unten vom Polster weg, unterer Rücken rundet sich.",
+      "Knie werden oben vollständig durchgestreckt und die Spannung geht verloren.",
+      "Füße stehen zu weit unten auf der Plattform, Fersen finden keinen Halt."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Füße etwas höher auf der Plattform platzieren, wenn Gesäß und hintere Oberschenkel stärker beteiligt sein sollen.",
+      "Sicherungen vor dem Satz prüfen und erst nach dem letzten Satz wieder einrasten lassen.",
+      "Erst dann Gewicht erhöhen, wenn die Tiefe über alle Wiederholungen gleich bleibt."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "beinpresse",
+    "name": "Beinpresse",
+    "category": "quads",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Haltegriffe seitlich am Sitz fassen, um das Becken stabil zu halten. Füße mittig auf der Platte, etwa schulterbreit, Fußspitzen leicht nach außen.",
+    "primary_muscles": ["quads"],
+    "secondary_muscles": ["glutes", "hamstrings"],
+    "description": "Geführte Druckübung an der 45-Grad- oder horizontalen Beinpresse, bei der der Oberkörper fixiert ist und die Beine das Gewicht wegdrücken. Gut geeignet, um Quadrizeps und Gesäß mit hoher Last und geringer Stabilisationsanforderung zu trainieren.",
+    "setup": [
+      "Rückenlehne so einstellen, dass unterer Rücken und Becken vollständig am Polster anliegen.",
+      "Füße mittig und etwa schulterbreit auf die Platte stellen, Fußspitzen leicht nach außen.",
+      "Haltegriffe fassen, Rumpf anspannen.",
+      "Platte leicht wegdrücken und die Sicherungen lösen.",
+      "Startposition mit leicht gebeugten Knien einnehmen, Fersen fest auf der Platte."
+    ],
+    "execution": [
+      "Platte kontrolliert absenken, Knie beugen sich in Richtung Fußspitzen.",
+      "So weit absenken, wie das Becken am Polster bleibt.",
+      "Unten kurz stoppen, ohne dass das Gewicht aufsetzt.",
+      "Über die ganze Fußsohle wegdrücken, Fersen bleiben auf der Platte.",
+      "Knie am Ende nicht vollständig durchstrecken.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von leicht gebeugten Knien bis zu einem Kniewinkel von etwa 90 Grad oder tiefer, solange das Becken am Polster bleibt. Oben kurz vor der vollen Streckung stoppen.",
+    "breathing": "Beim Wegdrücken ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Becken hebt sich unten vom Polster ab, unterer Rücken rundet sich.",
+      "Knie werden oben vollständig durchgestreckt.",
+      "Knie fallen beim Drücken nach innen.",
+      "Fersen heben sich von der Platte ab, Druck kommt nur aus den Zehen.",
+      "Gewicht wird unten mit Schwung abgefangen."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Hände an den Griffen lassen und nicht gegen die Knie drücken.",
+      "Höhere Fußposition auf der Platte verlagert die Belastung mehr auf Gesäß und hintere Oberschenkel, tiefere Position mehr auf den Quadrizeps.",
+      "Sicherungen vor dem Satz prüfen und erst nach dem letzten Satz einrasten lassen."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "beinstrecker",
+    "name": "Beinstrecker",
+    "category": "quads",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Haltegriffe seitlich am Sitz fassen, um das Becken im Sitz zu halten. Keine Griffarbeit nötig, Hände bleiben locker.",
+    "primary_muscles": ["quads"],
+    "secondary_muscles": [],
+    "description": "Isolationsübung an der Maschine, bei der die Knie gegen Widerstand gestreckt werden. Gut geeignet, um den Quadrizeps gezielt und ohne Belastung von Hüfte und Rücken zu trainieren.",
+    "setup": [
+      "Rückenlehne so einstellen, dass die Drehachse der Maschine auf Höhe des Kniegelenks liegt.",
+      "Beinpolster so einstellen, dass es knapp oberhalb des Sprunggelenks am Schienbein anliegt.",
+      "Rücken vollständig an das Polster anlehnen, Haltegriffe fassen.",
+      "Oberschenkel liegen flach auf dem Sitz, Fußspitzen leicht angezogen.",
+      "Gewicht so wählen, dass die Streckung kontrolliert möglich ist."
+    ],
+    "execution": [
+      "Beine kontrolliert strecken, bis die Knie fast gestreckt sind.",
+      "In der Endposition ein bis zwei Sekunden halten und den Quadrizeps anspannen.",
+      "Oberschenkel bleiben auf dem Sitz, Becken bleibt am Polster.",
+      "Gewicht langsam zurückführen, bis der Kniewinkel etwa 90 Grad erreicht.",
+      "Gewicht nicht aufsetzen lassen, Spannung halten.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von etwa 90 Grad Kniebeugung bis zur fast vollständigen Streckung. Bei Beschwerden im Knie den Bewegungsradius in der unteren Position verkleinern.",
+    "breathing": "Beim Strecken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Gewicht wird mit Schwung nach oben geschleudert.",
+      "Becken hebt sich vom Sitz ab, um mehr Gewicht zu bewegen.",
+      "Drehachse der Maschine liegt nicht auf Kniehöhe, Knie wird ungünstig belastet.",
+      "Gewicht fällt in der exzentrischen Phase unkontrolliert zurück.",
+      "Polster liegt zu hoch am Schienbein, Hebel wird ungünstig."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Fußspitzen leicht nach oben ziehen, um die Spannung im Quadrizeps zu erhöhen.",
+      "Einbeinige Ausführung, um Seitenunterschiede auszugleichen.",
+      "Mit moderatem Gewicht und höheren Wiederholungszahlen beginnen, dann schrittweise steigern."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "bulgarian-split-squat",
+    "name": "Bulgarian Split Squat",
+    "category": "quads",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": "Kurzhanteln neutral an den Seiten halten, Arme hängen locker, Handgelenke gerade. Alternativ eine Kurzhantel vor der Brust halten (Goblet-Position) für mehr Rumpfstabilität.",
+    "primary_muscles": ["quads", "glutes"],
+    "secondary_muscles": ["hamstrings", "abs"],
+    "description": "Einbeinige Kniebeuge mit dem hinteren Fuß auf einer Bank, bei der das vordere Bein die Hauptlast trägt. Gut geeignet, um Quadrizeps und Gesäß einseitig zu belasten und Seitenunterschiede auszugleichen.",
+    "setup": [
+      "Bank hinter sich aufstellen, Kurzhanteln an den Seiten halten.",
+      "Mit dem Rücken zur Bank einen großen Schritt nach vorne machen.",
+      "Hinteren Fuß mit dem Fußrücken oder den Zehen auf der Bank ablegen.",
+      "Vorderer Fuß steht flach und so weit vorne, dass das Knie unten etwa über dem Mittelfuß bleibt.",
+      "Oberkörper aufrecht, Blick nach vorne, Rumpf anspannen."
+    ],
+    "execution": [
+      "Vorderes Knie kontrolliert beugen und das Becken gerade nach unten absenken.",
+      "Vorderes Knie zeigt in Richtung Fußspitze, Ferse bleibt am Boden.",
+      "Hinteres Knie nähert sich dem Boden, ohne aufzusetzen.",
+      "Oberkörper bleibt aufrecht oder leicht nach vorne geneigt.",
+      "Über die ganze Fußsohle des vorderen Fußes nach oben drücken.",
+      "Oben Knie nicht durchstrecken, Spannung halten.",
+      "Nach allen Wiederholungen die Seite wechseln."
+    ],
+    "range_of_motion": "Absenken, bis der vordere Oberschenkel etwa parallel zum Boden steht oder das hintere Knie knapp über dem Boden ist, je nach Beweglichkeit. Oben kurz vor der vollen Streckung stoppen.",
+    "breathing": "Beim Hochdrücken ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Vorderer Fuß steht zu nah an der Bank, Knie wandert weit über die Fußspitze.",
+      "Vorderes Knie fällt nach innen.",
+      "Oberkörper kippt stark nach vorne oder dreht sich ein.",
+      "Hinteres Bein drückt aktiv mit und übernimmt einen Teil der Arbeit.",
+      "Ferse des vorderen Fußes hebt sich vom Boden ab."
+    ],
+    "tips": [
+      "Zuerst ohne Zusatzgewicht die Fußposition finden, dann Kurzhanteln hinzunehmen.",
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Leichte Vorlage des Oberkörpers betont das Gesäß, aufrechte Haltung mehr den Quadrizeps.",
+      "Bei Gleichgewichtsproblemen mit einer Hand leicht an einem Rack abstützen."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "kniebeuge",
+    "name": "Kniebeuge",
+    "category": "quads",
+    "equipment": "barbell",
+    "grip_id": null,
+    "grip_notes": "Pronierter Griff etwas weiter als schulterbreit, Stange liegt auf dem oberen Trapez (High Bar) oder etwas tiefer auf den hinteren Schultern (Low Bar). Handgelenke möglichst gerade, Ellenbogen zeigen nach unten.",
+    "primary_muscles": ["quads", "glutes"],
+    "secondary_muscles": ["hamstrings", "lower_back", "abs"],
+    "description": "Freie Kniebeuge mit der Langhantel im Nacken, bei der Knie und Hüfte gemeinsam gebeugt und gestreckt werden. Grundübung für Quadrizeps und Gesäß, die zusätzlich Rumpf und unteren Rücken fordert.",
+    "setup": [
+      "Stange im Rack etwa auf Höhe des oberen Brustbeins ablegen, Sicherheitsstangen knapp unterhalb der tiefsten Position einstellen.",
+      "Unter die Stange treten, Stange auf dem oberen Trapez ablegen und Griff etwas weiter als schulterbreit fassen.",
+      "Schulterblätter zusammenziehen, Rumpf anspannen und Stange aus dem Rack heben.",
+      "Ein bis zwei kleine Schritte zurück, Füße etwa schulterbreit, Fußspitzen leicht nach außen.",
+      "Blick nach vorne, Stange steht über dem Mittelfuß."
+    ],
+    "execution": [
+      "Vor dem Absenken einatmen und den Rumpf anspannen.",
+      "Hüfte und Knie gleichzeitig beugen, Becken nach hinten und unten absenken.",
+      "Knie zeigen in Richtung Fußspitzen, Fersen bleiben am Boden.",
+      "So tief absenken, wie der Rücken neutral bleibt.",
+      "Über die ganze Fußsohle nach oben drücken, Hüfte und Schultern steigen gemeinsam.",
+      "Oben aufrecht stehen, Knie nicht hart durchstrecken.",
+      "Nach dem letzten Satz Stange kontrolliert zurück ins Rack führen."
+    ],
+    "range_of_motion": "Tiefe nach Beweglichkeit wählen, in der Regel bis die Oberschenkel etwa parallel zum Boden stehen oder tiefer. Sobald das Becken unten einrollt oder die Fersen abheben, ist der sinnvolle Bewegungsradius erreicht.",
+    "breathing": "Oben einatmen und die Spannung während des Absenkens halten, beim Hochdrücken nach dem schwersten Punkt ausatmen.",
+    "common_mistakes": [
+      "Knie fallen nach innen.",
+      "Fersen heben sich vom Boden ab, Gewicht verlagert sich auf die Zehen.",
+      "Hüfte steigt beim Hochdrücken schneller als die Schultern, Oberkörper kippt nach vorne.",
+      "Unterer Rücken rundet sich in der tiefen Position.",
+      "Sicherheitsstangen werden nicht eingestellt oder liegen zu hoch."
+    ],
+    "tips": [
+      "Technik zuerst mit der leeren Stange oder leichtem Gewicht festigen.",
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Bei eingeschränkter Sprunggelenkbeweglichkeit Fersen leicht erhöhen oder Schuhe mit erhöhter Ferse nutzen.",
+      "Gewicht in kleinen Schritten steigern, wenn Tiefe und Rückenposition stabil bleiben."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "ausfallschritte",
+    "name": "Ausfallschritte",
+    "category": "glutes",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": "Kurzhanteln neutral an den Seiten halten, Arme hängen locker, Schultern hinten. Handgelenke gerade.",
+    "primary_muscles": ["glutes", "quads"],
+    "secondary_muscles": ["hamstrings", "abs"],
+    "description": "Schrittbewegung mit Kurzhanteln, bei der ein Bein nach vorne gesetzt und das Becken abgesenkt wird, entweder gehend (Walking Lunges) oder auf der Stelle. Gut geeignet für Gesäß und Oberschenkel sowie für Gleichgewicht und einseitige Stabilität.",
+    "setup": [
+      "Kurzhanteln an den Seiten halten, Füße hüftbreit, Oberkörper aufrecht.",
+      "Ausreichend Platz nach vorne sicherstellen, besonders bei gehender Ausführung.",
+      "Rumpf anspannen, Blick nach vorne.",
+      "Schrittlänge so wählen, dass das vordere Knie unten etwa über dem Mittelfuß bleibt."
+    ],
+    "execution": [
+      "Mit einem Bein einen großen Schritt nach vorne machen und den Fuß flach aufsetzen.",
+      "Becken gerade nach unten absenken, beide Knie beugen sich.",
+      "Vorderes Knie zeigt in Richtung Fußspitze, Ferse bleibt am Boden.",
+      "Hinteres Knie nähert sich dem Boden, ohne hart aufzusetzen.",
+      "Über die ganze Fußsohle des vorderen Fußes nach oben drücken.",
+      "Bei Walking Lunges das hintere Bein direkt in den nächsten Schritt führen, auf der Stelle zurück in die Ausgangsposition.",
+      "Seiten gleichmäßig abwechseln."
+    ],
+    "range_of_motion": "Absenken, bis der vordere Oberschenkel etwa parallel zum Boden steht und das hintere Knie knapp über dem Boden ist, je nach Beweglichkeit. Oben kurz vor der vollen Kniestreckung stoppen.",
+    "breathing": "Beim Hochdrücken ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Schritt zu kurz, vorderes Knie wandert weit über die Fußspitze.",
+      "Vorderes Knie fällt nach innen.",
+      "Oberkörper kippt nach vorne oder dreht sich zur Seite.",
+      "Hinteres Knie schlägt auf den Boden auf.",
+      "Abdruck erfolgt über die Zehen statt über die ganze Fußsohle."
+    ],
+    "tips": [
+      "Zuerst ohne Zusatzgewicht die Schrittlänge finden, dann Kurzhanteln hinzunehmen.",
+      "Leichte Vorlage des Oberkörpers betont das Gesäß stärker.",
+      "Exzentrische Phase kontrolliert ausführen, nicht in die untere Position fallen.",
+      "Bei Gleichgewichtsproblemen Ausfallschritte auf der Stelle statt gehend ausführen."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "beinbeuger",
+    "name": "Beinbeuger",
+    "category": "hamstrings",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Haltegriffe fassen, um Becken und Oberkörper stabil zu halten. Liegend: Griffe vorne unter dem Polster, Hüfte bleibt auf dem Polster. Sitzend: Griffe seitlich, Rücken am Polster, Oberschenkelpolster fest fixiert.",
+    "primary_muscles": ["hamstrings"],
+    "secondary_muscles": ["calves", "glutes"],
+    "description": "Isolationsübung an der Maschine, bei der die Knie gegen Widerstand gebeugt werden, liegend oder sitzend. Gut geeignet, um die hintere Oberschenkelmuskulatur gezielt zu trainieren.",
+    "setup": [
+      "Maschine so einstellen, dass die Drehachse auf Höhe des Kniegelenks liegt.",
+      "Beinpolster knapp oberhalb der Ferse an der Achillessehne anlegen.",
+      "Liegend: Hüfte flach auf dem Polster, Oberkörper abgelegt, Griffe fassen.",
+      "Sitzend: Rücken am Polster, Oberschenkelpolster fest auf den Oberschenkeln fixieren, Griffe fassen.",
+      "Beine in der Startposition fast gestreckt, Fußspitzen leicht angezogen."
+    ],
+    "execution": [
+      "Fersen kontrolliert in Richtung Gesäß ziehen.",
+      "Becken bleibt dabei stabil auf oder am Polster.",
+      "In der Endposition kurz halten und die hinteren Oberschenkel anspannen.",
+      "Gewicht langsam zurückführen, bis die Beine fast gestreckt sind.",
+      "Gewicht nicht aufsetzen lassen, Spannung halten.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von fast gestreckten Beinen bis zu einem Kniewinkel von etwa 90 Grad oder enger, soweit das Becken stabil bleibt. Die Dehnung in der gestreckten Position bewusst kontrollieren.",
+    "breathing": "Beim Beugen ausatmen, beim Strecken einatmen.",
+    "common_mistakes": [
+      "Hüfte hebt sich liegend vom Polster ab, unterer Rücken überstreckt.",
+      "Gewicht wird mit Schwung nach oben gezogen.",
+      "Beine werden am Ende nicht wieder kontrolliert gestreckt.",
+      "Polster liegt zu hoch an der Wade, Hebel wird ungünstig.",
+      "Sitzend: Oberschenkelpolster zu locker, Oberschenkel heben sich ab."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Sitzende Variante erlaubt eine stärkere Dehnung, liegende Variante eine stärkere Endkontraktion; beide lassen sich abwechseln.",
+      "Einbeinige Ausführung, um Seitenunterschiede auszugleichen.",
+      "Fußspitzen gestreckt halten, um den Anteil der Waden zu verringern und die hinteren Oberschenkel stärker zu betonen."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "rumaenisches-kreuzheben",
+    "name": "Rumänisches Kreuzheben",
+    "category": "hamstrings",
+    "equipment": "barbell",
+    "grip_id": null,
+    "grip_notes": "Pronierter Griff etwa schulterbreit, Stange nah an den Oberschenkeln. Bei nachlassender Griffkraft Zughilfen nutzen.",
+    "primary_muscles": ["hamstrings", "glutes"],
+    "secondary_muscles": ["lower_back", "forearms", "upper_back"],
+    "description": "Hüftdominante Beugebewegung mit der Langhantel, bei der die Knie leicht gebeugt bleiben und die Stange nah am Körper abgesenkt wird. Gut geeignet, um hintere Oberschenkel und Gesäß über eine Dehnung zu belasten.",
+    "setup": [
+      "Stange aus dem Rack oder vom Boden in den aufrechten Stand bringen, Füße hüftbreit.",
+      "Pronierter Griff etwa schulterbreit, Arme gestreckt, Stange liegt an den Oberschenkeln.",
+      "Knie leicht beugen und diesen Winkel während der Bewegung beibehalten.",
+      "Schulterblätter leicht nach hinten ziehen, Brust angehoben, Rücken neutral.",
+      "Rumpf anspannen, Gewicht auf der ganzen Fußsohle."
+    ],
+    "execution": [
+      "Hüfte nach hinten schieben, Oberkörper neigt sich nach vorne.",
+      "Stange gleitet nah an den Oberschenkeln nach unten.",
+      "Rücken bleibt neutral, Blick folgt dem Oberkörper.",
+      "So tief absenken, wie der Rücken neutral bleibt und die Dehnung in den hinteren Oberschenkeln spürbar ist.",
+      "Hüfte nach vorne schieben und aufrichten, Gesäß anspannen.",
+      "Oben aufrecht stehen, unteren Rücken nicht überstrecken."
+    ],
+    "range_of_motion": "Von der aufrechten Position bis die Stange etwa auf Höhe der Knie oder des oberen Schienbeins ist. Die Tiefe wird durch die neutrale Rückenposition begrenzt, nicht durch den Boden.",
+    "breathing": "Oben einatmen, während des Absenkens die Spannung halten, beim Aufrichten ausatmen.",
+    "common_mistakes": [
+      "Unterer Rücken rundet sich in der tiefen Position.",
+      "Stange entfernt sich vom Körper, Hebel auf den unteren Rücken steigt.",
+      "Knie werden stark gebeugt, Bewegung wird zur Kniebeuge.",
+      "Oben wird der untere Rücken überstreckt.",
+      "Schultern hängen nach vorne, Oberkörper verliert die Spannung."
+    ],
+    "tips": [
+      "Technik zuerst mit leichtem Gewicht festigen und auf die Dehnung in den hinteren Oberschenkeln achten.",
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Zughilfen nutzen, wenn die Griffkraft vor den hinteren Oberschenkeln nachlässt.",
+      "Alternativ mit Kurzhanteln ausführen, wenn keine Langhantel verfügbar ist."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "hip-thrust",
+    "name": "Hip Thrust",
+    "category": "glutes",
+    "equipment": "barbell",
+    "grip_id": null,
+    "grip_notes": "Stange mit proniertem Griff etwa schulterbreit außen am Polster halten, nur zum Stabilisieren, nicht ziehen. Alternativ: Hip-Thrust-Maschine mit Gurt oder Polster über der Hüfte, Haltegriffe seitlich.",
+    "primary_muscles": ["glutes"],
+    "secondary_muscles": ["hamstrings", "quads"],
+    "description": "Hüftstreckung gegen Widerstand mit dem oberen Rücken auf einer Bank und der Langhantel auf der Hüfte. Gut geeignet, um das Gesäß in der gestreckten Endposition stark zu belasten.",
+    "setup": [
+      "Stabile Bank quer hinter sich stellen, Höhe etwa Kniehöhe.",
+      "Polster auf die Stange legen und Stange über die Hüfte rollen.",
+      "Oberen Rücken unterhalb der Schulterblätter auf der Bankkante ablegen.",
+      "Füße hüftbreit so aufstellen, dass die Unterschenkel in der Endposition etwa senkrecht stehen.",
+      "Rippen nach unten, Kinn leicht eingezogen, Rumpf anspannen."
+    ],
+    "execution": [
+      "Über die Fersen die Hüfte nach oben drücken.",
+      "Gesäß in der Endposition bewusst anspannen, Hüfte vollständig gestreckt.",
+      "Oben bilden Schultern, Hüfte und Knie eine Linie, unterer Rücken bleibt neutral.",
+      "Ein bis zwei Sekunden oben halten.",
+      "Hüfte kontrolliert absenken, bis die Stange knapp über dem Boden ist.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von knapp über dem Boden bis zur vollständigen Hüftstreckung. Die Endposition wird durch das Gesäß erreicht, nicht durch Überstrecken des unteren Rückens.",
+    "breathing": "Beim Hochdrücken ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Unterer Rücken wird oben überstreckt, statt die Hüfte zu strecken.",
+      "Kopf kippt nach hinten, Blick geht an die Decke.",
+      "Füße stehen zu weit vorne, Belastung geht in die hinteren Oberschenkel.",
+      "Füße stehen zu nah am Gesäß, Quadrizeps übernimmt.",
+      "Bewegung wird mit Schwung ausgeführt, keine Pause oben."
+    ],
+    "tips": [
+      "Blick während der gesamten Bewegung in Richtung Knie halten.",
+      "Oben ein bis zwei Sekunden halten und das Gesäß bewusst anspannen.",
+      "Gewichtsscheiben mit Stoppern gegen Verrutschen sichern und Bank gegen Wegrutschen fixieren.",
+      "Zu Beginn Technik ohne Zusatzgewicht oder nur mit der Stange üben."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "kabel-kickback",
+    "name": "Kabel Kickback",
+    "category": "glutes",
+    "equipment": "cable",
+    "grip_id": "ankle_strap",
+    "grip_notes": "Fußschlaufe am Sprunggelenk des Arbeitsbeins befestigen, fest, aber nicht einschnürend. Hände stützen sich am Kabelturm ab. Alternativ eine gepolsterte Manschette nutzen, wenn vorhanden.",
+    "primary_muscles": ["glutes"],
+    "secondary_muscles": ["hamstrings"],
+    "description": "Einbeinige Hüftstreckung am unteren Kabelzug mit Fußschlaufe, bei der das Bein nach hinten-oben geführt wird. Gut geeignet als Isolationsübung für das Gesäß mit leichtem bis moderatem Gewicht.",
+    "setup": [
+      "Fußschlaufe am unteren Kabel einhängen und am Sprunggelenk des Arbeitsbeins befestigen.",
+      "Mit dem Gesicht zum Kabelturm stellen, Hände am Turm abstützen.",
+      "Oberkörper leicht nach vorne neigen, Rücken neutral, Rumpf anspannen.",
+      "Standbein leicht gebeugt, Gewicht auf der ganzen Fußsohle.",
+      "Arbeitsbein leicht vor dem Körper, Spannung im Kabel aufnehmen."
+    ],
+    "execution": [
+      "Arbeitsbein kontrolliert nach hinten-oben führen, Knie bleibt fast gestreckt.",
+      "Bewegung kommt aus der Hüfte, Gesäß anspannen.",
+      "Becken bleibt stabil, unterer Rücken überstreckt nicht.",
+      "In der Endposition ein bis zwei Sekunden halten.",
+      "Bein langsam zurückführen, bis es leicht vor dem Körper ist.",
+      "Nach allen Wiederholungen die Seite wechseln."
+    ],
+    "range_of_motion": "Vom leichten Vorschwung bis zur vollständigen Hüftstreckung. Die Höhe des Beins wird durch die stabile Beckenposition begrenzt, nicht durch Überstrecken des Rückens.",
+    "breathing": "Beim Führen des Beins nach hinten ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Unterer Rücken überstreckt, um das Bein höher zu bringen.",
+      "Bewegung wird mit Schwung aus dem Vorschwung ausgeführt.",
+      "Oberkörper dreht sich ein oder weicht zur Seite aus.",
+      "Knie des Arbeitsbeins beugt sich stark, Bewegung wird zum Beinbeugen.",
+      "Zu viel Gewicht, Bewegungsradius wird klein."
+    ],
+    "tips": [
+      "Leichtes bis moderates Gewicht wählen und auf die Kontraktion im Gesäß konzentrieren.",
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Fußspitze des Arbeitsbeins leicht nach außen drehen, um das Gesäß stärker zu spüren.",
+      "Höhere Wiederholungszahlen (12 bis 20) sind bei dieser Übung sinnvoll."
+    ],
+    "cable_setup": {
+      "cable": "Kabelturm oder Doppelkabelzug, einarmig mit einem Kabel",
+      "height": "Rolle ganz unten",
+      "grip_width": "Keine Griffarbeit, Fußschlaufe am Sprunggelenk; Hände stützen sich am Turm ab",
+      "body_position": "Stehend mit dem Gesicht zum Turm, Oberkörper leicht nach vorne geneigt, Rücken neutral, Rumpf angespannt, Hände am Turm",
+      "foot_position": "Standbein leicht gebeugt, Fuß flach auf dem Boden; Arbeitsbein mit Schlaufe leicht vor dem Körper",
+      "movement_direction": "Bein nach hinten-oben, in Verlängerung des Rumpfes",
+      "elbow_position": "Arme leicht gebeugt am Turm, dienen nur der Stabilisierung",
+      "end_position": "Bein hinter dem Körper, Hüfte vollständig gestreckt, Gesäß angespannt, Becken stabil",
+      "return": "Langsam und kontrolliert über etwa zwei Sekunden, bis das Bein leicht vor dem Körper ist, ohne dass das Gewicht aufsetzt"
+    }
+  },
+  {
+    "slug": "wadenheben-stehend",
+    "name": "Wadenheben stehend",
+    "category": "calves",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Haltegriffe oder Schulterpolster der stehenden Wadenmaschine nutzen, Hände bleiben locker. Alternativ: Smith-Maschine mit Stange im Nacken oder Stufe mit Kurzhantel in einer Hand und Abstützen mit der anderen.",
+    "primary_muscles": ["calves"],
+    "secondary_muscles": [],
+    "description": "Plantarflexion im Stand gegen Widerstand, bei der die gesamte Wadenmuskulatur einschließlich des zweigelenkigen Gastrocnemius belastet wird. Gut geeignet als Grundübung für die Waden.",
+    "setup": [
+      "Schulterpolster so einstellen, dass die Beine im Stand fast gestreckt sind und das Gewicht leicht abhebt.",
+      "Fußballen auf die Kante der Plattform stellen, Fersen frei, Füße hüftbreit.",
+      "Knie fast gestreckt, aber nicht durchgedrückt.",
+      "Rumpf anspannen, Oberkörper aufrecht.",
+      "Fersen kontrolliert absenken, um die Startposition in der Dehnung einzunehmen."
+    ],
+    "execution": [
+      "Fersen so hoch wie möglich anheben, auf die Fußballen drücken.",
+      "In der oberen Position ein bis zwei Sekunden halten.",
+      "Fersen langsam absenken, bis eine deutliche Dehnung in der Wade spürbar ist.",
+      "In der unteren Position kurz halten, ohne zu federn.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Volle Dehnung unten mit Fersen deutlich unter der Plattformkante bis zum höchsten Punkt auf den Fußballen. Der Kniewinkel bleibt während der gesamten Bewegung gleich.",
+    "breathing": "Beim Anheben der Fersen ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Bewegung wird federnd und mit Schwung aus der Dehnung ausgeführt.",
+      "Knie werden während der Bewegung gebeugt und gestreckt.",
+      "Bewegungsradius ist zu klein, keine Dehnung unten.",
+      "Füße rutschen auf der Plattform nach vorne.",
+      "Oberkörper kippt nach vorne oder hinten."
+    ],
+    "tips": [
+      "Oben kurze Pause einlegen, unten die Dehnung ein bis zwei Sekunden halten.",
+      "Höhere Wiederholungszahlen (12 bis 20) mit vollem Bewegungsradius sind bei Waden in der Regel sinnvoll.",
+      "Einbeinige Ausführung, um Seitenunterschiede auszugleichen.",
+      "Ohne Maschine: Stufe mit Kurzhantel in einer Hand, andere Hand stützt sich ab."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "wadenheben-sitzend",
+    "name": "Wadenheben sitzend",
+    "category": "calves",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Haltegriffe am Oberschenkelpolster fassen, um das Polster zu sichern und den Oberkörper stabil zu halten. Hände bleiben locker, keine Zugarbeit.",
+    "primary_muscles": ["calves"],
+    "secondary_muscles": [],
+    "description": "Plantarflexion im Sitzen gegen Widerstand mit gebeugten Knien, bei der vor allem der Soleus belastet wird, weil der Gastrocnemius durch die Kniebeugung entlastet ist. Sinnvolle Ergänzung zum stehenden Wadenheben.",
+    "setup": [
+      "Polster so einstellen, dass es fest auf dem unteren Oberschenkel knapp oberhalb der Knie aufliegt.",
+      "Fußballen auf die Kante der Plattform stellen, Fersen frei, Füße hüftbreit.",
+      "Knie etwa im rechten Winkel, Oberkörper aufrecht.",
+      "Haltegriffe fassen und die Sicherung der Maschine lösen.",
+      "Fersen kontrolliert absenken, um die Startposition in der Dehnung einzunehmen."
+    ],
+    "execution": [
+      "Fersen so hoch wie möglich anheben, auf die Fußballen drücken.",
+      "In der oberen Position ein bis zwei Sekunden halten.",
+      "Fersen langsam absenken, bis eine deutliche Dehnung in der Wade spürbar ist.",
+      "Unten kurz halten, ohne zu federn.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Volle Dehnung unten bis zum höchsten Punkt auf den Fußballen. Der Kniewinkel bleibt während der gesamten Bewegung gleich, damit der Soleus gezielt arbeitet.",
+    "breathing": "Beim Anheben der Fersen ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Bewegung wird federnd und mit Schwung aus der Dehnung ausgeführt.",
+      "Bewegungsradius ist zu klein, keine Dehnung unten.",
+      "Polster liegt zu weit oben auf dem Oberschenkel, Hebel wird ungünstig.",
+      "Oberkörper wird nach vorne gebeugt, um mit dem Rücken mitzuhelfen."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Höhere Wiederholungszahlen (12 bis 20) mit vollem Bewegungsradius sind hier sinnvoll.",
+      "Mit stehendem Wadenheben kombinieren, um Gastrocnemius und Soleus gemeinsam zu trainieren."
+    ],
+    "cable_setup": null
+  }
+]

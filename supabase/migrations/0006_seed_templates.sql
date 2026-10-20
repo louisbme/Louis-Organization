@@ -1,0 +1,14 @@
+-- ============================================================
+-- 0006_seed_templates.sql
+-- GENERIERT aus supabase/seed/templates.json via `npm run db:generate` – nicht manuell bearbeiten.
+-- Standard-Trainingspläne (Vorlagen), werden bei Registrierung je Benutzer kopiert.
+-- ============================================================
+
+-- Oberkörper A
+select public.upsert_seed_template($seed${"name":"Oberkörper A","sort_order":1,"exercises":[{"slug":"schraegbankdruecken-maschine","sets":3,"rep_min":6,"rep_max":10},{"slug":"pec-deck","sets":3,"rep_min":6,"rep_max":10},{"slug":"neutraler-latzug","sets":3,"rep_min":8,"rep_max":12},{"slug":"breites-rudern","sets":3,"rep_min":8,"rep_max":12},{"slug":"schulterdruecken-maschine","sets":2,"rep_min":8,"rep_max":12},{"slug":"seitheben-maschine","sets":2,"rep_min":12,"rep_max":15},{"slug":"trizepsdruecken-kabel","sets":2,"rep_min":10,"rep_max":15},{"slug":"incline-curl-hinterm-koerper","sets":2,"rep_min":10,"rep_max":15}]}$seed$::jsonb);
+
+-- Unterkörper
+select public.upsert_seed_template($seed${"name":"Unterkörper","sort_order":2,"exercises":[{"slug":"hackenschmidt","sets":3,"rep_min":6,"rep_max":10},{"slug":"beinpresse","sets":2,"rep_min":10,"rep_max":12},{"slug":"beinbeuger","sets":3,"rep_min":8,"rep_max":12},{"slug":"beinstrecker","sets":2,"rep_min":10,"rep_max":15},{"slug":"hyperextensions","sets":2,"rep_min":10,"rep_max":15},{"slug":"wadenheben-stehend","sets":3,"rep_min":10,"rep_max":15},{"slug":"crunch-maschine","sets":3,"rep_min":10,"rep_max":15}]}$seed$::jsonb);
+
+-- Oberkörper B
+select public.upsert_seed_template($seed${"name":"Oberkörper B","sort_order":3,"exercises":[{"slug":"schraegbankdruecken-maschine","sets":2,"rep_min":8,"rep_max":12},{"slug":"enges-rudern","sets":3,"rep_min":8,"rep_max":12},{"slug":"neutraler-latzug","sets":2,"rep_min":8,"rep_max":12},{"slug":"butterfly","sets":2,"rep_min":10,"rep_max":15},{"slug":"reverse-butterfly","sets":2,"rep_min":12,"rep_max":15},{"slug":"seitheben-maschine","sets":2,"rep_min":12,"rep_max":15},{"slug":"hammercurl-kabel","sets":2,"rep_min":10,"rep_max":15},{"slug":"ueberkopf-trizeps-extension","sets":2,"rep_min":10,"rep_max":12}]}$seed$::jsonb);

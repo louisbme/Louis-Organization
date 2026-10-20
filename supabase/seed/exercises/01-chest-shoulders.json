@@ -1,0 +1,605 @@
+[
+  {
+    "slug": "schraegbankdruecken-maschine",
+    "name": "Schrägbankdrücken Maschine",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierte Griffe (Handflächen nach vorne) oder neutrale Griffe, je nach Maschine. Handgelenke gerade halten.",
+    "primary_muscles": ["upper_chest", "chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Geführte Druckbewegung in Schrägposition, die vor allem den oberen Anteil der Brust belastet. Gut geeignet als erste Druckübung im Oberkörpertraining.",
+    "setup": [
+      "Sitz so einstellen, dass die Griffe ungefähr auf Höhe der mittleren bis oberen Brust liegen.",
+      "Rücken und Kopf vollständig an das Polster anlehnen.",
+      "Füße flach auf den Boden stellen.",
+      "Schulterblätter kontrolliert nach hinten und unten ziehen.",
+      "Griffe fassen, Handgelenke gerade, Ellenbogen leicht unterhalb der Griffe."
+    ],
+    "execution": [
+      "Griffe kontrolliert nach vorne-oben drücken.",
+      "Ellenbogen am Ende nicht aggressiv durchstrecken.",
+      "Spannung in der Brust halten, Schulterblätter bleiben hinten.",
+      "Gewicht langsam und kontrolliert zurückführen.",
+      "In der Endposition leichte Dehnung der Brust spüren, ohne dass das Gewicht aufsetzt.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Voller Bewegungsradius, soweit die Schultern schmerzfrei bleiben. In der unteren Position die Griffe etwa auf Brusthöhe bringen, oben kurz vor dem Durchstrecken stoppen.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Schultern rollen beim Drücken nach vorne.",
+      "Sitz zu niedrig, Griffe liegen auf Schulterhöhe.",
+      "Gewicht wird mit Schwung aus der unteren Position gedrückt.",
+      "Ellenbogen werden am Ende hart durchgestreckt.",
+      "Rücken löst sich vom Polster."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden.",
+      "Wenn die Schultern unangenehm belastet sind, Sitz etwas höher stellen oder Griffweite ändern."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "brustpresse",
+    "name": "Brustpresse",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierte Griffe (Handflächen nach vorne) oder neutrale Griffe, je nach Maschine. Handgelenke gerade halten, Griffe nicht zu fest umklammern.",
+    "primary_muscles": ["chest"],
+    "secondary_muscles": ["triceps", "front_delts"],
+    "description": "Geführte horizontale Druckbewegung im Sitzen, die die gesamte Brustmuskulatur belastet. Geeignet als Grundübung für die Brust, wenn eine stabile Führung gewünscht ist.",
+    "setup": [
+      "Sitz so einstellen, dass die Griffe etwa auf Höhe der mittleren Brust liegen.",
+      "Rücken und Kopf vollständig an das Polster anlehnen.",
+      "Füße flach auf den Boden oder auf die Fußstütze stellen.",
+      "Schulterblätter nach hinten und unten ziehen, Brust leicht anheben.",
+      "Griffe fassen, Handgelenke gerade, Ellenbogen etwa auf Höhe der Griffe oder leicht darunter."
+    ],
+    "execution": [
+      "Griffe kontrolliert nach vorne drücken, bis die Arme fast gestreckt sind.",
+      "Ellenbogen am Ende nicht hart durchstrecken.",
+      "Schulterblätter während der gesamten Bewegung hinten am Polster lassen.",
+      "Gewicht langsam zurückführen, Ellenbogen wandern nach hinten.",
+      "In der Startposition leichte Dehnung der Brust spüren, Gewicht nicht aufsetzen lassen.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer leichten Dehnung der Brust mit den Griffen etwa auf Brusthöhe bis kurz vor die vollständige Armstreckung. Bewegungsradius nur so groß wählen, wie die Schultern schmerzfrei bleiben.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Schultern rollen beim Drücken nach vorne, Schulterblätter lösen sich vom Polster.",
+      "Sitz zu hoch oder zu tief, Griffe liegen nicht auf Brusthöhe.",
+      "Ellenbogen werden am Ende hart durchgestreckt.",
+      "Gewicht wird mit Schwung aus der hinteren Position gedrückt.",
+      "Handgelenke knicken nach hinten ab."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Ellenbogen etwa 45 bis 60 Grad vom Körper abspreizen, um die Schultern zu entlasten.",
+      "Falls vorhanden, das Fußpedal nutzen, um die Griffe in die Ausgangsposition zu bringen.",
+      "Erst Gewicht erhöhen, wenn alle Sätze sauber ausgeführt werden."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "pec-deck",
+    "name": "Pec Deck",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Unterarme liegen an den Polstern an, Hände halten die Griffe locker oder liegen flach auf. Nicht mit den Händen drücken, die Kraft kommt aus den Unterarmen und Ellenbogen.",
+    "primary_muscles": ["chest"],
+    "secondary_muscles": ["front_delts"],
+    "description": "Geführte Adduktionsbewegung an der Maschine mit Armpolstern, bei der die Brust ohne Belastung der Handgelenke isoliert wird. Geeignet als Isolationsübung nach den Druckübungen.",
+    "setup": [
+      "Sitz so einstellen, dass die Polster etwa auf Höhe der mittleren Brust liegen und die Oberarme waagerecht sind.",
+      "Rücken und Kopf an das Polster anlehnen, Füße flach auf den Boden stellen.",
+      "Unterarme an die Polster legen, Ellenbogen etwa 90 Grad gebeugt.",
+      "Schulterblätter nach hinten und unten ziehen, Brust leicht anheben.",
+      "Startposition so wählen, dass eine leichte Dehnung in der Brust spürbar ist."
+    ],
+    "execution": [
+      "Polster über die Ellenbogen kontrolliert vor dem Körper zusammenführen.",
+      "Vorstellen, die Ellenbogen zueinander zu bringen statt die Hände.",
+      "In der Endposition kurz halten und die Brust bewusst anspannen.",
+      "Polster langsam zurückführen, bis die Oberarme etwa in der Schulterlinie sind.",
+      "Schulterblätter bleiben während der gesamten Bewegung hinten.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer leichten Dehnung mit den Oberarmen etwa in der Schulterlinie bis zum Zusammenführen der Polster vor der Brust. Nicht weiter nach hinten öffnen, als die Schultern schmerzfrei zulassen.",
+    "breathing": "Beim Zusammenführen ausatmen, beim Öffnen einatmen.",
+    "common_mistakes": [
+      "Schultern rollen nach vorne, Schulterblätter lösen sich vom Polster.",
+      "Bewegung wird aus den Händen statt aus den Ellenbogen geführt.",
+      "Polster werden zu weit nach hinten geöffnet, Schulter wird überdehnt.",
+      "Gewicht fällt in der exzentrischen Phase unkontrolliert zurück.",
+      "Sitz zu niedrig, Ellenbogen liegen deutlich über der Schulterlinie."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang ausführen.",
+      "In der Endposition eine Sekunde halten, um die Kontraktion zu betonen.",
+      "Leichtes bis mittleres Gewicht wählen, der Fokus liegt auf der Muskelspannung."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "butterfly",
+    "name": "Butterfly",
+    "category": "chest",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Handgriffe neutral oder leicht proniert fassen, je nach Maschine. Arme fast gestreckt mit leichter Ellenbogenbeuge, Handgelenke gerade.",
+    "primary_muscles": ["chest"],
+    "secondary_muscles": ["front_delts", "biceps"],
+    "description": "Geführte Fly-Bewegung an der Maschine mit Handgriffen und fast gestreckten Armen, die die Brust über einen großen Bewegungsradius dehnt und kontrahiert. Geeignet als Isolationsübung für die Brust.",
+    "setup": [
+      "Sitz so einstellen, dass die Griffe etwa auf Höhe der mittleren Brust bis Schulter liegen.",
+      "Rücken und Kopf an das Polster anlehnen, Füße flach auf den Boden stellen.",
+      "Griffe fassen, Arme fast gestreckt mit leichter Beuge im Ellenbogen.",
+      "Schulterblätter nach hinten und unten ziehen, Brust leicht anheben.",
+      "Startposition so wählen, dass eine leichte Dehnung der Brust spürbar ist."
+    ],
+    "execution": [
+      "Griffe in einem weiten Bogen vor der Brust zusammenführen.",
+      "Ellenbogenwinkel während der gesamten Bewegung konstant halten.",
+      "In der Endposition kurz halten und die Brust anspannen.",
+      "Griffe langsam und kontrolliert zurückführen, bis die Hände etwa in der Schulterlinie sind.",
+      "Schulterblätter bleiben hinten am Polster.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer leichten Dehnung mit den Händen etwa in der Schulterlinie bis zum Zusammenführen der Griffe vor der Brust. Die Öffnung nicht erzwingen, Bewegungsradius an die Schulterbeweglichkeit anpassen.",
+    "breathing": "Beim Zusammenführen ausatmen, beim Öffnen einatmen.",
+    "common_mistakes": [
+      "Ellenbogen werden während der Bewegung stark gebeugt, die Übung wird zur Druckbewegung.",
+      "Griffe werden zu weit nach hinten geöffnet, Schulter wird überdehnt.",
+      "Schultern rollen beim Zusammenführen nach vorne.",
+      "Gewicht wird mit Schwung aus der Dehnposition geführt.",
+      "Rücken löst sich vom Polster, um mehr Gewicht zu bewegen."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Leichtes bis mittleres Gewicht wählen, der Fokus liegt auf Dehnung und Kontraktion.",
+      "Bei Beschwerden im Ellenbogen oder Bizeps auf die Pec-Deck-Variante mit Armpolstern wechseln."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "kabel-flys",
+    "name": "Kabel-Flys",
+    "category": "chest",
+    "equipment": "cable",
+    "grip_id": "single_handle",
+    "grip_notes": "Einzelgriffe in beiden Händen, neutraler Griff (Handflächen zeigen zueinander oder leicht nach vorne). Alternativ ohne Griff direkt am Kabelende, falls die Griffe stören.",
+    "primary_muscles": ["chest"],
+    "secondary_muscles": ["front_delts"],
+    "description": "Fly-Bewegung am Doppelkabelzug mit Rollen auf Schulter- bis Brusthöhe, die die Brust horizontal mit konstanter Spannung belastet. Geeignet als Isolationsübung mit gleichmäßigem Widerstand über den gesamten Bewegungsradius.",
+    "setup": [
+      "Beide Rollen des Doppelkabelzugs auf Schulter- bis Brusthöhe einstellen und Einzelgriffe einhängen.",
+      "Einen Griff nach dem anderen fassen und einen Schritt nach vorne in die Mitte gehen.",
+      "Schrittstellung einnehmen, Rumpf anspannen, Oberkörper leicht nach vorne geneigt.",
+      "Arme seitlich mit leichter Ellenbogenbeuge halten, Hände etwa in der Schulterlinie.",
+      "Schulterblätter nach hinten und unten ziehen, Brust leicht anheben."
+    ],
+    "execution": [
+      "Griffe in einem weiten Bogen vor der Brust zusammenführen.",
+      "Ellenbogenwinkel während der gesamten Bewegung konstant halten.",
+      "In der Endposition die Hände vor der Brust zusammenbringen und die Brust anspannen.",
+      "Griffe langsam und kontrolliert zurückführen, bis die Hände wieder etwa in der Schulterlinie sind.",
+      "Oberkörper und Rumpf bleiben während der Bewegung stabil.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von einer leichten Dehnung mit den Händen etwa in der Schulterlinie bis zum Zusammenführen der Hände vor der Brust. Die Dehnposition nicht erzwingen.",
+    "breathing": "Beim Zusammenführen ausatmen, beim Öffnen einatmen.",
+    "common_mistakes": [
+      "Ellenbogen werden stark gebeugt, die Bewegung wird zum Drücken.",
+      "Oberkörper schwingt mit und erzeugt Schwung aus dem Rumpf.",
+      "Schultern rollen beim Zusammenführen nach vorne.",
+      "Hände werden zu weit nach hinten geführt, Schulter wird überdehnt.",
+      "Gewicht zieht die Arme in der exzentrischen Phase unkontrolliert zurück."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Leichtes bis mittleres Gewicht wählen, da die Hebelverhältnisse ungünstig sind.",
+      "Hände in der Endposition leicht überkreuzen, um die Kontraktion zu verlängern.",
+      "Schrittstellung von Satz zu Satz wechseln, um einseitige Belastung zu vermeiden."
+    ],
+    "cable_setup": {
+      "cable": "Doppelkabelzug (Cable Crossover)",
+      "height": "Rollen auf Schulter- bis Brusthöhe",
+      "grip_width": "Einzelgriffe, neutraler Griff, Hände starten etwa in der Schulterlinie",
+      "body_position": "Stehend in der Mitte zwischen den Säulen, Oberkörper leicht nach vorne geneigt, Rumpf angespannt, Schulterblätter hinten und unten",
+      "foot_position": "Schrittstellung, vorderer Fuß flach, hinterer Fuß auf dem Ballen, Knie leicht gebeugt",
+      "movement_direction": "Horizontal in einem Bogen von außen nach vorne-innen vor die Brust",
+      "elbow_position": "Leicht gebeugt, Winkel bleibt über die gesamte Bewegung konstant",
+      "end_position": "Hände vor der Brust zusammengeführt, Brust angespannt, Schultern bleiben hinten",
+      "return": "Langsam und kontrolliert, bis die Hände etwa in der Schulterlinie sind und eine leichte Dehnung spürbar ist"
+    }
+  },
+  {
+    "slug": "kabel-flys-von-unten",
+    "name": "Kabel-Flys von unten",
+    "category": "chest",
+    "equipment": "cable",
+    "grip_id": "single_handle",
+    "grip_notes": "Einzelgriffe in beiden Händen, neutraler Griff (Handflächen zeigen zueinander bzw. nach oben). Alternativ ohne Griff direkt am Kabelende.",
+    "primary_muscles": ["upper_chest", "chest"],
+    "secondary_muscles": ["front_delts"],
+    "description": "Fly-Bewegung am Doppelkabelzug mit Rollen in der unteren Position, bei der die Arme von unten nach oben-vorne zusammengeführt werden. Belastet vor allem den oberen Anteil der Brust.",
+    "setup": [
+      "Beide Rollen des Doppelkabelzugs in die unterste Position bringen und Einzelgriffe einhängen.",
+      "Griffe fassen und einen Schritt nach vorne in die Mitte gehen.",
+      "Schrittstellung einnehmen, Rumpf anspannen, Oberkörper aufrecht oder leicht nach vorne geneigt.",
+      "Arme seitlich-unten mit leichter Ellenbogenbeuge halten, Handflächen zeigen nach vorne-oben.",
+      "Schulterblätter nach hinten und unten ziehen, Brust leicht anheben."
+    ],
+    "execution": [
+      "Griffe in einem Bogen von unten nach oben-vorne zusammenführen.",
+      "Ellenbogenwinkel während der gesamten Bewegung konstant halten.",
+      "In der Endposition die Hände etwa auf Höhe der oberen Brust bis Kinn zusammenbringen.",
+      "Obere Brust kurz bewusst anspannen.",
+      "Griffe langsam und kontrolliert nach unten-außen zurückführen.",
+      "Oberkörper bleibt stabil, kein Mitschwingen aus dem Rumpf.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von den seitlich-unten gehaltenen Armen bis die Hände vor der oberen Brust zusammenkommen. Nicht über die Schulterhöhe hinaus führen, um die Schultern nicht unnötig zu belasten.",
+    "breathing": "Beim Zusammenführen nach oben ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Schultern ziehen beim Anheben nach oben zum Ohr.",
+      "Bewegung wird zum Frontheben, Ellenbogen stark gebeugt und Arme vor dem Körper angehoben.",
+      "Oberkörper lehnt sich nach hinten, um das Gewicht zu bewegen.",
+      "Hände werden in der Endposition deutlich über die Schulter geführt.",
+      "Gewicht zieht die Arme unkontrolliert nach unten zurück."
+    ],
+    "tips": [
+      "Leichtes Gewicht wählen und in der Endposition eine Sekunde halten.",
+      "Vorstellen, die Oberarme zueinander zu führen, nicht die Hände nach oben zu heben.",
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren."
+    ],
+    "cable_setup": {
+      "cable": "Doppelkabelzug (Cable Crossover)",
+      "height": "Rollen ganz unten",
+      "grip_width": "Einzelgriffe, neutraler Griff, Hände starten seitlich-unten neben den Hüften",
+      "body_position": "Stehend in der Mitte zwischen den Säulen, Oberkörper aufrecht bis leicht nach vorne geneigt, Rumpf angespannt, Schulterblätter hinten und unten",
+      "foot_position": "Schrittstellung, Knie leicht gebeugt, Gewicht gleichmäßig verteilt",
+      "movement_direction": "Von unten-außen in einem Bogen nach oben-vorne vor die obere Brust",
+      "elbow_position": "Leicht gebeugt, Winkel bleibt konstant, Ellenbogen zeigen leicht nach außen-unten",
+      "end_position": "Hände vor der oberen Brust bis Kinnhöhe zusammengeführt, obere Brust angespannt, Schultern unten",
+      "return": "Langsam und kontrolliert nach unten-außen bis zur Startposition neben den Hüften"
+    }
+  },
+  {
+    "slug": "kabel-flys-von-oben",
+    "name": "Kabel-Flys von oben",
+    "category": "chest",
+    "equipment": "cable",
+    "grip_id": "single_handle",
+    "grip_notes": "Einzelgriffe in beiden Händen, neutraler Griff (Handflächen zeigen zueinander bzw. nach unten-innen). Alternativ ohne Griff direkt am Kabelende.",
+    "primary_muscles": ["chest"],
+    "secondary_muscles": ["front_delts", "triceps"],
+    "description": "Fly-Bewegung am Doppelkabelzug mit Rollen in der oberen Position, bei der die Arme von oben nach unten-vorne zusammengeführt werden. Belastet vor allem den unteren Anteil der Brust.",
+    "setup": [
+      "Beide Rollen des Doppelkabelzugs in die oberste Position bringen und Einzelgriffe einhängen.",
+      "Griffe fassen und einen Schritt nach vorne in die Mitte gehen.",
+      "Schrittstellung einnehmen, Rumpf anspannen, Oberkörper leicht nach vorne geneigt.",
+      "Arme seitlich-oben mit leichter Ellenbogenbeuge halten, Hände etwas über Schulterhöhe.",
+      "Schulterblätter nach hinten und unten ziehen, Brust leicht anheben."
+    ],
+    "execution": [
+      "Griffe in einem Bogen von oben nach unten-vorne zusammenführen.",
+      "Ellenbogenwinkel während der gesamten Bewegung konstant halten.",
+      "In der Endposition die Hände etwa auf Höhe der unteren Brust bis Bauchnabel zusammenbringen.",
+      "Untere Brust kurz bewusst anspannen.",
+      "Griffe langsam und kontrolliert nach oben-außen zurückführen.",
+      "Oberkörper bleibt in seiner Neigung, kein Mitschwingen aus dem Rumpf.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von den seitlich-oben gehaltenen Armen mit leichter Dehnung bis die Hände vor der unteren Brust zusammenkommen. Die Dehnposition oben nicht erzwingen.",
+    "breathing": "Beim Zusammenführen nach unten ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Oberkörper wird stark nach vorne geklappt, die Bewegung kommt aus dem Rumpf.",
+      "Ellenbogen werden stark gebeugt, die Übung wird zum Drücken nach unten.",
+      "Schultern rollen beim Zusammenführen nach vorne.",
+      "Arme werden in der Startposition zu weit nach hinten geführt.",
+      "Gewicht zieht die Arme unkontrolliert nach oben zurück."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Hände in der Endposition leicht überkreuzen, um die Kontraktion zu verlängern.",
+      "Leichtes bis mittleres Gewicht wählen, der Fokus liegt auf der Muskelspannung.",
+      "Schrittstellung von Satz zu Satz wechseln."
+    ],
+    "cable_setup": {
+      "cable": "Doppelkabelzug (Cable Crossover)",
+      "height": "Rollen ganz oben",
+      "grip_width": "Einzelgriffe, neutraler Griff, Hände starten seitlich etwas über Schulterhöhe",
+      "body_position": "Stehend in der Mitte zwischen den Säulen, Oberkörper etwa 15 bis 30 Grad nach vorne geneigt, Rumpf angespannt, Schulterblätter hinten und unten",
+      "foot_position": "Schrittstellung, vorderer Fuß flach, hinterer Fuß auf dem Ballen, Knie leicht gebeugt",
+      "movement_direction": "Von oben-außen in einem Bogen nach unten-vorne vor die untere Brust",
+      "elbow_position": "Leicht gebeugt, Winkel bleibt konstant, Ellenbogen zeigen nach außen-oben",
+      "end_position": "Hände vor der unteren Brust bis Bauchnabelhöhe zusammengeführt, untere Brust angespannt, Schultern bleiben hinten",
+      "return": "Langsam und kontrolliert nach oben-außen, bis eine leichte Dehnung in der Brust spürbar ist"
+    }
+  },
+  {
+    "slug": "schulterdruecken-maschine",
+    "name": "Schulterdrücken Maschine",
+    "category": "shoulders",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Pronierte Griffe (Handflächen nach vorne) oder neutrale Griffe, je nach Maschine. Neutrale Griffe sind meist schulterfreundlicher. Handgelenke gerade halten.",
+    "primary_muscles": ["front_delts", "side_delts"],
+    "secondary_muscles": ["triceps", "traps"],
+    "description": "Geführte vertikale Druckbewegung im Sitzen, die vor allem die vordere und seitliche Schulter belastet. Geeignet als Grundübung für die Schulter mit stabiler Führung.",
+    "setup": [
+      "Sitz so einstellen, dass die Griffe in der Startposition etwa auf Schulterhöhe oder leicht darunter liegen.",
+      "Rücken und Kopf an das Polster anlehnen, Füße flach auf den Boden stellen.",
+      "Griffe fassen, Handgelenke gerade, Unterarme möglichst senkrecht.",
+      "Rumpf anspannen, Rippen nicht nach vorne herausdrücken.",
+      "Schultern bewusst nach unten ziehen, nicht zu den Ohren hochziehen."
+    ],
+    "execution": [
+      "Griffe kontrolliert nach oben drücken.",
+      "Ellenbogen am Ende nicht hart durchstrecken.",
+      "Schultern während des Drückens unten lassen, nicht hochziehen.",
+      "Gewicht langsam zurückführen, bis die Griffe etwa auf Schulterhöhe sind.",
+      "Rücken bleibt während der gesamten Bewegung am Polster.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von den Griffen etwa auf Schulterhöhe bis kurz vor die vollständige Armstreckung. Unten nur so tief, wie die Schultern schmerzfrei bleiben.",
+    "breathing": "Beim Drücken ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Schultern werden beim Drücken zu den Ohren hochgezogen.",
+      "Rücken wölbt sich stark ins Hohlkreuz, Rippen werden herausgedrückt.",
+      "Sitz zu hoch, Griffe liegen deutlich unter der Schulter.",
+      "Ellenbogen werden am Ende hart durchgestreckt.",
+      "Gewicht wird mit Schwung aus der unteren Position gedrückt."
+    ],
+    "tips": [
+      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
+      "Bei Beschwerden in der Schulter neutrale Griffe wählen oder Sitz etwas höher stellen.",
+      "Erst Gewicht erhöhen, wenn alle Sätze sauber und ohne Hohlkreuz ausgeführt werden."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "seitheben-maschine",
+    "name": "Seitheben Maschine",
+    "category": "shoulders",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Polster liegen an den Oberarmen knapp oberhalb der Ellenbogen an. Griffe locker fassen oder Hände nur anlegen, nicht mit den Händen heben.",
+    "primary_muscles": ["side_delts"],
+    "secondary_muscles": ["traps"],
+    "description": "Geführtes Seitheben an der Maschine mit Polstern an den Oberarmen, das die seitliche Schulter isoliert. Geeignet für kontrollierte Isolationsarbeit ohne Ausweichbewegungen des Rumpfes.",
+    "setup": [
+      "Sitz so einstellen, dass die Drehachse der Maschine etwa auf Höhe der Schultergelenke liegt.",
+      "Oberkörper aufrecht an das Polster anlehnen, Füße flach auf den Boden stellen.",
+      "Oberarme an die Polster legen, Ellenbogen etwa 90 Grad gebeugt.",
+      "Schultern bewusst nach unten ziehen, Brust leicht anheben.",
+      "Rumpf anspannen."
+    ],
+    "execution": [
+      "Oberarme über die Polster seitlich nach oben führen.",
+      "Bewegung aus den Ellenbogen führen, nicht aus den Händen.",
+      "Bis etwa Schulterhöhe anheben, Schultern bleiben unten.",
+      "In der Endposition kurz halten.",
+      "Arme langsam und kontrolliert zurückführen.",
+      "Gewicht unten nicht aufsetzen lassen, Spannung halten."
+    ],
+    "range_of_motion": "Von den Oberarmen neben dem Körper bis etwa Schulterhöhe. Nicht über die Schulterhöhe hinaus heben, da dann vermehrt der Trapezmuskel übernimmt.",
+    "breathing": "Beim Anheben ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Schultern werden beim Anheben zu den Ohren hochgezogen.",
+      "Oberarme werden über die Schulterhöhe hinaus gehoben.",
+      "Sitz zu niedrig oder zu hoch, Drehachse stimmt nicht mit der Schulter überein.",
+      "Gewicht fällt in der exzentrischen Phase unkontrolliert zurück.",
+      "Oberkörper lehnt sich nach hinten, um das Gewicht zu bewegen."
+    ],
+    "tips": [
+      "Leichtes bis mittleres Gewicht wählen, der Fokus liegt auf der seitlichen Schulter.",
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "In der Endposition eine Sekunde halten."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "seitheben-kabel",
+    "name": "Seitheben Kabel",
+    "category": "shoulders",
+    "equipment": "cable",
+    "grip_id": "single_handle",
+    "grip_notes": "Einzelgriff in einer Hand, neutraler Griff mit lockerem Daumen. Alternativ ohne Griff direkt am Kabelende oder mit Handschlaufe, um weniger mit der Hand zu arbeiten.",
+    "primary_muscles": ["side_delts"],
+    "secondary_muscles": ["traps", "front_delts"],
+    "description": "Einarmiges Seitheben am Kabelzug mit der Rolle unten, das die seitliche Schulter mit konstanter Spannung belastet. Geeignet als Isolationsübung mit gleichmäßigem Widerstand auch in der unteren Position.",
+    "setup": [
+      "Rolle ganz unten oder leicht über dem Boden einstellen und Einzelgriff einhängen.",
+      "Seitlich zur Säule stellen, die arbeitende Hand ist von der Säule abgewandt.",
+      "Griff fassen, das Kabel läuft vor oder hinter dem Körper zur Säule.",
+      "Freie Hand an der Säule abstützen, Rumpf anspannen, Oberkörper aufrecht.",
+      "Arm mit leichter Ellenbogenbeuge neben dem Körper halten, Schulter bewusst nach unten ziehen."
+    ],
+    "execution": [
+      "Arm seitlich nach oben führen, der Ellenbogen führt die Bewegung.",
+      "Bis etwa Schulterhöhe anheben, Hand und Ellenbogen etwa auf gleicher Höhe.",
+      "Schulter bleibt während der gesamten Bewegung unten.",
+      "In der Endposition kurz halten.",
+      "Arm langsam und kontrolliert zurückführen, bis er wieder neben dem Körper ist.",
+      "Spannung unten halten, Gewicht nicht aufsetzen lassen.",
+      "Nach dem Satz die Seite wechseln."
+    ],
+    "range_of_motion": "Vom Arm neben bzw. leicht vor dem Körper bis etwa Schulterhöhe. Nicht über die Schulterhöhe hinaus heben.",
+    "breathing": "Beim Anheben ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Schulter wird beim Anheben zum Ohr hochgezogen.",
+      "Oberkörper neigt sich zur Seite oder schwingt mit.",
+      "Arm wird über die Schulterhöhe hinaus gehoben.",
+      "Hand liegt in der Endposition deutlich über dem Ellenbogen.",
+      "Gewicht zieht den Arm unkontrolliert zurück."
+    ],
+    "tips": [
+      "Leichtes Gewicht wählen, die Übung reagiert empfindlich auf Schwung.",
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Vorstellen, den Ellenbogen zur Seite wegzuschieben, nicht die Hand anzuheben.",
+      "Kabel hinter dem Körper führen, wenn die seitliche Schulter stärker isoliert werden soll."
+    ],
+    "cable_setup": {
+      "cable": "Kabelturm oder Doppelkabelzug, einarmig",
+      "height": "Rolle ganz unten oder leicht über dem Boden",
+      "grip_width": "Einzelgriff in einer Hand, neutraler Griff, Daumen locker",
+      "body_position": "Seitlich zur Säule stehend, aufrecht, freie Hand an der Säule abgestützt, Rumpf angespannt, Schulter unten",
+      "foot_position": "Hüftbreit oder leichte Schrittstellung, Knie leicht gebeugt",
+      "movement_direction": "Seitlich nach oben in einem Bogen bis etwa Schulterhöhe",
+      "elbow_position": "Leicht gebeugt, Winkel bleibt konstant, Ellenbogen führt die Bewegung und bleibt auf Höhe der Hand oder leicht darüber",
+      "end_position": "Oberarm etwa waagerecht auf Schulterhöhe, Schulter unten, kurz halten",
+      "return": "Langsam und kontrolliert zurück neben den Körper, Spannung am Kabel bleibt erhalten"
+    }
+  },
+  {
+    "slug": "reverse-butterfly",
+    "name": "Reverse Butterfly",
+    "category": "shoulders",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Neutrale Griffe (Handflächen zeigen zueinander) oder pronierte Griffe, je nach Maschine. Griffe locker fassen, Handgelenke gerade, die Bewegung kommt aus den Ellenbogen und Schulterblättern.",
+    "primary_muscles": ["rear_delts"],
+    "secondary_muscles": ["upper_back", "traps", "mid_back"],
+    "description": "Geführte Reverse-Fly-Bewegung an der umgekehrten Pec-Deck-Maschine, die die hintere Schulter und den oberen Rücken belastet. Geeignet als Isolationsübung für die hintere Schulter und als Ausgleich zu Druckübungen.",
+    "setup": [
+      "Griffe der Maschine in die vordere Position stellen, sodass die Arme vor dem Körper starten.",
+      "Sitz so einstellen, dass die Griffe etwa auf Schulterhöhe liegen.",
+      "Mit der Brust zum Polster setzen, Brustbein am Polster anlehnen, Füße flach auf den Boden stellen.",
+      "Griffe fassen, Arme fast gestreckt mit leichter Ellenbogenbeuge.",
+      "Schultern nach unten ziehen, Rumpf anspannen."
+    ],
+    "execution": [
+      "Griffe in einem weiten Bogen nach hinten-außen führen.",
+      "Ellenbogenwinkel während der gesamten Bewegung konstant halten.",
+      "Bewegung aus der hinteren Schulter und den Schulterblättern führen, nicht aus den Händen.",
+      "In der Endposition kurz halten, Hände etwa in der Schulterlinie oder leicht dahinter.",
+      "Griffe langsam und kontrolliert nach vorne zurückführen.",
+      "Brust bleibt am Polster, Gewicht vorne nicht aufsetzen lassen."
+    ],
+    "range_of_motion": "Von den Armen vor dem Körper bis die Hände etwa in der Schulterlinie oder leicht dahinter sind. Nicht weiter nach hinten erzwingen.",
+    "breathing": "Beim Öffnen nach hinten ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Schultern werden zu den Ohren hochgezogen.",
+      "Ellenbogen werden stark gebeugt, die Übung wird zum Rudern.",
+      "Brust löst sich vom Polster, Oberkörper schwingt mit.",
+      "Gewicht wird mit Schwung nach hinten gerissen.",
+      "Gewicht fällt in der exzentrischen Phase unkontrolliert zurück."
+    ],
+    "tips": [
+      "Leichtes bis mittleres Gewicht wählen, die hintere Schulter ist ein kleiner Muskel.",
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Vorstellen, die Ellenbogen nach hinten-außen zu ziehen.",
+      "Neutraler Griff legt den Fokus stärker auf die hintere Schulter, pronierter Griff mehr auf den oberen Rücken."
+    ],
+    "cable_setup": null
+  },
+  {
+    "slug": "kabel-reverse-fly",
+    "name": "Kabel Reverse Fly",
+    "category": "shoulders",
+    "equipment": "cable",
+    "grip_id": "single_handle",
+    "grip_notes": "Einzelgriffe oder ohne Griff direkt am Kabelende bzw. an der Kugel fassen. Kabel überkreuz greifen: die rechte Hand hält das linke Kabel, die linke Hand das rechte Kabel.",
+    "primary_muscles": ["rear_delts"],
+    "secondary_muscles": ["upper_back", "traps"],
+    "description": "Reverse-Fly-Bewegung am Doppelkabelzug mit Rollen auf Schulterhöhe und überkreuz gegriffenen Kabeln. Belastet die hintere Schulter mit konstanter Spannung und eignet sich als Isolationsübung für den hinteren Schulteranteil.",
+    "setup": [
+      "Beide Rollen des Doppelkabelzugs auf Schulterhöhe einstellen, Einzelgriffe einhängen oder Kabelenden direkt nutzen.",
+      "In die Mitte zwischen die Säulen stellen und die Kabel überkreuz fassen.",
+      "Einen Schritt zurückgehen, bis die Kabel unter Spannung sind.",
+      "Hüftbreiter Stand oder leichte Schrittstellung, Rumpf anspannen, Oberkörper aufrecht.",
+      "Arme vor der Brust fast gestreckt mit leichter Ellenbogenbeuge halten, Schultern nach unten ziehen."
+    ],
+    "execution": [
+      "Arme in einem weiten Bogen nach außen-hinten führen.",
+      "Ellenbogenwinkel während der gesamten Bewegung konstant halten.",
+      "Bewegung aus der hinteren Schulter führen, Schulterblätter am Ende leicht zusammenziehen.",
+      "In der Endposition kurz halten, Hände etwa in der Schulterlinie.",
+      "Arme langsam und kontrolliert nach vorne zurückführen, bis sich die Hände wieder vor der Brust überkreuzen.",
+      "Oberkörper bleibt stabil, kein Mitschwingen."
+    ],
+    "range_of_motion": "Von den vor der Brust überkreuzten Armen bis die Hände etwa in der Schulterlinie sind. Nicht weiter nach hinten erzwingen.",
+    "breathing": "Beim Öffnen nach außen ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Schultern werden zu den Ohren hochgezogen.",
+      "Ellenbogen werden stark gebeugt, die Übung wird zum Rudern.",
+      "Oberkörper lehnt sich nach hinten, um das Gewicht zu bewegen.",
+      "Gewicht zieht die Arme in der exzentrischen Phase unkontrolliert zurück.",
+      "Zu viel Gewicht, der Bewegungsradius wird deutlich kleiner."
+    ],
+    "tips": [
+      "Leichtes Gewicht wählen und auf saubere Ausführung achten.",
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Vorstellen, die Hände an eine Wand hinter dem Körper zu führen."
+    ],
+    "cable_setup": {
+      "cable": "Doppelkabelzug (Cable Crossover)",
+      "height": "Rollen auf Schulterhöhe",
+      "grip_width": "Kabel überkreuz gegriffen, Einzelgriffe oder direkt am Kabelende, neutraler Griff",
+      "body_position": "Stehend in der Mitte zwischen den Säulen, aufrecht, Rumpf angespannt, Schultern unten, Arme vor der Brust",
+      "foot_position": "Hüftbreit oder leichte Schrittstellung, Knie leicht gebeugt",
+      "movement_direction": "Horizontal in einem Bogen von vorne nach außen-hinten",
+      "elbow_position": "Leicht gebeugt, Winkel bleibt konstant, Ellenbogen etwa auf Schulterhöhe",
+      "end_position": "Arme seitlich etwa in der Schulterlinie, Schulterblätter leicht zusammengezogen, kurz halten",
+      "return": "Langsam und kontrolliert nach vorne, bis sich die Hände vor der Brust wieder überkreuzen, Spannung bleibt erhalten"
+    }
+  },
+  {
+    "slug": "face-pull",
+    "name": "Face Pull",
+    "category": "shoulders",
+    "equipment": "cable",
+    "grip_id": "rope",
+    "grip_notes": "Seilgriff mit neutralem Griff, Daumen zeigen zum Körper. Alternativ Handflächen nach unten (proniert) fassen, dann liegt der Fokus stärker auf dem oberen Rücken.",
+    "primary_muscles": ["rear_delts"],
+    "secondary_muscles": ["upper_back", "traps", "side_delts"],
+    "description": "Zugübung am Kabelzug mit Seilgriff, bei der das Seil auf Gesichtshöhe zum Kopf gezogen wird. Belastet die hintere Schulter und den oberen Rücken und eignet sich als Ausgleichsübung zu Druckbewegungen.",
+    "setup": [
+      "Rolle auf Gesichts- bis Stirnhöhe einstellen und Seilgriff einhängen.",
+      "Seil mit neutralem Griff fassen, Daumen zeigen zum Körper.",
+      "Ein bis zwei Schritte zurückgehen, bis das Kabel unter Spannung ist.",
+      "Hüftbreiter Stand oder Schrittstellung, Rumpf anspannen, Oberkörper aufrecht.",
+      "Arme gestreckt nach vorne, Schultern bewusst nach unten ziehen."
+    ],
+    "execution": [
+      "Seil in Richtung Gesicht ziehen, Ellenbogen führen die Bewegung nach hinten-außen.",
+      "Seilenden auseinanderziehen, Hände kommen neben die Ohren.",
+      "Ellenbogen hoch auf Schulterhöhe und außen halten.",
+      "In der Endposition Schulterblätter zusammenziehen und kurz halten.",
+      "Seil langsam und kontrolliert zurückführen, Arme strecken.",
+      "Schultern am Ende leicht nach vorne kommen lassen, ohne den Oberkörper mitzuziehen.",
+      "Nächste Wiederholung ohne Schwung beginnen."
+    ],
+    "range_of_motion": "Von vollständig gestreckten Armen bis die Hände neben den Ohren und die Ellenbogen etwa in der Schulterlinie sind. Nicht über die Schulterlinie hinaus ziehen.",
+    "breathing": "Beim Ziehen ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Ellenbogen sinken nach unten, die Übung wird zum Rudern.",
+      "Oberkörper lehnt sich nach hinten, Bewegung kommt aus dem Rumpf.",
+      "Schultern werden zu den Ohren hochgezogen.",
+      "Seil wird nur zum Gesicht gezogen, ohne die Enden auseinanderzuziehen.",
+      "Gewicht zieht die Arme unkontrolliert zurück."
+    ],
+    "tips": [
+      "Leichtes bis mittleres Gewicht wählen und auf hohe Ellenbogen achten.",
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Vorstellen, in der Endposition eine Doppelbizeps-Pose einzunehmen.",
+      "Bei Platzmangel auch kniend oder im Halbkniestand ausführbar."
+    ],
+    "cable_setup": {
+      "cable": "Kabelturm oder Doppelkabelzug, eine Seite",
+      "height": "Rolle auf Gesichts- bis Stirnhöhe",
+      "grip_width": "Seilgriff, neutraler Griff, Daumen zum Körper, Hände am Ende neben den Ohren",
+      "body_position": "Stehend mit ein bis zwei Schritten Abstand zur Säule, aufrecht, Rumpf angespannt, Schultern unten",
+      "foot_position": "Hüftbreit oder Schrittstellung, Knie leicht gebeugt",
+      "movement_direction": "Horizontal von vorne in Richtung Gesicht, Seilenden werden dabei nach außen gezogen",
+      "elbow_position": "Ellenbogen hoch etwa auf Schulterhöhe, zeigen nach außen und wandern nach hinten",
+      "end_position": "Hände neben den Ohren, Ellenbogen in der Schulterlinie, Schulterblätter zusammengezogen",
+      "return": "Langsam und kontrolliert bis zur vollen Armstreckung, Spannung am Kabel bleibt erhalten"
+    }
+  }
+]
