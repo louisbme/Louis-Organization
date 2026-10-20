@@ -39,7 +39,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function 
       type={type}
       disabled={disabled || loading}
       className={cn(
-        "inline-flex items-center justify-center select-none whitespace-nowrap transition-colors duration-150 disabled:opacity-50 disabled:pointer-events-none touch-manipulation",
+        "press inline-flex items-center justify-center select-none whitespace-nowrap disabled:opacity-50 disabled:pointer-events-none touch-manipulation",
         variantClasses[variant],
         sizeClasses[size],
         fullWidth && "w-full",

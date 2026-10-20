@@ -27,10 +27,13 @@
   --chart-2: #60a5fa;
   --chart-3: #a78bfa;
   --chart-4: #fbbf24;
-  --muscle-primary: #34d399;
-  --muscle-secondary: #2a7a5c;
-  --muscle-base: #26262b;
-  --muscle-outline: #3a3a41;
+  --muscle-primary: #e3473f;
+  --muscle-primary-light: #f0776a;
+  --muscle-secondary: #a8574f;
+  --muscle-base: #4f5e74;
+  --muscle-base-light: #66778f;
+  --muscle-structural: #3d4858;
+  --muscle-outline: #1c2230;
   --ring: rgba(52, 211, 153, 0.45);
   color-scheme: dark;
 }
@@ -59,10 +62,13 @@
   --chart-2: #2563eb;
   --chart-3: #7c3aed;
   --chart-4: #d97706;
-  --muscle-primary: #059669;
-  --muscle-secondary: #86d4b4;
-  --muscle-base: #e4e4e7;
-  --muscle-outline: #cfcfd4;
+  --muscle-primary: #d9403a;
+  --muscle-primary-light: #ec6f63;
+  --muscle-secondary: #e9a39c;
+  --muscle-base: #7f8ea6;
+  --muscle-base-light: #9aa8bd;
+  --muscle-structural: #b8c1cf;
+  --muscle-outline: #ffffff;
   --ring: rgba(5, 150, 105, 0.35);
   color-scheme: light;
 }
@@ -159,6 +165,80 @@ input[type="number"] {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+/* ------------------------------------------------------------
+   Bewegung: dezent, schnell, nur wo sie Orientierung gibt
+   ------------------------------------------------------------ */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 var(--accent-soft);
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+.animate-fade-up {
+  animation: fade-up 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-scale-in {
+  animation: scale-in 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+/* Seitenwechsel: Inhalt gleitet dezent ein */
+.page-enter {
+  animation: fade-up 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+/* Gestaffelter Einstieg direkter Kinder (Karten, Listen) */
+.stagger > * {
+  animation: fade-up 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 40ms; }
+.stagger > *:nth-child(3) { animation-delay: 80ms; }
+.stagger > *:nth-child(4) { animation-delay: 120ms; }
+.stagger > *:nth-child(5) { animation-delay: 160ms; }
+.stagger > *:nth-child(6) { animation-delay: 200ms; }
+.stagger > *:nth-child(7) { animation-delay: 240ms; }
+.stagger > *:nth-child(8) { animation-delay: 280ms; }
+.stagger > *:nth-child(n + 9) { animation-delay: 320ms; }
+
+/* Interaktive Karten: leichtes Anheben auf Desktop */
+@media (hover: hover) and (pointer: fine) {
+  .card-interactive {
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  }
+  .card-interactive:hover {
+    transform: translateY(-1px);
+    border-color: var(--border-strong);
+  }
+}
+
+/* Druckfeedback für Buttons und Listenzeilen */
+.press {
+  transition: transform 120ms ease, background-color 150ms ease, border-color 150ms ease, color 150ms ease, opacity 150ms ease;
+}
+.press:active {
+  transform: scale(0.985);
+}
+
 /* Sheet-Animation (subtil) */
 @keyframes sheet-in {
   from {
@@ -187,8 +267,16 @@ input[type="number"] {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-sheet-in,
-  .animate-fade-in {
+  .animate-fade-in,
+  .animate-fade-up,
+  .animate-scale-in,
+  .page-enter,
+  .stagger > * {
     animation: none;
+  }
+  .card-interactive,
+  .press {
+    transition: none;
   }
 }
 

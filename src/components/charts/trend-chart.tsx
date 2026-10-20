@@ -114,7 +114,7 @@ export function TrendChart({
           <XAxis dataKey="x" {...axisProps} interval="preserveStartEnd" minTickGap={24} />
           <YAxis {...axisProps} width={56} tickFormatter={(v: number) => compact(v)} />
           {tooltip}
-          <Bar dataKey="y" fill={color} radius={[4, 4, 0, 0]} maxBarSize={36} isAnimationActive={false} />
+          <Bar dataKey="y" fill={color} radius={[4, 4, 0, 0]} maxBarSize={36} isAnimationActive animationDuration={600} animationEasing="ease-out" />
         </BarChart>
       ) : (
         <LineChart data={data} margin={{ top: 8, right: 8, left: -18, bottom: 0 }}>
@@ -129,7 +129,9 @@ export function TrendChart({
             strokeWidth={2}
             dot={{ r: 3, fill: color, strokeWidth: 0 }}
             activeDot={{ r: 5 }}
-            isAnimationActive={false}
+            isAnimationActive
+            animationDuration={700}
+            animationEasing="ease-out"
           />
         </LineChart>
       )}

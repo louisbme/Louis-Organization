@@ -16,7 +16,7 @@ export default async function ProfilePage() {
   const unit = settings.weight_unit;
 
   return (
-    <div className="space-y-5">
+    <div className="stagger space-y-5">
       <PageHeader
         title={profile.nickname}
         eyebrow="Profil"

@@ -52,7 +52,7 @@ export function WorkoutStartList({ plans, nextPlanId, preselectPlanId }: Props) 
   }
 
   return (
-    <div className="space-y-3">
+    <div className="stagger space-y-3">
       {plans.map((p) => {
         const isNext = p.id === (preselectPlanId ?? nextPlanId);
         return (

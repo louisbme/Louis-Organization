@@ -47,7 +47,7 @@ export default async function DashboardPage() {
   }));
 
   return (
-    <div className="space-y-5">
+    <div className="stagger space-y-5">
       <header>
         <p className="text-sm text-muted">Hallo {profile.nickname}</p>
         <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Dashboard</h1>
@@ -216,7 +216,7 @@ function QuickLink({ href, icon, label }: { href: string; icon: React.ReactNode;
   return (
     <Link
       href={href}
-      className="flex h-20 flex-col items-center justify-center gap-1.5 rounded-[var(--radius-card)] border border-border bg-card text-sm font-medium text-muted hover:bg-subtle hover:text-fg"
+      className="card-interactive press flex h-20 flex-col items-center justify-center gap-1.5 rounded-[var(--radius-card)] border border-border bg-card text-sm font-medium text-muted hover:bg-subtle hover:text-fg"
     >
       {icon}
       {label}

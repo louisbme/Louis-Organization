@@ -201,7 +201,7 @@ export function ProgressView({ exercises, initialPoints, initialBodyWeight }: Pr
   };
 
   return (
-    <div className="space-y-5">
+    <div className="stagger space-y-5">
       <Segmented value={period} onChange={setPeriod} options={PERIOD_OPTIONS} />
 
       <div className="grid grid-cols-3 gap-3">

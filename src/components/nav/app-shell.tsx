@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils/cn";
 import { useUser } from "@/lib/context/user-context";
 import { Wordmark } from "@/components/brand/logo";
 import { MOBILE_NAV, PRIMARY_NAV, SECONDARY_NAV, isActivePath } from "@/components/nav/nav-items";
+import { PageTransition } from "@/components/theme/page-transition";
 
 interface AppShellProps {
   activeSession: { id: string; name: string } | null;
@@ -67,7 +68,7 @@ export function AppShell({ activeSession, children }: AppShellProps) {
             showBanner && "pb-40 lg:pb-24"
           )}
         >
-          {children}
+          <PageTransition>{children}</PageTransition>
         </main>
       </div>
 
@@ -107,12 +108,18 @@ export function AppShell({ activeSession, children }: AppShellProps) {
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex h-full flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors touch-manipulation",
+                      "relative flex h-full flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors duration-200 touch-manipulation",
                       active ? "text-accent" : "text-faint hover:text-fg"
                     )}
                     aria-current={active ? "page" : undefined}
                   >
-                    <Icon className="h-5 w-5" strokeWidth={active ? 2.2 : 1.8} />
+                    <span
+                      className={cn(
+                        "absolute top-0 h-0.5 w-8 rounded-full bg-accent transition-all duration-300",
+                        active ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
+                      )}
+                    />
+                    <Icon className={cn("h-5 w-5 transition-transform duration-200", active && "-translate-y-px")} strokeWidth={active ? 2.2 : 1.8} />
                     {item.label}
                   </Link>
                 </li>
@@ -131,7 +138,7 @@ function SidebarLink({ item, active }: { item: { href: string; label: string; ic
     <Link
       href={item.href}
       className={cn(
-        "flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition-colors",
+        "press flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium",
         active ? "bg-subtle text-fg" : "text-muted hover:bg-subtle/60 hover:text-fg"
       )}
       aria-current={active ? "page" : undefined}
