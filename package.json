@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "db:generate": "node scripts/generate-seed.mjs",
     "check": "npm run typecheck && npm run lint && npm run test:db",
-    "test:db": "node scripts/test-db.mjs"
+    "test:db": "node scripts/test-db.mjs",
+    "db:apply": "node scripts/apply-migrations.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

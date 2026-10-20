@@ -63,6 +63,14 @@ supabase link --project-ref <project-ref>
 supabase db push          # führt supabase/migrations/*.sql aus
 ```
 
+Variante C (Management API, ohne CLI): Einen Personal Access Token unter https://supabase.com/dashboard/account/tokens erstellen und einmalig ausführen:
+
+```bash
+SUPABASE_ACCESS_TOKEN=sbp_... npm run db:apply
+```
+
+Der Token wird nur für diesen Lauf verwendet und nicht gespeichert. Die Projekt-Referenz wird aus `NEXT_PUBLIC_SUPABASE_URL` in `.env.local` abgeleitet (alternativ `SUPABASE_PROJECT_REF` setzen).
+
 Migrationen:
 
 | Datei | Inhalt |
@@ -131,6 +139,7 @@ npm run test:db     # führt alle Migrationen in einer eingebetteten Postgres-In
                     # Sätze speichern, Statistiken, eigene Übungen, Kalender
 npm run check       # alle drei zusammen
 npm run build       # Produktions-Build
+npm run db:apply    # Migrationen per Management API einspielen (siehe Supabase Setup, Variante C)
 ```
 
 Manuell geprüft werden sollten zusätzlich: Login/Logout, Plan bearbeiten, Übung hinzufügen, Progress-Grafiken und das Mobile-Layout (Bottom Navigation, Tracking-Ansicht).
