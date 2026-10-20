@@ -6,8 +6,12 @@
     "equipment": "dumbbell",
     "grip_id": null,
     "grip_notes": "Supinierter Griff (Handflächen zeigen nach vorne bzw. oben), Kurzhanteln locker aber sicher umschließen. Handgelenke gerade halten, nicht einknicken.",
-    "primary_muscles": ["biceps"],
-    "secondary_muscles": ["forearms"],
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
     "description": "Kurzhantelcurl auf der Schrägbank, bei dem die Arme seitlich und leicht hinter dem Körper hängen. Durch die vorgedehnte Position wird der Bizeps über einen großen Bewegungsradius belastet.",
     "setup": [
       "Rückenlehne der Bank auf etwa 45 bis 60 Grad einstellen.",
@@ -49,7 +53,8 @@
       "Verstellbare Schrägbank (45–60 Grad)",
       "Kurzhanteln"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   },
   {
     "slug": "incline-curl-hinterm-koerper",
@@ -58,8 +63,13 @@
     "equipment": "dumbbell",
     "grip_id": null,
     "grip_notes": "Supinierter Griff, Handflächen zeigen während der gesamten Bewegung nach vorne bzw. oben. Handgelenke gerade, kein Umklappen in der oberen Position.",
-    "primary_muscles": ["biceps"],
-    "secondary_muscles": ["forearms", "front_delts"],
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms",
+      "front_delts"
+    ],
     "description": "Variante des Incline Curls mit steilerer Bank, bei der die Oberarme bewusst hinter der Körperlinie bleiben. Dadurch wird der lange Bizepskopf in einer stark gedehnten Position belastet.",
     "setup": [
       "Rückenlehne der Bank auf etwa 60 bis 75 Grad einstellen.",
@@ -102,7 +112,8 @@
       "Verstellbare Schrägbank (60–75 Grad)",
       "Leichte Kurzhanteln"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   },
   {
     "slug": "hammercurl-kabel",
@@ -111,7 +122,10 @@
     "equipment": "cable",
     "grip_id": "neutral_parallel",
     "grip_notes": "Neutraler Parallelgriff (Handflächen zeigen zueinander, Daumen nach oben), Griffe etwa schulterbreit. Alternativ Seil oder einarmig mit Handschlaufe bzw. Einzelgriff in neutraler Handstellung.",
-    "primary_muscles": ["biceps", "forearms"],
+    "primary_muscles": [
+      "biceps",
+      "forearms"
+    ],
     "secondary_muscles": [],
     "description": "Curl am Kabelzug mit neutralem Parallelgriff (Handflächen zueinander), der neben dem Bizeps vor allem den Brachialis und den Brachioradialis belastet. Durch das Kabel bleibt die Spannung über den gesamten Bewegungsradius erhalten.",
     "setup": [
@@ -164,7 +178,11 @@
       "Kabelturm mit verstellbarer Rolle",
       "Neutraler Parallelgriff (alternativ Seil oder Handschlaufe)"
     ],
-    "grip_alternatives": ["rope", "strap_handle"]
+    "grip_alternatives": [
+      "rope",
+      "strap_handle"
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "kabelcurl",
@@ -173,8 +191,12 @@
     "equipment": "cable",
     "grip_id": "straight_bar",
     "grip_notes": "Supinierter Griff an der geraden Stange, etwa schulterbreit. Alternativ: EZ-Stange, wenn die Handgelenke bei gerader Stange unangenehm belastet werden.",
-    "primary_muscles": ["biceps"],
-    "secondary_muscles": ["forearms"],
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
     "description": "Stehender Bizepscurl am unteren Kabelzug mit gerader Stange. Das Kabel hält die Spannung über den gesamten Bewegungsradius, auch in der oberen Position.",
     "setup": [
       "Gerade Stange am unteren Kabel einhängen und Gewicht einstellen.",
@@ -227,7 +249,10 @@
       "Kabelturm mit verstellbarer Rolle",
       "Gerade kurze Stange (alternativ SZ-Stange)"
     ],
-    "grip_alternatives": ["ez_bar"]
+    "grip_alternatives": [
+      "ez_bar"
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "kurzhantelcurl",
@@ -236,8 +261,12 @@
     "equipment": "dumbbell",
     "grip_id": null,
     "grip_notes": "Supinierter Griff, Handflächen zeigen nach oben. Alternativ: Start mit neutraler Handstellung und Drehen der Hand während des Curls (Supination). Handgelenke gerade halten.",
-    "primary_muscles": ["biceps"],
-    "secondary_muscles": ["forearms"],
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
     "description": "Klassischer Bizepscurl mit Kurzhanteln, stehend oder sitzend, beidarmig oder im Wechsel. Grundübung für den Bizeps mit freier Bewegung und ohne Gerätebindung.",
     "setup": [
       "Kurzhanteln aufnehmen und aufrecht stehen oder auf einer Bank mit aufrechter Lehne sitzen.",
@@ -280,7 +309,8 @@
       "Kurzhanteln",
       "Optional: Bank mit aufrechter Lehne für die sitzende Ausführung"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   },
   {
     "slug": "trizepsdruecken-kabel",
@@ -289,7 +319,9 @@
     "equipment": "cable",
     "grip_id": "v_bar_triceps",
     "grip_notes": "Neutraler Griff an der V-förmigen Trizepsstange, Handgelenke gerade. Alternativ: Seil oder gerade Stange, je nach Verfügbarkeit und Handgelenkskomfort.",
-    "primary_muscles": ["triceps"],
+    "primary_muscles": [
+      "triceps"
+    ],
     "secondary_muscles": [],
     "description": "Trizepsdrücken am oberen Kabelzug mit der V-förmigen Trizepsstange. Der neutrale Griff ist handgelenkschonend und erlaubt eine stabile Führung der Bewegung.",
     "setup": [
@@ -342,7 +374,10 @@
       "Kabelturm mit verstellbarer Rolle",
       "Trizeps-V-Stange (alternativ gerade kurze Stange)"
     ],
-    "grip_alternatives": ["straight_bar"]
+    "grip_alternatives": [
+      "straight_bar"
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "trizepsdruecken-stange",
@@ -351,8 +386,12 @@
     "equipment": "cable",
     "grip_id": "straight_bar",
     "grip_notes": "Pronierter Griff (Handflächen nach unten), etwa schulterbreit. Alternativ: EZ-Stange, wenn die Handgelenke bei gerader Stange unangenehm belastet werden.",
-    "primary_muscles": ["triceps"],
-    "secondary_muscles": ["forearms"],
+    "primary_muscles": [
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
     "description": "Trizepsdrücken am oberen Kabelzug mit gerader Stange und proniertem Griff. Erlaubt eine stabile beidarmige Ausführung und eine gute Kontrolle des Gewichts.",
     "setup": [
       "Gerade Stange am oberen Kabel einhängen und Gewicht einstellen.",
@@ -405,7 +444,10 @@
       "Kabelturm mit verstellbarer Rolle",
       "Gerade kurze Stange (alternativ Trizeps-V-Stange oder SZ-Stange)"
     ],
-    "grip_alternatives": ["v_bar_triceps"]
+    "grip_alternatives": [
+      "v_bar_triceps"
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "trizepsdruecken-seil",
@@ -414,7 +456,9 @@
     "equipment": "cable",
     "grip_id": "rope",
     "grip_notes": "Neutraler Griff am Seil, Seilenden fest umschließen. Alternativ: V-förmige Trizepsstange, wenn kein Seil verfügbar ist.",
-    "primary_muscles": ["triceps"],
+    "primary_muscles": [
+      "triceps"
+    ],
     "secondary_muscles": [],
     "description": "Trizepsdrücken am oberen Kabelzug mit Seil, bei dem die Seilenden am Ende der Bewegung auseinandergezogen werden. Erlaubt eine vollständige Streckung und eine deutliche Endkontraktion des Trizeps.",
     "setup": [
@@ -467,7 +511,11 @@
       "Kabelturm mit verstellbarer Rolle",
       "Seilgriff"
     ],
-    "grip_alternatives": ["v_bar_triceps", "straight_bar"]
+    "grip_alternatives": [
+      "v_bar_triceps",
+      "straight_bar"
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "ueberkopf-trizeps-extension",
@@ -476,7 +524,9 @@
     "equipment": "cable",
     "grip_id": "straight_bar",
     "grip_notes": "Gerade kurze Stange etwa schulterbreit mit proniertem Griff fassen, Handgelenke gerade. Alternativ SZ-Stange, wenn die Handgelenke bei gerader Stange unangenehm belastet werden, oder Seil.",
-    "primary_muscles": ["triceps"],
+    "primary_muscles": [
+      "triceps"
+    ],
     "secondary_muscles": [],
     "description": "Trizepsstreckung über dem Kopf am Kabelzug mit gerader Stange, bei der die Oberarme neben dem Kopf gehalten werden. Durch die gestreckte Schulterposition wird vor allem der lange Trizepskopf belastet.",
     "setup": [
@@ -530,7 +580,11 @@
       "Kabelturm mit verstellbarer Rolle",
       "Gerade kurze Stange (alternativ SZ-Stange oder Seil)"
     ],
-    "grip_alternatives": ["ez_bar", "rope"]
+    "grip_alternatives": [
+      "ez_bar",
+      "rope"
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "kabel-extension-einarmig",
@@ -539,7 +593,9 @@
     "equipment": "cable",
     "grip_id": "single_handle",
     "grip_notes": "Einzelner Griff mit neutraler oder pronierter Handstellung, je nach Komfort. Alternativ Handschlaufe, um den Griff zu entlasten, oder ohne Griff direkt am Kabelende greifen.",
-    "primary_muscles": ["triceps"],
+    "primary_muscles": [
+      "triceps"
+    ],
     "secondary_muscles": [],
     "description": "Einarmiges Trizepsdrücken am oberen Kabelzug, bei dem die freie Hand am Turm stützt. Erlaubt eine gezielte Arbeit pro Seite und den Ausgleich von Kraftunterschieden.",
     "setup": [
@@ -592,7 +648,10 @@
       "Kabelturm mit verstellbarer Rolle",
       "Einzelgriff (D-Griff) oder Handschlaufe"
     ],
-    "grip_alternatives": ["strap_handle"]
+    "grip_alternatives": [
+      "strap_handle"
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "crunch-maschine",
@@ -601,8 +660,12 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Griffe oder Polster je nach Maschine locker halten, nicht mit den Armen ziehen. Bei Brustpolster die Arme nur zur Fixierung auflegen.",
-    "primary_muscles": ["abs"],
-    "secondary_muscles": ["obliques"],
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliques"
+    ],
     "description": "Geführte Crunch-Bewegung an der Maschine, bei der der Widerstand über einen Gewichtsstapel eingestellt wird. Gut geeignet, um die Bauchmuskulatur mit Zusatzgewicht gezielt zu trainieren.",
     "setup": [
       "Sitz so einstellen, dass die Drehachse der Maschine etwa auf Höhe des unteren Brustkorbs liegt.",
@@ -644,7 +707,12 @@
     "requirements": [
       "Bauchmaschine (Crunch-Maschine) mit Gewichtsstapel und verstellbarem Sitz"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/abdominal-machine.jpg",
+    "machine_name": "DHZ Abdominal Isolator, Steckgewicht",
+    "alternative_exercises": [
+      "kabel-crunch"
+    ]
   },
   {
     "slug": "kabel-crunch",
@@ -653,8 +721,12 @@
     "equipment": "cable",
     "grip_id": "rope",
     "grip_notes": "Seil mit neutralem Griff fassen und die Seilenden beidhändig vor der Brust bzw. an den Schultern halten, Position während des Satzes nicht verändern. Alternativ Handschlaufen (eine pro Hand), wenn das Seil stört.",
-    "primary_muscles": ["abs"],
-    "secondary_muscles": ["obliques"],
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliques"
+    ],
     "description": "Sitzender Crunch auf der Matte mit dem Rücken zum Kabelturm, bei dem das Seil vor der Brust gehalten und der Oberkörper gegen den Zug von hinten-oben eingerollt wird. Erlaubt eine gut steuerbare Belastung der Bauchmuskulatur mit Zusatzgewicht, ohne Druck auf die Knie.",
     "setup": [
       "Rolle am Kabelturm auf Hüft- bis Brusthöhe einstellen und Seil einhängen.",
@@ -708,7 +780,12 @@
       "Seilgriff (alternativ Handschlaufen)",
       "Matte"
     ],
-    "grip_alternatives": ["strap_handle"]
+    "grip_alternatives": [
+      "strap_handle"
+    ],
+    "alternative_exercises": [
+      "crunch-maschine"
+    ]
   },
   {
     "slug": "hanging-knee-raise",
@@ -717,8 +794,13 @@
     "equipment": "bodyweight",
     "grip_id": null,
     "grip_notes": "Pronierter oder neutraler Griff an der Klimmzugstange, etwa schulterbreit. Alternativ: Armschlaufen, wenn die Griffkraft vor dem Bauch ermüdet.",
-    "primary_muscles": ["abs"],
-    "secondary_muscles": ["obliques", "forearms"],
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliques",
+      "forearms"
+    ],
     "description": "Hängendes Anziehen der Knie an der Klimmzugstange oder in Armschlaufen, bei dem das Becken leicht eingerollt wird. Bauchübung mit dem eigenen Körpergewicht, die zusätzlich die Griffkraft fordert.",
     "setup": [
       "Klimmzugstange etwa schulterbreit fassen oder Oberarme in Armschlaufen einhängen.",
@@ -759,7 +841,10 @@
     "requirements": [
       "Klimmzugstange oder Armschlaufen (Ab Straps) an einem stabilen Gestell"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/knee-raise-station.jpg",
+    "machine_name": "DHZ Vertical Knee Raise Station",
+    "alternative_exercises": []
   },
   {
     "slug": "plank",
@@ -768,8 +853,13 @@
     "equipment": "bodyweight",
     "grip_id": null,
     "grip_notes": "Unterarme flach auf dem Boden, Hände locker geöffnet oder zu Fäusten geschlossen. Ellenbogen etwa unter den Schultern.",
-    "primary_muscles": ["abs"],
-    "secondary_muscles": ["obliques", "glutes"],
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliques",
+      "glutes"
+    ],
     "description": "Isometrischer Unterarmstütz, bei dem der Körper in einer geraden Linie gehalten wird. Grundübung für die Rumpfstabilität, die über die Haltedauer statt über Wiederholungen gesteuert wird.",
     "setup": [
       "Unterarme flach auf den Boden legen, Ellenbogen etwa unter den Schultern.",
@@ -811,6 +901,7 @@
     "requirements": [
       "Matte oder weicher Untergrund für die Unterarme"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   }
 ]

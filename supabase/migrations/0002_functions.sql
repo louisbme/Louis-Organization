@@ -478,7 +478,7 @@ begin
   insert into public.exercises (
     slug, name, category, equipment, grip_id, grip_notes, description,
     setup, execution, range_of_motion, breathing, common_mistakes, tips, cable_setup, image_url, animation_url,
-    muscle_focus, requirements, grip_alternatives
+    muscle_focus, requirements, grip_alternatives, machine_name, alternative_exercises
   ) values (
     p ->> 'slug',
     p ->> 'name',
@@ -498,7 +498,9 @@ begin
     nullif(p ->> 'animation_url', ''),
     coalesce(array(select jsonb_array_elements_text(p -> 'muscle_focus')), '{}'),
     coalesce(array(select jsonb_array_elements_text(p -> 'requirements')), '{}'),
-    coalesce(array(select jsonb_array_elements_text(p -> 'grip_alternatives')), '{}')
+    coalesce(array(select jsonb_array_elements_text(p -> 'grip_alternatives')), '{}'),
+    nullif(p ->> 'machine_name', ''),
+    coalesce(array(select jsonb_array_elements_text(p -> 'alternative_exercises')), '{}')
   )
   on conflict (slug) where owner_id is null do update set
     name = excluded.name,
@@ -514,11 +516,13 @@ begin
     common_mistakes = excluded.common_mistakes,
     tips = excluded.tips,
     cable_setup = excluded.cable_setup,
-    image_url = coalesce(public.exercises.image_url, excluded.image_url),
+    image_url = excluded.image_url,
     animation_url = coalesce(public.exercises.animation_url, excluded.animation_url),
     muscle_focus = excluded.muscle_focus,
     requirements = excluded.requirements,
-    grip_alternatives = excluded.grip_alternatives
+    grip_alternatives = excluded.grip_alternatives,
+    machine_name = excluded.machine_name,
+    alternative_exercises = excluded.alternative_exercises
   returning id into v_id;
 
   delete from public.exercise_muscles where exercise_id = v_id;

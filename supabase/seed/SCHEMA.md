@@ -23,7 +23,9 @@ Die Daten werden per Skript in eine SQL-Migration übersetzt. Halte dich EXAKT a
 | common_mistakes | string[] | ja | 3–5 typische Fehler, jeweils ein kurzer Satz. |
 | tips | string[] | ja | 2–4 Hinweise (Tempo, Fokus, Progression, Alternativen). |
 | cable_setup | object/null | ja | NUR bei equipment = "cable" (sonst null). Felder siehe unten. |
-| image_url | string/null | nein | Optional: Pfad zum Gerätefoto (nur auf Anweisung setzen) |
+| image_url | string/null | nein | Gerätefoto, nur bei Maschinen-/Rack-/Cardio-Übungen (nie bei dumbbell oder cable) |
+| machine_name | string/null | nein | Offizielle Gerätebezeichnung (z. B. DHZ Fitness "Incline Chest Press") |
+| alternative_exercises | string[] | nein | Slugs alternativer Übungen am anderen Gerät (werden mit Foto verlinkt) |
 | muscle_focus | string[] | ja | 2–4 Punkte "So triffst du den Muskel": nach aktuellem sportwissenschaftlichem Stand (Bewegungsradius, gedehnte Position, Ellenbogen-/Schulterführung, Tempo, typische Ausweichbewegung). Sachlich, keine Heilsversprechen. |
 | requirements | string[] | ja | 1–4 Einträge "Das brauchst du": konkrete Ausstattung (Gerät, Hantelart, Bank, Griff, Stufe, Polster). Bei freien Übungen eindeutig, z. B. "Flachbank oder Hocker", "Kurzhanteln auf den Knien oder Langhantel mit Polster". |
 | grip_alternatives | string[] | ja | Nur bei Kabelübungen: 0–3 alternative Griff-IDs (aus der grip_id-Liste), die ebenfalls gut funktionieren, z. B. statt Seil eine Stange. Bei Nicht-Kabelübungen leeres Array []. |
@@ -39,6 +41,7 @@ Grundsatz: Als grip_id den Griff eintragen, der am einfachsten und schulterfreun
 ```
 {
   "cable": "Welcher Kabelzug (z. B. Kabelturm / Doppelkabelzug / integrierter Latzug / Kabelzug einarmig)",
+  "seat_position": "Nur bei festen Stationen (Latzug-Station): Sitz-/Polstereinstellung; dann darf height leer sein",
   "height": "Rollenhöhe EXPLIZIT: eines von \"ganz oben\", \"über Kopfhöhe\", \"Schulterhöhe\", \"Brusthöhe\", \"Hüfthöhe\", \"Kniehöhe\", \"ganz unten\" – plus kurzer Begründung",
   "grip_width": "Griffbreite / Handposition",
   "body_position": "Körperposition (Stand, Sitz, Abstand, Neigung, Rumpfspannung)",

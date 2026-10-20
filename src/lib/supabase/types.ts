@@ -62,6 +62,7 @@ export type MuscleId =
 export type CableSetup = {
   cable: string;
   height: string;
+  seat_position?: string;
   grip_width: string;
   body_position: string;
   foot_position: string;
@@ -124,6 +125,8 @@ export type ExerciseRow = Timestamps & {
   muscle_focus: string[];
   requirements: string[];
   grip_alternatives: string[];
+  machine_name: string | null;
+  alternative_exercises: string[];
   is_custom: boolean;
   owner_id: string | null;
 };
@@ -295,6 +298,8 @@ export type Database = {
           | "muscle_focus"
           | "requirements"
           | "grip_alternatives"
+          | "machine_name"
+          | "alternative_exercises"
           | "is_custom"
           | "owner_id"
           | "created_at"

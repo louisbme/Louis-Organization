@@ -110,6 +110,8 @@ create table public.exercises (
   muscle_focus text[] not null default '{}',
   requirements text[] not null default '{}',
   grip_alternatives text[] not null default '{}',
+  machine_name text,
+  alternative_exercises text[] not null default '{}',
   is_custom boolean not null default false,
   owner_id uuid references public.profiles (id) on delete cascade,
   created_at timestamptz not null default now(),

@@ -196,16 +196,16 @@ export function CalendarView({ initialMonth, initialEntries, initialSessions }: 
                 onClick={() => openDay(date)}
                 className={cn(
                   "flex aspect-square flex-col items-center justify-center gap-1 rounded-lg text-sm transition-colors touch-manipulation",
-                  effectiveType ? "bg-subtle" : "hover:bg-subtle",
-                  isToday && "ring-1 ring-accent",
+                  effectiveType === "training" ? "bg-subtle" : "hover:bg-subtle",
+                  isToday && "ring-1 ring-border-strong",
                   future && "text-faint"
                 )}
                 aria-label={format(date, "d. MMMM yyyy", { locale: de })}
               >
-                <span className={cn("tnum font-medium", isToday && "text-accent")}>{date.getDate()}</span>
+                <span className={cn("tnum font-medium", isToday && "font-bold")}>{date.getDate()}</span>
                 <span className="flex h-1.5 items-center gap-0.5">
-                  {effectiveType ? <span className={cn("h-1.5 w-1.5 rounded-full", CALENDAR_TYPE_STYLES[effectiveType].dot)} /> : null}
-                  {entry?.note ? <span className="h-1.5 w-1.5 rounded-full bg-faint/60" /> : null}
+                  {effectiveType ? <span className={cn("h-2 w-2 rounded-full", CALENDAR_TYPE_STYLES[effectiveType].dot)} /> : null}
+                  {entry?.note ? <span className="h-1 w-1 rounded-full bg-faint" /> : null}
                 </span>
               </button>
             );
@@ -216,11 +216,11 @@ export function CalendarView({ initialMonth, initialEntries, initialSessions }: 
       <div className="flex flex-wrap gap-x-4 gap-y-2 px-1 text-xs text-muted">
         {CALENDAR_TYPE_ORDER.map((t) => (
           <span key={t} className="inline-flex items-center gap-1.5">
-            <span className={cn("h-2 w-2 rounded-full", CALENDAR_TYPE_STYLES[t].dot)} /> {CALENDAR_TYPE_LABELS[t]}
+            <span className={cn("h-2.5 w-2.5 rounded-full", CALENDAR_TYPE_STYLES[t].dot)} /> {CALENDAR_TYPE_LABELS[t]}
           </span>
         ))}
         <span className="inline-flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-faint/60" /> Notiz
+          <span className="h-1.5 w-1.5 rounded-full bg-faint" /> Notiz
         </span>
       </div>
 
@@ -262,11 +262,11 @@ export function CalendarView({ initialMonth, initialEntries, initialSessions }: 
               onClick={() => setType(t)}
               className={cn(
                 "flex h-11 items-center gap-2 rounded-xl border px-3 text-sm font-medium touch-manipulation",
-                type === t ? "border-accent bg-accent-soft text-accent" : "border-border bg-subtle text-muted hover:text-fg"
+                type === t ? "border-border-strong bg-accent-soft text-fg" : "border-border bg-subtle text-muted hover:text-fg"
               )}
               aria-pressed={type === t}
             >
-              <span className={cn("h-2 w-2 rounded-full", CALENDAR_TYPE_STYLES[t].dot)} /> {CALENDAR_TYPE_LABELS[t]}
+              <span className={cn("h-2.5 w-2.5 rounded-full", CALENDAR_TYPE_STYLES[t].dot)} /> {CALENDAR_TYPE_LABELS[t]}
             </button>
           ))}
         </div>

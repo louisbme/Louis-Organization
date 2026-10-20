@@ -54,7 +54,13 @@
       "Multipresse mit Steckgewichtsblock (Hebel-Druckmaschine mit über Schulterhöhe gelagerten Griffen)",
       "Höhenverstellbarer Sitz mit Rückenpolster"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/multi-press.jpg",
+    "machine_name": "DHZ Multi Press, Steckgewicht",
+    "alternative_exercises": [
+      "brustpresse",
+      "schulterpresse-maschine"
+    ]
   },
   {
     "slug": "brustpresse-hebel-sitzend",
@@ -112,7 +118,13 @@
       "Gewichtsscheiben und Scheibenverschlüsse",
       "Höhenverstellbarer Sitz mit Rückenpolster"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/chest-press-lever-seated.jpg",
+    "machine_name": "DHZ Seated Chest Press, Plate Loaded",
+    "alternative_exercises": [
+      "brustpresse",
+      "brustpresse-hebel"
+    ]
   },
   {
     "slug": "brustpresse-hebel",
@@ -171,7 +183,13 @@
       "Gewichtsscheiben und Scheibenverschlüsse",
       "Höhenverstellbarer Sitz mit Rückenpolster"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/chest-press-lever.jpg",
+    "machine_name": "DHZ Chest Press, Plate Loaded (Iso-Lateral)",
+    "alternative_exercises": [
+      "brustpresse",
+      "brustpresse-hebel-sitzend"
+    ]
   },
   {
     "slug": "brustpresse-vertikal",
@@ -228,7 +246,13 @@
       "Brustpresse mit Steckgewichtsblock und konvergierender Griffbahn",
       "Höhenverstellbarer Sitz mit aufrechtem Rückenpolster"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/chest-press-vertical.jpg",
+    "machine_name": "DHZ Chest Press Vertical, Steckgewicht",
+    "alternative_exercises": [
+      "brustpresse",
+      "brustpresse-hebel"
+    ]
   },
   {
     "slug": "schraegbankdruecken-hebelmaschine",
@@ -287,7 +311,13 @@
       "Gewichtsscheiben und Scheibenverschlüsse",
       "Höhenverstellbarer Sitz"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/incline-press-lever.jpg",
+    "machine_name": "DHZ Incline Chest Press, Plate Loaded (zweite Station)",
+    "alternative_exercises": [
+      "schraegbankdruecken-maschine",
+      "schraegbankdruecken-hebel-flex"
+    ]
   },
   {
     "slug": "schraegbankdruecken-hebel-liegend",
@@ -346,7 +376,13 @@
       "Gewichtsscheiben und Scheibenverschlüsse",
       "Ablage beziehungsweise Haken für den Hebelarm"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/incline-press-lever-bench.jpg",
+    "machine_name": "DHZ Flex Press-Station mit Hebel über Kopf",
+    "alternative_exercises": [
+      "schraegbankdruecken-maschine",
+      "schraegbankdruecken-hebelmaschine"
+    ]
   },
   {
     "slug": "schraegbankdruecken-hebel-flex",
@@ -405,7 +441,13 @@
       "Gewichtsscheiben und Scheibenverschlüsse",
       "Höhenverstellbarer Sitz mit Rückenpolster"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/incline-press-flex.jpg",
+    "machine_name": "DHZ Flex Incline Chest Press (A702L)",
+    "alternative_exercises": [
+      "schraegbankdruecken-maschine",
+      "schraegbankdruecken-hebelmaschine"
+    ]
   },
   {
     "slug": "bankdruecken-langhantel",
@@ -465,7 +507,13 @@
       "Langhantel mit Gewichtsscheiben und Verschlüssen",
       "Sicherheitsablagen oder Trainingspartner zum Absichern"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/flat-bench-rack.jpg",
+    "machine_name": "Olympic Flat Bench mit Hantelablage",
+    "alternative_exercises": [
+      "brustpresse",
+      "brustpresse-hebel"
+    ]
   },
   {
     "slug": "schraegbankdruecken-langhantel",
@@ -525,7 +573,12 @@
       "Langhantel mit Gewichtsscheiben und Verschlüssen",
       "Sicherheitsablagen oder Trainingspartner zum Absichern"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/incline-bench-rack.jpg",
+    "machine_name": "Olympic Incline Bench mit Hantelablage",
+    "alternative_exercises": [
+      "schraegbankdruecken-maschine"
+    ]
   },
   {
     "slug": "schulterpresse-maschine",
@@ -583,7 +636,13 @@
       "Schulterpresse mit Steckgewichtsblock",
       "Höhenverstellbarer Sitz mit Rückenpolster"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/shoulder-press-selectorized.jpg",
+    "machine_name": "DHZ Shoulder Press, Steckgewicht",
+    "alternative_exercises": [
+      "schulterdruecken-maschine",
+      "multi-press-maschine"
+    ]
   },
   {
     "slug": "scott-curl",
@@ -641,6 +700,12 @@
       "SZ-Stange oder kurze Langhantel",
       "Gewichtsscheiben und Verschlüsse"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/preacher-curl-bench.jpg",
+    "machine_name": "Preacher Curl Bench (Scott-Pult)",
+    "alternative_exercises": [
+      "kurzhantelcurl",
+      "kabelcurl"
+    ]
   }
 ]

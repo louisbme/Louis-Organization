@@ -20,7 +20,7 @@ const EQUIPMENT = ["machine", "cable", "barbell", "dumbbell", "bodyweight", "smi
 const GRIPS = ["neutral_parallel", "wide_lat_bar", "close_v_grip", "rope", "single_handle", "strap_handle", "straight_bar", "ez_bar", "v_bar_triceps", "ankle_strap"];
 const MUSCLES = ["chest", "upper_chest", "front_delts", "side_delts", "rear_delts", "traps", "lats", "upper_back", "mid_back", "lower_back", "biceps", "triceps", "forearms", "abs", "obliques", "quads", "hamstrings", "glutes", "calves", "adductors", "abductors"];
 const REQUIRED = ["slug", "name", "category", "equipment", "grip_id", "grip_notes", "primary_muscles", "secondary_muscles", "description", "setup", "execution", "range_of_motion", "breathing", "common_mistakes", "tips", "cable_setup", "muscle_focus", "requirements", "grip_alternatives"];
-const OPTIONAL = ["image_url", "animation_url"];
+const OPTIONAL = ["image_url", "animation_url", "machine_name", "alternative_exercises"];
 const CABLE_FIELDS = ["cable", "height", "grip_width", "body_position", "foot_position", "movement_direction", "elbow_position", "end_position", "return"];
 
 const errors = [];
@@ -64,12 +64,25 @@ for (const file of readdirSync(exercisesDir).filter((f) => f.endsWith(".json")).
     }
     if (ex.equipment === "cable") {
       if (!ex.cable_setup || typeof ex.cable_setup !== "object") errors.push(`${ctx}: cable_setup fehlt`);
-      else for (const f of CABLE_FIELDS) if (!ex.cable_setup[f]) errors.push(`${ctx}: cable_setup.${f} fehlt`);
+      else {
+        for (const f of CABLE_FIELDS) {
+          if (f === "height" && ex.cable_setup.seat_position) continue;
+          if (!ex.cable_setup[f]) errors.push(`${ctx}: cable_setup.${f} fehlt`);
+        }
+      }
     } else if (ex.cable_setup !== null) {
       errors.push(`${ctx}: cable_setup muss null sein`);
     }
     exercises.push(ex);
   }
+}
+
+for (const ex of exercises) {
+  for (const alt of ex.alternative_exercises ?? []) {
+    if (!slugs.has(alt)) errors.push(`${ex.slug}: alternative_exercises verweist auf unbekannten Slug "${alt}"`);
+    if (alt === ex.slug) errors.push(`${ex.slug}: alternative_exercises verweist auf sich selbst`);
+  }
+  if (ex.image_url && ["dumbbell", "cable"].includes(ex.equipment)) errors.push(`${ex.slug}: Kurzhantel- und Kabelübungen bekommen kein Gerätefoto`);
 }
 
 const templates = JSON.parse(readFileSync(join(root, "supabase", "seed", "templates.json"), "utf8"));

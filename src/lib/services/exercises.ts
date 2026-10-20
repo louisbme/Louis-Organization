@@ -30,8 +30,16 @@ export interface ExerciseDetail extends ExerciseRow {
   secondary_muscles: string[];
   grip: GripRow | null;
   alternative_grips: GripRow[];
+  alternatives: AlternativeExercise[];
   cable: CableSetup | null;
   is_favorite: boolean;
+}
+
+export interface AlternativeExercise {
+  slug: string;
+  name: string;
+  image_url: string | null;
+  machine_name: string | null;
 }
 
 type ExerciseWithMusclesRaw = ExerciseRow & { exercise_muscles: Array<{ muscle_id: string; role: MuscleRole }> };
@@ -87,11 +95,23 @@ export async function getExerciseBySlug(db: DbClient, userId: string, slug: stri
     .overrideTypes<ExerciseDetailRaw, { merge: false }>();
   if (error) throw error;
   if (!data) return null;
-  const [{ data: fav }, alternatives] = await Promise.all([
+  const [{ data: fav }, alternatives, altExercises] = await Promise.all([
     db.from("favorites").select("exercise_id").eq("user_id", userId).eq("exercise_id", data.id).maybeSingle(),
     loadGrips(db, data.grip_alternatives),
+    loadAlternatives(db, data.alternative_exercises),
   ]);
-  return toDetail(data, !!fav, alternatives);
+  return toDetail(data, !!fav, alternatives, altExercises);
+}
+
+async function loadAlternatives(db: DbClient, slugs: string[]): Promise<AlternativeExercise[]> {
+  if (!slugs || slugs.length === 0) return [];
+  const { data, error } = await db
+    .from("exercises")
+    .select("slug, name, image_url, machine_name")
+    .in("slug", slugs)
+    .is("owner_id", null);
+  if (error) throw error;
+  return slugs.map((slug) => (data ?? []).find((e) => e.slug === slug)).filter((e): e is AlternativeExercise => !!e);
 }
 
 async function loadGrips(db: DbClient, ids: string[]): Promise<GripRow[]> {
@@ -110,14 +130,15 @@ export async function getExerciseById(db: DbClient, userId: string, id: string):
     .overrideTypes<ExerciseDetailRaw, { merge: false }>();
   if (error) throw error;
   if (!data) return null;
-  const [{ data: fav }, alternatives] = await Promise.all([
+  const [{ data: fav }, alternatives, altExercises] = await Promise.all([
     db.from("favorites").select("exercise_id").eq("user_id", userId).eq("exercise_id", data.id).maybeSingle(),
     loadGrips(db, data.grip_alternatives),
+    loadAlternatives(db, data.alternative_exercises),
   ]);
-  return toDetail(data, !!fav, alternatives);
+  return toDetail(data, !!fav, alternatives, altExercises);
 }
 
-function toDetail(raw: ExerciseDetailRaw, isFavorite: boolean, alternatives: GripRow[]): ExerciseDetail {
+function toDetail(raw: ExerciseDetailRaw, isFavorite: boolean, alternatives: GripRow[], altExercises: AlternativeExercise[]): ExerciseDetail {
   const { exercise_muscles, grips, ...rest } = raw;
   const cable = isCableSetup(rest.cable_setup) ? rest.cable_setup : null;
   return {
@@ -125,6 +146,7 @@ function toDetail(raw: ExerciseDetailRaw, isFavorite: boolean, alternatives: Gri
     ...splitMuscles(exercise_muscles),
     grip: grips ?? null,
     alternative_grips: alternatives,
+    alternatives: altExercises,
     cable,
     is_favorite: isFavorite,
   };

@@ -54,7 +54,13 @@
     "requirements": [
       "Hackenschmidt-Maschine (Hack Squat) mit Schulterpolstern und Sicherungen"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/hack-squat.jpg",
+    "machine_name": "Hack Squat, Plate Loaded",
+    "alternative_exercises": [
+      "beinpresse-45-grad",
+      "multipresse-kniebeuge"
+    ]
   },
   {
     "slug": "beinpresse",
@@ -111,7 +117,13 @@
     "requirements": [
       "45-Grad- oder horizontale Beinpresse mit verstellbarer Rückenlehne und Sicherungen"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/leg-press-seated.jpg",
+    "machine_name": "DHZ Seated Leg Press, Steckgewicht",
+    "alternative_exercises": [
+      "beinpresse-45-grad",
+      "hackenschmidt"
+    ]
   },
   {
     "slug": "beinstrecker",
@@ -165,7 +177,12 @@
     "requirements": [
       "Beinstrecker-Maschine mit verstellbarer Rückenlehne und Beinpolster"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/leg-extension-curl.jpg",
+    "machine_name": "DHZ Leg Extension / Leg Curl, Steckgewicht",
+    "alternative_exercises": [
+      "beinbeuger"
+    ]
   },
   {
     "slug": "bulgarian-split-squat",
@@ -226,7 +243,8 @@
       "Flachbank für den hinteren Fuß",
       "Optional: Rack oder Wand zum Abstützen bei Gleichgewichtsproblemen"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   },
   {
     "slug": "kniebeuge",
@@ -288,7 +306,13 @@
       "Hantelscheiben mit Verschlüssen",
       "Optional: Schuhe mit erhöhter Ferse"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/half-rack.jpg",
+    "machine_name": "Half Rack mit Plattform",
+    "alternative_exercises": [
+      "multipresse-kniebeuge",
+      "hackenschmidt"
+    ]
   },
   {
     "slug": "ausfallschritte",
@@ -348,7 +372,8 @@
       "Bank oder Ablage zum Aufnehmen und Abstellen der Kurzhanteln",
       "Ausreichend Platz nach vorne, besonders bei gehender Ausführung"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   },
   {
     "slug": "beinbeuger",
@@ -405,7 +430,12 @@
     "requirements": [
       "Beinbeuger-Maschine, liegend oder sitzend, mit verstellbarer Drehachse und Beinpolster"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/seated-leg-curl.jpg",
+    "machine_name": "DHZ Seated Leg Curl, Steckgewicht",
+    "alternative_exercises": [
+      "beinstrecker"
+    ]
   },
   {
     "slug": "rumaenisches-kreuzheben",
@@ -465,7 +495,12 @@
       "Langhantel mit Hantelscheiben und Verschlüssen; alternativ Kurzhanteln",
       "Optional: Zughilfen bei nachlassender Griffkraft"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/half-rack.jpg",
+    "machine_name": "Half Rack mit Plattform",
+    "alternative_exercises": [
+      "hyperextensions"
+    ]
   },
   {
     "slug": "hip-thrust",
@@ -523,7 +558,8 @@
       "Stabile Bank, Höhe etwa Kniehöhe, gegen Wegrutschen gesichert",
       "Langhantel mit Polster (Hip-Thrust-Pad) und Hantelscheiben mit Verschlüssen; alternativ Hip-Thrust-Maschine"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   },
   {
     "slug": "kabel-kickback",
@@ -590,7 +626,8 @@
       "Kabelturm mit unterer Rolle",
       "Fußschlaufe (Ankle Strap) oder gepolsterte Manschette"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   },
   {
     "slug": "wadenheben-stehend",
@@ -644,7 +681,12 @@
       "Stehende Wadenmaschine mit Schulterpolstern; alternativ Multipresse mit Stufe oder Kurzhanteln in den Händen auf einer Stufe",
       "Stufe oder Plattformkante, damit die Fersen frei absinken können"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/standing-calf-raise.jpg",
+    "machine_name": "DHZ Standing Calf Raise, Plate Loaded",
+    "alternative_exercises": [
+      "wadenheben-sitzend"
+    ]
   },
   {
     "slug": "wadenheben-sitzend",
@@ -697,6 +739,9 @@
     "requirements": [
       "Sitzende Wadenmaschine; alternativ Flachbank oder Hocker, Kurzhanteln auf den Knien oder Langhantel mit Polster auf den Oberschenkeln, Stufe oder Hantelscheibe unter den Fußballen"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": [
+      "wadenheben-stehend"
+    ]
   }
 ]

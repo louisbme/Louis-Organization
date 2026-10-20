@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ExerciseDetail as ExerciseDetailType } from "@/lib/services/exercises";
 import type { ExerciseRecordsRow, GripRow } from "@/lib/supabase/types";
 import { CATEGORY_LABELS, EQUIPMENT_LABELS, muscleLabel } from "@/lib/utils/labels";
@@ -49,16 +50,29 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
         <Card>
           <CardContent className="pt-5">
             <SectionLabel>Kabelturm</SectionLabel>
-            <div className="mt-3 flex items-start gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-border bg-subtle text-fg">
-                <CableHeightIcon height={exercise.cable.height} />
+            {exercise.cable.seat_position && !exercise.cable.height ? (
+              <div className="mt-3 flex items-start gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-border bg-subtle text-fg">
+                  <SeatIcon />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Sitzposition</p>
+                  <p className="text-sm leading-relaxed">{exercise.cable.seat_position}</p>
+                  <p className="mt-1 text-xs text-faint">{exercise.cable.cable}</p>
+                </div>
               </div>
-              <div className="min-w-0">
-                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Rollenhöhe</p>
-                <p className="text-lg font-semibold">{heightLabel(exercise.cable.height)}</p>
-                <p className="mt-0.5 text-sm text-muted">{heightNote(exercise.cable.height)}</p>
+            ) : (
+              <div className="mt-3 flex items-start gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-border bg-subtle text-fg">
+                  <CableHeightIcon height={exercise.cable.height} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Rollenhöhe</p>
+                  <p className="text-lg font-semibold">{heightLabel(exercise.cable.height)}</p>
+                  <p className="mt-0.5 text-sm text-muted">{heightNote(exercise.cable.height)}</p>
+                </div>
               </div>
-            </div>
+            )}
 
             {exercise.grip ? (
               <div className="mt-5 border-t border-border pt-5">
@@ -101,44 +115,91 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
         </Card>
       ) : null}
 
-      {/* Das brauchst du + Gerät (Foto nur, wenn ausdrücklich hinterlegt) */}
-      <Card>
-        <CardContent className="pt-5">
-          <div className="flex items-start gap-4">
-            <div className="min-w-0 flex-1">
-              <SectionLabel>Das brauchst du</SectionLabel>
-              <div className="mt-2 flex items-center gap-2 text-sm font-medium">
-                <EquipmentIcon equipment={exercise.equipment} className="h-5 w-5 text-muted" strokeWidth={1.7} />
-                {EQUIPMENT_LABELS[exercise.equipment]}
+      {/* Gerät: kompakt, nur bei Maschinenübungen mit Foto */}
+      {exercise.image_url ? (
+        <Card>
+          <CardContent className="pt-5">
+            <SectionLabel>Gerät</SectionLabel>
+            <div className="mt-3 flex items-center gap-4">
+              <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1 sm:h-28 sm:w-28">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={exercise.image_url} alt={exercise.machine_name ?? exercise.name} loading="lazy" decoding="async" className="h-full w-full object-contain" />
               </div>
-              {exercise.requirements.length > 0 ? (
-                <ul className="mt-2 space-y-1.5">
-                  {exercise.requirements.map((r, i) => (
-                    <li key={i} className="flex gap-2 text-sm leading-relaxed text-muted">
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint" />
-                      <span>{r}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-              {!isCable && (exercise.grip || exercise.grip_notes) ? (
-                <div className="mt-4 border-t border-border pt-4">
-                  <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Griff</p>
-                  {exercise.grip ? <GripRowView grip={exercise.grip} /> : null}
-                  {exercise.grip_notes ? <p className="mt-2 text-sm leading-relaxed text-muted">{exercise.grip_notes}</p> : null}
-                </div>
-              ) : null}
+              <div className="min-w-0">
+                <p className="text-base font-semibold">{exercise.machine_name ?? EQUIPMENT_LABELS[exercise.equipment]}</p>
+                <p className="mt-0.5 text-sm text-muted">{EQUIPMENT_LABELS[exercise.equipment]} · so steht es im Studio</p>
+              </div>
             </div>
-            {exercise.image_url ? (
-              <div className="flex shrink-0 flex-col items-center gap-1.5">
-                <div className="flex h-28 w-28 items-center justify-center overflow-hidden rounded-xl border border-border bg-white/95 p-1 sm:h-32 sm:w-32">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={exercise.image_url} alt={`${exercise.name} – Gerät`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+            {exercise.alternatives.length > 0 ? (
+              <div className="mt-4 border-t border-border pt-4">
+                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Alternativ an diesem Gerät</p>
+                <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+                  {exercise.alternatives.map((alt) => (
+                    <Link key={alt.slug} href={`/exercises/${alt.slug}`} className="card-interactive press flex w-36 shrink-0 flex-col gap-2 rounded-xl border border-border bg-subtle p-2">
+                      <div className="flex h-20 items-center justify-center overflow-hidden rounded-lg bg-white p-1">
+                        {alt.image_url ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={alt.image_url} alt={alt.machine_name ?? alt.name} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                        ) : (
+                          <EquipmentIcon equipment={exercise.equipment} className="h-6 w-6 text-faint" />
+                        )}
+                      </div>
+                      <p className="line-clamp-2 text-xs font-medium leading-snug">{alt.name}</p>
+                    </Link>
+                  ))}
                 </div>
-                <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-faint">Gerät</p>
               </div>
             ) : null}
+          </CardContent>
+        </Card>
+      ) : exercise.alternatives.length > 0 ? (
+        <Card>
+          <CardContent className="pt-5">
+            <SectionLabel>Alternativ am Gerät</SectionLabel>
+            <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+              {exercise.alternatives.map((alt) => (
+                <Link key={alt.slug} href={`/exercises/${alt.slug}`} className="card-interactive press flex w-36 shrink-0 flex-col gap-2 rounded-xl border border-border bg-subtle p-2">
+                  <div className="flex h-20 items-center justify-center overflow-hidden rounded-lg bg-white p-1">
+                    {alt.image_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={alt.image_url} alt={alt.machine_name ?? alt.name} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                    ) : (
+                      <EquipmentIcon equipment={exercise.equipment} className="h-6 w-6 text-faint" />
+                    )}
+                  </div>
+                  <p className="line-clamp-2 text-xs font-medium leading-snug">{alt.name}</p>
+                </Link>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      ) : null}
+
+      {/* Das brauchst du */}
+      <Card>
+        <CardContent className="pt-5">
+          <SectionLabel>Das brauchst du</SectionLabel>
+          <div className="mt-2 flex items-center gap-2 text-sm font-medium">
+            <EquipmentIcon equipment={exercise.equipment} className="h-5 w-5 text-muted" strokeWidth={1.7} />
+            {EQUIPMENT_LABELS[exercise.equipment]}
           </div>
+          {exercise.requirements.length > 0 ? (
+            <ul className="mt-2 space-y-1.5">
+              {exercise.requirements.map((r, i) => (
+                <li key={i} className="flex gap-2 text-sm leading-relaxed text-muted">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint" />
+                  <span>{r}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          {!isCable && (exercise.grip || exercise.grip_notes) ? (
+            <div className="mt-4 border-t border-border pt-4">
+              <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Griff</p>
+              {exercise.grip ? <GripRowView grip={exercise.grip} /> : null}
+              {exercise.grip_notes ? <p className="mt-2 text-sm leading-relaxed text-muted">{exercise.grip_notes}</p> : null}
+            </div>
+          ) : null}
         </CardContent>
       </Card>
 
@@ -224,6 +285,16 @@ function heightLabel(height: string): string {
 function heightNote(height: string): string {
   const rest = height.slice(heightLabel(height).length).replace(/^[\s,(–-]+/, "").replace(/\)$/, "");
   return rest;
+}
+
+function SeatIcon() {
+  return (
+    <svg viewBox="0 0 48 48" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M14 10v18h18" />
+      <path d="M10 28h26v6H10z" />
+      <path d="M14 34v8M32 34v8" />
+    </svg>
+  );
 }
 
 /** Kleines Icon: Kabelturm mit markierter Rollenhöhe */

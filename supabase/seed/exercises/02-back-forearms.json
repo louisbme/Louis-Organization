@@ -46,15 +46,16 @@
       "Die exzentrische Phase bewusst zwei bis drei Sekunden lang ausführen."
     ],
     "cable_setup": {
-      "cable": "Latzug-Station am Kabelturm oder integrierter Latzug",
-      "height": "ganz oben, damit der Zug senkrecht von oben kommt und der Latissimus bei gestreckten Armen in voller Länge belastet wird",
+      "cable": "Latzug-Station am Kabelturm (feste Rolle oben)",
+      "height": "",
       "grip_width": "Schulterbreit, neutral (Handflächen zueinander)",
       "body_position": "Aufrecht sitzend, leichte Rücklage von etwa 10 bis 20 Grad, Brust angehoben, Rumpf stabil",
       "foot_position": "Füße flach auf dem Boden, Oberschenkel unter dem Polster fixiert",
       "movement_direction": "Vertikal von oben nach unten in Richtung obere Brust",
       "elbow_position": "Ellenbogen zeigen nach unten und leicht nach vorne, bleiben nah am Körper",
       "end_position": "Griff auf Höhe des Kinns bis der oberen Brust, Schulterblätter nach unten und zusammengezogen",
-      "return": "Langsam und kontrolliert bis zur vollen Armstreckung, Schultern am Ende leicht nach oben kommen lassen"
+      "return": "Langsam und kontrolliert bis zur vollen Armstreckung, Schultern am Ende leicht nach oben kommen lassen",
+      "seat_position": "Oberschenkelpolster so einstellen, dass die Beine fest fixiert sind und die Füße flach auf dem Boden stehen. Sitz so wählen, dass die Arme oben vollständig gestreckt sind, ohne dass das Gewicht aufsetzt."
     },
     "muscle_focus": [
       "Oben die Arme lang werden lassen und die Schultern kurz in Richtung Ohren gleiten lassen, so steht der Latissimus in der gedehnten Position unter Last.",
@@ -68,6 +69,10 @@
     ],
     "grip_alternatives": [
       "close_v_grip"
+    ],
+    "alternative_exercises": [
+      "latzug-hebel",
+      "breiter-latzug"
     ]
   },
   {
@@ -117,15 +122,16 @@
       "Wenn die Schultern bei sehr breitem Griff unangenehm belastet sind, etwas enger greifen oder auf den neutralen Latzug wechseln."
     ],
     "cable_setup": {
-      "cable": "Latzug-Station am Kabelturm oder integrierter Latzug",
-      "height": "ganz oben, damit die Zugrichtung senkrecht verläuft und der Latissimus oben in der gedehnten Position belastet wird",
+      "cable": "Latzug-Station am Kabelturm (feste Rolle oben)",
+      "height": "",
       "grip_width": "Deutlich weiter als schulterbreit, proniert (Handflächen nach vorne)",
       "body_position": "Aufrecht sitzend, leichte Rücklage von etwa 10 bis 20 Grad, Brust angehoben, Rumpf stabil",
       "foot_position": "Füße flach auf dem Boden, Oberschenkel unter dem Polster fixiert",
       "movement_direction": "Vertikal von oben nach unten in Richtung obere Brust",
       "elbow_position": "Ellenbogen zeigen nach unten und leicht nach außen, bleiben etwa in der Ebene des Oberkörpers",
       "end_position": "Stange auf Höhe der oberen Brust, Schulterblätter nach unten und zusammengezogen",
-      "return": "Langsam und kontrolliert bis zur vollen Armstreckung, Schultern am Ende leicht nach oben kommen lassen"
+      "return": "Langsam und kontrolliert bis zur vollen Armstreckung, Schultern am Ende leicht nach oben kommen lassen",
+      "seat_position": "Oberschenkelpolster so einstellen, dass die Beine fest fixiert sind und die Füße flach auf dem Boden stehen. Sitz so wählen, dass die Arme oben vollständig gestreckt sind, ohne dass das Gewicht aufsetzt."
     },
     "muscle_focus": [
       "Oben die Arme vollständig strecken und die Schulterblätter kurz nach oben gleiten lassen, so wird der Latissimus in der gedehnten Position belastet.",
@@ -139,6 +145,10 @@
     ],
     "grip_alternatives": [
       "neutral_parallel"
+    ],
+    "alternative_exercises": [
+      "neutraler-latzug",
+      "latzug-hebel"
     ]
   },
   {
@@ -211,7 +221,8 @@
     ],
     "grip_alternatives": [
       "neutral_parallel"
-    ]
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "breites-rudern",
@@ -284,7 +295,8 @@
     ],
     "grip_alternatives": [
       "neutral_parallel"
-    ]
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "brustgestuetztes-rudern",
@@ -343,7 +355,13 @@
     "requirements": [
       "Rudermaschine mit Brustpolster (Hebel- oder Seilzugmaschine)"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/chest-supported-row.jpg",
+    "machine_name": "DHZ Flex Mid Row (A704L)",
+    "alternative_exercises": [
+      "rudern-hebel-sitzend",
+      "enges-rudern"
+    ]
   },
   {
     "slug": "kabelrudern-einarmig",
@@ -414,7 +432,8 @@
     ],
     "grip_alternatives": [
       "strap_handle"
-    ]
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "reverse-fly-kurzhantel",
@@ -474,7 +493,8 @@
       "Leichte Kurzhanteln",
       "Optional: Schrägbank für die bäuchlings liegende Variante"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   },
   {
     "slug": "straight-arm-pulldown",
@@ -547,7 +567,8 @@
     "grip_alternatives": [
       "wide_lat_bar",
       "rope"
-    ]
+    ],
+    "alternative_exercises": []
   },
   {
     "slug": "hyperextensions",
@@ -604,7 +625,12 @@
       "45-Grad-Rückenstrecker-Bank (Hyperextension-Bank)",
       "Optional: Hantelscheibe vor der Brust als Zusatzgewicht"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/hyperextension-bench.jpg",
+    "machine_name": "Hyperextension-Bank 45°",
+    "alternative_exercises": [
+      "rumaenisches-kreuzheben"
+    ]
   },
   {
     "slug": "wrist-curl",
@@ -656,7 +682,8 @@
       "Leichte Kurzhantel",
       "Flachbank oder Hocker zum Sitzen und Ablegen des Unterarms"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   },
   {
     "slug": "reverse-wrist-curl",
@@ -709,6 +736,7 @@
       "Sehr leichte Kurzhantel",
       "Flachbank oder Hocker zum Sitzen und Ablegen des Unterarms"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "alternative_exercises": []
   }
 ]

@@ -58,7 +58,13 @@
       "Gewichtsscheiben und Scheibenverschlüsse",
       "Einstellbares Oberschenkelpolster"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/lat-pulldown-lever.jpg",
+    "machine_name": "DHZ Lat Pulldown, Plate Loaded",
+    "alternative_exercises": [
+      "neutraler-latzug",
+      "breiter-latzug"
+    ]
   },
   {
     "slug": "rudern-hebel-sitzend",
@@ -121,7 +127,13 @@
       "Gewichtsscheiben und Scheibenverschlüsse",
       "Höhenverstellbarer Sitz mit Fußstützen"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/seated-row-lever.jpg",
+    "machine_name": "DHZ Low Row, Plate Loaded",
+    "alternative_exercises": [
+      "brustgestuetztes-rudern",
+      "enges-rudern"
+    ]
   },
   {
     "slug": "beinpresse-45-grad",
@@ -181,7 +193,13 @@
       "Gewichtsscheiben und Scheibenverschlüsse",
       "Einstellbare Rückenlehne"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/leg-press-45.jpg",
+    "machine_name": "Leg Press 45°, Plate Loaded",
+    "alternative_exercises": [
+      "beinpresse",
+      "hackenschmidt"
+    ]
   },
   {
     "slug": "multipresse-kniebeuge",
@@ -241,7 +259,13 @@
       "Multipresse (Smith Machine) mit einstellbaren Sicherheitsstopps",
       "Gewichtsscheiben und Scheibenverschlüsse"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/smith-machine.jpg",
+    "machine_name": "Smith Machine (Multipresse)",
+    "alternative_exercises": [
+      "kniebeuge",
+      "hackenschmidt"
+    ]
   },
   {
     "slug": "adduktoren-maschine",
@@ -294,7 +318,12 @@
       "Adduktoren-Maschine mit Steckgewichtsblock und Innenpolstern",
       "Einstellhebel für die Startweite"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/adductor-machine.jpg",
+    "machine_name": "DHZ Adductor, Steckgewicht",
+    "alternative_exercises": [
+      "abduktoren-maschine"
+    ]
   },
   {
     "slug": "abduktoren-maschine",
@@ -349,7 +378,12 @@
       "Abduktoren-Maschine mit Steckgewichtsblock und Außenpolstern",
       "Einstellhebel für die Startposition"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/abductor-machine.jpg",
+    "machine_name": "DHZ Abductor, Steckgewicht",
+    "alternative_exercises": [
+      "adduktoren-maschine"
+    ]
   },
   {
     "slug": "air-bike",
@@ -408,7 +442,10 @@
       "Air Bike mit Luftwiderstand und beweglichen Armhebeln",
       "Verstellbarer Sattel (Höhe und Länge)"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/air-bike.jpg",
+    "machine_name": "USAEON Air Bike",
+    "alternative_exercises": []
   },
   {
     "slug": "rudergeraet",
@@ -469,7 +506,10 @@
       "Rudergerät mit Magnet- oder Luftwiderstand (Rollsitz, Fußschalen mit Riemen)",
       "Konsole für Zeit, Distanz oder Intervall"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/rowing-machine.jpg",
+    "machine_name": "Rudergerät (Neolymp)",
+    "alternative_exercises": []
   },
   {
     "slug": "ski-erg",
@@ -528,7 +568,10 @@
       "Ski-Ergometer mit Griffen über Kopf (Luft- oder Magnetwiderstand)",
       "Etwa eine Armlänge Platz vor dem Gerät"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/ski-erg.jpg",
+    "machine_name": "Ski-Ergometer (Rogue)",
+    "alternative_exercises": []
   },
   {
     "slug": "laufband",
@@ -587,6 +630,9 @@
       "Laufband mit einstellbarer Geschwindigkeit und Steigung",
       "Not-Stopp-Clip"
     ],
-    "grip_alternatives": []
+    "grip_alternatives": [],
+    "image_url": "/exercises/treadmill.jpg",
+    "machine_name": "USAEON Laufband",
+    "alternative_exercises": []
   }
 ]

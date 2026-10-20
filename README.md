@@ -86,6 +86,7 @@ Migrationen:
 | `0009_categories_cardio_hips.sql` | Kategorien Cardio und Ad-/Abduktoren, Equipment Cardio, neue Muskelgruppen |
 | `0010_remove_machine_images.sql` | Entfernt frühere Gerätefoto-Zuordnungen |
 | `0011_focus_requirements_grips.sql` | Muskelfokus, benötigte Ausstattung, Griff-Alternativen, Griff "Handschlaufe" |
+| `0012_machine_info.sql` | Gerätebezeichnung und alternative Geräte je Übung |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 
@@ -126,7 +127,7 @@ Die Standard-Templates funktionieren ebenfalls (Route `/auth/callback`), dann mu
 
 ### 4. Bilder, Animationen und Storage
 
-- Gerätefotos (`public/exercises/`) werden nur auf der Detailseite angezeigt und nur bei Übungen, für die `exercises.image_url` ausdrücklich gesetzt ist (Orientierung, welches Gerät gemeint ist). In Listen erscheinen keine Fotos.
+- Gerätefotos (`public/exercises/`, DHZ-Fitness-Geräte des Studios) erscheinen nur auf der Detailseite von Maschinen-, Rack- und Cardio-Übungen, kompakt mit offizieller Gerätebezeichnung (`machine_name`) und Alternativgeräten mit Bild (`alternative_exercises`). Kurzhantel- und Kabelturm-Übungen bekommen kein Foto; in Listen erscheinen nie Fotos. Beim Latzug wird statt der Rollenhöhe die Sitzposition angezeigt.
 - Ausführungs-Animationen (GIF, WebP, MP4) werden über `exercises.animation_url` eingebunden und auf der Detailseite als Schleife abgespielt. Jede Übung funktioniert auch ohne Bild und ohne Animation (Placeholder).
 - Griff-Fotos: `grips.image_url` setzen, dann erscheint das Foto statt des Icons.
 - Migration `0007` legt den öffentlichen Storage-Bucket `exercise-assets` an (lesen für alle, schreiben für angemeldete Benutzer im eigenen Ordner `<user_id>/…`). Dateien dort hochladen und die öffentliche URL in `image_url`, `animation_url` oder `grips.image_url` eintragen, zum Beispiel per SQL:
