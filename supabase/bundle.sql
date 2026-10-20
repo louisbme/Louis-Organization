@@ -1298,3 +1298,300 @@ select public.upsert_seed_template($seed${"name":"Unterkörper","sort_order":2,"
 
 -- Oberkörper B
 select public.upsert_seed_template($seed${"name":"Oberkörper B","sort_order":3,"exercises":[{"slug":"schraegbankdruecken-maschine","sets":2,"rep_min":8,"rep_max":12},{"slug":"enges-rudern","sets":3,"rep_min":8,"rep_max":12},{"slug":"neutraler-latzug","sets":2,"rep_min":8,"rep_max":12},{"slug":"butterfly","sets":2,"rep_min":10,"rep_max":15},{"slug":"reverse-butterfly","sets":2,"rep_min":12,"rep_max":15},{"slug":"seitheben-maschine","sets":2,"rep_min":12,"rep_max":15},{"slug":"hammercurl-kabel","sets":2,"rep_min":10,"rep_max":15},{"slug":"ueberkopf-trizeps-extension","sets":2,"rep_min":10,"rep_max":12}]}$seed$::jsonb);
+
+
+-- >>>>>>>>>> 0007_media_and_storage.sql <<<<<<<<<<
+
+-- ============================================================
+-- 0007_media_and_storage.sql
+-- Griff-Bilder, Ausführungs-Animationen, Storage-Bucket, Maschinenfotos
+-- ============================================================
+
+-- Griffe können ein Foto bekommen (z. B. aus dem eigenen Studio)
+alter table public.grips add column if not exists image_url text;
+
+-- Übungen: zusätzlich zur Maschinen-/Übungsabbildung eine Ausführungs-Animation (GIF, WebP, MP4)
+alter table public.exercises add column if not exists animation_url text;
+
+-- Seed-Funktion: animation_url mitnehmen, vorhandene Werte nicht überschreiben
+create or replace function public.upsert_seed_exercise(p jsonb)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_id uuid;
+  m text;
+begin
+  insert into public.exercises (
+    slug, name, category, equipment, grip_id, grip_notes, description,
+    setup, execution, range_of_motion, breathing, common_mistakes, tips, cable_setup, image_url, animation_url
+  ) values (
+    p ->> 'slug',
+    p ->> 'name',
+    (p ->> 'category')::public.exercise_category,
+    (p ->> 'equipment')::public.equipment_type,
+    nullif(p ->> 'grip_id', ''),
+    nullif(p ->> 'grip_notes', ''),
+    p ->> 'description',
+    coalesce(array(select jsonb_array_elements_text(p -> 'setup')), '{}'),
+    coalesce(array(select jsonb_array_elements_text(p -> 'execution')), '{}'),
+    p ->> 'range_of_motion',
+    p ->> 'breathing',
+    coalesce(array(select jsonb_array_elements_text(p -> 'common_mistakes')), '{}'),
+    coalesce(array(select jsonb_array_elements_text(p -> 'tips')), '{}'),
+    case when jsonb_typeof(p -> 'cable_setup') = 'object' then p -> 'cable_setup' else null end,
+    nullif(p ->> 'image_url', ''),
+    nullif(p ->> 'animation_url', '')
+  )
+  on conflict (slug) where owner_id is null do update set
+    name = excluded.name,
+    category = excluded.category,
+    equipment = excluded.equipment,
+    grip_id = excluded.grip_id,
+    grip_notes = excluded.grip_notes,
+    description = excluded.description,
+    setup = excluded.setup,
+    execution = excluded.execution,
+    range_of_motion = excluded.range_of_motion,
+    breathing = excluded.breathing,
+    common_mistakes = excluded.common_mistakes,
+    tips = excluded.tips,
+    cable_setup = excluded.cable_setup,
+    image_url = coalesce(public.exercises.image_url, excluded.image_url),
+    animation_url = coalesce(public.exercises.animation_url, excluded.animation_url)
+  returning id into v_id;
+
+  delete from public.exercise_muscles where exercise_id = v_id;
+
+  for m in select jsonb_array_elements_text(p -> 'primary_muscles') loop
+    insert into public.exercise_muscles (exercise_id, muscle_id, role)
+    values (v_id, m, 'primary') on conflict do nothing;
+  end loop;
+
+  for m in select jsonb_array_elements_text(p -> 'secondary_muscles') loop
+    insert into public.exercise_muscles (exercise_id, muscle_id, role)
+    values (v_id, m, 'secondary') on conflict do nothing;
+  end loop;
+
+  return v_id;
+end;
+$$;
+revoke all on function public.upsert_seed_exercise(jsonb) from public;
+
+-- ------------------------------------------------------------
+-- Storage-Bucket für Übungs-, Griff- und Animationsdateien
+-- (öffentlich lesbar; Schreiben nur für angemeldete Benutzer in eigenem Ordner)
+-- ------------------------------------------------------------
+do $$
+begin
+  if exists (select 1 from information_schema.tables where table_schema = 'storage' and table_name = 'buckets') then
+    insert into storage.buckets (id, name, public)
+    values ('exercise-assets', 'exercise-assets', true)
+    on conflict (id) do update set public = true;
+
+    if not exists (select 1 from pg_policies where schemaname = 'storage' and tablename = 'objects' and policyname = 'exercise_assets_public_read') then
+      create policy "exercise_assets_public_read" on storage.objects
+        for select using (bucket_id = 'exercise-assets');
+    end if;
+    if not exists (select 1 from pg_policies where schemaname = 'storage' and tablename = 'objects' and policyname = 'exercise_assets_user_write') then
+      create policy "exercise_assets_user_write" on storage.objects
+        for insert to authenticated
+        with check (bucket_id = 'exercise-assets' and (storage.foldername(name))[1] = auth.uid()::text);
+    end if;
+    if not exists (select 1 from pg_policies where schemaname = 'storage' and tablename = 'objects' and policyname = 'exercise_assets_user_update') then
+      create policy "exercise_assets_user_update" on storage.objects
+        for update to authenticated
+        using (bucket_id = 'exercise-assets' and (storage.foldername(name))[1] = auth.uid()::text);
+    end if;
+    if not exists (select 1 from pg_policies where schemaname = 'storage' and tablename = 'objects' and policyname = 'exercise_assets_user_delete') then
+      create policy "exercise_assets_user_delete" on storage.objects
+        for delete to authenticated
+        using (bucket_id = 'exercise-assets' and (storage.foldername(name))[1] = auth.uid()::text);
+    end if;
+  end if;
+end $$;
+
+-- ------------------------------------------------------------
+-- Maschinenfotos aus dem Studio (vom Nutzer bereitgestellt, liegen unter public/exercises)
+-- Nur setzen, wenn noch kein Bild hinterlegt ist.
+-- ------------------------------------------------------------
+with mapping(slug, url) as (
+  values
+    ('schraegbankdruecken-maschine', '/exercises/incline-press-plate.jpg'),
+    ('brustpresse', '/exercises/chest-press.jpg'),
+    ('pec-deck', '/exercises/pec-deck-rear-delt.jpg'),
+    ('butterfly', '/exercises/pec-deck-rear-delt.jpg'),
+    ('reverse-butterfly', '/exercises/pec-deck-rear-delt.jpg'),
+    ('neutraler-latzug', '/exercises/lat-pulldown-neutral.jpg'),
+    ('breiter-latzug', '/exercises/lat-pulldown-wide.jpg'),
+    ('brustgestuetztes-rudern', '/exercises/chest-supported-row.jpg'),
+    ('reverse-fly-kurzhantel', '/exercises/dumbbell-area.jpg'),
+    ('hyperextensions', '/exercises/hyperextension-bench.jpg'),
+    ('wrist-curl', '/exercises/flat-bench.jpg'),
+    ('reverse-wrist-curl', '/exercises/flat-bench.jpg'),
+    ('schulterdruecken-maschine', '/exercises/shoulder-press-plate.jpg'),
+    ('hackenschmidt', '/exercises/hack-squat.jpg'),
+    ('beinpresse', '/exercises/leg-press-seated.jpg'),
+    ('beinstrecker', '/exercises/leg-extension-curl.jpg'),
+    ('beinbeuger', '/exercises/seated-leg-curl.jpg'),
+    ('bulgarian-split-squat', '/exercises/adjustable-bench.jpg'),
+    ('kniebeuge', '/exercises/half-rack.jpg'),
+    ('rumaenisches-kreuzheben', '/exercises/half-rack.jpg'),
+    ('ausfallschritte', '/exercises/dumbbell-area.jpg'),
+    ('hip-thrust', '/exercises/flat-bench.jpg'),
+    ('incline-curl', '/exercises/adjustable-bench.jpg'),
+    ('incline-curl-hinterm-koerper', '/exercises/adjustable-bench.jpg'),
+    ('kurzhantelcurl', '/exercises/dumbbell-area.jpg'),
+    ('crunch-maschine', '/exercises/abdominal-machine.jpg'),
+    ('hanging-knee-raise', '/exercises/knee-raise-station.jpg')
+)
+update public.exercises e
+set image_url = m.url
+from mapping m
+where e.slug = m.slug and e.owner_id is null and e.image_url is null;
+
+-- Alle Kabelübungen: Foto des Kabelturms
+update public.exercises
+set image_url = '/exercises/cable-station.jpg'
+where owner_id is null and equipment = 'cable' and image_url is null;
+
+
+-- >>>>>>>>>> 0008_member_sessions.sql <<<<<<<<<<
+
+-- ============================================================
+-- 0008_member_sessions.sql
+-- Mitglieder-Detailansicht in den Stats: abgeschlossene Trainings
+-- eines Mitglieds samt Übungen und Sätzen (nur lesend, nur für
+-- angemeldete Benutzer).
+-- ============================================================
+
+-- ------------------------------------------------------------
+-- Trainingsliste eines Mitglieds
+-- ------------------------------------------------------------
+create or replace function public.get_member_sessions(p_user_id uuid, p_limit integer default 100)
+returns table (
+  session_id uuid,
+  name text,
+  started_at timestamptz,
+  ended_at timestamptz,
+  duration_seconds integer,
+  total_volume numeric,
+  total_sets integer,
+  exercise_names text[]
+)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null then
+    raise exception 'Nicht angemeldet' using errcode = '42501';
+  end if;
+
+  return query
+  select
+    s.id as session_id,
+    s.name,
+    s.started_at,
+    s.ended_at,
+    s.duration_seconds,
+    s.total_volume,
+    s.total_sets,
+    coalesce(
+      (select array_agg(e.name order by se.sort_order)
+         from public.workout_session_exercises se
+         join public.exercises e on e.id = se.exercise_id
+        where se.session_id = s.id),
+      '{}'::text[]
+    ) as exercise_names
+  from public.workout_sessions s
+  where s.user_id = p_user_id
+    and s.status = 'completed'
+  order by s.started_at desc
+  limit coalesce(p_limit, 100);
+end;
+$$;
+revoke all on function public.get_member_sessions(uuid, integer) from public;
+grant execute on function public.get_member_sessions(uuid, integer) to authenticated;
+
+-- ------------------------------------------------------------
+-- Detail eines abgeschlossenen Trainings (Übungen + Sätze) als JSON
+-- Gibt null zurück, wenn die Session nicht existiert oder nicht abgeschlossen ist.
+-- ------------------------------------------------------------
+create or replace function public.get_member_session_detail(p_session_id uuid)
+returns jsonb
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  v_result jsonb;
+begin
+  if auth.uid() is null then
+    raise exception 'Nicht angemeldet' using errcode = '42501';
+  end if;
+
+  select jsonb_build_object(
+    'session', jsonb_build_object(
+      'id', s.id,
+      'user_id', s.user_id,
+      'nickname', coalesce(p.nickname, 'Benutzer'),
+      'name', s.name,
+      'started_at', s.started_at,
+      'ended_at', s.ended_at,
+      'duration_seconds', s.duration_seconds,
+      'total_volume', s.total_volume,
+      'total_sets', s.total_sets,
+      'notes', s.notes
+    ),
+    'exercises', coalesce(
+      (select jsonb_agg(
+         jsonb_build_object(
+           'id', se.id,
+           'sort_order', se.sort_order,
+           'target_sets', se.target_sets,
+           'rep_min', se.rep_min,
+           'rep_max', se.rep_max,
+           'exercise', jsonb_build_object(
+             'id', e.id,
+             'slug', e.slug,
+             'name', e.name,
+             'category', e.category,
+             'equipment', e.equipment
+           ),
+           'sets', coalesce(
+             (select jsonb_agg(
+                jsonb_build_object(
+                  'set_number', ws.set_number,
+                  'weight', ws.weight,
+                  'reps', ws.reps,
+                  'rir', ws.rir,
+                  'is_warmup', ws.is_warmup
+                ) order by ws.set_number)
+                from public.workout_sets ws
+               where ws.session_exercise_id = se.id
+                 and ws.completed),
+             '[]'::jsonb
+           )
+         ) order by se.sort_order)
+         from public.workout_session_exercises se
+         join public.exercises e on e.id = se.exercise_id
+        where se.session_id = s.id),
+      '[]'::jsonb
+    )
+  )
+  into v_result
+  from public.workout_sessions s
+  left join public.profiles p on p.id = s.user_id
+  where s.id = p_session_id
+    and s.status = 'completed';
+
+  return v_result;
+end;
+$$;
+revoke all on function public.get_member_session_detail(uuid) from public;
+grant execute on function public.get_member_session_detail(uuid) to authenticated;

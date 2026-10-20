@@ -1,4 +1,4 @@
-# Trainingslog
+# FORM
 
 Private Fitness-Tracking-Web-App für eine kleine Gruppe. Trainingspläne, satzgenaues Tracking mit Progressive Overload, Historie, Fortschrittsgrafiken, Übungsdatenbank mit Muskelkarte, Kalender und Gruppen-Stats. Dark Mode, Mobile First, keine KI, keine Social-Funktionen.
 
@@ -23,9 +23,9 @@ Keine OpenAI-/Claude-API, keine Analytics, keine Payments, keine externen Bildda
 - **Aktives Training**: große +/- Eingaben für Gewicht und Wiederholungen, optional RIR, Aufwärmsätze, vorherige Werte, Double-Progression-Vorschlag („Gewicht erhöhen/halten“), Trainingsdauer, Rest Timer (60/90/120/180 s oder eigene Zeit), Übung spontan hinzufügen, lokaler Zwischenstand (localStorage) mit Synchronisierung nach Verbindungsabbruch.
 - **Historie**: Liste mit Filtern (Zeitraum, Training, Übung), Detailansicht mit allen Sätzen und Volumen, Notizen.
 - **Fortschritt**: Zeiträume 1 W / 1 M / 6 M / 12 M / Gesamt; Volumen, Trainingsanzahl, Dauer, Körpergewicht (optional), Kraftentwicklung je Übung (Top-Satz, Wiederholungen, geschätztes 1RM, Volumen), Bestleistungen.
-- **Übungsdatenbank**: 50 Standardübungen mit Setup, Ausführung, Bewegungsradius, Atmung, Fehlern, Tipps; Kabelübungen mit konkretem Griff (Griff-Icons) und vollständigem Kabel-Setup; wiederverwendbare SVG-Muskelkarte (Front/Rück) mit primären und sekundären Muskeln; Favoriten; eigene Übungen.
+- **Übungsdatenbank**: 50 Standardübungen mit Setup, Ausführung, Bewegungsradius, Atmung, Fehlern, Tipps; Kabelübungen mit konkretem Griff (Griff-Icons oder eigene Griff-Fotos) und vollständigem Kabel-Setup; anatomische SVG-Muskelkarte (Front/Rück, primär rot, sekundär hell); Fotos der Studiogeräte je Übung; optionale Ausführungs-Animation (GIF, WebP oder MP4) je Übung; Favoriten; eigene Übungen.
 - **Kalender**: Monatsansicht, ±10 Jahre, Tage als Training / Rest Day / Freizeit / Party / Anderer Tag markieren, Notizen; abgeschlossene Trainings werden automatisch eingetragen.
-- **Stats**: private Übersicht aller Mitglieder (Nickname, Trainings, Zeit, Volumen, letztes Training), nur für angemeldete Benutzer.
+- **Stats**: private Übersicht aller Mitglieder (Nickname, Gesamtvolumen, Trainings, Zeit, letztes Training) mit Mitglieder-Detailansicht („Mehr sehen“): abgeschlossene Trainings nach Monat, Detail mit Übungen und Sätzen; nur lesend, nur für angemeldete Benutzer.
 - **Profil & Einstellungen**: Nickname, E-Mail, Passwort, Gewichtseinheit, Gewichtsschritt, Rest-Timer-Standard, RIR anzeigen, Theme.
 
 ## Lokale Installation
@@ -81,6 +81,8 @@ Migrationen:
 | `0004_seed_static.sql` | Muskelgruppen, Griffe, Motivationszitate |
 | `0005_seed_exercises.sql` | 50 Standardübungen (generiert) |
 | `0006_seed_templates.sql` | drei Standard-Trainingspläne (generiert) |
+| `0007_media_and_storage.sql` | Griff-Bilder, Storage-Bucket, Übungsbilder |
+| `0008_member_sessions.sql` | RPCs für die Mitglieder-Detailansicht in den Stats (`get_member_sessions`, `get_member_session_detail`) |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 
@@ -119,12 +121,17 @@ Empfohlen für geräteübergreifende Bestätigungslinks, falls die Bestätigung 
 
 Die Standard-Templates funktionieren ebenfalls (Route `/auth/callback`), dann muss der Link aber auf demselben Gerät geöffnet werden, auf dem die Aktion gestartet wurde.
 
-### 4. Storage (optional)
+### 4. Bilder, Animationen und Storage
 
-Bilder sind nicht erforderlich; jede Übung funktioniert mit `image_url = NULL` und einem einheitlichen Placeholder. Für eigene Bilder:
+- Fotos der Studiogeräte liegen unter `public/exercises/` und sind über Migration `0007` den Standardübungen zugeordnet (`exercises.image_url`). Sie wurden vom Betreiber bereitgestellt und sind jederzeit austauschbar.
+- Ausführungs-Animationen (GIF, WebP, MP4) werden über `exercises.animation_url` eingebunden und auf der Detailseite als Schleife abgespielt. Jede Übung funktioniert auch ohne Bild und ohne Animation (Placeholder).
+- Griff-Fotos: `grips.image_url` setzen, dann erscheint das Foto statt des Icons.
+- Migration `0007` legt den öffentlichen Storage-Bucket `exercise-assets` an (lesen für alle, schreiben für angemeldete Benutzer im eigenen Ordner `<user_id>/…`). Dateien dort hochladen und die öffentliche URL in `image_url`, `animation_url` oder `grips.image_url` eintragen, zum Beispiel per SQL:
 
-1. Bucket `exercise-assets` anlegen (öffentlich lesbar für Standardübungen).
-2. Datei hochladen, öffentliche URL in `exercises.image_url` eintragen (Standardübungen über SQL/Admin, eigene Übungen über das Formular).
+```sql
+update exercises set animation_url = 'https://<ref>.supabase.co/storage/v1/object/public/exercise-assets/schulterdruecken.gif' where slug = 'schulterdruecken-maschine';
+update grips set image_url = '/grips/neutral-parallel.jpg' where id = 'neutral_parallel';
+```
 
 ## Benutzerablauf
 
@@ -195,4 +202,4 @@ Alle benutzerbezogenen Tabellen tragen `user_id` bzw. `owner_id` und sind per RL
 
 ## Lizenz / Assets
 
-Alle Grafiken (Logo, Muskelkarte, Griff- und Equipment-Icons) sind eigene SVGs. Motivationssätze sind eigene Formulierungen. Keine fremden App-Assets.
+Logo, Griff- und Equipment-Icons sind eigene SVGs. Die Polygon-Daten der anatomischen Muskelkarte stammen aus `react-body-highlighter` (MIT License, Giovanni Fiorentino) und wurden in `src/components/muscle-map/anatomy-data.ts` übernommen. Gerätefotos unter `public/exercises/` und `public/images/` wurden vom Betreiber bereitgestellt. Motivationssätze sind eigene Formulierungen. Keine fremden App-Assets.
