@@ -1,6 +1,6 @@
 -- ============================================================
 -- 0007_media_and_storage.sql
--- Griff-Bilder, Ausführungs-Animationen, Storage-Bucket, Maschinenfotos
+-- Griff-Bilder, Ausführungs-Animationen, Storage-Bucket
 -- ============================================================
 
 -- Griffe können ein Foto bekommen (z. B. aus dem eigenen Studio)
@@ -108,47 +108,3 @@ begin
     end if;
   end if;
 end $$;
-
--- ------------------------------------------------------------
--- Maschinenfotos aus dem Studio (vom Nutzer bereitgestellt, liegen unter public/exercises)
--- Nur setzen, wenn noch kein Bild hinterlegt ist.
--- ------------------------------------------------------------
-with mapping(slug, url) as (
-  values
-    ('schraegbankdruecken-maschine', '/exercises/incline-press-plate.jpg'),
-    ('brustpresse', '/exercises/chest-press.jpg'),
-    ('pec-deck', '/exercises/pec-deck-rear-delt.jpg'),
-    ('butterfly', '/exercises/pec-deck-rear-delt.jpg'),
-    ('reverse-butterfly', '/exercises/pec-deck-rear-delt.jpg'),
-    ('neutraler-latzug', '/exercises/lat-pulldown-neutral.jpg'),
-    ('breiter-latzug', '/exercises/lat-pulldown-wide.jpg'),
-    ('brustgestuetztes-rudern', '/exercises/chest-supported-row.jpg'),
-    ('reverse-fly-kurzhantel', '/exercises/dumbbell-area.jpg'),
-    ('hyperextensions', '/exercises/hyperextension-bench.jpg'),
-    ('wrist-curl', '/exercises/flat-bench.jpg'),
-    ('reverse-wrist-curl', '/exercises/flat-bench.jpg'),
-    ('schulterdruecken-maschine', '/exercises/shoulder-press-plate.jpg'),
-    ('hackenschmidt', '/exercises/hack-squat.jpg'),
-    ('beinpresse', '/exercises/leg-press-seated.jpg'),
-    ('beinstrecker', '/exercises/leg-extension-curl.jpg'),
-    ('beinbeuger', '/exercises/seated-leg-curl.jpg'),
-    ('bulgarian-split-squat', '/exercises/adjustable-bench.jpg'),
-    ('kniebeuge', '/exercises/half-rack.jpg'),
-    ('rumaenisches-kreuzheben', '/exercises/half-rack.jpg'),
-    ('ausfallschritte', '/exercises/dumbbell-area.jpg'),
-    ('hip-thrust', '/exercises/flat-bench.jpg'),
-    ('incline-curl', '/exercises/adjustable-bench.jpg'),
-    ('incline-curl-hinterm-koerper', '/exercises/adjustable-bench.jpg'),
-    ('kurzhantelcurl', '/exercises/dumbbell-area.jpg'),
-    ('crunch-maschine', '/exercises/abdominal-machine.jpg'),
-    ('hanging-knee-raise', '/exercises/knee-raise-station.jpg')
-)
-update public.exercises e
-set image_url = m.url
-from mapping m
-where e.slug = m.slug and e.owner_id is null and e.image_url is null;
-
--- Alle Kabelübungen: Foto des Kabelturms
-update public.exercises
-set image_url = '/exercises/cable-station.jpg'
-where owner_id is null and equipment = 'cable' and image_url is null;

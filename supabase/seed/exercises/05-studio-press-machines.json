@@ -6,8 +6,13 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Pronierte Griffe (Handflächen nach vorne) an den beiden Hebelarmen. Handgelenke gerade halten, Griffe mittig in der Handfläche.",
-    "primary_muscles": ["chest", "front_delts"],
-    "secondary_muscles": ["triceps"],
+    "primary_muscles": [
+      "chest",
+      "front_delts"
+    ],
+    "secondary_muscles": [
+      "triceps"
+    ],
     "description": "Steckgewicht-Multipresse mit verstellbarem Sitz, bei der die Griffe in der Ausgangsposition über Schulterhöhe liegen. Je nach Sitzhöhe lässt sich die Übung als Brustdrücken oder als Schulterdrücken ausführen.",
     "setup": [
       "Gewicht am Steckgewichtsblock wählen und den Stift vollständig einstecken.",
@@ -38,8 +43,7 @@
       "Sitzhöhe einmal festlegen und für Vergleichbarkeit notieren, da sie die Belastung deutlich verschiebt.",
       "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/multi-press.jpg"
+    "cable_setup": null
   },
   {
     "slug": "brustpresse-hebel-sitzend",
@@ -48,8 +52,13 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Pronierte Griffe (Handflächen nach vorne) auf Brusthöhe. Handgelenke gerade halten, Griffe fest in der Handfläche.",
-    "primary_muscles": ["chest"],
-    "secondary_muscles": ["triceps", "front_delts"],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
     "description": "Scheibenbeladene Hebelmaschine für die horizontale Druckbewegung im Sitzen mit Griffen auf Brusthöhe. Die Fußplatte vorne hilft, die Hebelarme in die Startposition zu bringen.",
     "setup": [
       "Gewichtsscheiben gleichmäßig auf beide Seiten laden und mit Verschlüssen sichern.",
@@ -80,8 +89,7 @@
       "Nach dem letzten Satz die Hebelarme über die Fußplatte kontrolliert ablegen.",
       "Beim Beladen beide Seiten gleich bestücken, um eine einseitige Belastung zu vermeiden."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/chest-press-lever-seated.jpg"
+    "cable_setup": null
   },
   {
     "slug": "brustpresse-hebel",
@@ -90,8 +98,13 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Waagerechte Griffe (proniert) für die klassische Druckbewegung, senkrechte Griffe (neutral) für eine schulterfreundlichere Variante. Handgelenke gerade halten.",
-    "primary_muscles": ["chest"],
-    "secondary_muscles": ["triceps", "front_delts"],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
     "description": "Scheibenbeladene Iso-Lateral-Brustpresse mit zwei unabhängig beweglichen Hebelarmen und jeweils senkrechten und waagerechten Griffen. Beide Seiten arbeiten getrennt, sodass eine Seite die andere nicht ausgleichen kann.",
     "setup": [
       "Gewichtsscheiben auf beiden Seiten gleich laden und mit Verschlüssen sichern.",
@@ -123,8 +136,7 @@
       "Die Übung lässt sich auch einarmig ausführen, dann die freie Hand am Rahmen abstützen.",
       "Beide Seiten gleich beladen, damit die Belastung symmetrisch bleibt."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/chest-press-lever.jpg"
+    "cable_setup": null
   },
   {
     "slug": "brustpresse-vertikal",
@@ -133,8 +145,13 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Pronierte Griffe (Handflächen nach vorne), die der Maschine folgend leicht nach innen laufen. Handgelenke gerade halten, nicht abknicken.",
-    "primary_muscles": ["chest"],
-    "secondary_muscles": ["triceps", "front_delts"],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
     "description": "Steckgewicht-Brustpresse mit aufrechtem Rückenpolster, bei der die Griffe während der Druckbewegung leicht nach vorne zusammenlaufen. Die konvergierende Bahn unterstützt die Kontraktion der Brust am Ende der Bewegung.",
     "setup": [
       "Gewicht am Steckgewichtsblock wählen und den Stift vollständig einstecken.",
@@ -165,8 +182,7 @@
       "In der vorderen Position kurz halten, um die Kontraktion der Brust zu nutzen.",
       "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/chest-press-vertical.jpg"
+    "cable_setup": null
   },
   {
     "slug": "schraegbankdruecken-hebelmaschine",
@@ -175,8 +191,14 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Pronierte Griffe (Handflächen nach vorne) an den Hebelarmen, etwas weiter als schulterbreit. Handgelenke gerade halten.",
-    "primary_muscles": ["upper_chest", "chest"],
-    "secondary_muscles": ["triceps", "front_delts"],
+    "primary_muscles": [
+      "upper_chest",
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
     "description": "Scheibenbeladene Hebelmaschine mit einem auf etwa 30 bis 45 Grad geneigten Rückenpolster, die die Druckbewegung nach vorne-oben führt. Belastet vor allem den oberen Anteil der Brust.",
     "setup": [
       "Gewichtsscheiben auf beiden Seiten gleich laden und mit Verschlüssen sichern.",
@@ -207,8 +229,7 @@
       "Beide Seiten gleich beladen, damit die Belastung symmetrisch bleibt.",
       "Wenn die Schultern unangenehm belastet sind, Sitz etwas höher stellen."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/incline-press-lever.jpg"
+    "cable_setup": null
   },
   {
     "slug": "schraegbankdruecken-hebel-liegend",
@@ -217,8 +238,14 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Pronierter Griff (Handflächen nach vorne) an der Stange des Hebelarms, etwas weiter als schulterbreit. Handgelenke gerade halten, Stange in der Handwurzel ablegen.",
-    "primary_muscles": ["upper_chest", "chest"],
-    "secondary_muscles": ["triceps", "front_delts"],
+    "primary_muscles": [
+      "upper_chest",
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
     "description": "Schrägbank mit einem hinter dem Kopf gelagerten, scheibenbeladenen Hebelarm, dessen Stange auf einer festen Bogenbahn nach oben gedrückt wird. Geführte Alternative zum Schrägbankdrücken mit freier Langhantel.",
     "setup": [
       "Gewichtsscheiben auf den Hebelarm laden und mit Verschlüssen sichern.",
@@ -249,8 +276,7 @@
       "Nach dem letzten Satz den Hebelarm kontrolliert in die Ablage zurückführen.",
       "Die geführte Bahn eignet sich, um die Druckbewegung ohne Balancearbeit mit höherer Last zu trainieren."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/incline-press-lever-bench.jpg"
+    "cable_setup": null
   },
   {
     "slug": "schraegbankdruecken-hebel-flex",
@@ -259,8 +285,14 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Zwei Griffpositionen an den Hebelarmen: die äußere, weitere Position für mehr Dehnung der Brust, die innere, engere Position für eine schulterfreundlichere Bahn. Handgelenke gerade halten.",
-    "primary_muscles": ["upper_chest", "chest"],
-    "secondary_muscles": ["triceps", "front_delts"],
+    "primary_muscles": [
+      "upper_chest",
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
     "description": "Scheibenbeladene Schrägdruckmaschine, deren Hebelarme auf einer Bogenbahn nach vorne-oben laufen und zwei Griffpositionen bieten. Die Bogenbahn bringt die Hände am Ende der Bewegung leicht zusammen.",
     "setup": [
       "Gewichtsscheiben auf beiden Seiten gleich laden und mit Verschlüssen sichern.",
@@ -291,8 +323,7 @@
       "Griffposition pro Trainingseinheit festlegen und notieren, damit Gewichte vergleichbar bleiben.",
       "Bei Schulterbeschwerden die engere Griffposition verwenden."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/incline-press-flex.jpg"
+    "cable_setup": null
   },
   {
     "slug": "bankdruecken-langhantel",
@@ -301,8 +332,13 @@
     "equipment": "barbell",
     "grip_id": null,
     "grip_notes": "Pronierter Griff (Handflächen nach vorne), etwas weiter als schulterbreit, Daumen umschließen die Stange. Stange in der Handwurzel ablegen, Handgelenke gerade.",
-    "primary_muscles": ["chest"],
-    "secondary_muscles": ["triceps", "front_delts"],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
     "description": "Freie Druckübung auf der Flachbank mit Langhantel und Ablage, die Brust, vordere Schulter und Trizeps belastet. Grundübung für den Oberkörper, bei der Stabilität und Technik gleichermaßen gefordert sind.",
     "setup": [
       "Sicherheitsablagen so einstellen, dass die Stange knapp über der Brust abgefangen wird, wenn sie abgelegt werden muss.",
@@ -335,8 +371,7 @@
       "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden.",
       "Füße fest in den Boden drücken, um den Rumpf zu stabilisieren."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/flat-bench-rack.jpg"
+    "cable_setup": null
   },
   {
     "slug": "schraegbankdruecken-langhantel",
@@ -345,8 +380,14 @@
     "equipment": "barbell",
     "grip_id": null,
     "grip_notes": "Pronierter Griff (Handflächen nach vorne), etwas weiter als schulterbreit, Daumen umschließen die Stange. Stange in der Handwurzel ablegen, Handgelenke gerade.",
-    "primary_muscles": ["upper_chest", "chest"],
-    "secondary_muscles": ["triceps", "front_delts"],
+    "primary_muscles": [
+      "upper_chest",
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
     "description": "Freie Druckübung auf der etwa 30 Grad geneigten Schrägbank mit Langhantel und Ablage, die vor allem den oberen Anteil der Brust belastet. Ergänzung zum flachen Bankdrücken.",
     "setup": [
       "Sicherheitsablagen so einstellen, dass die Stange knapp über der oberen Brust abgefangen wird, wenn sie abgelegt werden muss.",
@@ -378,8 +419,7 @@
       "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
       "Mit einer geringeren Last als beim flachen Bankdrücken starten, da die Schrägposition weniger Kraft zulässt."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/incline-bench-rack.jpg"
+    "cable_setup": null
   },
   {
     "slug": "schulterpresse-maschine",
@@ -388,8 +428,14 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Pronierte Griffe (Handflächen nach vorne) oder neutrale Griffe, je nach Griffwahl an der Maschine. Handgelenke gerade halten.",
-    "primary_muscles": ["front_delts", "side_delts"],
-    "secondary_muscles": ["triceps", "traps"],
+    "primary_muscles": [
+      "front_delts",
+      "side_delts"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "traps"
+    ],
     "description": "Steckgewicht-Schulterpresse mit Rückenpolster, bei der die Griffe in der Ausgangsposition auf Schulterhöhe liegen und senkrecht nach oben gedrückt werden. Geführte Druckübung für die vordere und seitliche Schulter.",
     "setup": [
       "Gewicht am Steckgewichtsblock wählen und den Stift vollständig einstecken.",
@@ -420,8 +466,7 @@
       "Bei Schulterbeschwerden neutrale Griffe wählen, falls vorhanden.",
       "Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/shoulder-press-selectorized.jpg"
+    "cable_setup": null
   },
   {
     "slug": "scott-curl",
@@ -430,8 +475,12 @@
     "equipment": "barbell",
     "grip_id": null,
     "grip_notes": "Supinierter Griff (Handflächen nach oben) an der SZ-Hantel oder Langhantel, etwa schulterbreit. Die SZ-Hantel entlastet die Handgelenke, die gerade Langhantel betont die Supination.",
-    "primary_muscles": ["biceps"],
-    "secondary_muscles": ["forearms"],
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
     "description": "Bizepscurl am Scott-Pult, bei dem die Oberarme flächig auf dem geneigten Polster aufliegen und dadurch kein Schwung aus Schulter oder Rumpf möglich ist. Betont die Bizepsarbeit über einen klar begrenzten Bewegungsweg.",
     "setup": [
       "Sitz so einstellen, dass die Achseln oben an der Polsterkante anliegen und die Oberarme flächig auf dem Polster liegen.",
@@ -463,7 +512,6 @@
       "Bei Beschwerden in den Handgelenken auf die SZ-Hantel wechseln.",
       "Nach dem letzten Satz die Hantel kontrolliert in die Ablage legen oder reichen lassen."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/preacher-curl-bench.jpg"
+    "cable_setup": null
   }
 ]

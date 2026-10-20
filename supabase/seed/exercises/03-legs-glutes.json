@@ -524,8 +524,7 @@
       "Einbeinige Ausführung, um Seitenunterschiede auszugleichen.",
       "Ohne Maschine: Stufe mit Kurzhantel in einer Hand, andere Hand stützt sich ab."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/standing-calf-raise.jpg"
+    "cable_setup": null
   },
   {
     "slug": "wadenheben-sitzend",

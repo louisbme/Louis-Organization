@@ -23,7 +23,7 @@ Keine OpenAI-/Claude-API, keine Analytics, keine Payments, keine externen Bildda
 - **Aktives Training**: große +/- Eingaben für Gewicht und Wiederholungen, optional RIR, Aufwärmsätze, vorherige Werte, Double-Progression-Vorschlag („Gewicht erhöhen/halten“), Trainingsdauer, Rest Timer (60/90/120/180 s oder eigene Zeit), Übung spontan hinzufügen, lokaler Zwischenstand (localStorage) mit Synchronisierung nach Verbindungsabbruch.
 - **Historie**: Liste mit Filtern (Zeitraum, Training, Übung), Detailansicht mit allen Sätzen und Volumen, Notizen.
 - **Fortschritt**: Zeiträume 1 W / 1 M / 6 M / 12 M / Gesamt; Volumen, Trainingsanzahl, Dauer, Körpergewicht (optional), Kraftentwicklung je Übung (Top-Satz, Wiederholungen, geschätztes 1RM, Volumen), Bestleistungen.
-- **Übungsdatenbank**: 50 Standardübungen mit Setup, Ausführung, Bewegungsradius, Atmung, Fehlern, Tipps; Kabelübungen mit konkretem Griff (Griff-Icons oder eigene Griff-Fotos) und vollständigem Kabel-Setup; anatomische SVG-Muskelkarte (Front/Rück, primär rot, sekundär hell); Fotos der Studiogeräte je Übung; optionale Ausführungs-Animation (GIF, WebP oder MP4) je Übung; Favoriten; eigene Übungen.
+- **Übungsdatenbank**: 50 Standardübungen mit Setup, Ausführung, Bewegungsradius, Atmung, Fehlern, Tipps; Kabelübungen mit konkretem Griff (Griff-Icons oder eigene Griff-Fotos) und vollständigem Kabel-Setup; anatomische SVG-Muskelkarte (Front/Rück, primär rot, sekundär gelb) als einzige Visualisierung; optionale Ausführungs-Animation (GIF, WebP oder MP4) je Übung; Favoriten; eigene Übungen.
 - **Kalender**: Monatsansicht, ±10 Jahre, Tage als Training / Rest Day / Freizeit / Party / Anderer Tag markieren, Notizen; abgeschlossene Trainings werden automatisch eingetragen.
 - **Stats**: private Übersicht aller Mitglieder (Nickname, Gesamtvolumen, Trainings, Zeit, letztes Training) mit Mitglieder-Detailansicht („Mehr sehen“): abgeschlossene Trainings nach Monat, Detail mit Übungen und Sätzen; nur lesend, nur für angemeldete Benutzer.
 - **Profil & Einstellungen**: Nickname, E-Mail, Passwort, Gewichtseinheit, Gewichtsschritt, Rest-Timer-Standard, RIR anzeigen, Theme.
@@ -81,8 +81,10 @@ Migrationen:
 | `0004_seed_static.sql` | Muskelgruppen, Griffe, Zitate (Tabelle ohne UI-Verwendung) |
 | `0005_seed_exercises.sql` | 50 Standardübungen (generiert) |
 | `0006_seed_templates.sql` | drei Standard-Trainingspläne (generiert) |
-| `0007_media_and_storage.sql` | Griff-Bilder, Storage-Bucket, Übungsbilder |
+| `0007_media_and_storage.sql` | Griff-Bilder, Animationen, Storage-Bucket |
 | `0008_member_sessions.sql` | RPCs für die Mitglieder-Detailansicht in den Stats (`get_member_sessions`, `get_member_session_detail`) |
+| `0009_categories_cardio_hips.sql` | Kategorien Cardio und Ad-/Abduktoren, Equipment Cardio, neue Muskelgruppen |
+| `0010_remove_machine_images.sql` | Entfernt frühere Gerätefoto-Zuordnungen (nur Muskelkarte) |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 
@@ -123,7 +125,7 @@ Die Standard-Templates funktionieren ebenfalls (Route `/auth/callback`), dann mu
 
 ### 4. Bilder, Animationen und Storage
 
-- Fotos der Studiogeräte liegen unter `public/exercises/` und sind über Migration `0007` den Standardübungen zugeordnet (`exercises.image_url`). Sie wurden vom Betreiber bereitgestellt und sind jederzeit austauschbar.
+- Übungen zeigen bewusst keine Gerätefotos, nur die Muskelkarte (Migration `0010` entfernt frühere Zuordnungen). Das Feld `exercises.image_url` bleibt für spätere Nutzung erhalten.
 - Ausführungs-Animationen (GIF, WebP, MP4) werden über `exercises.animation_url` eingebunden und auf der Detailseite als Schleife abgespielt. Jede Übung funktioniert auch ohne Bild und ohne Animation (Placeholder).
 - Griff-Fotos: `grips.image_url` setzen, dann erscheint das Foto statt des Icons.
 - Migration `0007` legt den öffentlichen Storage-Bucket `exercise-assets` an (lesen für alle, schreiben für angemeldete Benutzer im eigenen Ordner `<user_id>/…`). Dateien dort hochladen und die öffentliche URL in `image_url`, `animation_url` oder `grips.image_url` eintragen, zum Beispiel per SQL:
@@ -202,4 +204,4 @@ Alle benutzerbezogenen Tabellen tragen `user_id` bzw. `owner_id` und sind per RL
 
 ## Lizenz / Assets
 
-Das Logo ist ein vom Betreiber bereitgestelltes Foto (`public/brand/logo.jpg`). Griff- und Equipment-Icons sind eigene SVGs. Die Polygon-Daten der anatomischen Muskelkarte stammen aus `react-body-highlighter` (MIT License, Giovanni Fiorentino) und wurden in `src/components/muscle-map/anatomy-data.ts` übernommen. Gerätefotos unter `public/exercises/` und `public/images/` wurden vom Betreiber bereitgestellt. Motivationssätze sind eigene Formulierungen. Keine fremden App-Assets.
+Das Logo ist ein vom Betreiber bereitgestelltes Foto (`public/brand/logo.jpg`). Griff- und Equipment-Icons sind eigene SVGs. Die Polygon-Daten der anatomischen Muskelkarte stammen aus `react-body-highlighter` (MIT License, Giovanni Fiorentino) und wurden in `src/components/muscle-map/anatomy-data.ts` übernommen. Das Studiofoto unter `public/images/` wurde vom Betreiber bereitgestellt. Motivationssätze sind eigene Formulierungen. Keine fremden App-Assets.

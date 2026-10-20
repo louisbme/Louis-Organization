@@ -35,20 +35,7 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
       {/* Muskelkarte, Gerätefoto, Muskeln */}
       <Card>
         <CardContent className="pt-5">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-            <div className="flex-1">
-              <MuscleMap primary={exercise.primary_muscles} secondary={exercise.secondary_muscles} />
-            </div>
-            {exercise.image_url ? (
-              <div className="flex shrink-0 flex-col items-center gap-1.5 self-center sm:self-start">
-                <div className="flex h-36 w-36 items-center justify-center overflow-hidden rounded-xl border border-border bg-white/95 p-1.5 sm:h-40 sm:w-40">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={exercise.image_url} alt={`${exercise.name} – Gerät`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
-                </div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Gerät im Studio</p>
-              </div>
-            ) : null}
-          </div>
+          <MuscleMap primary={exercise.primary_muscles} secondary={exercise.secondary_muscles} />
           <div className="mt-5">
             <MuscleList primary={exercise.primary_muscles} secondary={exercise.secondary_muscles} label={muscleLabel} />
           </div>

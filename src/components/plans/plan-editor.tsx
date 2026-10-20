@@ -212,13 +212,8 @@ export function PlanEditor({ plan: initial }: { plan: PlanWithExercises }) {
           {plan.exercises.map((pe, index) => (
             <Card key={pe.id} className="overflow-hidden">
               <div className="flex items-start gap-3 px-4 pt-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-subtle text-muted">
-                  {pe.exercise.image_url ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={pe.exercise.image_url} alt="" loading="lazy" className="h-full w-full bg-white object-contain p-0.5" />
-                  ) : (
-                    <EquipmentIcon equipment={pe.exercise.equipment} className="h-5 w-5" strokeWidth={1.7} />
-                  )}
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-subtle text-muted">
+                  <EquipmentIcon equipment={pe.exercise.equipment} className="h-5 w-5" strokeWidth={1.7} />
                 </div>
                 <div className="min-w-0 flex-1">
                   <Link href={`/exercises/${pe.exercise.slug}`} className="block truncate text-sm font-medium hover:text-accent">

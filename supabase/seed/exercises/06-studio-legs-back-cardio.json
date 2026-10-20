@@ -6,8 +6,15 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Pronierte oder neutrale Griffe an den Hebelarmen, je nach gewählter Griffposition. Beide Hebelarme sind unabhängig, daher beide Seiten gleichmäßig ziehen. Handgelenke gerade halten.",
-    "primary_muscles": ["lats"],
-    "secondary_muscles": ["biceps", "upper_back", "forearms", "rear_delts"],
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "upper_back",
+      "forearms",
+      "rear_delts"
+    ],
     "description": "Scheibenbeladener Iso-Lateral-Latzug mit zwei unabhängigen Hebelarmen, die den Zug in einer festen Bahn führen. Vertikale Zugübung für den Latissimus, die sich auch einseitig ausführen lässt.",
     "setup": [
       "Gewichtsscheiben auf beiden Hebelarmen gleich beladen und sichern.",
@@ -39,8 +46,7 @@
       "Scheiben auf beiden Seiten in kleinen Schritten erhöhen, erst wenn alle Sätze sauber sind.",
       "Daumen auf die Griffe legen statt zu umschließen, um weniger mit den Unterarmen zu arbeiten."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/lat-pulldown-lever.jpg"
+    "cable_setup": null
   },
   {
     "slug": "rudern-hebel-sitzend",
@@ -49,8 +55,16 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Neutrale Griffe (Handflächen zeigen zueinander) an den Hebelarmen. Handgelenke gerade, Griffe nicht verkrampft umschließen.",
-    "primary_muscles": ["lats", "mid_back"],
-    "secondary_muscles": ["biceps", "rear_delts", "forearms", "upper_back"],
+    "primary_muscles": [
+      "lats",
+      "mid_back"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "rear_delts",
+      "forearms",
+      "upper_back"
+    ],
     "description": "Scheibenbeladene Rudermaschine mit Brustpolster und zwei unabhängigen Hebelarmen. Horizontale Zugübung für Latissimus und mittleren Rücken, bei der der Rumpf durch das Polster abgestützt wird.",
     "setup": [
       "Gewichtsscheiben auf beiden Hebelarmen gleich beladen und sichern.",
@@ -83,8 +97,7 @@
       "Einseitige Ausführung ist durch die unabhängigen Hebelarme möglich und hilft bei Seitenunterschieden.",
       "Griffe mit den Fingern haken statt fest zu umschließen, um die Unterarme zu entlasten."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/seated-row-lever.jpg"
+    "cable_setup": null
   },
   {
     "slug": "beinpresse-45-grad",
@@ -93,8 +106,13 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Hände an den seitlichen Haltegriffen, um Rücken und Becken am Polster zu halten. Griffe nicht zum Mitdrücken nutzen.",
-    "primary_muscles": ["quads", "glutes"],
-    "secondary_muscles": ["hamstrings"],
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
     "description": "Scheibenbeladene Beinpresse, bei der der Schlitten auf einer 45-Grad-Schiene geführt wird. Grundübung für die Beine mit hoher Belastbarkeit, bei der kein Gleichgewicht gehalten werden muss.",
     "setup": [
       "Gewichtsscheiben beidseitig gleich beladen und sichern.",
@@ -127,8 +145,7 @@
       "Höhere Fußposition belastet Gesäß und hintere Oberschenkel stärker, tiefere Fußposition die Oberschenkelvorderseite.",
       "Gewicht in kleinen Schritten erhöhen, erst wenn die Tiefe in allen Sätzen gleich bleibt."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/leg-press-45.jpg"
+    "cable_setup": null
   },
   {
     "slug": "multipresse-kniebeuge",
@@ -137,8 +154,14 @@
     "equipment": "smith_machine",
     "grip_id": null,
     "grip_notes": "Stange etwas breiter als schulterbreit mit pronierten Händen fassen, die Hände sichern die Stange auf dem oberen Rücken. Ellenbogen unter der Stange, Handgelenke gerade.",
-    "primary_muscles": ["quads", "glutes"],
-    "secondary_muscles": ["hamstrings", "abs"],
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "abs"
+    ],
     "description": "Kniebeuge an der geführten Stange der Multipresse, bei der die Stange in einer festen Bahn läuft. Geeignet, um die Beuge ohne Balanceanteil zu trainieren und die Bewegung mit Sicherheitsstopps abzusichern.",
     "setup": [
       "Sicherheitsstopps knapp unterhalb der tiefsten Position der Beuge einstellen.",
@@ -171,8 +194,7 @@
       "Füße weiter nach vorne stellen, um Gesäß und hintere Oberschenkel stärker einzubeziehen.",
       "Gewicht erst erhöhen, wenn Tiefe und Technik in allen Sätzen gleich bleiben."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/smith-machine.jpg"
+    "cable_setup": null
   },
   {
     "slug": "adduktoren-maschine",
@@ -181,7 +203,9 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Hände an den seitlichen Haltegriffen, um das Becken ruhig am Polster zu halten.",
-    "primary_muscles": ["adductors"],
+    "primary_muscles": [
+      "adductors"
+    ],
     "secondary_muscles": [],
     "description": "Steckgewichtmaschine, bei der die Beine gegen Polster an den Innenseiten der Oberschenkel zusammengeführt werden. Isolierte Übung für die Adduktoren.",
     "setup": [
@@ -212,8 +236,7 @@
       "Moderate Gewichte und höhere Wiederholungszahlen sind hier sinnvoll.",
       "Als Ergänzung zu Kniebeuge und Beinpresse einsetzen."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/adductor-machine.jpg"
+    "cable_setup": null
   },
   {
     "slug": "abduktoren-maschine",
@@ -222,7 +245,10 @@
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Hände an den seitlichen Haltegriffen, um das Becken ruhig am Polster zu halten.",
-    "primary_muscles": ["abductors", "glutes"],
+    "primary_muscles": [
+      "abductors",
+      "glutes"
+    ],
     "secondary_muscles": [],
     "description": "Steckgewichtmaschine, bei der die Beine gegen Polster an den Außenseiten der Oberschenkel nach außen gedrückt werden. Isolierte Übung für die Abduktoren und die seitlichen Gesäßmuskeln.",
     "setup": [
@@ -254,8 +280,7 @@
       "Moderate Gewichte und höhere Wiederholungszahlen sind hier sinnvoll.",
       "Als Ergänzung zu Hip Thrust und Kniebeuge einsetzen."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/abductor-machine.jpg"
+    "cable_setup": null
   },
   {
     "slug": "air-bike",
@@ -264,8 +289,15 @@
     "equipment": "cardio",
     "grip_id": null,
     "grip_notes": "Hände an den beweglichen Armhebeln, Griffe locker umschließen. Alternativ die festen Griffe in der Mitte nutzen, wenn nur die Beine arbeiten sollen.",
-    "primary_muscles": ["quads"],
-    "secondary_muscles": ["hamstrings", "calves", "triceps", "front_delts"],
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "calves",
+      "triceps",
+      "front_delts"
+    ],
     "description": "Fahrrad mit Luftwiderstand und beweglichen Armhebeln, bei dem Beine und Arme gleichzeitig arbeiten. Der Widerstand steigt mit dem Tempo; geeignet für Aufwärmen, Intervalle und Ausdauertraining.",
     "setup": [
       "Sattelhöhe so einstellen, dass das Knie in der unteren Pedalstellung leicht gebeugt bleibt.",
@@ -296,8 +328,7 @@
       "Für reines Beintraining die festen Griffe nutzen und die Armhebel ruhen lassen.",
       "Progression über längere Dauer oder mehr Distanz beziehungsweise Kalorien bei gleicher Zeit."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/air-bike.jpg"
+    "cable_setup": null
   },
   {
     "slug": "rudergeraet",
@@ -306,8 +337,16 @@
     "equipment": "cardio",
     "grip_id": null,
     "grip_notes": "Griff mit beiden Händen etwa schulterbreit von oben fassen, Handgelenke gerade. Griff locker halten, die Finger haken, nicht verkrampfen.",
-    "primary_muscles": ["quads", "lats"],
-    "secondary_muscles": ["hamstrings", "glutes", "biceps", "mid_back"],
+    "primary_muscles": [
+      "quads",
+      "lats"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "glutes",
+      "biceps",
+      "mid_back"
+    ],
     "description": "Rudergerät mit Magnet- oder Luftwiderstand, bei dem Beine, Rumpf und Arme nacheinander arbeiten. Ganzkörper-Ausdauerübung, die sich für Aufwärmen, Intervalle und Dauerbelastung eignet.",
     "setup": [
       "Widerstandsstufe am Gerät einstellen, für den Einstieg eine mittlere Stufe wählen.",
@@ -339,8 +378,7 @@
       "Progression über längere Dauer oder eine bessere Zeit pro 500 Meter bei gleicher Schlagfrequenz.",
       "Für Intervalle Zugphasen von ein bis zwei Minuten mit lockeren Erholungsphasen abwechseln."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/rowing-machine.jpg"
+    "cable_setup": null
   },
   {
     "slug": "ski-erg",
@@ -349,8 +387,15 @@
     "equipment": "cardio",
     "grip_id": null,
     "grip_notes": "Beide Griffe von oben fassen, Handflächen zeigen nach unten beziehungsweise zueinander. Griffe locker halten, der Zug kommt aus Rumpf und Latissimus, nicht aus den Fingern.",
-    "primary_muscles": ["lats", "abs"],
-    "secondary_muscles": ["triceps", "hamstrings", "glutes"],
+    "primary_muscles": [
+      "lats",
+      "abs"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "hamstrings",
+      "glutes"
+    ],
     "description": "Ski-Ergometer, bei dem die Griffe von oben nach unten gezogen werden, ähnlich dem Doppelstockschub beim Skilanglauf. Belastet Latissimus und Bauch über die Rumpfbeuge; geeignet für Aufwärmen, Intervalle und Ausdauertraining.",
     "setup": [
       "Widerstandsstufe am Gerät einstellen, für den Einstieg eine mittlere Stufe wählen.",
@@ -381,8 +426,7 @@
       "Progression über längere Dauer oder mehr Distanz bei gleicher Zeit.",
       "Für Intervalle 30 bis 60 Sekunden zügiger Zug mit lockeren Erholungsphasen abwechseln."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/ski-erg.jpg"
+    "cable_setup": null
   },
   {
     "slug": "laufband",
@@ -391,8 +435,14 @@
     "equipment": "cardio",
     "grip_id": null,
     "grip_notes": "Hände frei und locker mitschwingen lassen. Haltegriffe nur zum Aufsteigen, Absteigen oder kurzen Abstützen nutzen.",
-    "primary_muscles": ["quads", "calves"],
-    "secondary_muscles": ["hamstrings", "glutes"],
+    "primary_muscles": [
+      "quads",
+      "calves"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "glutes"
+    ],
     "description": "Laufband mit einstellbarer Geschwindigkeit und Steigung für Gehen, zügiges Gehen und Laufen. Geeignet für Aufwärmen, Dauerbelastung und Intervalle.",
     "setup": [
       "Beidbeinig auf die seitlichen Trittflächen stellen, nicht auf das stehende Band.",
@@ -424,7 +474,6 @@
       "Steigung von ein bis zwei Prozent beim Laufen gleicht den fehlenden Luftwiderstand aus.",
       "Für Intervalle etwa eine Minute schnelleres Tempo mit ein bis zwei Minuten lockerem Gehen oder Laufen abwechseln."
     ],
-    "cable_setup": null,
-    "image_url": "/exercises/treadmill.jpg"
+    "cable_setup": null
   }
 ]
