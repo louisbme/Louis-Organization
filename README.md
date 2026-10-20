@@ -103,15 +103,21 @@ Im Dashboard unter **Authentication → URL Configuration**:
 
 Unter **Authentication → Providers → Email** bleibt nur E-Mail/Passwort aktiv (keine Social Logins).
 
-Empfohlen für geräteübergreifende Bestätigungslinks (**Authentication → Email Templates**):
+Standardmäßig ist die E-Mail-Bestätigung abgeschaltet (`mailer_autoconfirm`), sodass neue Benutzer nach der Registrierung direkt im Dashboard landen. Für eine private Gruppe ist das ausreichend; aktivieren lässt sie sich unter **Authentication → Providers → Email → Confirm email** oder mit `MAILER_AUTOCONFIRM=false npm run auth:configure`.
+
+Site URL und Redirect URLs lassen sich auch per Skript setzen (Personal Access Token, siehe Variante C oben):
+
+```bash
+SUPABASE_ACCESS_TOKEN=sbp_... SITE_URL=https://deine-app.vercel.app npm run auth:configure
+```
+
+Empfohlen für geräteübergreifende Bestätigungslinks, falls die Bestätigung aktiv ist (**Authentication → Email Templates**; im Free Tier nur mit eigenem SMTP-Provider änderbar):
 
 - Confirm signup: `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next=/dashboard`
 - Reset password: `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=recovery&next=/reset-password`
 - Change email: `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email_change&next=/settings`
 
 Die Standard-Templates funktionieren ebenfalls (Route `/auth/callback`), dann muss der Link aber auf demselben Gerät geöffnet werden, auf dem die Aktion gestartet wurde.
-
-Optional kann „Confirm email“ deaktiviert werden, dann sind Benutzer nach der Registrierung sofort angemeldet.
 
 ### 4. Storage (optional)
 
@@ -140,6 +146,7 @@ npm run test:db     # führt alle Migrationen in einer eingebetteten Postgres-In
 npm run check       # alle drei zusammen
 npm run build       # Produktions-Build
 npm run db:apply    # Migrationen per Management API einspielen (siehe Supabase Setup, Variante C)
+npm run auth:configure  # Site URL, Redirect URLs und Autoconfirm per Management API setzen
 ```
 
 Manuell geprüft werden sollten zusätzlich: Login/Logout, Plan bearbeiten, Übung hinzufügen, Progress-Grafiken und das Mobile-Layout (Bottom Navigation, Tracking-Ansicht).

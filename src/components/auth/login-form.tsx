@@ -22,7 +22,7 @@ export function LoginForm() {
 
   React.useEffect(() => {
     if (params.get("error") === "auth") {
-      toast.error("Der Link ist ungültig oder abgelaufen.");
+      toast.error("Der Link konnte nicht verarbeitet werden. Falls du deine E-Mail gerade bestätigt hast, melde dich einfach an.");
     }
     if (params.get("reset") === "ok") {
       toast.success("Passwort wurde geändert. Bitte anmelden.");
