@@ -25,7 +25,9 @@ returns trigger
 language plpgsql
 as $$
 begin
-  if new.role is distinct from old.role and not public.is_admin() then
+  -- Über die App nur durch Admins; direkt in der Datenbank (ohne auth.uid()) erlaubt,
+  -- damit der erste Admin per SQL gesetzt werden kann.
+  if new.role is distinct from old.role and auth.uid() is not null and not public.is_admin() then
     raise exception 'Rolle kann nicht geändert werden' using errcode = '42501';
   end if;
   return new;

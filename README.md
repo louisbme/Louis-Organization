@@ -87,6 +87,7 @@ Migrationen:
 | `0010_remove_machine_images.sql` | Entfernt frühere Gerätefoto-Zuordnungen |
 | `0011_focus_requirements_grips.sql` | Muskelfokus, benötigte Ausstattung, Griff-Alternativen, Griff "Handschlaufe" |
 | `0012_machine_info.sql` | Gerätebezeichnung und alternative Geräte je Übung |
+| `0013_admin_bootstrap.sql` | Rollenschutz erlaubt direkte Datenbankänderungen (erster Admin) |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 
@@ -144,7 +145,7 @@ update grips set image_url = '/grips/neutral-parallel.jpg' where id = 'neutral_p
 3. Dashboard → Training starten → Sätze speichern → Training abschließen.
 4. Historie, Fortschritt, Kalender und Stats füllen sich automatisch.
 
-Der erste Admin (optional) wird per SQL gesetzt: `update profiles set role = 'admin' where nickname = '…';` Admins dürfen Standardübungen pflegen.
+Der erste Admin wird per SQL gesetzt (SQL-Editor): `update profiles set role = 'admin' where nickname = '…';` Admins dürfen Standardübungen pflegen und Rollen anderer Nutzer ändern. Nutzer anlegen, sperren, Passwörter zurücksetzen und löschen läuft über das Supabase-Dashboard unter Authentication → Users.
 
 ## Tests und Qualität
 
