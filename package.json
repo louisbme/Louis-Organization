@@ -11,7 +11,8 @@
     "db:generate": "node scripts/generate-seed.mjs",
     "check": "npm run typecheck && npm run lint && npm run test:db",
     "test:db": "node scripts/test-db.mjs",
-    "db:apply": "node scripts/apply-migrations.mjs"
+    "db:apply": "node scripts/apply-migrations.mjs",
+    "auth:configure": "node scripts/configure-auth.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
