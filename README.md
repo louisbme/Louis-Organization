@@ -18,7 +18,7 @@ Keine OpenAI-/Claude-API, keine Analytics, keine Payments, keine externen Bildda
 ## Funktionen
 
 - **Auth**: E-Mail + Passwort, Registrierung mit Nickname, Passwort vergessen, Logout, geschützte Routen (Middleware).
-- **Dashboard**: tägliches Motivationszitat, nächstes Training (Rotation A → B → C), letztes Training, Volumenverlauf, 7-Tage- und Gesamtstatistik, Schnellzugriffe.
+- **Dashboard**: nächstes Training (Rotation A → B → C), letztes Training, Volumenverlauf, 7-Tage- und Gesamtstatistik, Schnellzugriffe.
 - **Trainingspläne**: drei vorkonfigurierte Pläne (Oberkörper A, Unterkörper, Oberkörper B) pro Benutzer aus Vorlagen kopiert; Übungen hinzufügen, entfernen, austauschen, sortieren, Sätze und Wiederholungsbereich ändern, umbenennen, duplizieren, neue Pläne.
 - **Aktives Training**: große +/- Eingaben für Gewicht und Wiederholungen, optional RIR, Aufwärmsätze, vorherige Werte, Double-Progression-Vorschlag („Gewicht erhöhen/halten“), Trainingsdauer, Rest Timer (60/90/120/180 s oder eigene Zeit), Übung spontan hinzufügen, lokaler Zwischenstand (localStorage) mit Synchronisierung nach Verbindungsabbruch.
 - **Historie**: Liste mit Filtern (Zeitraum, Training, Übung), Detailansicht mit allen Sätzen und Volumen, Notizen.
@@ -78,7 +78,7 @@ Migrationen:
 | `0001_schema.sql` | Tabellen, Enums, Indexe, Foreign Keys, `updated_at`-Trigger |
 | `0002_functions.sql` | Trigger für neue Benutzer, RPCs (Training starten/abschließen, Statistiken, Bestleistungen), Seed-Hilfsfunktionen |
 | `0003_rls.sql` | Row Level Security für alle Tabellen |
-| `0004_seed_static.sql` | Muskelgruppen, Griffe, Motivationszitate |
+| `0004_seed_static.sql` | Muskelgruppen, Griffe, Zitate (Tabelle ohne UI-Verwendung) |
 | `0005_seed_exercises.sql` | 50 Standardübungen (generiert) |
 | `0006_seed_templates.sql` | drei Standard-Trainingspläne (generiert) |
 | `0007_media_and_storage.sql` | Griff-Bilder, Storage-Bucket, Übungsbilder |
@@ -202,4 +202,4 @@ Alle benutzerbezogenen Tabellen tragen `user_id` bzw. `owner_id` und sind per RL
 
 ## Lizenz / Assets
 
-Logo, Griff- und Equipment-Icons sind eigene SVGs. Die Polygon-Daten der anatomischen Muskelkarte stammen aus `react-body-highlighter` (MIT License, Giovanni Fiorentino) und wurden in `src/components/muscle-map/anatomy-data.ts` übernommen. Gerätefotos unter `public/exercises/` und `public/images/` wurden vom Betreiber bereitgestellt. Motivationssätze sind eigene Formulierungen. Keine fremden App-Assets.
+Das Logo ist ein vom Betreiber bereitgestelltes Foto (`public/brand/logo.jpg`). Griff- und Equipment-Icons sind eigene SVGs. Die Polygon-Daten der anatomischen Muskelkarte stammen aus `react-body-highlighter` (MIT License, Giovanni Fiorentino) und wurden in `src/components/muscle-map/anatomy-data.ts` übernommen. Gerätefotos unter `public/exercises/` und `public/images/` wurden vom Betreiber bereitgestellt. Motivationssätze sind eigene Formulierungen. Keine fremden App-Assets.

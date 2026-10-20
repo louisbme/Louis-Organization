@@ -2,13 +2,10 @@ import Link from "next/link";
 import { ArrowRight, Play, ClipboardList, History, TrendingUp } from "lucide-react";
 import { subDays } from "date-fns";
 import { requireUser } from "@/lib/auth/require-user";
-import { listQuotes } from "@/lib/services/quotes";
 import { listPlans, getNextPlanInRotation } from "@/lib/services/plans";
 import { getActiveSession, listSessions } from "@/lib/services/sessions";
 import { getUserStats, getSessionPoints } from "@/lib/services/stats";
-import { pickDailyQuote } from "@/lib/utils/quotes";
 import { formatDate, formatDuration, formatRelativeDay, formatVolume } from "@/lib/utils/format";
-import { QuoteCard } from "@/components/dashboard/quote-card";
 import { TrendChart, type TrendPoint } from "@/components/charts/trend-chart";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, SectionLabel } from "@/components/ui/card";
@@ -21,8 +18,7 @@ export default async function DashboardPage() {
   const { supabase, user, profile, settings } = await requireUser();
   const weekAgo = subDays(new Date(), 7).toISOString();
 
-  const [quotes, plans, activeSession, recentSessions, stats, weekSessions, points] = await Promise.all([
-    listQuotes(supabase).catch(() => []),
+  const [plans, activeSession, recentSessions, stats, weekSessions, points] = await Promise.all([
     listPlans(supabase, user.id),
     getActiveSession(supabase, user.id),
     listSessions(supabase, user.id, { limit: 5 }),
@@ -31,7 +27,6 @@ export default async function DashboardPage() {
     getSessionPoints(supabase, user.id, subDays(new Date(), 60).toISOString()),
   ]);
 
-  const quote = pickDailyQuote(quotes);
   const lastSession = recentSessions[0] ?? null;
   const nextPlan = getNextPlanInRotation(plans, lastSession?.plan_id ?? null);
   const unit = settings.weight_unit;
@@ -52,8 +47,6 @@ export default async function DashboardPage() {
         <p className="text-sm text-muted">Hallo {profile.nickname}</p>
         <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Dashboard</h1>
       </header>
-
-      <QuoteCard quote={quote} />
 
       {/* Nächstes Training / Aktives Training */}
       <Card className="border-accent/30">
