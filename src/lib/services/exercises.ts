@@ -150,6 +150,7 @@ export interface CustomExerciseInput {
   common_mistakes: string[];
   tips: string[];
   image_url: string | null;
+  animation_url: string | null;
 }
 
 export function slugify(name: string): string {
@@ -187,6 +188,7 @@ export async function createCustomExercise(db: DbClient, userId: string, input: 
       common_mistakes: input.common_mistakes,
       tips: input.tips,
       image_url: input.image_url,
+      animation_url: input.animation_url,
       is_custom: true,
       owner_id: userId,
     })
@@ -213,6 +215,7 @@ export async function updateCustomExercise(db: DbClient, id: string, input: Cust
       common_mistakes: input.common_mistakes,
       tips: input.tips,
       image_url: input.image_url,
+      animation_url: input.animation_url,
     })
     .eq("id", id);
   if (error) throw error;

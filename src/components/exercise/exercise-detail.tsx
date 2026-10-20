@@ -22,7 +22,7 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
     exercise.secondary_muscles.includes("forearms") && !exercise.primary_muscles.includes("forearms");
 
   return (
-    <div className="space-y-5">
+    <div className="stagger space-y-5">
       <PageHeader
         title={exercise.name}
         eyebrow={`${CATEGORY_LABELS[exercise.category]} · ${EQUIPMENT_LABELS[exercise.equipment]}`}
@@ -68,12 +68,27 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
         </CardContent>
       </Card>
 
-      <ExerciseVisual
-        name={exercise.name}
-        imageUrl={exercise.image_url}
-        equipment={exercise.equipment}
-        category={exercise.category}
-      />
+      {exercise.animation_url ? (
+        <div className="space-y-2">
+          <SectionLabel className="px-1">Ausführung</SectionLabel>
+          <ExerciseVisual
+            name={exercise.name}
+            imageUrl={null}
+            animationUrl={exercise.animation_url}
+            equipment={exercise.equipment}
+            category={exercise.category}
+          />
+        </div>
+      ) : null}
+      <div className="space-y-2">
+        {exercise.image_url ? <SectionLabel className="px-1">Gerät im Studio</SectionLabel> : null}
+        <ExerciseVisual
+          name={exercise.name}
+          imageUrl={exercise.image_url}
+          equipment={exercise.equipment}
+          category={exercise.category}
+        />
+      </div>
 
       {/* Equipment + Griff */}
       <Card>
@@ -93,8 +108,13 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises" }: P
               <SectionLabel>Griff</SectionLabel>
               {exercise.grip ? (
                 <div className="mt-2 flex items-start gap-3">
-                  <div className="flex h-14 w-20 shrink-0 items-center justify-center rounded-lg border border-border bg-subtle text-fg">
-                    <GripIcon gripId={exercise.grip.id} />
+                  <div className="flex h-16 w-24 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-subtle text-fg">
+                    {exercise.grip.image_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={exercise.grip.image_url} alt={exercise.grip.name_de} loading="lazy" className="h-full w-full object-cover" />
+                    ) : (
+                      <GripIcon gripId={exercise.grip.id} />
+                    )}
                   </div>
                   <div className="min-w-0">
                     <p className="text-sm font-medium">{exercise.grip.name_de}</p>

@@ -95,6 +95,7 @@ export type GripRow = {
   name_de: string;
   description: string;
   sort_order: number;
+  image_url: string | null;
 };
 
 export type ExerciseRow = Timestamps & {
@@ -114,6 +115,7 @@ export type ExerciseRow = Timestamps & {
   tips: string[];
   cable_setup: Json | null;
   image_url: string | null;
+  animation_url: string | null;
   is_custom: boolean;
   owner_id: string | null;
 };
@@ -264,7 +266,7 @@ export type Database = {
         ]
       >;
       muscle_groups: TableDef<MuscleGroupRow, Insertable<MuscleGroupRow, "sort_order">>;
-      grips: TableDef<GripRow, Insertable<GripRow, "sort_order">>;
+      grips: TableDef<GripRow, Insertable<GripRow, "sort_order" | "image_url">>;
       exercises: TableDef<
         ExerciseRow,
         Insertable<
@@ -281,6 +283,7 @@ export type Database = {
           | "tips"
           | "cable_setup"
           | "image_url"
+          | "animation_url"
           | "is_custom"
           | "owner_id"
           | "created_at"
@@ -407,6 +410,14 @@ export type Database = {
         Args: { p_exercise_id: string; p_from?: string | null };
         Returns: ExerciseHistoryRow[];
       };
+      get_member_sessions: {
+        Args: { p_user_id: string; p_limit?: number };
+        Returns: MemberSessionRow[];
+      };
+      get_member_session_detail: {
+        Args: { p_session_id: string };
+        Returns: MemberSessionDetail | null;
+      };
     };
     Enums: {
       muscle_role: MuscleRole;
@@ -479,6 +490,59 @@ export type ExerciseHistoryRow = {
   est_1rm: number;
   volume: number;
   sets: number;
+};
+
+/** Zeile aus get_member_sessions (Stats: Trainings eines Mitglieds) */
+export type MemberSessionRow = {
+  session_id: string;
+  name: string;
+  started_at: string;
+  ended_at: string | null;
+  duration_seconds: number | null;
+  total_volume: number;
+  total_sets: number;
+  exercise_names: string[];
+};
+
+/** Struktur des jsonb-Ergebnisses von get_member_session_detail */
+export type MemberSessionDetailSet = {
+  set_number: number;
+  weight: number;
+  reps: number;
+  rir: number | null;
+  is_warmup: boolean;
+};
+
+export type MemberSessionDetailExercise = {
+  id: string;
+  sort_order: number;
+  target_sets: number;
+  rep_min: number;
+  rep_max: number;
+  exercise: {
+    id: string;
+    slug: string;
+    name: string;
+    category: ExerciseCategory;
+    equipment: EquipmentType;
+  };
+  sets: MemberSessionDetailSet[];
+};
+
+export type MemberSessionDetail = {
+  session: {
+    id: string;
+    user_id: string;
+    nickname: string;
+    name: string;
+    started_at: string;
+    ended_at: string | null;
+    duration_seconds: number | null;
+    total_volume: number;
+    total_sets: number;
+    notes: string | null;
+  };
+  exercises: MemberSessionDetailExercise[];
 };
 
 /** Hilfstypen für die App */

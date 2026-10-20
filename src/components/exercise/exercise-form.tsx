@@ -66,6 +66,7 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
   const [mistakes, setMistakes] = React.useState((existing?.common_mistakes ?? []).join("\n"));
   const [tips, setTips] = React.useState((existing?.tips ?? []).join("\n"));
   const [imageUrl, setImageUrl] = React.useState(existing?.image_url ?? "");
+  const [animationUrl, setAnimationUrl] = React.useState(existing?.animation_url ?? "");
 
   const onCategoryChange = (next: ExerciseCategory) => {
     setCategory(next);
@@ -85,7 +86,8 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
     if (name.trim().length < 2) errs.name = "Mindestens 2 Zeichen";
     if (name.trim().length > 80) errs.name = "Maximal 80 Zeichen";
     if (primary.length === 0) errs.primary = "Mindestens eine primäre Muskelgruppe wählen";
-    if (imageUrl && !/^https?:\/\/.+/.test(imageUrl.trim())) errs.imageUrl = "Bitte eine vollständige URL (https://…) angeben";
+    if (imageUrl && !/^(https?:\/\/|\/).+/.test(imageUrl.trim())) errs.imageUrl = "Bitte eine vollständige URL (https://…) angeben";
+    if (animationUrl && !/^(https?:\/\/|\/).+/.test(animationUrl.trim())) errs.animationUrl = "Bitte eine vollständige URL (https://…) angeben";
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -109,6 +111,7 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
       common_mistakes: linesToArray(mistakes),
       tips: linesToArray(tips),
       image_url: imageUrl.trim() || null,
+      animation_url: animationUrl.trim() || null,
     };
     try {
       const db = createClient();
@@ -219,8 +222,11 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
           <Field label="Hinweise / Tipps (optional)" htmlFor="tips" hint="Ein Punkt pro Zeile">
             <Textarea id="tips" value={tips} onChange={(e) => setTips(e.target.value)} rows={3} />
           </Field>
-          <Field label="Bild-URL (optional)" htmlFor="imageUrl" error={errors.imageUrl} hint="z. B. ein Bild aus deinem Supabase Storage">
+          <Field label="Bild-URL (optional)" htmlFor="imageUrl" error={errors.imageUrl} hint="Foto der Maschine, z. B. aus dem Supabase Storage (Bucket exercise-assets)">
             <Input id="imageUrl" type="url" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} invalid={!!errors.imageUrl} />
+          </Field>
+          <Field label="Animations-URL (optional)" htmlFor="animationUrl" error={errors.animationUrl} hint="GIF, WebP oder MP4 der Ausführung">
+            <Input id="animationUrl" type="url" value={animationUrl} onChange={(e) => setAnimationUrl(e.target.value)} invalid={!!errors.animationUrl} />
           </Field>
         </CardContent>
       </Card>

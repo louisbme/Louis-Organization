@@ -6,22 +6,33 @@ import { EquipmentIcon } from "@/components/exercise/equipment-icon";
 interface ExerciseVisualProps {
   name: string;
   imageUrl: string | null;
+  animationUrl?: string | null;
   equipment: EquipmentType;
   category: ExerciseCategory;
   className?: string;
   size?: "sm" | "lg";
 }
 
+const isVideo = (url: string) => /\.(mp4|webm|mov)(\?|$)/i.test(url);
+
 /**
- * Bild der Übung, falls vorhanden – sonst ein hochwertiger, einheitlicher Placeholder.
- * Die Bildquelle ist austauschbar (image_url in der Datenbank / Supabase Storage).
+ * Darstellung der Übung:
+ * 1. Ausführungs-Animation (GIF, WebP oder MP4), falls hinterlegt
+ * 2. sonst Foto der Maschine / Übung
+ * 3. sonst einheitlicher Placeholder
+ * Alle Quellen sind austauschbar (image_url / animation_url in der Datenbank).
  */
-export function ExerciseVisual({ name, imageUrl, equipment, category, className, size = "lg" }: ExerciseVisualProps) {
-  if (imageUrl) {
+export function ExerciseVisual({ name, imageUrl, animationUrl, equipment, category, className, size = "lg" }: ExerciseVisualProps) {
+  const src = animationUrl ?? imageUrl;
+  if (src) {
     return (
-      <div className={cn("overflow-hidden rounded-xl border border-border bg-subtle", className)}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={imageUrl} alt={name} loading="lazy" className="h-full w-full object-cover" />
+      <div className={cn("overflow-hidden rounded-xl border border-border bg-subtle", size === "lg" ? "aspect-[4/3] sm:aspect-[16/9]" : "aspect-square", className)}>
+        {isVideo(src) ? (
+          <video src={src} autoPlay loop muted playsInline className="h-full w-full object-cover" aria-label={name} />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={src} alt={name} loading="lazy" decoding="async" className="h-full w-full object-cover" />
+        )}
       </div>
     );
   }
