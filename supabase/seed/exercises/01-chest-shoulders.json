@@ -320,7 +320,9 @@
     "grip_alternatives": [
       "strap_handle"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "kabel-flys-von-unten",
@@ -391,7 +393,9 @@
     "grip_alternatives": [
       "strap_handle"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "kabel-flys-von-oben",
@@ -463,7 +467,9 @@
     "grip_alternatives": [
       "strap_handle"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "schulterdruecken-maschine",
@@ -658,7 +664,9 @@
     ],
     "alternative_exercises": [
       "seitheben-maschine"
-    ]
+    ],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "reverse-butterfly",
@@ -792,7 +800,9 @@
     "grip_alternatives": [
       "strap_handle"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "face-pull",
@@ -865,6 +875,8 @@
     "grip_alternatives": [
       "single_handle"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   }
 ]

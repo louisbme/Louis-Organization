@@ -29,6 +29,9 @@ export function friendlyError(error: unknown, fallback = "Etwas ist schiefgelauf
     return "Diese Übung wurde bereits in Trainings verwendet und kann nicht gelöscht werden.";
   }
   if (m.includes("keine berechtigung")) return "Keine Berechtigung für diese Aktion.";
+  if (m.includes("nickname ungültig")) return "Nickname ungültig: 3 bis 20 Zeichen, nur Buchstaben, Zahlen, Punkt, Unterstrich, Bindestrich.";
+  if (m.includes("nickname bereits vergeben")) return "Dieser Nickname ist bereits vergeben.";
+  if (m.includes("email rate limit") || m.includes("over_email_send_rate_limit")) return "E-Mail-Limit erreicht. Bitte etwas warten und erneut versuchen.";
   if (m.includes("eigene admin-rolle")) return "Die eigene Admin-Rolle kann nicht entfernt werden.";
   if (m.includes("eigene konto")) return "Das eigene Konto kann hier nicht gelöscht werden.";
   if (m.includes("row-level security") || m.includes("permission denied")) {

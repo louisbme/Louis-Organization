@@ -27,7 +27,7 @@ Keine OpenAI-/Claude-API, keine Analytics, keine Payments, keine externen Bildda
 - **Kalender**: Monatsansicht, ±10 Jahre, Tage als Training / Rest Day / Freizeit / Party / Anderer Tag markieren, Notizen; abgeschlossene Trainings werden automatisch eingetragen.
 - **Stats**: private Übersicht aller Mitglieder (Nickname, Gesamtvolumen, Trainings, Zeit, letztes Training) mit Mitglieder-Detailansicht („Mehr sehen“): abgeschlossene Trainings nach Monat, Detail mit Übungen und Sätzen; nur lesend, nur für angemeldete Benutzer.
 - **Profil & Einstellungen**: Nickname, E-Mail, Passwort, Gewichtseinheit, Gewichtsschritt, Rest-Timer-Standard, RIR anzeigen, Theme.
-- **Verwaltung (nur Admins)**: Nutzerliste mit E-Mail, Registrierung, letztem Login, Trainings und Volumen; Rolle setzen; Nutzer löschen; Standardübungen über das Bearbeiten-Formular pflegen. Umgesetzt über abgesicherte Datenbankfunktionen (`admin_list_users`, `admin_set_role`, `admin_delete_user`), ohne Service-Key.
+- **Verwaltung (nur Admins)**: Nutzerliste mit E-Mail, Registrierung, letztem Login, Trainings und Volumen; Nickname ändern; Passwort-Reset-Mail senden; Rolle setzen; Nutzer löschen; Standardübungen über das Bearbeiten-Formular pflegen. Umgesetzt über abgesicherte Datenbankfunktionen (`admin_list_users`, `admin_set_nickname`, `admin_set_role`, `admin_delete_user`) und den öffentlichen Reset-Endpunkt, ohne Service-Key.
 
 ## Lokale Installation
 
@@ -91,6 +91,7 @@ Migrationen:
 | `0013_admin_bootstrap.sql` | Rollenschutz erlaubt direkte Datenbankänderungen (erster Admin) |
 | `0014_admin.sql` | Verwaltungsfunktionen für Admins (Nutzer listen, Rolle setzen, löschen) |
 | `0015_row_variants.sql` | Rudern Hebel in breit/eng aufgeteilt, Brustgestütztes Rudern entfernt |
+| `0016_admin_nickname.sql` | Admin: Nickname eines Nutzers ändern |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 
@@ -131,7 +132,7 @@ Die Standard-Templates funktionieren ebenfalls (Route `/auth/callback`), dann mu
 
 ### 4. Bilder, Animationen und Storage
 
-- Gerätefotos (`public/exercises/`, DHZ-Fitness-Geräte des Studios) erscheinen nur auf der Detailseite von Maschinen-, Rack- und Cardio-Übungen, kompakt mit offizieller Gerätebezeichnung (`machine_name`) und Alternativgeräten mit Bild (`alternative_exercises`). Kurzhantel- und Kabelturm-Übungen bekommen kein Foto; in Listen erscheinen nie Fotos. Beim Latzug wird statt der Rollenhöhe die Sitzposition angezeigt.
+- Gerätefotos (`public/exercises/`, DHZ-Fitness-Geräte des Studios) erscheinen nur auf der Detailseite von Maschinen-, Rack- und Cardio-Übungen, kompakt mit offizieller Gerätebezeichnung (`machine_name`) und Alternativgeräten mit Bild (`alternative_exercises`). Kabelübungen zeigen das Foto des Kabelturms, Kurzhantelübungen bekommen kein Foto; in Listen erscheinen nie Fotos. Beim Latzug wird statt der Rollenhöhe die Sitzposition angezeigt.
 - Ausführungs-Animationen (GIF, WebP, MP4) werden über `exercises.animation_url` eingebunden und auf der Detailseite als Schleife abgespielt. Jede Übung funktioniert auch ohne Bild und ohne Animation (Placeholder).
 - Griff-Fotos: `grips.image_url` setzen, dann erscheint das Foto statt des Icons.
 - Migration `0007` legt den öffentlichen Storage-Bucket `exercise-assets` an (lesen für alle, schreiben für angemeldete Benutzer im eigenen Ordner `<user_id>/…`). Dateien dort hochladen und die öffentliche URL in `image_url`, `animation_url` oder `grips.image_url` eintragen, zum Beispiel per SQL:

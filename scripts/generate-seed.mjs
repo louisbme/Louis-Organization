@@ -82,7 +82,7 @@ for (const ex of exercises) {
     if (!slugs.has(alt)) errors.push(`${ex.slug}: alternative_exercises verweist auf unbekannten Slug "${alt}"`);
     if (alt === ex.slug) errors.push(`${ex.slug}: alternative_exercises verweist auf sich selbst`);
   }
-  if (ex.image_url && ["dumbbell", "cable"].includes(ex.equipment)) errors.push(`${ex.slug}: Kurzhantel- und Kabelübungen bekommen kein Gerätefoto`);
+  if (ex.image_url && ex.equipment === "dumbbell") errors.push(`${ex.slug}: Kurzhantelübungen bekommen kein Gerätefoto`);
 }
 
 const templates = JSON.parse(readFileSync(join(root, "supabase", "seed", "templates.json"), "utf8"));

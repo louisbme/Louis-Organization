@@ -73,7 +73,9 @@
     "alternative_exercises": [
       "latzug-hebel",
       "breiter-latzug"
-    ]
+    ],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "breiter-latzug",
@@ -149,7 +151,9 @@
     "alternative_exercises": [
       "neutraler-latzug",
       "latzug-hebel"
-    ]
+    ],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "enges-rudern",
@@ -224,7 +228,9 @@
     ],
     "alternative_exercises": [
       "rudern-hebel-eng"
-    ]
+    ],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "breites-rudern",
@@ -300,7 +306,9 @@
     ],
     "alternative_exercises": [
       "rudern-hebel-breit"
-    ]
+    ],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "kabelrudern-einarmig",
@@ -372,7 +380,9 @@
     "grip_alternatives": [
       "strap_handle"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "reverse-fly-kurzhantel",
@@ -507,7 +517,9 @@
       "wide_lat_bar",
       "rope"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "hyperextensions",

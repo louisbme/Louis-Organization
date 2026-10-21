@@ -352,6 +352,15 @@ await test("Verwaltung: nur Admins dürfen Nutzer listen, Rolle setzen, löschen
     const b = await db.query("select role::text from admin_list_users() where user_id = $1", [USER_B]);
     assert(b.rows[0]?.role === "admin", "Rolle nicht gesetzt");
     await db.query("select admin_set_role($1, 'user')", [USER_B]);
+    await db.query("select admin_set_nickname($1, 'Boerge_2')", [USER_B]);
+    const nn = await db.query("select nickname from admin_list_users() where user_id = $1", [USER_B]);
+    assert(nn.rows[0]?.nickname === "Boerge_2", "Nickname nicht gesetzt");
+    let dup = false;
+    try { await db.query("select admin_set_nickname($1, 'louis')", [USER_B]); } catch { dup = true; }
+    assert(dup, "doppelter Nickname wurde akzeptiert");
+    let invalid = false;
+    try { await db.query("select admin_set_nickname($1, 'a@b')", [USER_B]); } catch { invalid = true; }
+    assert(invalid, "ungültiger Nickname wurde akzeptiert");
     let selfBlocked = false;
     try { await db.query("select admin_set_role($1, 'user')", [USER_A]); } catch { selfBlocked = true; }
     assert(selfBlocked, "eigene Admin-Rolle konnte entfernt werden");

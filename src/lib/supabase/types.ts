@@ -429,6 +429,7 @@ export type Database = {
       admin_list_users: { Args: Record<string, never>; Returns: AdminUserRow[] };
       admin_set_role: { Args: { p_user_id: string; p_role: UserRole }; Returns: undefined };
       admin_delete_user: { Args: { p_user_id: string }; Returns: undefined };
+      admin_set_nickname: { Args: { p_user_id: string; p_nickname: string }; Returns: undefined };
       get_member_sessions: {
         Args: { p_user_id: string; p_limit?: number };
         Returns: MemberSessionRow[];

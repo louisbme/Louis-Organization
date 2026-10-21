@@ -182,7 +182,9 @@
       "rope",
       "strap_handle"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "kabelcurl",
@@ -252,7 +254,9 @@
     "grip_alternatives": [
       "ez_bar"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "kurzhantelcurl",
@@ -377,7 +381,9 @@
     "grip_alternatives": [
       "straight_bar"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "trizepsdruecken-stange",
@@ -447,7 +453,9 @@
     "grip_alternatives": [
       "v_bar_triceps"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "trizepsdruecken-seil",
@@ -515,7 +523,9 @@
       "v_bar_triceps",
       "straight_bar"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "ueberkopf-trizeps-extension",
@@ -584,7 +594,9 @@
       "ez_bar",
       "rope"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "kabel-extension-einarmig",
@@ -651,7 +663,9 @@
     "grip_alternatives": [
       "strap_handle"
     ],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "crunch-maschine",
@@ -716,76 +730,78 @@
   },
   {
     "slug": "kabel-crunch",
-    "name": "Seated Cable Crunch",
+    "name": "Cable Crunch",
     "category": "abs",
     "equipment": "cable",
-    "grip_id": "rope",
-    "grip_notes": "Seil mit neutralem Griff fassen und die Seilenden beidhändig vor der Brust bzw. an den Schultern halten, Position während des Satzes nicht verändern. Alternativ Handschlaufen (eine pro Hand), wenn das Seil stört.",
+    "grip_id": "straight_bar",
+    "grip_notes": "Bizeps-/Trizeps-Stange (gerade, kurz) beidhändig etwa schulterbreit gefasst und an der Stirn gehalten. Alternativ das Seil mit den Enden an den Schläfen.",
     "primary_muscles": [
       "abs"
     ],
     "secondary_muscles": [
       "obliques"
     ],
-    "description": "Sitzender Crunch auf der Matte mit dem Rücken zum Kabelturm, bei dem das Seil vor der Brust gehalten und der Oberkörper gegen den Zug von hinten-oben eingerollt wird. Erlaubt eine gut steuerbare Belastung der Bauchmuskulatur mit Zusatzgewicht, ohne Druck auf die Knie.",
+    "description": "Crunch am Kabelturm in Rückenlage mit dem Kopf zum Turm. Die Stange am unteren Kabel wird an der Stirn gehalten, der Oberkörper rollt gegen den Zug nach oben ein. Isoliert die gerade Bauchmuskulatur bei konstanter Spannung über den gesamten Weg.",
     "setup": [
-      "Rolle am Kabelturm auf Hüft- bis Brusthöhe einstellen und Seil einhängen.",
-      "Matte vor den Turm legen und sich mit dem Rücken zum Turm hinsetzen, etwa eine halbe bis eine Armlänge entfernt.",
-      "Beine angewinkelt nach vorne aufstellen, Füße flach auf dem Boden.",
-      "Seil über die Schultern nach vorne führen und die Seilenden beidhändig vor der Brust bzw. an den Schultern halten.",
-      "Oberkörper aufrecht, leichte Vorspannung im Bauch, Becken stabil auf der Matte."
+      "Rolle ganz unten einstellen und die Bizeps-/Trizeps-Stange einhängen.",
+      "Matte vor den Turm legen, auf den Rücken legen, Kopf zum Turm, Knie angewinkelt, Füße flach auf dem Boden.",
+      "Stange beidhändig fassen und über den Kopf an die Stirn ziehen; die Hände bleiben während des Satzes dort.",
+      "Gewicht so wählen, dass die Schultern mit Kraft aus dem Bauch vom Boden kommen, ohne mit den Armen zu ziehen.",
+      "Unteren Rücken flach auf die Matte drücken, Becken leicht kippen."
     ],
     "execution": [
-      "Oberkörper kontrolliert nach vorne-unten einrollen, Bewegung aus der Brustwirbelsäule.",
-      "Brustbein in Richtung Becken ziehen, der Rücken wird dabei rund.",
-      "Becken bleibt stabil auf der Matte, die Hüfte beugt sich nicht aktiv mit.",
-      "In der Endposition den Bauch kurz bewusst anspannen.",
-      "Oberkörper langsam wieder aufrichten, Spannung im Bauch halten.",
-      "Oben stoppen, bevor der Rücken ins Hohlkreuz fällt und das Gewicht aufsetzt."
+      "Ausatmen und Brustbein Richtung Becken einrollen, Schulterblätter kommen vom Boden.",
+      "Die Bewegung kommt aus dem Bauch, Arme und Hals bleiben passiv, die Stange bleibt an der Stirn.",
+      "Oben eine Sekunde anspannen, unterer Rücken bleibt am Boden.",
+      "Langsam und kontrolliert abrollen, bis die Schulterblätter die Matte fast berühren.",
+      "Spannung halten, nicht komplett ablegen.",
+      "Nächste Wiederholung ohne Schwung aus Kopf oder Armen beginnen."
     ],
-    "range_of_motion": "Von einem aufrechten, leicht vorgespannten Oberkörper bis zum vollständig eingerollten Rumpf. Das Becken bleibt stabil, nur die Wirbelsäule rollt ein; oben nicht über die aufrechte Position hinaus ins Hohlkreuz.",
-    "breathing": "Beim Einrollen ausatmen, beim Aufrichten einatmen.",
+    "range_of_motion": "Einrollen aus der Brustwirbelsäule, bis die Schulterblätter deutlich vom Boden sind; der untere Rücken bleibt die ganze Zeit auf der Matte. Kein Aufsitzen.",
+    "breathing": "Beim Einrollen kräftig ausatmen, beim Abrollen einatmen.",
     "common_mistakes": [
-      "Oberkörper kippt mit geradem Rücken nach vorne, statt sich einzurollen; die Hüftbeuger übernehmen.",
-      "Mit den Armen am Seil gezogen statt mit dem Bauch eingerollt.",
-      "Hände verändern während des Satzes ihre Position vor der Brust.",
-      "Beim Aufrichten ins Hohlkreuz gefallen, der Zug zieht den Oberkörper nach hinten.",
-      "Gewicht fällt unkontrolliert zurück, keine Kontrolle in der exzentrischen Phase."
+      "Mit den Armen an der Stange ziehen statt den Bauch einzurollen.",
+      "Kopf wird nach vorne gezogen, Nacken statt Bauch arbeitet.",
+      "Unterer Rücken hebt sich vom Boden, Hüftbeuger übernehmen.",
+      "Zu viel Gewicht, die Bewegung wird kurz und ruckartig.",
+      "Komplettes Ablegen zwischen den Wiederholungen, die Spannung geht verloren."
     ],
     "tips": [
-      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
-      "Vorstellen, die Rippen in Richtung Becken zu ziehen.",
-      "Lieber leichtes Gewicht mit vollem Bewegungsradius als schweres Gewicht mit kurzer Bewegung.",
-      "Abstand zum Turm so wählen, dass das Kabel bereits in der aufrechten Position unter Spannung steht."
+      "Vorstellen, die Rippen zum Becken zu ziehen.",
+      "Zwei Sekunden abrollen, eine Sekunde oben halten.",
+      "Die Stange muss nicht schwer beladen sein; die konstante Kabelspannung ist der Vorteil gegenüber dem freien Crunch."
     ],
     "cable_setup": {
-      "cable": "Kabelturm, einzelnes Kabel",
-      "height": "Hüfthöhe bis Brusthöhe, damit der Zug im Sitzen etwa auf Kopf- bis Schulterhöhe schräg von hinten-oben kommt",
-      "grip_width": "Neutral am Seil, Seilenden beidhändig vor der Brust bzw. an den Schultern, eng beieinander",
-      "body_position": "Sitzend auf der Matte mit dem Rücken zum Turm, etwa eine halbe bis eine Armlänge entfernt, Oberkörper aufrecht, Becken stabil",
-      "foot_position": "Beine angewinkelt nach vorne aufgestellt, Füße flach auf dem Boden, etwa hüftbreit",
-      "movement_direction": "Einrollen nach vorne-unten, Brustbein in Richtung Becken, gegen den Zug von hinten-oben",
-      "elbow_position": "Ellenbogen zeigen nach unten und bleiben nah am Körper, keine aktive Armbewegung",
-      "end_position": "Rumpf vollständig eingerollt, Brustbein in Richtung Becken, Bauch angespannt",
-      "return": "Langsam und kontrolliert aufrichten, bis der Oberkörper aufrecht ist, nicht ins Hohlkreuz, Gewicht bleibt in der Luft"
+      "cable": "Kabelturm, eine Säule",
+      "height": "ganz unten, der Zug kommt flach über den Kopf hinweg und hält die Spannung in Rückenlage",
+      "grip_width": "Schulterbreit an der kurzen geraden Stange, Hände an der Stirn",
+      "body_position": "Rückenlage auf der Matte, Kopf zum Turm, Knie angewinkelt, unterer Rücken flach am Boden",
+      "foot_position": "Füße flach auf dem Boden, hüftbreit",
+      "movement_direction": "Einrollen der Brustwirbelsäule nach oben, Brustbein Richtung Becken",
+      "elbow_position": "Ellenbogen zeigen zur Decke und bleiben ruhig, keine Zugbewegung der Arme",
+      "end_position": "Schulterblätter deutlich vom Boden, Bauch maximal angespannt, unterer Rücken bleibt liegen",
+      "return": "Langsam abrollen bis kurz vor den Boden, Spannung halten"
     },
     "muscle_focus": [
-      "Rolle so einstellen, dass der Zug schräg von hinten-oben kommt; dann steht die Bauchmuskulatur schon in der aufrechten, leicht gestreckten Position unter Spannung.",
-      "Einrollen aus der Brustwirbelsäule, Brustbein in Richtung Becken; das Becken bleibt auf der Matte stabil, sonst übernehmen die Hüftbeuger.",
-      "Seil nur fixieren, nicht mit den Armen ziehen; die Ellenbogen bleiben während des Satzes an derselben Stelle.",
-      "Beim Einrollen ausatmen, zwei Sekunden lang aufrichten und oben nicht ins Hohlkreuz fallen; leichtes Gewicht mit vollem Bewegungsradius bevorzugen."
+      "Das Kabel hält die Spannung auch in der oberen Position, wo der freie Crunch keinen Widerstand mehr bietet.",
+      "Der Reiz entsteht durch das Einrollen der Brustwirbelsäule (Rippen zum Becken), nicht durch Heben des Oberkörpers als Block.",
+      "Unterer Rücken am Boden halten, damit der Hüftbeuger nicht übernimmt.",
+      "Gewicht so wählen, dass die geraden Bauchmuskeln limitieren und Nacken und Arme passiv bleiben."
     ],
     "requirements": [
-      "Kabelturm mit verstellbarer Rolle",
-      "Seilgriff (alternativ Handschlaufen)",
+      "Kabelturm mit Rolle ganz unten",
+      "Bizeps-/Trizeps-Stange (kurz, gerade)",
       "Matte"
     ],
     "grip_alternatives": [
-      "strap_handle"
+      "rope"
     ],
     "alternative_exercises": [
-      "crunch-maschine"
-    ]
+      "crunch-maschine",
+      "hanging-knee-raise"
+    ],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "hanging-knee-raise",

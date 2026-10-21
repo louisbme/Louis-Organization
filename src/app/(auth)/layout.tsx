@@ -17,7 +17,6 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         </Link>
         <p className="mb-10 text-sm text-muted animate-fade-up [animation-delay:60ms]">{APP_TAGLINE}</p>
         <main className="flex-1 animate-fade-up [animation-delay:120ms]">{children}</main>
-        <p className="mt-10 text-center text-xs text-faint">Private Nutzung · Kein Social Login · Keine KI</p>
       </div>
     </div>
   );

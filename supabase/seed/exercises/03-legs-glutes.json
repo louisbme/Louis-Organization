@@ -628,7 +628,9 @@
       "Fußschlaufe (Ankle Strap) oder gepolsterte Manschette"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "image_url": "/exercises/cable-tower.jpg",
+    "machine_name": "Kabelturm (Multistation)"
   },
   {
     "slug": "wadenheben-hackenschmidt",
