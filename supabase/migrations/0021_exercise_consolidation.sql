@@ -81,7 +81,7 @@ select public.merge_exercise('schraegbankdruecken-hebel-flex', 'schraegbankdruec
 select public.merge_exercise('kabel-flys-von-unten', 'kabel-flys');
 select public.merge_exercise('kabel-flys-von-oben', 'kabel-flys');
 select public.merge_exercise('schulterpresse-maschine', 'schulterdruecken-maschine');
-select public.merge_exercise('seitheben-kabel', 'seitheben-maschine');
+-- Seitheben Kabel bleibt eine eigene Übung (ursprünglich zusammengeführt, auf Wunsch wiederhergestellt)
 select public.merge_exercise('kabel-reverse-fly', 'reverse-butterfly');
 select public.merge_exercise('latzug-hebel', 'neutraler-latzug');
 select public.merge_exercise('rudern-hebel-eng', 'enges-rudern');

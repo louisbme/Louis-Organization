@@ -418,7 +418,7 @@
     "secondary_muscles": [
       "traps"
     ],
-    "description": "Isolation der seitlichen Schulter mit konstanter Spannung. An der Maschine liegen die Oberarme am Polster, am Kabelzug zieht man einarmig von der tiefen Rolle. Beide Varianten belasten die Schulter im Gegensatz zur Kurzhantel auch unten, wo der Muskel gedehnt ist.",
+    "description": "Isolation der seitlichen Schulter an der Seitheben-Maschine. Die Oberarme liegen am Polster, dadurch ist Schwung ausgeschlossen und die Last bleibt gleichmäßig; die Kabel- und Kurzhantelvarianten sind eigene Übungen.",
     "setup": [
       "Sitz so einstellen, dass die Drehachse der Maschine etwa auf Höhe der Schultergelenke liegt.",
       "Oberkörper aufrecht an das Polster anlehnen, Füße flach auf den Boden stellen.",
@@ -460,6 +460,7 @@
     ],
     "grip_alternatives": [],
     "alternative_exercises": [
+      "seitheben-kabel",
       "seitheben-kurzhantel"
     ],
     "animation_source_url": "https://modusx.de/fitness-uebungen/seitheben-an-seitheben-maschine/",
@@ -469,9 +470,97 @@
         "description": "Polster am Oberarm knapp über dem Ellenbogen, Arme bis Schulterhöhe heben, langsam ab."
       },
       {
-        "name": "Kabelzug einarmig, Rolle hüfthoch",
-        "description": "Kabel läuft hinter dem Körper, Arm leicht gebeugt, bis Schulterhöhe heben. Gleichmäßige Spannung über den gesamten Weg.",
+        "name": "Einarmig",
+        "description": "Eine Seite nach der anderen, freie Hand stützt. Gleicht Seitenunterschiede aus."
+      }
+    ]
+  },
+  {
+    "slug": "seitheben-kabel",
+    "name": "Seitheben Kabel",
+    "category": "shoulders",
+    "equipment": "cable",
+    "grip_id": "strap_handle",
+    "grip_notes": "Handschlaufe um die Hand legen, Hand bleibt locker, der Arm hängt entspannt. Alternativ Einzelgriff mit lockerem Daumen oder ohne Griff direkt am Kabelende.",
+    "primary_muscles": [
+      "side_delts"
+    ],
+    "secondary_muscles": [
+      "traps",
+      "front_delts"
+    ],
+    "description": "Seitheben einarmig am tiefen Block. Das Kabel hält im Gegensatz zur Kurzhantel auch in der unteren Position Spannung, also genau dort, wo die seitliche Schulter gedehnt ist. Die ergänzende Übung zu Seitheben an der Maschine oder mit Kurzhanteln.",
+    "setup": [
+      "Rolle auf Hüfthöhe einstellen und Handschlaufe einhängen.",
+      "Seitlich zur Säule stellen, die arbeitende Hand ist von der Säule abgewandt.",
+      "Schlaufe um die Hand legen, Hand locker lassen, das Kabel läuft vor oder hinter dem Körper zur Säule.",
+      "Freie Hand an der Säule abstützen, Rumpf anspannen, Oberkörper aufrecht.",
+      "Arm mit leichter Ellenbogenbeuge entspannt neben dem Körper hängen lassen, Schulter bewusst nach unten ziehen."
+    ],
+    "execution": [
+      "Arm seitlich nach oben führen, der Ellenbogen führt die Bewegung.",
+      "Bis etwa Schulterhöhe anheben, Hand und Ellenbogen etwa auf gleicher Höhe.",
+      "Schulter bleibt während der gesamten Bewegung unten.",
+      "In der Endposition kurz halten.",
+      "Arm langsam und kontrolliert zurückführen, bis er wieder neben dem Körper ist.",
+      "Spannung unten halten, Gewicht nicht aufsetzen lassen.",
+      "Nach dem Satz die Seite wechseln."
+    ],
+    "range_of_motion": "Vom Arm neben bzw. leicht vor dem Körper bis etwa Schulterhöhe. Nicht über die Schulterhöhe hinaus heben.",
+    "breathing": "Beim Anheben ausatmen, beim Absenken einatmen.",
+    "common_mistakes": [
+      "Schulter wird beim Anheben zum Ohr hochgezogen.",
+      "Oberkörper neigt sich zur Seite oder schwingt mit.",
+      "Arm wird über die Schulterhöhe hinaus gehoben.",
+      "Hand liegt in der Endposition deutlich über dem Ellenbogen.",
+      "Gewicht zieht den Arm unkontrolliert zurück."
+    ],
+    "tips": [
+      "Leichtes Gewicht wählen, die Übung reagiert empfindlich auf Schwung.",
+      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
+      "Vorstellen, den Ellenbogen zur Seite wegzuschieben, nicht die Hand anzuheben.",
+      "Kabel hinter dem Körper führen, wenn die seitliche Schulter stärker isoliert werden soll."
+    ],
+    "cable_setup": {
+      "cable": "Kabelturm oder Doppelkabelzug, einarmig",
+      "height": "Hüfthöhe, damit das Kabel über den gesamten Weg seitlich am Körper vorbei zieht und die Spannung auch unten erhalten bleibt",
+      "grip_width": "Handschlaufe um eine Hand, Hand locker, kein aktives Greifen",
+      "body_position": "Seitlich zur Säule stehend, aufrecht, freie Hand an der Säule abgestützt, Rumpf angespannt, Schulter unten",
+      "foot_position": "Hüftbreit oder leichte Schrittstellung, Knie leicht gebeugt",
+      "movement_direction": "Seitlich nach oben in einem Bogen bis etwa Schulterhöhe",
+      "elbow_position": "Leicht gebeugt, Winkel bleibt konstant, Ellenbogen führt die Bewegung und bleibt auf Höhe der Hand oder leicht darüber",
+      "end_position": "Oberarm etwa waagerecht auf Schulterhöhe, Schulter unten, kurz halten",
+      "return": "Langsam und kontrolliert zurück neben den Körper, Spannung am Kabel bleibt erhalten"
+    },
+    "muscle_focus": [
+      "Das Kabel belastet die seitliche Schulter über den gesamten Weg, besonders unten in der gedehnten Position; dort langsam ankommen und kurz halten.",
+      "Kabel hinter dem Körper führen und den Arm bis knapp über die Waagerechte heben, nicht höher, sonst übernimmt der Trapez.",
+      "Hand und Ellenbogen auf einer Höhe, kein Eindrehen des Daumens nach oben.",
+      "12 bis 20 Wiederholungen bis nahe ans Versagen, 2 bis 3 Sekunden absenken."
+    ],
+    "requirements": [
+      "Kabelturm mit verstellbarer Rolle",
+      "Handschlaufe (alternativ Einzelgriff)"
+    ],
+    "grip_alternatives": [
+      "single_handle"
+    ],
+    "alternative_exercises": [
+      "seitheben-maschine",
+      "seitheben-kurzhantel"
+    ],
+    "image_url": null,
+    "animation_source_url": "https://modusx.de/fitness-uebungen/seitheben-am-kabelzug/seitheben-am-kabelzug-einarmig/",
+    "variants": [
+      {
+        "name": "Einarmig, Kabel hinter dem Körper (Standard)",
+        "description": "Rolle ganz unten oder hüfthoch, Griff in der dem Turm abgewandten Hand. Größte Spannung in der Dehnung.",
         "source_url": "https://modusx.de/fitness-uebungen/seitheben-am-kabelzug/seitheben-am-kabelzug-einarmig/"
+      },
+      {
+        "name": "Beidarmig über Kreuz",
+        "description": "Beide Rollen unten, Griffe über Kreuz gefasst, beide Arme gleichzeitig seitlich heben.",
+        "source_url": "https://modusx.de/fitness-uebungen/seitheben-am-kabelzug/seitheben-am-kabelzug-beidarmig/"
       }
     ]
   },
