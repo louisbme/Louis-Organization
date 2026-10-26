@@ -1,7 +1,7 @@
 [
   {
     "slug": "hackenschmidt",
-    "name": "Hackenschmidt",
+    "name": "Hackenschmidt Kniebeuge",
     "category": "quads",
     "equipment": "machine",
     "grip_id": null,
@@ -13,7 +13,7 @@
       "glutes",
       "hamstrings"
     ],
-    "description": "Geführte Kniebeuge an der Hackenschmidt-Maschine, bei der der Rücken am Schlitten anliegt und die Bewegung in einer festen Bahn verläuft. Gut geeignet, um den Quadrizeps mit hoher Kontrolle und ohne freie Stabilisation zu belasten.",
+    "description": "Geführte Kniebeuge mit Rückenpolster, der sicherste Weg, den Quadrizeps mit viel Gewicht in tiefer Beugung zu belasten. Die Multipresse-Kniebeuge ist die gleiche geführte Bewegung ohne Polster und deshalb hier eine Variante.",
     "setup": [
       "Rücken und Schultern vollständig an das Rückenpolster und die Schulterpolster anlegen.",
       "Füße mittig und etwa schulterbreit auf der Plattform platzieren, Fußspitzen leicht nach außen.",
@@ -46,10 +46,10 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Tief absenken, soweit das Becken am Polster bleibt; der Quadrizeps arbeitet in der tiefen, gedehnten Kniebeugung am stärksten.",
-      "Fersen auf der Plattform lassen und die Knie in Richtung Fußspitzen führen, dann bleibt die Last auf dem Oberschenkel statt auf dem Kniegelenk.",
-      "Füße eher mittig bis tief auf der Plattform betonen den Quadrizeps; höher platziert verlagert sich die Arbeit zu Gesäß und hinteren Oberschenkeln.",
-      "Exzentrische Phase zwei bis drei Sekunden kontrollieren und oben kurz vor der Kniestreckung stoppen, damit die Spannung erhalten bleibt."
+      "Tief beugen: unterhalb der Waagerechten arbeitet der Quadrizeps in gedehnter Position, dort entsteht der größte Reiz.",
+      "Füße weiter vorne verlagern die Last Richtung Gesäß, weiter hinten Richtung Quadrizeps.",
+      "Knie über die Fußspitzen hinaus sind bei beschwerdefreien Knien erwünscht, nicht verboten.",
+      "6 bis 12 Wiederholungen, kontrolliertes Absenken, oben nicht einrasten."
     ],
     "requirements": [
       "Hackenschmidt-Maschine (Hack Squat) mit Schulterpolstern und Sicherungen"
@@ -59,74 +59,27 @@
     "machine_name": "Hack Squat, Plate Loaded",
     "alternative_exercises": [
       "beinpresse-45-grad",
-      "multipresse-kniebeuge",
-      "wadenheben-hackenschmidt"
+      "kniebeuge",
+      "kurzhantel-kniebeuge"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/hackenschmidt-kniebeuge/"
-  },
-  {
-    "slug": "beinpresse",
-    "name": "Beinpresse",
-    "category": "quads",
-    "equipment": "machine",
-    "grip_id": null,
-    "grip_notes": "Haltegriffe seitlich am Sitz fassen, um das Becken stabil zu halten. Füße mittig auf der Platte, etwa schulterbreit, Fußspitzen leicht nach außen.",
-    "primary_muscles": [
-      "quads"
-    ],
-    "secondary_muscles": [
-      "glutes",
-      "hamstrings"
-    ],
-    "description": "Geführte Druckübung an der 45-Grad- oder horizontalen Beinpresse, bei der der Oberkörper fixiert ist und die Beine das Gewicht wegdrücken. Gut geeignet, um Quadrizeps und Gesäß mit hoher Last und geringer Stabilisationsanforderung zu trainieren.",
-    "setup": [
-      "Rückenlehne so einstellen, dass unterer Rücken und Becken vollständig am Polster anliegen.",
-      "Füße mittig und etwa schulterbreit auf die Platte stellen, Fußspitzen leicht nach außen.",
-      "Haltegriffe fassen, Rumpf anspannen.",
-      "Platte leicht wegdrücken und die Sicherungen lösen.",
-      "Startposition mit leicht gebeugten Knien einnehmen, Fersen fest auf der Platte."
-    ],
-    "execution": [
-      "Platte kontrolliert absenken, Knie beugen sich in Richtung Fußspitzen.",
-      "So weit absenken, wie das Becken am Polster bleibt.",
-      "Unten kurz stoppen, ohne dass das Gewicht aufsetzt.",
-      "Über die ganze Fußsohle wegdrücken, Fersen bleiben auf der Platte.",
-      "Knie am Ende nicht vollständig durchstrecken.",
-      "Nächste Wiederholung ohne Schwung beginnen."
-    ],
-    "range_of_motion": "Von leicht gebeugten Knien bis zu einem Kniewinkel von etwa 90 Grad oder tiefer, solange das Becken am Polster bleibt. Oben kurz vor der vollen Streckung stoppen.",
-    "breathing": "Beim Wegdrücken ausatmen, beim Absenken einatmen.",
-    "common_mistakes": [
-      "Becken hebt sich unten vom Polster ab, unterer Rücken rundet sich.",
-      "Knie werden oben vollständig durchgestreckt.",
-      "Knie fallen beim Drücken nach innen.",
-      "Fersen heben sich von der Platte ab, Druck kommt nur aus den Zehen.",
-      "Gewicht wird unten mit Schwung abgefangen."
-    ],
-    "tips": [
-      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
-      "Hände an den Griffen lassen und nicht gegen die Knie drücken.",
-      "Höhere Fußposition auf der Platte verlagert die Belastung mehr auf Gesäß und hintere Oberschenkel, tiefere Position mehr auf den Quadrizeps.",
-      "Sicherungen vor dem Satz prüfen und erst nach dem letzten Satz einrasten lassen."
-    ],
-    "cable_setup": null,
-    "muscle_focus": [
-      "So tief absenken, wie das Becken am Polster bleibt; die tiefe Kniebeugung belastet den Quadrizeps in der gedehnten Position.",
-      "Über die ganze Fußsohle drücken und die Knie in Richtung Fußspitzen führen, nicht nach innen fallen lassen.",
-      "Fußposition bestimmt den Fokus: tiefer auf der Platte betont den Quadrizeps, höher Gesäß und hintere Oberschenkel.",
-      "Exzentrische Phase etwa zwei Sekunden kontrollieren, oben nicht durchstrecken."
-    ],
-    "requirements": [
-      "45-Grad- oder horizontale Beinpresse mit verstellbarer Rückenlehne und Sicherungen"
-    ],
-    "grip_alternatives": [],
-    "image_url": "/exercises/leg-press-seated.jpg",
-    "machine_name": "DHZ Seated Leg Press, Steckgewicht",
-    "alternative_exercises": [
-      "beinpresse-45-grad",
-      "hackenschmidt"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/beinpresse-klassisch/beinpresse-mit-beiden-beinen/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/hackenschmidt-kniebeuge/",
+    "variants": [
+      {
+        "name": "Hackenschmidt (Standard)",
+        "description": "Schultern unter die Polster, Füße mittig, tief beugen, Rücken bleibt am Polster.",
+        "source_url": "https://modusx.de/fitness-uebungen/hackenschmidt-kniebeuge/"
+      },
+      {
+        "name": "Enger Stand",
+        "description": "Füße hüftbreit oder enger, Schwerpunkt äußerer Quadrizeps.",
+        "source_url": "https://modusx.de/fitness-uebungen/hackenschmidt-kniebeuge/enge-squats-an-der-squat-maschine/"
+      },
+      {
+        "name": "Multipresse-Kniebeuge",
+        "description": "Stange in der Führung, Füße eine Fußlänge vor der Stange. Erlaubt aufrechten Oberkörper und tiefe Beugung ohne Gleichgewichtsarbeit.",
+        "source_url": "https://modusx.de/fitness-uebungen/multipresse-kniebeuge/"
+      }
+    ]
   },
   {
     "slug": "beinstrecker",
@@ -186,7 +139,8 @@
     "alternative_exercises": [
       "beinbeuger"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/beinstrecken-maschine/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/beinstrecken-maschine/",
+    "variants": []
   },
   {
     "slug": "bulgarian-split-squat",
@@ -249,7 +203,8 @@
     ],
     "grip_alternatives": [],
     "alternative_exercises": [],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/bulgarian-split-squat/bulgarian-split-kniebeugen-mit-kurzhanteln/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/bulgarian-split-squat/bulgarian-split-kniebeugen-mit-kurzhanteln/",
+    "variants": []
   },
   {
     "slug": "kniebeuge",
@@ -315,10 +270,12 @@
     "image_url": "/exercises/half-rack.jpg",
     "machine_name": "Half Rack mit Plattform",
     "alternative_exercises": [
-      "multipresse-kniebeuge",
-      "hackenschmidt"
+      "hackenschmidt",
+      "beinpresse-45-grad",
+      "kurzhantel-kniebeuge"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/langhantel-kniebeuge/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/langhantel-kniebeuge/",
+    "variants": []
   },
   {
     "slug": "ausfallschritte",
@@ -380,7 +337,8 @@
     ],
     "grip_alternatives": [],
     "alternative_exercises": [],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/klassische-lunges-mit-gewicht/ausfallschritte-mit-kurzhanteln/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/klassische-lunges-mit-gewicht/ausfallschritte-mit-kurzhanteln/",
+    "variants": []
   },
   {
     "slug": "beinbeuger",
@@ -441,9 +399,11 @@
     "image_url": "/exercises/seated-leg-curl.jpg",
     "machine_name": "DHZ Seated Leg Curl, Steckgewicht",
     "alternative_exercises": [
-      "beinstrecker"
+      "beinstrecker",
+      "kurzhantel-rumaenisches-kreuzheben"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/beincurls-maschine/beinbeuger-sitzend-am-beinbeuger-geraet/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/beincurls-maschine/beinbeuger-sitzend-am-beinbeuger-geraet/",
+    "variants": []
   },
   {
     "slug": "rumaenisches-kreuzheben",
@@ -507,9 +467,11 @@
     "image_url": "/exercises/half-rack.jpg",
     "machine_name": "Half Rack mit Plattform",
     "alternative_exercises": [
-      "hyperextensions"
+      "hyperextensions",
+      "kurzhantel-rumaenisches-kreuzheben"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/rumaenisches-kreuzheben/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/rumaenisches-kreuzheben/",
+    "variants": []
   },
   {
     "slug": "hip-thrust",
@@ -569,7 +531,8 @@
     ],
     "grip_alternatives": [],
     "alternative_exercises": [],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/hip-thrust-langhantel/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/hip-thrust-langhantel/",
+    "variants": []
   },
   {
     "slug": "kabel-kickback",
@@ -640,72 +603,12 @@
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
     "machine_name": "Kabelturm (Multistation)",
-    "animation_source_url": "https://modusx.de/fitness-uebungen/po-kickbacks-kabel/"
-  },
-  {
-    "slug": "wadenheben-hackenschmidt",
-    "name": "Wadenheben Hackenschmidt",
-    "category": "calves",
-    "equipment": "machine",
-    "grip_id": null,
-    "grip_notes": "Schulterpolster tragen die Last, Hände an den Haltegriffen. Kein Zug mit den Armen.",
-    "primary_muscles": [
-      "calves"
-    ],
-    "secondary_muscles": [],
-    "description": "Wadenheben stehend auf der Fußplatte der Hackenschmidt-Maschine. Die Schulterpolster übernehmen die Last, die Fußballen stehen auf der unteren Kante der Platte, die Fersen hängen frei über den Rand.",
-    "setup": [
-      "Hackenschmidt wie für Kniebeugen beladen, deutlich leichter als beim Beugen beginnen.",
-      "Unter die Schulterpolster stellen, Rücken flächig am Polster.",
-      "Fußballen auf die untere Kante der Fußplatte setzen, Fersen hängen frei über den Rand, Füße hüftbreit und parallel.",
-      "Beine fast gestreckt, Knie leicht weich, nicht durchgedrückt.",
-      "Sicherung lösen und die Last mit den Schultern übernehmen."
-    ],
-    "execution": [
-      "Fersen so tief wie möglich unter die Plattenkante absenken, bis die Waden deutlich gedehnt sind.",
-      "In der gedehnten Position eine Sekunde halten.",
-      "Über den Fußballen so hoch wie möglich nach oben drücken, Knie bleiben leicht gebeugt und ruhig.",
-      "Oben kurz anspannen, Gewicht liegt auf dem Großzehenballen.",
-      "Langsam und kontrolliert wieder in die Dehnung absenken.",
-      "Nächste Wiederholung ohne Federn aus der unteren Position beginnen."
-    ],
-    "range_of_motion": "Voller Bewegungsradius von tiefer Dehnung unter der Plattenkante bis zum maximalen Zehenstand. Die Knie bleiben während der gesamten Bewegung in gleicher, leicht gebeugter Stellung.",
-    "breathing": "Beim Hochdrücken ausatmen, beim Absenken einatmen.",
-    "common_mistakes": [
-      "Federn aus der unteren Position statt kontrollierter Dehnung mit Pause.",
-      "Knie beugen und strecken während der Wiederholung, dadurch arbeiten Oberschenkel statt Waden.",
-      "Nur halber Bewegungsradius, vor allem oben zu früh gestoppt.",
-      "Fersen stehen auf der Platte, die Dehnung fehlt.",
-      "Zu viel Gewicht, die Bewegung wird kurz und ruckartig."
-    ],
-    "tips": [
-      "Zwei bis drei Sekunden Exzentrik und eine Sekunde Pause in der Dehnung, das wirkt mehr als hohes Gewicht.",
-      "Die Sicherung vor dem Satz lösen und nach dem Satz wieder einhängen, die Fußplatte ist beim Wadenheben voll belastet.",
-      "Mit gestreckten Beinen arbeitet vor allem der Gastrocnemius; für den Soleus zusätzlich Wadenheben sitzend."
-    ],
-    "muscle_focus": [
-      "Die gestreckte Beinposition belastet vor allem den Gastrocnemius, den sichtbaren oberen Wadenmuskel.",
-      "Die tiefe, kurz gehaltene Dehnung unter der Plattenkante ist der wichtigste Reiz; dort entscheidet sich der Trainingseffekt.",
-      "Kontrollierte Exzentrik über zwei bis drei Sekunden statt Federn aus der Achillessehne.",
-      "Gewicht so wählen, dass der volle Bewegungsradius sauber möglich ist."
-    ],
-    "requirements": [
-      "Hackenschmidt-Maschine mit Schulterpolstern und Fußplatte",
-      "Hantelscheiben"
-    ],
-    "grip_alternatives": [],
-    "cable_setup": null,
-    "image_url": "/exercises/hack-squat.jpg",
-    "machine_name": "Hack Squat, Plate Loaded (Wadenheben auf der Fußplatte)",
-    "alternative_exercises": [
-      "wadenheben-stehend",
-      "wadenheben-sitzend"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/wadenheben-hackenschmidt-maschine/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/po-kickbacks-kabel/",
+    "variants": []
   },
   {
     "slug": "wadenheben-stehend",
-    "name": "Wadenheben stehend",
+    "name": "Wadenheben",
     "category": "calves",
     "equipment": "machine",
     "grip_id": null,
@@ -714,7 +617,7 @@
       "calves"
     ],
     "secondary_muscles": [],
-    "description": "Plantarflexion im Stand gegen Widerstand, bei der die gesamte Wadenmuskulatur einschließlich des zweigelenkigen Gastrocnemius belastet wird. Gut geeignet als Grundübung für die Waden.",
+    "description": "Wadenheben als eine Übung mit zwei anatomisch begründeten Varianten: Stehend mit gestrecktem Knie trainiert den Gastrocnemius (die sichtbare Wade), sitzend mit gebeugtem Knie den darunter liegenden Soleus. Für vollständige Waden gehören beide ins Programm.",
     "setup": [
       "Schulterpolster so einstellen, dass die Beine im Stand fast gestreckt sind und das Gewicht leicht abhebt.",
       "Fußballen auf die Kante der Plattform stellen, Fersen frei, Füße hüftbreit.",
@@ -746,10 +649,10 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Fersen tief unter die Plattformkante absenken und die Dehnung unten ein bis zwei Sekunden halten; in dieser gedehnten Position reagiert die Wade am stärksten auf das Training.",
-      "Knie fast gestreckt und den Kniewinkel konstant halten, so arbeitet vor allem der zweigelenkige Gastrocnemius; das sitzende Wadenheben betont dagegen den Soleus.",
-      "Oben auf den Fußballen hochdrücken und kurz halten, dann langsam über zwei bis drei Sekunden absenken, nicht federn.",
-      "Oberkörper aufrecht und ruhig halten, kein Mitschwingen aus Hüfte oder Knie."
+      "Die gedehnte Position unten ist der wichtigste Teil: Fersen tief absenken und dort eine Sekunde halten, bevor es hochgeht.",
+      "Oben kurz auf die Zehenspitzen, nicht federn; das Springen aus der Achillessehne bringt dem Muskel nichts.",
+      "Stehend und sitzend trainieren unterschiedliche Muskeln, beide Varianten einplanen.",
+      "10 bis 20 Wiederholungen, 2 bis 3 Sekunden absenken, Waden vertragen hohe Frequenz."
     ],
     "requirements": [
       "Stehende Wadenmaschine mit Schulterpolstern; alternativ Multipresse mit Stufe oder Kurzhanteln in den Händen auf einer Stufe",
@@ -758,68 +661,155 @@
     "grip_alternatives": [],
     "image_url": "/exercises/standing-calf-raise.jpg",
     "machine_name": "DHZ Standing Calf Raise, Plate Loaded",
-    "alternative_exercises": [
-      "wadenheben-sitzend",
-      "wadenheben-hackenschmidt"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/wadenheben-stehend/wadenheben-maschine-stehend/"
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/wadenheben-stehend/wadenheben-maschine-stehend/",
+    "variants": [
+      {
+        "name": "Stehend (Gastrocnemius)",
+        "description": "Knie gestreckt, Fersen tief absenken, bis die Wade deutlich dehnt, dann hoch auf die Zehenspitzen. An der Standmaschine oder mit Kurzhanteln auf einer Stufe.",
+        "source_url": "https://modusx.de/fitness-uebungen/wadenheben-stehend/wadenheben-maschine-stehend/"
+      },
+      {
+        "name": "Sitzend (Soleus)",
+        "description": "Knie 90° gebeugt, Polster auf den Oberschenkeln. Der Gastrocnemius ist entspannt, der Soleus übernimmt.",
+        "source_url": "https://modusx.de/fitness-uebungen/wadenheben-sitzend/wadenheben-maschine-sitzend/"
+      },
+      {
+        "name": "An der Hackenschmidt oder Beinpresse",
+        "description": "Fußballen auf der Plattenkante, Beine fast gestreckt. Ersetzt die Standmaschine bei gestrecktem Knie.",
+        "source_url": "https://modusx.de/fitness-uebungen/wadenheben-hackenschmidt-maschine/"
+      }
+    ]
   },
   {
-    "slug": "wadenheben-sitzend",
-    "name": "Wadenheben sitzend",
-    "category": "calves",
-    "equipment": "machine",
+    "slug": "kurzhantel-kniebeuge",
+    "name": "Kurzhantel Kniebeuge (Goblet Squat)",
+    "category": "quads",
+    "equipment": "dumbbell",
     "grip_id": null,
-    "grip_notes": "Haltegriffe am Oberschenkelpolster fassen, um das Polster zu sichern und den Oberkörper stabil zu halten. Hände bleiben locker, keine Zugarbeit.",
+    "grip_notes": null,
     "primary_muscles": [
-      "calves"
+      "quads",
+      "glutes"
     ],
-    "secondary_muscles": [],
-    "description": "Plantarflexion im Sitzen gegen Widerstand mit gebeugten Knien, bei der vor allem der Soleus belastet wird, weil der Gastrocnemius durch die Kniebeugung entlastet ist. Sinnvolle Ergänzung zum stehenden Wadenheben.",
+    "secondary_muscles": [
+      "adductors",
+      "abs"
+    ],
+    "description": "Kniebeuge mit einer Kurzhantel vor der Brust. Die Last vorne hält den Oberkörper aufrecht und erlaubt eine tiefe, saubere Beuge; die beste freie Kniebeuge zum Lernen und für das Aufwärmen.",
     "setup": [
-      "Polster so einstellen, dass es fest auf dem unteren Oberschenkel knapp oberhalb der Knie aufliegt.",
-      "Fußballen auf die Kante der Plattform stellen, Fersen frei, Füße hüftbreit.",
-      "Knie etwa im rechten Winkel, Oberkörper aufrecht.",
-      "Haltegriffe fassen und die Sicherung der Maschine lösen.",
-      "Fersen kontrolliert absenken, um die Startposition in der Dehnung einzunehmen.",
-      "Ohne Maschine: Auf Flachbank oder Hocker setzen, Fußballen auf die Kante einer Stufe oder Hantelscheibe stellen, Fersen tief, Kurzhanteln oder Langhantel mit Polster auf den Oberschenkeln nahe den Knien ablegen."
+      "Kurzhantel senkrecht mit beiden Händen unter der oberen Scheibe vor der Brust halten.",
+      "Füße etwas weiter als schulterbreit, Zehen leicht nach außen.",
+      "Ellenbogen zeigen nach unten, Brust raus, Rumpf fest."
     ],
     "execution": [
-      "Fersen so hoch wie möglich anheben, auf die Fußballen drücken.",
-      "In der oberen Position ein bis zwei Sekunden halten.",
-      "Fersen langsam absenken, bis eine deutliche Dehnung in der Wade spürbar ist.",
-      "Unten kurz halten, ohne zu federn.",
-      "Nächste Wiederholung ohne Schwung beginnen.",
-      "Bei der Hantelvariante die Last mit den Händen auf den Oberschenkeln nahe den Knien sichern und die Fersen unten bewusst tief unter die Kante absenken."
+      "Hüfte und Knie gleichzeitig beugen, tief absitzen.",
+      "Knie in Richtung der Fußspitzen, Ellenbogen zwischen den Knien.",
+      "So tief, wie der Rücken gerade bleibt, ideal unter die Waagerechte.",
+      "Unten kurz halten, dann über den ganzen Fuß hochdrücken.",
+      "Oben nicht komplett strecken."
     ],
-    "range_of_motion": "Volle Dehnung unten bis zum höchsten Punkt auf den Fußballen. Der Kniewinkel bleibt während der gesamten Bewegung gleich, damit der Soleus gezielt arbeitet.",
-    "breathing": "Beim Anheben der Fersen ausatmen, beim Absenken einatmen.",
+    "range_of_motion": "So tief wie möglich mit geradem Rücken, Fersen bleiben am Boden.",
+    "breathing": "Beim Absenken (Dehnung) einatmen, beim Drücken oder Ziehen ausatmen.",
     "common_mistakes": [
-      "Bewegung wird federnd und mit Schwung aus der Dehnung ausgeführt.",
-      "Bewegungsradius ist zu klein, keine Dehnung unten.",
-      "Polster liegt zu weit oben auf dem Oberschenkel, Hebel wird ungünstig.",
-      "Oberkörper wird nach vorne gebeugt, um mit dem Rücken mitzuhelfen."
+      "Fersen heben sich ab.",
+      "Knie fallen nach innen.",
+      "Oberkörper kippt nach vorne.",
+      "Zu flach beugen."
     ],
     "tips": [
-      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
-      "Höhere Wiederholungszahlen (12 bis 20) mit vollem Bewegungsradius sind hier sinnvoll.",
-      "Mit stehendem Wadenheben kombinieren, um Gastrocnemius und Soleus gemeinsam zu trainieren."
+      "Hantel ist zu schwer, wenn die Ellenbogen nicht mehr unten bleiben.",
+      "10 bis 15 Wiederholungen.",
+      "Ideal vor schweren Beinübungen oder an Tagen ohne Rack."
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Fersen tief absenken und die Dehnung unten ein bis zwei Sekunden halten; die gedehnte Position ist der wirksamste Teil der Bewegung.",
-      "Knie etwa im rechten Winkel halten; durch die Kniebeugung ist der Gastrocnemius entlastet und der Soleus übernimmt die Arbeit.",
-      "Last nahe an den Knien auf den Oberschenkeln, oben auf den Fußballen hochdrücken und kurz halten, Absenken über zwei bis drei Sekunden kontrollieren.",
-      "Oberkörper ruhig lassen, nicht mit dem Rücken oder durch Federn mithelfen."
+      "Tiefe ist der Reiz: der Quadrizeps arbeitet unterhalb der Waagerechten in Dehnung.",
+      "Die Last vorne zwingt zur aufrechten Haltung, so bleibt der untere Rücken entlastet.",
+      "Kontrolliert absenken, unten eine Sekunde halten, kein Federn."
     ],
     "requirements": [
-      "Sitzende Wadenmaschine; alternativ Flachbank oder Hocker, Kurzhanteln auf den Knien oder Langhantel mit Polster auf den Oberschenkeln, Stufe oder Hantelscheibe unter den Fußballen"
+      "Eine Kurzhantel oder Kettlebell"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": [
-      "wadenheben-stehend",
-      "wadenheben-hackenschmidt"
+    "variants": [
+      {
+        "name": "Goblet (Standard)",
+        "description": "Hantel vor der Brust."
+      },
+      {
+        "name": "Zwei Kurzhanteln seitlich",
+        "description": "Mehr Gewicht möglich, weniger Hilfe für die Haltung."
+      }
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/wadenheben-sitzend/wadenheben-maschine-sitzend/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-kniebeuge/",
+    "alternative_exercises": []
+  },
+  {
+    "slug": "kurzhantel-rumaenisches-kreuzheben",
+    "name": "Kurzhantel Rumänisches Kreuzheben",
+    "category": "hamstrings",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": null,
+    "primary_muscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "lower_back",
+      "forearms"
+    ],
+    "description": "Hüftbeugen mit fast gestreckten Beinen und zwei Kurzhanteln. Die wichtigste Übung für die Beinbeuger in gedehnter Position; mit Kurzhanteln bleibt die Last nah am Körper und der Griff ist einfacher als mit der Langhantel.",
+    "setup": [
+      "Stehend, Füße hüftbreit, Hanteln vor den Oberschenkeln.",
+      "Knie leicht gebeugt und in diesem Winkel fixiert.",
+      "Schultern hinten, Rücken gerade, Blick nach vorne-unten."
+    ],
+    "execution": [
+      "Hüfte nach hinten schieben, Oberkörper neigt sich, Hanteln gleiten eng an den Beinen nach unten.",
+      "Bis die Beinbeuger deutlich dehnen, meist etwa Mitte Schienbein.",
+      "Rücken bleibt gerade, Knie bleiben leicht gebeugt.",
+      "Mit der Hüfte nach vorne wieder aufrichten.",
+      "Oben Gesäß anspannen, nicht ins Hohlkreuz."
+    ],
+    "range_of_motion": "So tief, wie der Rücken gerade bleibt und die Dehnung in den Beinbeugern spürbar ist.",
+    "breathing": "Beim Absenken (Dehnung) einatmen, beim Drücken oder Ziehen ausatmen.",
+    "common_mistakes": [
+      "Rücken rund werden lassen.",
+      "Knie stark beugen und daraus eine Kniebeuge machen.",
+      "Hanteln vom Körper weg führen.",
+      "Oben überstrecken."
+    ],
+    "tips": [
+      "Griff hält? Sonst Zughilfen, der Griff darf nicht der limitierende Faktor sein.",
+      "8 bis 12 Wiederholungen, 3 Sekunden absenken.",
+      "Perfekte Ergänzung zum Beinbeuger an der Maschine."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Beinbeuger wachsen aus der gedehnten Position; die Tiefe kommt aus der Hüfte, nicht aus dem Rücken.",
+      "Hanteln eng am Bein halten, dann bleibt der Hebel klein und der Rücken sicher.",
+      "Langsame Exzentrik, unten eine Sekunde halten."
+    ],
+    "requirements": [
+      "Zwei Kurzhanteln",
+      "Optional Zughilfen"
+    ],
+    "grip_alternatives": [],
+    "variants": [
+      {
+        "name": "Beidbeinig (Standard)",
+        "description": "Klassische Ausführung.",
+        "source_url": "https://modusx.de/fitness-uebungen/kurzhantel-kreuzheben/rumaenisches-kreuzheben-mit-kurzhanteln/"
+      },
+      {
+        "name": "Einbeinig",
+        "description": "Mehr Gleichgewicht, stärkere Gesäßbeteiligung.",
+        "source_url": "https://modusx.de/fitness-uebungen/einbeiniges-kreuzheben/einbeiniges-kreuzheben-mit-kurzhanteln/"
+      }
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-kreuzheben/rumaenisches-kreuzheben-mit-kurzhanteln/",
+    "alternative_exercises": []
   }
 ]

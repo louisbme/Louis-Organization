@@ -74,6 +74,13 @@ export type CableSetup = {
   return: string;
 };
 
+/** Ausführungsvariante derselben Übung (z. B. stehend/sitzend, Stange/Seil) */
+export type ExerciseVariant = {
+  name: string;
+  description: string;
+  source_url?: string | null;
+};
+
 type Timestamps = { created_at: string; updated_at: string };
 
 export type ProfileRow = Timestamps & {
@@ -137,6 +144,8 @@ export type ExerciseRow = Timestamps & {
   bodyweight_factor: number;
   /** Seite, von der die Ausführungs-Animation stammt (wird verlinkt, nicht eingebettet) */
   animation_source_url: string | null;
+  /** Varianten der Übung */
+  variants: ExerciseVariant[];
   is_custom: boolean;
   owner_id: string | null;
 };
@@ -327,6 +336,7 @@ export type Database = {
           | "tracking_mode"
           | "bodyweight_factor"
           | "animation_source_url"
+          | "variants"
           | "is_custom"
           | "owner_id"
           | "created_at"
@@ -471,6 +481,7 @@ export type Database = {
       admin_set_nickname: { Args: { p_user_id: string; p_nickname: string }; Returns: undefined };
       recalc_session_totals: { Args: { p_session_id: string }; Returns: undefined };
       promote_custom_exercises: { Args: Record<string, never>; Returns: number };
+      merge_exercise: { Args: { p_from: string; p_to: string }; Returns: number };
       get_member_plans: { Args: { p_user_id: string }; Returns: MemberPlan[] };
       copy_member_plan: { Args: { p_plan_id: string; p_name?: string | null }; Returns: string };
       get_member_sessions: {

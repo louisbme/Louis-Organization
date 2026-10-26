@@ -4,6 +4,7 @@ import type {
   EquipmentType,
   ExerciseCategory,
   ExerciseRow,
+  ExerciseVariant,
   GripRow,
   MuscleRole,
   TrackingMode,
@@ -172,6 +173,7 @@ function toDetail(raw: ExerciseDetailRaw, isFavorite: boolean, alternatives: Gri
     ...rest,
     tracking_mode: trackingModeOf(rest),
     bodyweight_factor: rest.bodyweight_factor === null || rest.bodyweight_factor === undefined ? 1 : Number(rest.bodyweight_factor),
+    variants: Array.isArray(rest.variants) ? rest.variants : [],
     ...splitMuscles(exercise_muscles),
     grip: grips ?? null,
     alternative_grips: alternatives,
@@ -211,6 +213,8 @@ export interface CustomExerciseInput {
   requirements: string[];
   /** Anteil des Körpergewichts bei Körpergewichtsübungen (1 = 100 %) */
   bodyweight_factor: number;
+  /** Ausführungsvarianten */
+  variants: ExerciseVariant[];
 }
 
 export function slugify(name: string): string {
@@ -252,6 +256,7 @@ export async function createCustomExercise(db: DbClient, userId: string, input: 
       muscle_focus: input.muscle_focus,
       requirements: input.requirements,
       bodyweight_factor: input.bodyweight_factor,
+      variants: input.variants,
       is_custom: true,
       owner_id: userId,
     })
@@ -282,6 +287,7 @@ export async function updateCustomExercise(db: DbClient, id: string, input: Cust
       muscle_focus: input.muscle_focus,
       requirements: input.requirements,
       bodyweight_factor: input.bodyweight_factor,
+      variants: input.variants,
     })
     .eq("id", id);
   if (error) throw error;

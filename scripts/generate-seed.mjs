@@ -20,7 +20,7 @@ const EQUIPMENT = ["machine", "cable", "barbell", "dumbbell", "bodyweight", "smi
 const GRIPS = ["neutral_parallel", "wide_lat_bar", "close_v_grip", "rope", "single_handle", "strap_handle", "straight_bar", "ez_bar", "v_bar_triceps", "ankle_strap"];
 const MUSCLES = ["chest", "upper_chest", "front_delts", "side_delts", "rear_delts", "traps", "lats", "upper_back", "mid_back", "lower_back", "biceps", "triceps", "forearms", "abs", "obliques", "quads", "hamstrings", "glutes", "calves", "adductors", "abductors"];
 const REQUIRED = ["slug", "name", "category", "equipment", "grip_id", "grip_notes", "primary_muscles", "secondary_muscles", "description", "setup", "execution", "range_of_motion", "breathing", "common_mistakes", "tips", "cable_setup", "muscle_focus", "requirements", "grip_alternatives"];
-const OPTIONAL = ["image_url", "animation_url", "machine_name", "alternative_exercises", "bodyweight_factor", "animation_source_url"];
+const OPTIONAL = ["image_url", "animation_url", "machine_name", "alternative_exercises", "bodyweight_factor", "animation_source_url", "variants"];
 const CABLE_FIELDS = ["cable", "height", "grip_width", "body_position", "foot_position", "movement_direction", "elbow_position", "end_position", "return"];
 
 const errors = [];
@@ -54,6 +54,14 @@ for (const file of readdirSync(exercisesDir).filter((f) => f.endsWith(".json")).
     }
     if (ex.image_url !== undefined && ex.image_url !== null && !/^(\/|https?:\/\/)/.test(ex.image_url)) errors.push(`${ctx}: image_url muss mit / oder http beginnen`);
     if (ex.animation_source_url !== undefined && ex.animation_source_url !== null && !/^https:\/\//.test(ex.animation_source_url)) errors.push(`${ctx}: animation_source_url muss mit https:// beginnen`);
+    if (ex.variants !== undefined) {
+      if (!Array.isArray(ex.variants)) errors.push(`${ctx}: variants muss ein Array sein`);
+      else for (const v of ex.variants) {
+        if (!v || typeof v.name !== "string" || !v.name || typeof v.description !== "string" || !v.description) errors.push(`${ctx}: Variante braucht name und description`);
+        if (v.source_url !== undefined && v.source_url !== null && !/^https:\/\//.test(v.source_url)) errors.push(`${ctx}: Varianten-Link muss mit https:// beginnen`);
+        for (const key of Object.keys(v)) if (!["name", "description", "source_url"].includes(key)) errors.push(`${ctx}: unbekanntes Variantenfeld "${key}"`);
+      }
+    }
     if (ex.bodyweight_factor !== undefined) {
       if (ex.equipment !== "bodyweight") errors.push(`${ctx}: bodyweight_factor nur bei Körpergewichtsübungen`);
       if (typeof ex.bodyweight_factor !== "number" || ex.bodyweight_factor < 0 || ex.bodyweight_factor > 2) errors.push(`${ctx}: bodyweight_factor muss zwischen 0 und 2 liegen`);

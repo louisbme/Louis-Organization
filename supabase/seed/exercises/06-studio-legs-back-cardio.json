@@ -1,205 +1,7 @@
 [
   {
-    "slug": "latzug-hebel",
-    "name": "Latzug Hebel",
-    "category": "back",
-    "equipment": "machine",
-    "grip_id": null,
-    "grip_notes": "Pronierte oder neutrale Griffe an den Hebelarmen, je nach gewählter Griffposition. Beide Hebelarme sind unabhängig, daher beide Seiten gleichmäßig ziehen. Handgelenke gerade halten.",
-    "primary_muscles": [
-      "lats"
-    ],
-    "secondary_muscles": [
-      "biceps",
-      "upper_back",
-      "forearms",
-      "rear_delts"
-    ],
-    "description": "Scheibenbeladener Iso-Lateral-Latzug mit zwei unabhängigen Hebelarmen, die den Zug in einer festen Bahn führen. Vertikale Zugübung für den Latissimus, die sich auch einseitig ausführen lässt.",
-    "setup": [
-      "Gewichtsscheiben auf beiden Hebelarmen gleich beladen und sichern.",
-      "Oberschenkelpolster so einstellen, dass die Beine fest fixiert sind.",
-      "Hinsetzen, Füße flach auf den Boden, Oberschenkel unter das Polster bringen.",
-      "Griffe fassen, Arme gestreckt, Oberkörper aufrecht und leicht nach hinten geneigt.",
-      "Schultern vor der ersten Wiederholung bewusst nach unten ziehen."
-    ],
-    "execution": [
-      "Beide Hebelarme gleichzeitig nach unten ziehen, die Ellenbogen führen die Bewegung.",
-      "Schulterblätter nach unten und zusammen ziehen, Brust bleibt angehoben.",
-      "In der Endposition kurz halten, Griffe befinden sich etwa auf Höhe der oberen Brust.",
-      "Hebelarme langsam zurückführen, Arme kontrolliert strecken.",
-      "Oben die Schultern leicht nach oben kommen lassen, um den Lat zu dehnen.",
-      "Nächste Wiederholung ohne Schwung beginnen."
-    ],
-    "range_of_motion": "Von vollständig gestreckten Armen bis die Griffe etwa auf Höhe der oberen Brust sind. Der Bewegungsradius ist durch die Hebelbahn vorgegeben; die Scheiben sollen oben nicht aufsetzen.",
-    "breathing": "Beim Ziehen ausatmen, beim Zurückführen einatmen.",
-    "common_mistakes": [
-      "Oberkörper lehnt sich stark nach hinten und zieht mit Schwung.",
-      "Schultern bleiben während des Zugs am Ohr.",
-      "Beide Hebelarme werden ungleich beladen oder ungleich schnell bewegt.",
-      "Gewicht fällt nach oben zurück, keine Kontrolle in der exzentrischen Phase.",
-      "Griffe werden mit den Armen statt mit den Ellenbogen geführt."
-    ],
-    "tips": [
-      "Exzentrische Phase bewusst zwei bis drei Sekunden lang ausführen.",
-      "Einseitige Ausführung nutzen, um Unterschiede zwischen beiden Seiten auszugleichen.",
-      "Scheiben auf beiden Seiten in kleinen Schritten erhöhen, erst wenn alle Sätze sauber sind.",
-      "Daumen auf die Griffe legen statt zu umschließen, um weniger mit den Unterarmen zu arbeiten."
-    ],
-    "cable_setup": null,
-    "muscle_focus": [
-      "Ellenbogen zur Hüfte ziehen, nicht die Hände zur Brust; Schulterblätter nach unten und zusammen, Brust angehoben. So übernimmt der Latissimus statt des Bizeps.",
-      "Oben die Arme vollständig strecken und die Schultern leicht nach oben kommen lassen; die gedehnte Position ist der wirksamste Teil der Bewegung.",
-      "Exzentrik zwei bis drei Sekunden lang kontrollieren und die Scheiben oben nicht aufsetzen lassen.",
-      "Gewicht so wählen, dass der Latissimus den Satz begrenzt und der Oberkörper nicht mit Schwung nach hinten arbeitet."
-    ],
-    "requirements": [
-      "Scheibenbeladener Iso-Lateral-Latzug (Hebelmaschine) mit zwei unabhängigen Hebelarmen",
-      "Gewichtsscheiben und Scheibenverschlüsse",
-      "Einstellbares Oberschenkelpolster"
-    ],
-    "grip_alternatives": [],
-    "image_url": "/exercises/lat-pulldown-lever.jpg",
-    "machine_name": "DHZ Lat Pulldown, Plate Loaded",
-    "alternative_exercises": [
-      "neutraler-latzug",
-      "breiter-latzug"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/latziehen-zur-brust/klassische-latziehen-zur-brust/"
-  },
-  {
-    "slug": "rudern-hebel-breit",
-    "name": "Rudern Hebel breit",
-    "category": "back",
-    "equipment": "machine",
-    "grip_id": null,
-    "grip_notes": "Äußere Griffe der Hebelmaschine (breit, Handflächen nach unten oder leicht gedreht). Ellenbogen laufen weiter außen, dadurch mehr Betonung von oberem Rücken und hinterer Schulter.",
-    "primary_muscles": [
-      "upper_back",
-      "mid_back"
-    ],
-    "secondary_muscles": [
-      "lats",
-      "rear_delts",
-      "biceps",
-      "forearms"
-    ],
-    "description": "Rudern an der scheibenbeladenen Hebelmaschine mit Brustpolster, äußere (breite) Griffe. Betont oberen Rücken, hintere Schulter und mittleren Rücken; die Brust liegt am Polster, der Rumpf bleibt stabil.",
-    "setup": [
-      "Sitzhöhe so einstellen, dass die Brust mittig am Polster anliegt und die Griffe etwa auf Höhe der unteren Brust liegen.",
-      "Füße fest auf die Fußplatte stellen, leichte Beugung in den Knien.",
-      "Äußere Griffe fassen, Arme gestreckt, Schulterblätter nach vorne kommen lassen (Dehnung).",
-      "Brust bleibt während des gesamten Satzes am Polster."
-    ],
-    "execution": [
-      "Griffe nach hinten ziehen, Ellenbogen etwa 45 bis 60 Grad vom Körper weg führen.",
-      "Schulterblätter aktiv zusammenziehen, Brust bleibt am Polster.",
-      "In der Endposition kurz halten, Ellenbogen hinter der Körperlinie.",
-      "Gewicht langsam zurückführen, Arme vollständig strecken.",
-      "Schulterblätter am Ende nach vorne gleiten lassen, ohne den Rumpf vom Polster zu lösen.",
-      "Nächste Wiederholung ohne Schwung aus dem Rumpf beginnen."
-    ],
-    "range_of_motion": "Von vollständig gestreckten Armen mit nach vorne gleitenden Schulterblättern bis zu Ellenbogen hinter der Körperlinie und zusammengezogenen Schulterblättern.",
-    "breathing": "Beim Ziehen ausatmen, beim Zurückführen einatmen.",
-    "common_mistakes": [
-      "Brust löst sich vom Polster, der Zug kommt aus dem unteren Rücken.",
-      "Ellenbogen werden eng am Körper geführt, dann wird daraus die enge Variante.",
-      "Schultern ziehen zu den Ohren.",
-      "Gewicht fällt nach vorne zurück, keine Kontrolle in der Exzentrik."
-    ],
-    "tips": [
-      "Vorstellen, die Ellenbogen weit nach hinten-außen zu führen, nicht die Hände.",
-      "Exzentrik zwei bis drei Sekunden lang kontrollieren.",
-      "Die enge Variante an den inneren Griffen setzt mehr Reiz auf den Latissimus."
-    ],
-    "cable_setup": null,
-    "muscle_focus": [
-      "Breite Griffposition mit abgespreizten Ellenbogen verlagert die Arbeit auf oberen Rücken, Rhomboiden und hintere Schulter.",
-      "Volle Streckung mit nach vorne gleitenden Schulterblättern am Anfang jeder Wiederholung bringt die gedehnte Position, die für den Muskelaufbau besonders wirksam ist.",
-      "Am Ende die Schulterblätter bewusst zusammenziehen und kurz halten, ohne den Rumpf vom Polster zu lösen.",
-      "Gewicht so wählen, dass die Bewegung aus Rücken und Ellenbogen kommt und nicht aus dem Schwung des Oberkörpers."
-    ],
-    "requirements": [
-      "Scheibenbeladene Rudermaschine mit Brustpolster (Hebel), äußere Griffe",
-      "Hantelscheiben"
-    ],
-    "grip_alternatives": [],
-    "image_url": "/exercises/seated-row-lever.jpg",
-    "machine_name": "DHZ Low Row, Plate Loaded",
-    "alternative_exercises": [
-      "rudern-hebel-eng",
-      "breites-rudern"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/t-bar-rudern/t-bar-rudern-an-der-maschine/"
-  },
-  {
-    "slug": "rudern-hebel-eng",
-    "name": "Rudern Hebel eng",
-    "category": "back",
-    "equipment": "machine",
-    "grip_id": null,
-    "grip_notes": "Innere Griffe der Hebelmaschine (eng, neutral, Handflächen zueinander). Ellenbogen laufen nah am Körper, dadurch mehr Betonung des Latissimus.",
-    "primary_muscles": [
-      "lats",
-      "mid_back"
-    ],
-    "secondary_muscles": [
-      "biceps",
-      "rear_delts",
-      "forearms",
-      "upper_back"
-    ],
-    "description": "Rudern an der scheibenbeladenen Hebelmaschine mit Brustpolster, innere (enge, neutrale) Griffe. Betont den Latissimus und den mittleren Rücken; die Brust liegt am Polster, der Rumpf bleibt stabil.",
-    "setup": [
-      "Sitzhöhe so einstellen, dass die Brust mittig am Polster anliegt und die Griffe etwa auf Höhe des unteren Brustbeins liegen.",
-      "Füße fest auf die Fußplatte stellen, leichte Beugung in den Knien.",
-      "Innere Griffe neutral fassen, Arme gestreckt, Schulterblätter nach vorne kommen lassen (Dehnung).",
-      "Brust bleibt während des gesamten Satzes am Polster."
-    ],
-    "execution": [
-      "Griffe nach hinten ziehen, Ellenbogen nah am Körper in Richtung Hüfte führen.",
-      "Schulterblätter nach hinten-unten ziehen, Brust bleibt am Polster.",
-      "In der Endposition kurz halten, Ellenbogen hinter der Körperlinie.",
-      "Gewicht langsam zurückführen, Arme vollständig strecken.",
-      "Schulterblätter am Ende nach vorne gleiten lassen, Latissimus dehnen.",
-      "Nächste Wiederholung ohne Schwung aus dem Rumpf beginnen."
-    ],
-    "range_of_motion": "Von vollständig gestreckten Armen mit gedehntem Latissimus bis zu Ellenbogen hinter der Körperlinie und nach hinten-unten gezogenen Schulterblättern.",
-    "breathing": "Beim Ziehen ausatmen, beim Zurückführen einatmen.",
-    "common_mistakes": [
-      "Brust löst sich vom Polster, der Zug kommt aus dem unteren Rücken.",
-      "Ellenbogen weichen nach außen aus, dann wird daraus die breite Variante.",
-      "Schultern ziehen zu den Ohren.",
-      "Gewicht fällt nach vorne zurück, keine Kontrolle in der Exzentrik."
-    ],
-    "tips": [
-      "Vorstellen, die Ellenbogen in die Hosentaschen zu ziehen.",
-      "Exzentrik zwei bis drei Sekunden lang kontrollieren.",
-      "Die breite Variante an den äußeren Griffen setzt mehr Reiz auf oberen Rücken und hintere Schulter."
-    ],
-    "cable_setup": null,
-    "muscle_focus": [
-      "Enge, neutrale Griffposition mit körpernahen Ellenbogen verlagert die Arbeit auf den Latissimus.",
-      "Volle Streckung mit nach vorne gleitenden Schulterblättern am Anfang jeder Wiederholung bringt die gedehnte Position des Latissimus.",
-      "Am Ende die Ellenbogen hinter die Körperlinie bringen und die Schulterblätter nach hinten-unten ziehen, kurz halten.",
-      "Gewicht so wählen, dass die Bewegung aus Rücken und Ellenbogen kommt und nicht aus dem Schwung des Oberkörpers."
-    ],
-    "requirements": [
-      "Scheibenbeladene Rudermaschine mit Brustpolster (Hebel), innere neutrale Griffe",
-      "Hantelscheiben"
-    ],
-    "grip_alternatives": [],
-    "image_url": "/exercises/seated-row-lever.jpg",
-    "machine_name": "DHZ Low Row, Plate Loaded",
-    "alternative_exercises": [
-      "rudern-hebel-breit",
-      "enges-rudern"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/t-bar-rudern/t-bar-rudern-an-der-maschine/"
-  },
-  {
     "slug": "beinpresse-45-grad",
-    "name": "Beinpresse 45°",
+    "name": "Beinpresse",
     "category": "quads",
     "equipment": "machine",
     "grip_id": null,
@@ -211,7 +13,7 @@
     "secondary_muscles": [
       "hamstrings"
     ],
-    "description": "Scheibenbeladene Beinpresse, bei der der Schlitten auf einer 45-Grad-Schiene geführt wird. Grundübung für die Beine mit hoher Belastbarkeit, bei der kein Gleichgewicht gehalten werden muss.",
+    "description": "Schwere Grundübung für Quadrizeps und Gesäß an der 45°-Beinpresse. Die Fußposition steuert den Schwerpunkt: tief und eng für den Quadrizeps, hoch und breit für Gesäß und Beinbeuger. Die horizontale, sitzende Beinpresse ist dieselbe Bewegung mit kleinerem Weg.",
     "setup": [
       "Gewichtsscheiben beidseitig gleich beladen und sichern.",
       "Rückenlehne so einstellen, dass das Becken in der unteren Position am Polster bleibt.",
@@ -245,10 +47,10 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Tiefe nur so weit, wie das Becken am Polster bleibt; sobald es abrollt, verlagert sich die Last auf den unteren Rücken statt auf Oberschenkel und Gesäß.",
-      "Innerhalb dieser Grenze die volle Beugung bis 90 Grad oder etwas tiefer nutzen; die gedehnte Position der Oberschenkelvorderseite setzt den stärksten Reiz.",
-      "Die Fußposition steuert den Schwerpunkt: tief und schulterbreit für die Oberschenkelvorderseite, höher auf der Platte für Gesäß und hintere Oberschenkel.",
-      "Exzentrik zwei bis drei Sekunden lang kontrollieren, oben kurz vor der Kniestreckung stoppen und das Gewicht so wählen, dass die Beine den Satz begrenzen."
+      "Der Quadrizeps wächst am stärksten aus tiefer Kniebeugung: so weit absenken, wie der untere Rücken auf dem Polster bleibt.",
+      "Knie in Richtung der Fußspitzen führen, nicht nach innen; Fersen nicht abheben.",
+      "Oben nicht durchstrecken, die Knie bleiben leicht gebeugt, damit die Spannung bleibt.",
+      "8 bis 15 Wiederholungen, 2 bis 3 Sekunden absenken, Gewicht steigern, sobald alle Sätze das obere Ende erreichen."
     ],
     "requirements": [
       "Scheibenbeladene 45-Grad-Beinpresse mit Sicherheitsriegeln",
@@ -259,90 +61,48 @@
     "image_url": "/exercises/leg-press-45.jpg",
     "machine_name": "Leg Press 45°, Plate Loaded",
     "alternative_exercises": [
-      "beinpresse",
-      "hackenschmidt"
+      "hackenschmidt",
+      "kniebeuge"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/beinpresse-45-grad/"
-  },
-  {
-    "slug": "multipresse-kniebeuge",
-    "name": "Multipresse Kniebeuge",
-    "category": "quads",
-    "equipment": "smith_machine",
-    "grip_id": null,
-    "grip_notes": "Stange etwas breiter als schulterbreit mit pronierten Händen fassen, die Hände sichern die Stange auf dem oberen Rücken. Ellenbogen unter der Stange, Handgelenke gerade.",
-    "primary_muscles": [
-      "quads",
-      "glutes"
-    ],
-    "secondary_muscles": [
-      "hamstrings",
-      "abs"
-    ],
-    "description": "Kniebeuge an der geführten Stange der Multipresse, bei der die Stange in einer festen Bahn läuft. Geeignet, um die Beuge ohne Balanceanteil zu trainieren und die Bewegung mit Sicherheitsstopps abzusichern.",
-    "setup": [
-      "Sicherheitsstopps knapp unterhalb der tiefsten Position der Beuge einstellen.",
-      "Stange auf Höhe der oberen Brust einhängen, Scheiben beidseitig gleich beladen und sichern.",
-      "Unter die Stange treten und die Stange auf dem oberen Rücken ablegen, nicht auf dem Nacken.",
-      "Füße etwa schulterbreit und leicht vor der Stange aufstellen, Zehen leicht nach außen.",
-      "Stange durch Drehen aus den Haken lösen, Rumpf anspannen."
-    ],
-    "execution": [
-      "Hüfte und Knie gleichzeitig beugen und kontrolliert nach unten gehen.",
-      "Knie folgen der Richtung der Zehen.",
-      "Oberkörper bleibt aufrecht, Blick geradeaus.",
-      "Tiefe erreichen, bei der der untere Rücken neutral bleibt.",
-      "Über die ganze Fußsohle nach oben drücken, Fersen bleiben am Boden.",
-      "Oben kurz vor der vollen Kniestreckung stoppen.",
-      "Nach dem letzten Satz die Stange wieder in die Haken drehen."
-    ],
-    "range_of_motion": "Bis die Oberschenkel etwa parallel zum Boden sind oder so tief, wie der untere Rücken neutral bleibt. Oben nicht hart durchstrecken.",
-    "breathing": "Beim Absenken einatmen, beim Hochdrücken ausatmen.",
-    "common_mistakes": [
-      "Füße stehen direkt unter der Stange, dadurch kippt der Oberkörper nach vorne.",
-      "Knie fallen nach innen.",
-      "Unterer Rücken rundet sich in der tiefen Position.",
-      "Sicherheitsstopps werden nicht eingestellt.",
-      "Fersen heben beim Hochdrücken vom Boden ab."
-    ],
-    "tips": [
-      "Vor dem ersten Arbeitssatz mit leerer Stange prüfen, ob die Sicherheitsstopps passend eingestellt sind.",
-      "Exzentrische Phase etwa zwei Sekunden lang kontrollieren.",
-      "Füße weiter nach vorne stellen, um Gesäß und hintere Oberschenkel stärker einzubeziehen.",
-      "Gewicht erst erhöhen, wenn Tiefe und Technik in allen Sätzen gleich bleiben."
-    ],
-    "cable_setup": null,
-    "muscle_focus": [
-      "Füße leicht vor der Stange aufstellen, damit der Oberkörper aufrecht bleibt und die Last auf Oberschenkelvorderseite und Gesäß liegt.",
-      "So tief gehen, wie der untere Rücken neutral bleibt; die tiefe, gedehnte Position setzt den stärksten Reiz auf Oberschenkel und Gesäß.",
-      "Knie in Richtung der Zehen führen, Fersen am Boden, Exzentrik etwa zwei Sekunden lang kontrollieren; oben kurz vor der Kniestreckung stoppen.",
-      "Füße weiter vorne verschieben die Arbeit zu Gesäß und hinteren Oberschenkeln; Gewicht so wählen, dass die Beine den Satz begrenzen."
-    ],
-    "requirements": [
-      "Multipresse (Smith Machine) mit einstellbaren Sicherheitsstopps",
-      "Gewichtsscheiben und Scheibenverschlüsse"
-    ],
-    "grip_alternatives": [],
-    "image_url": "/exercises/smith-machine.jpg",
-    "machine_name": "Smith Machine (Multipresse)",
-    "alternative_exercises": [
-      "kniebeuge",
-      "hackenschmidt"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/multipresse-kniebeuge/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/beinpresse-45-grad/",
+    "variants": [
+      {
+        "name": "45° mit mittlerer Fußposition (Standard)",
+        "description": "Füße schulterbreit in der Plattenmitte, Knie tief beugen, Fersen bleiben auf der Platte.",
+        "source_url": "https://modusx.de/fitness-uebungen/beinpresse-45-grad/45-grad-beinpresse-mit-neutraler-fussstellung/"
+      },
+      {
+        "name": "Füße tief und eng",
+        "description": "Mehr Kniebeugung, Schwerpunkt Quadrizeps. Knie nicht nach innen fallen lassen.",
+        "source_url": "https://modusx.de/fitness-uebungen/beinpresse-45-grad/45-grad-beinpresse-mit-enger-fussstellung/"
+      },
+      {
+        "name": "Füße hoch und breit",
+        "description": "Mehr Hüftbeugung, Schwerpunkt Gesäß und Beinbeuger.",
+        "source_url": "https://modusx.de/fitness-uebungen/beinpresse-45-grad/45-grad-beinpresse-mit-breiter-fussstellung/"
+      },
+      {
+        "name": "Horizontale Beinpresse sitzend",
+        "description": "Gleiche Bewegung an der sitzenden Maschine mit Steckgewicht. Sitz so einstellen, dass die Knie in der Startposition tief gebeugt sind.",
+        "source_url": "https://modusx.de/fitness-uebungen/beinpresse-klassisch/beinpresse-mit-beiden-beinen/"
+      }
+    ]
   },
   {
     "slug": "adduktoren-maschine",
-    "name": "Adduktoren Maschine",
+    "name": "Ad-/Abduktoren Maschine",
     "category": "adductors",
     "equipment": "machine",
     "grip_id": null,
     "grip_notes": "Hände an den seitlichen Haltegriffen, um das Becken ruhig am Polster zu halten.",
     "primary_muscles": [
-      "adductors"
+      "adductors",
+      "abductors"
     ],
-    "secondary_muscles": [],
-    "description": "Steckgewichtmaschine, bei der die Beine gegen Polster an den Innenseiten der Oberschenkel zusammengeführt werden. Isolierte Übung für die Adduktoren.",
+    "secondary_muscles": [
+      "glutes"
+    ],
+    "description": "Eine Maschine, zwei Bewegungen: Beine gegen Widerstand schließen (Adduktion, Innenseite der Oberschenkel) oder öffnen (Abduktion, Gesäß seitlich). Beide Varianten gehören in ein vollständiges Beintraining und werden hier als eine Übung geführt.",
     "setup": [
       "Gewicht am Steckgewicht wählen.",
       "Hinsetzen, Rücken an die Lehne, Oberschenkel innen an die Polster legen.",
@@ -373,10 +133,10 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Startweite so wählen, dass die Innenseite der Oberschenkel spürbar gedehnt ist, aber kein Zug in der Leiste entsteht; die gedehnte Position ist der wirksamste Teil der Bewegung.",
-      "Beine kontrolliert zusammenführen, am Ende kurz anspannen und das Gewicht nicht aufsetzen lassen, damit die Spannung in der Dehnung erhalten bleibt.",
-      "Becken und Rücken bleiben am Polster; jedes Kippen nimmt den Adduktoren Last ab.",
-      "Exzentrik zwei bis drei Sekunden lang kontrollieren und das Gewicht so wählen, dass die Adduktoren den Satz begrenzen."
+      "Bei der Adduktion die Startposition weit öffnen: die Adduktoren wachsen am besten aus der gedehnten Position.",
+      "Bei der Abduktion die Endposition eine Sekunde halten und langsam zurück, das Gesäß seitlich arbeitet gegen den Widerstand auch beim Nachgeben.",
+      "Becken ruhig am Polster, kein Wippen mit dem Oberkörper.",
+      "12 bis 20 Wiederholungen je Variante, beide Varianten im selben Training sind sinnvoll."
     ],
     "requirements": [
       "Adduktoren-Maschine mit Steckgewichtsblock und Innenpolstern",
@@ -385,71 +145,20 @@
     "grip_alternatives": [],
     "image_url": "/exercises/adductor-machine.jpg",
     "machine_name": "DHZ Adductor, Steckgewicht",
-    "alternative_exercises": [
-      "abduktoren-maschine"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/adduktion-geraet/adduktion-am-geraet-im-sitzen/"
-  },
-  {
-    "slug": "abduktoren-maschine",
-    "name": "Abduktoren Maschine",
-    "category": "adductors",
-    "equipment": "machine",
-    "grip_id": null,
-    "grip_notes": "Hände an den seitlichen Haltegriffen, um das Becken ruhig am Polster zu halten.",
-    "primary_muscles": [
-      "abductors",
-      "glutes"
-    ],
-    "secondary_muscles": [],
-    "description": "Steckgewichtmaschine, bei der die Beine gegen Polster an den Außenseiten der Oberschenkel nach außen gedrückt werden. Isolierte Übung für die Abduktoren und die seitlichen Gesäßmuskeln.",
-    "setup": [
-      "Gewicht am Steckgewicht wählen.",
-      "Hinsetzen, Rücken an die Lehne, Oberschenkel außen an die Polster legen.",
-      "Polster über den Einstellhebel so stellen, dass die Beine in der Startposition geschlossen sind.",
-      "Füße auf die Fußstützen stellen, Hände an die Haltegriffe.",
-      "Becken und Rücken fest am Polster, Rumpf anspannen."
-    ],
-    "execution": [
-      "Beine kontrolliert gegen die Polster nach außen drücken.",
-      "So weit öffnen, wie das Becken ruhig am Polster bleibt.",
-      "In der Endposition kurz anspannen.",
-      "Beine langsam wieder zusammenführen.",
-      "Bewegung stoppen, bevor das Gewicht aufsetzt.",
-      "Nächste Wiederholung ohne Schwung beginnen."
-    ],
-    "range_of_motion": "Von geschlossenen Beinen bis zu einer Öffnung, bei der Becken und Rücken am Polster bleiben. Nicht mit Schwung in die Endposition gehen.",
-    "breathing": "Beim Öffnen ausatmen, beim Zusammenführen einatmen.",
-    "common_mistakes": [
-      "Oberkörper lehnt sich nach vorne oder das Becken kippt, um mehr Weite zu erreichen.",
-      "Beine schnellen nach außen und fallen danach zurück.",
-      "Gewicht setzt in der geschlossenen Position auf.",
-      "Füße verlieren den Kontakt zu den Fußstützen."
-    ],
-    "tips": [
-      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
-      "Leichte Vorneigung des Oberkörpers mit geradem Rücken verschiebt die Belastung stärker auf das Gesäß.",
-      "Moderate Gewichte und höhere Wiederholungszahlen sind hier sinnvoll.",
-      "Als Ergänzung zu Hip Thrust und Kniebeuge einsetzen."
-    ],
-    "cable_setup": null,
-    "muscle_focus": [
-      "Becken fest am Polster, Beine gegen die Außenpolster drücken; so arbeiten Abduktoren und seitliches Gesäß statt des unteren Rückens.",
-      "Leichte Vorneigung mit geradem Rücken verlagert die Last stärker auf das seitliche Gesäß (Gluteus medius); aufrechtes Sitzen betont die Abduktoren.",
-      "Bewegung über den vollen Radius bis zu der Öffnung, bei der das Becken ruhig bleibt; am Ende kurz anspannen und das Gewicht nicht aufsetzen lassen.",
-      "Exzentrik zwei bis drei Sekunden lang kontrollieren und das Gewicht so wählen, dass die Abduktoren den Satz begrenzen."
-    ],
-    "requirements": [
-      "Abduktoren-Maschine mit Steckgewichtsblock und Außenpolstern",
-      "Einstellhebel für die Startposition"
-    ],
-    "grip_alternatives": [],
-    "image_url": "/exercises/abductor-machine.jpg",
-    "machine_name": "DHZ Abductor, Steckgewicht",
-    "alternative_exercises": [
-      "adduktoren-maschine"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/abduktion-maschine/abduktion-an-der-abduktionsmaschine-klassisch/"
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/adduktion-geraet/adduktion-am-geraet-im-sitzen/",
+    "variants": [
+      {
+        "name": "Adduktion: Beine schließen",
+        "description": "Polster innen an den Knien, Beine weit öffnen (Dehnung), kontrolliert zusammenführen. Zielmuskel Adduktoren.",
+        "source_url": "https://modusx.de/fitness-uebungen/adduktion-geraet/adduktion-am-geraet-im-sitzen/"
+      },
+      {
+        "name": "Abduktion: Beine öffnen",
+        "description": "Polster außen, Beine gegen Widerstand öffnen. Zielmuskel Gluteus medius und minimus. Leicht nach vorne gelehnt trifft es das Gesäß stärker.",
+        "source_url": "https://modusx.de/fitness-uebungen/abduktion-maschine/abduktion-an-der-abduktionsmaschine-klassisch/"
+      }
+    ]
   },
   {
     "slug": "air-bike",
@@ -511,7 +220,8 @@
     "grip_alternatives": [],
     "image_url": "/exercises/air-bike.jpg",
     "machine_name": "USAEON Air Bike",
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "variants": []
   },
   {
     "slug": "rudergeraet",
@@ -575,7 +285,8 @@
     "grip_alternatives": [],
     "image_url": "/exercises/rowing-machine.jpg",
     "machine_name": "Rudergerät (Neolymp)",
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "variants": []
   },
   {
     "slug": "ski-erg",
@@ -637,7 +348,8 @@
     "grip_alternatives": [],
     "image_url": "/exercises/ski-erg.jpg",
     "machine_name": "Ski-Ergometer (Rogue)",
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "variants": []
   },
   {
     "slug": "laufband",
@@ -699,6 +411,7 @@
     "grip_alternatives": [],
     "image_url": "/exercises/treadmill.jpg",
     "machine_name": "USAEON Laufband",
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "variants": []
   }
 ]

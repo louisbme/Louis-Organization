@@ -14,7 +14,7 @@
       "triceps",
       "front_delts"
     ],
-    "description": "Geführte Druckbewegung in Schrägposition, die vor allem den oberen Anteil der Brust belastet. Gut geeignet als erste Druckübung im Oberkörpertraining.",
+    "description": "Geführtes Drücken in Schrägposition für die obere Brust. Egal welche der Schrägbankmaschinen im Studio frei ist: die Bewegung ist identisch, entscheidend sind Sitzhöhe und Ellenbogenführung.",
     "setup": [
       "Sitz so einstellen, dass die Griffe ungefähr auf Höhe der mittleren bis oberen Brust liegen.",
       "Rücken und Kopf vollständig an das Polster anlehnen.",
@@ -46,10 +46,10 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Griffe in der unteren Position bis auf Höhe der mittleren bis oberen Brust bringen, damit die obere Brust in der gedehnten Position arbeitet; dieser Bereich liefert nach aktuellem Stand einen hohen Trainingsreiz.",
-      "Schulterblätter während des gesamten Satzes nach hinten und unten am Polster halten, sonst übernimmt die vordere Schulter einen Großteil der Arbeit.",
-      "Ellenbogen etwa 45 bis 60 Grad vom Rumpf abgespreizt führen, nicht ganz seitlich und nicht am Körper anliegend.",
-      "Exzentrische Phase zwei bis drei Sekunden lang kontrollieren und oben kurz vor dem Durchstrecken stoppen, damit die Spannung in der Brust bleibt."
+      "Der obere Brustanteil arbeitet am meisten, wenn die Ellenbogen leicht unterhalb der Griffe bleiben und die Druckrichtung nach vorne-oben zeigt.",
+      "Griffe tief genug zurückführen, bis die obere Brust gedehnt ist; dort liegt der größte Wachstumsreiz.",
+      "Brust raus, Schulterblätter zurück. Wenn die Schulter nach vorne kommt, sinkt die Brustbeteiligung sofort.",
+      "6 bis 12 Wiederholungen, kontrollierte Exzentrik, Progression über Gewicht erst bei sauberer Technik in allen Sätzen."
     ],
     "requirements": [
       "Schrägbankdrück-Maschine mit verstellbarem Sitz (Hebel- oder Stapelmaschine)"
@@ -58,16 +58,29 @@
     "image_url": "/exercises/incline-press-plate.jpg",
     "machine_name": "DHZ Incline Chest Press, Plate Loaded",
     "alternative_exercises": [
-      "schraegbankdruecken-hebelmaschine",
-      "schraegbankdruecken-hebel-flex",
-      "schraegbankdruecken-hebel-liegend",
-      "schraegbankdruecken-langhantel"
+      "schraegbankdruecken-langhantel",
+      "kurzhantel-schraegbankdruecken",
+      "brustpresse"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-fuer-die-obere-brust-aufrecht-sitzend/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-fuer-die-obere-brust-aufrecht-sitzend/",
+    "variants": [
+      {
+        "name": "Plate-Loaded Hebelmaschine (Standard)",
+        "description": "Griffe auf Höhe der oberen Brust, Druckrichtung nach vorne-oben. Scheiben beidseitig gleich auflegen."
+      },
+      {
+        "name": "FLEX-Maschine (konvergierende Griffe)",
+        "description": "Die Griffe laufen beim Drücken zusammen. Mehr Kontraktion der oberen Brust am Ende der Bewegung."
+      },
+      {
+        "name": "Liegende Variante (Hebel über Kopf)",
+        "description": "Liegend auf der Schrägbank, Hebel kommt von oben. Rücken flach lassen, nicht ins Hohlkreuz drücken."
+      }
+    ]
   },
   {
     "slug": "brustpresse",
-    "name": "Brustpresse",
+    "name": "Brustpresse Maschine",
     "category": "chest",
     "equipment": "machine",
     "grip_id": null,
@@ -79,7 +92,7 @@
       "triceps",
       "front_delts"
     ],
-    "description": "Geführte horizontale Druckbewegung im Sitzen, die die gesamte Brustmuskulatur belastet. Geeignet als Grundübung für die Brust, wenn eine stabile Führung gewünscht ist.",
+    "description": "Geführtes Drücken für die mittlere Brust. Ob Steckgewicht, Hebel oder vertikale Griffe: die Bewegung ist dieselbe, deshalb ist das hier eine Übung mit Maschinenvarianten. Sitzhöhe und Griffe bestimmen, welcher Teil der Brust den Schwerpunkt bekommt.",
     "setup": [
       "Sitz so einstellen, dass die Griffe etwa auf Höhe der mittleren Brust liegen.",
       "Rücken und Kopf vollständig an das Polster anlehnen.",
@@ -112,10 +125,10 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Griffe so weit zurückführen, dass eine deutliche Dehnung in der Brust spürbar ist; der gedehnte Bereich liefert einen hohen Reiz, das Gewicht darf dabei nicht aufsetzen.",
-      "Schulterblätter nach hinten und unten am Polster fixieren und die Brust leicht anheben, damit die Bewegung aus der Brust und nicht aus der vorderen Schulter kommt.",
-      "Ellenbogen etwa 45 bis 60 Grad vom Rumpf abgespreizt halten; weit abgespreizte Ellenbogen belasten die Schulter, eng anliegende verlagern die Arbeit auf den Trizeps.",
-      "Beim Drücken kurz vor der Streckung stoppen und zwei bis drei Sekunden lang zurückführen, ohne mit Schwung aus der hinteren Position zu starten."
+      "Schulterblätter zusammenziehen und während des Drückens hinten lassen, dann drückt die Brust und nicht die vordere Schulter.",
+      "Griffe so weit zurückführen, dass die Brust gedehnt wird (Hände etwa auf Brusthöhe), aber ohne dass die Schulter nach vorne rollt.",
+      "Oben nicht vollständig strecken, damit die Spannung auf der Brust bleibt.",
+      "6 bis 12 Wiederholungen mit 2 bis 3 Sekunden Absenken; Gewicht erst erhöhen, wenn alle Sätze das obere Ende des Bereichs erreichen."
     ],
     "requirements": [
       "Brustpresse (Sitzmaschine) mit verstellbarem Sitz"
@@ -124,74 +137,29 @@
     "image_url": "/exercises/chest-press.jpg",
     "machine_name": "DHZ Chest Press, Steckgewicht",
     "alternative_exercises": [
-      "brustpresse-vertikal",
-      "brustpresse-hebel",
-      "brustpresse-hebel-sitzend",
-      "multi-press-maschine"
+      "schraegbankdruecken-maschine",
+      "bankdruecken-langhantel",
+      "kurzhantel-bankdruecken"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-mit-fokus-auf-die-mittlere-brust/"
-  },
-  {
-    "slug": "pec-deck",
-    "name": "Pec Deck",
-    "category": "chest",
-    "equipment": "machine",
-    "grip_id": null,
-    "grip_notes": "Unterarme liegen an den Polstern an, Hände halten die Griffe locker oder liegen flach auf. Nicht mit den Händen drücken, die Kraft kommt aus den Unterarmen und Ellenbogen.",
-    "primary_muscles": [
-      "chest"
-    ],
-    "secondary_muscles": [
-      "front_delts"
-    ],
-    "description": "Geführte Adduktionsbewegung an der Maschine mit Armpolstern, bei der die Brust ohne Belastung der Handgelenke isoliert wird. Geeignet als Isolationsübung nach den Druckübungen.",
-    "setup": [
-      "Sitz so einstellen, dass die Polster etwa auf Höhe der mittleren Brust liegen und die Oberarme waagerecht sind.",
-      "Rücken und Kopf an das Polster anlehnen, Füße flach auf den Boden stellen.",
-      "Unterarme an die Polster legen, Ellenbogen etwa 90 Grad gebeugt.",
-      "Schulterblätter nach hinten und unten ziehen, Brust leicht anheben.",
-      "Startposition so wählen, dass eine leichte Dehnung in der Brust spürbar ist."
-    ],
-    "execution": [
-      "Polster über die Ellenbogen kontrolliert vor dem Körper zusammenführen.",
-      "Vorstellen, die Ellenbogen zueinander zu bringen statt die Hände.",
-      "In der Endposition kurz halten und die Brust bewusst anspannen.",
-      "Polster langsam zurückführen, bis die Oberarme etwa in der Schulterlinie sind.",
-      "Schulterblätter bleiben während der gesamten Bewegung hinten.",
-      "Nächste Wiederholung ohne Schwung beginnen."
-    ],
-    "range_of_motion": "Von einer leichten Dehnung mit den Oberarmen etwa in der Schulterlinie bis zum Zusammenführen der Polster vor der Brust. Nicht weiter nach hinten öffnen, als die Schultern schmerzfrei zulassen.",
-    "breathing": "Beim Zusammenführen ausatmen, beim Öffnen einatmen.",
-    "common_mistakes": [
-      "Schultern rollen nach vorne, Schulterblätter lösen sich vom Polster.",
-      "Bewegung wird aus den Händen statt aus den Ellenbogen geführt.",
-      "Polster werden zu weit nach hinten geöffnet, Schulter wird überdehnt.",
-      "Gewicht fällt in der exzentrischen Phase unkontrolliert zurück.",
-      "Sitz zu niedrig, Ellenbogen liegen deutlich über der Schulterlinie."
-    ],
-    "tips": [
-      "Exzentrische Phase etwa zwei bis drei Sekunden lang ausführen.",
-      "In der Endposition eine Sekunde halten, um die Kontraktion zu betonen.",
-      "Leichtes bis mittleres Gewicht wählen, der Fokus liegt auf der Muskelspannung."
-    ],
-    "cable_setup": null,
-    "muscle_focus": [
-      "Startposition so wählen, dass die Oberarme etwa in der Schulterlinie sind und die Brust leicht gedehnt ist; dieser gedehnte Bereich trägt nach aktuellem Stand stark zum Muskelaufbau bei.",
-      "Druck über die Ellenbogen und Unterarme an die Polster geben, nicht über die Hände, und die Ellenbogen zueinander führen.",
-      "Schulterblätter nach hinten und unten halten und nicht nach vorne rollen, sonst übernimmt die vordere Schulter.",
-      "Zwei bis drei Sekunden lang öffnen, in der Endposition kurz halten und das Gewicht so wählen, dass die Brust und nicht die Schulter limitiert."
-    ],
-    "requirements": [
-      "Pec-Deck-Maschine mit Armpolstern und verstellbarem Sitz"
-    ],
-    "grip_alternatives": [],
-    "image_url": "/exercises/pec-deck-rear-delt.jpg",
-    "machine_name": "DHZ Pectoral Fly / Rear Delt, Steckgewicht",
-    "alternative_exercises": [
-      "butterfly",
-      "kabel-flys"
-    ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-an-maschine/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-mit-fokus-auf-die-mittlere-brust/",
+    "variants": [
+      {
+        "name": "Steckgewicht sitzend (Standard)",
+        "description": "Griffe auf Höhe der Brustmitte, Rücken am Polster, voller Weg bis knapp vor die Streckung."
+      },
+      {
+        "name": "Hebelmaschine / Iso-Lateral",
+        "description": "Jeder Arm bewegt sich einzeln. Gut für Seitenunterschiede und zum Ausgleichen; Gewicht pro Seite auflegen."
+      },
+      {
+        "name": "Vertikale Griffe (neutral)",
+        "description": "Handflächen zueinander. Schulterfreundlich, etwas mehr Trizeps, bei Schulterbeschwerden die bessere Wahl."
+      },
+      {
+        "name": "Multipresse",
+        "description": "Bankdrücken in der geführten Stange. Fühlt sich wie die Langhantel an, lässt sich aber ohne Spotter bis nahe ans Versagen trainieren."
+      }
+    ]
   },
   {
     "slug": "butterfly",
@@ -207,7 +175,7 @@
       "front_delts",
       "biceps"
     ],
-    "description": "Geführte Fly-Bewegung an der Maschine mit Handgriffen und fast gestreckten Armen, die die Brust über einen großen Bewegungsradius dehnt und kontrahiert. Geeignet als Isolationsübung für die Brust.",
+    "description": "Isolationsübung für die Brust an der Butterfly-Maschine (auch Pec Deck genannt, es ist dieselbe Maschine). Die Bewegung unter konstanter Spannung belastet die Brust besonders in der gedehnten Position, ideal als zweite Brustübung nach dem Drücken.",
     "setup": [
       "Sitz so einstellen, dass die Griffe etwa auf Höhe der mittleren Brust bis Schulter liegen.",
       "Rücken und Kopf an das Polster anlehnen, Füße flach auf den Boden stellen.",
@@ -239,10 +207,10 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Griffe so weit öffnen, dass die Hände etwa in der Schulterlinie sind und die Brust spürbar gedehnt wird; nicht weiter, als die Schulter zulässt.",
-      "Ellenbogenwinkel über die gesamte Bewegung konstant halten, damit die Arbeit aus der Schulteradduktion und nicht aus Drücken oder Armbeugen kommt.",
-      "Schulterblätter am Polster halten und die Brust angehoben lassen, sodass die Brust und nicht die vordere Schulter die Bewegung führt.",
-      "Exzentrische Phase zwei bis drei Sekunden lang kontrollieren und ein Gewicht wählen, bei dem die Brust limitiert."
+      "Die Brust wächst am stärksten aus der gedehnten Position: Arme weit öffnen, bis eine deutliche Dehnung spürbar ist, ohne dass die Schulter nach vorne kippt.",
+      "Ellenbogen leicht gebeugt lassen und während der gesamten Bewegung nicht verändern, sonst übernimmt der Trizeps.",
+      "Vorne nur kurz zusammendrücken, das Anspannen bringt wenig; die Zeit unter Spannung in der Dehnung bringt viel.",
+      "2 bis 3 Sekunden kontrolliert öffnen, dann zügig schließen. 8 bis 15 Wiederholungen bis 1 bis 2 Wiederholungen vor dem Muskelversagen."
     ],
     "requirements": [
       "Butterfly-Maschine mit Handgriffen und verstellbarem Sitz"
@@ -251,10 +219,24 @@
     "image_url": "/exercises/pec-deck-rear-delt.jpg",
     "machine_name": "DHZ Pectoral Fly / Rear Delt, Steckgewicht",
     "alternative_exercises": [
-      "pec-deck",
-      "kabel-flys"
+      "kabel-flys",
+      "kurzhantel-fliegende"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-an-maschine/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-an-maschine/",
+    "variants": [
+      {
+        "name": "Griffe mit gestreckten Armen",
+        "description": "Standard: Arme fast gestreckt, Ellenbogen leicht gebeugt und fixiert. Größter Hebel, stärkste Dehnung der Brust."
+      },
+      {
+        "name": "Griffe auf Brusthöhe",
+        "description": "Sitz so einstellen, dass die Griffe genau auf Höhe der Brustmitte liegen. Zu hoch belastet die vordere Schulter, zu tief verschiebt die Last nach unten."
+      },
+      {
+        "name": "Teilwiederholungen in der Dehnung",
+        "description": "Am Satzende die unteren zwei Drittel der Bewegung wiederholen, wenn die volle Bewegung nicht mehr geht. Die gedehnte Position ist für das Wachstum am wertvollsten."
+      }
+    ]
   },
   {
     "slug": "kabel-flys",
@@ -269,7 +251,7 @@
     "secondary_muscles": [
       "front_delts"
     ],
-    "description": "Fly-Bewegung am Doppelkabelzug mit Rollen auf Schulter- bis Brusthöhe, die die Brust horizontal mit konstanter Spannung belastet. Geeignet als Isolationsübung mit gleichmäßigem Widerstand über den gesamten Bewegungsradius.",
+    "description": "Fliegende am Kabelturm. Die Rollenhöhe bestimmt, welcher Anteil der Brust den Schwerpunkt bekommt: Rollen oben für die untere, auf Brusthöhe für die mittlere, unten für die obere Brust. Eine Übung, drei Einstellungen.",
     "setup": [
       "Beide Rollen des Doppelkabelzugs auf Schulter- bis Brusthöhe einstellen und Einzelgriffe einhängen.",
       "Einen Griff nach dem anderen fassen und einen Schritt nach vorne in die Mitte gehen.",
@@ -312,10 +294,10 @@
       "return": "Langsam und kontrolliert, bis die Hände etwa in der Schulterlinie sind und eine leichte Dehnung spürbar ist"
     },
     "muscle_focus": [
-      "Rollen auf Schulterhöhe stellen, sodass die Zugrichtung waagerecht durch die mittlere Brust läuft; so bleibt die Spannung auch in der gedehnten Position hoch.",
-      "Hände beim Öffnen bis in die Schulterlinie zurückführen und dort kurz halten; der gedehnte Bereich liefert einen hohen Reiz, die Position aber nicht erzwingen.",
-      "Ellenbogenwinkel konstant lassen und Schulterblätter nach hinten und unten halten, sonst wird die Übung zum Drücken und die vordere Schulter übernimmt.",
-      "Zwei bis drei Sekunden lang zurückführen, Oberkörper ruhig lassen und das Gewicht so wählen, dass die Brust und nicht der Rumpf limitiert."
+      "Das Kabel hält die Spannung über den gesamten Weg, besonders in der Dehnung. Arme weit öffnen, Ellenbogen leicht gebeugt und fixiert.",
+      "Schritt nach vorne, Oberkörper leicht geneigt, Schulterblätter hinten: so zieht die Brust und nicht die vordere Schulter.",
+      "Vorne die Hände nur kurz zusammenführen, die wertvolle Arbeit passiert beim langsamen Öffnen.",
+      "10 bis 15 Wiederholungen, 2 bis 3 Sekunden Exzentrik, bis 1 bis 2 Wiederholungen vor dem Versagen."
     ],
     "requirements": [
       "Kabelturm mit zwei Säulen (Doppelkabelzug) und verstellbaren Rollen",
@@ -324,159 +306,30 @@
     "grip_alternatives": [
       "strap_handle"
     ],
-    "alternative_exercises": [],
+    "alternative_exercises": [
+      "butterfly",
+      "kurzhantel-fliegende"
+    ],
     "image_url": "/exercises/cable-tower.jpg",
     "machine_name": "Kabelturm (Multistation)",
-    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-zur-mitte-fuer-die-mittlere-brust/"
-  },
-  {
-    "slug": "kabel-flys-von-unten",
-    "name": "Kabel-Flys von unten",
-    "category": "chest",
-    "equipment": "cable",
-    "grip_id": "single_handle",
-    "grip_notes": "Einzelgriffe in beiden Händen, neutraler Griff (Handflächen zeigen zueinander bzw. nach oben). Alternativ Handschlaufen oder ohne Griff direkt am Kabelende.",
-    "primary_muscles": [
-      "upper_chest",
-      "chest"
-    ],
-    "secondary_muscles": [
-      "front_delts"
-    ],
-    "description": "Fly-Bewegung am Doppelkabelzug mit Rollen in der unteren Position, bei der die Arme von unten nach oben-vorne zusammengeführt werden. Belastet vor allem den oberen Anteil der Brust.",
-    "setup": [
-      "Beide Rollen des Doppelkabelzugs in die unterste Position bringen und Einzelgriffe einhängen.",
-      "Griffe fassen und einen Schritt nach vorne in die Mitte gehen.",
-      "Schrittstellung einnehmen, Rumpf anspannen, Oberkörper aufrecht oder leicht nach vorne geneigt.",
-      "Arme seitlich-unten mit leichter Ellenbogenbeuge halten, Handflächen zeigen nach vorne-oben.",
-      "Schulterblätter nach hinten und unten ziehen, Brust leicht anheben."
-    ],
-    "execution": [
-      "Griffe in einem Bogen von unten nach oben-vorne zusammenführen.",
-      "Ellenbogenwinkel während der gesamten Bewegung konstant halten.",
-      "In der Endposition die Hände etwa auf Höhe der oberen Brust bis Kinn zusammenbringen.",
-      "Obere Brust kurz bewusst anspannen.",
-      "Griffe langsam und kontrolliert nach unten-außen zurückführen.",
-      "Oberkörper bleibt stabil, kein Mitschwingen aus dem Rumpf.",
-      "Nächste Wiederholung ohne Schwung beginnen."
-    ],
-    "range_of_motion": "Von den seitlich-unten gehaltenen Armen bis die Hände vor der oberen Brust zusammenkommen. Nicht über die Schulterhöhe hinaus führen, um die Schultern nicht unnötig zu belasten.",
-    "breathing": "Beim Zusammenführen nach oben ausatmen, beim Zurückführen einatmen.",
-    "common_mistakes": [
-      "Schultern ziehen beim Anheben nach oben zum Ohr.",
-      "Bewegung wird zum Frontheben, Ellenbogen stark gebeugt und Arme vor dem Körper angehoben.",
-      "Oberkörper lehnt sich nach hinten, um das Gewicht zu bewegen.",
-      "Hände werden in der Endposition deutlich über die Schulter geführt.",
-      "Gewicht zieht die Arme unkontrolliert nach unten zurück."
-    ],
-    "tips": [
-      "Leichtes Gewicht wählen und in der Endposition eine Sekunde halten.",
-      "Vorstellen, die Oberarme zueinander zu führen, nicht die Hände nach oben zu heben.",
-      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren."
-    ],
-    "cable_setup": {
-      "cable": "Kabelturm mit zwei Säulen (Doppelkabelzug / Cable Crossover)",
-      "height": "ganz unten, damit die Zugrichtung von unten-außen nach oben-innen entlang der Fasern der oberen Brust verläuft",
-      "grip_width": "Einzelgriffe, neutraler Griff, Hände starten seitlich-unten neben den Hüften",
-      "body_position": "Stehend in der Mitte zwischen den Säulen, Oberkörper aufrecht bis leicht nach vorne geneigt, Rumpf angespannt, Schulterblätter hinten und unten",
-      "foot_position": "Schrittstellung, Knie leicht gebeugt, Gewicht gleichmäßig verteilt",
-      "movement_direction": "Von unten-außen in einem Bogen nach oben-vorne vor die obere Brust",
-      "elbow_position": "Leicht gebeugt, Winkel bleibt konstant, Ellenbogen zeigen leicht nach außen-unten",
-      "end_position": "Hände vor der oberen Brust bis Kinnhöhe zusammengeführt, obere Brust angespannt, Schultern unten",
-      "return": "Langsam und kontrolliert nach unten-außen bis zur Startposition neben den Hüften"
-    },
-    "muscle_focus": [
-      "Rollen ganz unten, sodass die Zugrichtung von unten-außen nach oben-innen entlang der Fasern der oberen Brust verläuft.",
-      "Startposition mit Händen seitlich neben den Hüften und leichter Dehnung einnehmen; aus dieser gedehnten Position kommt ein hoher Reiz für die obere Brust.",
-      "Oberarme in einem Bogen zueinander führen und die Ellenbogenbeuge konstant halten, sonst wird die Übung zum Frontheben für die vordere Schulter.",
-      "Schultern unten halten, Endposition auf Höhe der oberen Brust kurz halten und zwei bis drei Sekunden lang nach unten-außen zurückführen."
-    ],
-    "requirements": [
-      "Kabelturm mit zwei Säulen (Doppelkabelzug) und verstellbaren Rollen",
-      "Zwei Einzelgriffe (D-Griffe)"
-    ],
-    "grip_alternatives": [
-      "strap_handle"
-    ],
-    "alternative_exercises": [],
-    "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)",
-    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-nach-oben-fuer-die-obere-brust/"
-  },
-  {
-    "slug": "kabel-flys-von-oben",
-    "name": "Kabel-Flys von oben",
-    "category": "chest",
-    "equipment": "cable",
-    "grip_id": "single_handle",
-    "grip_notes": "Einzelgriffe in beiden Händen, neutraler Griff (Handflächen zeigen zueinander bzw. nach unten-innen). Alternativ Handschlaufen oder ohne Griff direkt am Kabelende.",
-    "primary_muscles": [
-      "chest"
-    ],
-    "secondary_muscles": [
-      "front_delts",
-      "triceps"
-    ],
-    "description": "Fly-Bewegung am Doppelkabelzug mit Rollen in der oberen Position, bei der die Arme von oben nach unten-vorne zusammengeführt werden. Belastet vor allem den unteren Anteil der Brust.",
-    "setup": [
-      "Beide Rollen des Doppelkabelzugs in die oberste Position bringen und Einzelgriffe einhängen.",
-      "Griffe fassen und einen Schritt nach vorne in die Mitte gehen.",
-      "Schrittstellung einnehmen, Rumpf anspannen, Oberkörper leicht nach vorne geneigt.",
-      "Arme seitlich-oben mit leichter Ellenbogenbeuge halten, Hände etwas über Schulterhöhe.",
-      "Schulterblätter nach hinten und unten ziehen, Brust leicht anheben."
-    ],
-    "execution": [
-      "Griffe in einem Bogen von oben nach unten-vorne zusammenführen.",
-      "Ellenbogenwinkel während der gesamten Bewegung konstant halten.",
-      "In der Endposition die Hände etwa auf Höhe der unteren Brust bis Bauchnabel zusammenbringen.",
-      "Untere Brust kurz bewusst anspannen.",
-      "Griffe langsam und kontrolliert nach oben-außen zurückführen.",
-      "Oberkörper bleibt in seiner Neigung, kein Mitschwingen aus dem Rumpf.",
-      "Nächste Wiederholung ohne Schwung beginnen."
-    ],
-    "range_of_motion": "Von den seitlich-oben gehaltenen Armen mit leichter Dehnung bis die Hände vor der unteren Brust zusammenkommen. Die Dehnposition oben nicht erzwingen.",
-    "breathing": "Beim Zusammenführen nach unten ausatmen, beim Zurückführen einatmen.",
-    "common_mistakes": [
-      "Oberkörper wird stark nach vorne geklappt, die Bewegung kommt aus dem Rumpf.",
-      "Ellenbogen werden stark gebeugt, die Übung wird zum Drücken nach unten.",
-      "Schultern rollen beim Zusammenführen nach vorne.",
-      "Arme werden in der Startposition zu weit nach hinten geführt.",
-      "Gewicht zieht die Arme unkontrolliert nach oben zurück."
-    ],
-    "tips": [
-      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
-      "Hände in der Endposition leicht überkreuzen, um die Kontraktion zu verlängern.",
-      "Leichtes bis mittleres Gewicht wählen, der Fokus liegt auf der Muskelspannung.",
-      "Schrittstellung von Satz zu Satz wechseln."
-    ],
-    "cable_setup": {
-      "cable": "Kabelturm mit zwei Säulen (Doppelkabelzug / Cable Crossover)",
-      "height": "ganz oben, damit die Zugrichtung von oben-außen nach unten-innen entlang der Fasern der unteren Brust verläuft",
-      "grip_width": "Einzelgriffe, neutraler Griff, Hände starten seitlich etwas über Schulterhöhe",
-      "body_position": "Stehend in der Mitte zwischen den Säulen, Oberkörper etwa 15 bis 30 Grad nach vorne geneigt, Rumpf angespannt, Schulterblätter hinten und unten",
-      "foot_position": "Schrittstellung, vorderer Fuß flach, hinterer Fuß auf dem Ballen, Knie leicht gebeugt",
-      "movement_direction": "Von oben-außen in einem Bogen nach unten-vorne vor die untere Brust",
-      "elbow_position": "Leicht gebeugt, Winkel bleibt konstant, Ellenbogen zeigen nach außen-oben",
-      "end_position": "Hände vor der unteren Brust bis Bauchnabelhöhe zusammengeführt, untere Brust angespannt, Schultern bleiben hinten",
-      "return": "Langsam und kontrolliert nach oben-außen, bis eine leichte Dehnung in der Brust spürbar ist"
-    },
-    "muscle_focus": [
-      "Rollen ganz oben, sodass die Zugrichtung von oben-außen nach unten-innen entlang der Fasern der unteren Brust verläuft.",
-      "Arme in der Startposition seitlich-oben bis zu einer leichten Dehnung zurückführen; dieser Bereich liefert einen hohen Reiz, die Position nicht erzwingen.",
-      "Oberkörper etwa 15 bis 30 Grad nach vorne geneigt halten und die Neigung während des Satzes nicht verändern, sonst kommt die Bewegung aus dem Rumpf.",
-      "Ellenbogenwinkel konstant halten, Schulterblätter hinten lassen und zwei bis drei Sekunden lang nach oben-außen zurückführen."
-    ],
-    "requirements": [
-      "Kabelturm mit zwei Säulen (Doppelkabelzug) und verstellbaren Rollen",
-      "Zwei Einzelgriffe (D-Griffe)"
-    ],
-    "grip_alternatives": [
-      "strap_handle"
-    ],
-    "alternative_exercises": [],
-    "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)",
-    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-nach-unten-fuer-die-untere-brust/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-zur-mitte-fuer-die-mittlere-brust/",
+    "variants": [
+      {
+        "name": "Rollen auf Brusthöhe",
+        "description": "Zug horizontal zur Brustmitte. Standardvariante für die gesamte Brust.",
+        "source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-zur-mitte-fuer-die-mittlere-brust/"
+      },
+      {
+        "name": "Rollen ganz oben",
+        "description": "Zug schräg nach unten vor den Bauch. Schwerpunkt untere Brust.",
+        "source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-nach-unten-fuer-die-untere-brust/"
+      },
+      {
+        "name": "Rollen ganz unten",
+        "description": "Zug schräg nach oben vor das Gesicht. Schwerpunkt obere Brust.",
+        "source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-nach-oben-fuer-die-obere-brust/"
+      }
+    ]
   },
   {
     "slug": "schulterdruecken-maschine",
@@ -493,7 +346,7 @@
       "triceps",
       "traps"
     ],
-    "description": "Geführte vertikale Druckbewegung im Sitzen, die vor allem die vordere und seitliche Schulter belastet. Geeignet als Grundübung für die Schulter mit stabiler Führung.",
+    "description": "Geführtes Überkopfdrücken für die vordere und seitliche Schulter. Hebelmaschine oder Steckgewicht: die Bewegung ist dieselbe. Die neutralen Griffe sind schulterfreundlicher, die pronierten belasten die seitliche Schulter etwas stärker.",
     "setup": [
       "Sitz so einstellen, dass die Griffe in der Startposition etwa auf Schulterhöhe oder leicht darunter liegen.",
       "Rücken und Kopf an das Polster anlehnen, Füße flach auf den Boden stellen.",
@@ -525,10 +378,10 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Griffe in der unteren Position bis etwa auf Schulterhöhe absenken, damit die vordere und seitliche Schulter über den vollen Bewegungsradius arbeitet; nur so tief, wie die Schulter schmerzfrei zulässt.",
-      "Unterarme möglichst senkrecht unter den Griffen führen und die Ellenbogen leicht vor der Schulterlinie halten, das entlastet das Schultergelenk.",
-      "Schultern während des Drückens unten lassen und nicht zu den Ohren ziehen, sonst übernimmt der Trapezmuskel einen Teil der Arbeit.",
-      "Rumpf anspannen und Rippen nicht herausdrücken, oben kurz vor dem Durchstrecken stoppen und zwei Sekunden lang zurückführen."
+      "Griffe bis auf Kinn- bis Schulterhöhe absenken, dort ist die vordere Schulter gedehnt und der Reiz am größten.",
+      "Oben nicht komplett strecken und die Schultern nicht hochziehen, sonst übernimmt der Trapez.",
+      "Rücken am Polster, Rumpf fest, kein Hohlkreuz: die Kraft kommt aus der Schulter, nicht aus dem Rücken.",
+      "6 bis 12 Wiederholungen, kontrolliert absenken, Gewicht nach dem Doppelprogressions-Prinzip steigern."
     ],
     "requirements": [
       "Schulterdrück-Maschine mit verstellbarem Sitz und Rückenlehne"
@@ -537,10 +390,20 @@
     "image_url": "/exercises/shoulder-press-plate.jpg",
     "machine_name": "DHZ Shoulder Press, Plate Loaded",
     "alternative_exercises": [
-      "schulterpresse-maschine",
-      "multi-press-maschine"
+      "kurzhantel-schulterdruecken",
+      "arnold-press"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/schulterdruecken-an-maschine/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/schulterdruecken-an-maschine/",
+    "variants": [
+      {
+        "name": "Plate Loaded mit neutralen Griffen (Standard)",
+        "description": "Handflächen zueinander, Ellenbogen leicht vor dem Körper. Schonend für das Schultergelenk."
+      },
+      {
+        "name": "Steckgewicht mit pronierten Griffen",
+        "description": "Handflächen nach vorne, Ellenbogen weiter außen. Etwas mehr seitliche Schulter, mehr Belastung für das Gelenk."
+      }
+    ]
   },
   {
     "slug": "seitheben-maschine",
@@ -555,7 +418,7 @@
     "secondary_muscles": [
       "traps"
     ],
-    "description": "Geführtes Seitheben an der Maschine mit Polstern an den Oberarmen, das die seitliche Schulter isoliert. Geeignet für kontrollierte Isolationsarbeit ohne Ausweichbewegungen des Rumpfes.",
+    "description": "Isolation der seitlichen Schulter mit konstanter Spannung. An der Maschine liegen die Oberarme am Polster, am Kabelzug zieht man einarmig von der tiefen Rolle. Beide Varianten belasten die Schulter im Gegensatz zur Kurzhantel auch unten, wo der Muskel gedehnt ist.",
     "setup": [
       "Sitz so einstellen, dass die Drehachse der Maschine etwa auf Höhe der Schultergelenke liegt.",
       "Oberkörper aufrecht an das Polster anlehnen, Füße flach auf den Boden stellen.",
@@ -587,96 +450,30 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Drehachse der Maschine auf Höhe der Schultergelenke einstellen, sonst passt der Bewegungsbogen nicht zur Schulter und der Widerstand verschiebt sich.",
-      "Bewegung über die Ellenbogen gegen die Polster führen und die Oberarme nur bis etwa Schulterhöhe heben; darüber übernimmt zunehmend der Trapezmuskel.",
-      "Schultern während des gesamten Satzes nach unten ziehen und den Oberkörper aufrecht am Polster lassen, kein Mitschwingen aus dem Rumpf.",
-      "Zwei bis drei Sekunden lang absenken, unten die Spannung halten und das Gewicht so wählen, dass die seitliche Schulter limitiert."
+      "Die seitliche Schulter arbeitet, wenn der Oberarm seitlich bis knapp über die Waagerechte geführt wird; höher bringt nichts und lässt den Trapez übernehmen.",
+      "Kleine Außendrehung vermeiden: Hand und Ellenbogen auf einer Höhe, Daumen nicht nach oben drehen.",
+      "Unten nicht ablegen oder entspannen, die Spannung bleibt über die ganze Serie erhalten.",
+      "12 bis 20 Wiederholungen, bis nahe ans Versagen; die seitliche Schulter verträgt und braucht hohes Volumen."
     ],
     "requirements": [
       "Seitheben-Maschine mit Armpolstern und verstellbarem Sitz"
     ],
     "grip_alternatives": [],
     "alternative_exercises": [
-      "seitheben-kabel"
+      "seitheben-kurzhantel"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/seitheben-an-seitheben-maschine/"
-  },
-  {
-    "slug": "seitheben-kabel",
-    "name": "Seitheben Kabel",
-    "category": "shoulders",
-    "equipment": "cable",
-    "grip_id": "strap_handle",
-    "grip_notes": "Handschlaufe um die Hand legen, Hand bleibt locker, der Arm hängt entspannt. Alternativ Einzelgriff mit lockerem Daumen oder ohne Griff direkt am Kabelende.",
-    "primary_muscles": [
-      "side_delts"
-    ],
-    "secondary_muscles": [
-      "traps",
-      "front_delts"
-    ],
-    "description": "Einarmiges Seitheben am Kabelzug mit der Rolle unten und Handschlaufe, das die seitliche Schulter mit konstanter Spannung belastet. Geeignet als Isolationsübung mit gleichmäßigem Widerstand auch in der unteren Position.",
-    "setup": [
-      "Rolle auf Hüfthöhe einstellen und Handschlaufe einhängen.",
-      "Seitlich zur Säule stellen, die arbeitende Hand ist von der Säule abgewandt.",
-      "Schlaufe um die Hand legen, Hand locker lassen, das Kabel läuft vor oder hinter dem Körper zur Säule.",
-      "Freie Hand an der Säule abstützen, Rumpf anspannen, Oberkörper aufrecht.",
-      "Arm mit leichter Ellenbogenbeuge entspannt neben dem Körper hängen lassen, Schulter bewusst nach unten ziehen."
-    ],
-    "execution": [
-      "Arm seitlich nach oben führen, der Ellenbogen führt die Bewegung.",
-      "Bis etwa Schulterhöhe anheben, Hand und Ellenbogen etwa auf gleicher Höhe.",
-      "Schulter bleibt während der gesamten Bewegung unten.",
-      "In der Endposition kurz halten.",
-      "Arm langsam und kontrolliert zurückführen, bis er wieder neben dem Körper ist.",
-      "Spannung unten halten, Gewicht nicht aufsetzen lassen.",
-      "Nach dem Satz die Seite wechseln."
-    ],
-    "range_of_motion": "Vom Arm neben bzw. leicht vor dem Körper bis etwa Schulterhöhe. Nicht über die Schulterhöhe hinaus heben.",
-    "breathing": "Beim Anheben ausatmen, beim Absenken einatmen.",
-    "common_mistakes": [
-      "Schulter wird beim Anheben zum Ohr hochgezogen.",
-      "Oberkörper neigt sich zur Seite oder schwingt mit.",
-      "Arm wird über die Schulterhöhe hinaus gehoben.",
-      "Hand liegt in der Endposition deutlich über dem Ellenbogen.",
-      "Gewicht zieht den Arm unkontrolliert zurück."
-    ],
-    "tips": [
-      "Leichtes Gewicht wählen, die Übung reagiert empfindlich auf Schwung.",
-      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
-      "Vorstellen, den Ellenbogen zur Seite wegzuschieben, nicht die Hand anzuheben.",
-      "Kabel hinter dem Körper führen, wenn die seitliche Schulter stärker isoliert werden soll."
-    ],
-    "cable_setup": {
-      "cable": "Kabelturm oder Doppelkabelzug, einarmig",
-      "height": "Hüfthöhe, damit das Kabel über den gesamten Weg seitlich am Körper vorbei zieht und die Spannung auch unten erhalten bleibt",
-      "grip_width": "Handschlaufe um eine Hand, Hand locker, kein aktives Greifen",
-      "body_position": "Seitlich zur Säule stehend, aufrecht, freie Hand an der Säule abgestützt, Rumpf angespannt, Schulter unten",
-      "foot_position": "Hüftbreit oder leichte Schrittstellung, Knie leicht gebeugt",
-      "movement_direction": "Seitlich nach oben in einem Bogen bis etwa Schulterhöhe",
-      "elbow_position": "Leicht gebeugt, Winkel bleibt konstant, Ellenbogen führt die Bewegung und bleibt auf Höhe der Hand oder leicht darüber",
-      "end_position": "Oberarm etwa waagerecht auf Schulterhöhe, Schulter unten, kurz halten",
-      "return": "Langsam und kontrolliert zurück neben den Körper, Spannung am Kabel bleibt erhalten"
-    },
-    "muscle_focus": [
-      "Rolle ganz unten und Kabel hinter dem Körper führen, sodass der Arm in der Startposition leicht vor dem Körper hängt; so steht die seitliche Schulter schon in der gedehnten Position unter Spannung.",
-      "Bewegung über den Ellenbogen seitlich nach außen führen, Hand und Ellenbogen auf gleicher Höhe, nur bis etwa Schulterhöhe heben; darüber übernimmt der Trapezmuskel.",
-      "Schulter während des gesamten Satzes unten halten und den Oberkörper nicht zur Seite neigen; die Handschlaufe hält die Hand passiv, sodass der Unterarm nicht mitarbeitet.",
-      "Zwei bis drei Sekunden lang absenken, unten die Spannung halten und ein Gewicht wählen, bei dem die seitliche Schulter limitiert."
-    ],
-    "requirements": [
-      "Kabelturm mit verstellbarer Rolle",
-      "Handschlaufe (alternativ Einzelgriff)"
-    ],
-    "grip_alternatives": [
-      "single_handle"
-    ],
-    "alternative_exercises": [
-      "seitheben-maschine"
-    ],
-    "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)",
-    "animation_source_url": "https://modusx.de/fitness-uebungen/seitheben-am-kabelzug/seitheben-am-kabelzug-einarmig/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/seitheben-an-seitheben-maschine/",
+    "variants": [
+      {
+        "name": "Seitheben-Maschine (Standard)",
+        "description": "Polster am Oberarm knapp über dem Ellenbogen, Arme bis Schulterhöhe heben, langsam ab."
+      },
+      {
+        "name": "Kabelzug einarmig, Rolle hüfthoch",
+        "description": "Kabel läuft hinter dem Körper, Arm leicht gebeugt, bis Schulterhöhe heben. Gleichmäßige Spannung über den gesamten Weg.",
+        "source_url": "https://modusx.de/fitness-uebungen/seitheben-am-kabelzug/seitheben-am-kabelzug-einarmig/"
+      }
+    ]
   },
   {
     "slug": "reverse-butterfly",
@@ -693,7 +490,7 @@
       "traps",
       "mid_back"
     ],
-    "description": "Geführte Reverse-Fly-Bewegung an der umgekehrten Pec-Deck-Maschine, die die hintere Schulter und den oberen Rücken belastet. Geeignet als Isolationsübung für die hintere Schulter und als Ausgleich zu Druckübungen.",
+    "description": "Isolation der hinteren Schulter und des oberen Rückens. An der Butterfly-Maschine in Rear-Delt-Stellung oder beidarmig am Kabelzug von vorne: dieselbe Bewegung, horizontale Abduktion mit fast gestreckten Armen.",
     "setup": [
       "Griffe der Maschine in die vordere Position stellen, sodass die Arme vor dem Körper starten.",
       "Sitz so einstellen, dass die Griffe etwa auf Schulterhöhe liegen.",
@@ -726,10 +523,10 @@
     ],
     "cable_setup": null,
     "muscle_focus": [
-      "Griffe vorne so einstellen, dass die Arme vor dem Körper starten und die hintere Schulter in der Startposition gedehnt ist; aus dieser Position kommt ein hoher Reiz.",
-      "Bewegung aus der hinteren Schulter nach hinten-außen führen, Ellenbogenwinkel konstant halten, Hände nur bis in die Schulterlinie bringen; darüber hinaus übernimmt der obere Rücken.",
-      "Schultern unten lassen, Brust am Polster halten und nicht mit den Armen ziehen, sonst wird die Übung zum Rudern.",
-      "Zwei bis drei Sekunden lang zurückführen und ein leichtes Gewicht wählen, bei dem die hintere Schulter limitiert."
+      "Die hintere Schulter arbeitet, wenn die Ellenbogen auf Schulterhöhe nach hinten-außen geführt werden; zu tief übernimmt der Latissimus.",
+      "Schulterblätter nicht aktiv zusammenziehen, dann bleibt die Last auf der hinteren Schulter statt auf dem Trapez.",
+      "Volle Dehnung vorne zulassen, der Reiz in der gedehnten Position ist für diesen kleinen Muskel entscheidend.",
+      "12 bis 20 Wiederholungen mit leichtem bis mittlerem Gewicht, kontrollierte Rückführung."
     ],
     "requirements": [
       "Reverse-Butterfly-Maschine (umgekehrtes Pec Deck) mit verstellbarem Sitz und Griffen"
@@ -738,83 +535,21 @@
     "image_url": "/exercises/pec-deck-rear-delt.jpg",
     "machine_name": "DHZ Pectoral Fly / Rear Delt, Steckgewicht (Rear-Delt-Stellung)",
     "alternative_exercises": [
-      "kabel-reverse-fly",
-      "reverse-fly-kurzhantel"
+      "reverse-fly-kurzhantel",
+      "face-pull"
     ],
-    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-reverse-am-geraet/"
-  },
-  {
-    "slug": "kabel-reverse-fly",
-    "name": "Kabel Reverse Fly",
-    "category": "shoulders",
-    "equipment": "cable",
-    "grip_id": "single_handle",
-    "grip_notes": "Einzelgriffe (alternativ Handschlaufen) oder ohne Griff direkt am Kabelende bzw. an der Kugel fassen. Kabel überkreuz greifen: die rechte Hand hält das linke Kabel, die linke Hand das rechte Kabel.",
-    "primary_muscles": [
-      "rear_delts"
-    ],
-    "secondary_muscles": [
-      "upper_back",
-      "traps"
-    ],
-    "description": "Reverse-Fly-Bewegung am Doppelkabelzug mit Rollen auf Schulterhöhe und überkreuz gegriffenen Kabeln. Belastet die hintere Schulter mit konstanter Spannung und eignet sich als Isolationsübung für den hinteren Schulteranteil.",
-    "setup": [
-      "Beide Rollen des Doppelkabelzugs auf Schulterhöhe einstellen, Einzelgriffe einhängen oder Kabelenden direkt nutzen.",
-      "In die Mitte zwischen die Säulen stellen und die Kabel überkreuz fassen.",
-      "Einen Schritt zurückgehen, bis die Kabel unter Spannung sind.",
-      "Hüftbreiter Stand oder leichte Schrittstellung, Rumpf anspannen, Oberkörper aufrecht.",
-      "Arme vor der Brust fast gestreckt mit leichter Ellenbogenbeuge halten, Schultern nach unten ziehen."
-    ],
-    "execution": [
-      "Arme in einem weiten Bogen nach außen-hinten führen.",
-      "Ellenbogenwinkel während der gesamten Bewegung konstant halten.",
-      "Bewegung aus der hinteren Schulter führen, Schulterblätter am Ende leicht zusammenziehen.",
-      "In der Endposition kurz halten, Hände etwa in der Schulterlinie.",
-      "Arme langsam und kontrolliert nach vorne zurückführen, bis sich die Hände wieder vor der Brust überkreuzen.",
-      "Oberkörper bleibt stabil, kein Mitschwingen."
-    ],
-    "range_of_motion": "Von den vor der Brust überkreuzten Armen bis die Hände etwa in der Schulterlinie sind. Nicht weiter nach hinten erzwingen.",
-    "breathing": "Beim Öffnen nach außen ausatmen, beim Zurückführen einatmen.",
-    "common_mistakes": [
-      "Schultern werden zu den Ohren hochgezogen.",
-      "Ellenbogen werden stark gebeugt, die Übung wird zum Rudern.",
-      "Oberkörper lehnt sich nach hinten, um das Gewicht zu bewegen.",
-      "Gewicht zieht die Arme in der exzentrischen Phase unkontrolliert zurück.",
-      "Zu viel Gewicht, der Bewegungsradius wird deutlich kleiner."
-    ],
-    "tips": [
-      "Leichtes Gewicht wählen und auf saubere Ausführung achten.",
-      "Exzentrische Phase etwa zwei bis drei Sekunden lang kontrollieren.",
-      "Vorstellen, die Hände an eine Wand hinter dem Körper zu führen."
-    ],
-    "cable_setup": {
-      "cable": "Kabelturm mit zwei Säulen (Doppelkabelzug / Cable Crossover)",
-      "height": "Schulterhöhe, damit die Zugrichtung waagerecht in Verlängerung der Arme durch die hintere Schulter verläuft",
-      "grip_width": "Kabel überkreuz gegriffen, Einzelgriffe oder direkt am Kabelende, neutraler Griff",
-      "body_position": "Stehend in der Mitte zwischen den Säulen, aufrecht, Rumpf angespannt, Schultern unten, Arme vor der Brust",
-      "foot_position": "Hüftbreit oder leichte Schrittstellung, Knie leicht gebeugt",
-      "movement_direction": "Horizontal in einem Bogen von vorne nach außen-hinten",
-      "elbow_position": "Leicht gebeugt, Winkel bleibt konstant, Ellenbogen etwa auf Schulterhöhe",
-      "end_position": "Arme seitlich etwa in der Schulterlinie, Schulterblätter leicht zusammengezogen, kurz halten",
-      "return": "Langsam und kontrolliert nach vorne, bis sich die Hände vor der Brust wieder überkreuzen, Spannung bleibt erhalten"
-    },
-    "muscle_focus": [
-      "Rollen auf Schulterhöhe und Kabel überkreuz greifen, sodass die Arme vor der Brust starten und die hintere Schulter in der gedehnten Position unter Spannung steht.",
-      "Arme in einem weiten Bogen nach außen führen, Ellenbogen etwa auf Schulterhöhe und Ellenbogenwinkel konstant; stark gebeugte Ellenbogen machen daraus ein Rudern für den Rücken.",
-      "Schultern unten halten und die Schulterblätter erst am Ende leicht zusammenziehen, nicht die gesamte Bewegung aus dem Schulterblatt führen.",
-      "Zwei bis drei Sekunden lang zurückführen, bis sich die Hände wieder überkreuzen, und ein leichtes Gewicht wählen, bei dem die hintere Schulter limitiert."
-    ],
-    "requirements": [
-      "Kabelturm mit zwei Säulen (Doppelkabelzug) und verstellbaren Rollen",
-      "Zwei Einzelgriffe (D-Griffe) oder direkt an den Kabelenden"
-    ],
-    "grip_alternatives": [
-      "strap_handle"
-    ],
-    "alternative_exercises": [],
-    "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)",
-    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-reverse-am-kabelzug/butterfly-reverse-am-kabelturm-von-vorne/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-reverse-am-geraet/",
+    "variants": [
+      {
+        "name": "Maschine in Rear-Delt-Stellung (Standard)",
+        "description": "Brust ans Polster, Griffe vorne greifen, Arme nach hinten-außen öffnen, bis sie in Verlängerung der Schultern stehen."
+      },
+      {
+        "name": "Kabelzug beidarmig von vorne",
+        "description": "Rollen schulterhoch, über Kreuz greifen, Arme nach außen ziehen. Mehr Spannung in der Endposition.",
+        "source_url": "https://modusx.de/fitness-uebungen/butterfly-reverse-am-kabelzug/butterfly-reverse-am-kabelturm-von-vorne/"
+      }
+    ]
   },
   {
     "slug": "face-pull",
@@ -890,7 +625,8 @@
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
     "machine_name": "Kabelturm (Multistation)",
-    "animation_source_url": "https://modusx.de/fitness-uebungen/face-pulls/face-pulls-am-kabelzug/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/face-pulls/face-pulls-am-kabelzug/",
+    "variants": []
   },
   {
     "slug": "dips",
@@ -945,6 +681,462 @@
     ],
     "grip_alternatives": [],
     "bodyweight_factor": 1.0,
-    "animation_source_url": "https://modusx.de/fitness-uebungen/arnold-dips/klassische-arnold-dips/"
+    "animation_source_url": "https://modusx.de/fitness-uebungen/arnold-dips/klassische-arnold-dips/",
+    "variants": [],
+    "alternative_exercises": []
+  },
+  {
+    "slug": "kurzhantel-bankdruecken",
+    "name": "Kurzhantel Bankdrücken",
+    "category": "chest",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": null,
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
+    "description": "Drücken mit zwei Kurzhanteln auf der Flachbank. Gegenüber der Langhantel erlauben Kurzhanteln einen größeren Bewegungsweg und damit mehr Dehnung der Brust; jede Seite arbeitet für sich.",
+    "setup": [
+      "Kurzhanteln auf die Oberschenkel nehmen, hinlegen und mit den Knien in die Startposition schwingen.",
+      "Füße fest am Boden, Schulterblätter zusammen und nach unten, leichtes Hohlkreuz.",
+      "Hanteln über der Brust, Handflächen nach vorne oder leicht gedreht.",
+      "Ellenbogen etwa 45 Grad vom Körper abgespreizt."
+    ],
+    "execution": [
+      "Hanteln kontrolliert absenken, bis sie neben der Brust unterhalb der Bankebene sind.",
+      "In der tiefen Position die Dehnung der Brust spüren, kurz halten.",
+      "Hanteln nach oben und leicht zueinander drücken, ohne sie aneinanderzuschlagen.",
+      "Oben nicht komplett strecken, Spannung halten.",
+      "Nächste Wiederholung ohne Federn starten."
+    ],
+    "range_of_motion": "Tiefer als bei der Langhantel: die Hanteln dürfen unter die Bankebene, solange die Schulter stabil bleibt.",
+    "breathing": "Beim Absenken (Dehnung) einatmen, beim Drücken oder Ziehen ausatmen.",
+    "common_mistakes": [
+      "Hanteln oben zusammenschlagen und Spannung verlieren.",
+      "Ellenbogen auf Schulterhöhe abspreizen.",
+      "Zu schwere Hanteln und dadurch halber Weg.",
+      "Schulterblätter lösen und Schultern nach vorne rollen."
+    ],
+    "tips": [
+      "Hanteln mit den Knien hochschwingen statt aus der Rückenlage heben.",
+      "Am Satzende die Hanteln kontrolliert auf die Oberschenkel legen und aufsetzen.",
+      "Gewicht erst erhöhen, wenn alle Sätze den oberen Wiederholungsbereich erreichen."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Die Brust wächst aus der gedehnten Position: tief absenken, unterhalb der Bankebene, ohne die Schulter nach vorne kippen zu lassen.",
+      "Schulterblätter die ganze Zeit hinten lassen, dann drückt die Brust und nicht die vordere Schulter.",
+      "2 bis 3 Sekunden absenken, zügig drücken, 6 bis 12 Wiederholungen bis 1 bis 2 Wiederholungen vor dem Versagen."
+    ],
+    "requirements": [
+      "Flachbank",
+      "Zwei Kurzhanteln"
+    ],
+    "grip_alternatives": [],
+    "variants": [
+      {
+        "name": "Neutraler Griff",
+        "description": "Handflächen zueinander. Schulterschonend, etwas mehr Trizeps."
+      },
+      {
+        "name": "Leicht negative Bank",
+        "description": "Bank 10 bis 15 Grad abfallend, Schwerpunkt untere Brust.",
+        "source_url": "https://modusx.de/fitness-uebungen/negativ-kurzhantel-bankdruecken/"
+      }
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-flachbankdruecken/",
+    "alternative_exercises": []
+  },
+  {
+    "slug": "kurzhantel-schraegbankdruecken",
+    "name": "Kurzhantel Schrägbankdrücken",
+    "category": "chest",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": null,
+    "primary_muscles": [
+      "upper_chest",
+      "chest"
+    ],
+    "secondary_muscles": [
+      "front_delts",
+      "triceps"
+    ],
+    "description": "Drücken mit Kurzhanteln auf der Schrägbank für die obere Brust. Der freie Bewegungsweg erlaubt eine tiefere Dehnung als jede Maschine.",
+    "setup": [
+      "Bank auf 30 Grad stellen; steiler wird es zunehmend eine Schulterübung.",
+      "Hanteln auf den Knien aufnehmen, zurücklehnen, Hanteln in die Startposition bringen.",
+      "Schulterblätter zusammen und tief, Brust raus.",
+      "Hanteln über der oberen Brust, Ellenbogen etwa 45 Grad abgespreizt."
+    ],
+    "execution": [
+      "Hanteln kontrolliert zur oberen Brust absenken, bis die Brust deutlich dehnt.",
+      "Kurz halten, dann nach oben-innen drücken.",
+      "Oben nicht aneinanderschlagen, Arme nicht komplett strecken.",
+      "Ellenbogen unter den Hanteln halten.",
+      "Ohne Schwung in die nächste Wiederholung."
+    ],
+    "range_of_motion": "Hanteln bis auf Höhe der oberen Brust oder knapp darunter, oben kurz vor der Streckung.",
+    "breathing": "Beim Absenken (Dehnung) einatmen, beim Drücken oder Ziehen ausatmen.",
+    "common_mistakes": [
+      "Bank zu steil, dann übernimmt die Schulter.",
+      "Hohlkreuz übertreiben, um die Bank flacher zu machen.",
+      "Hanteln oben zusammenschlagen.",
+      "Zu wenig Tiefe aus Angst vor dem Gewicht."
+    ],
+    "tips": [
+      "Mit 30 Grad starten; 15 bis 30 Grad sind für die obere Brust ideal.",
+      "Die obere Brust reagiert gut auf 8 bis 12 Wiederholungen mit voller Dehnung.",
+      "Spotter oder Hanteln auf die Knie ablegen, nie fallen lassen."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Obere Brust: Druckrichtung nach oben-innen, Ellenbogen leicht unter den Händen.",
+      "Tiefe Dehnung in der unteren Position ist der Hauptreiz, dort 1 Sekunde halten.",
+      "Schultern tief und hinten, sonst wandert die Last auf die vordere Schulter."
+    ],
+    "requirements": [
+      "Schrägbank, verstellbar",
+      "Zwei Kurzhanteln"
+    ],
+    "grip_alternatives": [],
+    "variants": [
+      {
+        "name": "30 Grad (Standard)",
+        "description": "Bester Kompromiss aus oberer Brust und Schulterschonung."
+      },
+      {
+        "name": "Neutraler Griff",
+        "description": "Handflächen zueinander, mehr Bewegungsfreiheit für die Schulter."
+      }
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-schraegbankdruecken/",
+    "alternative_exercises": []
+  },
+  {
+    "slug": "kurzhantel-fliegende",
+    "name": "Kurzhantel Fliegende",
+    "category": "chest",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": null,
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "front_delts"
+    ],
+    "description": "Fliegende mit Kurzhanteln auf der Flach- oder Schrägbank. Isoliert die Brust in der gedehnten Position; die Spannung oben ist gering, deshalb mit Kabel-Flys oder Butterfly kombinieren.",
+    "setup": [
+      "Auf der Bank liegen, Hanteln über der Brust, Handflächen zueinander.",
+      "Ellenbogen leicht gebeugt und in diesem Winkel fixieren.",
+      "Schulterblätter zusammen, Füße fest am Boden."
+    ],
+    "execution": [
+      "Arme in einem weiten Bogen seitlich öffnen, Ellenbogen bleiben leicht gebeugt.",
+      "Absenken, bis die Hanteln auf Höhe der Brust oder leicht darunter sind und die Brust deutlich dehnt.",
+      "Kurz halten, dann im gleichen Bogen zurück über die Brust führen.",
+      "Oben nicht zusammenschlagen, Spannung halten.",
+      "Langsam und ohne Schwung."
+    ],
+    "range_of_motion": "Bis die Brust deutlich gedehnt ist, nicht tiefer als die Schulter schmerzfrei zulässt.",
+    "breathing": "Beim Absenken (Dehnung) einatmen, beim Drücken oder Ziehen ausatmen.",
+    "common_mistakes": [
+      "Ellenbogen während der Bewegung beugen und daraus ein Drücken machen.",
+      "Zu schwere Hanteln, dadurch kein Bogen.",
+      "Hanteln oben zusammenschlagen.",
+      "Schultern nach vorne kippen lassen."
+    ],
+    "tips": [
+      "Leichter wählen als beim Drücken; 10 bis 15 Wiederholungen.",
+      "Auf der Schrägbank trifft die Variante die obere Brust.",
+      "Als zweite oder dritte Brustübung einplanen."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Die gesamte Wirkung liegt in der Dehnung: dort langsam ankommen und eine Sekunde halten.",
+      "Fester Ellenbogenwinkel, sonst wird es ein Drücken mit Trizepsbeteiligung.",
+      "Oben bringt das Zusammenführen wenig, deshalb den Weg oben kurz halten und den Fokus nach unten legen."
+    ],
+    "requirements": [
+      "Flach- oder Schrägbank",
+      "Zwei leichte bis mittlere Kurzhanteln"
+    ],
+    "grip_alternatives": [],
+    "variants": [
+      {
+        "name": "Flachbank (Standard)",
+        "description": "Gesamte Brust.",
+        "source_url": "https://modusx.de/fitness-uebungen/kurzhantel-fliegende/kurzhantel-fliegende-fuer-die-mittlere-brust/"
+      },
+      {
+        "name": "Schrägbank",
+        "description": "Schwerpunkt obere Brust.",
+        "source_url": "https://modusx.de/fitness-uebungen/kurzhantel-fliegende/positive-kurzhantel-fliegende-fuer-die-obere-brust/"
+      }
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-fliegende/",
+    "alternative_exercises": []
+  },
+  {
+    "slug": "kurzhantel-pullover",
+    "name": "Kurzhantel Pullover",
+    "category": "chest",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": null,
+    "primary_muscles": [
+      "chest",
+      "lats"
+    ],
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "description": "Überzüge mit einer Kurzhantel quer auf der Bank. Belastet Brust und Latissimus in maximaler Dehnung über Kopf; eine der wenigen Übungen, die beide großen Oberkörpermuskeln in gestreckter Position trifft.",
+    "setup": [
+      "Mit dem oberen Rücken quer auf die Bank legen, Füße fest am Boden, Hüfte leicht tiefer als die Schultern.",
+      "Eine Kurzhantel mit beiden Händen unter der inneren Scheibe fassen, Arme fast gestreckt über der Brust.",
+      "Ellenbogen leicht gebeugt fixieren."
+    ],
+    "execution": [
+      "Hantel in einem Bogen hinter den Kopf absenken, Arme bleiben leicht gebeugt.",
+      "So tief, bis Brust und Latissimus deutlich dehnen.",
+      "Kurz halten, dann im Bogen zurück über die Brust ziehen.",
+      "Hüfte ruhig halten, nicht absinken lassen, um Schwung zu holen.",
+      "Über der Brust nicht weiter als senkrecht, dort ist die Spannung weg."
+    ],
+    "range_of_motion": "Hantel bis hinter den Kopf auf Höhe der Bank oder leicht darunter, zurück bis senkrecht über die Brust.",
+    "breathing": "Beim Absenken tief einatmen und den Brustkorb weiten, beim Hochziehen ausatmen.",
+    "common_mistakes": [
+      "Ellenbogen stark beugen und die Übung zur Trizeps-Extension machen.",
+      "Hüfte beim Absenken mit nach unten gehen lassen.",
+      "Zu schwere Hantel und dadurch kein kontrollierter Bogen.",
+      "Über der Brust weiterziehen, obwohl keine Spannung mehr da ist."
+    ],
+    "tips": [
+      "Leicht bis mittel starten, 10 bis 15 Wiederholungen.",
+      "Längs auf der Bank liegend ist der Weg kürzer, aber stabiler.",
+      "Gut am Ende des Brust- oder Rückentrainings."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Die Dehnung hinter dem Kopf ist der Reiz; dort langsam ankommen und eine Sekunde halten.",
+      "Fester Ellenbogenwinkel hält die Last auf Brust und Latissimus statt auf dem Trizeps.",
+      "Wer die Brust betonen will, hält die Ellenbogen enger; für mehr Latissimus die Ellenbogen leicht weiter."
+    ],
+    "requirements": [
+      "Flachbank",
+      "Eine Kurzhantel"
+    ],
+    "grip_alternatives": [],
+    "variants": [
+      {
+        "name": "Quer auf der Bank (Standard)",
+        "description": "Größter Bewegungsweg und Dehnung."
+      },
+      {
+        "name": "Längs auf der Bank",
+        "description": "Stabiler, etwas weniger Weg, gut für Einsteiger."
+      }
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-ueberzuege/",
+    "alternative_exercises": []
+  },
+  {
+    "slug": "kurzhantel-schulterdruecken",
+    "name": "Kurzhantel Schulterdrücken",
+    "category": "shoulders",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": null,
+    "primary_muscles": [
+      "front_delts",
+      "side_delts"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "traps"
+    ],
+    "description": "Überkopfdrücken mit Kurzhanteln, sitzend mit Rückenlehne. Freier Bewegungsweg, jede Seite arbeitet für sich; die wichtigste freie Übung für die vordere und seitliche Schulter.",
+    "setup": [
+      "Bank fast senkrecht (80 Grad) einstellen.",
+      "Hanteln auf die Knie nehmen und einzeln in die Startposition auf Schulterhöhe bringen.",
+      "Handflächen nach vorne oder leicht nach innen, Ellenbogen leicht vor dem Körper.",
+      "Rumpf fest, unterer Rücken leicht an der Lehne."
+    ],
+    "execution": [
+      "Hanteln nach oben drücken, bis die Arme fast gestreckt sind.",
+      "Hanteln oben leicht zueinander führen, ohne sie zu berühren.",
+      "Kontrolliert bis auf Kinn- bis Schulterhöhe absenken.",
+      "Ellenbogen nicht hinter den Körper wandern lassen.",
+      "Ohne Schwung die nächste Wiederholung starten."
+    ],
+    "range_of_motion": "Von Schulterhöhe bis kurz vor die Streckung; so tief, wie die Schulter ohne Ausweichen zulässt.",
+    "breathing": "Beim Absenken (Dehnung) einatmen, beim Drücken oder Ziehen ausatmen.",
+    "common_mistakes": [
+      "Hohlkreuz, um mehr zu drücken.",
+      "Oben die Schultern hochziehen.",
+      "Zu kurzer Weg nach unten.",
+      "Hanteln oben aneinanderschlagen."
+    ],
+    "tips": [
+      "Mit 80 Grad Lehne starten; frei stehend braucht deutlich mehr Rumpfkontrolle.",
+      "6 bis 12 Wiederholungen, Gewicht per Doppelprogression steigern.",
+      "Hanteln nach dem Satz nach vorne auf die Knie ablegen."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Die vordere Schulter arbeitet in Dehnung, wenn die Hanteln bis auf Schulterhöhe oder leicht darunter kommen.",
+      "Ellenbogen leicht vor dem Körper (Scapula-Ebene) ist schulterfreundlicher als weit außen.",
+      "Nacken lang, Schultern tief, dann übernimmt nicht der Trapez."
+    ],
+    "requirements": [
+      "Bank mit verstellbarer Lehne",
+      "Zwei Kurzhanteln"
+    ],
+    "grip_alternatives": [],
+    "variants": [
+      {
+        "name": "Sitzend mit Lehne (Standard)",
+        "description": "Stabil, höchste Last.",
+        "source_url": "https://modusx.de/fitness-uebungen/schulterdruecken-mit-kurzhanteln/schulterdruecken-mit-kurzhanteln-sitzend/"
+      },
+      {
+        "name": "Stehend",
+        "description": "Mehr Rumpfarbeit, weniger Gewicht.",
+        "source_url": "https://modusx.de/fitness-uebungen/schulterdruecken-mit-kurzhanteln/schulterdruecken-mit-kurzhanteln-stehend/"
+      }
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/schulterdruecken-mit-kurzhanteln/",
+    "alternative_exercises": []
+  },
+  {
+    "slug": "arnold-press",
+    "name": "Arnold Press",
+    "category": "shoulders",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": null,
+    "primary_muscles": [
+      "front_delts",
+      "side_delts"
+    ],
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "description": "Schulterdrücken mit Drehung: Start mit den Handflächen zum Gesicht, beim Drücken nach außen drehen. Längerer Bewegungsweg und mehr Zeit unter Spannung für die vordere und seitliche Schulter.",
+    "setup": [
+      "Sitzend an der Lehne, Hanteln vor dem Gesicht auf Kinnhöhe, Handflächen zum Körper.",
+      "Ellenbogen vor dem Körper, Rumpf fest.",
+      "Schultern tief."
+    ],
+    "execution": [
+      "Hanteln nach oben drücken und dabei die Handflächen nach vorne drehen.",
+      "Oben Arme fast gestreckt, Handflächen nach vorne.",
+      "Auf dem Rückweg wieder eindrehen, bis die Handflächen vor dem Gesicht zum Körper zeigen.",
+      "Kontrolliert und flüssig, keine Pause im Umkehrpunkt oben.",
+      "Ellenbogen nicht hinter den Körper."
+    ],
+    "range_of_motion": "Von Kinnhöhe vor dem Gesicht bis kurz vor die Streckung.",
+    "breathing": "Beim Absenken (Dehnung) einatmen, beim Drücken oder Ziehen ausatmen.",
+    "common_mistakes": [
+      "Schwung aus dem Rücken.",
+      "Oben komplett strecken und Spannung verlieren.",
+      "Zu schwer und dadurch die Drehung weglassen.",
+      "Hohlkreuz."
+    ],
+    "tips": [
+      "Deutlich leichter als beim normalen Schulterdrücken.",
+      "10 bis 15 Wiederholungen, Fokus auf Kontrolle.",
+      "Gute Alternative, wenn klassisches Drücken in der Schulter zwickt."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Die Eindrehung unten bringt die vordere Schulter in eine tiefe Dehnung, dort liegt der zusätzliche Reiz.",
+      "Die Drehung gleichmäßig über den ganzen Weg verteilen, nicht erst oben.",
+      "Tempo 2 Sekunden hoch, 2 bis 3 Sekunden runter."
+    ],
+    "requirements": [
+      "Bank mit Lehne",
+      "Zwei Kurzhanteln"
+    ],
+    "grip_alternatives": [],
+    "variants": [
+      {
+        "name": "Sitzend (Standard)",
+        "description": "Stabile Ausführung.",
+        "source_url": "https://modusx.de/fitness-uebungen/arnold-press/arnold-press-sitzend-mit-kurzhanteln/"
+      }
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/arnold-press/",
+    "alternative_exercises": []
+  },
+  {
+    "slug": "seitheben-kurzhantel",
+    "name": "Seitheben Kurzhantel",
+    "category": "shoulders",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": null,
+    "primary_muscles": [
+      "side_delts"
+    ],
+    "secondary_muscles": [
+      "traps"
+    ],
+    "description": "Klassisches Seitheben mit Kurzhanteln für die seitliche Schulter, die Übung für breite Schultern. Die Spannung ist oben am größten, deshalb gut mit Seitheben am Kabel oder an der Maschine kombinieren.",
+    "setup": [
+      "Stehend, Füße hüftbreit, Knie leicht gebeugt, Oberkörper minimal nach vorne geneigt.",
+      "Hanteln seitlich neben den Oberschenkeln, Ellenbogen leicht gebeugt.",
+      "Schultern tief, Nacken lang."
+    ],
+    "execution": [
+      "Arme seitlich anheben, Ellenbogen führen die Bewegung.",
+      "Bis die Oberarme waagerecht sind, Hände auf Ellenbogenhöhe.",
+      "Oben kurz halten.",
+      "Langsam absenken, unten nicht ablegen.",
+      "Kein Schwung aus den Beinen."
+    ],
+    "range_of_motion": "Bis zur Waagerechten des Oberarms, nicht höher.",
+    "breathing": "Beim Heben ausatmen, beim Senken einatmen.",
+    "common_mistakes": [
+      "Schultern hochziehen und den Trapez arbeiten lassen.",
+      "Schwung aus Knien und Rücken.",
+      "Zu schwer, dadurch kurzer Weg.",
+      "Daumen nach oben drehen und die vordere Schulter übernehmen lassen."
+    ],
+    "tips": [
+      "Leicht bis mittel, 12 bis 20 Wiederholungen bis nahe ans Versagen.",
+      "Sitzend ausgeführt ist Schwung unmöglich.",
+      "Die seitliche Schulter verträgt hohes Volumen, 2 bis 3 Mal pro Woche."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Ellenbogen leicht gebeugt lassen und den Oberarm bewegen, nicht die Hand.",
+      "Leichte Vorneigung des Oberkörpers bringt die Bewegung in die Ebene des Schulterblatts, das ist gelenkschonender und trifft die seitliche Schulter besser.",
+      "Kontrolliert absenken, die Exzentrik zählt."
+    ],
+    "requirements": [
+      "Zwei leichte Kurzhanteln"
+    ],
+    "grip_alternatives": [],
+    "variants": [
+      {
+        "name": "Stehend (Standard)",
+        "description": "Beidarmig, leichte Vorneigung.",
+        "source_url": "https://modusx.de/fitness-uebungen/kurzhantel-seitheben/kurzhantel-seitheben-im-stehen/"
+      },
+      {
+        "name": "Sitzend",
+        "description": "Kein Schwung möglich, strenger.",
+        "source_url": "https://modusx.de/fitness-uebungen/kurzhantel-seitheben/kurzhantel-seitheben-im-sitzen/"
+      }
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-seitheben/",
+    "alternative_exercises": []
   }
 ]

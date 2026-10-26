@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { createClient } from "@/lib/supabase/client";
 import { useUser } from "@/lib/context/user-context";
-import type { EquipmentType, ExerciseCategory, GripRow, MuscleId } from "@/lib/supabase/types";
+import type { EquipmentType, ExerciseCategory, ExerciseVariant, GripRow, MuscleId } from "@/lib/supabase/types";
 import {
   createCustomExercise,
   updateCustomExercise,
@@ -43,6 +43,22 @@ const DEFAULT_PRIMARY: Record<ExerciseCategory, MuscleId> = {
   cardio: "quads",
 };
 
+/** "Name: Beschreibung | https://…" je Zeile → Varianten */
+function parseVariants(text: string): ExerciseVariant[] {
+  return text
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const [main, url] = line.split("|").map((p) => p.trim());
+      const idx = main.indexOf(":");
+      const name = idx > 0 ? main.slice(0, idx).trim() : main;
+      const description = idx > 0 ? main.slice(idx + 1).trim() : "";
+      return { name, description: description || name, ...(url && /^https:\/\//.test(url) ? { source_url: url } : {}) };
+    })
+    .filter((v) => v.name.length > 0);
+}
+
 const linesToArray = (s: string) =>
   s
     .split("\n")
@@ -72,6 +88,7 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
   const [requirements, setRequirements] = React.useState((existing?.requirements ?? []).join("\n"));
   const [animationUrl, setAnimationUrl] = React.useState(existing?.animation_url ?? "");
   const [bodyweightPct, setBodyweightPct] = React.useState(String(Math.round((existing?.bodyweight_factor ?? 1) * 100)));
+  const [variants, setVariants] = React.useState((existing?.variants ?? []).map((v) => `${v.name}: ${v.description}${v.source_url ? ` | ${v.source_url}` : ""}`).join("\n"));
 
   const onCategoryChange = (next: ExerciseCategory) => {
     setCategory(next);
@@ -123,6 +140,7 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
       image_url: existing?.image_url ?? null,
       animation_url: animationUrl.trim() || null,
       bodyweight_factor: equipment === "bodyweight" ? Math.round(parseFloat(bodyweightPct.replace(",", ".")) ) / 100 : 1,
+      variants: parseVariants(variants),
     };
     try {
       const db = createClient();
@@ -254,6 +272,9 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
           </Field>
           <Field label="Das brauchst du (optional)" htmlFor="requirements" hint="Ausstattung, ein Punkt pro Zeile">
             <Textarea id="requirements" value={requirements} onChange={(e) => setRequirements(e.target.value)} rows={2} />
+          </Field>
+          <Field label="Varianten (optional)" htmlFor="variants" hint="Eine je Zeile im Format „Name: Beschreibung“, optional „| https://…“ für einen Link. Unterschiede derselben Übung hier erklären statt eine zweite Übung anzulegen.">
+            <Textarea id="variants" value={variants} onChange={(e) => setVariants(e.target.value)} rows={3} placeholder="Stehend: Knie gestreckt, trifft den Gastrocnemius" />
           </Field>
           <Field label="Animations-URL (optional)" htmlFor="animationUrl" error={errors.animationUrl} hint="GIF, WebP oder MP4 der Ausführung">
             <Input id="animationUrl" type="url" value={animationUrl} onChange={(e) => setAnimationUrl(e.target.value)} invalid={!!errors.animationUrl} />

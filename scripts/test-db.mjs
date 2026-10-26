@@ -434,6 +434,42 @@ await test("Portfolio: eigene Übungen werden Standardübungen (Slug ohne Suffix
   assert(kept.rows.length === 1 && kept.rows[0].is_custom === false, "Kollisionsfall nicht korrekt");
 });
 
+await test("Katalog: Dubletten zusammenführen hängt Pläne, Trainings und Favoriten um", async () => {
+  await db.query("insert into exercises (slug, name, category, equipment) values ('merge-alt', 'Alt', 'chest', 'machine'), ('merge-neu', 'Neu', 'chest', 'machine')");
+  const alt = (await db.query("select id from exercises where slug = 'merge-alt'")).rows[0].id;
+  const neu = (await db.query("select id from exercises where slug = 'merge-neu'")).rows[0].id;
+  await db.query("insert into exercise_muscles (exercise_id, muscle_id, role) values ($1, 'chest', 'primary'), ($2, 'chest', 'primary')", [alt, neu]);
+  const planA = (await db.query("select id from workout_plans where user_id = $1 and name = 'Oberkörper A'", [USER_A])).rows[0].id;
+  const planB = (await db.query("select id from workout_plans where user_id = $1 and name = 'Oberkörper B'", [USER_A])).rows[0].id;
+  // Plan A: nur alt → wird umgehängt; Plan B: alt und neu → Dublette entfällt
+  await db.query("insert into workout_plan_exercises (plan_id, exercise_id, sort_order) values ($1, $2, 90), ($3, $2, 90), ($3, $4, 91)", [planA, alt, planB, neu]);
+  await db.query("insert into favorites (user_id, exercise_id) values ($1, $2)", [USER_A, alt]);
+  // Training mit Satz an der alten Übung
+  await asUser(USER_A, async () => {
+    const r = await db.query("select start_workout_session($1) as id", [planA]);
+    const se = await db.query("select id from workout_session_exercises where session_id = $1 and exercise_id = $2", [r.rows[0].id, alt]);
+    await db.query("insert into workout_sets (session_exercise_id, user_id, set_number, weight, reps) values ($1, $2, 1, 10, 10)", [se.rows[0].id, USER_A]);
+    await db.query("select complete_workout_session($1, null, '2026-10-24')", [r.rows[0].id]);
+  });
+  const moved = await db.query("select merge_exercise('merge-alt', 'merge-neu') as n");
+  assert(Number(moved.rows[0].n) === 1, `erwartet 1 umgehängte Trainingsübung, erhalten ${moved.rows[0].n}`);
+  const gone = await db.query("select count(*)::int as n from exercises where slug = 'merge-alt'");
+  assert(gone.rows[0].n === 0, "alte Übung nicht gelöscht");
+  const pa = await db.query("select exercise_id from workout_plan_exercises where plan_id = $1 and sort_order = 90", [planA]);
+  assert(pa.rows[0].exercise_id === neu, "Plan A nicht umgehängt");
+  const pb = await db.query("select count(*)::int as n from workout_plan_exercises where plan_id = $1 and exercise_id = $2", [planB, neu]);
+  assert(pb.rows[0].n === 1, "Dublette in Plan B nicht entfernt");
+  const fav = await db.query("select exercise_id from favorites where user_id = $1 and exercise_id = $2", [USER_A, neu]);
+  assert(fav.rows.length === 1, "Favorit nicht umgehängt");
+  const sess = await db.query("select count(*)::int as n from workout_session_exercises where exercise_id = $1", [neu]);
+  assert(sess.rows[0].n === 1, "Training nicht umgehängt");
+  assert(Number((await db.query("select merge_exercise('gibt-es-nicht', 'merge-neu') as n")).rows[0].n) === 0, "unbekannte Übung sollte 0 liefern");
+  // Aufräumen, damit spätere Zählungen stimmen
+  await db.query("delete from workout_sessions where user_id = $1 and started_at::date = current_date and id in (select session_id from workout_session_exercises where exercise_id = $2)", [USER_A, neu]);
+  await db.query("delete from workout_plan_exercises where exercise_id = $1", [neu]);
+  await db.query("delete from exercises where slug = 'merge-neu'");
+});
+
 await test("Pläne anderer Mitglieder ansehen und kopieren, ohne Anmeldung gesperrt", async () => {
   await asUser(USER_B, async () => {
     const r = await db.query("select get_member_plans($1) as p", [USER_A]);

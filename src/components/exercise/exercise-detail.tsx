@@ -178,6 +178,32 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
         </Card>
       ) : null}
 
+      {/* Varianten derselben Übung */}
+      {exercise.variants.length > 0 ? (
+        <Card>
+          <CardContent className="pt-5">
+            <SectionLabel>Varianten</SectionLabel>
+            <p className="mt-1 text-sm text-muted">Eine Übung, mehrere Ausführungen. Die Unterschiede und was sie bewirken:</p>
+            <div className="mt-3 divide-y divide-border">
+              {exercise.variants.map((v, i) => (
+                <div key={i} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0">
+                  <span className="display tnum mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-subtle text-xs">{i + 1}</span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-base font-semibold">{v.name}</p>
+                    <p className="mt-0.5 text-sm leading-relaxed text-muted">{v.description}</p>
+                    {v.source_url ? (
+                      <a href={v.source_url} target="_blank" rel="noreferrer noopener" className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-accent">
+                        Animation ansehen <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    ) : null}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      ) : null}
+
       {/* Wie getrackt wird */}
       {exercise.tracking_mode !== "weight_reps" ? (
         <Card>
