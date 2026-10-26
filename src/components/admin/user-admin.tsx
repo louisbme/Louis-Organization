@@ -221,7 +221,7 @@ export function UserAdmin({ users: initial }: { users: AdminUserRow[] }) {
             <div className="mt-3 flex flex-wrap gap-2">
               <Link href={`/admin/users/${u.user_id}`}>
                 <Button variant="secondary" size="sm">
-                  <Dumbbell className="h-4 w-4" /> Trainingsdaten
+                  <Dumbbell className="h-4 w-4" /> Körper- und Trainingsdaten
                 </Button>
               </Link>
               <Button variant="secondary" size="sm" onClick={() => openAuth(u, "email")} disabled={busy === u.user_id}>

@@ -485,6 +485,24 @@ await test("Admin: Trainingsdaten anderer lesbar und bearbeitbar (Summen neu), N
     assert(prof.rows[0].n === 2, "Admin sieht nicht alle Profile");
     const plans = await db.query("select count(*)::int as n from workout_plans where user_id = $1", [USER_B]);
     assert(plans.rows[0].n >= 3, "Admin sieht fremde Pläne nicht");
+    // Körperdaten anderer pflegen
+    await db.query("update profiles set height_cm = 175, birth_date = '2001-01-15' where id = $1", [USER_B]);
+    const body = await db.query("select height_cm::float as h from profiles where id = $1", [USER_B]);
+    assert(body.rows[0]?.h === 175, "Admin konnte Größe nicht setzen");
+    await db.query("insert into body_weight_entries (user_id, entry_date, weight) values ($1, '2026-10-26', 77.5) on conflict (user_id, entry_date) do update set weight = excluded.weight", [USER_B]);
+    const bw = await db.query("select weight::float as w from body_weight_entries where user_id = $1", [USER_B]);
+    assert(bw.rows[0]?.w === 77.5, "Admin konnte Gewicht nicht eintragen");
+  });
+  await asUser(USER_B, async () => {
+    let blocked = false;
+    try {
+      await db.query("update profiles set height_cm = 190 where id = $1", [USER_A]);
+      const check = await db.query("select height_cm::float as h from profiles where id = $1", [USER_A]);
+      blocked = check.rows.length === 0 || check.rows[0].h !== 190;
+    } catch {
+      blocked = true;
+    }
+    assert(blocked, "Nicht-Admin konnte fremde Körperdaten ändern");
   });
 });
 

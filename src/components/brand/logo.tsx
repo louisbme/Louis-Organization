@@ -6,7 +6,7 @@ export function LogoMark({ className, size = 32 }: { className?: string; size?: 
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/brand/logo.svg"
+      src="/brand/logo.png"
       alt={APP_NAME}
       width={size}
       height={size}

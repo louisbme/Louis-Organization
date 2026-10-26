@@ -32,7 +32,7 @@ Gestaltung nach Apple Human Interface Guidelines: semantische Farben mit Licht- 
 - **Kalender**: eigener Tab in der mobilen Leiste, Monatsansicht, ±10 Jahre, Tage als Training / Rest Day / Freizeit / Party / Anderer Tag markieren, Notizen, Knopf „Heute eintragen“; abgeschlossene Trainings werden automatisch eingetragen. Die Trainingsliste (Verlauf) liegt als zweite Ansicht daneben.
 - **Stats**: private Übersicht aller Mitglieder (Nickname, Gesamtvolumen, Trainings, Zeit, letztes Training) mit Mitglieder-Detailansicht („Mehr sehen“): abgeschlossene Trainings nach Monat, Detail mit Übungen und Sätzen; nur lesend, nur für angemeldete Benutzer. In der Mitglieder-Detailansicht sind die Trainingspläne des Mitglieds sichtbar und lassen sich mit einem Tipp in die eigenen Pläne kopieren.
 - **Profil & Einstellungen**: Nickname, E-Mail, Passwort, Körperdaten (Gewicht als Verlauf, Größe, Geburtsdatum; Profil zeigt BMI und Alter), Gewichtseinheit, Gewichtsschritt, Rest-Timer-Standard, RIR anzeigen, Theme. Das Körpergewicht wird für Körpergewichtsübungen verwendet.
-- **Verwaltung (nur Admins)**: Nutzerliste mit E-Mail, Registrierung, letztem Login, Trainings und Volumen; Nickname ändern; E-Mail und Passwort eines Nutzers direkt setzen (Route Handler mit Service-Zugang `SUPABASE_SECRET_KEY`, nur für angemeldete Admins; der Nutzer wird dabei abgemeldet); Passwort-Reset-Mail senden; Rolle setzen; Nutzer löschen; Trainingsdaten anderer Nutzer öffnen und bearbeiten (Trainings, Sätze, Pläne über RLS-Richtlinien für Admins); Standardübungen über das Bearbeiten-Formular pflegen.
+- **Verwaltung (nur Admins)**: Nutzerliste mit E-Mail, Registrierung, letztem Login, Trainings und Volumen; Nickname ändern; E-Mail und Passwort eines Nutzers direkt setzen (Route Handler mit Service-Zugang `SUPABASE_SECRET_KEY`, nur für angemeldete Admins; der Nutzer wird dabei abgemeldet); Passwort-Reset-Mail senden; Rolle setzen; Nutzer löschen; Körper- und Trainingsdaten anderer Nutzer öffnen und bearbeiten (Gewicht, Größe, Geburtsdatum, Trainings, Sätze, Pläne über RLS-Richtlinien für Admins); Standardübungen über das Bearbeiten-Formular pflegen.
 
 ## Lokale Installation
 
@@ -101,6 +101,7 @@ Migrationen:
 | `0017_tracking_modes.sql` | Tracking-Arten (Gewicht × Wdh, Körpergewicht, Cardio) je Übung, Cardio-Felder (Dauer, Distanz) und Körpergewichts-Felder an Sätzen, Neuberechnung der Summen per Trigger (nachträgliches Bearbeiten), erweiterte Bestleistungen und Verläufe |
 | `0018_portfolio_admin_sharing.sql` | Eigene Übungen werden Standardübungen (`promote_custom_exercises`), Quelle der Ausführungs-Animation, RLS-Richtlinien für Admins (Trainings, Sätze, Pläne, Profile), Pläne anderer Mitglieder lesen und kopieren |
 | `0019_body_data_cardio_targets.sql` | Körperdaten im Profil (Größe, Geburtsdatum), Cardio-Ziele (Dauer, Distanz) in Plänen und Trainings, Übernahme beim Start und Kopieren |
+| `0020_admin_body_data.sql` | Admins dürfen Körperdaten und Gewichtseinträge anderer Nutzer pflegen |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 

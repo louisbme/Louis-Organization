@@ -3,25 +3,28 @@ import { requireUser } from "@/lib/auth/require-user";
 import { getProfile } from "@/lib/services/profile";
 import { listSessions } from "@/lib/services/sessions";
 import { listPlans } from "@/lib/services/plans";
+import { getLatestBodyWeight } from "@/lib/services/stats";
 import { formatDuration, formatRelativeDay, formatVolume } from "@/lib/utils/format";
 import { PageHeader } from "@/components/ui/page-header";
 import { EmptyState } from "@/components/ui/states";
 import { List, ListHeader, ListRow } from "@/components/ui/list";
+import { AdminBodyData } from "@/components/admin/admin-body-data";
 
 export const metadata = { title: "Trainingsdaten" };
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-/** Admin: Trainings und Pläne eines Nutzers öffnen und bearbeiten. */
+/** Admin: Körperdaten, Trainings und Pläne eines Nutzers öffnen und bearbeiten. */
 export default async function AdminUserPage({ params }: { params: Promise<{ userId: string }> }) {
   const { userId } = await params;
   if (!UUID_RE.test(userId)) notFound();
   const { supabase, profile, settings } = await requireUser();
   if (profile.role !== "admin") redirect("/dashboard");
-  const [target, sessions, plans] = await Promise.all([
+  const [target, sessions, plans, bodyWeight] = await Promise.all([
     getProfile(supabase, userId),
     listSessions(supabase, userId, { limit: 200 }),
     listPlans(supabase, userId, true),
+    getLatestBodyWeight(supabase, userId).catch(() => null),
   ]);
   if (!target) notFound();
   const unit = settings.weight_unit;
@@ -30,12 +33,14 @@ export default async function AdminUserPage({ params }: { params: Promise<{ user
     <div className="space-y-5">
       <PageHeader
         title={target.nickname}
-        eyebrow="Trainingsdaten bearbeiten"
+        eyebrow="Nutzerdaten bearbeiten"
         backHref="/admin"
         backLabel="Verwaltung"
         description={`${sessions.length} Trainings · ${plans.length} Pläne. Änderungen wirken direkt im Konto von ${target.nickname}.`}
         compact
       />
+
+      <AdminBodyData profile={target} bodyWeight={bodyWeight} />
 
       <section>
         <ListHeader>Trainingspläne</ListHeader>
