@@ -2,6 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils/cn";
 import { AnimatedNumber } from "@/components/ui/animated-number";
 
+/** Kennzahl-Kachel: Beschriftung oben, Wert groß (Montserrat), optionaler Hinweis */
 export function Stat({
   label,
   value,
@@ -14,12 +15,12 @@ export function Stat({
   className?: string;
 }) {
   return (
-    <div className={cn("rounded-[var(--radius-card)] border border-border bg-card px-4 py-4", className)}>
-      <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-faint">{label}</p>
-      <p className="tnum mt-1.5 text-2xl font-semibold tracking-tight text-fg">
+    <div className={cn("rounded-[var(--radius-card)] bg-card px-4 py-4", className)}>
+      <p className="text-[13px] font-medium text-muted">{label}</p>
+      <p className="display tnum mt-1 text-xl text-fg sm:text-2xl">
         {typeof value === "number" ? <AnimatedNumber value={value} /> : value}
       </p>
-      {hint ? <p className="mt-0.5 text-xs text-muted">{hint}</p> : null}
+      {hint ? <p className="mt-0.5 text-xs text-faint">{hint}</p> : null}
     </div>
   );
 }

@@ -14,8 +14,8 @@ export default async function PlanPage({ params }: { params: Promise<{ planId: s
   if (!plan || plan.user_id !== user.id) notFound();
   return (
     <div>
-      <Link href="/plans" className="-ml-1 mb-2 inline-flex items-center gap-0.5 text-sm text-muted hover:text-fg">
-        <ChevronLeft className="h-4 w-4" /> Pläne
+      <Link href="/plans" className="press -ml-1.5 mb-2 inline-flex h-9 items-center gap-0.5 pr-2 text-base font-medium text-accent">
+        <ChevronLeft className="h-5 w-5" strokeWidth={2.4} /> Pläne
       </Link>
       <PlanEditor plan={plan} />
     </div>

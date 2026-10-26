@@ -107,6 +107,32 @@ function Figure({
   );
 }
 
+/**
+ * Reduzierte Figur im Linienstil (für Karten der Übungsübersicht):
+ * Konturen in der aktuellen Textfarbe, hervorgehobene Muskeln in Akzentrot.
+ */
+export function MuscleFigure({ view, highlight, className }: { view: View; highlight: string[]; className?: string }) {
+  const regions: AnatomyRegion[] = view === "front" ? ANTERIOR : POSTERIOR;
+  const map = intensities(view, highlight, []);
+  return (
+    <svg viewBox="0 0 100 200" aria-hidden className={cn("h-full w-auto", className)}>
+      {regions.map((r) => {
+        const active = map.get(r.muscle) === "primary";
+        return r.svgPoints.map((points, idx) => (
+          <polygon
+            key={`${r.muscle}-${idx}`}
+            points={points}
+            fill={active ? "var(--muscle-primary)" : "transparent"}
+            stroke={active ? "var(--muscle-primary-light)" : "currentColor"}
+            strokeWidth={active ? 0.5 : 0.7}
+            strokeLinejoin="round"
+          />
+        ));
+      })}
+    </svg>
+  );
+}
+
 interface MuscleMapProps {
   primary: string[];
   secondary: string[];
@@ -128,7 +154,7 @@ export function MuscleList({ primary, secondary, label }: { primary: string[]; s
 
 function MuscleGroupColumn({ title, color, items, emphasis }: { title: string; color: string; items: string[]; emphasis?: boolean }) {
   return (
-    <div className="rounded-xl border border-border bg-subtle/60 px-3.5 py-3">
+    <div className="rounded-[var(--radius-control)] bg-subtle/60 px-3.5 py-3">
       <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-faint">
         <span className="h-2.5 w-2.5 rounded-sm" style={{ background: color }} /> {title}
       </p>

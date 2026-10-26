@@ -21,19 +21,19 @@ export function RestTimerBar({ timer }: { timer: Timer }) {
   const progress = timer.running && timer.duration > 0 ? 1 - timer.remaining / timer.duration : 0;
 
   const bar = (
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-bg/95 backdrop-blur safe-bottom lg:left-60">
-        <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
+      <div className="fixed inset-x-0 bottom-0 z-30 px-4 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] pt-2 lg:left-64 lg:px-8">
+        <div className="glass mx-auto flex max-w-md items-center gap-2 rounded-full p-1.5 shadow-[var(--shadow-float)] lg:max-w-5xl lg:rounded-[20px]">
           {timer.running ? (
             <>
-              <div className="relative flex h-11 flex-1 items-center overflow-hidden rounded-xl border border-border bg-subtle px-4">
+              <div className="relative flex h-11 flex-1 items-center overflow-hidden rounded-full bg-subtle px-4">
                 <div className="absolute inset-y-0 left-0 bg-accent-soft transition-[width] duration-200" style={{ width: `${progress * 100}%` }} />
-                <span className="relative flex items-center gap-2 text-sm font-medium">
+                <span className="relative flex items-center gap-2 text-sm font-semibold">
                   <Timer className="h-4 w-4 text-accent" /> Pause
                 </span>
-                <span className="tnum relative ml-auto text-xl font-semibold">{formatClock(timer.remaining)}</span>
+                <span className="display tnum relative ml-auto text-xl">{formatClock(timer.remaining)}</span>
               </div>
               <Button variant="secondary" size="md" onClick={() => timer.add(30)} aria-label="30 Sekunden hinzufügen">
-                <Plus className="h-4 w-4" /> 30s
+                <Plus className="h-4 w-4" strokeWidth={2.6} /> 30s
               </Button>
               <Button variant="ghost" size="icon" onClick={timer.stop} aria-label="Pause beenden">
                 <X className="h-5 w-5" />
@@ -45,8 +45,8 @@ export function RestTimerBar({ timer }: { timer: Timer }) {
                 type="button"
                 onClick={() => setOpen(true)}
                 className={cn(
-                  "flex h-11 flex-1 items-center justify-between rounded-xl border border-border bg-subtle px-4 text-sm font-medium hover:bg-hover touch-manipulation",
-                  timer.justFinished && "border-accent text-accent"
+                  "press flex h-11 flex-1 items-center justify-between rounded-full bg-subtle px-4 text-sm font-semibold hover:bg-hover touch-manipulation",
+                  timer.justFinished && "bg-accent-soft text-accent"
                 )}
               >
                 <span className="flex items-center gap-2">
@@ -54,9 +54,7 @@ export function RestTimerBar({ timer }: { timer: Timer }) {
                 </span>
                 <span className="tnum text-muted">{formatClock(timer.duration)}</span>
               </button>
-              <Button variant="secondary" onClick={() => timer.start()}>
-                Start
-              </Button>
+              <Button onClick={() => timer.start()}>Start</Button>
             </>
           )}
         </div>
@@ -80,8 +78,8 @@ export function RestTimerBar({ timer }: { timer: Timer }) {
                 setOpen(false);
               }}
               className={cn(
-                "h-14 rounded-xl border text-base font-semibold touch-manipulation",
-                timer.duration === p ? "border-accent bg-accent-soft text-accent" : "border-border bg-subtle hover:bg-hover"
+                "press h-14 rounded-[var(--radius-control)] text-base font-semibold touch-manipulation",
+                timer.duration === p ? "bg-accent-fill text-accent-fg" : "bg-subtle hover:bg-hover"
               )}
             >
               {p}s

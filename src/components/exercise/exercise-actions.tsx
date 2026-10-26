@@ -85,7 +85,7 @@ export function AddToPlanButton({ exerciseId, exerciseName }: { exerciseId: stri
             </Link>
           </p>
         ) : (
-          <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border">
+          <ul className="divide-y divide-border overflow-hidden rounded-[var(--radius-control)] bg-subtle">
             {plans.map((p) => {
               const contains = p.exercises.some((e) => e.exercise_id === exerciseId);
               return (

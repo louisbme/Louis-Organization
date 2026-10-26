@@ -200,7 +200,7 @@ export function UserAdmin({ users: initial }: { users: AdminUserRow[] }) {
 function Cell({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-lg bg-subtle px-3 py-2">
-      <p className="text-[10px] font-medium uppercase tracking-wider text-faint">{label}</p>
+      <p className="text-xs font-medium text-muted">{label}</p>
       <p className="tnum mt-0.5 text-sm font-semibold">{value}</p>
     </div>
   );

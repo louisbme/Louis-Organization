@@ -19,7 +19,7 @@ import {
   type SessionPoint,
   type TrainedExercise,
 } from "@/lib/services/stats";
-import { formatDate, formatDecimal, formatDuration, formatVolume, formatWeight, toDateKey } from "@/lib/utils/format";
+import { formatClock, formatDate, formatDecimal, formatDistance, formatDuration, formatPace, formatVolume, formatWeight, toDateKey } from "@/lib/utils/format";
 import { friendlyError } from "@/lib/utils/errors";
 import { Segmented } from "@/components/ui/segmented";
 import { Card, CardContent, SectionLabel } from "@/components/ui/card";
@@ -167,6 +167,28 @@ export function ProgressView({ exercises, initialPoints, initialBodyWeight }: Pr
     y: h.volume,
   }));
 
+  const selectedExercise = exercises.find((e) => e.id === exerciseId) ?? null;
+  const isCardio = selectedExercise?.tracking_mode === "cardio";
+  const exDistance: TrendPoint[] = history.map((h) => ({
+    x: formatDate(h.started_at, "d.M."),
+    label: formatDate(h.started_at, "EEE, d. MMM yyyy"),
+    y: h.total_distance_m / 1000,
+    extra: h.total_duration_seconds ? formatClock(h.total_duration_seconds) : undefined,
+  }));
+  const exDuration: TrendPoint[] = history.map((h) => ({
+    x: formatDate(h.started_at, "d.M."),
+    label: formatDate(h.started_at, "EEE, d. MMM yyyy"),
+    y: Math.round(h.total_duration_seconds / 60),
+    extra: h.total_distance_m ? formatDistance(h.total_distance_m) : undefined,
+  }));
+  const exPace: TrendPoint[] = history
+    .filter((h) => h.total_distance_m >= 500 && h.total_duration_seconds > 0)
+    .map((h) => ({
+      x: formatDate(h.started_at, "d.M."),
+      label: formatDate(h.started_at, "EEE, d. MMM yyyy"),
+      y: Math.round(h.total_duration_seconds / (h.total_distance_m / 1000)),
+    }));
+
   const totalVolume = points.reduce((s, p) => s + p.total_volume, 0);
   const totalDuration = points.reduce((s, p) => s + p.duration_seconds, 0);
 
@@ -209,6 +231,9 @@ export function ProgressView({ exercises, initialPoints, initialBodyWeight }: Pr
         <Mini label="Zeit" value={formatDuration(totalDuration)} />
         <Mini label="Volumen" value={formatVolume(totalVolume, unit)} />
       </div>
+      {bodyWeight.length === 0 && exercises.some((e) => e.tracking_mode === "bodyweight") ? (
+        <p className="text-sm text-muted">Tipp: Trage dein Körpergewicht ein, damit Körpergewichtsübungen mit realer Last gerechnet werden.</p>
+      ) : null}
 
       <ChartCard title="Trainingsvolumen" subtitle="Summe Gewicht × Wiederholungen je Training">
         <TrendChart data={volumeData} type="bar" formatValue={(v) => formatVolume(v, unit)} />
@@ -267,7 +292,14 @@ export function ProgressView({ exercises, initialPoints, initialBodyWeight }: Pr
                 </Select>
               </div>
 
-              {records ? (
+              {records && isCardio ? (
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  <Mini label="Längste Distanz" value={records.max_distance_m ? formatDistance(records.max_distance_m) : "–"} />
+                  <Mini label="Längste Dauer" value={records.max_duration_seconds ? formatClock(records.max_duration_seconds) : "–"} />
+                  <Mini label="Beste Pace" value={records.best_pace_sec_per_km ? formatPace(records.best_pace_sec_per_km) : "–"} />
+                  <Mini label="Einheiten" value={String(records.total_sessions)} />
+                </div>
+              ) : records ? (
                 <div className="mt-4 grid grid-cols-2 gap-2">
                   <Mini label="Schwerstes Gewicht" value={records.max_weight !== null ? `${formatWeight(records.max_weight, unit)} × ${records.max_weight_reps}` : "–"} />
                   <Mini label="Meiste Wdh" value={records.max_reps !== null ? `${records.max_reps} × ${formatWeight(records.max_reps_weight ?? 0, unit)}` : "–"} />
@@ -276,24 +308,41 @@ export function ProgressView({ exercises, initialPoints, initialBodyWeight }: Pr
                 </div>
               ) : null}
 
-              <div className="mt-5 space-y-6">
-                <div>
-                  <p className="mb-2 text-sm font-medium">Gewicht über Zeit (Top-Satz)</p>
-                  <TrendChart data={exWeight} type="line" formatValue={(v) => formatWeight(v, unit)} />
+              {isCardio ? (
+                <div className="mt-5 space-y-6">
+                  <div>
+                    <p className="mb-2 text-sm font-semibold">Distanz je Einheit</p>
+                    <TrendChart data={exDistance} type="bar" formatValue={(v) => `${formatDecimal(v)} km`} />
+                  </div>
+                  <div>
+                    <p className="mb-2 text-sm font-semibold">Dauer je Einheit</p>
+                    <TrendChart data={exDuration} type="bar" color="var(--chart-2)" formatValue={(v) => `${v} min`} />
+                  </div>
+                  <div>
+                    <p className="mb-2 text-sm font-semibold">Pace</p>
+                    <TrendChart data={exPace} type="line" color="var(--chart-3)" formatValue={(v) => formatPace(v)} emptyLabel="Pace braucht Dauer und mindestens 500 m Distanz." />
+                  </div>
                 </div>
-                <div>
-                  <p className="mb-2 text-sm font-medium">Wiederholungen (max. je Training)</p>
-                  <TrendChart data={exReps} type="bar" color="var(--chart-2)" formatValue={(v) => `${v} Wdh`} />
+              ) : (
+                <div className="mt-5 space-y-6">
+                  <div>
+                    <p className="mb-2 text-sm font-semibold">Gewicht über Zeit (Top-Satz)</p>
+                    <TrendChart data={exWeight} type="line" formatValue={(v) => formatWeight(v, unit)} />
+                  </div>
+                  <div>
+                    <p className="mb-2 text-sm font-semibold">Wiederholungen (max. je Training)</p>
+                    <TrendChart data={exReps} type="bar" color="var(--chart-2)" formatValue={(v) => `${v} Wdh`} />
+                  </div>
+                  <div>
+                    <p className="mb-2 text-sm font-semibold">Geschätztes 1RM</p>
+                    <TrendChart data={ex1rm} type="line" color="var(--chart-3)" formatValue={(v) => formatWeight(v, unit)} />
+                  </div>
+                  <div>
+                    <p className="mb-2 text-sm font-semibold">Volumen je Training</p>
+                    <TrendChart data={exVolume} type="bar" color="var(--chart-4)" formatValue={(v) => formatVolume(v, unit)} />
+                  </div>
                 </div>
-                <div>
-                  <p className="mb-2 text-sm font-medium">Geschätztes 1RM</p>
-                  <TrendChart data={ex1rm} type="line" color="var(--chart-3)" formatValue={(v) => formatWeight(v, unit)} />
-                </div>
-                <div>
-                  <p className="mb-2 text-sm font-medium">Volumen je Training</p>
-                  <TrendChart data={exVolume} type="bar" color="var(--chart-4)" formatValue={(v) => formatVolume(v, unit)} />
-                </div>
-              </div>
+              )}
             </>
           )}
         </CardContent>
@@ -322,8 +371,8 @@ function ChartCard({ title, subtitle, action, children }: { title: string; subti
       <CardContent className="pt-5">
         <div className="mb-3 flex items-start justify-between gap-3">
           <div>
-            <p className="text-sm font-semibold">{title}</p>
-            {subtitle ? <p className="text-xs text-muted">{subtitle}</p> : null}
+            <p className="text-base font-semibold">{title}</p>
+            {subtitle ? <p className="text-sm text-muted">{subtitle}</p> : null}
           </div>
           {action}
         </div>
@@ -335,9 +384,9 @@ function ChartCard({ title, subtitle, action, children }: { title: string; subti
 
 function Mini({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-border bg-card px-3 py-3">
-      <p className="text-[10px] font-medium uppercase tracking-wider text-faint">{label}</p>
-      <p className="tnum mt-1 text-base font-semibold">{value}</p>
+    <div className="rounded-[var(--radius-control)] bg-card px-3 py-3">
+      <p className="text-[13px] font-medium text-muted">{label}</p>
+      <p className="display tnum mt-1 text-base">{value}</p>
     </div>
   );
 }

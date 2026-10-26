@@ -9,7 +9,17 @@ export interface ExerciseLastPerformance {
   targetSets: number;
   repMin: number;
   repMax: number;
-  sets: Array<{ setNumber: number; weight: number; reps: number; rir: number | null; isWarmup: boolean }>;
+  sets: Array<{
+    setNumber: number;
+    weight: number;
+    reps: number;
+    rir: number | null;
+    isWarmup: boolean;
+    durationSeconds: number | null;
+    distanceM: number | null;
+    bodyWeight: number | null;
+    extraWeight: number | null;
+  }>;
 }
 
 export function groupLastPerformance(rows: LastPerformanceRow[]): Map<string, ExerciseLastPerformance> {
@@ -34,6 +44,10 @@ export function groupLastPerformance(rows: LastPerformanceRow[]): Map<string, Ex
       reps: r.reps,
       rir: r.rir,
       isWarmup: r.is_warmup,
+      durationSeconds: r.duration_seconds ?? null,
+      distanceM: r.distance_m ?? null,
+      bodyWeight: r.body_weight === null || r.body_weight === undefined ? null : Number(r.body_weight),
+      extraWeight: r.extra_weight === null || r.extra_weight === undefined ? null : Number(r.extra_weight),
     });
   }
   return map;

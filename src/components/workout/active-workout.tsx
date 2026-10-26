@@ -9,34 +9,39 @@ import { createClient } from "@/lib/supabase/client";
 import { useUser } from "@/lib/context/user-context";
 import type { SessionDetail } from "@/lib/services/sessions";
 import { cancelSession, completeSession } from "@/lib/services/sessions";
+import { upsertBodyWeight } from "@/lib/services/stats";
 import type { ExerciseListItem } from "@/lib/services/exercises";
 import type { ExerciseLastPerformance } from "@/lib/utils/progression";
 import { suggestProgression } from "@/lib/utils/progression";
-import { formatClock, formatDate, formatVolume, formatWeight, toDateKey } from "@/lib/utils/format";
+import { formatClock, formatDate, formatVolume, toDateKey } from "@/lib/utils/format";
+import { describeBodyweight, describeSet, formatTarget } from "@/lib/utils/tracking";
 import { friendlyError } from "@/lib/utils/errors";
 import { cn } from "@/lib/utils/cn";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Sheet } from "@/components/ui/sheet";
-import { Stepper } from "@/components/ui/stepper";
 import { Textarea } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { ExercisePickerSheet } from "@/components/exercise/exercise-picker-sheet";
 import { RestTimerBar } from "@/components/workout/rest-timer-bar";
 import { useRestTimer } from "@/components/workout/use-rest-timer";
+import { SetEditor } from "@/components/workout/set-editor";
 import { useWorkoutStore, clearSnapshot, type LocalExercise, type LocalSet } from "@/components/workout/use-workout-store";
 
 interface Props {
   session: SessionDetail;
   lastPerformance: Record<string, ExerciseLastPerformance>;
+  /** Zuletzt eingetragenes Körpergewicht (für Körpergewichtsübungen) */
+  bodyWeight: number | null;
 }
 
-export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord }: Props) {
+export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord, bodyWeight: initialBodyWeight }: Props) {
   const lastPerformance = React.useMemo(() => new Map(Object.entries(lastPerformanceRecord)), [lastPerformanceRecord]);
   const router = useRouter();
   const { userId, settings } = useUser();
   const unit = settings.weight_unit;
-  const store = useWorkoutStore(session, lastPerformance, Number(settings.weight_step) || 2.5, userId);
+  const weightStep = Number(settings.weight_step) || 2.5;
+  const store = useWorkoutStore(session, lastPerformance, weightStep, userId, initialBodyWeight);
   const timer = useRestTimer(settings.rest_timer_default);
   const [current, setCurrent] = React.useState(0);
   const [editingKey, setEditingKey] = React.useState<string | null>(null);
@@ -74,6 +79,16 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
     const nextOpen = ex.sets.find((s) => !s.completed && s.key !== set.key);
     setEditingKey(nextOpen?.key ?? null);
     timer.start();
+  };
+
+  const onBodyWeightChange = async (value: number) => {
+    try {
+      await upsertBodyWeight(createClient(), userId, toDateKey(new Date()), value);
+      store.setBodyWeight(value);
+      toast.success("Körpergewicht gespeichert");
+    } catch (e) {
+      toast.error(friendlyError(e));
+    }
   };
 
   const finish = async () => {
@@ -118,19 +133,19 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
   };
 
   const last = ex ? lastPerformance.get(ex.exercise.id) : undefined;
-  const progression = ex ? suggestProgression(last, ex.target_sets, ex.rep_max) : null;
+  const progression = ex && ex.exercise.tracking_mode !== "cardio" ? suggestProgression(last, ex.target_sets, ex.rep_max) : null;
 
   return (
     <div className="pb-24">
       {/* Kopfzeile */}
-      <div className="safe-top sticky top-0 z-20 -mx-4 mb-4 border-b border-border bg-bg/95 px-4 pb-3 pt-3 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+      <div className="safe-top sticky top-0 z-20 -mx-4 mb-4 bg-bg/85 px-4 pb-3 pt-3 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
         <div className="mx-auto flex max-w-5xl items-center gap-2">
-          <Link href="/workout" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-muted hover:bg-subtle" aria-label="Zur Übersicht">
-            <ChevronLeft className="h-5 w-5" />
+          <Link href="/workout" className="press flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-accent hover:bg-subtle" aria-label="Zur Übersicht">
+            <ChevronLeft className="h-6 w-6" strokeWidth={2.4} />
           </Link>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-semibold">{session.name}</p>
-            <p className="tnum text-xs text-muted">
+            <p className="truncate text-base font-semibold">{session.name}</p>
+            <p className="tnum text-[13px] text-muted">
               {formatClock(elapsed)} · {store.workingSetCount} Sätze · {formatVolume(store.volume, unit)}
               {store.pendingCount > 0 ? (
                 <span className="ml-2 inline-flex items-center gap-1 text-warning">
@@ -142,14 +157,14 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
           <Button size="sm" onClick={() => setFinishOpen(true)}>
             Beenden
           </Button>
-          <Button size="icon" variant="ghost" onClick={() => setMenu(true)} aria-label="Mehr">
+          <Button size="icon-sm" variant="ghost" onClick={() => setMenu(true)} aria-label="Mehr">
             <MoreHorizontal className="h-5 w-5" />
           </Button>
         </div>
       </div>
 
       {/* Übungsnavigation */}
-      <div className="-mx-4 mb-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+      <div className="no-scrollbar -mx-4 mb-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
         <div className="flex w-max gap-2 pb-1">
           {exercises.map((e, i) => {
             const done = e.sets.filter((s) => s.completed).length;
@@ -163,11 +178,11 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
                   setEditingKey(null);
                 }}
                 className={cn(
-                  "flex h-10 shrink-0 items-center gap-2 rounded-full border px-3.5 text-sm font-medium touch-manipulation",
-                  i === safeIndex ? "border-accent bg-accent-soft text-accent" : all ? "border-border bg-subtle text-muted" : "border-border bg-card text-muted"
+                  "press flex h-10 shrink-0 items-center gap-2 rounded-full px-3.5 text-sm font-medium touch-manipulation",
+                  i === safeIndex ? "bg-fg text-bg" : all ? "bg-card text-faint" : "bg-card text-muted"
                 )}
               >
-                {all ? <Check className="h-3.5 w-3.5" /> : <span className="tnum text-xs">{i + 1}</span>}
+                {all ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <span className="tnum text-xs">{i + 1}</span>}
                 <span className="max-w-[9rem] truncate">{e.exercise.name}</span>
                 <span className="tnum text-xs opacity-70">
                   {done}/{e.sets.length}
@@ -175,7 +190,11 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
               </button>
             );
           })}
-          <button type="button" onClick={() => setPicker(true)} className="flex h-10 shrink-0 items-center gap-1.5 rounded-full border border-dashed border-border-strong px-3.5 text-sm font-medium text-muted hover:text-fg touch-manipulation">
+          <button
+            type="button"
+            onClick={() => setPicker(true)}
+            className="press flex h-10 shrink-0 items-center gap-1.5 rounded-full border border-dashed border-border-strong px-3.5 text-sm font-medium text-muted hover:text-fg touch-manipulation"
+          >
             <Plus className="h-4 w-4" /> Übung
           </button>
         </div>
@@ -187,8 +206,10 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
           index={safeIndex}
           total={exercises.length}
           unit={unit}
-          weightStep={Number(settings.weight_step) || 2.5}
+          weightStep={weightStep}
           showRir={settings.show_rir}
+          bodyWeight={store.bodyWeight}
+          onBodyWeightChange={onBodyWeightChange}
           last={last}
           progression={progression}
           editingKey={editingKey}
@@ -198,13 +219,19 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
           onAddSet={() => store.addSet(ex.sessionExerciseId)}
           onRemoveLast={() => store.removeLastSet(ex.sessionExerciseId)}
           onRemoveExercise={() => store.removeExercise(ex.sessionExerciseId)}
-          onPrev={() => { setCurrent((i) => Math.max(0, i - 1)); setEditingKey(null); }}
-          onNext={() => { setCurrent((i) => Math.min(exercises.length - 1, i + 1)); setEditingKey(null); }}
+          onPrev={() => {
+            setCurrent((i) => Math.max(0, i - 1));
+            setEditingKey(null);
+          }}
+          onNext={() => {
+            setCurrent((i) => Math.min(exercises.length - 1, i + 1));
+            setEditingKey(null);
+          }}
         />
       ) : (
         <Card className="p-6 text-center text-sm text-muted">
           Keine Übungen im Training.{" "}
-          <button type="button" className="text-accent" onClick={() => setPicker(true)}>
+          <button type="button" className="font-semibold text-accent" onClick={() => setPicker(true)}>
             Übung hinzufügen
           </button>
         </Card>
@@ -216,10 +243,24 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
 
       <Sheet open={menu} onClose={() => setMenu(false)} title="Training">
         <div className="space-y-2">
-          <Button variant="secondary" fullWidth onClick={() => { setMenu(false); setPicker(true); }}>
+          <Button
+            variant="secondary"
+            fullWidth
+            onClick={() => {
+              setMenu(false);
+              setPicker(true);
+            }}
+          >
             <Plus className="h-4 w-4" /> Übung hinzufügen
           </Button>
-          <Button variant="danger" fullWidth onClick={() => { setMenu(false); setCancelOpen(true); }}>
+          <Button
+            variant="danger"
+            fullWidth
+            onClick={() => {
+              setMenu(false);
+              setCancelOpen(true);
+            }}
+          >
             <X className="h-4 w-4" /> Training abbrechen
           </Button>
         </div>
@@ -232,8 +273,12 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
         description="Alle Sätze dieses Trainings werden verworfen."
         footer={
           <div className="flex gap-2">
-            <Button variant="secondary" fullWidth onClick={() => setCancelOpen(false)}>Weiter trainieren</Button>
-            <Button variant="danger" fullWidth onClick={cancel} loading={busy}>Verwerfen</Button>
+            <Button variant="secondary" fullWidth onClick={() => setCancelOpen(false)}>
+              Weiter trainieren
+            </Button>
+            <Button variant="danger" fullWidth onClick={cancel} loading={busy}>
+              Verwerfen
+            </Button>
           </div>
         }
       >
@@ -246,7 +291,7 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
         title="Training abschließen"
         footer={
           <Button size="lg" fullWidth onClick={finish} loading={busy} disabled={store.completedSetCount === 0}>
-            <Check className="h-4 w-4" /> Training speichern
+            <Check className="h-4 w-4" strokeWidth={3} /> Training speichern
           </Button>
         }
       >
@@ -259,7 +304,9 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
           <p className="mt-4 text-sm text-warning">Noch kein Satz gespeichert. Speichere mindestens einen Satz oder brich das Training ab.</p>
         ) : null}
         <div className="mt-4">
-          <label htmlFor="notes" className="mb-1.5 block text-sm font-medium text-muted">Notiz (optional)</label>
+          <label htmlFor="notes" className="mb-1.5 block text-[13px] font-medium text-muted">
+            Notiz (optional)
+          </label>
           <Textarea id="notes" value={notes} onChange={(e) => setNotes(e.target.value)} maxLength={500} rows={3} placeholder="Wie lief es?" />
         </div>
       </Sheet>
@@ -269,9 +316,9 @@ export function ActiveWorkout({ session, lastPerformance: lastPerformanceRecord 
 
 function Summary({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl bg-subtle px-2 py-3">
-      <p className="text-[10px] font-medium uppercase tracking-wider text-faint">{label}</p>
-      <p className="tnum mt-0.5 text-base font-semibold">{value}</p>
+    <div className="rounded-[var(--radius-control)] bg-subtle px-2 py-3">
+      <p className="text-[13px] font-medium text-muted">{label}</p>
+      <p className="display tnum mt-0.5 text-lg">{value}</p>
     </div>
   );
 }
@@ -283,6 +330,8 @@ interface ExerciseCardProps {
   unit: "kg" | "lb";
   weightStep: number;
   showRir: boolean;
+  bodyWeight: number | null;
+  onBodyWeightChange: (v: number) => Promise<void>;
   last: ExerciseLastPerformance | undefined;
   progression: ReturnType<typeof suggestProgression> | null;
   editingKey: string | null;
@@ -296,32 +345,51 @@ interface ExerciseCardProps {
   onNext: () => void;
 }
 
-function ExerciseCard({ ex, index, total, unit, weightStep, showRir, last, progression, editingKey, onEdit, onPatch, onSave, onAddSet, onRemoveLast, onRemoveExercise, onPrev, onNext }: ExerciseCardProps) {
+function ExerciseCard({
+  ex,
+  index,
+  total,
+  unit,
+  weightStep,
+  showRir,
+  bodyWeight,
+  onBodyWeightChange,
+  last,
+  progression,
+  editingKey,
+  onEdit,
+  onPatch,
+  onSave,
+  onAddSet,
+  onRemoveLast,
+  onRemoveExercise,
+  onPrev,
+  onNext,
+}: ExerciseCardProps) {
+  const mode = ex.exercise.tracking_mode;
   const lastWorking = (last?.sets ?? []).filter((s) => !s.isWarmup);
   return (
     <Card className="overflow-hidden">
       <div className="px-5 pt-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-faint">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-muted">
               Übung {index + 1} von {total}
             </p>
-            <Link href={`/exercises/${ex.exercise.slug}`} className="block text-xl font-semibold tracking-tight hover:text-accent">
+            <Link href={`/exercises/${ex.exercise.slug}`} className="block text-xl font-semibold text-fg hover:text-accent">
               {ex.exercise.name}
             </Link>
-            <p className="tnum mt-0.5 text-sm text-muted">
-              Ziel: {ex.target_sets} × {ex.rep_min}–{ex.rep_max}
-            </p>
+            <p className="tnum mt-0.5 text-sm text-muted">Ziel: {formatTarget(mode, ex.target_sets, ex.rep_min, ex.rep_max)}</p>
           </div>
           {progression && progression.suggestion !== "none" ? (
             <Badge tone={progression.suggestion === "increase" ? "accent" : "neutral"} className="shrink-0">
               {progression.suggestion === "increase" ? (
                 <>
-                  <ArrowUp className="mr-1 h-3 w-3" /> Gewicht erhöhen
+                  <ArrowUp className="mr-1 h-3 w-3" strokeWidth={3} /> {mode === "bodyweight" ? "Zusatz erhöhen" : "Gewicht erhöhen"}
                 </>
               ) : (
                 <>
-                  <Minus className="mr-1 h-3 w-3" /> Gewicht halten
+                  <Minus className="mr-1 h-3 w-3" strokeWidth={3} /> Halten
                 </>
               )}
             </Badge>
@@ -329,25 +397,36 @@ function ExerciseCard({ ex, index, total, unit, weightStep, showRir, last, progr
         </div>
 
         {lastWorking.length > 0 && last ? (
-          <div className="mt-3 rounded-lg bg-subtle px-3 py-2">
-            <p className="text-[11px] font-medium uppercase tracking-wider text-faint">Vorher · {formatDate(last.startedAt, "d. MMM")}</p>
-            <p className="tnum mt-0.5 text-sm text-muted">
-              {lastWorking.map((s) => `${formatWeight(s.weight, unit)} × ${s.reps}`).join("  ·  ")}
+          <div className="mt-3 rounded-[var(--radius-control)] bg-subtle px-3.5 py-2.5">
+            <p className="text-[13px] font-medium text-muted">Vorher · {formatDate(last.startedAt, "d. MMM")}</p>
+            <p className="tnum mt-0.5 text-sm text-fg">
+              {lastWorking
+                .map((s) =>
+                  describeSet(
+                    mode,
+                    { weight: s.weight, reps: s.reps, duration_seconds: s.durationSeconds, distance_m: s.distanceM, body_weight: s.bodyWeight, extra_weight: s.extraWeight },
+                    unit
+                  )
+                )
+                .join("  ·  ")}
             </p>
           </div>
         ) : (
-          <p className="mt-3 text-xs text-faint">Noch keine vorherigen Werte für diese Übung.</p>
+          <p className="mt-3 text-sm text-faint">Noch keine vorherigen Werte für diese Übung.</p>
         )}
       </div>
 
-      <div className="mt-4 divide-y divide-border border-t border-border">
+      <div className="mt-4 border-t border-border">
         {ex.sets.map((set) => (
           <SetRow
             key={set.key}
+            ex={ex}
             set={set}
             unit={unit}
             weightStep={weightStep}
             showRir={showRir}
+            bodyWeight={bodyWeight}
+            onBodyWeightChange={onBodyWeightChange}
             editing={editingKey === set.key}
             onEdit={() => onEdit(set.key)}
             onPatch={(patch) => onPatch(set.key, patch)}
@@ -356,25 +435,25 @@ function ExerciseCard({ ex, index, total, unit, weightStep, showRir, last, progr
         ))}
       </div>
 
-      <div className="flex items-center gap-2 px-4 py-3">
+      <div className="flex items-center gap-2 border-t border-border px-4 py-3">
         <Button variant="secondary" size="sm" onClick={onAddSet}>
-          <Plus className="h-4 w-4" /> Satz
+          <Plus className="h-4 w-4" strokeWidth={2.6} /> Satz
         </Button>
         <Button variant="ghost" size="sm" onClick={onRemoveLast} disabled={ex.sets.length <= 1} aria-label="Letzten Satz entfernen">
-          <Trash2 className="h-4 w-4" /> Letzter Satz
+          <Trash2 className="h-4 w-4" /> Letzter
         </Button>
         <div className="ml-auto flex gap-1">
-          <Button variant="ghost" size="icon" onClick={onPrev} disabled={index === 0} aria-label="Vorherige Übung">
-            <ChevronLeft className="h-5 w-5" />
+          <Button variant="ghost" size="icon-sm" onClick={onPrev} disabled={index === 0} aria-label="Vorherige Übung">
+            <ChevronLeft className="h-5 w-5" strokeWidth={2.4} />
           </Button>
-          <Button variant="ghost" size="icon" onClick={onNext} disabled={index >= total - 1} aria-label="Nächste Übung">
-            <ChevronRight className="h-5 w-5" />
+          <Button variant="ghost" size="icon-sm" onClick={onNext} disabled={index >= total - 1} aria-label="Nächste Übung">
+            <ChevronRight className="h-5 w-5" strokeWidth={2.4} />
           </Button>
         </div>
       </div>
       {ex.sets.every((s) => !s.completed) ? (
-        <div className="border-t border-border px-4 py-2">
-          <button type="button" onClick={onRemoveExercise} className="text-xs text-faint hover:text-danger">
+        <div className="border-t border-border px-4 py-2.5">
+          <button type="button" onClick={onRemoveExercise} className="text-sm text-faint hover:text-danger">
             Übung aus diesem Training entfernen
           </button>
         </div>
@@ -383,26 +462,58 @@ function ExerciseCard({ ex, index, total, unit, weightStep, showRir, last, progr
   );
 }
 
-function SetRow({ set, unit, weightStep, showRir, editing, onEdit, onPatch, onSave }: { set: LocalSet; unit: string; weightStep: number; showRir: boolean; editing: boolean; onEdit: () => void; onPatch: (p: Partial<LocalSet>) => void; onSave: () => void }) {
+function SetRow({
+  ex,
+  set,
+  unit,
+  weightStep,
+  showRir,
+  bodyWeight,
+  onBodyWeightChange,
+  editing,
+  onEdit,
+  onPatch,
+  onSave,
+}: {
+  ex: LocalExercise;
+  set: LocalSet;
+  unit: "kg" | "lb";
+  weightStep: number;
+  showRir: boolean;
+  bodyWeight: number | null;
+  onBodyWeightChange: (v: number) => Promise<void>;
+  editing: boolean;
+  onEdit: () => void;
+  onPatch: (p: Partial<LocalSet>) => void;
+  onSave: () => void;
+}) {
+  const mode = ex.exercise.tracking_mode;
+  const canSave = mode === "cardio" ? (set.duration_seconds ?? 0) > 0 || (set.distance_m ?? 0) > 0 : set.reps > 0 && (mode !== "bodyweight" || set.body_weight !== null);
+
   if (!editing) {
+    const bwInfo = mode === "bodyweight" ? describeBodyweight(set, ex.exercise.bodyweight_factor, unit) : null;
     return (
-      <button type="button" onClick={onEdit} className="flex min-h-14 w-full items-center gap-3 px-5 py-2 text-left hover:bg-subtle touch-manipulation">
-        <span className={cn("tnum flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-semibold", set.completed ? "bg-accent-soft text-accent" : "bg-subtle text-faint")}>
-          {set.completed ? <Check className="h-4 w-4" /> : set.set_number}
+      <button
+        type="button"
+        onClick={onEdit}
+        className="relative flex min-h-[56px] w-full items-center gap-3 px-5 py-2 text-left hover:bg-subtle touch-manipulation after:absolute after:bottom-0 after:left-[68px] after:right-0 after:h-px after:bg-border after:content-['']"
+      >
+        <span className={cn("tnum flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-semibold", set.completed ? "bg-accent text-accent-fg" : "bg-subtle text-faint")}>
+          {set.completed ? <Check className="h-4 w-4" strokeWidth={3} /> : set.set_number}
         </span>
         <div className="min-w-0 flex-1">
-          {set.completed ? (
-            <p className="tnum text-base font-medium">
-              {formatWeight(set.weight, unit as "kg")} × {set.reps}
-              {showRir && set.rir !== null ? <span className="ml-2 text-sm text-muted">RIR {set.rir}</span> : null}
-            </p>
-          ) : (
-            <p className="tnum text-base text-muted">
-              {formatWeight(set.weight, unit as "kg")} × {set.reps} <span className="text-faint">· offen</span>
-            </p>
-          )}
+          <p className={cn("tnum text-base", set.completed ? "font-medium text-fg" : "text-muted")}>
+            {describeSet(mode, set, unit)}
+            {showRir && set.rir !== null && mode !== "cardio" ? <span className="ml-2 text-sm text-muted">RIR {set.rir}</span> : null}
+            {!set.completed ? <span className="text-faint"> · offen</span> : null}
+          </p>
+          {bwInfo ? <p className="tnum truncate text-xs text-faint">{bwInfo}</p> : null}
         </div>
-        {set.is_warmup ? <Badge tone="warning"><Flame className="mr-1 h-3 w-3" /> Aufwärmen</Badge> : null}
+        {set.is_warmup ? (
+          <Badge tone="warning">
+            <Flame className="mr-1 h-3 w-3" /> Aufwärmen
+          </Badge>
+        ) : null}
         {set.pending ? <CloudOff className="h-4 w-4 text-warning" aria-label="Noch nicht synchronisiert" /> : null}
       </button>
     );
@@ -411,25 +522,33 @@ function SetRow({ set, unit, weightStep, showRir, editing, onEdit, onPatch, onSa
   return (
     <div className="space-y-3 bg-subtle/40 px-4 py-4">
       <div className="flex items-center justify-between">
-        <p className="text-sm font-semibold">Satz {set.set_number}</p>
+        <p className="text-base font-semibold">Satz {set.set_number}</p>
         <button
           type="button"
           onClick={() => onPatch({ is_warmup: !set.is_warmup })}
-          className={cn("inline-flex h-8 items-center gap-1.5 rounded-full border px-3 text-xs font-medium touch-manipulation", set.is_warmup ? "border-warning bg-warning-soft text-warning" : "border-border text-muted")}
+          className={cn(
+            "press inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-xs font-semibold touch-manipulation",
+            set.is_warmup ? "bg-warning-soft text-warning" : "bg-subtle text-muted"
+          )}
           aria-pressed={set.is_warmup}
         >
           <Flame className="h-3.5 w-3.5" /> Aufwärmsatz
         </button>
       </div>
-      <div className={cn("grid gap-3", showRir ? "grid-cols-1 sm:grid-cols-3" : "grid-cols-1 sm:grid-cols-2")}>
-        <Stepper label="Gewicht" unit={unit} value={set.weight} step={weightStep} decimals={2} onChange={(v) => onPatch({ weight: v })} max={999} />
-        <Stepper label="Wiederholungen" value={set.reps} step={1} onChange={(v) => onPatch({ reps: v })} max={500} />
-        {showRir ? (
-          <Stepper label="RIR" value={set.rir ?? 2} step={1} onChange={(v) => onPatch({ rir: v })} min={0} max={10} />
-        ) : null}
-      </div>
-      <Button size="lg" fullWidth onClick={onSave}>
-        <Check className="h-4 w-4" /> Satz speichern
+      <SetEditor
+        mode={mode}
+        factor={ex.exercise.bodyweight_factor}
+        set={set}
+        unit={unit}
+        weightStep={weightStep}
+        showRir={showRir}
+        bodyWeight={bodyWeight}
+        onChange={onPatch}
+        onBodyWeightChange={onBodyWeightChange}
+        idPrefix={`set-${set.key}`}
+      />
+      <Button size="lg" fullWidth onClick={onSave} disabled={!canSave}>
+        <Check className="h-4 w-4" strokeWidth={3} /> Satz speichern
       </Button>
     </div>
   );

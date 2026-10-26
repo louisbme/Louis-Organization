@@ -1216,7 +1216,7 @@ select public.upsert_seed_exercise($seed${"slug":"reverse-fly-kurzhantel","name"
 select public.upsert_seed_exercise($seed${"slug":"straight-arm-pulldown","name":"Straight Arm Pulldown","category":"back","equipment":"cable","grip_id":"straight_bar","grip_notes":"Gerade Stange, pronierter Griff etwa schulterbreit. Alternativ: Seil mit neutralem Griff (Handflächen zueinander), erlaubt am Ende etwas mehr Bewegung an der Hüfte vorbei.","primary_muscles":["lats"],"secondary_muscles":["triceps","rear_delts","abs"],"description":"Zugübung am oberen Kabel mit fast gestreckten Armen, bei der der Latissimus ohne nennenswerte Beteiligung des Bizeps arbeitet. Geeignet als Isolations- oder Vorermüdungsübung für den Rücken.","setup":["Gerade Stange am oberen Kabel einhängen.","Etwa einen Schritt vom Kabelturm entfernt aufstellen, Füße hüftbreit, Knie leicht gebeugt.","Stange schulterbreit mit proniertem Griff fassen, Arme nach vorne-oben gestreckt.","Oberkörper leicht nach vorne neigen, Rücken gerade, Rumpf anspannen.","Schultern nach unten ziehen, Ellenbogen leicht gebeugt und in dieser Position fixieren."],"execution":["Stange in einem Bogen nach unten zu den Oberschenkeln ziehen, Arme bleiben fast gestreckt.","Bewegung aus den Schultern führen, Ellenbogenwinkel bleibt unverändert.","Schulterblätter nach unten ziehen, Oberkörper bleibt stabil.","In der Endposition kurz halten, Stange berührt beinahe die Oberschenkel.","Stange langsam und kontrolliert wieder nach oben führen.","Oben die Dehnung im Latissimus spüren, ohne den Rücken zu überstrecken.","Ohne Schwung aus dem Oberkörper die nächste Wiederholung beginnen."],"range_of_motion":"Von Armen etwa auf Höhe des Kopfes oder leicht darüber bis die Stange die Oberschenkel fast berührt. Oben nur so weit, wie der Rücken gerade bleibt.","breathing":"Beim Ziehen nach unten ausatmen, beim Zurückführen nach oben einatmen.","common_mistakes":["Ellenbogen werden während des Zugs gebeugt, die Übung wird zum Trizepsdrücken.","Oberkörper pendelt mit, um das Gewicht zu bewegen.","Schultern rollen nach vorne und ziehen nach oben.","Zu schweres Gewicht, die Bewegung wird kurz und ruckartig.","Rücken wird in der oberen Position stark überstreckt."],"tips":["Leichtes Gewicht wählen und die Spannung im Latissimus über den gesamten Bewegungsradius halten.","Vorstellen, die Stange mit den Ellenbogen statt mit den Händen nach unten zu drücken.","Die exzentrische Phase zwei bis drei Sekunden lang ausführen.","Mit dem Seil lässt sich die Endposition etwas weiter an der Hüfte vorbei führen."],"cable_setup":{"cable":"Kabelturm mit oberer Rolle; alternativ Latzug-Station am Kabelturm im Stand","height":"ganz oben, damit der Zug von oben kommt und der Latissimus bei angehobenen Armen in der gedehnten Position belastet wird","grip_width":"Schulterbreit, proniert (Handrücken nach oben) an der geraden Stange","body_position":"Stehend, etwa einen Schritt vom Turm entfernt, Oberkörper leicht nach vorne geneigt, Rücken gerade, Rumpf angespannt","foot_position":"Hüftbreit, Knie leicht gebeugt, Gewicht gleichmäßig auf beiden Füßen","movement_direction":"Bogenförmig von vorne-oben nach unten zu den Oberschenkeln","elbow_position":"Leicht gebeugt und während der gesamten Bewegung unverändert","end_position":"Stange an den Oberschenkeln, Schulterblätter nach unten gezogen, Oberkörper stabil","return":"Langsam und kontrolliert nach oben bis etwa auf Kopfhöhe, Dehnung im Latissimus, Rücken bleibt gerade"},"muscle_focus":["Oben die Arme etwa auf Kopfhöhe lang werden lassen und die Dehnung im Latissimus kurz aufnehmen, ohne den unteren Rücken zu überstrecken.","Bewegung ausschließlich aus dem Schultergelenk führen: Ellenbogenwinkel bleibt leicht gebeugt und unverändert, die Oberarme drücken in einem Bogen nach unten zur Hüfte.","Leichtes Gewicht wählen; sobald die Ellenbogen beugen oder die Schultern nach vorne rollen, übernehmen Trizeps und Brust.","Rückführung zwei bis drei Sekunden kontrollieren, oben nicht ins Hohlkreuz ausweichen."],"requirements":["Kabelturm mit oberer Rolle","Gerade kurze Stange; alternativ breite Latzugstange oder Seil"],"grip_alternatives":["wide_lat_bar","rope"],"alternative_exercises":[],"image_url":"/exercises/cable-tower.jpg","machine_name":"Kabelturm (Multistation)"}$seed$::jsonb);
 
 -- Hyperextensions
-select public.upsert_seed_exercise($seed${"slug":"hyperextensions","name":"Hyperextensions","category":"back","equipment":"bodyweight","grip_id":null,"grip_notes":"Arme vor der Brust verschränkt oder Hände an den Schläfen. Mit Zusatzgewicht: Hantelscheibe oder Kurzhantel vor der Brust halten.","primary_muscles":["lower_back","glutes"],"secondary_muscles":["hamstrings"],"description":"Rumpfstreckung an der 45-Grad-Rückenstrecker-Bank, die den unteren Rücken, das Gesäß und die hintere Oberschenkelmuskulatur belastet. Geeignet als Ergänzung im Rücken- oder Beintraining und zur Kräftigung der Rumpfrückseite.","setup":["Hüftpolster so einstellen, dass die Oberkante knapp unterhalb des Hüftknochens liegt und die Hüfte frei beugen kann.","Fersen fest gegen die Fußplatte stellen, Füße hüftbreit.","Oberkörper auf dem Polster ablegen, Arme vor der Brust verschränken.","Rumpf anspannen, Nacken in Verlängerung der Wirbelsäule.","Oberkörper aufrichten, bis der Körper eine gerade Linie von Kopf bis Ferse bildet."],"execution":["Oberkörper langsam aus der Hüfte nach unten absenken, Wirbelsäule bleibt neutral.","So weit absenken, wie der Rücken gerade bleibt, etwa bis der Oberkörper senkrecht ist.","Gesäß und hintere Oberschenkel anspannen und den Oberkörper kontrolliert wieder anheben.","Anheben, bis Oberkörper und Beine eine gerade Linie bilden.","In der Endposition kurz halten, ohne weiter nach oben zu überstrecken.","Nächste Wiederholung kontrolliert beginnen."],"range_of_motion":"Von der geraden Linie zwischen Oberkörper und Beinen bis der Oberkörper etwa senkrecht hängt. In der Endposition nicht über die gerade Linie hinaus überstrecken.","breathing":"Beim Absenken einatmen, beim Anheben ausatmen.","common_mistakes":["Oberkörper wird in der Endposition über die gerade Linie hinaus überstreckt.","Rücken wird beim Absenken rund, Bewegung kommt aus der Wirbelsäule statt aus der Hüfte.","Polster zu hoch eingestellt, Hüfte kann nicht frei beugen.","Bewegung wird mit Schwung ausgeführt.","Kopf wird in den Nacken gelegt."],"tips":["Zunächst mit Körpergewicht beginnen, Zusatzgewicht erst dann, wenn die Technik stabil ist.","Für mehr Betonung des Gesäßes die Füße leicht nach außen drehen und bewusst aus der Hüfte arbeiten.","Die exzentrische Phase zwei bis drei Sekunden lang kontrollieren."],"cable_setup":null,"muscle_focus":["Hüftpolster knapp unter dem Hüftknochen einstellen, damit die Beugung aus der Hüfte kommt und Gesäß und hintere Oberschenkel in der tiefen Position gedehnt werden.","Beim Absenken die Wirbelsäule neutral halten und so tief gehen, wie der Rücken gerade bleibt; die Dehnung unten kurz aufnehmen.","Beim Anheben Gesäß und hintere Oberschenkel aktiv anspannen und nur bis zur geraden Linie kommen; Überstrecken verlagert die Last auf die Lendenwirbelsäule.","Exzentrische Phase zwei bis drei Sekunden kontrollieren, kein Schwung aus dem Oberkörper."],"requirements":["45-Grad-Rückenstrecker-Bank (Hyperextension-Bank)","Optional: Hantelscheibe vor der Brust als Zusatzgewicht"],"grip_alternatives":[],"image_url":"/exercises/hyperextension-bench.jpg","machine_name":"Hyperextension-Bank 45°","alternative_exercises":["rumaenisches-kreuzheben"]}$seed$::jsonb);
+select public.upsert_seed_exercise($seed${"slug":"hyperextensions","name":"Hyperextensions","category":"back","equipment":"bodyweight","grip_id":null,"grip_notes":"Arme vor der Brust verschränkt oder Hände an den Schläfen. Mit Zusatzgewicht: Hantelscheibe oder Kurzhantel vor der Brust halten.","primary_muscles":["lower_back","glutes"],"secondary_muscles":["hamstrings"],"description":"Rumpfstreckung an der 45-Grad-Rückenstrecker-Bank, die den unteren Rücken, das Gesäß und die hintere Oberschenkelmuskulatur belastet. Geeignet als Ergänzung im Rücken- oder Beintraining und zur Kräftigung der Rumpfrückseite.","setup":["Hüftpolster so einstellen, dass die Oberkante knapp unterhalb des Hüftknochens liegt und die Hüfte frei beugen kann.","Fersen fest gegen die Fußplatte stellen, Füße hüftbreit.","Oberkörper auf dem Polster ablegen, Arme vor der Brust verschränken.","Rumpf anspannen, Nacken in Verlängerung der Wirbelsäule.","Oberkörper aufrichten, bis der Körper eine gerade Linie von Kopf bis Ferse bildet."],"execution":["Oberkörper langsam aus der Hüfte nach unten absenken, Wirbelsäule bleibt neutral.","So weit absenken, wie der Rücken gerade bleibt, etwa bis der Oberkörper senkrecht ist.","Gesäß und hintere Oberschenkel anspannen und den Oberkörper kontrolliert wieder anheben.","Anheben, bis Oberkörper und Beine eine gerade Linie bilden.","In der Endposition kurz halten, ohne weiter nach oben zu überstrecken.","Nächste Wiederholung kontrolliert beginnen."],"range_of_motion":"Von der geraden Linie zwischen Oberkörper und Beinen bis der Oberkörper etwa senkrecht hängt. In der Endposition nicht über die gerade Linie hinaus überstrecken.","breathing":"Beim Absenken einatmen, beim Anheben ausatmen.","common_mistakes":["Oberkörper wird in der Endposition über die gerade Linie hinaus überstreckt.","Rücken wird beim Absenken rund, Bewegung kommt aus der Wirbelsäule statt aus der Hüfte.","Polster zu hoch eingestellt, Hüfte kann nicht frei beugen.","Bewegung wird mit Schwung ausgeführt.","Kopf wird in den Nacken gelegt."],"tips":["Zunächst mit Körpergewicht beginnen, Zusatzgewicht erst dann, wenn die Technik stabil ist.","Für mehr Betonung des Gesäßes die Füße leicht nach außen drehen und bewusst aus der Hüfte arbeiten.","Die exzentrische Phase zwei bis drei Sekunden lang kontrollieren."],"cable_setup":null,"muscle_focus":["Hüftpolster knapp unter dem Hüftknochen einstellen, damit die Beugung aus der Hüfte kommt und Gesäß und hintere Oberschenkel in der tiefen Position gedehnt werden.","Beim Absenken die Wirbelsäule neutral halten und so tief gehen, wie der Rücken gerade bleibt; die Dehnung unten kurz aufnehmen.","Beim Anheben Gesäß und hintere Oberschenkel aktiv anspannen und nur bis zur geraden Linie kommen; Überstrecken verlagert die Last auf die Lendenwirbelsäule.","Exzentrische Phase zwei bis drei Sekunden kontrollieren, kein Schwung aus dem Oberkörper."],"requirements":["45-Grad-Rückenstrecker-Bank (Hyperextension-Bank)","Optional: Hantelscheibe vor der Brust als Zusatzgewicht"],"grip_alternatives":[],"image_url":"/exercises/hyperextension-bench.jpg","machine_name":"Hyperextension-Bank 45°","alternative_exercises":["rumaenisches-kreuzheben"],"bodyweight_factor":0.6}$seed$::jsonb);
 
 -- Wrist Curl
 select public.upsert_seed_exercise($seed${"slug":"wrist-curl","name":"Wrist Curl","category":"forearms","equipment":"dumbbell","grip_id":null,"grip_notes":"Supinierter Griff (Handflächen nach oben), Kurzhantel locker in den Fingern. Alternativ: Langhantel mit beiden Händen, etwa schulterbreit.","primary_muscles":["forearms"],"secondary_muscles":[],"description":"Isolierte Beugung des Handgelenks mit der Kurzhantel, die die Beugemuskulatur des Unterarms belastet. Geeignet als Ergänzung am Ende des Arm- oder Rückentrainings.","setup":["Leichte Kurzhantel wählen, sitzend auf einer Bank Platz nehmen.","Unterarm auf dem Oberschenkel oder auf der Bank ablegen, Handfläche zeigt nach oben.","Handgelenk ragt über das Knie bzw. die Bankkante hinaus, sodass es sich frei bewegen kann.","Hantel locker greifen, Finger leicht geöffnet.","Unterarm bleibt während der gesamten Bewegung auf der Unterlage."],"execution":["Handgelenk langsam nach unten beugen, Hantel in die Finger rollen lassen.","In der unteren Position die Dehnung im Unterarm kurz halten.","Hantel mit den Fingern wieder greifen und das Handgelenk nach oben beugen.","In der oberen Position kurz halten, Unterarm bleibt auf der Unterlage.","Hantel langsam und kontrolliert wieder absenken.","Nach allen Wiederholungen die Seite wechseln."],"range_of_motion":"Von der vollständig gestreckten Position mit geöffneten Fingern bis zur vollen Beugung des Handgelenks nach oben. Der Unterarm bewegt sich dabei nicht.","breathing":"Beim Beugen nach oben ausatmen, beim Absenken einatmen.","common_mistakes":["Unterarm hebt sich von der Unterlage ab, die Bewegung kommt aus dem Ellenbogen.","Zu schweres Gewicht, der Bewegungsradius wird sehr klein.","Hantel wird mit Schwung nach oben geworfen.","Keine Kontrolle beim Absenken."],"tips":["Leichtes Gewicht und höhere Wiederholungszahlen wählen, die Unterarmmuskulatur reagiert gut darauf.","Die Hantel bewusst bis in die Finger rollen lassen, um den vollen Bewegungsradius zu nutzen.","Tempo langsam halten, etwa zwei Sekunden pro Phase."],"cable_setup":null,"muscle_focus":["Unten die Hantel bis in die Finger rollen lassen und die Dehnung der Unterarmbeuger kurz halten; dieser gedehnte Bereich ist der wichtigste Teil der Bewegung.","Unterarm fest auf der Unterlage lassen, die Bewegung kommt ausschließlich aus dem Handgelenk.","Leichtes Gewicht und langsames Tempo wählen, etwa zwei Sekunden pro Phase; zu schwere Hanteln verkürzen den Bewegungsradius."],"requirements":["Leichte Kurzhantel","Flachbank oder Hocker zum Sitzen und Ablegen des Unterarms"],"grip_alternatives":[],"alternative_exercises":[]}$seed$::jsonb);
@@ -1300,10 +1300,10 @@ select public.upsert_seed_exercise($seed${"slug":"crunch-maschine","name":"Crunc
 select public.upsert_seed_exercise($seed${"slug":"kabel-crunch","name":"Cable Crunch","category":"abs","equipment":"cable","grip_id":"straight_bar","grip_notes":"Bizeps-/Trizeps-Stange (gerade, kurz) beidhändig etwa schulterbreit gefasst und an der Stirn gehalten. Alternativ das Seil mit den Enden an den Schläfen.","primary_muscles":["abs"],"secondary_muscles":["obliques"],"description":"Crunch am Kabelturm in Rückenlage mit dem Kopf zum Turm. Die Stange am unteren Kabel wird an der Stirn gehalten, der Oberkörper rollt gegen den Zug nach oben ein. Isoliert die gerade Bauchmuskulatur bei konstanter Spannung über den gesamten Weg.","setup":["Rolle ganz unten einstellen und die Bizeps-/Trizeps-Stange einhängen.","Matte vor den Turm legen, auf den Rücken legen, Kopf zum Turm, Knie angewinkelt, Füße flach auf dem Boden.","Stange beidhändig fassen und über den Kopf an die Stirn ziehen; die Hände bleiben während des Satzes dort.","Gewicht so wählen, dass die Schultern mit Kraft aus dem Bauch vom Boden kommen, ohne mit den Armen zu ziehen.","Unteren Rücken flach auf die Matte drücken, Becken leicht kippen."],"execution":["Ausatmen und Brustbein Richtung Becken einrollen, Schulterblätter kommen vom Boden.","Die Bewegung kommt aus dem Bauch, Arme und Hals bleiben passiv, die Stange bleibt an der Stirn.","Oben eine Sekunde anspannen, unterer Rücken bleibt am Boden.","Langsam und kontrolliert abrollen, bis die Schulterblätter die Matte fast berühren.","Spannung halten, nicht komplett ablegen.","Nächste Wiederholung ohne Schwung aus Kopf oder Armen beginnen."],"range_of_motion":"Einrollen aus der Brustwirbelsäule, bis die Schulterblätter deutlich vom Boden sind; der untere Rücken bleibt die ganze Zeit auf der Matte. Kein Aufsitzen.","breathing":"Beim Einrollen kräftig ausatmen, beim Abrollen einatmen.","common_mistakes":["Mit den Armen an der Stange ziehen statt den Bauch einzurollen.","Kopf wird nach vorne gezogen, Nacken statt Bauch arbeitet.","Unterer Rücken hebt sich vom Boden, Hüftbeuger übernehmen.","Zu viel Gewicht, die Bewegung wird kurz und ruckartig.","Komplettes Ablegen zwischen den Wiederholungen, die Spannung geht verloren."],"tips":["Vorstellen, die Rippen zum Becken zu ziehen.","Zwei Sekunden abrollen, eine Sekunde oben halten.","Die Stange muss nicht schwer beladen sein; die konstante Kabelspannung ist der Vorteil gegenüber dem freien Crunch."],"cable_setup":{"cable":"Kabelturm, eine Säule","height":"ganz unten, der Zug kommt flach über den Kopf hinweg und hält die Spannung in Rückenlage","grip_width":"Schulterbreit an der kurzen geraden Stange, Hände an der Stirn","body_position":"Rückenlage auf der Matte, Kopf zum Turm, Knie angewinkelt, unterer Rücken flach am Boden","foot_position":"Füße flach auf dem Boden, hüftbreit","movement_direction":"Einrollen der Brustwirbelsäule nach oben, Brustbein Richtung Becken","elbow_position":"Ellenbogen zeigen zur Decke und bleiben ruhig, keine Zugbewegung der Arme","end_position":"Schulterblätter deutlich vom Boden, Bauch maximal angespannt, unterer Rücken bleibt liegen","return":"Langsam abrollen bis kurz vor den Boden, Spannung halten"},"muscle_focus":["Das Kabel hält die Spannung auch in der oberen Position, wo der freie Crunch keinen Widerstand mehr bietet.","Der Reiz entsteht durch das Einrollen der Brustwirbelsäule (Rippen zum Becken), nicht durch Heben des Oberkörpers als Block.","Unterer Rücken am Boden halten, damit der Hüftbeuger nicht übernimmt.","Gewicht so wählen, dass die geraden Bauchmuskeln limitieren und Nacken und Arme passiv bleiben."],"requirements":["Kabelturm mit Rolle ganz unten","Bizeps-/Trizeps-Stange (kurz, gerade)","Matte"],"grip_alternatives":["rope"],"alternative_exercises":["crunch-maschine","hanging-knee-raise"],"image_url":"/exercises/cable-tower.jpg","machine_name":"Kabelturm (Multistation)"}$seed$::jsonb);
 
 -- Hanging Knee Raise
-select public.upsert_seed_exercise($seed${"slug":"hanging-knee-raise","name":"Hanging Knee Raise","category":"abs","equipment":"bodyweight","grip_id":null,"grip_notes":"Pronierter oder neutraler Griff an der Klimmzugstange, etwa schulterbreit. Alternativ: Armschlaufen, wenn die Griffkraft vor dem Bauch ermüdet.","primary_muscles":["abs"],"secondary_muscles":["obliques","forearms"],"description":"Hängendes Anziehen der Knie an der Klimmzugstange oder in Armschlaufen, bei dem das Becken leicht eingerollt wird. Bauchübung mit dem eigenen Körpergewicht, die zusätzlich die Griffkraft fordert.","setup":["Klimmzugstange etwa schulterbreit fassen oder Oberarme in Armschlaufen einhängen.","Frei hängen, Beine gestreckt oder leicht gebeugt, Füße ohne Bodenkontakt.","Schultern aktiv nach unten ziehen, nicht passiv in den Gelenken hängen.","Rumpf anspannen und den Körper zur Ruhe bringen, bevor die Bewegung beginnt."],"execution":["Knie kontrolliert in Richtung Brust anziehen.","Am Ende der Bewegung das Becken leicht einrollen, der untere Rücken rundet sich dabei etwas.","In der oberen Position den Bauch kurz bewusst anspannen.","Beine langsam absenken, bis die Ausgangsposition erreicht ist.","Unten kurz zur Ruhe kommen, damit kein Schwung entsteht.","Nächste Wiederholung aus dem Stand heraus beginnen."],"range_of_motion":"Von gestreckt hängenden Beinen bis zu angezogenen Knien mit leicht eingerolltem Becken. Die Knie müssen nicht die Brust berühren, das Einrollen des Beckens ist entscheidend.","breathing":"Beim Anziehen der Knie ausatmen, beim Absenken einatmen.","common_mistakes":["Körper schwingt vor und zurück, die Bewegung kommt aus dem Schwung.","Becken wird nicht eingerollt, nur die Hüftbeuger heben die Beine.","Beine fallen unkontrolliert nach unten.","Schultern hängen passiv in den Gelenken.","Zu schnelles Tempo, das Einrollen des Beckens wird übersprungen."],"tips":["Jede Wiederholung erst beginnen, wenn der Körper ruhig hängt.","Exzentrische Phase etwa zwei Sekunden lang kontrollieren.","Als Progression die Beine zunehmend gestreckt halten oder die Bewegung langsamer ausführen.","Wenn die Griffkraft vor dem Bauch ermüdet, Armschlaufen verwenden."],"cable_setup":null,"muscle_focus":["Entscheidend ist das Einrollen des Beckens am Ende der Bewegung; reines Anheben der Beine kommt überwiegend aus den Hüftbeugern.","Beine unten fast gestreckt hängen lassen, sodass die Bauchmuskulatur in der gedehnten Position arbeitet, und jede Wiederholung aus dem ruhigen Hang starten.","Schultern aktiv nach unten ziehen und den Rumpf anspannen, damit kein Schwung entsteht.","Zwei Sekunden lang absenken; wenn die Griffkraft vor dem Bauch ermüdet, Armschlaufen verwenden."],"requirements":["Klimmzugstange oder Armschlaufen (Ab Straps) an einem stabilen Gestell"],"grip_alternatives":[],"image_url":"/exercises/knee-raise-station.jpg","machine_name":"DHZ Vertical Knee Raise Station","alternative_exercises":[]}$seed$::jsonb);
+select public.upsert_seed_exercise($seed${"slug":"hanging-knee-raise","name":"Hanging Knee Raise","category":"abs","equipment":"bodyweight","grip_id":null,"grip_notes":"Pronierter oder neutraler Griff an der Klimmzugstange, etwa schulterbreit. Alternativ: Armschlaufen, wenn die Griffkraft vor dem Bauch ermüdet.","primary_muscles":["abs"],"secondary_muscles":["obliques","forearms"],"description":"Hängendes Anziehen der Knie an der Klimmzugstange oder in Armschlaufen, bei dem das Becken leicht eingerollt wird. Bauchübung mit dem eigenen Körpergewicht, die zusätzlich die Griffkraft fordert.","setup":["Klimmzugstange etwa schulterbreit fassen oder Oberarme in Armschlaufen einhängen.","Frei hängen, Beine gestreckt oder leicht gebeugt, Füße ohne Bodenkontakt.","Schultern aktiv nach unten ziehen, nicht passiv in den Gelenken hängen.","Rumpf anspannen und den Körper zur Ruhe bringen, bevor die Bewegung beginnt."],"execution":["Knie kontrolliert in Richtung Brust anziehen.","Am Ende der Bewegung das Becken leicht einrollen, der untere Rücken rundet sich dabei etwas.","In der oberen Position den Bauch kurz bewusst anspannen.","Beine langsam absenken, bis die Ausgangsposition erreicht ist.","Unten kurz zur Ruhe kommen, damit kein Schwung entsteht.","Nächste Wiederholung aus dem Stand heraus beginnen."],"range_of_motion":"Von gestreckt hängenden Beinen bis zu angezogenen Knien mit leicht eingerolltem Becken. Die Knie müssen nicht die Brust berühren, das Einrollen des Beckens ist entscheidend.","breathing":"Beim Anziehen der Knie ausatmen, beim Absenken einatmen.","common_mistakes":["Körper schwingt vor und zurück, die Bewegung kommt aus dem Schwung.","Becken wird nicht eingerollt, nur die Hüftbeuger heben die Beine.","Beine fallen unkontrolliert nach unten.","Schultern hängen passiv in den Gelenken.","Zu schnelles Tempo, das Einrollen des Beckens wird übersprungen."],"tips":["Jede Wiederholung erst beginnen, wenn der Körper ruhig hängt.","Exzentrische Phase etwa zwei Sekunden lang kontrollieren.","Als Progression die Beine zunehmend gestreckt halten oder die Bewegung langsamer ausführen.","Wenn die Griffkraft vor dem Bauch ermüdet, Armschlaufen verwenden."],"cable_setup":null,"muscle_focus":["Entscheidend ist das Einrollen des Beckens am Ende der Bewegung; reines Anheben der Beine kommt überwiegend aus den Hüftbeugern.","Beine unten fast gestreckt hängen lassen, sodass die Bauchmuskulatur in der gedehnten Position arbeitet, und jede Wiederholung aus dem ruhigen Hang starten.","Schultern aktiv nach unten ziehen und den Rumpf anspannen, damit kein Schwung entsteht.","Zwei Sekunden lang absenken; wenn die Griffkraft vor dem Bauch ermüdet, Armschlaufen verwenden."],"requirements":["Klimmzugstange oder Armschlaufen (Ab Straps) an einem stabilen Gestell"],"grip_alternatives":[],"image_url":"/exercises/knee-raise-station.jpg","machine_name":"DHZ Vertical Knee Raise Station","alternative_exercises":[],"bodyweight_factor":0.45}$seed$::jsonb);
 
 -- Plank
-select public.upsert_seed_exercise($seed${"slug":"plank","name":"Plank","category":"abs","equipment":"bodyweight","grip_id":null,"grip_notes":"Unterarme flach auf dem Boden, Hände locker geöffnet oder zu Fäusten geschlossen. Ellenbogen etwa unter den Schultern.","primary_muscles":["abs"],"secondary_muscles":["obliques","glutes"],"description":"Isometrischer Unterarmstütz, bei dem der Körper in einer geraden Linie gehalten wird. Grundübung für die Rumpfstabilität, die über die Haltedauer statt über Wiederholungen gesteuert wird.","setup":["Unterarme flach auf den Boden legen, Ellenbogen etwa unter den Schultern.","Beine nach hinten strecken, Füße etwa hüftbreit auf den Zehenspitzen.","Körper in eine gerade Linie von Kopf bis Fersen bringen.","Blick auf den Boden richten, Nacken in Verlängerung der Wirbelsäule.","Bauch und Gesäß anspannen, Becken leicht nach hinten kippen."],"execution":["Position halten, Rumpfspannung über die gesamte Dauer aufrechterhalten.","Becken bleibt in neutraler Position, weder abgesenkt noch angehoben.","Gleichmäßig weiteratmen, ohne die Spannung zu verlieren.","Schultern aktiv vom Boden wegdrücken, oberer Rücken bleibt stabil.","Halten, solange die gerade Linie sauber gehalten werden kann.","Kontrolliert ablegen, wenn die Position nicht mehr gehalten werden kann."],"range_of_motion":"Keine Bewegung, die Position wird statisch gehalten. Entscheidend ist die gerade Körperlinie ohne Absinken der Hüfte.","breathing":"Gleichmäßig und ruhig weiteratmen, die Luft nicht anhalten. Bei jeder Ausatmung die Bauchspannung bewusst beibehalten.","common_mistakes":["Hüfte sinkt ab, der untere Rücken fällt ins Hohlkreuz.","Gesäß wird zu hoch gehoben, der Körper bildet ein Dreieck.","Kopf hängt nach unten oder wird in den Nacken gelegt.","Luft wird angehalten.","Schultern sacken zwischen den Schulterblättern ein."],"tips":["Haltedauer in Sekunden kann als Wiederholungszahl eingetragen werden, zum Beispiel 45 für 45 Sekunden.","Lieber kürzere Haltezeiten mit sauberer Linie als lange Haltezeiten mit abgesenkter Hüfte.","Als Progression die Haltedauer schrittweise verlängern oder die Füße enger stellen.","Gesäß bewusst anspannen, das stabilisiert das Becken."],"cable_setup":null,"muscle_focus":["Becken leicht nach hinten kippen und Gesäß anspannen; so arbeitet die Bauchmuskulatur gegen das Hohlkreuz und hält die Spannung.","Ellenbogen unter den Schultern und aktiv in den Boden drücken, damit der obere Rücken nicht einsackt.","Gerade Linie von Kopf bis Fersen halten, ohne das Gesäß anzuheben; ruhig weiteratmen und die Spannung bei jeder Ausatmung beibehalten.","Lieber kürzer und sauber halten als lange mit abgesenkter Hüfte."],"requirements":["Matte oder weicher Untergrund für die Unterarme"],"grip_alternatives":[],"alternative_exercises":[]}$seed$::jsonb);
+select public.upsert_seed_exercise($seed${"slug":"plank","name":"Plank","category":"abs","equipment":"bodyweight","grip_id":null,"grip_notes":"Unterarme flach auf dem Boden, Hände locker geöffnet oder zu Fäusten geschlossen. Ellenbogen etwa unter den Schultern.","primary_muscles":["abs"],"secondary_muscles":["obliques","glutes"],"description":"Isometrischer Unterarmstütz, bei dem der Körper in einer geraden Linie gehalten wird. Grundübung für die Rumpfstabilität, die über die Haltedauer statt über Wiederholungen gesteuert wird.","setup":["Unterarme flach auf den Boden legen, Ellenbogen etwa unter den Schultern.","Beine nach hinten strecken, Füße etwa hüftbreit auf den Zehenspitzen.","Körper in eine gerade Linie von Kopf bis Fersen bringen.","Blick auf den Boden richten, Nacken in Verlängerung der Wirbelsäule.","Bauch und Gesäß anspannen, Becken leicht nach hinten kippen."],"execution":["Position halten, Rumpfspannung über die gesamte Dauer aufrechterhalten.","Becken bleibt in neutraler Position, weder abgesenkt noch angehoben.","Gleichmäßig weiteratmen, ohne die Spannung zu verlieren.","Schultern aktiv vom Boden wegdrücken, oberer Rücken bleibt stabil.","Halten, solange die gerade Linie sauber gehalten werden kann.","Kontrolliert ablegen, wenn die Position nicht mehr gehalten werden kann."],"range_of_motion":"Keine Bewegung, die Position wird statisch gehalten. Entscheidend ist die gerade Körperlinie ohne Absinken der Hüfte.","breathing":"Gleichmäßig und ruhig weiteratmen, die Luft nicht anhalten. Bei jeder Ausatmung die Bauchspannung bewusst beibehalten.","common_mistakes":["Hüfte sinkt ab, der untere Rücken fällt ins Hohlkreuz.","Gesäß wird zu hoch gehoben, der Körper bildet ein Dreieck.","Kopf hängt nach unten oder wird in den Nacken gelegt.","Luft wird angehalten.","Schultern sacken zwischen den Schulterblättern ein."],"tips":["Haltedauer in Sekunden kann als Wiederholungszahl eingetragen werden, zum Beispiel 45 für 45 Sekunden.","Lieber kürzere Haltezeiten mit sauberer Linie als lange Haltezeiten mit abgesenkter Hüfte.","Als Progression die Haltedauer schrittweise verlängern oder die Füße enger stellen.","Gesäß bewusst anspannen, das stabilisiert das Becken."],"cable_setup":null,"muscle_focus":["Becken leicht nach hinten kippen und Gesäß anspannen; so arbeitet die Bauchmuskulatur gegen das Hohlkreuz und hält die Spannung.","Ellenbogen unter den Schultern und aktiv in den Boden drücken, damit der obere Rücken nicht einsackt.","Gerade Linie von Kopf bis Fersen halten, ohne das Gesäß anzuheben; ruhig weiteratmen und die Spannung bei jeder Ausatmung beibehalten.","Lieber kürzer und sauber halten als lange mit abgesenkter Hüfte."],"requirements":["Matte oder weicher Untergrund für die Unterarme"],"grip_alternatives":[],"alternative_exercises":[],"bodyweight_factor":0.65}$seed$::jsonb);
 
 -- Multi Press Maschine
 select public.upsert_seed_exercise($seed${"slug":"multi-press-maschine","name":"Multi Press Maschine","category":"chest","equipment":"machine","grip_id":null,"grip_notes":"Pronierte Griffe (Handflächen nach vorne) an den beiden Hebelarmen. Handgelenke gerade halten, Griffe mittig in der Handfläche.","primary_muscles":["chest","front_delts"],"secondary_muscles":["triceps"],"description":"Steckgewicht-Multipresse mit verstellbarem Sitz, bei der die Griffe in der Ausgangsposition über Schulterhöhe liegen. Je nach Sitzhöhe lässt sich die Übung als Brustdrücken oder als Schulterdrücken ausführen.","setup":["Gewicht am Steckgewichtsblock wählen und den Stift vollständig einstecken.","Für Brustdrücken den Sitz so hoch stellen, dass die Griffe auf Höhe der oberen Brust liegen; für Schulterdrücken den Sitz tiefer stellen, sodass die Griffe etwa auf Schulterhöhe sind.","Rücken und Kopf an das Rückenpolster anlehnen, Füße flach auf den Boden stellen.","Griffe fassen, Handgelenke gerade, Ellenbogen unterhalb der Griffe.","Schulterblätter nach hinten und unten ziehen und Rumpf anspannen."],"execution":["Griffe kontrolliert nach oben beziehungsweise nach vorne-oben drücken, je nach Sitzhöhe.","Ellenbogen am Ende nicht hart durchstrecken.","Spannung in Brust und vorderer Schulter halten, Schulterblätter bleiben am Polster.","Gewicht langsam zurückführen, bis die Oberarme etwa waagerecht sind.","Gewichtsblock in der unteren Position nicht aufsetzen lassen.","Nächste Wiederholung ohne Schwung beginnen."],"range_of_motion":"Vom unteren Umkehrpunkt mit etwa waagerechten Oberarmen bis kurz vor die Armstreckung. Nicht tiefer gehen, als die Schultern schmerzfrei zulassen.","breathing":"Beim Drücken ausatmen, beim Zurückführen einatmen.","common_mistakes":["Sitzhöhe passt nicht zum gewünschten Ziel, Griffe liegen zu hoch oder zu tief.","Rücken hebt sich beim Drücken vom Polster ab.","Schultern wandern beim Drücken Richtung Ohren.","Gewicht wird mit Schwung aus der unteren Position gedrückt.","Ellenbogen werden am Ende hart durchgestreckt."],"tips":["Exzentrische Phase etwa zwei Sekunden lang kontrollieren.","Sitzhöhe einmal festlegen und für Vergleichbarkeit notieren, da sie die Belastung deutlich verschiebt.","Erst dann Gewicht erhöhen, wenn alle Sätze im oberen Wiederholungsbereich sauber ausgeführt werden."],"cable_setup":null,"muscle_focus":["Die Sitzhöhe bestimmt den Zielmuskel: Griffe auf Höhe der oberen Brust belasten die Brust, Griffe auf Schulterhöhe die vordere Schulter. Einmal festlegen und für alle Sätze beibehalten.","Schulterblätter nach hinten und unten am Polster halten, Ellenbogen etwa 45 Grad vom Rumpf abgewinkelt; so bleibt die Last auf Brust und vorderer Schulter statt auf dem Schultergelenk.","Vollen Bewegungsradius nutzen und die untere, gedehnte Position bewusst mitnehmen, ohne den Gewichtsblock aufzusetzen; dort entsteht ein großer Teil des Trainingsreizes.","Exzentrik etwa zwei Sekunden lang kontrollieren und das Gewicht so wählen, dass Brust oder Schulter den Satz begrenzen, nicht der Trizeps."],"requirements":["Multipresse mit Steckgewichtsblock (Hebel-Druckmaschine mit über Schulterhöhe gelagerten Griffen)","Höhenverstellbarer Sitz mit Rückenpolster"],"grip_alternatives":[],"image_url":"/exercises/multi-press.jpg","machine_name":"DHZ Multi Press, Steckgewicht","alternative_exercises":["brustpresse","schulterpresse-maschine"]}$seed$::jsonb);
@@ -2013,3 +2013,541 @@ end;
 $$;
 revoke all on function public.admin_set_nickname(uuid, text) from public;
 grant execute on function public.admin_set_nickname(uuid, text) to authenticated;
+
+
+-- >>>>>>>>>> 0017_tracking_modes.sql <<<<<<<<<<
+
+-- ============================================================
+-- 0017_tracking_modes.sql
+-- Drei Tracking-Arten je Übung (Gewicht × Wdh, Körpergewicht, Cardio),
+-- Cardio-Sätze mit Dauer und Distanz, Körpergewichts-Sätze mit
+-- Körpergewicht-Snapshot und Zusatzgewicht, Trainings nachträglich
+-- bearbeitbar (Summen werden per Trigger neu berechnet).
+-- ============================================================
+
+-- ------------------------------------------------------------
+-- exercises: Tracking-Art und Körpergewichts-Anteil
+-- ------------------------------------------------------------
+alter table public.exercises
+  add column if not exists tracking_mode text not null default 'weight_reps'
+    check (tracking_mode in ('weight_reps', 'bodyweight', 'cardio'));
+alter table public.exercises
+  add column if not exists bodyweight_factor numeric(4, 2) not null default 1.00
+    check (bodyweight_factor >= 0 and bodyweight_factor <= 2);
+
+comment on column public.exercises.tracking_mode is
+  'weight_reps: Gewicht × Wiederholungen · bodyweight: Körpergewicht × Anteil + Zusatzgewicht · cardio: Dauer und Distanz';
+comment on column public.exercises.bodyweight_factor is
+  'Anteil des Körpergewichts, der bei Körpergewichtsübungen tatsächlich bewegt wird (1,00 = 100 %)';
+
+-- Tracking-Art wird aus Kategorie und Equipment abgeleitet (auch für Seeds und eigene Übungen)
+create or replace function public.derive_tracking_mode()
+returns trigger
+language plpgsql
+as $$
+begin
+  if new.category = 'cardio' or new.equipment = 'cardio' then
+    new.tracking_mode := 'cardio';
+  elsif new.equipment = 'bodyweight' then
+    new.tracking_mode := 'bodyweight';
+  else
+    new.tracking_mode := 'weight_reps';
+  end if;
+  return new;
+end;
+$$;
+drop trigger if exists exercises_derive_tracking on public.exercises;
+create trigger exercises_derive_tracking
+  before insert or update of category, equipment on public.exercises
+  for each row execute function public.derive_tracking_mode();
+
+-- Bestehende Übungen einmal durch den Trigger schicken
+update public.exercises set category = category;
+
+-- Körpergewichts-Anteile der Standardübungen
+update public.exercises set bodyweight_factor = 0.60 where owner_id is null and slug = 'hyperextensions';
+update public.exercises set bodyweight_factor = 0.45 where owner_id is null and slug = 'hanging-knee-raise';
+update public.exercises set bodyweight_factor = 0.65 where owner_id is null and slug = 'plank';
+
+-- ------------------------------------------------------------
+-- workout_sets: Cardio- und Körpergewichts-Felder
+-- ------------------------------------------------------------
+alter table public.workout_sets
+  add column if not exists duration_seconds integer
+    check (duration_seconds is null or (duration_seconds >= 0 and duration_seconds <= 86400));
+alter table public.workout_sets
+  add column if not exists distance_m integer
+    check (distance_m is null or (distance_m >= 0 and distance_m <= 1000000));
+alter table public.workout_sets
+  add column if not exists body_weight numeric(5, 2)
+    check (body_weight is null or (body_weight > 0 and body_weight < 500));
+alter table public.workout_sets
+  add column if not exists extra_weight numeric(7, 2)
+    check (extra_weight is null or (extra_weight >= -500 and extra_weight <= 999));
+
+comment on column public.workout_sets.weight is
+  'Bewegte Last. Bei Körpergewichtsübungen: body_weight × bodyweight_factor + extra_weight. Bei Cardio 0.';
+comment on column public.workout_sets.duration_seconds is 'Cardio: Dauer in Sekunden';
+comment on column public.workout_sets.distance_m is 'Cardio: Distanz in Metern';
+comment on column public.workout_sets.body_weight is 'Körpergewichtsübungen: Körpergewicht zum Zeitpunkt des Satzes';
+comment on column public.workout_sets.extra_weight is 'Körpergewichtsübungen: Zusatzgewicht (negativ = unterstützt)';
+
+-- ------------------------------------------------------------
+-- Summen eines abgeschlossenen Trainings neu berechnen
+-- ------------------------------------------------------------
+create or replace function public.recalc_session_totals(p_session_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  update public.workout_sessions s
+  set total_volume = coalesce((
+        select sum(w.weight * w.reps)
+        from public.workout_sets w
+        join public.workout_session_exercises se on se.id = w.session_exercise_id
+        where se.session_id = s.id and w.completed and w.is_warmup = false
+      ), 0),
+      total_sets = coalesce((
+        select count(*)
+        from public.workout_sets w
+        join public.workout_session_exercises se on se.id = w.session_exercise_id
+        where se.session_id = s.id and w.completed and w.is_warmup = false
+      ), 0)
+  where s.id = p_session_id
+    and s.status = 'completed';
+end;
+$$;
+-- Nur für angemeldete Benutzer (wird auch aus complete_workout_session im Benutzerkontext aufgerufen);
+-- berechnet ausschließlich bereits abgeschlossene Trainings neu und ist damit idempotent.
+revoke all on function public.recalc_session_totals(uuid) from public;
+grant execute on function public.recalc_session_totals(uuid) to authenticated;
+
+-- Nach jeder Satzänderung: Summen des (abgeschlossenen) Trainings aktualisieren
+create or replace function public.workout_sets_touch_session()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_session uuid;
+begin
+  select se.session_id into v_session
+  from public.workout_session_exercises se
+  where se.id = coalesce(new.session_exercise_id, old.session_exercise_id);
+  if v_session is not null then
+    perform public.recalc_session_totals(v_session);
+  end if;
+  return coalesce(new, old);
+end;
+$$;
+drop trigger if exists workout_sets_recalc on public.workout_sets;
+create trigger workout_sets_recalc
+  after insert or update or delete on public.workout_sets
+  for each row execute function public.workout_sets_touch_session();
+
+-- Übung aus einem Training entfernt: Sätze sind per Cascade weg, Summen neu berechnen
+create or replace function public.session_exercises_touch_session()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.recalc_session_totals(old.session_id);
+  return old;
+end;
+$$;
+drop trigger if exists session_exercises_recalc on public.workout_session_exercises;
+create trigger session_exercises_recalc
+  after delete on public.workout_session_exercises
+  for each row execute function public.session_exercises_touch_session();
+
+-- Abschließen nutzt dieselbe Berechnung
+create or replace function public.complete_workout_session(p_session_id uuid, p_notes text default null, p_local_date date default null)
+returns public.workout_sessions
+language plpgsql
+security invoker
+set search_path = public
+as $$
+declare
+  v_user uuid := auth.uid();
+  v_session public.workout_sessions;
+  v_ended timestamptz := now();
+begin
+  select * into v_session
+  from public.workout_sessions
+  where id = p_session_id and user_id = v_user;
+
+  if v_session.id is null then
+    raise exception 'Training nicht gefunden' using errcode = 'P0002';
+  end if;
+
+  if v_session.status <> 'active' then
+    return v_session;
+  end if;
+
+  delete from public.workout_sets s
+  using public.workout_session_exercises se
+  where s.session_exercise_id = se.id
+    and se.session_id = p_session_id
+    and s.completed = false;
+
+  delete from public.workout_session_exercises se
+  where se.session_id = p_session_id
+    and not exists (select 1 from public.workout_sets s where s.session_exercise_id = se.id);
+
+  update public.workout_sessions
+  set status = 'completed',
+      ended_at = v_ended,
+      duration_seconds = greatest(0, extract(epoch from (v_ended - started_at))::integer),
+      notes = coalesce(p_notes, notes)
+  where id = p_session_id;
+
+  perform public.recalc_session_totals(p_session_id);
+
+  select * into v_session from public.workout_sessions where id = p_session_id;
+
+  insert into public.calendar_entries (user_id, entry_date, entry_type)
+  values (v_user, coalesce(p_local_date, (v_session.started_at at time zone 'Europe/Berlin')::date), 'training')
+  on conflict (user_id, entry_date) do update set entry_type = 'training';
+
+  return v_session;
+end;
+$$;
+
+-- ------------------------------------------------------------
+-- Letzte Leistung je Übung: Cardio- und Körpergewichtsfelder mitliefern
+-- ------------------------------------------------------------
+drop function if exists public.get_last_exercise_performance(uuid[]);
+create function public.get_last_exercise_performance(p_exercise_ids uuid[])
+returns table (
+  exercise_id uuid,
+  session_id uuid,
+  started_at timestamptz,
+  target_sets integer,
+  rep_min integer,
+  rep_max integer,
+  set_number integer,
+  weight numeric,
+  reps integer,
+  rir integer,
+  is_warmup boolean,
+  duration_seconds integer,
+  distance_m integer,
+  body_weight numeric,
+  extra_weight numeric
+)
+language sql
+stable
+security invoker
+set search_path = public
+as $$
+  with last_sessions as (
+    select distinct on (se.exercise_id)
+      se.exercise_id, se.id as session_exercise_id, ws.id as session_id, ws.started_at,
+      se.target_sets, se.rep_min, se.rep_max
+    from public.workout_session_exercises se
+    join public.workout_sessions ws on ws.id = se.session_id
+    where se.user_id = auth.uid()
+      and ws.status = 'completed'
+      and se.exercise_id = any (p_exercise_ids)
+      and exists (select 1 from public.workout_sets s where s.session_exercise_id = se.id and s.completed)
+    order by se.exercise_id, ws.started_at desc
+  )
+  select ls.exercise_id, ls.session_id, ls.started_at, ls.target_sets, ls.rep_min, ls.rep_max,
+         s.set_number, s.weight, s.reps, s.rir, s.is_warmup,
+         s.duration_seconds, s.distance_m, s.body_weight, s.extra_weight
+  from last_sessions ls
+  join public.workout_sets s on s.session_exercise_id = ls.session_exercise_id
+  where s.completed
+  order by ls.exercise_id, s.set_number;
+$$;
+
+-- ------------------------------------------------------------
+-- Bestleistungen: zusätzlich Distanz, Dauer und Pace (Cardio)
+-- ------------------------------------------------------------
+drop function if exists public.get_exercise_records(uuid);
+create function public.get_exercise_records(p_exercise_id uuid)
+returns table (
+  max_weight numeric,
+  max_weight_reps integer,
+  max_weight_at timestamptz,
+  max_reps integer,
+  max_reps_weight numeric,
+  max_reps_at timestamptz,
+  best_est_1rm numeric,
+  best_est_1rm_at timestamptz,
+  max_session_volume numeric,
+  max_session_volume_at timestamptz,
+  total_sessions bigint,
+  max_distance_m integer,
+  max_distance_at timestamptz,
+  max_duration_seconds integer,
+  max_duration_at timestamptz,
+  best_pace_sec_per_km numeric,
+  best_pace_at timestamptz
+)
+language sql
+stable
+security invoker
+set search_path = public
+as $$
+  with sets as (
+    select s.weight, s.reps, s.duration_seconds, s.distance_m, s.completed_at, ws.id as session_id, ws.started_at,
+           s.weight * (1 + s.reps / 30.0) as est_1rm
+    from public.workout_sets s
+    join public.workout_session_exercises se on se.id = s.session_exercise_id
+    join public.workout_sessions ws on ws.id = se.session_id
+    where se.user_id = auth.uid()
+      and se.exercise_id = p_exercise_id
+      and ws.status = 'completed'
+      and s.completed
+      and s.is_warmup = false
+  ),
+  lifted as (select * from sets where reps > 0),
+  by_session as (
+    select session_id, started_at, sum(weight * reps) as volume
+    from sets group by session_id, started_at
+  ),
+  mw as (select weight, reps, started_at from lifted order by weight desc, reps desc limit 1),
+  mr as (select reps, weight, started_at from lifted order by reps desc, weight desc limit 1),
+  m1 as (select est_1rm, started_at from lifted order by est_1rm desc limit 1),
+  mv as (select volume, started_at from by_session where volume > 0 order by volume desc limit 1),
+  md as (select distance_m, started_at from sets where distance_m > 0 order by distance_m desc limit 1),
+  mt as (select duration_seconds, started_at from sets where duration_seconds > 0 order by duration_seconds desc limit 1),
+  mp as (
+    select duration_seconds::numeric / (distance_m / 1000.0) as pace, started_at
+    from sets where distance_m >= 500 and duration_seconds > 0
+    order by pace asc limit 1
+  )
+  select
+    (select weight from mw), (select reps from mw), (select started_at from mw),
+    (select reps from mr), (select weight from mr), (select started_at from mr),
+    (select round(est_1rm, 1) from m1), (select started_at from m1),
+    (select volume from mv), (select started_at from mv),
+    (select count(*) from by_session),
+    (select distance_m from md), (select started_at from md),
+    (select duration_seconds from mt), (select started_at from mt),
+    (select round(pace, 0) from mp), (select started_at from mp);
+$$;
+
+-- ------------------------------------------------------------
+-- Verlauf einer Übung: zusätzlich Dauer und Distanz je Training
+-- ------------------------------------------------------------
+drop function if exists public.get_exercise_history(uuid, timestamptz);
+create function public.get_exercise_history(p_exercise_id uuid, p_from timestamptz default null)
+returns table (
+  session_id uuid,
+  started_at timestamptz,
+  max_weight numeric,
+  max_reps integer,
+  top_set_weight numeric,
+  top_set_reps integer,
+  est_1rm numeric,
+  volume numeric,
+  sets integer,
+  total_duration_seconds integer,
+  total_distance_m integer
+)
+language sql
+stable
+security invoker
+set search_path = public
+as $$
+  with sets as (
+    select ws.id as session_id, ws.started_at, s.weight, s.reps, s.duration_seconds, s.distance_m,
+           s.weight * (1 + s.reps / 30.0) as est_1rm
+    from public.workout_sets s
+    join public.workout_session_exercises se on se.id = s.session_exercise_id
+    join public.workout_sessions ws on ws.id = se.session_id
+    where se.user_id = auth.uid()
+      and se.exercise_id = p_exercise_id
+      and ws.status = 'completed'
+      and s.completed
+      and s.is_warmup = false
+      and (p_from is null or ws.started_at >= p_from)
+  ),
+  top as (
+    select distinct on (session_id) session_id, weight as top_set_weight, reps as top_set_reps
+    from sets order by session_id, est_1rm desc
+  )
+  select s.session_id, s.started_at,
+         max(s.weight) as max_weight,
+         max(s.reps) as max_reps,
+         t.top_set_weight, t.top_set_reps,
+         round(max(s.est_1rm), 1) as est_1rm,
+         sum(s.weight * s.reps) as volume,
+         count(*)::integer as sets,
+         coalesce(sum(s.duration_seconds), 0)::integer as total_duration_seconds,
+         coalesce(sum(s.distance_m), 0)::integer as total_distance_m
+  from sets s
+  join top t on t.session_id = s.session_id
+  group by s.session_id, s.started_at, t.top_set_weight, t.top_set_reps
+  order by s.started_at;
+$$;
+
+-- ------------------------------------------------------------
+-- Mitglieder-Detail: Tracking-Art und Cardio-/Körpergewichtsfelder im JSON
+-- ------------------------------------------------------------
+create or replace function public.get_member_session_detail(p_session_id uuid)
+returns jsonb
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  v_result jsonb;
+begin
+  if auth.uid() is null then
+    raise exception 'Nicht angemeldet' using errcode = '42501';
+  end if;
+
+  select jsonb_build_object(
+    'session', jsonb_build_object(
+      'id', s.id,
+      'user_id', s.user_id,
+      'nickname', coalesce(p.nickname, 'Benutzer'),
+      'name', s.name,
+      'started_at', s.started_at,
+      'ended_at', s.ended_at,
+      'duration_seconds', s.duration_seconds,
+      'total_volume', s.total_volume,
+      'total_sets', s.total_sets,
+      'notes', s.notes
+    ),
+    'exercises', coalesce(
+      (select jsonb_agg(
+         jsonb_build_object(
+           'id', se.id,
+           'sort_order', se.sort_order,
+           'target_sets', se.target_sets,
+           'rep_min', se.rep_min,
+           'rep_max', se.rep_max,
+           'exercise', jsonb_build_object(
+             'id', e.id,
+             'slug', e.slug,
+             'name', e.name,
+             'category', e.category,
+             'equipment', e.equipment,
+             'tracking_mode', e.tracking_mode
+           ),
+           'sets', coalesce(
+             (select jsonb_agg(
+                jsonb_build_object(
+                  'set_number', ws.set_number,
+                  'weight', ws.weight,
+                  'reps', ws.reps,
+                  'rir', ws.rir,
+                  'is_warmup', ws.is_warmup,
+                  'duration_seconds', ws.duration_seconds,
+                  'distance_m', ws.distance_m,
+                  'body_weight', ws.body_weight,
+                  'extra_weight', ws.extra_weight
+                ) order by ws.set_number)
+                from public.workout_sets ws
+               where ws.session_exercise_id = se.id
+                 and ws.completed),
+             '[]'::jsonb
+           )
+         ) order by se.sort_order)
+         from public.workout_session_exercises se
+         join public.exercises e on e.id = se.exercise_id
+        where se.session_id = s.id),
+      '[]'::jsonb
+    )
+  )
+  into v_result
+  from public.workout_sessions s
+  left join public.profiles p on p.id = s.user_id
+  where s.id = p_session_id
+    and s.status = 'completed';
+
+  return v_result;
+end;
+$$;
+
+-- ------------------------------------------------------------
+-- Seed-Hilfsfunktion: bodyweight_factor aus JSON übernehmen
+-- ------------------------------------------------------------
+create or replace function public.upsert_seed_exercise(p jsonb)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_id uuid;
+  m text;
+begin
+  insert into public.exercises (
+    slug, name, category, equipment, grip_id, grip_notes, description,
+    setup, execution, range_of_motion, breathing, common_mistakes, tips, cable_setup, image_url, animation_url,
+    muscle_focus, requirements, grip_alternatives, machine_name, alternative_exercises, bodyweight_factor
+  ) values (
+    p ->> 'slug',
+    p ->> 'name',
+    (p ->> 'category')::public.exercise_category,
+    (p ->> 'equipment')::public.equipment_type,
+    nullif(p ->> 'grip_id', ''),
+    nullif(p ->> 'grip_notes', ''),
+    p ->> 'description',
+    coalesce(array(select jsonb_array_elements_text(p -> 'setup')), '{}'),
+    coalesce(array(select jsonb_array_elements_text(p -> 'execution')), '{}'),
+    p ->> 'range_of_motion',
+    p ->> 'breathing',
+    coalesce(array(select jsonb_array_elements_text(p -> 'common_mistakes')), '{}'),
+    coalesce(array(select jsonb_array_elements_text(p -> 'tips')), '{}'),
+    case when jsonb_typeof(p -> 'cable_setup') = 'object' then p -> 'cable_setup' else null end,
+    nullif(p ->> 'image_url', ''),
+    nullif(p ->> 'animation_url', ''),
+    coalesce(array(select jsonb_array_elements_text(p -> 'muscle_focus')), '{}'),
+    coalesce(array(select jsonb_array_elements_text(p -> 'requirements')), '{}'),
+    coalesce(array(select jsonb_array_elements_text(p -> 'grip_alternatives')), '{}'),
+    nullif(p ->> 'machine_name', ''),
+    coalesce(array(select jsonb_array_elements_text(p -> 'alternative_exercises')), '{}'),
+    coalesce((p ->> 'bodyweight_factor')::numeric, 1.00)
+  )
+  on conflict (slug) where owner_id is null do update set
+    name = excluded.name,
+    category = excluded.category,
+    equipment = excluded.equipment,
+    grip_id = excluded.grip_id,
+    grip_notes = excluded.grip_notes,
+    description = excluded.description,
+    setup = excluded.setup,
+    execution = excluded.execution,
+    range_of_motion = excluded.range_of_motion,
+    breathing = excluded.breathing,
+    common_mistakes = excluded.common_mistakes,
+    tips = excluded.tips,
+    cable_setup = excluded.cable_setup,
+    image_url = excluded.image_url,
+    animation_url = coalesce(public.exercises.animation_url, excluded.animation_url),
+    muscle_focus = excluded.muscle_focus,
+    requirements = excluded.requirements,
+    grip_alternatives = excluded.grip_alternatives,
+    machine_name = excluded.machine_name,
+    alternative_exercises = excluded.alternative_exercises,
+    bodyweight_factor = excluded.bodyweight_factor
+  returning id into v_id;
+
+  delete from public.exercise_muscles where exercise_id = v_id;
+
+  for m in select jsonb_array_elements_text(p -> 'primary_muscles') loop
+    insert into public.exercise_muscles (exercise_id, muscle_id, role)
+    values (v_id, m, 'primary') on conflict do nothing;
+  end loop;
+
+  for m in select jsonb_array_elements_text(p -> 'secondary_muscles') loop
+    insert into public.exercise_muscles (exercise_id, muscle_id, role)
+    values (v_id, m, 'secondary') on conflict do nothing;
+  end loop;
+
+  return v_id;
+end;
+$$;
+revoke all on function public.upsert_seed_exercise(jsonb) from public;

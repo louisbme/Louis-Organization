@@ -6,6 +6,7 @@ import { getActiveSession, getLastCompletedSession } from "@/lib/services/sessio
 import { formatRelativeDay } from "@/lib/utils/format";
 import { PageHeader } from "@/components/ui/page-header";
 import { Button } from "@/components/ui/button";
+import { AvatarLink } from "@/components/ui/avatar";
 import { Card, CardContent, SectionLabel } from "@/components/ui/card";
 import { WorkoutStartList } from "@/components/workout/workout-start-list";
 
@@ -13,7 +14,7 @@ export const metadata = { title: "Training" };
 
 export default async function WorkoutPage({ searchParams }: { searchParams: Promise<{ plan?: string }> }) {
   const { plan: preselect } = await searchParams;
-  const { supabase, user } = await requireUser();
+  const { supabase, user, profile } = await requireUser();
   const [plans, active, last] = await Promise.all([
     listPlans(supabase, user.id),
     getActiveSession(supabase, user.id),
@@ -23,16 +24,20 @@ export default async function WorkoutPage({ searchParams }: { searchParams: Prom
 
   return (
     <div>
-      <PageHeader title="Training" description={last ? `Letztes Training: ${last.name}, ${formatRelativeDay(last.started_at).toLowerCase()}` : "Wähle ein Training und starte."} />
+      <PageHeader
+        title="Training"
+        description={last ? `Letztes Training: ${last.name}, ${formatRelativeDay(last.started_at).toLowerCase()}` : "Wähle ein Training und starte."}
+        actions={<AvatarLink name={profile.nickname} className="lg:hidden" />}
+      />
       {active ? (
-        <Card className="mb-4 border-accent/40">
+        <Card className="mb-4 ring-1 ring-accent/40">
           <CardContent className="pt-5">
-            <SectionLabel>Aktives Training</SectionLabel>
-            <p className="mt-1 text-lg font-semibold">{active.name}</p>
+            <SectionLabel className="text-accent">Aktives Training</SectionLabel>
+            <p className="mt-1 text-xl font-semibold">{active.name}</p>
             <p className="text-sm text-muted">Gestartet {formatRelativeDay(active.started_at).toLowerCase()}</p>
             <Link href={`/workout/${active.id}`} className="mt-4 block">
               <Button size="lg" fullWidth>
-                <Play className="h-4 w-4" /> Fortsetzen
+                <Play className="h-4 w-4" fill="currentColor" /> Fortsetzen
               </Button>
             </Link>
           </CardContent>

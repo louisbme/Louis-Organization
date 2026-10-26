@@ -20,7 +20,7 @@ const EQUIPMENT = ["machine", "cable", "barbell", "dumbbell", "bodyweight", "smi
 const GRIPS = ["neutral_parallel", "wide_lat_bar", "close_v_grip", "rope", "single_handle", "strap_handle", "straight_bar", "ez_bar", "v_bar_triceps", "ankle_strap"];
 const MUSCLES = ["chest", "upper_chest", "front_delts", "side_delts", "rear_delts", "traps", "lats", "upper_back", "mid_back", "lower_back", "biceps", "triceps", "forearms", "abs", "obliques", "quads", "hamstrings", "glutes", "calves", "adductors", "abductors"];
 const REQUIRED = ["slug", "name", "category", "equipment", "grip_id", "grip_notes", "primary_muscles", "secondary_muscles", "description", "setup", "execution", "range_of_motion", "breathing", "common_mistakes", "tips", "cable_setup", "muscle_focus", "requirements", "grip_alternatives"];
-const OPTIONAL = ["image_url", "animation_url", "machine_name", "alternative_exercises"];
+const OPTIONAL = ["image_url", "animation_url", "machine_name", "alternative_exercises", "bodyweight_factor"];
 const CABLE_FIELDS = ["cable", "height", "grip_width", "body_position", "foot_position", "movement_direction", "elbow_position", "end_position", "return"];
 
 const errors = [];
@@ -53,6 +53,10 @@ for (const file of readdirSync(exercisesDir).filter((f) => f.endsWith(".json")).
       if (!REQUIRED.includes(key) && !OPTIONAL.includes(key)) errors.push(`${ctx}: unbekanntes Feld "${key}"`);
     }
     if (ex.image_url !== undefined && ex.image_url !== null && !/^(\/|https?:\/\/)/.test(ex.image_url)) errors.push(`${ctx}: image_url muss mit / oder http beginnen`);
+    if (ex.bodyweight_factor !== undefined) {
+      if (ex.equipment !== "bodyweight") errors.push(`${ctx}: bodyweight_factor nur bei Körpergewichtsübungen`);
+      if (typeof ex.bodyweight_factor !== "number" || ex.bodyweight_factor < 0 || ex.bodyweight_factor > 2) errors.push(`${ctx}: bodyweight_factor muss zwischen 0 und 2 liegen`);
+    }
     for (const key of ["setup", "execution", "common_mistakes", "tips", "muscle_focus", "requirements"]) {
       if (!Array.isArray(ex[key]) || ex[key].length === 0) errors.push(`${ctx}: ${key} leer`);
     }

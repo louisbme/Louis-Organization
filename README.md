@@ -15,15 +15,20 @@ Private Fitness-Tracking-Web-App für eine kleine Gruppe. Trainingspläne, satzg
 
 Keine OpenAI-/Claude-API, keine Analytics, keine Payments, keine externen Bilddatenbanken.
 
+## Design
+
+Gestaltung nach Apple Human Interface Guidelines: semantische Farben mit Licht- und Dunkel-Variante (schwarzer gruppierter Hintergrund, Karten ohne Rahmen), iOS-Textstile (Body 17 pt, Subheadline 15 pt, Caption 12 pt, Large Title 34 pt), Rot als einzige Akzentfarbe für Aktionen und Markierungen, Systemschrift für Text und Bedienelemente, Montserrat nur für große Titel und Kennzahlen. Mobile Navigation als schwebende, durchscheinende Tab-Leiste mit fünf Bereichen (Start, Training, Übungen, Verlauf, Fortschritt); alles Weitere über den Avatar oben rechts. Sheets mit Griff, 44-pt-Tastziele, Reduced Motion und Reduced Transparency werden respektiert.
+
 ## Funktionen
 
 - **Auth**: E-Mail + Passwort, Registrierung mit Nickname, Passwort vergessen, Logout, geschützte Routen (Middleware).
 - **Dashboard**: nächstes Training (Rotation A → B → C), letztes Training, Volumenverlauf, 7-Tage- und Gesamtstatistik, Schnellzugriffe.
 - **Trainingspläne**: drei vorkonfigurierte Pläne (Oberkörper A, Unterkörper, Oberkörper B) pro Benutzer aus Vorlagen kopiert; Übungen hinzufügen, entfernen, austauschen, sortieren, Sätze und Wiederholungsbereich ändern, umbenennen, duplizieren, neue Pläne.
 - **Aktives Training**: große +/- Eingaben für Gewicht und Wiederholungen, optional RIR, Aufwärmsätze, vorherige Werte, Double-Progression-Vorschlag („Gewicht erhöhen/halten“), Trainingsdauer, Rest Timer (60/90/120/180 s oder eigene Zeit), Übung spontan hinzufügen, lokaler Zwischenstand (localStorage) mit Synchronisierung nach Verbindungsabbruch.
-- **Historie**: Liste mit Filtern (Zeitraum, Training, Übung), Detailansicht mit allen Sätzen und Volumen, Notizen.
+- **Drei Tracking-Arten** (werden aus Kategorie und Equipment abgeleitet): Gewicht × Wiederholungen; **Cardio** mit Dauer und Distanz (Pace wird berechnet, eigene Bestleistungen und Verlaufsgrafiken); **Körpergewicht**: Körpergewicht × Anteil der Übung (z. B. Dips 100 %, Hyperextensions 60 %) + Zusatz- oder Gegengewicht ergibt sofort die reale Last, die in Volumen, 1RM und Bestleistungen einfließt. Das Körpergewicht wird im Training abgefragt und als Eintrag gespeichert.
+- **Historie**: Liste mit Filtern (Zeitraum, Training, Übung), Detailansicht mit allen Sätzen und Volumen, Notizen. Abgeschlossene Trainings lassen sich nachträglich bearbeiten: Satzwerte ändern, Sätze hinzufügen oder löschen, Übungen hinzufügen oder entfernen; Volumen und Satzanzahl werden in der Datenbank per Trigger neu berechnet.
 - **Fortschritt**: Zeiträume 1 W / 1 M / 6 M / 12 M / Gesamt; Volumen, Trainingsanzahl, Dauer, Körpergewicht (optional), Kraftentwicklung je Übung (Top-Satz, Wiederholungen, geschätztes 1RM, Volumen), Bestleistungen.
-- **Übungsdatenbank**: 50 Standardübungen mit Setup, Ausführung, Bewegungsradius, Atmung, Fehlern, Tipps; Kabelübungen mit konkretem Griff (Griff-Icons oder eigene Griff-Fotos) und vollständigem Kabel-Setup; anatomische SVG-Muskelkarte (Front/Rück, primär rot, sekundär gelb); je Übung "So triffst du den Muskel" (sportwissenschaftlich begründet) und "Das brauchst du" (konkrete Ausstattung); Kabelübungen mit expliziter Rollenhöhe, empfohlenem Griff und Griff-Alternativen (eigene Griff-Illustrationen); optionales Gerätefoto nur auf der Detailseite und nur wo gewünscht; optionale Ausführungs-Animation; Favoriten; eigene Übungen.
+- **Übungsdatenbank**: Übersicht als Muskelgruppen-Raster (Brust, Rücken, Beine, Schultern, Bizeps, Trizeps, Bauch, Rumpf, Unterarme, Cardio, Favoriten, Eigene) mit Figur je Gruppe, Suche über alle Übungen; 50 Standardübungen mit Setup, Ausführung, Bewegungsradius, Atmung, Fehlern, Tipps; Kabelübungen mit konkretem Griff (Griff-Icons oder eigene Griff-Fotos) und vollständigem Kabel-Setup; anatomische SVG-Muskelkarte (Front/Rück, primär rot, sekundär gelb); je Übung "So triffst du den Muskel" (sportwissenschaftlich begründet) und "Das brauchst du" (konkrete Ausstattung); Kabelübungen mit expliziter Rollenhöhe, empfohlenem Griff und Griff-Alternativen (eigene Griff-Illustrationen); optionales Gerätefoto nur auf der Detailseite und nur wo gewünscht; optionale Ausführungs-Animation; Favoriten; eigene Übungen.
 - **Kalender**: Monatsansicht, ±10 Jahre, Tage als Training / Rest Day / Freizeit / Party / Anderer Tag markieren, Notizen; abgeschlossene Trainings werden automatisch eingetragen.
 - **Stats**: private Übersicht aller Mitglieder (Nickname, Gesamtvolumen, Trainings, Zeit, letztes Training) mit Mitglieder-Detailansicht („Mehr sehen“): abgeschlossene Trainings nach Monat, Detail mit Übungen und Sätzen; nur lesend, nur für angemeldete Benutzer.
 - **Profil & Einstellungen**: Nickname, E-Mail, Passwort, Gewichtseinheit, Gewichtsschritt, Rest-Timer-Standard, RIR anzeigen, Theme.
@@ -92,6 +97,7 @@ Migrationen:
 | `0014_admin.sql` | Verwaltungsfunktionen für Admins (Nutzer listen, Rolle setzen, löschen) |
 | `0015_row_variants.sql` | Rudern Hebel in breit/eng aufgeteilt, Brustgestütztes Rudern entfernt |
 | `0016_admin_nickname.sql` | Admin: Nickname eines Nutzers ändern |
+| `0017_tracking_modes.sql` | Tracking-Arten (Gewicht × Wdh, Körpergewicht, Cardio) je Übung, Cardio-Felder (Dauer, Distanz) und Körpergewichts-Felder an Sätzen, Neuberechnung der Summen per Trigger (nachträgliches Bearbeiten), erweiterte Bestleistungen und Verläufe |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 

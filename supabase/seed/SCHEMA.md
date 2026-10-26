@@ -26,6 +26,7 @@ Die Daten werden per Skript in eine SQL-Migration übersetzt. Halte dich EXAKT a
 | image_url | string/null | nein | Gerätefoto, nur bei Maschinen-/Rack-/Cardio-Übungen (nie bei dumbbell oder cable) |
 | machine_name | string/null | nein | Offizielle Gerätebezeichnung (z. B. DHZ Fitness "Incline Chest Press") |
 | alternative_exercises | string[] | nein | Slugs alternativer Übungen am anderen Gerät (werden mit Foto verlinkt) |
+| bodyweight_factor | number | nein | Nur bei equipment = "bodyweight": Anteil des Körpergewichts, der bewegt wird (0–2, Standard 1.0). Beispiele: Klimmzug/Dips 1.0, Liegestütz 0.65, Hyperextensions 0.6, Hanging Knee Raise 0.45. Daraus wird die reale Last berechnet (Körpergewicht × Anteil + Zusatzgewicht). |
 | muscle_focus | string[] | ja | 2–4 Punkte "So triffst du den Muskel": nach aktuellem sportwissenschaftlichem Stand (Bewegungsradius, gedehnte Position, Ellenbogen-/Schulterführung, Tempo, typische Ausweichbewegung). Sachlich, keine Heilsversprechen. |
 | requirements | string[] | ja | 1–4 Einträge "Das brauchst du": konkrete Ausstattung (Gerät, Hantelart, Bank, Griff, Stufe, Polster). Bei freien Übungen eindeutig, z. B. "Flachbank oder Hocker", "Kurzhanteln auf den Knien oder Langhantel mit Polster". |
 | grip_alternatives | string[] | ja | Nur bei Kabelübungen: 0–3 alternative Griff-IDs (aus der grip_id-Liste), die ebenfalls gut funktionieren, z. B. statt Seil eine Stange. Bei Nicht-Kabelübungen leeres Array []. |

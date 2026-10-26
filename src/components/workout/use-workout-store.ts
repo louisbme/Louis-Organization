@@ -13,6 +13,7 @@ import {
 } from "@/lib/services/sessions";
 import type { ExerciseLastPerformance } from "@/lib/utils/progression";
 import { suggestProgression } from "@/lib/utils/progression";
+import { bodyweightLoad, extraForLoad, setVolume } from "@/lib/utils/tracking";
 import { friendlyError } from "@/lib/utils/errors";
 
 export interface LocalSet {
@@ -25,6 +26,10 @@ export interface LocalSet {
   is_warmup: boolean;
   completed: boolean;
   pending: boolean;
+  duration_seconds: number | null;
+  distance_m: number | null;
+  body_weight: number | null;
+  extra_weight: number | null;
 }
 
 export interface LocalExercise {
@@ -38,7 +43,7 @@ export interface LocalExercise {
 }
 
 interface Snapshot {
-  version: 1;
+  version: 2;
   exercises: Record<string, LocalSet[]>;
 }
 
@@ -49,7 +54,7 @@ function readSnapshot(sessionId: string): Snapshot | null {
     const raw = localStorage.getItem(storageKey(sessionId));
     if (!raw) return null;
     const parsed = JSON.parse(raw) as Snapshot;
-    return parsed.version === 1 ? parsed : null;
+    return parsed.version === 2 ? parsed : null;
   } catch {
     return null;
   }
@@ -57,7 +62,7 @@ function readSnapshot(sessionId: string): Snapshot | null {
 
 function writeSnapshot(sessionId: string, exercises: LocalExercise[]) {
   try {
-    const snap: Snapshot = { version: 1, exercises: {} };
+    const snap: Snapshot = { version: 2, exercises: {} };
     for (const e of exercises) snap.exercises[e.sessionExerciseId] = e.sets;
     localStorage.setItem(storageKey(sessionId), JSON.stringify(snap));
   } catch {
@@ -75,38 +80,74 @@ export function clearSnapshot(sessionId: string) {
 
 const newKey = () => Math.random().toString(36).slice(2, 10);
 
+function emptySet(n: number): LocalSet {
+  return {
+    key: newKey(),
+    id: null,
+    set_number: n,
+    weight: 0,
+    reps: 0,
+    rir: null,
+    is_warmup: false,
+    completed: false,
+    pending: false,
+    duration_seconds: null,
+    distance_m: null,
+    body_weight: null,
+    extra_weight: null,
+  };
+}
+
+/**
+ * Platzhalter-Sätze bis zur Zielanzahl: Werte aus dem letzten Training übernehmen,
+ * bei Double-Progression das Gewicht (bzw. Zusatzgewicht) um einen Schritt erhöhen.
+ */
 function buildPlaceholders(
-  ex: { target_sets: number; rep_min: number; rep_max: number },
+  ex: { target_sets: number; rep_min: number; rep_max: number; exercise: ExerciseSummary },
   existing: LocalSet[],
   last: ExerciseLastPerformance | undefined,
-  weightStep: number
+  weightStep: number,
+  bodyWeight: number | null
 ): LocalSet[] {
   const result = [...existing].sort((a, b) => a.set_number - b.set_number);
+  const mode = ex.exercise.tracking_mode;
+  const factor = ex.exercise.bodyweight_factor;
   const { suggestion, lastWeight } = suggestProgression(last, ex.target_sets, ex.rep_max);
   const lastWorking = (last?.sets ?? []).filter((s) => !s.isWarmup);
   for (let n = 1; n <= ex.target_sets; n++) {
     if (result.some((s) => s.set_number === n)) continue;
     const ref = lastWorking[n - 1] ?? lastWorking[lastWorking.length - 1];
-    let weight = ref?.weight ?? lastWeight ?? 0;
-    if (suggestion === "increase" && lastWeight !== null) weight = Math.max(weight, lastWeight) + weightStep;
-    const reps = ref?.reps ?? ex.rep_min;
-    result.push({
-      key: newKey(),
-      id: null,
-      set_number: n,
-      weight: Math.round(weight * 100) / 100,
-      reps,
-      rir: null,
-      is_warmup: false,
-      completed: false,
-      pending: false,
-    });
+    const set = emptySet(n);
+    if (mode === "cardio") {
+      set.duration_seconds = ref?.durationSeconds ?? null;
+      set.distance_m = ref?.distanceM ?? null;
+    } else if (mode === "bodyweight") {
+      let extra = ref ? (ref.extraWeight ?? extraForLoad(ref.weight, ref.bodyWeight ?? bodyWeight, factor)) : 0;
+      if (suggestion === "increase" && ref) extra = Math.round((extra + weightStep) * 100) / 100;
+      set.body_weight = bodyWeight;
+      set.extra_weight = Math.round(extra * 100) / 100;
+      set.weight = bodyweightLoad(bodyWeight, factor, set.extra_weight);
+      set.reps = ref?.reps ?? ex.rep_min;
+    } else {
+      let weight = ref?.weight ?? lastWeight ?? 0;
+      if (suggestion === "increase" && lastWeight !== null) weight = Math.max(weight, lastWeight) + weightStep;
+      set.weight = Math.round(weight * 100) / 100;
+      set.reps = ref?.reps ?? ex.rep_min;
+    }
+    result.push(set);
   }
   return result.sort((a, b) => a.set_number - b.set_number);
 }
 
-export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<string, ExerciseLastPerformance>, weightStep: number, userId: string) {
+export function useWorkoutStore(
+  session: SessionDetail,
+  lastPerformance: Map<string, ExerciseLastPerformance>,
+  weightStep: number,
+  userId: string,
+  initialBodyWeight: number | null
+) {
   const db = React.useMemo(() => createClient(), []);
+  const [bodyWeight, setBodyWeightState] = React.useState<number | null>(initialBodyWeight);
   const [exercises, setExercises] = React.useState<LocalExercise[]>(() => {
     const snapshot = typeof window !== "undefined" ? readSnapshot(session.id) : null;
     return session.exercises.map((se) => {
@@ -122,6 +163,10 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
           is_warmup: s.is_warmup,
           completed: true,
           pending: false,
+          duration_seconds: s.duration_seconds,
+          distance_m: s.distance_m,
+          body_weight: s.body_weight,
+          extra_weight: s.extra_weight,
         }));
       const localSets = snapshot?.exercises[se.id] ?? [];
       // Lokale Sätze übernehmen, die der Server noch nicht kennt (ausstehend oder Entwurf)
@@ -138,7 +183,7 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
         target_sets: se.target_sets,
         rep_min: se.rep_min,
         rep_max: se.rep_max,
-        sets: buildPlaceholders(se, merged, last, weightStep),
+        sets: buildPlaceholders(se, merged, last, weightStep, initialBodyWeight),
       };
     });
   });
@@ -161,6 +206,25 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
     );
   }, []);
 
+  /** Neues Körpergewicht: alle offenen Körpergewichtssätze bekommen die neue Last. */
+  const setBodyWeight = React.useCallback((value: number) => {
+    setBodyWeightState(value);
+    setExercises((list) =>
+      list.map((e) =>
+        e.exercise.tracking_mode === "bodyweight"
+          ? {
+              ...e,
+              sets: e.sets.map((s) =>
+                s.completed
+                  ? s
+                  : { ...s, body_weight: value, weight: bodyweightLoad(value, e.exercise.bodyweight_factor, s.extra_weight ?? 0) }
+              ),
+            }
+          : e
+      )
+    );
+  }, []);
+
   const persist = React.useCallback(
     async (sessionExerciseId: string, set: LocalSet): Promise<boolean> => {
       try {
@@ -174,6 +238,10 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
           rir: set.rir,
           is_warmup: set.is_warmup,
           completed: true,
+          duration_seconds: set.duration_seconds,
+          distance_m: set.distance_m,
+          body_weight: set.body_weight,
+          extra_weight: set.extra_weight,
         });
         patchSet(sessionExerciseId, set.key, { id: saved.id, pending: false, completed: true });
         return true;
@@ -245,23 +313,19 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
         const last = e.sets[e.sets.length - 1];
         const n = (last?.set_number ?? 0) + 1;
         if (n > 30) return e;
-        return {
-          ...e,
-          sets: [
-            ...e.sets,
-            {
-              key: newKey(),
-              id: null,
-              set_number: n,
-              weight: last?.weight ?? 0,
-              reps: last?.reps ?? e.rep_min,
-              rir: last?.rir ?? null,
-              is_warmup: false,
-              completed: false,
-              pending: false,
-            },
-          ],
-        };
+        const set = emptySet(n);
+        if (last) {
+          set.weight = last.weight;
+          set.reps = last.reps;
+          set.rir = last.rir;
+          set.duration_seconds = last.duration_seconds;
+          set.distance_m = last.distance_m;
+          set.body_weight = last.body_weight;
+          set.extra_weight = last.extra_weight;
+        } else {
+          set.reps = e.rep_min;
+        }
+        return { ...e, sets: [...e.sets, set] };
       })
     );
   }, []);
@@ -294,7 +358,7 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
           user_id: userId,
           exercise_id: item.id,
           sort_order: order,
-          target_sets: 3,
+          target_sets: item.tracking_mode === "cardio" ? 1 : 3,
           rep_min: 8,
           rep_max: 12,
         });
@@ -307,7 +371,7 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
             target_sets: row.target_sets,
             rep_min: row.rep_min,
             rep_max: row.rep_max,
-            sets: buildPlaceholders(row, [], lastPerformance.get(item.id), weightStep),
+            sets: buildPlaceholders({ ...row, exercise: item }, [], lastPerformance.get(item.id), weightStep, bodyWeight),
           },
         ]);
         return true;
@@ -316,7 +380,7 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
         return false;
       }
     },
-    [db, exercises, session.id, userId, lastPerformance, weightStep]
+    [db, exercises, session.id, userId, lastPerformance, weightStep, bodyWeight]
   );
 
   const removeExercise = React.useCallback(
@@ -337,11 +401,13 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
     [db, exercises]
   );
 
-  const completedSets = exercises.flatMap((e) => e.sets.filter((s) => s.completed));
-  const volume = completedSets.filter((s) => !s.is_warmup).reduce((v, s) => v + s.weight * s.reps, 0);
+  const completedSets = exercises.flatMap((e) => e.sets.filter((s) => s.completed).map((s) => ({ set: s, mode: e.exercise.tracking_mode })));
+  const volume = completedSets.filter(({ set }) => !set.is_warmup).reduce((v, { set, mode }) => v + setVolume(mode, set), 0);
 
   return {
     exercises,
+    bodyWeight,
+    setBodyWeight,
     patchSet,
     saveSet,
     addSet,
@@ -352,7 +418,7 @@ export function useWorkoutStore(session: SessionDetail, lastPerformance: Map<str
     pendingCount,
     syncing,
     completedSetCount: completedSets.length,
-    workingSetCount: completedSets.filter((s) => !s.is_warmup).length,
+    workingSetCount: completedSets.filter(({ set }) => !set.is_warmup).length,
     volume,
   };
 }

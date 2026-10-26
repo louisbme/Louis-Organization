@@ -1,12 +1,16 @@
 import type { DbClient } from "@/lib/supabase/db";
 import type {
+  EquipmentType,
+  ExerciseCategory,
   ExerciseHistoryRow,
   ExerciseRecordsRow,
   GroupStatsRow,
   MemberSessionDetail,
   MemberSessionRow,
+  TrackingMode,
   UserStatsRow,
 } from "@/lib/supabase/types";
+import { trackingModeOf } from "@/lib/utils/tracking";
 
 export async function getUserStats(db: DbClient): Promise<UserStatsRow> {
   const { data, error } = await db.rpc("get_user_stats");
@@ -53,7 +57,15 @@ export async function getMemberSessionDetail(db: DbClient, sessionId: string): P
     session: { ...data.session, total_volume: Number(data.session.total_volume) },
     exercises: (data.exercises ?? []).map((ex) => ({
       ...ex,
-      sets: (ex.sets ?? []).map((s) => ({ ...s, weight: Number(s.weight) })),
+      exercise: { ...ex.exercise, tracking_mode: trackingModeOf(ex.exercise) },
+      sets: (ex.sets ?? []).map((s) => ({
+        ...s,
+        weight: Number(s.weight),
+        duration_seconds: s.duration_seconds ?? null,
+        distance_m: s.distance_m ?? null,
+        body_weight: s.body_weight === null || s.body_weight === undefined ? null : Number(s.body_weight),
+        extra_weight: s.extra_weight === null || s.extra_weight === undefined ? null : Number(s.extra_weight),
+      })),
     })),
   };
 }
@@ -70,7 +82,23 @@ export async function getExerciseRecords(db: DbClient, exerciseId: string): Prom
     best_est_1rm: row.best_est_1rm === null ? null : Number(row.best_est_1rm),
     max_session_volume: row.max_session_volume === null ? null : Number(row.max_session_volume),
     total_sessions: Number(row.total_sessions),
+    max_distance_m: row.max_distance_m ?? null,
+    max_duration_seconds: row.max_duration_seconds ?? null,
+    best_pace_sec_per_km: row.best_pace_sec_per_km === null || row.best_pace_sec_per_km === undefined ? null : Number(row.best_pace_sec_per_km),
   };
+}
+
+/** Zuletzt eingetragenes Körpergewicht (für Körpergewichtsübungen), null wenn noch keins vorhanden. */
+export async function getLatestBodyWeight(db: DbClient, userId: string): Promise<{ weight: number; entry_date: string } | null> {
+  const { data, error } = await db
+    .from("body_weight_entries")
+    .select("weight, entry_date")
+    .eq("user_id", userId)
+    .order("entry_date", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return data ? { weight: Number(data.weight), entry_date: data.entry_date } : null;
 }
 
 export async function getExerciseHistory(
@@ -86,6 +114,8 @@ export async function getExerciseHistory(
     top_set_weight: Number(r.top_set_weight),
     est_1rm: Number(r.est_1rm),
     volume: Number(r.volume),
+    total_duration_seconds: Number(r.total_duration_seconds ?? 0),
+    total_distance_m: Number(r.total_distance_m ?? 0),
   }));
 }
 
@@ -121,22 +151,36 @@ export interface TrainedExercise {
   name: string;
   slug: string;
   sessions: number;
+  tracking_mode: TrackingMode;
 }
 
 /** Übungen, die der Benutzer bereits trainiert hat (für Auswahl im Fortschritt). */
 export async function listTrainedExercises(db: DbClient, userId: string): Promise<TrainedExercise[]> {
   const { data, error } = await db
     .from("workout_session_exercises")
-    .select("exercise_id, exercises(id, name, slug), workout_sessions!inner(status)")
+    .select("exercise_id, exercises(*), workout_sessions!inner(status)")
     .eq("user_id", userId)
     .eq("workout_sessions.status", "completed")
-    .overrideTypes<Array<{ exercise_id: string; exercises: { id: string; name: string; slug: string } }>, { merge: false }>();
+    .overrideTypes<
+      Array<{
+        exercise_id: string;
+        exercises: { id: string; name: string; slug: string; category: ExerciseCategory; equipment: EquipmentType; tracking_mode: TrackingMode | null };
+      }>,
+      { merge: false }
+    >();
   if (error) throw error;
   const map = new Map<string, TrainedExercise>();
   for (const r of data ?? []) {
     const existing = map.get(r.exercise_id);
     if (existing) existing.sessions += 1;
-    else map.set(r.exercise_id, { id: r.exercises.id, name: r.exercises.name, slug: r.exercises.slug, sessions: 1 });
+    else
+      map.set(r.exercise_id, {
+        id: r.exercises.id,
+        name: r.exercises.name,
+        slug: r.exercises.slug,
+        sessions: 1,
+        tracking_mode: trackingModeOf(r.exercises),
+      });
   }
   return Array.from(map.values()).sort((a, b) => b.sessions - a.sessions || a.name.localeCompare(b.name, "de"));
 }

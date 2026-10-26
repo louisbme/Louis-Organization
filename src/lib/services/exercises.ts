@@ -6,7 +6,9 @@ import type {
   ExerciseRow,
   GripRow,
   MuscleRole,
+  TrackingMode,
 } from "@/lib/supabase/types";
+import { trackingModeOf } from "@/lib/utils/tracking";
 
 export interface ExerciseSummary {
   id: string;
@@ -16,6 +18,33 @@ export interface ExerciseSummary {
   equipment: EquipmentType;
   image_url: string | null;
   is_custom: boolean;
+  tracking_mode: TrackingMode;
+  bodyweight_factor: number;
+}
+
+/** Rohdaten aus der DB in eine Zusammenfassung überführen (Tracking-Art abgesichert, Faktor als Zahl). */
+export function toSummary(raw: {
+  id: string;
+  slug: string;
+  name: string;
+  category: ExerciseCategory;
+  equipment: EquipmentType;
+  image_url: string | null;
+  is_custom: boolean;
+  tracking_mode?: TrackingMode | null;
+  bodyweight_factor?: number | string | null;
+}): ExerciseSummary {
+  return {
+    id: raw.id,
+    slug: raw.slug,
+    name: raw.name,
+    category: raw.category,
+    equipment: raw.equipment,
+    image_url: raw.image_url,
+    is_custom: raw.is_custom,
+    tracking_mode: trackingModeOf(raw),
+    bodyweight_factor: raw.bodyweight_factor === null || raw.bodyweight_factor === undefined ? 1 : Number(raw.bodyweight_factor),
+  };
 }
 
 export interface ExerciseListItem extends ExerciseSummary {
@@ -45,7 +74,11 @@ export interface AlternativeExercise {
 type ExerciseWithMusclesRaw = ExerciseRow & { exercise_muscles: Array<{ muscle_id: string; role: MuscleRole }> };
 type ExerciseDetailRaw = ExerciseWithMusclesRaw & { grips: GripRow | null };
 
-export const EXERCISE_SUMMARY_SELECT = "id, slug, name, category, equipment, image_url, is_custom";
+/**
+ * Alle Spalten statt einer festen Liste: so funktionieren Pläne und Trainings auch dann,
+ * wenn der Code vor einer Migration mit neuen Spalten deployt wird (fehlende Felder → Standardwerte).
+ */
+export const EXERCISE_SUMMARY_SELECT = "*";
 
 function splitMuscles(list: Array<{ muscle_id: string; role: MuscleRole }>) {
   return {
@@ -71,13 +104,7 @@ export async function listExercises(db: DbClient, userId: string): Promise<Exerc
   ]);
   if (error) throw error;
   return (data ?? []).map((e) => ({
-    id: e.id,
-    slug: e.slug,
-    name: e.name,
-    category: e.category,
-    equipment: e.equipment,
-    image_url: e.image_url,
-    is_custom: e.is_custom,
+    ...toSummary(e),
     grip_id: e.grip_id,
     ...splitMuscles(e.exercise_muscles),
     is_favorite: favorites.has(e.id),
@@ -143,6 +170,8 @@ function toDetail(raw: ExerciseDetailRaw, isFavorite: boolean, alternatives: Gri
   const cable = isCableSetup(rest.cable_setup) ? rest.cable_setup : null;
   return {
     ...rest,
+    tracking_mode: trackingModeOf(rest),
+    bodyweight_factor: rest.bodyweight_factor === null || rest.bodyweight_factor === undefined ? 1 : Number(rest.bodyweight_factor),
     ...splitMuscles(exercise_muscles),
     grip: grips ?? null,
     alternative_grips: alternatives,
@@ -180,6 +209,8 @@ export interface CustomExerciseInput {
   animation_url: string | null;
   muscle_focus: string[];
   requirements: string[];
+  /** Anteil des Körpergewichts bei Körpergewichtsübungen (1 = 100 %) */
+  bodyweight_factor: number;
 }
 
 export function slugify(name: string): string {
@@ -220,6 +251,7 @@ export async function createCustomExercise(db: DbClient, userId: string, input: 
       animation_url: input.animation_url,
       muscle_focus: input.muscle_focus,
       requirements: input.requirements,
+      bodyweight_factor: input.bodyweight_factor,
       is_custom: true,
       owner_id: userId,
     })
@@ -249,6 +281,7 @@ export async function updateCustomExercise(db: DbClient, id: string, input: Cust
       animation_url: input.animation_url,
       muscle_focus: input.muscle_focus,
       requirements: input.requirements,
+      bodyweight_factor: input.bodyweight_factor,
     })
     .eq("id", id);
   if (error) throw error;

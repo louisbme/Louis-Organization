@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { APP_DESCRIPTION, APP_NAME } from "@/lib/config";
 import "./globals.css";
 
-const montserrat = Montserrat({ variable: "--font-geist-sans", subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+/** Montserrat nur für große Titel und Kennzahlen; Text und Bedienelemente nutzen die Systemschrift. */
+const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin"], weight: ["600", "700", "800"], display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: APP_NAME, template: `%s · ${APP_NAME}` },
@@ -23,7 +23,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0b",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    { media: "(prefers-color-scheme: light)", color: "#f2f2f7" },
+  ],
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -38,7 +41,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${montserrat.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${montserrat.variable} antialiased`}>
         {children}
         <Toaster />
       </body>

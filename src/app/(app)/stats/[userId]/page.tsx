@@ -1,13 +1,11 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight } from "lucide-react";
 import { requireUser } from "@/lib/auth/require-user";
 import { getGroupStats, listMemberSessions } from "@/lib/services/stats";
 import type { MemberSessionRow } from "@/lib/supabase/types";
 import { formatDate, formatDuration, formatRelativeDay, formatVolume } from "@/lib/utils/format";
 import { PageHeader } from "@/components/ui/page-header";
-import { Card } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/states";
+import { List, ListHeader, ListRow } from "@/components/ui/list";
 
 export const metadata = { title: "Mitglied" };
 
@@ -39,7 +37,9 @@ export default async function MemberStatsPage({ params }: { params: Promise<{ us
       <PageHeader
         title={member.nickname}
         backHref="/stats"
+        backLabel="Stats"
         description={`${sessions.length} abgeschlossene Trainings · Gesamtvolumen ${formatVolume(member.total_volume, unit)}`}
+        compact
       />
 
       {sessions.length === 0 ? (
@@ -49,29 +49,24 @@ export default async function MemberStatsPage({ params }: { params: Promise<{ us
           const [year, monthIndex] = month.split("-").map(Number);
           return (
             <section key={month}>
-              <h2 className="mb-2 px-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-faint">
-                {formatDate(new Date(year, monthIndex - 1, 1), "MMMM yyyy")}
-                <span className="ml-2 normal-case tracking-normal">· {items.length}</span>
-              </h2>
-              <Card className="divide-y divide-border overflow-hidden">
+              <ListHeader trailing={String(items.length)}>{formatDate(new Date(year, monthIndex - 1, 1), "MMMM yyyy")}</ListHeader>
+              <List>
                 {items.map((s) => (
-                  <Link
+                  <ListRow
                     key={s.session_id}
                     href={`/stats/${userId}/${s.session_id}`}
-                    className="flex items-center gap-3 px-5 py-3.5 hover:bg-subtle"
-                  >
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-medium">{s.name}</p>
-                      <p className="text-xs text-muted">
+                    title={s.name}
+                    subtitle={
+                      <>
                         {formatRelativeDay(s.started_at)} · {formatDuration(s.duration_seconds)} · {s.total_sets} Sätze
-                      </p>
-                      <p className="mt-0.5 truncate text-xs text-faint">{s.exercise_names.join(" · ")}</p>
-                    </div>
-                    <span className="tnum shrink-0 text-sm text-muted">{formatVolume(s.total_volume, unit)}</span>
-                    <ArrowRight className="h-4 w-4 shrink-0 text-faint" />
-                  </Link>
+                        <span className="block truncate text-xs text-faint">{s.exercise_names.join(" · ")}</span>
+                      </>
+                    }
+                    trailing={formatVolume(s.total_volume, unit)}
+                    chevron
+                  />
                 ))}
-              </Card>
+              </List>
             </section>
           );
         })

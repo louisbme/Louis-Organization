@@ -3,10 +3,12 @@ import { notFound } from "next/navigation";
 import { Flame } from "lucide-react";
 import { requireUser } from "@/lib/auth/require-user";
 import { getMemberSessionDetail } from "@/lib/services/stats";
-import { formatDateTime, formatDuration, formatVolume, formatWeight } from "@/lib/utils/format";
+import { formatDateTime, formatDuration, formatVolume } from "@/lib/utils/format";
+import { describeBodyweight, describeSet, formatTarget, setVolume } from "@/lib/utils/tracking";
 import { PageHeader } from "@/components/ui/page-header";
 import { Card, CardContent, SectionLabel } from "@/components/ui/card";
 import { Stat } from "@/components/ui/stat";
+import { Badge } from "@/components/ui/badge";
 
 export const metadata = { title: "Training" };
 
@@ -23,12 +25,7 @@ export default async function MemberSessionPage({ params }: { params: Promise<{ 
 
   return (
     <div className="space-y-5">
-      <PageHeader
-        eyebrow={session.nickname}
-        title={session.name}
-        backHref={`/stats/${userId}`}
-        description={formatDateTime(session.started_at)}
-      />
+      <PageHeader eyebrow={session.nickname} title={session.name} backHref={`/stats/${userId}`} backLabel={session.nickname} description={formatDateTime(session.started_at)} compact />
 
       <div className="grid grid-cols-3 gap-3">
         <Stat label="Dauer" value={formatDuration(session.duration_seconds)} />
@@ -40,15 +37,16 @@ export default async function MemberSessionPage({ params }: { params: Promise<{ 
         <Card>
           <CardContent className="pt-5">
             <SectionLabel>Notiz</SectionLabel>
-            <p className="mt-1.5 whitespace-pre-wrap text-sm leading-relaxed">{session.notes}</p>
+            <p className="mt-1.5 whitespace-pre-wrap text-base leading-relaxed">{session.notes}</p>
           </CardContent>
         </Card>
       ) : null}
 
       <div className="space-y-3">
         {exercises.map((se) => {
+          const mode = se.exercise.tracking_mode;
           const working = se.sets.filter((s) => !s.is_warmup);
-          const volume = working.reduce((v, s) => v + s.weight * s.reps, 0);
+          const volume = working.reduce((v, s) => v + setVolume(mode, s), 0);
           return (
             <Card key={se.id} className="overflow-hidden">
               <div className="flex items-start justify-between gap-3 px-5 pt-4">
@@ -56,37 +54,37 @@ export default async function MemberSessionPage({ params }: { params: Promise<{ 
                   <Link href={`/exercises/${se.exercise.slug}`} className="block truncate text-base font-semibold hover:text-accent">
                     {se.exercise.name}
                   </Link>
-                  <p className="tnum text-xs text-muted">
-                    Ziel {se.target_sets} × {se.rep_min}–{se.rep_max} · {working.length} Arbeitssätze
+                  <p className="tnum text-sm text-muted">
+                    Ziel {formatTarget(mode, se.target_sets, se.rep_min, se.rep_max)} · {working.length} {mode === "cardio" ? "Einheiten" : "Arbeitssätze"}
                   </p>
                 </div>
-                <span className="tnum shrink-0 text-sm text-muted">{formatVolume(volume, unit)}</span>
+                {mode !== "cardio" ? <span className="tnum shrink-0 text-sm text-muted">{formatVolume(volume, unit)}</span> : null}
               </div>
-              <table className="mt-3 w-full text-sm">
-                <thead>
-                  <tr className="border-t border-border text-left text-[11px] uppercase tracking-wider text-faint">
-                    <th className="px-5 py-2 font-medium">Satz</th>
-                    <th className="py-2 font-medium">Gewicht</th>
-                    <th className="py-2 font-medium">Wdh</th>
-                    {settings.show_rir ? <th className="py-2 font-medium">RIR</th> : null}
-                    <th className="py-2 pr-5 text-right font-medium">Volumen</th>
-                  </tr>
-                </thead>
-                <tbody className="tnum">
-                  {se.sets.map((s) => (
-                    <tr key={`${se.id}-${s.set_number}`} className="border-t border-border">
-                      <td className="px-5 py-2 text-muted">
-                        {s.set_number}
-                        {s.is_warmup ? <Flame className="ml-1 inline h-3 w-3 text-warning" aria-label="Aufwärmsatz" /> : null}
-                      </td>
-                      <td className="py-2">{formatWeight(s.weight, unit)}</td>
-                      <td className="py-2">{s.reps}</td>
-                      {settings.show_rir ? <td className="py-2 text-muted">{s.rir ?? "–"}</td> : null}
-                      <td className="py-2 pr-5 text-right text-muted">{s.is_warmup ? "–" : formatVolume(s.weight * s.reps, unit)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="mt-3 border-t border-border">
+                {se.sets.map((s) => {
+                  const bwInfo = mode === "bodyweight" ? describeBodyweight(s, 1, unit) : null;
+                  return (
+                    <div
+                      key={`${se.id}-${s.set_number}`}
+                      className="relative flex min-h-[48px] items-center gap-3 px-5 py-2 after:absolute after:bottom-0 after:left-[68px] after:right-0 after:h-px after:bg-border after:content-[''] last:after:hidden"
+                    >
+                      <span className="tnum flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-subtle text-sm font-semibold text-muted">{s.set_number}</span>
+                      <span className="min-w-0 flex-1">
+                        <span className="tnum block text-base">
+                          {describeSet(mode, s, unit)}
+                          {settings.show_rir && s.rir !== null && mode !== "cardio" ? <span className="ml-2 text-sm text-muted">RIR {s.rir}</span> : null}
+                        </span>
+                        {bwInfo && s.body_weight ? <span className="tnum block truncate text-xs text-faint">Körpergewicht {bwInfo.split(" × ")[0]}{s.extra_weight ? ` · Zusatz ${s.extra_weight > 0 ? "+" : "−"}${Math.abs(s.extra_weight)} ${unit}` : ""}</span> : null}
+                      </span>
+                      {s.is_warmup ? (
+                        <Badge tone="warning">
+                          <Flame className="mr-1 h-3 w-3" /> Aufwärmen
+                        </Badge>
+                      ) : null}
+                    </div>
+                  );
+                })}
+              </div>
             </Card>
           );
         })}

@@ -26,7 +26,7 @@ export function ExerciseVisual({ name, imageUrl, animationUrl, equipment, catego
   const src = animationUrl ?? imageUrl;
   if (src) {
     return (
-      <div className={cn("overflow-hidden rounded-xl border border-border bg-subtle", size === "lg" ? "aspect-[4/3] sm:aspect-[16/9]" : "aspect-square", className)}>
+      <div className={cn("overflow-hidden rounded-[var(--radius-control)] bg-subtle", size === "lg" ? "aspect-[4/3] sm:aspect-[16/9]" : "aspect-square", className)}>
         {isVideo(src) ? (
           <video src={src} autoPlay loop muted playsInline className="h-full w-full object-cover" aria-label={name} />
         ) : (
@@ -39,7 +39,7 @@ export function ExerciseVisual({ name, imageUrl, animationUrl, equipment, catego
   return (
     <div
       className={cn(
-        "relative flex items-center justify-center overflow-hidden rounded-xl border border-border bg-subtle text-muted",
+        "relative flex items-center justify-center overflow-hidden rounded-[var(--radius-control)] bg-subtle text-muted",
         size === "lg" ? "aspect-[16/9]" : "aspect-square",
         className
       )}

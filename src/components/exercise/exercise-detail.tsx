@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ExerciseDetail as ExerciseDetailType } from "@/lib/services/exercises";
 import type { ExerciseRecordsRow, GripRow } from "@/lib/supabase/types";
 import { CATEGORY_LABELS, EQUIPMENT_LABELS, muscleLabel } from "@/lib/utils/labels";
-import { formatDate, formatVolume, formatWeight } from "@/lib/utils/format";
+import { formatClock, formatDate, formatDistance, formatPace, formatVolume, formatWeight } from "@/lib/utils/format";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, SectionLabel } from "@/components/ui/card";
 import { PageHeader } from "@/components/ui/page-header";
@@ -54,7 +54,7 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
             <SectionLabel>Kabelturm</SectionLabel>
             {exercise.cable.seat_position && !exercise.cable.height ? (
               <div className="mt-3 flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-border bg-subtle text-fg">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[var(--radius-control)] bg-subtle text-fg">
                   <SeatIcon />
                 </div>
                 <div className="min-w-0">
@@ -65,7 +65,7 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
               </div>
             ) : (
               <div className="mt-3 flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-border bg-subtle text-fg">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[var(--radius-control)] bg-subtle text-fg">
                   <CableHeightIcon height={exercise.cable.height} />
                 </div>
                 <div className="min-w-0">
@@ -137,7 +137,7 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
                 <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Alternativ an diesem Gerät</p>
                 <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
                   {exercise.alternatives.map((alt) => (
-                    <Link key={alt.slug} href={`/exercises/${alt.slug}`} className="card-interactive press flex w-36 shrink-0 flex-col gap-2 rounded-xl border border-border bg-subtle p-2">
+                    <Link key={alt.slug} href={`/exercises/${alt.slug}`} className="card-interactive press flex w-36 shrink-0 flex-col gap-2 rounded-[var(--radius-control)] bg-subtle p-2">
                       <div className="flex h-20 items-center justify-center overflow-hidden rounded-lg bg-white p-1">
                         {alt.image_url ? (
                           // eslint-disable-next-line @next/next/no-img-element
@@ -160,7 +160,7 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
             <SectionLabel>Alternativ am Gerät</SectionLabel>
             <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
               {exercise.alternatives.map((alt) => (
-                <Link key={alt.slug} href={`/exercises/${alt.slug}`} className="card-interactive press flex w-36 shrink-0 flex-col gap-2 rounded-xl border border-border bg-subtle p-2">
+                <Link key={alt.slug} href={`/exercises/${alt.slug}`} className="card-interactive press flex w-36 shrink-0 flex-col gap-2 rounded-[var(--radius-control)] bg-subtle p-2">
                   <div className="flex h-20 items-center justify-center overflow-hidden rounded-lg bg-white p-1">
                     {alt.image_url ? (
                       // eslint-disable-next-line @next/next/no-img-element
@@ -173,6 +173,25 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
                 </Link>
               ))}
             </div>
+          </CardContent>
+        </Card>
+      ) : null}
+
+      {/* Wie getrackt wird */}
+      {exercise.tracking_mode !== "weight_reps" ? (
+        <Card>
+          <CardContent className="pt-5">
+            <SectionLabel>So wird getrackt</SectionLabel>
+            {exercise.tracking_mode === "cardio" ? (
+              <p className="mt-1.5 text-base leading-relaxed">
+                Als <span className="font-semibold">Dauer und Distanz</span> statt Gewicht und Wiederholungen. Pace wird automatisch berechnet.
+              </p>
+            ) : (
+              <p className="mt-1.5 text-base leading-relaxed">
+                Mit <span className="font-semibold">Körpergewicht</span>: Etwa {Math.round(exercise.bodyweight_factor * 100)} % deines Körpergewichts werden bewegt,
+                Zusatz- oder Gegengewicht kommt dazu. Die reale Last wird sofort berechnet und fließt in Volumen und Bestleistungen ein.
+              </p>
+            )}
           </CardContent>
         </Card>
       ) : null}
@@ -238,7 +257,19 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
       <StepsCard title="Häufige Fehler" steps={exercise.common_mistakes} />
       <StepsCard title="Tipps" steps={exercise.tips} />
 
-      {records ? (
+      {records && exercise.tracking_mode === "cardio" ? (
+        <Card>
+          <CardContent className="pt-5">
+            <SectionLabel>Bestleistungen</SectionLabel>
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              <Record label="Längste Distanz" value={records.max_distance_m ? formatDistance(records.max_distance_m) : "–"} date={records.max_distance_at} />
+              <Record label="Längste Dauer" value={records.max_duration_seconds ? formatClock(records.max_duration_seconds) : "–"} date={records.max_duration_at} />
+              <Record label="Beste Pace" value={records.best_pace_sec_per_km ? formatPace(records.best_pace_sec_per_km) : "–"} date={records.best_pace_at} />
+              <Record label="Einheiten" value={String(records.total_sessions)} date={null} />
+            </div>
+          </CardContent>
+        </Card>
+      ) : records ? (
         <Card>
           <CardContent className="pt-5">
             <SectionLabel>Bestleistungen</SectionLabel>
@@ -256,7 +287,7 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
         <AddToPlanButton exerciseId={exercise.id} exerciseName={exercise.name} />
         {exercise.is_custom ? <CustomExerciseActions exerciseId={exercise.id} slug={exercise.slug} /> : null}
         {canEditStandard ? (
-          <Link href={`/exercises/${exercise.slug}/edit`} className="press flex h-11 items-center justify-center gap-2 rounded-full border border-border-strong text-sm font-medium hover:bg-subtle">
+          <Link href={`/exercises/${exercise.slug}/edit`} className="press flex h-11 items-center justify-center gap-2 rounded-full bg-subtle text-base font-semibold hover:bg-hover">
             Standardübung bearbeiten (Admin)
           </Link>
         ) : null}
@@ -338,9 +369,9 @@ function StepsCard({ title, steps, numbered = false }: { title: string; steps: s
 
 function Record({ label, value, date }: { label: string; value: string; date: string | null }) {
   return (
-    <div className="rounded-xl border border-border bg-subtle px-3 py-3">
-      <p className="text-[11px] font-medium uppercase tracking-wider text-faint">{label}</p>
-      <p className="tnum mt-1 text-base font-semibold">{value}</p>
+    <div className="rounded-[var(--radius-control)] bg-subtle px-3.5 py-3">
+      <p className="text-[13px] font-medium text-muted">{label}</p>
+      <p className="display tnum mt-1 text-base">{value}</p>
       {date ? <p className="text-xs text-faint">{formatDate(date)}</p> : null}
     </div>
   );

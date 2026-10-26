@@ -13,8 +13,9 @@ export function Toaster() {
           background: "var(--bg-card)",
           color: "var(--fg)",
           border: "1px solid var(--border)",
-          borderRadius: "12px",
-          fontSize: "14px",
+          borderRadius: "16px",
+          fontSize: "15px",
+          boxShadow: "var(--shadow-float)",
         },
       }}
     />

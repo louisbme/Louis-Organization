@@ -82,6 +82,66 @@ export const MUSCLE_LABELS: Record<MuscleId, string> = {
 
 export const MUSCLE_IDS = Object.keys(MUSCLE_LABELS) as MuscleId[];
 
+/** Gruppen der Übungsübersicht (Muskelkarten-Raster). */
+export type ExerciseGroupKey =
+  | "chest"
+  | "back"
+  | "legs"
+  | "shoulders"
+  | "biceps"
+  | "triceps"
+  | "abs"
+  | "core"
+  | "forearms"
+  | "cardio"
+  | "favorites"
+  | "custom";
+
+export interface ExerciseGroupDef {
+  key: ExerciseGroupKey;
+  label: string;
+  /** Kategorien, die zur Gruppe gehören */
+  categories?: ExerciseCategory[];
+  /** Alternativ: primäre Muskeln, die zur Gruppe gehören */
+  muscles?: MuscleId[];
+  /** Ansicht der Figur auf der Karte */
+  view: "front" | "back";
+  /** Muskeln, die auf der Karte hervorgehoben werden */
+  highlight: MuscleId[];
+  /** Volle Breite (Cardio, Eigene, Favoriten) */
+  wide?: boolean;
+}
+
+export const EXERCISE_GROUPS: ExerciseGroupDef[] = [
+  { key: "chest", label: "Brust", categories: ["chest"], view: "front", highlight: ["chest", "upper_chest"] },
+  { key: "back", label: "Rücken", categories: ["back"], view: "back", highlight: ["lats", "upper_back", "mid_back", "traps"] },
+  { key: "legs", label: "Beine", categories: ["quads", "hamstrings", "glutes", "calves", "adductors"], view: "front", highlight: ["quads", "adductors", "calves"] },
+  { key: "shoulders", label: "Schultern", categories: ["shoulders"], view: "front", highlight: ["front_delts", "side_delts"] },
+  { key: "biceps", label: "Bizeps", categories: ["biceps"], view: "front", highlight: ["biceps"] },
+  { key: "triceps", label: "Trizeps", categories: ["triceps"], view: "back", highlight: ["triceps"] },
+  { key: "abs", label: "Bauch", categories: ["abs"], view: "front", highlight: ["abs", "obliques"] },
+  { key: "core", label: "Rumpf", muscles: ["lower_back", "obliques"], view: "back", highlight: ["lower_back"] },
+  { key: "forearms", label: "Unterarme", categories: ["forearms"], view: "front", highlight: ["forearms"] },
+  { key: "cardio", label: "Cardio", categories: ["cardio"], view: "front", highlight: [], wide: true },
+  { key: "favorites", label: "Favoriten", view: "front", highlight: [], wide: true },
+  { key: "custom", label: "Eigene", view: "front", highlight: [], wide: true },
+];
+
+export function exerciseGroup(key: string | null | undefined): ExerciseGroupDef | null {
+  return EXERCISE_GROUPS.find((g) => g.key === key) ?? null;
+}
+
+export function exerciseInGroup(
+  e: { category: ExerciseCategory; primary_muscles: string[]; is_custom: boolean; is_favorite: boolean },
+  group: ExerciseGroupDef
+): boolean {
+  if (group.key === "favorites") return e.is_favorite;
+  if (group.key === "custom") return e.is_custom;
+  if (group.categories && group.categories.includes(e.category)) return true;
+  if (group.muscles && e.primary_muscles.some((m) => (group.muscles as string[]).includes(m))) return true;
+  return false;
+}
+
 export function muscleLabel(id: string): string {
   return (MUSCLE_LABELS as Record<string, string>)[id] ?? id;
 }

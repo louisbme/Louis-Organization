@@ -11,12 +11,10 @@ interface SegmentedProps<T extends string> {
   size?: "sm" | "md";
 }
 
+/** Segmentierte Steuerung nach iOS: graue Fläche, aktives Segment hell mit Schatten */
 export function Segmented<T extends string>({ value, onChange, options, className, size = "md" }: SegmentedProps<T>) {
   return (
-    <div
-      role="tablist"
-      className={cn("inline-flex w-full rounded-xl border border-border bg-subtle p-1", className)}
-    >
+    <div role="tablist" className={cn("inline-flex w-full rounded-[10px] bg-subtle p-0.5", className)}>
       {options.map((o) => {
         const active = o.value === value;
         return (
@@ -27,9 +25,9 @@ export function Segmented<T extends string>({ value, onChange, options, classNam
             aria-selected={active}
             onClick={() => onChange(o.value)}
             className={cn(
-              "flex-1 rounded-lg font-medium transition-colors touch-manipulation",
+              "flex-1 rounded-[8px] font-medium transition-colors touch-manipulation",
               size === "sm" ? "h-8 px-2 text-xs" : "h-9 px-3 text-sm",
-              active ? "bg-card text-fg shadow-sm" : "text-muted hover:text-fg"
+              active ? "bg-[var(--segment-active)] text-fg shadow-[0_1px_3px_rgba(0,0,0,0.25)]" : "text-muted hover:text-fg"
             )}
           >
             {o.label}

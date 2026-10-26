@@ -67,29 +67,25 @@ export function PlansList({ plans }: { plans: PlanWithExercises[] }) {
           }
         />
       ) : (
-        <Card className="divide-y divide-border overflow-hidden">
+        <Card className="overflow-hidden">
           {plans.map((p, index) => (
-            <div key={p.id} className="flex items-center gap-2 pr-2">
-              <Link href={`/plans/${p.id}`} className="flex min-w-0 flex-1 items-center gap-4 px-5 py-4 hover:bg-subtle">
-                <span className="tnum flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-subtle text-sm font-semibold text-muted">
+            <div
+              key={p.id}
+              className="relative flex items-center gap-1 pr-2 after:absolute after:bottom-0 after:left-[68px] after:right-0 after:h-px after:bg-border after:content-[''] last:after:hidden"
+            >
+              <Link href={`/plans/${p.id}`} className="press flex min-h-[60px] min-w-0 flex-1 items-center gap-3 px-4 py-2 hover:bg-subtle">
+                <span className="display tnum flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-subtle text-base text-fg">
                   {String.fromCharCode(65 + (index % 26))}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium">{p.name}</p>
-                  <p className="truncate text-xs text-muted">
+                  <p className="truncate text-base text-fg">{p.name}</p>
+                  <p className="truncate text-sm text-muted">
                     {p.exercises.length} Übungen · {p.exercises.reduce((s, e) => s + e.target_sets, 0)} Sätze
                   </p>
                 </div>
-                <ChevronRight className="h-4 w-4 shrink-0 text-faint" />
+                <ChevronRight className="h-4 w-4 shrink-0 text-faint" strokeWidth={2.4} />
               </Link>
-              <Button
-                variant="ghost"
-                size="icon"
-                aria-label="Duplizieren"
-                title="Duplizieren"
-                loading={dup === p.id}
-                onClick={() => duplicate(p.id)}
-              >
+              <Button variant="ghost" size="icon-sm" aria-label="Duplizieren" title="Duplizieren" loading={dup === p.id} onClick={() => duplicate(p.id)}>
                 {dup === p.id ? null : <Copy className="h-4 w-4" />}
               </Button>
             </div>

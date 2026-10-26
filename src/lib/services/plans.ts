@@ -1,6 +1,6 @@
 import type { DbClient } from "@/lib/supabase/db";
 import type { WorkoutPlanExerciseRow, WorkoutPlanRow } from "@/lib/supabase/types";
-import type { ExerciseSummary } from "@/lib/services/exercises";
+import { EXERCISE_SUMMARY_SELECT, toSummary, type ExerciseSummary } from "@/lib/services/exercises";
 
 export interface PlanExerciseWithExercise extends WorkoutPlanExerciseRow {
   exercise: ExerciseSummary;
@@ -11,11 +11,10 @@ export interface PlanWithExercises extends WorkoutPlanRow {
 }
 
 type PlanRaw = WorkoutPlanRow & {
-  workout_plan_exercises: Array<WorkoutPlanExerciseRow & { exercises: ExerciseSummary }>;
+  workout_plan_exercises: Array<WorkoutPlanExerciseRow & { exercises: Parameters<typeof toSummary>[0] }>;
 };
 
-const PLAN_SELECT =
-  "*, workout_plan_exercises(*, exercises(id, slug, name, category, equipment, image_url, is_custom))";
+const PLAN_SELECT = `*, workout_plan_exercises(*, exercises(${EXERCISE_SUMMARY_SELECT}))`;
 
 function normalize(raw: PlanRaw): PlanWithExercises {
   const { workout_plan_exercises, ...plan } = raw;
@@ -24,7 +23,7 @@ function normalize(raw: PlanRaw): PlanWithExercises {
     exercises: workout_plan_exercises
       .map((pe) => {
         const { exercises, ...rest } = pe;
-        return { ...rest, exercise: exercises };
+        return { ...rest, exercise: toSummary(exercises) };
       })
       .sort((a, b) => a.sort_order - b.sort_order),
   };

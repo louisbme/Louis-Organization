@@ -35,6 +35,8 @@ export type CalendarEntryType = "training" | "rest" | "leisure" | "party" | "oth
 export type WeightUnit = "kg" | "lb";
 export type ThemePreference = "dark" | "light" | "system";
 export type UserRole = "user" | "admin";
+/** Wie eine Übung erfasst wird: Gewicht × Wdh, Körpergewicht (× Anteil + Zusatz) oder Cardio (Dauer, Distanz) */
+export type TrackingMode = "weight_reps" | "bodyweight" | "cardio";
 
 export type MuscleId =
   | "chest"
@@ -127,6 +129,8 @@ export type ExerciseRow = Timestamps & {
   grip_alternatives: string[];
   machine_name: string | null;
   alternative_exercises: string[];
+  tracking_mode: TrackingMode;
+  bodyweight_factor: number;
   is_custom: boolean;
   owner_id: string | null;
 };
@@ -211,6 +215,14 @@ export type WorkoutSetRow = Timestamps & {
   is_warmup: boolean;
   completed: boolean;
   completed_at: string;
+  /** Cardio: Dauer in Sekunden */
+  duration_seconds: number | null;
+  /** Cardio: Distanz in Metern */
+  distance_m: number | null;
+  /** Körpergewichtsübung: Körpergewicht zum Zeitpunkt des Satzes */
+  body_weight: number | null;
+  /** Körpergewichtsübung: Zusatzgewicht (negativ = unterstützt) */
+  extra_weight: number | null;
 };
 
 export type CalendarEntryRow = Timestamps & {
@@ -300,6 +312,8 @@ export type Database = {
           | "grip_alternatives"
           | "machine_name"
           | "alternative_exercises"
+          | "tracking_mode"
+          | "bodyweight_factor"
           | "is_custom"
           | "owner_id"
           | "created_at"
@@ -386,7 +400,19 @@ export type Database = {
         WorkoutSetRow,
         Insertable<
           WorkoutSetRow,
-          "id" | "weight" | "reps" | "rir" | "is_warmup" | "completed" | "completed_at" | "created_at" | "updated_at"
+          | "id"
+          | "weight"
+          | "reps"
+          | "rir"
+          | "is_warmup"
+          | "completed"
+          | "completed_at"
+          | "duration_seconds"
+          | "distance_m"
+          | "body_weight"
+          | "extra_weight"
+          | "created_at"
+          | "updated_at"
         >
       ,
         [
@@ -430,6 +456,7 @@ export type Database = {
       admin_set_role: { Args: { p_user_id: string; p_role: UserRole }; Returns: undefined };
       admin_delete_user: { Args: { p_user_id: string }; Returns: undefined };
       admin_set_nickname: { Args: { p_user_id: string; p_nickname: string }; Returns: undefined };
+      recalc_session_totals: { Args: { p_session_id: string }; Returns: undefined };
       get_member_sessions: {
         Args: { p_user_id: string; p_limit?: number };
         Returns: MemberSessionRow[];
@@ -465,6 +492,10 @@ export type LastPerformanceRow = {
   reps: number;
   rir: number | null;
   is_warmup: boolean;
+  duration_seconds: number | null;
+  distance_m: number | null;
+  body_weight: number | null;
+  extra_weight: number | null;
 };
 
 export type UserStatsRow = {
@@ -498,6 +529,13 @@ export type ExerciseRecordsRow = {
   max_session_volume: number | null;
   max_session_volume_at: string | null;
   total_sessions: number;
+  max_distance_m: number | null;
+  max_distance_at: string | null;
+  max_duration_seconds: number | null;
+  max_duration_at: string | null;
+  /** Beste Pace in Sekunden pro Kilometer (nur Cardio) */
+  best_pace_sec_per_km: number | null;
+  best_pace_at: string | null;
 };
 
 export type AdminUserRow = {
@@ -521,6 +559,8 @@ export type ExerciseHistoryRow = {
   est_1rm: number;
   volume: number;
   sets: number;
+  total_duration_seconds: number;
+  total_distance_m: number;
 };
 
 /** Zeile aus get_member_sessions (Stats: Trainings eines Mitglieds) */
@@ -542,6 +582,10 @@ export type MemberSessionDetailSet = {
   reps: number;
   rir: number | null;
   is_warmup: boolean;
+  duration_seconds: number | null;
+  distance_m: number | null;
+  body_weight: number | null;
+  extra_weight: number | null;
 };
 
 export type MemberSessionDetailExercise = {
@@ -556,6 +600,7 @@ export type MemberSessionDetailExercise = {
     name: string;
     category: ExerciseCategory;
     equipment: EquipmentType;
+    tracking_mode: TrackingMode;
   };
   sets: MemberSessionDetailSet[];
 };

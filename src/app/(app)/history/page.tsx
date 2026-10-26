@@ -6,12 +6,13 @@ import { listPlans } from "@/lib/services/plans";
 import { listTrainedExercises } from "@/lib/services/stats";
 import { PageHeader } from "@/components/ui/page-header";
 import { Button } from "@/components/ui/button";
+import { AvatarLink } from "@/components/ui/avatar";
 import { HistoryList } from "@/components/history/history-list";
 
-export const metadata = { title: "Historie" };
+export const metadata = { title: "Verlauf" };
 
 export default async function HistoryPage() {
-  const { supabase, user } = await requireUser();
+  const { supabase, user, profile } = await requireUser();
   const [sessions, plans, exercises] = await Promise.all([
     listSessions(supabase, user.id, { limit: 200 }),
     listPlans(supabase, user.id, true),
@@ -20,14 +21,17 @@ export default async function HistoryPage() {
   return (
     <div>
       <PageHeader
-        title="Historie"
+        title="Verlauf"
         description={`${sessions.length} abgeschlossene Trainings`}
         actions={
-          <Link href="/calendar">
-            <Button variant="secondary" size="sm">
-              <CalendarDays className="h-4 w-4" /> Kalender
-            </Button>
-          </Link>
+          <>
+            <Link href="/calendar" aria-label="Kalender">
+              <Button variant="secondary" size="icon-sm">
+                <CalendarDays className="h-5 w-5" strokeWidth={2.2} />
+              </Button>
+            </Link>
+            <AvatarLink name={profile.nickname} className="lg:hidden" />
+          </>
         }
       />
       <HistoryList initial={sessions} plans={plans.map((p) => ({ id: p.id, name: p.name }))} exercises={exercises} />

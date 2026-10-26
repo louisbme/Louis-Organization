@@ -9,6 +9,7 @@ import { createClient } from "@/lib/supabase/client";
 import type { PlanWithExercises } from "@/lib/services/plans";
 import { startSession } from "@/lib/services/sessions";
 import { friendlyError } from "@/lib/utils/errors";
+import { formatTarget } from "@/lib/utils/tracking";
 import { cn } from "@/lib/utils/cn";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -56,7 +57,7 @@ export function WorkoutStartList({ plans, nextPlanId, preselectPlanId }: Props) 
       {plans.map((p) => {
         const isNext = p.id === (preselectPlanId ?? nextPlanId);
         return (
-          <Card key={p.id} className={cn("overflow-hidden", isNext && "border-accent/40")}>
+          <Card key={p.id} className={cn("overflow-hidden", isNext && "ring-1 ring-accent/40")}>
             <div className="flex items-start justify-between gap-3 px-5 pt-5">
               <div className="min-w-0">
                 <div className="flex items-center gap-2">
@@ -76,9 +77,7 @@ export function WorkoutStartList({ plans, nextPlanId, preselectPlanId }: Props) 
                 {p.exercises.slice(0, 4).map((e) => (
                   <li key={e.id} className="flex justify-between gap-3">
                     <span className="truncate">{e.exercise.name}</span>
-                    <span className="tnum shrink-0 text-faint">
-                      {e.target_sets} × {e.rep_min}–{e.rep_max}
-                    </span>
+                    <span className="tnum shrink-0 text-faint">{formatTarget(e.exercise.tracking_mode, e.target_sets, e.rep_min, e.rep_max)}</span>
                   </li>
                 ))}
                 {p.exercises.length > 4 ? <li className="text-xs text-faint">+ {p.exercises.length - 4} weitere</li> : null}
@@ -99,8 +98,8 @@ export function WorkoutStartList({ plans, nextPlanId, preselectPlanId }: Props) 
           </Card>
         );
       })}
-      <Link href="/plans" className="flex items-center justify-between rounded-[var(--radius-card)] border border-border bg-card px-5 py-4 text-sm font-medium hover:bg-subtle">
-        Trainingspläne verwalten <ChevronRight className="h-4 w-4 text-faint" />
+      <Link href="/plans" className="press flex min-h-[52px] items-center justify-between rounded-[var(--radius-card)] bg-card px-5 py-3 text-base hover:bg-subtle">
+        Trainingspläne verwalten <ChevronRight className="h-4 w-4 text-faint" strokeWidth={2.4} />
       </Link>
     </div>
   );

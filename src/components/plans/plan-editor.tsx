@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { ArrowDown, ArrowUp, Check, Copy, MoreHorizontal, Pencil, Play, Plus, Repeat, Trash2, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useUser } from "@/lib/context/user-context";
-import type { ExerciseListItem } from "@/lib/services/exercises";
+import type { ExerciseListItem, ExerciseSummary } from "@/lib/services/exercises";
 import {
   addPlanExercise,
   deletePlan,
@@ -112,21 +112,18 @@ export function PlanEditor({ plan: initial }: { plan: PlanWithExercises }) {
     try {
       if (current.mode === "add") {
         const order = (plan.exercises[plan.exercises.length - 1]?.sort_order ?? 0) + 1;
-        const row = await addPlanExercise(db, plan.id, item.id, { target_sets: 3, rep_min: 8, rep_max: 12 }, order);
+        const targets = item.tracking_mode === "cardio" ? { target_sets: 1, rep_min: 1, rep_max: 1 } : { target_sets: 3, rep_min: 8, rep_max: 12 };
+        const row = await addPlanExercise(db, plan.id, item.id, targets, order);
         setPlan((p) => ({
           ...p,
-          exercises: [...p.exercises, { ...row, exercise: { id: item.id, slug: item.slug, name: item.name, category: item.category, equipment: item.equipment, image_url: item.image_url, is_custom: item.is_custom } }],
+          exercises: [...p.exercises, { ...row, exercise: summaryOf(item) }],
         }));
         toast.success(`${item.name} hinzugefügt`);
       } else {
         await updatePlanExercise(db, current.id, { exercise_id: item.id });
         setPlan((p) => ({
           ...p,
-          exercises: p.exercises.map((e) =>
-            e.id === current.id
-              ? { ...e, exercise_id: item.id, exercise: { id: item.id, slug: item.slug, name: item.name, category: item.category, equipment: item.equipment, image_url: item.image_url, is_custom: item.is_custom } }
-              : e
-          ),
+          exercises: p.exercises.map((e) => (e.id === current.id ? { ...e, exercise_id: item.id, exercise: summaryOf(item) } : e)),
         }));
         toast.success(`Ersetzt durch ${item.name}`);
       }
@@ -230,11 +227,17 @@ export function PlanEditor({ plan: initial }: { plan: PlanWithExercises }) {
                   <IconBtn label="Entfernen" onClick={() => remove(pe)} tone="danger"><Trash2 className="h-4 w-4" /></IconBtn>
                 </div>
               </div>
-              <div className="mt-3 grid grid-cols-3 divide-x divide-border border-t border-border">
-                <NumberCell label="Sätze" value={pe.target_sets} onChange={(v) => updateTargets(pe, { target_sets: v })} min={1} max={10} />
-                <NumberCell label="Wdh min" value={pe.rep_min} onChange={(v) => updateTargets(pe, { rep_min: v })} min={1} max={100} />
-                <NumberCell label="Wdh max" value={pe.rep_max} onChange={(v) => updateTargets(pe, { rep_max: v })} min={1} max={100} />
-              </div>
+              {pe.exercise.tracking_mode === "cardio" ? (
+                <div className="mt-3 grid grid-cols-1 border-t border-border">
+                  <NumberCell label="Einheiten" value={pe.target_sets} onChange={(v) => updateTargets(pe, { target_sets: v })} min={1} max={10} />
+                </div>
+              ) : (
+                <div className="mt-3 grid grid-cols-3 divide-x divide-border border-t border-border">
+                  <NumberCell label="Sätze" value={pe.target_sets} onChange={(v) => updateTargets(pe, { target_sets: v })} min={1} max={10} />
+                  <NumberCell label="Wdh min" value={pe.rep_min} onChange={(v) => updateTargets(pe, { rep_min: v })} min={1} max={100} />
+                  <NumberCell label="Wdh max" value={pe.rep_max} onChange={(v) => updateTargets(pe, { rep_max: v })} min={1} max={100} />
+                </div>
+              )}
             </Card>
           ))}
           <Button variant="secondary" fullWidth onClick={() => setPicker({ mode: "add" })}>
@@ -291,6 +294,20 @@ function clamp(v: number, min: number, max: number) {
   return Math.min(max, Math.max(min, Math.round(v)));
 }
 
+function summaryOf(item: ExerciseListItem): ExerciseSummary {
+  return {
+    id: item.id,
+    slug: item.slug,
+    name: item.name,
+    category: item.category,
+    equipment: item.equipment,
+    image_url: item.image_url,
+    is_custom: item.is_custom,
+    tracking_mode: item.tracking_mode,
+    bodyweight_factor: item.bodyweight_factor,
+  };
+}
+
 function IconBtn({ label, onClick, disabled, children, tone }: { label: string; onClick: () => void; disabled?: boolean; children: React.ReactNode; tone?: "danger" }) {
   return (
     <button
@@ -312,7 +329,7 @@ function IconBtn({ label, onClick, disabled, children, tone }: { label: string; 
 function NumberCell({ label, value, onChange, min, max }: { label: string; value: number; onChange: (v: number) => void; min: number; max: number }) {
   return (
     <div className="flex flex-col items-center py-2">
-      <span className="text-[10px] font-medium uppercase tracking-wider text-faint">{label}</span>
+      <span className="text-[13px] font-medium text-muted">{label}</span>
       <div className="mt-1 flex items-center gap-1">
         <button type="button" aria-label={`${label} verringern`} disabled={value <= min} onClick={() => onChange(value - 1)} className="flex h-9 w-9 items-center justify-center rounded-lg text-muted hover:bg-subtle disabled:opacity-30 touch-manipulation">
           –

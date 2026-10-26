@@ -9,7 +9,6 @@ import {
   Users,
   User,
   Settings,
-  MoreHorizontal,
   ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
@@ -21,10 +20,10 @@ export interface NavItem {
 }
 
 export const PRIMARY_NAV: NavItem[] = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutGrid },
+  { href: "/dashboard", label: "Start", icon: LayoutGrid },
   { href: "/workout", label: "Training", icon: Dumbbell },
   { href: "/plans", label: "Pläne", icon: ClipboardList },
-  { href: "/history", label: "Historie", icon: History },
+  { href: "/history", label: "Verlauf", icon: History },
   { href: "/progress", label: "Fortschritt", icon: TrendingUp },
   { href: "/exercises", label: "Übungen", icon: BookOpen },
   { href: "/calendar", label: "Kalender", icon: CalendarDays },
@@ -39,14 +38,13 @@ export const SECONDARY_NAV: NavItem[] = [
 /** Nur für Admins */
 export const ADMIN_NAV: NavItem[] = [{ href: "/admin", label: "Verwaltung", icon: ShieldCheck }];
 
-/** Mobile Bottom Navigation: 5 Hauptziele + "Mehr" */
+/** Mobile Tab-Leiste: fünf Bereiche, alles Weitere über den Avatar (Mehr) */
 export const MOBILE_NAV: NavItem[] = [
   { href: "/dashboard", label: "Start", icon: LayoutGrid },
   { href: "/workout", label: "Training", icon: Dumbbell },
   { href: "/exercises", label: "Übungen", icon: BookOpen },
-  { href: "/history", label: "Historie", icon: History },
+  { href: "/history", label: "Verlauf", icon: History },
   { href: "/progress", label: "Fortschritt", icon: TrendingUp },
-  { href: "/more", label: "Mehr", icon: MoreHorizontal },
 ];
 
 export const MORE_NAV: NavItem[] = [
@@ -59,7 +57,7 @@ export const MORE_NAV: NavItem[] = [
 
 export function isActivePath(pathname: string, href: string): boolean {
   if (href === "/more") {
-    return [...MORE_NAV, ...ADMIN_NAV].some((i) => pathname === i.href || pathname.startsWith(i.href + "/"));
+    return pathname === "/more" || [...MORE_NAV, ...ADMIN_NAV].some((i) => pathname === i.href || pathname.startsWith(i.href + "/"));
   }
   return pathname === href || pathname.startsWith(href + "/");
 }

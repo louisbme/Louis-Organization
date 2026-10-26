@@ -15,7 +15,7 @@ export function LoadingBlock({ label = "Lädt …" }: { label?: string }) {
 }
 
 export function Skeleton({ className }: { className?: string }) {
-  return <div className={cn("animate-pulse rounded-lg bg-subtle", className)} />;
+  return <div className={cn("animate-pulse rounded-[12px] bg-subtle", className)} />;
 }
 
 export function EmptyState({
@@ -32,14 +32,9 @@ export function EmptyState({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "flex flex-col items-center justify-center rounded-[var(--radius-card)] border border-dashed border-border px-6 py-12 text-center",
-        className
-      )}
-    >
+    <div className={cn("flex flex-col items-center justify-center rounded-[var(--radius-card)] bg-card px-6 py-12 text-center", className)}>
       {icon ? <div className="mb-3 text-faint">{icon}</div> : null}
-      <p className="text-base font-medium text-fg">{title}</p>
+      <p className="text-base font-semibold text-fg">{title}</p>
       {description ? <p className="mt-1 max-w-sm text-sm text-muted">{description}</p> : null}
       {action ? <div className="mt-5">{action}</div> : null}
     </div>
@@ -56,8 +51,8 @@ export function ErrorState({
   action?: React.ReactNode;
 }) {
   return (
-    <div className="rounded-[var(--radius-card)] border border-danger/30 bg-danger-soft px-5 py-6 text-center">
-      <p className="font-medium text-danger">{title}</p>
+    <div className="rounded-[var(--radius-card)] bg-danger-soft px-5 py-6 text-center">
+      <p className="font-semibold text-danger">{title}</p>
       <p className="mt-1 text-sm text-muted">{description}</p>
       {action ? <div className="mt-4">{action}</div> : null}
     </div>

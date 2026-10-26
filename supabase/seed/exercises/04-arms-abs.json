@@ -860,7 +860,8 @@
     "grip_alternatives": [],
     "image_url": "/exercises/knee-raise-station.jpg",
     "machine_name": "DHZ Vertical Knee Raise Station",
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "bodyweight_factor": 0.45
   },
   {
     "slug": "plank",
@@ -918,6 +919,7 @@
       "Matte oder weicher Untergrund für die Unterarme"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "bodyweight_factor": 0.65
   }
 ]

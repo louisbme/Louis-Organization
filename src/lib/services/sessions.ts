@@ -5,8 +5,22 @@ import type {
   WorkoutSessionRow,
   WorkoutSetRow,
 } from "@/lib/supabase/types";
-import type { ExerciseSummary } from "@/lib/services/exercises";
+import { EXERCISE_SUMMARY_SELECT, toSummary, type ExerciseSummary } from "@/lib/services/exercises";
 import { groupLastPerformance, type ExerciseLastPerformance } from "@/lib/utils/progression";
+
+type RawSummary = Parameters<typeof toSummary>[0];
+
+/** Numerische Spalten aus PostgREST (numeric → string) in Zahlen wandeln */
+function normalizeSet(s: WorkoutSetRow): WorkoutSetRow {
+  return {
+    ...s,
+    weight: Number(s.weight),
+    body_weight: s.body_weight === null || s.body_weight === undefined ? null : Number(s.body_weight),
+    extra_weight: s.extra_weight === null || s.extra_weight === undefined ? null : Number(s.extra_weight),
+    duration_seconds: s.duration_seconds ?? null,
+    distance_m: s.distance_m ?? null,
+  };
+}
 
 export interface SessionExerciseDetail extends WorkoutSessionExerciseRow {
   exercise: ExerciseSummary;
@@ -19,12 +33,11 @@ export interface SessionDetail extends WorkoutSessionRow {
 
 type SessionDetailRaw = WorkoutSessionRow & {
   workout_session_exercises: Array<
-    WorkoutSessionExerciseRow & { exercises: ExerciseSummary; workout_sets: WorkoutSetRow[] }
+    WorkoutSessionExerciseRow & { exercises: RawSummary; workout_sets: WorkoutSetRow[] }
   >;
 };
 
-const SESSION_DETAIL_SELECT =
-  "*, workout_session_exercises(*, exercises(id, slug, name, category, equipment, image_url, is_custom), workout_sets(*))";
+const SESSION_DETAIL_SELECT = `*, workout_session_exercises(*, exercises(${EXERCISE_SUMMARY_SELECT}), workout_sets(*))`;
 
 function normalizeSession(raw: SessionDetailRaw): SessionDetail {
   const { workout_session_exercises, ...session } = raw;
@@ -36,10 +49,8 @@ function normalizeSession(raw: SessionDetailRaw): SessionDetail {
         const { exercises, workout_sets, ...rest } = se;
         return {
           ...rest,
-          exercise: exercises,
-          sets: workout_sets
-            .map((s) => ({ ...s, weight: Number(s.weight) }))
-            .sort((a, b) => a.set_number - b.set_number),
+          exercise: toSummary(exercises),
+          sets: workout_sets.map(normalizeSet).sort((a, b) => a.set_number - b.set_number),
         };
       })
       .sort((a, b) => a.sort_order - b.sort_order),
@@ -86,6 +97,23 @@ export interface SaveSetInput {
   rir: number | null;
   is_warmup: boolean;
   completed: boolean;
+  duration_seconds?: number | null;
+  distance_m?: number | null;
+  body_weight?: number | null;
+  extra_weight?: number | null;
+}
+
+/**
+ * Cardio-/Körpergewichtsfelder nur mitschicken, wenn sie gesetzt sind. Für Gewicht × Wdh
+ * bleibt die Nutzlast damit identisch zum alten Schema (deploy-reihenfolgeunabhängig).
+ */
+function trackingFields(input: Pick<SaveSetInput, "duration_seconds" | "distance_m" | "body_weight" | "extra_weight">) {
+  const out: Partial<Pick<WorkoutSetRow, "duration_seconds" | "distance_m" | "body_weight" | "extra_weight">> = {};
+  if (input.duration_seconds !== null && input.duration_seconds !== undefined) out.duration_seconds = input.duration_seconds;
+  if (input.distance_m !== null && input.distance_m !== undefined) out.distance_m = input.distance_m;
+  if (input.body_weight !== null && input.body_weight !== undefined) out.body_weight = input.body_weight;
+  if (input.extra_weight !== null && input.extra_weight !== undefined) out.extra_weight = input.extra_weight;
+  return out;
 }
 
 export async function saveSet(db: DbClient, input: SaveSetInput): Promise<WorkoutSetRow> {
@@ -103,13 +131,25 @@ export async function saveSet(db: DbClient, input: SaveSetInput): Promise<Workou
         is_warmup: input.is_warmup,
         completed: input.completed,
         completed_at: new Date().toISOString(),
+        ...trackingFields(input),
       },
       { onConflict: "session_exercise_id,set_number" }
     )
     .select("*")
     .single();
   if (error) throw error;
-  return { ...data, weight: Number(data.weight) };
+  return normalizeSet(data);
+}
+
+export type SetPatch = Partial<Pick<WorkoutSetRow, "weight" | "reps" | "rir" | "is_warmup" | "duration_seconds" | "distance_m" | "body_weight" | "extra_weight">>;
+
+/** Werte eines bestehenden Satzes ändern (auch nach Abschluss des Trainings; Summen berechnet die DB neu). */
+export async function updateSet(db: DbClient, setId: string, patch: SetPatch): Promise<WorkoutSetRow> {
+  const { duration_seconds, distance_m, body_weight, extra_weight, ...base } = patch;
+  const payload = { ...base, ...trackingFields({ duration_seconds, distance_m, body_weight, extra_weight }) };
+  const { data, error } = await db.from("workout_sets").update(payload).eq("id", setId).select("*").single();
+  if (error) throw error;
+  return normalizeSet(data);
 }
 
 export async function deleteSet(db: DbClient, setId: string): Promise<void> {

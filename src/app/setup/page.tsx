@@ -15,7 +15,7 @@ export default function SetupPage() {
               Projektordner an und trage Projekt-URL und Publishable Key ein. Beide Werte findest du im Supabase
               Dashboard unter <span className="text-fg">Project Settings → API</span>.
             </p>
-            <pre className="overflow-x-auto rounded-xl border border-border bg-subtle p-4 text-xs leading-6 text-muted">
+            <pre className="overflow-x-auto rounded-[var(--radius-control)] bg-subtle p-4 text-xs leading-6 text-muted">
 {`NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_...`}
             </pre>

@@ -14,6 +14,7 @@ import {
 } from "@/lib/services/exercises";
 import { CATEGORY_LABELS, CATEGORY_ORDER, EQUIPMENT_LABELS, EQUIPMENT_ORDER, MUSCLE_IDS, MUSCLE_LABELS } from "@/lib/utils/labels";
 import { friendlyError } from "@/lib/utils/errors";
+import { deriveTrackingMode, TRACKING_LABELS } from "@/lib/utils/tracking";
 import { cn } from "@/lib/utils/cn";
 import { Button } from "@/components/ui/button";
 import { Input, Select, Textarea } from "@/components/ui/input";
@@ -70,6 +71,7 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
   const [focus, setFocus] = React.useState((existing?.muscle_focus ?? []).join("\n"));
   const [requirements, setRequirements] = React.useState((existing?.requirements ?? []).join("\n"));
   const [animationUrl, setAnimationUrl] = React.useState(existing?.animation_url ?? "");
+  const [bodyweightPct, setBodyweightPct] = React.useState(String(Math.round((existing?.bodyweight_factor ?? 1) * 100)));
 
   const onCategoryChange = (next: ExerciseCategory) => {
     setCategory(next);
@@ -90,6 +92,10 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
     if (name.trim().length > 80) errs.name = "Maximal 80 Zeichen";
     if (primary.length === 0) errs.primary = "Mindestens eine primäre Muskelgruppe wählen";
     if (animationUrl && !/^(https?:\/\/|\/).+/.test(animationUrl.trim())) errs.animationUrl = "Bitte eine vollständige URL (https://…) angeben";
+    if (equipment === "bodyweight") {
+      const pct = parseFloat(bodyweightPct.replace(",", "."));
+      if (Number.isNaN(pct) || pct < 0 || pct > 200) errs.bodyweightPct = "Zwischen 0 und 200 %";
+    }
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -116,6 +122,7 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
       requirements: linesToArray(requirements),
       image_url: existing?.image_url ?? null,
       animation_url: animationUrl.trim() || null,
+      bodyweight_factor: equipment === "bodyweight" ? Math.round(parseFloat(bodyweightPct.replace(",", ".")) ) / 100 : 1,
     };
     try {
       const db = createClient();
@@ -162,6 +169,22 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
               </Select>
             </Field>
           </div>
+          <p className="text-sm text-muted">
+            Getrackt wird als <span className="font-semibold text-fg">{TRACKING_LABELS[deriveTrackingMode(category, equipment)]}</span>.
+          </p>
+          {equipment === "bodyweight" ? (
+            <Field
+              label="Anteil des Körpergewichts"
+              htmlFor="bodyweightPct"
+              error={errors.bodyweightPct}
+              hint="Wie viel Prozent deines Körpergewichts bei dieser Übung bewegt werden, z. B. Klimmzug 100 %, Liegestütz 65 %, Hyperextensions 60 %. Daraus wird die reale Last berechnet."
+            >
+              <div className="flex items-center gap-2">
+                <Input id="bodyweightPct" inputMode="numeric" value={bodyweightPct} onChange={(e) => setBodyweightPct(e.target.value)} className="max-w-[8rem]" invalid={!!errors.bodyweightPct} />
+                <span className="text-base text-muted">%</span>
+              </div>
+            </Field>
+          ) : null}
         </CardContent>
       </Card>
 

@@ -241,7 +241,7 @@ export function CalendarView({ initialMonth, initialEntries, initialSessions }: 
         {selectedSessions.length > 0 ? (
           <div className="mb-4 space-y-2">
             {selectedSessions.map((s) => (
-              <Link key={s.id} href={`/history/${s.id}`} className="block rounded-xl border border-border bg-subtle px-4 py-3 hover:bg-hover">
+              <Link key={s.id} href={`/history/${s.id}`} className="block rounded-[var(--radius-control)] bg-subtle px-4 py-3 hover:bg-hover">
                 <p className="text-sm font-medium">{s.name}</p>
                 <p className="text-xs text-muted">
                   {formatDuration(s.duration_seconds)} · {s.total_sets} Sätze · {formatVolume(s.total_volume, settings.weight_unit)}

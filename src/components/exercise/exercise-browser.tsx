@@ -2,12 +2,25 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Search, Star, ChevronRight, Plus } from "lucide-react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { ChevronLeft, HeartPulse, PenLine, Plus, Star } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
-import type { EquipmentType, ExerciseCategory } from "@/lib/supabase/types";
+import type { EquipmentType } from "@/lib/supabase/types";
 import type { ExerciseListItem } from "@/lib/services/exercises";
-import { CATEGORY_LABELS, CATEGORY_ORDER, EQUIPMENT_LABELS, EQUIPMENT_ORDER } from "@/lib/utils/labels";
+import {
+  CATEGORY_LABELS,
+  EQUIPMENT_LABELS,
+  EQUIPMENT_ORDER,
+  EXERCISE_GROUPS,
+  exerciseGroup,
+  exerciseInGroup,
+  type ExerciseGroupDef,
+  type ExerciseGroupKey,
+} from "@/lib/utils/labels";
 import { EquipmentIcon } from "@/components/exercise/equipment-icon";
+import { MuscleFigure } from "@/components/muscle-map/muscle-map";
+import { SearchField } from "@/components/ui/search-field";
+import { List, ListRow } from "@/components/ui/list";
 import { EmptyState } from "@/components/ui/states";
 import { Button } from "@/components/ui/button";
 
@@ -18,112 +31,170 @@ interface ExerciseBrowserProps {
   showCreateLink?: boolean;
 }
 
-type CategoryFilter = ExerciseCategory | "all";
 type EquipmentFilter = EquipmentType | "all";
 
+/**
+ * Übungsübersicht: Suche oben, darunter Muskelgruppen als Karten mit Figur.
+ * Eine Gruppe öffnet die Liste ihrer Übungen; die Suche durchsucht alle Übungen.
+ * Im Auswahlmodus (Sheet) bleibt die Gruppe lokal, sonst steht sie in der URL (?g=).
+ */
 export function ExerciseBrowser({ items, mode = "browse", onPick, showCreateLink = true }: ExerciseBrowserProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useSearchParams();
+  const [localGroup, setLocalGroup] = React.useState<ExerciseGroupKey | null>(null);
   const [query, setQuery] = React.useState("");
-  const [category, setCategory] = React.useState<CategoryFilter>("all");
   const [equipment, setEquipment] = React.useState<EquipmentFilter>("all");
-  const [favoritesOnly, setFavoritesOnly] = React.useState(false);
 
-  const filtered = React.useMemo(() => {
-    const q = query.trim().toLowerCase();
+  const groupKey = mode === "browse" ? params.get("g") : localGroup;
+  const group = exerciseGroup(groupKey);
+  const setGroup = React.useCallback(
+    (key: ExerciseGroupKey | null) => {
+      setEquipment("all");
+      if (mode === "browse") router.push(key ? `${pathname}?g=${key}` : pathname, { scroll: false });
+      else setLocalGroup(key);
+    },
+    [mode, pathname, router]
+  );
+
+  const counts = React.useMemo(() => {
+    const map = new Map<ExerciseGroupKey, number>();
+    for (const g of EXERCISE_GROUPS) map.set(g.key, items.filter((e) => exerciseInGroup(e, g)).length);
+    return map;
+  }, [items]);
+
+  const searching = query.trim().length > 0;
+  const q = query.trim().toLowerCase();
+
+  const list = React.useMemo(() => {
     return items
-      .filter((e) => (category === "all" ? true : e.category === category))
+      .filter((e) => (searching || !group ? true : exerciseInGroup(e, group)))
       .filter((e) => (equipment === "all" ? true : e.equipment === equipment))
-      .filter((e) => (favoritesOnly ? e.is_favorite : true))
-      .filter((e) => (q ? e.name.toLowerCase().includes(q) || CATEGORY_LABELS[e.category].toLowerCase().includes(q) : true))
+      .filter((e) =>
+        q
+          ? e.name.toLowerCase().includes(q) ||
+            CATEGORY_LABELS[e.category].toLowerCase().includes(q) ||
+            EQUIPMENT_LABELS[e.equipment].toLowerCase().includes(q)
+          : true
+      )
       .sort((a, b) => Number(b.is_favorite) - Number(a.is_favorite) || a.name.localeCompare(b.name, "de"));
-  }, [items, query, category, equipment, favoritesOnly]);
+  }, [items, searching, group, equipment, q]);
 
-  const grouped = React.useMemo(() => {
-    const favorites = filtered.filter((e) => e.is_favorite);
-    const rest = filtered.filter((e) => !e.is_favorite);
-    const byCategory = new Map<ExerciseCategory, ExerciseListItem[]>();
-    for (const e of rest) {
-      const list = byCategory.get(e.category) ?? [];
-      list.push(e);
-      byCategory.set(e.category, list);
-    }
-    return { favorites, byCategory };
-  }, [filtered]);
+  const equipmentOptions = React.useMemo(() => {
+    const base = searching || !group ? items : items.filter((e) => exerciseInGroup(e, group));
+    const present = new Set(base.map((e) => e.equipment));
+    return EQUIPMENT_ORDER.filter((e) => present.has(e) && e !== "other" && e !== "bench");
+  }, [items, searching, group]);
 
-  const hasFilters = query || category !== "all" || equipment !== "all" || favoritesOnly;
+  const showList = searching || !!group;
 
   return (
     <div className="space-y-4">
-      <div className="relative">
-        <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-faint" />
-        <input
-          type="search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Übung suchen"
-          className="h-12 w-full rounded-xl border border-border bg-subtle pl-11 pr-4 text-base placeholder:text-faint focus:border-border-strong focus:outline-none focus:ring-2 focus:ring-[var(--ring)]"
-          autoComplete="off"
-        />
-      </div>
+      <SearchField value={query} onChange={setQuery} placeholder="Übungen suchen" />
 
-      <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-        <div className="flex w-max gap-2 pb-1">
-          <FilterChip active={favoritesOnly} onClick={() => setFavoritesOnly((v) => !v)}>
-            <Star className={cn("h-3.5 w-3.5", favoritesOnly && "fill-current")} /> Favoriten
-          </FilterChip>
-          <FilterChip active={category === "all"} onClick={() => setCategory("all")}>
-            Alle
-          </FilterChip>
-          {CATEGORY_ORDER.map((c) => (
-            <FilterChip key={c} active={category === c} onClick={() => setCategory(category === c ? "all" : c)}>
-              {CATEGORY_LABELS[c]}
-            </FilterChip>
-          ))}
-        </div>
-      </div>
-      <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-        <div className="flex w-max gap-2 pb-1">
-          {EQUIPMENT_ORDER.filter((e) => e !== "other" && e !== "bench").map((eq) => (
-            <FilterChip key={eq} active={equipment === eq} onClick={() => setEquipment(equipment === eq ? "all" : eq)}>
-              <EquipmentIcon equipment={eq} className="h-3.5 w-3.5" /> {EQUIPMENT_LABELS[eq]}
-            </FilterChip>
-          ))}
-        </div>
-      </div>
-
-      {filtered.length === 0 ? (
-        <EmptyState
-          title="Keine Übungen gefunden"
-          description={hasFilters ? "Andere Suche oder Filter ausprobieren." : "Noch keine Übungen vorhanden."}
-          action={
-            showCreateLink && mode === "browse" ? (
-              <Link href="/exercises/new">
-                <Button variant="secondary">
-                  <Plus className="h-4 w-4" /> Eigene Übung erstellen
-                </Button>
-              </Link>
-            ) : undefined
-          }
-        />
+      {!showList ? (
+        <GroupGrid counts={counts} onSelect={setGroup} />
       ) : (
-        <div className="space-y-6">
-          {grouped.favorites.length > 0 ? (
-            <Group title="Favoriten" count={grouped.favorites.length}>
-              {grouped.favorites.map((e) => (
-                <Row key={e.id} item={e} mode={mode} onPick={onPick} />
-              ))}
-            </Group>
+        <>
+          <div className="flex items-center justify-between gap-3">
+            {group && !searching ? (
+              <button type="button" onClick={() => setGroup(null)} className="press -ml-1.5 inline-flex h-9 items-center gap-0.5 pr-2 text-base font-medium text-accent">
+                <ChevronLeft className="h-5 w-5" strokeWidth={2.4} /> Gruppen
+              </button>
+            ) : (
+              <p className="text-sm text-muted">
+                {list.length} {list.length === 1 ? "Treffer" : "Treffer"}
+              </p>
+            )}
+            {group && !searching ? (
+              <h2 className="font-sans text-base font-semibold">
+                {group.label} <span className="font-normal text-muted">· {list.length}</span>
+              </h2>
+            ) : null}
+          </div>
+
+          {equipmentOptions.length > 1 ? (
+            <div className="no-scrollbar -mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+              <div className="flex w-max gap-2 pb-1">
+                <FilterChip active={equipment === "all"} onClick={() => setEquipment("all")}>
+                  Alle
+                </FilterChip>
+                {equipmentOptions.map((eq) => (
+                  <FilterChip key={eq} active={equipment === eq} onClick={() => setEquipment(equipment === eq ? "all" : eq)}>
+                    <EquipmentIcon equipment={eq} className="h-3.5 w-3.5" /> {EQUIPMENT_LABELS[eq]}
+                  </FilterChip>
+                ))}
+              </div>
+            </div>
           ) : null}
-          {CATEGORY_ORDER.filter((c) => grouped.byCategory.has(c)).map((c) => (
-            <Group key={c} title={CATEGORY_LABELS[c]} count={grouped.byCategory.get(c)!.length}>
-              {grouped.byCategory.get(c)!.map((e) => (
+
+          {list.length === 0 ? (
+            <EmptyState
+              title="Keine Übungen gefunden"
+              description={searching ? "Andere Suche ausprobieren." : "In dieser Gruppe gibt es noch keine Übungen."}
+              action={
+                showCreateLink && mode === "browse" ? (
+                  <Link href="/exercises/new">
+                    <Button variant="secondary">
+                      <Plus className="h-4 w-4" /> Eigene Übung erstellen
+                    </Button>
+                  </Link>
+                ) : undefined
+              }
+            />
+          ) : (
+            <List>
+              {list.map((e) => (
                 <Row key={e.id} item={e} mode={mode} onPick={onPick} />
               ))}
-            </Group>
-          ))}
-        </div>
+            </List>
+          )}
+        </>
       )}
     </div>
   );
+}
+
+function GroupGrid({ counts, onSelect }: { counts: Map<ExerciseGroupKey, number>; onSelect: (key: ExerciseGroupKey) => void }) {
+  const visible = EXERCISE_GROUPS.filter((g) => (counts.get(g.key) ?? 0) > 0 || g.key === "custom");
+  return (
+    <div className="stagger grid grid-cols-2 gap-3">
+      {visible.map((g) => (
+        <GroupCard key={g.key} group={g} count={counts.get(g.key) ?? 0} onClick={() => onSelect(g.key)} />
+      ))}
+    </div>
+  );
+}
+
+function GroupCard({ group, count, onClick }: { group: ExerciseGroupDef; count: number; onClick: () => void }) {
+  const wide = !!group.wide;
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={`${group.label}, ${count} Übungen`}
+      className={cn(
+        "card-interactive press relative flex items-center justify-between overflow-hidden rounded-[var(--radius-card)] bg-card text-left",
+        wide ? "col-span-2 h-[96px] pl-5 pr-6" : "h-[124px] gap-1 pl-4 pr-2.5"
+      )}
+    >
+      <span className="min-w-0 flex-1">
+        <span className={cn("block font-semibold leading-tight text-fg", wide ? "text-lg" : "text-[17px]")}>{group.label}</span>
+        <span className="tnum block whitespace-nowrap text-xs text-muted">{count === 1 ? "1 Übung" : `${count} Übungen`}</span>
+      </span>
+      <span className={cn("flex shrink-0 items-center justify-center text-fg/55", wide ? "h-14 w-14" : "h-[100px] w-[56px]")} aria-hidden>
+        {group.highlight.length > 0 ? <MuscleFigure view={group.view} highlight={group.highlight} /> : <GroupIcon groupKey={group.key} />}
+      </span>
+    </button>
+  );
+}
+
+function GroupIcon({ groupKey }: { groupKey: ExerciseGroupKey }) {
+  const cls = "h-10 w-10";
+  if (groupKey === "cardio") return <HeartPulse className={cls} strokeWidth={1.6} />;
+  if (groupKey === "favorites") return <Star className={cn(cls, "text-warning")} strokeWidth={1.6} />;
+  if (groupKey === "custom") return <PenLine className={cls} strokeWidth={1.6} />;
+  return null;
 }
 
 function FilterChip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
@@ -131,9 +202,10 @@ function FilterChip({ active, onClick, children }: { active: boolean; onClick: (
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={active}
       className={cn(
-        "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border px-3.5 text-sm font-medium transition-colors touch-manipulation",
-        active ? "border-accent bg-accent-soft text-accent" : "border-border bg-card text-muted hover:text-fg"
+        "press inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-sm font-medium transition-colors touch-manipulation",
+        active ? "bg-fg text-bg" : "bg-card text-muted hover:text-fg"
       )}
     >
       {children}
@@ -141,48 +213,17 @@ function FilterChip({ active, onClick, children }: { active: boolean; onClick: (
   );
 }
 
-function Group({ title, count, children }: { title: string; count: number; children: React.ReactNode }) {
-  return (
-    <section>
-      <div className="mb-2 flex items-baseline justify-between px-1">
-        <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-faint">{title}</h2>
-        <span className="text-xs text-faint">{count}</span>
-      </div>
-      <div className="divide-y divide-border overflow-hidden rounded-[var(--radius-card)] border border-border bg-card">
-        {children}
-      </div>
-    </section>
-  );
-}
-
 function Row({ item, mode, onPick }: { item: ExerciseListItem; mode: "browse" | "pick"; onPick?: (i: ExerciseListItem) => void }) {
-  const content = (
-    <>
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-subtle text-muted">
-        <EquipmentIcon equipment={item.equipment} className="h-5 w-5" strokeWidth={1.7} />
-      </div>
-      <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-medium text-fg">{item.name}</p>
-        <p className="truncate text-xs text-muted">
-          {CATEGORY_LABELS[item.category]} · {EQUIPMENT_LABELS[item.equipment]}
-          {item.is_custom ? " · Eigene Übung" : ""}
-        </p>
-      </div>
-      {item.is_favorite ? <Star className="h-4 w-4 shrink-0 fill-current text-accent" /> : null}
-      {mode === "pick" ? <Plus className="h-4 w-4 shrink-0 text-faint" /> : <ChevronRight className="h-4 w-4 shrink-0 text-faint" />}
-    </>
+  const subtitle = `${CATEGORY_LABELS[item.category]} · ${EQUIPMENT_LABELS[item.equipment]}${item.is_custom ? " · Eigene" : ""}`;
+  const trailing = (
+    <span className="flex items-center gap-2">
+      {item.is_favorite ? <Star className="h-4 w-4 fill-current text-warning" aria-label="Favorit" /> : null}
+      {mode === "pick" ? <Plus className="h-5 w-5 text-accent" strokeWidth={2.4} /> : null}
+    </span>
   );
-  const className = "flex min-h-16 w-full items-center gap-3 px-4 py-2.5 text-left hover:bg-subtle touch-manipulation";
+  const leading = <EquipmentIcon equipment={item.equipment} className="h-5 w-5" strokeWidth={1.8} />;
   if (mode === "pick") {
-    return (
-      <button type="button" onClick={() => onPick?.(item)} className={className}>
-        {content}
-      </button>
-    );
+    return <ListRow onClick={() => onPick?.(item)} leading={leading} title={item.name} subtitle={subtitle} trailing={trailing} />;
   }
-  return (
-    <Link href={`/exercises/${item.slug}`} className={className}>
-      {content}
-    </Link>
-  );
+  return <ListRow href={`/exercises/${item.slug}`} leading={leading} title={item.name} subtitle={subtitle} trailing={trailing} chevron />;
 }

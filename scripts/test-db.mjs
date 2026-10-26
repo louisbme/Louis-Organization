@@ -257,6 +257,85 @@ await test("Letzte Leistung + Statistiken + Bestleistungen", async () => {
   });
 });
 
+await test("Tracking-Art: Cardio, Körpergewicht und Gewicht × Wdh werden abgeleitet", async () => {
+  const r = await db.query(
+    "select slug, tracking_mode, bodyweight_factor::float as f from exercises where owner_id is null and slug in ('laufband','hyperextensions','plank','schraegbankdruecken-maschine')"
+  );
+  const by = Object.fromEntries(r.rows.map((x) => [x.slug, x]));
+  assert(by.laufband?.tracking_mode === "cardio", "Laufband sollte cardio sein");
+  assert(by.hyperextensions?.tracking_mode === "bodyweight" && by.hyperextensions.f === 0.6, "Hyperextensions: bodyweight, Anteil 0,6");
+  assert(by.plank?.f === 0.65, "Plank: Anteil 0,65");
+  assert(by["schraegbankdruecken-maschine"]?.tracking_mode === "weight_reps", "Maschine: weight_reps");
+  await asUser(USER_A, async () => {
+    const c = await db.query(
+      "insert into exercises (slug, name, category, equipment, is_custom, owner_id) values ('mein-lauf-u2', 'Mein Lauf', 'cardio', 'other', true, $1) returning tracking_mode",
+      [USER_A]
+    );
+    assert(c.rows[0].tracking_mode === "cardio", "eigene Cardio-Übung");
+    const u = await db.query("update exercises set category = 'chest', equipment = 'bodyweight' where slug = 'mein-lauf-u2' returning tracking_mode");
+    assert(u.rows[0].tracking_mode === "bodyweight", "Umstellung auf Körpergewicht");
+    await db.query("delete from exercises where slug = 'mein-lauf-u2'");
+  });
+});
+
+await test("Nachträgliche Bearbeitung: Summen eines abgeschlossenen Trainings werden neu berechnet", async () => {
+  await asUser(USER_A, async () => {
+    const se = await db.query("select id from workout_session_exercises where session_id = $1", [sessionId]);
+    const seId = se.rows[0].id;
+    const totals = async () => (await db.query("select total_volume::float as v, total_sets as n from workout_sessions where id = $1", [sessionId])).rows[0];
+    await db.query("update workout_sets set weight = 80 where session_exercise_id = $1 and set_number = 2", [seId]);
+    let t = await totals();
+    assert(t.v === 800 + 1400 && t.n === 3, `nach Änderung: ${JSON.stringify(t)}`);
+    await db.query("insert into workout_sets (session_exercise_id, user_id, set_number, weight, reps) values ($1, $2, 5, 60, 8)", [seId, USER_A]);
+    t = await totals();
+    assert(t.v === 2200 + 480 && t.n === 4, `nach Hinzufügen: ${JSON.stringify(t)}`);
+    await db.query("delete from workout_sets where session_exercise_id = $1 and set_number = 5", [seId]);
+    await db.query("update workout_sets set weight = 70 where session_exercise_id = $1 and set_number = 2", [seId]);
+    t = await totals();
+    assert(t.v === 2100 && t.n === 3, `nach Zurücksetzen: ${JSON.stringify(t)}`);
+  });
+});
+
+await test("Cardio (Dauer/Distanz) und Körpergewicht (Snapshot + Zusatz): Abschluss, Bestleistungen, Verlauf, Entfernen", async () => {
+  await asUser(USER_A, async () => {
+    const plan = await db.query("select id from workout_plans where name = 'Unterkörper'");
+    const started = await db.query("select start_workout_session($1) as id", [plan.rows[0].id]);
+    const sid = started.rows[0].id;
+    const lauf = (await db.query("select id from exercises where slug = 'laufband' and owner_id is null")).rows[0].id;
+    const hyper = (await db.query("select id from exercises where slug = 'hyperextensions' and owner_id is null")).rows[0].id;
+    const seC = (await db.query("insert into workout_session_exercises (session_id, user_id, exercise_id, sort_order) values ($1, $2, $3, 90) returning id", [sid, USER_A, lauf])).rows[0].id;
+    const seB = (await db.query("insert into workout_session_exercises (session_id, user_id, exercise_id, sort_order) values ($1, $2, $3, 91) returning id", [sid, USER_A, hyper])).rows[0].id;
+    await db.query("insert into workout_sets (session_exercise_id, user_id, set_number, weight, reps, duration_seconds, distance_m) values ($1, $2, 1, 0, 0, 1500, 5000)", [seC, USER_A]);
+    // 80 kg × 0,6 + 10 kg Zusatz = 58 kg
+    await db.query("insert into workout_sets (session_exercise_id, user_id, set_number, weight, reps, body_weight, extra_weight) values ($1, $2, 1, 58, 12, 80, 10)", [seB, USER_A]);
+    const done = (await db.query("select * from complete_workout_session($1, null, '2026-10-22')", [sid])).rows[0];
+    assert(done.total_sets === 2 && Number(done.total_volume) === 58 * 12, `Cardio zählt als Satz ohne Volumen: ${done.total_sets} / ${done.total_volume}`);
+
+    const rec = (await db.query("select * from get_exercise_records($1)", [lauf])).rows[0];
+    assert(rec.max_distance_m === 5000 && rec.max_duration_seconds === 1500, `Cardio-Bestleistungen: ${JSON.stringify(rec)}`);
+    assert(Number(rec.best_pace_sec_per_km) === 300 && Number(rec.total_sessions) === 1, `Pace/Sessions: ${JSON.stringify(rec)}`);
+    assert(rec.max_weight === null, "Cardio darf kein Maximalgewicht haben");
+
+    const hist = (await db.query("select * from get_exercise_history($1, null)", [lauf])).rows;
+    assert(hist.length === 1 && hist[0].total_distance_m === 5000 && hist[0].total_duration_seconds === 1500, `Verlauf: ${JSON.stringify(hist)}`);
+
+    const lp = (await db.query("select * from get_last_exercise_performance($1::uuid[])", [[lauf, hyper]])).rows;
+    const lpC = lp.find((x) => x.exercise_id === lauf);
+    const lpB = lp.find((x) => x.exercise_id === hyper);
+    assert(lpC && lpC.distance_m === 5000 && lpC.duration_seconds === 1500, "Cardio-Felder in letzter Leistung");
+    assert(lpB && Number(lpB.body_weight) === 80 && Number(lpB.extra_weight) === 10 && Number(lpB.weight) === 58, "Körpergewichtsfelder in letzter Leistung");
+
+    const detail = (await db.query("select get_member_session_detail($1) as d", [sid])).rows[0].d;
+    const ex = detail.exercises.find((e) => e.exercise.slug === "laufband");
+    assert(ex && ex.exercise.tracking_mode === "cardio" && ex.sets[0].distance_m === 5000, "Mitglieder-Detail ohne Cardio-Felder");
+
+    await db.query("delete from workout_session_exercises where id = $1", [seB]);
+    const after = (await db.query("select total_sets as n, total_volume::float as v from workout_sessions where id = $1", [sid])).rows[0];
+    assert(after.n === 1 && after.v === 0, `nach Entfernen der Übung: ${JSON.stringify(after)}`);
+    await db.query("delete from workout_sessions where id = $1", [sid]);
+  });
+});
+
 await test("Mitglieder-Detail: fremde Trainings lesbar, ohne Anmeldung gesperrt", async () => {
   await asUser(USER_B, async () => {
     const list = await db.query("select * from get_member_sessions($1)", [USER_A]);

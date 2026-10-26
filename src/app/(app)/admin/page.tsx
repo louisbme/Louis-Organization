@@ -33,7 +33,7 @@ export default async function AdminPage() {
             <p className="text-xs text-faint">
               Hinweis: Wird der Übungs-Seed später erneut eingespielt, überschreibt er diese Änderungen. Dauerhafte Änderungen gehören zusätzlich in die Seed-Dateien im Repository.
             </p>
-            <Link href="/exercises" className="press flex items-center justify-between rounded-xl border border-border bg-subtle px-4 py-3 text-sm font-medium hover:bg-hover">
+            <Link href="/exercises" className="press flex items-center justify-between rounded-[var(--radius-control)] bg-subtle px-4 py-3 text-sm font-medium hover:bg-hover">
               <span className="flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-muted" /> Zur Übungsdatenbank
               </span>
@@ -54,7 +54,7 @@ export default async function AdminPage() {
               href="https://supabase.com/dashboard/project/kmufqcgqsqewhupsycoi/auth/users"
               target="_blank"
               rel="noreferrer"
-              className="press mt-3 flex items-center justify-between rounded-xl border border-border bg-subtle px-4 py-3 text-sm font-medium hover:bg-hover"
+              className="press mt-3 flex items-center justify-between rounded-[var(--radius-control)] bg-subtle px-4 py-3 text-sm font-medium hover:bg-hover"
             >
               Supabase Dashboard öffnen
               <ExternalLink className="h-4 w-4 text-faint" />

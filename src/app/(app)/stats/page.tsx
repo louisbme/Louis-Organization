@@ -5,6 +5,7 @@ import { formatDate, formatDuration, formatVolume, formatRelativeDay } from "@/l
 import { PageHeader } from "@/components/ui/page-header";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Stat } from "@/components/ui/stat";
 import { EmptyState } from "@/components/ui/states";
@@ -25,14 +26,17 @@ export default async function StatsPage() {
         <div className="stagger space-y-3">
           {rows.map((r) => (
             <Card key={r.user_id} className="px-5 py-4">
-              <div className="min-w-0">
-                <p className="flex items-center gap-2 truncate text-base font-semibold">
-                  {r.nickname}
-                  {r.user_id === user.id ? <Badge tone="accent">Du</Badge> : null}
-                </p>
-                <p className="text-xs text-muted">Dabei seit {formatDate(r.member_since)}</p>
+              <div className="flex min-w-0 items-center gap-3">
+                <Avatar name={r.nickname} size={40} />
+                <div className="min-w-0">
+                  <p className="flex items-center gap-2 truncate text-base font-semibold">
+                    {r.nickname}
+                    {r.user_id === user.id ? <Badge tone="accent">Du</Badge> : null}
+                  </p>
+                  <p className="text-sm text-muted">Dabei seit {formatDate(r.member_since)}</p>
+                </div>
               </div>
-              <Stat label="Gesamtvolumen" value={formatVolume(r.total_volume, unit)} className="mt-4" />
+              <Stat label="Gesamtvolumen" value={formatVolume(r.total_volume, unit)} className="mt-4 bg-subtle" />
               <div className="mt-3 grid grid-cols-3 gap-2">
                 <Cell label="Trainings" value={String(r.total_workouts)} />
                 <Cell label="Trainingszeit" value={formatDuration(r.total_duration_seconds)} />
@@ -53,9 +57,9 @@ export default async function StatsPage() {
 
 function Cell({ label, value }: { label: string; value: string }) {
   return (
-    <div className="min-w-0 rounded-lg bg-subtle px-3 py-2">
-      <p className="text-[10px] font-medium uppercase tracking-wider text-faint">{label}</p>
-      <p className="tnum mt-0.5 text-sm font-semibold">{value}</p>
+    <div className="min-w-0 rounded-[var(--radius-control)] bg-subtle px-3 py-2.5">
+      <p className="text-xs font-medium text-muted">{label}</p>
+      <p className="tnum mt-0.5 truncate text-sm font-semibold">{value}</p>
     </div>
   );
 }

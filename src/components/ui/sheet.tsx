@@ -17,9 +17,8 @@ interface SheetProps {
 }
 
 /**
- * Modal / Bottom Sheet ohne externe Abhängigkeit.
- * Wird per Portal direkt in <body> gerendert, damit position: fixed immer den Viewport meint
- * (auch wenn ein Vorfahr ein transform trägt, z. B. durch Animationen).
+ * Sheet nach iOS: Griff oben, große Rundung, erhöhte Fläche, Schließen-Taste als runder Button.
+ * Wird per Portal direkt in <body> gerendert, damit position: fixed immer den Viewport meint.
  */
 export function Sheet({ open, onClose, title, description, children, size = "md", footer }: SheetProps) {
   const panelRef = React.useRef<HTMLDivElement>(null);
@@ -49,18 +48,19 @@ export function Sheet({ open, onClose, title, description, children, size = "md"
       aria-modal="true"
       aria-labelledby={title ? "sheet-title" : undefined}
     >
-      <div className="absolute inset-0 animate-fade-in bg-black/60" onClick={onClose} aria-hidden />
+      <div className="absolute inset-0 animate-fade-in bg-black/50" onClick={onClose} aria-hidden />
       <div
         ref={panelRef}
         className={cn(
-          "relative flex max-h-[92dvh] w-full flex-col overflow-hidden rounded-t-2xl border border-border bg-card animate-sheet-in sm:rounded-2xl",
+          "relative flex max-h-[92dvh] w-full flex-col overflow-hidden rounded-t-[28px] bg-card animate-sheet-in sm:rounded-[28px]",
           size === "lg" ? "sm:max-w-2xl" : "sm:max-w-md"
         )}
       >
-        <div className="flex items-start justify-between gap-4 px-5 pt-5 pb-3">
-          <div className="min-w-0">
+        <div className="mx-auto mt-2 h-[5px] w-9 shrink-0 rounded-full bg-border-strong sm:hidden" aria-hidden />
+        <div className="flex items-start justify-between gap-4 px-5 pb-2 pt-3 sm:pt-5">
+          <div className="min-w-0 pt-1">
             {title ? (
-              <h2 id="sheet-title" className="text-lg font-semibold tracking-tight">
+              <h2 id="sheet-title" className="text-lg text-fg">
                 {title}
               </h2>
             ) : null}
@@ -69,13 +69,13 @@ export function Sheet({ open, onClose, title, description, children, size = "md"
           <button
             type="button"
             onClick={onClose}
-            className="-mr-2 -mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted hover:bg-subtle hover:text-fg"
+            className="press flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-subtle text-muted hover:text-fg"
             aria-label="Schließen"
           >
-            <X className="h-5 w-5" />
+            <X className="h-4 w-4" strokeWidth={2.5} />
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto px-5 pb-5">{children}</div>
+        <div className="flex-1 overflow-y-auto px-5 pb-5 pt-2">{children}</div>
         {footer ? <div className="border-t border-border bg-card px-5 py-4 safe-bottom">{footer}</div> : null}
       </div>
     </div>,

@@ -201,7 +201,7 @@ export function SettingsForm() {
                   key={p}
                   type="button"
                   onClick={() => onRest(p)}
-                  className={`h-11 rounded-xl border text-sm font-semibold ${rest === p ? "border-accent bg-accent-soft text-accent" : "border-border bg-subtle text-muted"}`}
+                  className={`press h-11 rounded-[var(--radius-control)] text-sm font-semibold ${rest === p ? "bg-accent-fill text-accent-fg" : "bg-subtle text-muted"}`}
                 >
                   {p}s
                 </button>
