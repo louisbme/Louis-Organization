@@ -58,7 +58,7 @@
       "Sicherheitsablagen oder Trainingspartner zum Absichern"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/flat-bench-rack.jpg",
+    "image_url": null,
     "machine_name": "Olympic Flat Bench mit Hantelablage",
     "alternative_exercises": [
       "brustpresse",
@@ -126,7 +126,7 @@
       "Sicherheitsablagen oder Trainingspartner zum Absichern"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/incline-bench-rack.jpg",
+    "image_url": null,
     "machine_name": "Olympic Incline Bench mit Hantelablage",
     "alternative_exercises": [
       "schraegbankdruecken-maschine",
@@ -192,7 +192,7 @@
       "Gewichtsscheiben und Verschlüsse"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/preacher-curl-bench.jpg",
+    "image_url": null,
     "machine_name": "Preacher Curl Bench (Scott-Pult)",
     "alternative_exercises": [
       "kurzhantelcurl",

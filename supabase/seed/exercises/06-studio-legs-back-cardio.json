@@ -58,7 +58,7 @@
       "Einstellbare Rückenlehne"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/leg-press-45.jpg",
+    "image_url": null,
     "machine_name": "Leg Press 45°, Plate Loaded",
     "alternative_exercises": [
       "hackenschmidt",
@@ -143,7 +143,7 @@
       "Einstellhebel für die Startweite"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/adductor-machine.jpg",
+    "image_url": null,
     "machine_name": "DHZ Adductor, Steckgewicht",
     "alternative_exercises": [],
     "animation_source_url": "https://modusx.de/fitness-uebungen/adduktion-geraet/adduktion-am-geraet-im-sitzen/",
@@ -218,7 +218,7 @@
       "Verstellbarer Sattel (Höhe und Länge)"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/air-bike.jpg",
+    "image_url": null,
     "machine_name": "USAEON Air Bike",
     "alternative_exercises": [],
     "variants": []
@@ -283,7 +283,7 @@
       "Konsole für Zeit, Distanz oder Intervall"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/rowing-machine.jpg",
+    "image_url": null,
     "machine_name": "Rudergerät (Neolymp)",
     "alternative_exercises": [],
     "variants": []
@@ -346,7 +346,7 @@
       "Etwa eine Armlänge Platz vor dem Gerät"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/ski-erg.jpg",
+    "image_url": null,
     "machine_name": "Ski-Ergometer (Rogue)",
     "alternative_exercises": [],
     "variants": []
@@ -409,7 +409,7 @@
       "Not-Stopp-Clip"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/treadmill.jpg",
+    "image_url": null,
     "machine_name": "USAEON Laufband",
     "alternative_exercises": [],
     "variants": []

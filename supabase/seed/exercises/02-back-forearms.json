@@ -74,7 +74,7 @@
       "breiter-latzug",
       "straight-arm-pulldown"
     ],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/latziehen-zur-brust/latziehen-enger-griff/",
     "variants": [
@@ -164,7 +164,7 @@
     "alternative_exercises": [
       "neutraler-latzug"
     ],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/latziehen-zur-brust/latzug-breit-zur-brust/",
     "variants": [
@@ -256,7 +256,7 @@
       "kurzhantel-rudern-einarmig",
       "kurzhantel-rudern-schraegbank"
     ],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/rudern-am-kabelzug-sitzend/enges-rudern-am-kabelzug/",
     "variants": [
@@ -352,7 +352,7 @@
       "enges-rudern",
       "reverse-fly-kurzhantel"
     ],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/rudern-am-kabelzug-sitzend/kabelrudern-mit-breitem-griff/",
     "variants": [
@@ -507,7 +507,7 @@
       "rope"
     ],
     "alternative_exercises": [],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "variants": []
   },
@@ -567,7 +567,7 @@
       "Optional: Hantelscheibe vor der Brust als Zusatzgewicht"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/hyperextension-bench.jpg",
+    "image_url": null,
     "machine_name": "Hyperextension-Bank 45°",
     "alternative_exercises": [
       "rumaenisches-kreuzheben",

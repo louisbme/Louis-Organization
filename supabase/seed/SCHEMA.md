@@ -23,7 +23,7 @@ Die Daten werden per Skript in eine SQL-Migration übersetzt. Halte dich EXAKT a
 | common_mistakes | string[] | ja | 3–5 typische Fehler, jeweils ein kurzer Satz. |
 | tips | string[] | ja | 2–4 Hinweise (Tempo, Fokus, Progression, Alternativen). |
 | cable_setup | object/null | ja | NUR bei equipment = "cable" (sonst null). Felder siehe unten. |
-| image_url | string/null | nein | Gerätefoto, nur bei Maschinen-/Rack-/Cardio-Übungen (nie bei dumbbell oder cable) |
+| image_url | string/null | nein | Nicht mehr verwendet: Gerätefotos wurden aus der App entfernt. Immer null. |
 | machine_name | string/null | nein | Offizielle Gerätebezeichnung (z. B. DHZ Fitness "Incline Chest Press") |
 | alternative_exercises | string[] | nein | Slugs alternativer Übungen am anderen Gerät (werden mit Foto verlinkt) |
 | bodyweight_factor | number | nein | Nur bei equipment = "bodyweight": Anteil des Körpergewichts, der bewegt wird (0–2, Standard 1.0). Beispiele: Klimmzug/Dips 1.0, Liegestütz 0.65, Hyperextensions 0.6, Hanging Knee Raise 0.45. Daraus wird die reale Last berechnet (Körpergewicht × Anteil + Zusatzgewicht). |

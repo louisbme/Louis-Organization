@@ -55,7 +55,7 @@
       "Schrägbankdrück-Maschine mit verstellbarem Sitz (Hebel- oder Stapelmaschine)"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/incline-press-plate.jpg",
+    "image_url": null,
     "machine_name": "DHZ Incline Chest Press, Plate Loaded",
     "alternative_exercises": [
       "schraegbankdruecken-langhantel",
@@ -134,7 +134,7 @@
       "Brustpresse (Sitzmaschine) mit verstellbarem Sitz"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/chest-press.jpg",
+    "image_url": null,
     "machine_name": "DHZ Chest Press, Steckgewicht",
     "alternative_exercises": [
       "schraegbankdruecken-maschine",
@@ -216,7 +216,7 @@
       "Butterfly-Maschine mit Handgriffen und verstellbarem Sitz"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/pec-deck-rear-delt.jpg",
+    "image_url": null,
     "machine_name": "DHZ Pectoral Fly / Rear Delt, Steckgewicht",
     "alternative_exercises": [
       "kabel-flys",
@@ -310,7 +310,7 @@
       "butterfly",
       "kurzhantel-fliegende"
     ],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-zur-mitte-fuer-die-mittlere-brust/",
     "variants": [
@@ -387,7 +387,7 @@
       "Schulterdrück-Maschine mit verstellbarem Sitz und Rückenlehne"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/shoulder-press-plate.jpg",
+    "image_url": null,
     "machine_name": "DHZ Shoulder Press, Plate Loaded",
     "alternative_exercises": [
       "kurzhantel-schulterdruecken",
@@ -532,7 +532,7 @@
       "Reverse-Butterfly-Maschine (umgekehrtes Pec Deck) mit verstellbarem Sitz und Griffen"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/pec-deck-rear-delt.jpg",
+    "image_url": null,
     "machine_name": "DHZ Pectoral Fly / Rear Delt, Steckgewicht (Rear-Delt-Stellung)",
     "alternative_exercises": [
       "reverse-fly-kurzhantel",
@@ -623,7 +623,7 @@
       "single_handle"
     ],
     "alternative_exercises": [],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/face-pulls/face-pulls-am-kabelzug/",
     "variants": []

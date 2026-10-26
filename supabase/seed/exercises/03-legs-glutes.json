@@ -55,7 +55,7 @@
       "Hackenschmidt-Maschine (Hack Squat) mit Schulterpolstern und Sicherungen"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/hack-squat.jpg",
+    "image_url": null,
     "machine_name": "Hack Squat, Plate Loaded",
     "alternative_exercises": [
       "beinpresse-45-grad",
@@ -134,7 +134,7 @@
       "Beinstrecker-Maschine mit verstellbarer Rückenlehne und Beinpolster"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/leg-extension-curl.jpg",
+    "image_url": null,
     "machine_name": "DHZ Leg Extension / Leg Curl, Steckgewicht",
     "alternative_exercises": [
       "beinbeuger"
@@ -267,7 +267,7 @@
       "Optional: Schuhe mit erhöhter Ferse"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/half-rack.jpg",
+    "image_url": null,
     "machine_name": "Half Rack mit Plattform",
     "alternative_exercises": [
       "hackenschmidt",
@@ -396,7 +396,7 @@
       "Beinbeuger-Maschine, liegend oder sitzend, mit verstellbarer Drehachse und Beinpolster"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/seated-leg-curl.jpg",
+    "image_url": null,
     "machine_name": "DHZ Seated Leg Curl, Steckgewicht",
     "alternative_exercises": [
       "beinstrecker",
@@ -464,7 +464,7 @@
       "Optional: Zughilfen bei nachlassender Griffkraft"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/half-rack.jpg",
+    "image_url": null,
     "machine_name": "Half Rack mit Plattform",
     "alternative_exercises": [
       "hyperextensions",
@@ -601,7 +601,7 @@
     ],
     "grip_alternatives": [],
     "alternative_exercises": [],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/po-kickbacks-kabel/",
     "variants": []
@@ -659,7 +659,7 @@
       "Stufe oder Plattformkante, damit die Fersen frei absinken können"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/standing-calf-raise.jpg",
+    "image_url": null,
     "machine_name": "DHZ Standing Calf Raise, Plate Loaded",
     "alternative_exercises": [],
     "animation_source_url": "https://modusx.de/fitness-uebungen/wadenheben-stehend/wadenheben-maschine-stehend/",

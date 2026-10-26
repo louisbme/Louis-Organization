@@ -68,7 +68,6 @@ export interface ExerciseDetail extends ExerciseRow {
 export interface AlternativeExercise {
   slug: string;
   name: string;
-  image_url: string | null;
   machine_name: string | null;
 }
 
@@ -135,7 +134,7 @@ async function loadAlternatives(db: DbClient, slugs: string[]): Promise<Alternat
   if (!slugs || slugs.length === 0) return [];
   const { data, error } = await db
     .from("exercises")
-    .select("slug, name, image_url, machine_name")
+    .select("slug, name, machine_name")
     .in("slug", slugs)
     .is("owner_id", null);
   if (error) throw error;

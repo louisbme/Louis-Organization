@@ -146,7 +146,7 @@
       "hammer-curl-kurzhantel",
       "curls"
     ],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/cable-curls/",
     "variants": [
@@ -301,7 +301,7 @@
       "trizeps-kickbacks",
       "dips"
     ],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/trizepsdruecken-kabelzug/trizeps-pushdowns-am-kabel/",
     "variants": [
@@ -396,7 +396,7 @@
       "trizepsdruecken-kabel",
       "kurzhantel-trizepsdruecken-ueber-kopf"
     ],
-    "image_url": "/exercises/cable-tower.jpg",
+    "image_url": null,
     "machine_name": "Kabelturm (Multistation)",
     "animation_source_url": "https://modusx.de/fitness-uebungen/trizepsdruecken-kabelzug/trizepsdruecken-ueber-kopf-am-kabelzug/",
     "variants": []
@@ -456,7 +456,7 @@
       "Bauchmaschine (Crunch-Maschine) mit Gewichtsstapel und verstellbarem Sitz"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/abdominal-machine.jpg",
+    "image_url": null,
     "machine_name": "DHZ Abdominal Isolator, Steckgewicht",
     "alternative_exercises": [
       "hanging-knee-raise",
@@ -531,7 +531,7 @@
       "Klimmzugstange oder Armschlaufen (Ab Straps) an einem stabilen Gestell"
     ],
     "grip_alternatives": [],
-    "image_url": "/exercises/knee-raise-station.jpg",
+    "image_url": null,
     "machine_name": "DHZ Vertical Knee Raise Station",
     "alternative_exercises": [
       "crunch-maschine",

@@ -118,59 +118,19 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
         </Card>
       ) : null}
 
-      {/* Gerät: kompakt, nur bei Maschinenübungen mit Foto */}
-      {exercise.image_url ? (
+      {/* Verwandte Übungen (ohne Gerätefotos) */}
+      {exercise.alternatives.length > 0 ? (
         <Card>
           <CardContent className="pt-5">
-            <SectionLabel>Gerät</SectionLabel>
-            <div className="mt-3 flex items-center gap-4">
-              <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1 sm:h-28 sm:w-28">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={exercise.image_url} alt={exercise.machine_name ?? exercise.name} loading="lazy" decoding="async" className="h-full w-full object-contain" />
-              </div>
-              <div className="min-w-0">
-                <p className="text-base font-semibold">{exercise.machine_name ?? EQUIPMENT_LABELS[exercise.equipment]}</p>
-                <p className="mt-0.5 text-sm text-muted">{EQUIPMENT_LABELS[exercise.equipment]} · so steht es im Studio</p>
-              </div>
-            </div>
-            {exercise.alternatives.length > 0 ? (
-              <div className="mt-4 border-t border-border pt-4">
-                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-faint">Alternativ an diesem Gerät</p>
-                <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
-                  {exercise.alternatives.map((alt) => (
-                    <Link key={alt.slug} href={`/exercises/${alt.slug}`} className="card-interactive press flex w-36 shrink-0 flex-col gap-2 rounded-[var(--radius-control)] bg-subtle p-2">
-                      <div className="flex h-20 items-center justify-center overflow-hidden rounded-lg bg-white p-1">
-                        {alt.image_url ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img src={alt.image_url} alt={alt.machine_name ?? alt.name} loading="lazy" decoding="async" className="h-full w-full object-contain" />
-                        ) : (
-                          <EquipmentIcon equipment={exercise.equipment} className="h-6 w-6 text-faint" />
-                        )}
-                      </div>
-                      <p className="line-clamp-2 text-xs font-medium leading-snug">{alt.name}</p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : null}
-          </CardContent>
-        </Card>
-      ) : exercise.alternatives.length > 0 ? (
-        <Card>
-          <CardContent className="pt-5">
-            <SectionLabel>Alternativ am Gerät</SectionLabel>
-            <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+            <SectionLabel>Alternativen</SectionLabel>
+            <div className="no-scrollbar -mx-5 mt-3 flex gap-2 overflow-x-auto px-5 pb-1">
               {exercise.alternatives.map((alt) => (
-                <Link key={alt.slug} href={`/exercises/${alt.slug}`} className="card-interactive press flex w-36 shrink-0 flex-col gap-2 rounded-[var(--radius-control)] bg-subtle p-2">
-                  <div className="flex h-20 items-center justify-center overflow-hidden rounded-lg bg-white p-1">
-                    {alt.image_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={alt.image_url} alt={alt.machine_name ?? alt.name} loading="lazy" decoding="async" className="h-full w-full object-contain" />
-                    ) : (
-                      <EquipmentIcon equipment={exercise.equipment} className="h-6 w-6 text-faint" />
-                    )}
-                  </div>
-                  <p className="line-clamp-2 text-xs font-medium leading-snug">{alt.name}</p>
+                <Link
+                  key={alt.slug}
+                  href={`/exercises/${alt.slug}`}
+                  className="press inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-subtle px-3.5 text-sm font-medium text-fg hover:bg-hover"
+                >
+                  {alt.name}
                 </Link>
               ))}
             </div>
@@ -230,6 +190,7 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
           <div className="mt-2 flex items-center gap-2 text-sm font-medium">
             <EquipmentIcon equipment={exercise.equipment} className="h-5 w-5 text-muted" strokeWidth={1.7} />
             {EQUIPMENT_LABELS[exercise.equipment]}
+            {exercise.machine_name ? <span className="text-muted">· im Studio: {exercise.machine_name}</span> : null}
           </div>
           {exercise.requirements.length > 0 ? (
             <ul className="mt-2 space-y-1.5">
@@ -254,7 +215,7 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
       {exercise.animation_url ? (
         <div className="space-y-2">
           <SectionLabel className="px-1">Ausführung</SectionLabel>
-          <ExerciseVisual name={exercise.name} imageUrl={null} animationUrl={exercise.animation_url} equipment={exercise.equipment} category={exercise.category} />
+          <ExerciseVisual name={exercise.name} animationUrl={exercise.animation_url} equipment={exercise.equipment} category={exercise.category} />
         </div>
       ) : null}
 

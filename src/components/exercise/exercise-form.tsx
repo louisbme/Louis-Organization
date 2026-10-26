@@ -137,7 +137,7 @@ export function ExerciseForm({ grips, existing }: ExerciseFormProps) {
       tips: linesToArray(tips),
       muscle_focus: linesToArray(focus),
       requirements: linesToArray(requirements),
-      image_url: existing?.image_url ?? null,
+      image_url: null,
       animation_url: animationUrl.trim() || null,
       bodyweight_factor: equipment === "bodyweight" ? Math.round(parseFloat(bodyweightPct.replace(",", ".")) ) / 100 : 1,
       variants: parseVariants(variants),

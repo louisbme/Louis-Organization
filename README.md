@@ -103,6 +103,7 @@ Migrationen:
 | `0019_body_data_cardio_targets.sql` | Körperdaten im Profil (Größe, Geburtsdatum), Cardio-Ziele (Dauer, Distanz) in Plänen und Trainings, Übernahme beim Start und Kopieren |
 | `0020_admin_body_data.sql` | Admins dürfen Körperdaten und Gewichtseinträge anderer Nutzer pflegen |
 | `0021_exercise_consolidation.sql` | Katalog konsolidiert: `merge_exercise` hängt Pläne, Vorlagen, Trainings und Favoriten um und löscht die Dublette; 28 Zusammenführungen; Spalte `variants` |
+| `0022_remove_machine_images.sql` | Gerätefotos entfernt (Bildverweise auf null; Dateien aus dem Repository gelöscht) |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 
@@ -143,7 +144,7 @@ Die Standard-Templates funktionieren ebenfalls (Route `/auth/callback`), dann mu
 
 ### 4. Bilder, Animationen und Storage
 
-- Gerätefotos (`public/exercises/`, DHZ-Fitness-Geräte des Studios) erscheinen nur auf der Detailseite von Maschinen-, Rack- und Cardio-Übungen, kompakt mit offizieller Gerätebezeichnung (`machine_name`) und Alternativgeräten mit Bild (`alternative_exercises`). Kabelübungen zeigen das Foto des Kabelturms, Kurzhantelübungen bekommen kein Foto; in Listen erscheinen nie Fotos. Beim Latzug wird statt der Rollenhöhe die Sitzposition angezeigt.
+- Gerätefotos gibt es in der App nicht mehr; die offizielle Gerätebezeichnung (`machine_name`) steht als Text unter „Das brauchst du“, verwandte Übungen als Chips unter „Alternativen“.
 - Ausführungs-Animationen (GIF, WebP, MP4) werden über `exercises.animation_url` eingebunden und auf der Detailseite als Schleife abgespielt. Jede Übung funktioniert auch ohne Bild und ohne Animation (Placeholder).
 - Griff-Fotos: `grips.image_url` setzen, dann erscheint das Foto statt des Icons.
 - Migration `0007` legt den öffentlichen Storage-Bucket `exercise-assets` an (lesen für alle, schreiben für angemeldete Benutzer im eigenen Ordner `<user_id>/…`). Dateien dort hochladen und die öffentliche URL in `image_url`, `animation_url` oder `grips.image_url` eintragen, zum Beispiel per SQL:
