@@ -22,6 +22,19 @@ export async function adminSetNickname(db: DbClient, userId: string, nickname: s
   if (error) throw error;
 }
 
+/** Setzt E-Mail und/oder Passwort eines Nutzers direkt (Route Handler mit Service-Zugang, nur Admins). */
+export async function adminUpdateAuth(userId: string, patch: { email?: string; password?: string }): Promise<void> {
+  const res = await fetch(`/api/admin/users/${userId}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(patch),
+  });
+  if (!res.ok) {
+    const data = (await res.json().catch(() => ({}))) as { error?: string };
+    throw new Error(data.error ?? `Änderung fehlgeschlagen (HTTP ${res.status})`);
+  }
+}
+
 /** Sendet die Passwort-Zurücksetzen-E-Mail an einen Nutzer (öffentlicher Auth-Endpunkt, ratenbegrenzt). */
 export async function adminSendPasswordReset(db: DbClient, email: string, origin: string): Promise<void> {
   const { error } = await db.auth.resetPasswordForEmail(email, { redirectTo: `${origin}/auth/callback?next=/reset-password` });

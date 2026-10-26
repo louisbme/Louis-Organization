@@ -75,7 +75,8 @@
       "breiter-latzug"
     ],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/latziehen-zur-brust/latziehen-enger-griff/"
   },
   {
     "slug": "breiter-latzug",
@@ -153,7 +154,8 @@
       "latzug-hebel"
     ],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/latziehen-zur-brust/latzug-breit-zur-brust/"
   },
   {
     "slug": "enges-rudern",
@@ -230,7 +232,8 @@
       "rudern-hebel-eng"
     ],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/rudern-am-kabelzug-sitzend/enges-rudern-am-kabelzug/"
   },
   {
     "slug": "breites-rudern",
@@ -308,7 +311,8 @@
       "rudern-hebel-breit"
     ],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/rudern-am-kabelzug-sitzend/kabelrudern-mit-breitem-griff/"
   },
   {
     "slug": "kabelrudern-einarmig",
@@ -443,7 +447,8 @@
       "Optional: Schrägbank für die bäuchlings liegende Variante"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/vorgebeugtes-seitheben-mit-kurzhanteln/vorgebeugtes-seitheben-sitzend/"
   },
   {
     "slug": "straight-arm-pulldown",
@@ -582,7 +587,8 @@
     "alternative_exercises": [
       "rumaenisches-kreuzheben"
     ],
-    "bodyweight_factor": 0.6
+    "bodyweight_factor": 0.6,
+    "animation_source_url": "https://modusx.de/fitness-uebungen/rueckenstrecken-am-geraet/hyperextensions-auf-der-hyperextension-bank/"
   },
   {
     "slug": "wrist-curl",
@@ -635,7 +641,8 @@
       "Flachbank oder Hocker zum Sitzen und Ablegen des Unterarms"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/unterarm-curls/unterarm-curls-mit-der-hantel/"
   },
   {
     "slug": "reverse-wrist-curl",
@@ -689,6 +696,7 @@
       "Flachbank oder Hocker zum Sitzen und Ablegen des Unterarms"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/reverse-unterarm-curls/reverse-unterarm-curls-mit-der-hantel/"
   }
 ]

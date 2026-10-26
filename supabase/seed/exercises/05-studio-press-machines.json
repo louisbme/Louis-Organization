@@ -60,7 +60,8 @@
     "alternative_exercises": [
       "brustpresse",
       "schulterpresse-maschine"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/"
   },
   {
     "slug": "brustpresse-hebel-sitzend",
@@ -124,7 +125,8 @@
     "alternative_exercises": [
       "brustpresse",
       "brustpresse-hebel"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-mit-fokus-auf-die-mittlere-brust/"
   },
   {
     "slug": "brustpresse-hebel",
@@ -189,7 +191,8 @@
     "alternative_exercises": [
       "brustpresse",
       "brustpresse-hebel-sitzend"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/"
   },
   {
     "slug": "brustpresse-vertikal",
@@ -252,7 +255,8 @@
     "alternative_exercises": [
       "brustpresse",
       "brustpresse-hebel"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/"
   },
   {
     "slug": "schraegbankdruecken-hebelmaschine",
@@ -317,7 +321,8 @@
     "alternative_exercises": [
       "schraegbankdruecken-maschine",
       "schraegbankdruecken-hebel-flex"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-fuer-die-obere-brust-aufrecht-sitzend/"
   },
   {
     "slug": "schraegbankdruecken-hebel-liegend",
@@ -382,7 +387,8 @@
     "alternative_exercises": [
       "schraegbankdruecken-maschine",
       "schraegbankdruecken-hebelmaschine"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-fuer-die-obere-brust-aufrecht-sitzend/"
   },
   {
     "slug": "schraegbankdruecken-hebel-flex",
@@ -447,7 +453,8 @@
     "alternative_exercises": [
       "schraegbankdruecken-maschine",
       "schraegbankdruecken-hebelmaschine"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-fuer-die-obere-brust-aufrecht-sitzend/"
   },
   {
     "slug": "bankdruecken-langhantel",
@@ -513,7 +520,8 @@
     "alternative_exercises": [
       "brustpresse",
       "brustpresse-hebel"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/langhantel-flachbankdruecken/"
   },
   {
     "slug": "schraegbankdruecken-langhantel",
@@ -578,7 +586,8 @@
     "machine_name": "Olympic Incline Bench mit Hantelablage",
     "alternative_exercises": [
       "schraegbankdruecken-maschine"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/langhantel-schraegbankdruecken/"
   },
   {
     "slug": "schulterpresse-maschine",
@@ -642,7 +651,8 @@
     "alternative_exercises": [
       "schulterdruecken-maschine",
       "multi-press-maschine"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/schulterdruecken-an-maschine/"
   },
   {
     "slug": "scott-curl",
@@ -706,6 +716,7 @@
     "alternative_exercises": [
       "kurzhantelcurl",
       "kabelcurl"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/scott-curls/preacher-curls-mit-der-langhantel/"
   }
 ]

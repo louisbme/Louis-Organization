@@ -131,6 +131,8 @@ export type ExerciseRow = Timestamps & {
   alternative_exercises: string[];
   tracking_mode: TrackingMode;
   bodyweight_factor: number;
+  /** Seite, von der die Ausführungs-Animation stammt (wird verlinkt, nicht eingebettet) */
+  animation_source_url: string | null;
   is_custom: boolean;
   owner_id: string | null;
 };
@@ -314,6 +316,7 @@ export type Database = {
           | "alternative_exercises"
           | "tracking_mode"
           | "bodyweight_factor"
+          | "animation_source_url"
           | "is_custom"
           | "owner_id"
           | "created_at"
@@ -457,6 +460,9 @@ export type Database = {
       admin_delete_user: { Args: { p_user_id: string }; Returns: undefined };
       admin_set_nickname: { Args: { p_user_id: string; p_nickname: string }; Returns: undefined };
       recalc_session_totals: { Args: { p_session_id: string }; Returns: undefined };
+      promote_custom_exercises: { Args: Record<string, never>; Returns: number };
+      get_member_plans: { Args: { p_user_id: string }; Returns: MemberPlan[] };
+      copy_member_plan: { Args: { p_plan_id: string; p_name?: string | null }; Returns: string };
       get_member_sessions: {
         Args: { p_user_id: string; p_limit?: number };
         Returns: MemberSessionRow[];
@@ -619,6 +625,22 @@ export type MemberSessionDetail = {
     notes: string | null;
   };
   exercises: MemberSessionDetailExercise[];
+};
+
+/** Trainingsplan eines Mitglieds (get_member_plans), nur lesend */
+export type MemberPlan = {
+  id: string;
+  name: string;
+  sort_order: number;
+  exercises: Array<{
+    exercise_id: string;
+    name: string;
+    slug: string;
+    sort_order: number;
+    target_sets: number;
+    rep_min: number;
+    rep_max: number;
+  }>;
 };
 
 /** Hilfstypen für die App */

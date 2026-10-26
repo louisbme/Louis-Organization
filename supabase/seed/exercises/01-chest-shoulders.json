@@ -62,7 +62,8 @@
       "schraegbankdruecken-hebel-flex",
       "schraegbankdruecken-hebel-liegend",
       "schraegbankdruecken-langhantel"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-fuer-die-obere-brust-aufrecht-sitzend/"
   },
   {
     "slug": "brustpresse",
@@ -127,7 +128,8 @@
       "brustpresse-hebel",
       "brustpresse-hebel-sitzend",
       "multi-press-maschine"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/brustpresse/brustpresse-mit-fokus-auf-die-mittlere-brust/"
   },
   {
     "slug": "pec-deck",
@@ -188,7 +190,8 @@
     "alternative_exercises": [
       "butterfly",
       "kabel-flys"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-an-maschine/"
   },
   {
     "slug": "butterfly",
@@ -250,7 +253,8 @@
     "alternative_exercises": [
       "pec-deck",
       "kabel-flys"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-an-maschine/"
   },
   {
     "slug": "kabel-flys",
@@ -322,7 +326,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-zur-mitte-fuer-die-mittlere-brust/"
   },
   {
     "slug": "kabel-flys-von-unten",
@@ -395,7 +400,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-nach-oben-fuer-die-obere-brust/"
   },
   {
     "slug": "kabel-flys-von-oben",
@@ -469,7 +475,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-fly/cable-fly-nach-unten-fuer-die-untere-brust/"
   },
   {
     "slug": "schulterdruecken-maschine",
@@ -532,7 +539,8 @@
     "alternative_exercises": [
       "schulterpresse-maschine",
       "multi-press-maschine"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/schulterdruecken-an-maschine/"
   },
   {
     "slug": "seitheben-maschine",
@@ -590,7 +598,8 @@
     "grip_alternatives": [],
     "alternative_exercises": [
       "seitheben-kabel"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/seitheben-an-seitheben-maschine/"
   },
   {
     "slug": "seitheben-kabel",
@@ -666,7 +675,8 @@
       "seitheben-maschine"
     ],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/seitheben-am-kabelzug/seitheben-am-kabelzug-einarmig/"
   },
   {
     "slug": "reverse-butterfly",
@@ -730,7 +740,8 @@
     "alternative_exercises": [
       "kabel-reverse-fly",
       "reverse-fly-kurzhantel"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-reverse-am-geraet/"
   },
   {
     "slug": "kabel-reverse-fly",
@@ -802,7 +813,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/butterfly-reverse-am-kabelzug/butterfly-reverse-am-kabelturm-von-vorne/"
   },
   {
     "slug": "face-pull",
@@ -877,6 +889,62 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/face-pulls/face-pulls-am-kabelzug/"
+  },
+  {
+    "slug": "dips",
+    "name": "Dips",
+    "category": "chest",
+    "equipment": "bodyweight",
+    "grip_id": null,
+    "grip_notes": "Neutraler Griff an den Holmen, Handgelenke gerade über den Händen. Für mehr Brust den Oberkörper leicht nach vorne neigen, für mehr Trizeps aufrecht bleiben.",
+    "primary_muscles": [
+      "chest",
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "front_delts"
+    ],
+    "description": "Druckübung mit dem eigenen Körpergewicht an den Dip-Holmen. Mit nach vorne geneigtem Oberkörper belastet sie vor allem die untere und mittlere Brust, aufrecht ausgeführt stärker den Trizeps.",
+    "setup": [
+      "Holme hüft- bis schulterbreit wählen; zu breite Holme belasten die Schulter.",
+      "In den Stütz springen oder steigen, Arme gestreckt, Schultern tief und hinten.",
+      "Beine leicht anwinkeln oder kreuzen, Blick nach vorne-unten.",
+      "Oberkörper etwa 20 bis 30 Grad nach vorne neigen, Brust raus."
+    ],
+    "execution": [
+      "Ellenbogen beugen und den Körper kontrolliert absenken.",
+      "Ellenbogen zeigen leicht nach außen-hinten, nicht nach außen abspreizen.",
+      "Bis die Oberarme etwa waagerecht sind oder leichte Dehnung in der Brust spürbar wird.",
+      "Kraftvoll nach oben drücken, Brust bleibt raus, Schultern bleiben tief.",
+      "Oben nicht komplett durchstrecken, Spannung halten und direkt die nächste Wiederholung beginnen."
+    ],
+    "range_of_motion": "Bis die Oberarme waagerecht sind, tiefer nur bei schmerzfreien Schultern. Oben kurz vor der vollen Streckung stoppen.",
+    "breathing": "Beim Absenken einatmen, beim Hochdrücken ausatmen.",
+    "common_mistakes": [
+      "Zu tief absenken, Schultern rollen nach vorne.",
+      "Schultern hochziehen statt tief und hinten halten.",
+      "Schwung aus den Beinen holen.",
+      "Ellenbogen weit nach außen abspreizen."
+    ],
+    "tips": [
+      "Zusatzgewicht erst, wenn 3 × 10 saubere Wiederholungen gelingen.",
+      "Mit Gegengewicht an der Dip-Maschine starten, wenn das Körpergewicht noch zu schwer ist.",
+      "Tempo: zwei Sekunden absenken, kontrolliert hochdrücken."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Oberkörper nach vorne neigen und Ellenbogen leicht nach außen führen, dann arbeitet die Brust in der gedehnten Position.",
+      "Schultern während der ganzen Bewegung tief halten, sonst übernimmt die vordere Schulter.",
+      "Die untere Umkehr kontrolliert und ohne Federn ausführen."
+    ],
+    "requirements": [
+      "Dip-Station oder Dip-Holme, hüft- bis schulterbreit",
+      "Optional Dip-Gürtel für Zusatzgewicht oder Dip-Maschine mit Gegengewicht"
+    ],
+    "grip_alternatives": [],
+    "bodyweight_factor": 1.0,
+    "animation_source_url": "https://modusx.de/fitness-uebungen/arnold-dips/klassische-arnold-dips/"
   }
 ]

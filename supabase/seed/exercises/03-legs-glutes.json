@@ -61,7 +61,8 @@
       "beinpresse-45-grad",
       "multipresse-kniebeuge",
       "wadenheben-hackenschmidt"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/hackenschmidt-kniebeuge/"
   },
   {
     "slug": "beinpresse",
@@ -124,7 +125,8 @@
     "alternative_exercises": [
       "beinpresse-45-grad",
       "hackenschmidt"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/beinpresse-klassisch/beinpresse-mit-beiden-beinen/"
   },
   {
     "slug": "beinstrecker",
@@ -183,7 +185,8 @@
     "machine_name": "DHZ Leg Extension / Leg Curl, Steckgewicht",
     "alternative_exercises": [
       "beinbeuger"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/beinstrecken-maschine/"
   },
   {
     "slug": "bulgarian-split-squat",
@@ -245,7 +248,8 @@
       "Optional: Rack oder Wand zum Abstützen bei Gleichgewichtsproblemen"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/bulgarian-split-squat/bulgarian-split-kniebeugen-mit-kurzhanteln/"
   },
   {
     "slug": "kniebeuge",
@@ -313,7 +317,8 @@
     "alternative_exercises": [
       "multipresse-kniebeuge",
       "hackenschmidt"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/langhantel-kniebeuge/"
   },
   {
     "slug": "ausfallschritte",
@@ -374,7 +379,8 @@
       "Ausreichend Platz nach vorne, besonders bei gehender Ausführung"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/klassische-lunges-mit-gewicht/ausfallschritte-mit-kurzhanteln/"
   },
   {
     "slug": "beinbeuger",
@@ -436,7 +442,8 @@
     "machine_name": "DHZ Seated Leg Curl, Steckgewicht",
     "alternative_exercises": [
       "beinstrecker"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/beincurls-maschine/beinbeuger-sitzend-am-beinbeuger-geraet/"
   },
   {
     "slug": "rumaenisches-kreuzheben",
@@ -501,7 +508,8 @@
     "machine_name": "Half Rack mit Plattform",
     "alternative_exercises": [
       "hyperextensions"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/rumaenisches-kreuzheben/"
   },
   {
     "slug": "hip-thrust",
@@ -560,7 +568,8 @@
       "Langhantel mit Polster (Hip-Thrust-Pad) und Hantelscheiben mit Verschlüssen; alternativ Hip-Thrust-Maschine"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/hip-thrust-langhantel/"
   },
   {
     "slug": "kabel-kickback",
@@ -630,7 +639,8 @@
     "grip_alternatives": [],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/po-kickbacks-kabel/"
   },
   {
     "slug": "wadenheben-hackenschmidt",
@@ -690,7 +700,8 @@
     "alternative_exercises": [
       "wadenheben-stehend",
       "wadenheben-sitzend"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/wadenheben-hackenschmidt-maschine/"
   },
   {
     "slug": "wadenheben-stehend",
@@ -750,7 +761,8 @@
     "alternative_exercises": [
       "wadenheben-sitzend",
       "wadenheben-hackenschmidt"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/wadenheben-stehend/wadenheben-maschine-stehend/"
   },
   {
     "slug": "wadenheben-sitzend",
@@ -807,6 +819,7 @@
     "alternative_exercises": [
       "wadenheben-stehend",
       "wadenheben-hackenschmidt"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/wadenheben-sitzend/wadenheben-maschine-sitzend/"
   }
 ]

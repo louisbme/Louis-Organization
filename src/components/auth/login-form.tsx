@@ -27,6 +27,9 @@ export function LoginForm() {
     if (params.get("reset") === "ok") {
       toast.success("Passwort wurde geändert. Bitte anmelden.");
     }
+    if (params.get("expired") === "1") {
+      toast.message("Deine Sitzung ist abgelaufen. Bitte erneut anmelden.");
+    }
   }, [params]);
 
   const onSubmit = async (e: React.FormEvent) => {

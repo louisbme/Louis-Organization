@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth/require-user";
 import { getSessionDetail } from "@/lib/services/sessions";
 import { getLatestBodyWeight } from "@/lib/services/stats";
+import { getProfile } from "@/lib/services/profile";
 import { formatDateTime, formatDuration, formatVolume } from "@/lib/utils/format";
 import { PageHeader } from "@/components/ui/page-header";
 import { Card, CardContent, SectionLabel } from "@/components/ui/card";
@@ -14,16 +15,32 @@ export const metadata = { title: "Training" };
 
 export default async function SessionPage({ params }: { params: Promise<{ sessionId: string }> }) {
   const { sessionId } = await params;
-  const { supabase, user, settings } = await requireUser();
+  const { supabase, user, profile, settings } = await requireUser();
   const session = await getSessionDetail(supabase, sessionId);
-  if (!session || session.user_id !== user.id) notFound();
-  if (session.status === "active") redirect(`/workout/${session.id}`);
-  const bodyWeight = await getLatestBodyWeight(supabase, user.id).catch(() => null);
+  if (!session) notFound();
+  const foreign = session.user_id !== user.id;
+  // Fremde Trainings nur für Admins (RLS liefert sie sonst gar nicht)
+  if (foreign && profile.role !== "admin") notFound();
+  if (session.status === "active") {
+    if (foreign) notFound();
+    redirect(`/workout/${session.id}`);
+  }
+  const [bodyWeight, owner] = await Promise.all([
+    getLatestBodyWeight(supabase, session.user_id).catch(() => null),
+    foreign ? getProfile(supabase, session.user_id).catch(() => null) : Promise.resolve(null),
+  ]);
   const unit = settings.weight_unit;
 
   return (
     <div className="space-y-5">
-      <PageHeader title={session.name} backHref="/history" backLabel="Verlauf" description={formatDateTime(session.started_at)} compact />
+      <PageHeader
+        title={session.name}
+        eyebrow={foreign ? `Training von ${owner?.nickname ?? "Mitglied"} · Admin` : undefined}
+        backHref={foreign ? `/admin/users/${session.user_id}` : "/history"}
+        backLabel={foreign ? (owner?.nickname ?? "Zurück") : "Verlauf"}
+        description={formatDateTime(session.started_at)}
+        compact
+      />
 
       <div className="grid grid-cols-3 gap-3">
         <Stat label="Dauer" value={formatDuration(session.duration_seconds)} />
@@ -46,7 +63,7 @@ export default async function SessionPage({ params }: { params: Promise<{ sessio
       </div>
 
       <Suspense>
-        <SessionActions sessionId={session.id} notes={session.notes} />
+        <SessionActions sessionId={session.id} notes={session.notes} backHref={foreign ? `/admin/users/${session.user_id}` : "/history"} />
       </Suspense>
     </div>
   );

@@ -31,7 +31,7 @@ import { EmptyState } from "@/components/ui/states";
 import { EquipmentIcon } from "@/components/exercise/equipment-icon";
 import { ExercisePickerSheet } from "@/components/exercise/exercise-picker-sheet";
 
-export function PlanEditor({ plan: initial }: { plan: PlanWithExercises }) {
+export function PlanEditor({ plan: initial, canStart = true }: { plan: PlanWithExercises; canStart?: boolean }) {
   const router = useRouter();
   const { userId } = useUser();
   const db = React.useMemo(() => createClient(), []);
@@ -246,7 +246,7 @@ export function PlanEditor({ plan: initial }: { plan: PlanWithExercises }) {
         </div>
       )}
 
-      {plan.exercises.length > 0 ? (
+      {plan.exercises.length > 0 && canStart ? (
         <div className="pt-2">
           <Button size="lg" fullWidth onClick={start} loading={busy === "start"}>
             <Play className="h-4 w-4" /> Training starten

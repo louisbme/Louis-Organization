@@ -54,7 +54,8 @@
       "Kurzhanteln"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-bizeps-curls-schraegbank/klassische-bizeps-curls-auf-der-schraegbank/"
   },
   {
     "slug": "incline-curl-hinterm-koerper",
@@ -113,7 +114,8 @@
       "Leichte Kurzhanteln"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-bizeps-curls-schraegbank/"
   },
   {
     "slug": "hammercurl-kabel",
@@ -184,7 +186,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-curls/kabelcurls-mit-stange-und-seil-am-tiefen-block/"
   },
   {
     "slug": "kabelcurl",
@@ -256,7 +259,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-curls/"
   },
   {
     "slug": "kurzhantelcurl",
@@ -314,7 +318,8 @@
       "Optional: Bank mit aufrechter Lehne für die sitzende Ausführung"
     ],
     "grip_alternatives": [],
-    "alternative_exercises": []
+    "alternative_exercises": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/kurzhantel-bizeps-curls-klassisch/kurzhantel-curls-stehend/"
   },
   {
     "slug": "trizepsdruecken-kabel",
@@ -383,7 +388,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/trizepsdruecken-kabelzug/trizeps-pushdowns-am-kabel/"
   },
   {
     "slug": "trizepsdruecken-stange",
@@ -455,7 +461,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/trizepsdruecken-kabelzug/trizeps-pushdowns-am-kabel/"
   },
   {
     "slug": "trizepsdruecken-seil",
@@ -525,7 +532,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/trizepsdruecken-kabelzug/"
   },
   {
     "slug": "ueberkopf-trizeps-extension",
@@ -596,7 +604,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/trizepsdruecken-kabelzug/trizepsdruecken-ueber-kopf-am-kabelzug/"
   },
   {
     "slug": "kabel-extension-einarmig",
@@ -665,7 +674,8 @@
     ],
     "alternative_exercises": [],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/trizepsdruecken-kabelzug/"
   },
   {
     "slug": "crunch-maschine",
@@ -726,7 +736,8 @@
     "machine_name": "DHZ Abdominal Isolator, Steckgewicht",
     "alternative_exercises": [
       "kabel-crunch"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/crunches-an-crunch-maschine/"
   },
   {
     "slug": "kabel-crunch",
@@ -801,7 +812,8 @@
       "hanging-knee-raise"
     ],
     "image_url": "/exercises/cable-tower.jpg",
-    "machine_name": "Kabelturm (Multistation)"
+    "machine_name": "Kabelturm (Multistation)",
+    "animation_source_url": "https://modusx.de/fitness-uebungen/cable-crunches/crunch-kniend-am-seil/"
   },
   {
     "slug": "hanging-knee-raise",
@@ -861,7 +873,8 @@
     "image_url": "/exercises/knee-raise-station.jpg",
     "machine_name": "DHZ Vertical Knee Raise Station",
     "alternative_exercises": [],
-    "bodyweight_factor": 0.45
+    "bodyweight_factor": 0.45,
+    "animation_source_url": "https://modusx.de/fitness-uebungen/beinheben-haengend/beinheben-haengend-fuer-die-geraden-bauchmuskeln/"
   },
   {
     "slug": "plank",
@@ -921,5 +934,165 @@
     "grip_alternatives": [],
     "alternative_exercises": [],
     "bodyweight_factor": 0.65
+  },
+  {
+    "slug": "curls",
+    "name": "Bizepscurl Maschine",
+    "category": "biceps",
+    "equipment": "machine",
+    "grip_id": null,
+    "grip_notes": "Supinierter Griff (Handflächen nach oben) an den Griffen der Maschine, Handgelenke gerade.",
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
+    "description": "Geführte Curl-Bewegung an der Bizepsmaschine mit Armpolster. Die feste Führung isoliert den Bizeps und verhindert Schwung aus dem Oberkörper.",
+    "setup": [
+      "Sitz so einstellen, dass die Achseln oben auf dem Armpolster aufliegen.",
+      "Oberarme vollständig auf dem Polster ablegen, Ellenbogen auf Höhe der Drehachse.",
+      "Griffe im Untergriff fassen, Handgelenke gerade.",
+      "Rücken aufrecht, Brust leicht raus, Füße flach auf dem Boden."
+    ],
+    "execution": [
+      "Griffe kontrolliert nach oben curlen, Oberarme bleiben auf dem Polster.",
+      "Oben kurz anspannen, ohne die Ellenbogen vom Polster zu heben.",
+      "Gewicht langsam zurückführen, bis die Arme fast gestreckt sind.",
+      "Unten die Spannung halten, Gewicht nicht aufsetzen.",
+      "Nächste Wiederholung ohne Ruck beginnen."
+    ],
+    "range_of_motion": "Fast gestreckte Arme unten bis zur vollen Beugung oben; die Ellenbogen bleiben dabei immer auf dem Polster.",
+    "breathing": "Beim Curlen ausatmen, beim Zurückführen einatmen.",
+    "common_mistakes": [
+      "Ellenbogen vom Polster heben.",
+      "Mit dem Oberkörper nachhelfen.",
+      "Handgelenke abknicken.",
+      "Unten das Gewicht aufsetzen und Spannung verlieren."
+    ],
+    "tips": [
+      "Langsame Negative, etwa drei Sekunden.",
+      "Eher 10 bis 15 Wiederholungen, die Maschine verzeiht wenig Schwung.",
+      "Sitzhöhe bei jedem Training gleich einstellen."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Oberarme fest auf dem Polster lassen, dann arbeitet nur der Ellenbogen und der Bizeps trägt die ganze Last.",
+      "Oben eine Sekunde halten und bewusst anspannen.",
+      "Unten fast strecken, damit der Bizeps unter Dehnung arbeitet."
+    ],
+    "requirements": [
+      "Bizepscurl-Maschine mit Armpolster",
+      "Optional Trainingshandschuhe bei glatten Griffen"
+    ],
+    "grip_alternatives": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/bizepsmaschine-bizeps-curls/klassische-curls-an-der-bizepsmaschine/"
+  },
+  {
+    "slug": "hammer-curl-kurzhantel",
+    "name": "Hammercurl Kurzhantel",
+    "category": "biceps",
+    "equipment": "dumbbell",
+    "grip_id": null,
+    "grip_notes": "Neutraler Griff (Daumen nach oben) über die gesamte Bewegung, Handgelenke gerade.",
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
+    "description": "Curl mit neutralem Griff im Stehen oder Sitzen. Der Hammergriff belastet neben dem Bizeps stark den Brachialis und die Unterarme und sorgt für dickere Oberarme.",
+    "setup": [
+      "Zwei Kurzhanteln im neutralen Griff an den Seiten halten.",
+      "Stand hüftbreit, Knie leicht gebeugt, Rumpf angespannt.",
+      "Schultern hinten und tief, Ellenbogen nah am Körper.",
+      "Blick geradeaus, Brust leicht raus."
+    ],
+    "execution": [
+      "Eine oder beide Hanteln kontrolliert nach oben curlen, Daumen zeigen nach oben.",
+      "Ellenbogen bleiben am Körper, Oberarme bewegen sich nicht.",
+      "Oben kurz anspannen, Hantel nicht an die Schulter legen.",
+      "Langsam zurückführen, bis der Arm fast gestreckt ist.",
+      "Wechselnd oder beidarmig, ohne Schwung aus dem Rücken."
+    ],
+    "range_of_motion": "Von fast gestrecktem Arm bis zur vollen Beugung; die Oberarme bleiben senkrecht und still.",
+    "breathing": "Beim Curlen ausatmen, beim Senken einatmen.",
+    "common_mistakes": [
+      "Ellenbogen nach vorne wandern lassen.",
+      "Schwung aus Hüfte und Rücken holen.",
+      "Handgelenke eindrehen oder abknicken.",
+      "Zu schwere Hanteln, dadurch halbe Bewegungen."
+    ],
+    "tips": [
+      "Alternierend ausführen, dann bleibt die Technik sauberer.",
+      "Zwei bis drei Sekunden absenken.",
+      "Als letzte Bizepsübung im Training einplanen."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Neutraler Griff verlagert Last auf Brachialis und Brachioradialis, deshalb Handgelenke nicht eindrehen.",
+      "Ellenbogen am Körper fixieren, sonst übernimmt die vordere Schulter.",
+      "Volle Streckung unten für die Dehnung, kontrolliert ohne Federn."
+    ],
+    "requirements": [
+      "Zwei Kurzhanteln",
+      "Optional eine Bank mit Rückenlehne für die sitzende Variante"
+    ],
+    "grip_alternatives": [],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/hammer-curls/hammer-curls-mit-kurzhanteln-stehend/"
+  },
+  {
+    "slug": "sit-ups",
+    "name": "Sit-ups",
+    "category": "abs",
+    "equipment": "bodyweight",
+    "grip_id": null,
+    "grip_notes": "Hände locker an den Schläfen oder vor der Brust gekreuzt, nicht hinter dem Kopf ziehen.",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliques"
+    ],
+    "description": "Klassische Rumpfbeuge aus der Rückenlage bis zum Sitzen. Beansprucht die geraden Bauchmuskeln über den vollen Bewegungsweg, mit Beteiligung der Hüftbeuger.",
+    "setup": [
+      "Auf den Rücken legen, Knie etwa 90 Grad gebeugt, Füße flach auf dem Boden.",
+      "Füße bei Bedarf unter einer Hantel oder Bank fixieren.",
+      "Hände an die Schläfen oder vor die Brust.",
+      "Unteren Rücken in den Boden drücken, Bauch anspannen."
+    ],
+    "execution": [
+      "Kinn leicht zur Brust, Schultern vom Boden lösen.",
+      "Wirbel für Wirbel aufrollen, bis der Oberkörper fast senkrecht ist.",
+      "Oben kurz anspannen, nicht nach vorne fallen lassen.",
+      "Kontrolliert und langsam wieder abrollen.",
+      "Schultern kurz über dem Boden stoppen und die nächste Wiederholung beginnen."
+    ],
+    "range_of_motion": "Vom Boden bis zum fast aufrechten Sitz; unten die Schultern nicht ganz ablegen, damit die Spannung bleibt.",
+    "breathing": "Beim Aufrollen ausatmen, beim Abrollen einatmen.",
+    "common_mistakes": [
+      "Mit den Armen am Kopf ziehen.",
+      "Schwung aus den Armen oder Beinen holen.",
+      "Rücken durchdrücken statt einrollen.",
+      "Zu schnell und ohne Kontrolle abrollen."
+    ],
+    "tips": [
+      "Für mehr Widerstand eine Hantelscheibe vor der Brust halten.",
+      "Langsame Negative von drei Sekunden.",
+      "Bei Nackenbeschwerden lieber Crunches oder Cable Crunches wählen."
+    ],
+    "cable_setup": null,
+    "muscle_focus": [
+      "Einrollen statt Hochklappen, dann arbeitet der gerade Bauchmuskel und nicht nur die Hüftbeuger.",
+      "Ausatmen und den Bauchnabel zur Wirbelsäule ziehen.",
+      "Unten nicht ablegen, die Spannung bleibt über die ganze Serie erhalten."
+    ],
+    "requirements": [
+      "Matte oder Bauchbank",
+      "Optional Fixierung für die Füße oder eine Hantelscheibe als Zusatzgewicht"
+    ],
+    "grip_alternatives": [],
+    "bodyweight_factor": 0.5,
+    "animation_source_url": "https://modusx.de/fitness-uebungen/sit-ups/"
   }
 ]

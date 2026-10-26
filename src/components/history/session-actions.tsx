@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet } from "@/components/ui/sheet";
 import { Textarea } from "@/components/ui/input";
 
-export function SessionActions({ sessionId, notes }: { sessionId: string; notes: string | null }) {
+export function SessionActions({ sessionId, notes, backHref = "/history" }: { sessionId: string; notes: string | null; backHref?: string }) {
   const router = useRouter();
   const params = useSearchParams();
   const [confirm, setConfirm] = React.useState(false);
@@ -31,7 +31,7 @@ export function SessionActions({ sessionId, notes }: { sessionId: string; notes:
     try {
       await deleteSession(createClient(), sessionId);
       toast.success("Training gelöscht");
-      router.push("/history");
+      router.push(backHref);
       router.refresh();
     } catch (e) {
       toast.error(friendlyError(e));

@@ -48,7 +48,7 @@ export default async function AdminPage() {
         <Card>
           <CardContent className="pt-5">
             <p className="text-sm text-muted">
-              Einladungen, Passwort-Resets und Sperren laufen über das Supabase-Dashboard unter Authentication, Users.
+              Nickname, E-Mail und Passwort setzt du direkt in der Nutzerliste; Trainings und Pläne öffnest du über „Trainingsdaten“. Einladungen und Sperren laufen weiterhin über das Supabase-Dashboard.
             </p>
             <a
               href="https://supabase.com/dashboard/project/kmufqcgqsqewhupsycoi/auth/users"

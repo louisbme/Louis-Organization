@@ -180,7 +180,7 @@ export default async function DashboardPage() {
       {/* Schnellzugriff */}
       <List>
         <ListRow href="/plans" leading={<ClipboardList className="h-5 w-5" strokeWidth={1.9} />} title="Trainingspläne" chevron />
-        <ListRow href="/calendar" leading={<CalendarDays className="h-5 w-5" strokeWidth={1.9} />} title="Kalender" chevron />
+        <ListRow href="/history?tab=calendar" leading={<CalendarDays className="h-5 w-5" strokeWidth={1.9} />} title="Kalender" chevron />
         <ListRow href="/stats" leading={<Users className="h-5 w-5" strokeWidth={1.9} />} title="Gruppen-Stats" chevron />
       </List>
     </div>

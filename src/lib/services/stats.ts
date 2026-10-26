@@ -5,6 +5,7 @@ import type {
   ExerciseHistoryRow,
   ExerciseRecordsRow,
   GroupStatsRow,
+  MemberPlan,
   MemberSessionDetail,
   MemberSessionRow,
   TrackingMode,
@@ -86,6 +87,20 @@ export async function getExerciseRecords(db: DbClient, exerciseId: string): Prom
     max_duration_seconds: row.max_duration_seconds ?? null,
     best_pace_sec_per_km: row.best_pace_sec_per_km === null || row.best_pace_sec_per_km === undefined ? null : Number(row.best_pace_sec_per_km),
   };
+}
+
+/** Trainingspläne eines Mitglieds (nur lesend, für alle angemeldeten Nutzer). */
+export async function listMemberPlans(db: DbClient, userId: string): Promise<MemberPlan[]> {
+  const { data, error } = await db.rpc("get_member_plans", { p_user_id: userId });
+  if (error) throw error;
+  return (data ?? []) as MemberPlan[];
+}
+
+/** Kopiert den Plan eines Mitglieds in die eigenen Pläne; liefert die neue Plan-ID. */
+export async function copyMemberPlan(db: DbClient, planId: string, name?: string | null): Promise<string> {
+  const { data, error } = await db.rpc("copy_member_plan", { p_plan_id: planId, p_name: name ?? null });
+  if (error) throw error;
+  return data;
 }
 
 /** Zuletzt eingetragenes Körpergewicht (für Körpergewichtsübungen), null wenn noch keins vorhanden. */

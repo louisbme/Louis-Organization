@@ -105,7 +105,8 @@ export function SessionEditor({ session: initial, bodyWeight: initialBodyWeight 
   const patchDraft = (patch: Partial<Draft>) => setEditor((e) => (e ? { ...e, draft: { ...e.draft, ...patch } } : e));
 
   const onBodyWeightChange = async (value: number) => {
-    await upsertBodyWeight(db, userId, toDateKey(new Date()), value);
+    // Körpergewicht nur im eigenen Konto speichern; bei fremden Trainings nur für diesen Satz verwenden
+    if (initial.user_id === userId) await upsertBodyWeight(db, userId, toDateKey(new Date()), value);
     setBodyWeight(value);
   };
 
@@ -130,7 +131,8 @@ export function SessionEditor({ session: initial, bodyWeight: initialBodyWeight 
         saved = await updateSet(db, set.id, values);
       } else {
         const nextNumber = (exercise.sets.at(-1)?.set_number ?? 0) + 1;
-        saved = await saveSet(db, { ...values, session_exercise_id: exercise.id, user_id: userId, set_number: nextNumber, completed: true });
+        // Besitzer des Trainings, nicht der angemeldete Nutzer (Admin kann fremde Trainings bearbeiten)
+        saved = await saveSet(db, { ...values, session_exercise_id: exercise.id, user_id: initial.user_id, set_number: nextNumber, completed: true });
       }
       setExercises((list) =>
         list.map((e) =>
@@ -188,7 +190,7 @@ export function SessionEditor({ session: initial, bodyWeight: initialBodyWeight 
       const order = (exercises.at(-1)?.sort_order ?? 0) + 1;
       const row = await addSessionExercise(db, {
         session_id: initial.id,
-        user_id: userId,
+        user_id: initial.user_id,
         exercise_id: item.id,
         sort_order: order,
         target_sets: item.tracking_mode === "cardio" ? 1 : 3,

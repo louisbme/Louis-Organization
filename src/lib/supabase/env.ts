@@ -9,6 +9,19 @@ export function getSupabaseEnv() {
   return { url, anonKey };
 }
 
+/**
+ * Server-seitiger Service-Zugang (Secret Key) für Admin-Funktionen der Auth-API.
+ * Niemals im Browser verwenden; die Variable hat bewusst kein NEXT_PUBLIC_-Präfix.
+ */
+export function getSupabaseAdminEnv() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const secretKey = process.env.SUPABASE_SECRET_KEY;
+  if (!url || !secretKey) {
+    throw new Error("SUPABASE_SECRET_KEY ist nicht gesetzt. E-Mail und Passwort anderer Nutzer können nur mit Service-Zugang geändert werden.");
+  }
+  return { url, secretKey };
+}
+
 export function isSupabaseConfigured() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";

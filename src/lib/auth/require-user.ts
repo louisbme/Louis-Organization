@@ -12,7 +12,10 @@ export const requireUser = cache(async () => {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) redirect("/login");
+  // Die Middleware prüft das Token nur lokal. Wurde die Sitzung serverseitig beendet
+  // (z. B. Passwort durch einen Admin gesetzt), müssen die Cookies gelöscht werden,
+  // sonst pendelt der Browser zwischen Login und Dashboard.
+  if (!user) redirect("/auth/signout?reason=expired");
 
   const [profile, settings] = await Promise.all([getProfile(supabase, user.id), getSettings(supabase, user.id)]);
 

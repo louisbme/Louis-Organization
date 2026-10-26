@@ -409,6 +409,85 @@ await test("Kalender: Eintrag anlegen/ändern, Duplikat je Tag verhindert", asyn
   });
 });
 
+await test("Portfolio: eigene Übungen werden Standardübungen (Slug ohne Suffix, ID bleibt, für alle sichtbar)", async () => {
+  // Suffix wie in der App erzeugt: "-u" + 4 Zeichen
+  await asUser(USER_A, async () => {
+    await db.query("insert into exercises (slug, name, category, equipment, is_custom, owner_id) values ('portfolio-test-uab12', 'Portfolio Test', 'chest', 'machine', true, $1)", [USER_A]);
+  });
+  const before = await db.query("select id from exercises where slug = 'portfolio-test-uab12'");
+  assert(before.rows.length === 1, "eigene Übung fehlt");
+  const n = await db.query("select promote_custom_exercises() as n");
+  assert(Number(n.rows[0].n) >= 1, "nichts übernommen");
+  const after = await db.query("select id, is_custom, owner_id from exercises where slug = 'portfolio-test'");
+  assert(after.rows.length === 1 && after.rows[0].is_custom === false && after.rows[0].owner_id === null, "nicht zur Standardübung geworden");
+  assert(after.rows[0].id === before.rows[0].id, "ID hat sich geändert");
+  await asUser(USER_B, async () => {
+    const r = await db.query("select count(*)::int as n from exercises where slug = 'portfolio-test'");
+    assert(r.rows[0].n === 1, "für andere Nutzer nicht sichtbar");
+  });
+  // Kollision mit einer Standardübung: Suffix bleibt erhalten
+  await asUser(USER_A, async () => {
+    await db.query("insert into exercises (slug, name, category, equipment, is_custom, owner_id) values ('plank-u9z9z', 'Plank 2', 'abs', 'bodyweight', true, $1)", [USER_A]);
+  });
+  await db.query("select promote_custom_exercises()");
+  const kept = await db.query("select slug, is_custom from exercises where slug = 'plank-u9z9z'");
+  assert(kept.rows.length === 1 && kept.rows[0].is_custom === false, "Kollisionsfall nicht korrekt");
+});
+
+await test("Pläne anderer Mitglieder ansehen und kopieren, ohne Anmeldung gesperrt", async () => {
+  await asUser(USER_B, async () => {
+    const r = await db.query("select get_member_plans($1) as p", [USER_A]);
+    const plans = r.rows[0].p;
+    assert(Array.isArray(plans) && plans.length === 3, `erwartet 3 Pläne, erhalten ${Array.isArray(plans) ? plans.length : typeof plans}`);
+    const src = plans.find((p) => p.name === "Oberkörper A");
+    assert(src && src.exercises.length === 8, "Übungen des Plans fehlen");
+    const copied = await db.query("select copy_member_plan($1, null) as id", [src.id]);
+    const mine = await db.query("select name, user_id from workout_plans where id = $1", [copied.rows[0].id]);
+    assert(mine.rows[0].user_id === USER_B, "Kopie gehört nicht dem Kopierenden");
+    assert(mine.rows[0].name === "Oberkörper A (von Louis)", `Name der Kopie: ${mine.rows[0].name}`);
+    const pe = await db.query("select count(*)::int as n from workout_plan_exercises where plan_id = $1", [copied.rows[0].id]);
+    assert(pe.rows[0].n === 8, `erwartet 8 Übungen in der Kopie, erhalten ${pe.rows[0].n}`);
+  });
+  let blocked = false;
+  await db.exec("set role anon; select set_config('request.jwt.claim.sub', '', false);");
+  try {
+    try {
+      await db.query("select get_member_plans($1)", [USER_A]);
+    } catch {
+      blocked = true;
+    }
+  } finally {
+    await db.exec("reset role;");
+  }
+  assert(blocked, "get_member_plans ohne Anmeldung nicht blockiert");
+});
+
+await test("Admin: Trainingsdaten anderer lesbar und bearbeitbar (Summen neu), Nicht-Admin nicht", async () => {
+  await asUser(USER_B, async () => {
+    const plan = await db.query("select id from workout_plans where user_id = $1 and template_id is not null order by sort_order limit 1", [USER_B]);
+    const r = await db.query("select start_workout_session($1) as id", [plan.rows[0].id]);
+    const se = await db.query("select id from workout_session_exercises where session_id = $1 order by sort_order limit 1", [r.rows[0].id]);
+    await db.query("insert into workout_sets (session_exercise_id, user_id, set_number, weight, reps) values ($1, $2, 1, 20, 10)", [se.rows[0].id, USER_B]);
+    await db.query("select complete_workout_session($1, null, '2026-10-23')", [r.rows[0].id]);
+  });
+  await asUser(USER_A, async () => {
+    const r = await db.query("select count(*)::int as n from workout_sessions where user_id = $1", [USER_B]);
+    assert(r.rows[0].n === 0, "Nicht-Admin sieht fremde Trainings");
+  });
+  await db.query("update profiles set role = 'admin' where id = $1", [USER_A]);
+  await asUser(USER_A, async () => {
+    const r = await db.query("select id, total_volume::float as v from workout_sessions where user_id = $1", [USER_B]);
+    assert(r.rows.length === 1 && r.rows[0].v === 200, `Admin sieht fremdes Training nicht korrekt: ${JSON.stringify(r.rows)}`);
+    await db.query("update workout_sets set weight = 30 where user_id = $1", [USER_B]);
+    const after = await db.query("select total_volume::float as v from workout_sessions where user_id = $1", [USER_B]);
+    assert(after.rows[0].v === 300, `Summe nach Admin-Änderung: ${after.rows[0].v}`);
+    const prof = await db.query("select count(*)::int as n from profiles");
+    assert(prof.rows[0].n === 2, "Admin sieht nicht alle Profile");
+    const plans = await db.query("select count(*)::int as n from workout_plans where user_id = $1", [USER_B]);
+    assert(plans.rows[0].n >= 3, "Admin sieht fremde Pläne nicht");
+  });
+});
+
 await test("Verwaltung: nur Admins dürfen Nutzer listen, Rolle setzen, löschen", async () => {
   let blocked = false;
   await asUser(USER_B, async () => {

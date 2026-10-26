@@ -49,7 +49,7 @@ export const MOBILE_NAV: NavItem[] = [
 
 export const MORE_NAV: NavItem[] = [
   { href: "/plans", label: "Trainingspläne", icon: ClipboardList },
-  { href: "/calendar", label: "Kalender", icon: CalendarDays },
+  { href: "/history?tab=calendar", label: "Kalender", icon: CalendarDays },
   { href: "/stats", label: "Stats", icon: Users },
   { href: "/profile", label: "Profil", icon: User },
   { href: "/settings", label: "Einstellungen", icon: Settings },

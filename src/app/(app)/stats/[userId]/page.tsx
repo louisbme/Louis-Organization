@@ -1,11 +1,13 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireUser } from "@/lib/auth/require-user";
-import { getGroupStats, listMemberSessions } from "@/lib/services/stats";
+import { getGroupStats, listMemberPlans, listMemberSessions } from "@/lib/services/stats";
 import type { MemberSessionRow } from "@/lib/supabase/types";
 import { formatDate, formatDuration, formatRelativeDay, formatVolume } from "@/lib/utils/format";
 import { PageHeader } from "@/components/ui/page-header";
 import { EmptyState } from "@/components/ui/states";
 import { List, ListHeader, ListRow } from "@/components/ui/list";
+import { MemberPlans } from "@/components/stats/member-plans";
 
 export const metadata = { title: "Mitglied" };
 
@@ -25,15 +27,20 @@ function groupByMonth(items: MemberSessionRow[]): Array<[string, MemberSessionRo
 export default async function MemberStatsPage({ params }: { params: Promise<{ userId: string }> }) {
   const { userId } = await params;
   if (!UUID_RE.test(userId)) notFound();
-  const { supabase, settings } = await requireUser();
-  const [members, sessions] = await Promise.all([getGroupStats(supabase), listMemberSessions(supabase, userId)]);
+  const { supabase, user, settings } = await requireUser();
+  const [members, sessions, plans] = await Promise.all([
+    getGroupStats(supabase),
+    listMemberSessions(supabase, userId),
+    listMemberPlans(supabase, userId).catch(() => []),
+  ]);
   const member = members.find((m) => m.user_id === userId);
   if (!member) notFound();
   const unit = settings.weight_unit;
   const grouped = groupByMonth(sessions);
+  const isSelf = user.id === userId;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       <PageHeader
         title={member.nickname}
         backHref="/stats"
@@ -41,6 +48,25 @@ export default async function MemberStatsPage({ params }: { params: Promise<{ us
         description={`${sessions.length} abgeschlossene Trainings · Gesamtvolumen ${formatVolume(member.total_volume, unit)}`}
         compact
       />
+
+      <section>
+        <ListHeader
+          trailing={
+            isSelf ? (
+              <Link href="/plans" className="font-semibold text-accent">
+                Bearbeiten
+              </Link>
+            ) : undefined
+          }
+        >
+          Trainingspläne
+        </ListHeader>
+        {isSelf ? (
+          <p className="px-4 text-sm text-muted">Deine eigenen Pläne findest du unter Trainingspläne.</p>
+        ) : (
+          <MemberPlans plans={plans} ownerName={member.nickname} />
+        )}
+      </section>
 
       {sessions.length === 0 ? (
         <EmptyState title="Noch keine Trainings" description={`${member.nickname} hat noch kein Training abgeschlossen.`} />

@@ -19,12 +19,12 @@
   --fg: #ffffff;
   --fg-muted: #a1a1a6;
   --fg-subtle: #86868c;
-  /* Akzent: Rot als einzige Signalfarbe */
-  --accent: #ff453a;
-  --accent-strong: #ff6961;
-  --accent-fill: #e0342b;
-  --accent-fg: #ffffff;
-  --accent-soft: rgba(255, 69, 58, 0.16);
+  /* Akzent: Neongrün für Auswahl und Aktionen (schwarzer Text auf gefüllten Flächen, 15:1) */
+  --accent: #39ff14;
+  --accent-strong: #7dff66;
+  --accent-fill: #39ff14;
+  --accent-fg: #000000;
+  --accent-soft: rgba(57, 255, 20, 0.16);
   --danger: #ff453a;
   --danger-soft: rgba(255, 69, 58, 0.14);
   --warning: #ffd60a;
@@ -33,11 +33,11 @@
   --info-soft: rgba(10, 132, 255, 0.14);
   --success: #30d158;
   --success-soft: rgba(48, 209, 88, 0.14);
-  --chart-1: #ff453a;
+  --chart-1: #39ff14;
   --chart-2: #a1a1a6;
   --chart-3: #636366;
   --chart-4: #ffd60a;
-  /* Muskelkarte */
+  /* Muskelkarte (Rot bleibt: Muskeln, nicht Auswahl) */
   --muscle-primary: #ff453a;
   --muscle-primary-light: #ff6961;
   --muscle-secondary: #ffd60a;
@@ -45,7 +45,7 @@
   --muscle-base-light: #48484a;
   --muscle-structural: #2c2c2e;
   --muscle-outline: #1c1c1e;
-  --ring: rgba(255, 69, 58, 0.45);
+  --ring: rgba(57, 255, 20, 0.45);
   /* Kalender */
   --cal-training: #30d158;
   --cal-rest: #ffd60a;
@@ -70,11 +70,12 @@
   --fg: #000000;
   --fg-muted: #5e5e63;
   --fg-subtle: #76767a;
-  --accent: #d70015;
-  --accent-strong: #b8000f;
-  --accent-fill: #d70015;
-  --accent-fg: #ffffff;
-  --accent-soft: rgba(215, 0, 21, 0.1);
+  /* Hell: dunkleres Grün für Text und Markierungen (4,5:1 auf Weiß), Neongrün nur als Fläche mit schwarzem Text */
+  --accent: #008a2e;
+  --accent-strong: #006b23;
+  --accent-fill: #2ee84f;
+  --accent-fg: #000000;
+  --accent-soft: rgba(0, 138, 46, 0.12);
   --danger: #d70015;
   --danger-soft: rgba(215, 0, 21, 0.1);
   --warning: #a05a00;
@@ -83,7 +84,7 @@
   --info-soft: rgba(0, 64, 221, 0.1);
   --success: #248a3d;
   --success-soft: rgba(36, 138, 61, 0.12);
-  --chart-1: #d70015;
+  --chart-1: #008a2e;
   --chart-2: #5e5e63;
   --chart-3: #aeaeb2;
   --chart-4: #b58900;
@@ -94,7 +95,7 @@
   --muscle-base-light: #d1d1d6;
   --muscle-structural: #e5e5ea;
   --muscle-outline: #ffffff;
-  --ring: rgba(215, 0, 21, 0.3);
+  --ring: rgba(0, 138, 46, 0.35);
   --cal-training: #248a3d;
   --cal-rest: #b58900;
   --cal-leisure: #c93400;

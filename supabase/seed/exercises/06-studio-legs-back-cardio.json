@@ -64,7 +64,8 @@
     "alternative_exercises": [
       "neutraler-latzug",
       "breiter-latzug"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/latziehen-zur-brust/klassische-latziehen-zur-brust/"
   },
   {
     "slug": "rudern-hebel-breit",
@@ -128,7 +129,8 @@
     "alternative_exercises": [
       "rudern-hebel-eng",
       "breites-rudern"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/t-bar-rudern/t-bar-rudern-an-der-maschine/"
   },
   {
     "slug": "rudern-hebel-eng",
@@ -192,7 +194,8 @@
     "alternative_exercises": [
       "rudern-hebel-breit",
       "enges-rudern"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/t-bar-rudern/t-bar-rudern-an-der-maschine/"
   },
   {
     "slug": "beinpresse-45-grad",
@@ -258,7 +261,8 @@
     "alternative_exercises": [
       "beinpresse",
       "hackenschmidt"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/beinpresse-45-grad/"
   },
   {
     "slug": "multipresse-kniebeuge",
@@ -324,7 +328,8 @@
     "alternative_exercises": [
       "kniebeuge",
       "hackenschmidt"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/multipresse-kniebeuge/"
   },
   {
     "slug": "adduktoren-maschine",
@@ -382,7 +387,8 @@
     "machine_name": "DHZ Adductor, Steckgewicht",
     "alternative_exercises": [
       "abduktoren-maschine"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/adduktion-geraet/adduktion-am-geraet-im-sitzen/"
   },
   {
     "slug": "abduktoren-maschine",
@@ -442,7 +448,8 @@
     "machine_name": "DHZ Abductor, Steckgewicht",
     "alternative_exercises": [
       "adduktoren-maschine"
-    ]
+    ],
+    "animation_source_url": "https://modusx.de/fitness-uebungen/abduktion-maschine/abduktion-an-der-abduktionsmaschine-klassisch/"
   },
   {
     "slug": "air-bike",

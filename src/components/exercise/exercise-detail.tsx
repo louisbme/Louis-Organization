@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ExternalLink, PlayCircle } from "lucide-react";
 import type { ExerciseDetail as ExerciseDetailType } from "@/lib/services/exercises";
 import type { ExerciseRecordsRow, GripRow } from "@/lib/supabase/types";
 import { CATEGORY_LABELS, EQUIPMENT_LABELS, muscleLabel } from "@/lib/utils/labels";
@@ -229,6 +230,26 @@ export function ExerciseDetail({ exercise, records, backHref = "/exercises", can
           <SectionLabel className="px-1">Ausführung</SectionLabel>
           <ExerciseVisual name={exercise.name} imageUrl={null} animationUrl={exercise.animation_url} equipment={exercise.equipment} category={exercise.category} />
         </div>
+      ) : null}
+
+      {exercise.animation_source_url ? (
+        <a
+          href={exercise.animation_source_url}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="card-interactive press flex items-center justify-between gap-3 rounded-[var(--radius-card)] bg-card px-5 py-4"
+        >
+          <span className="flex min-w-0 items-center gap-3">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent">
+              <PlayCircle className="h-5 w-5" strokeWidth={2.2} />
+            </span>
+            <span className="min-w-0">
+              <span className="block text-base font-semibold">Ausführung als Animation ansehen</span>
+              <span className="block truncate text-sm text-muted">Öffnet die Übungsseite bei MODUSX</span>
+            </span>
+          </span>
+          <ExternalLink className="h-4 w-4 shrink-0 text-faint" />
+        </a>
       ) : null}
 
       <StepsCard title="Ausführung" steps={exercise.execution} numbered />
