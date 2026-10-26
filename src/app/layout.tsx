@@ -15,9 +15,12 @@ export const metadata: Metadata = {
   appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: APP_SHORT_NAME },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48 64x64" },
+      { url: "/icons/favicon-32.png", type: "image/png", sizes: "32x32" },
       { url: "/icons/favicon-64.png", type: "image/png", sizes: "64x64" },
       { url: "/icons/icon-192.png", type: "image/png", sizes: "192x192" },
     ],
+    shortcut: "/favicon.ico",
     apple: "/icons/apple-touch-icon.png",
   },
 };
