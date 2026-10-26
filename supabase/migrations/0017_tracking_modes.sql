@@ -97,11 +97,13 @@ begin
         where se.session_id = s.id and w.completed and w.is_warmup = false
       ), 0)
   where s.id = p_session_id
-    and s.status = 'completed';
+    and s.status = 'completed'
+    -- Nur eigene Trainings; ohne Benutzerkontext (SQL-Editor, Service-Rolle) alle
+    and (auth.uid() is null or s.user_id = auth.uid());
 end;
 $$;
 -- Nur für angemeldete Benutzer (wird auch aus complete_workout_session im Benutzerkontext aufgerufen);
--- berechnet ausschließlich bereits abgeschlossene Trainings neu und ist damit idempotent.
+-- berechnet ausschließlich eigene, bereits abgeschlossene Trainings neu und ist damit idempotent.
 revoke all on function public.recalc_session_totals(uuid) from public;
 grant execute on function public.recalc_session_totals(uuid) to authenticated;
 
