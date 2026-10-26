@@ -5,7 +5,7 @@ import Link from "next/link";
 import { toast } from "sonner";
 import { addMonths, endOfMonth, startOfMonth, format, getDay, getDaysInMonth, isSameDay, isAfter } from "date-fns";
 import { de } from "date-fns/locale";
-import { ChevronLeft, ChevronRight, Trash2 } from "lucide-react";
+import { CalendarPlus, ChevronLeft, ChevronRight, Trash2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useUser } from "@/lib/context/user-context";
 import type { CalendarEntryRow, CalendarEntryType } from "@/lib/supabase/types";
@@ -213,6 +213,10 @@ export function CalendarView({ initialMonth, initialEntries, initialSessions }: 
         </div>
       </Card>
 
+      <Button variant="secondary" fullWidth size="lg" onClick={() => openDay(today)}>
+        <CalendarPlus className="h-5 w-5" /> Heute eintragen
+      </Button>
+
       <div className="flex flex-wrap gap-x-4 gap-y-2 px-1 text-xs text-muted">
         {CALENDAR_TYPE_ORDER.map((t) => (
           <span key={t} className="inline-flex items-center gap-1.5">
@@ -258,8 +262,8 @@ export function CalendarView({ initialMonth, initialEntries, initialSessions }: 
               type="button"
               onClick={() => setType(t)}
               className={cn(
-                "flex h-11 items-center gap-2 rounded-xl border px-3 text-sm font-medium touch-manipulation",
-                type === t ? "border-border-strong bg-accent-soft text-fg" : "border-border bg-subtle text-muted hover:text-fg"
+                "press flex h-11 items-center gap-2 rounded-[var(--radius-control)] px-3 text-sm font-semibold touch-manipulation",
+                type === t ? "bg-accent-soft text-accent ring-1 ring-accent/50" : "bg-subtle text-muted hover:text-fg"
               )}
               aria-pressed={type === t}
             >

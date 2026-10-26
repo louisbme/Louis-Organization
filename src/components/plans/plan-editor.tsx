@@ -27,7 +27,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Sheet } from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
+import { Stepper } from "@/components/ui/stepper";
 import { EmptyState } from "@/components/ui/states";
+import { formatClock, parseClock } from "@/lib/utils/format";
 import { EquipmentIcon } from "@/components/exercise/equipment-icon";
 import { ExercisePickerSheet } from "@/components/exercise/exercise-picker-sheet";
 
@@ -94,6 +96,15 @@ export function PlanEditor({ plan: initial, canStart = true }: { plan: PlanWithE
     }
   };
 
+  const updateCardio = async (pe: PlanExerciseWithExercise, patch: Partial<Pick<PlanExerciseWithExercise, "target_duration_seconds" | "target_distance_m">>) => {
+    setPlan((p) => ({ ...p, exercises: p.exercises.map((e) => (e.id === pe.id ? { ...e, ...patch } : e)) }));
+    try {
+      await updatePlanExercise(db, pe.id, patch);
+    } catch (e) {
+      toast.error(friendlyError(e));
+    }
+  };
+
   const remove = async (pe: PlanExerciseWithExercise) => {
     setPlan((p) => ({ ...p, exercises: p.exercises.filter((e) => e.id !== pe.id) }));
     try {
@@ -112,7 +123,10 @@ export function PlanEditor({ plan: initial, canStart = true }: { plan: PlanWithE
     try {
       if (current.mode === "add") {
         const order = (plan.exercises[plan.exercises.length - 1]?.sort_order ?? 0) + 1;
-        const targets = item.tracking_mode === "cardio" ? { target_sets: 1, rep_min: 1, rep_max: 1 } : { target_sets: 3, rep_min: 8, rep_max: 12 };
+        const targets =
+          item.tracking_mode === "cardio"
+            ? { target_sets: 1, rep_min: 1, rep_max: 1, target_duration_seconds: 1200, target_distance_m: null }
+            : { target_sets: 3, rep_min: 8, rep_max: 12 };
         const row = await addPlanExercise(db, plan.id, item.id, targets, order);
         setPlan((p) => ({
           ...p,
@@ -228,8 +242,36 @@ export function PlanEditor({ plan: initial, canStart = true }: { plan: PlanWithE
                 </div>
               </div>
               {pe.exercise.tracking_mode === "cardio" ? (
-                <div className="mt-3 grid grid-cols-1 border-t border-border">
-                  <NumberCell label="Einheiten" value={pe.target_sets} onChange={(v) => updateTargets(pe, { target_sets: v })} min={1} max={10} />
+                <div className="mt-3 space-y-3 border-t border-border px-4 pb-4 pt-3">
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <Stepper
+                      label="Dauer je Einheit"
+                      value={pe.target_duration_seconds ?? 0}
+                      step={60}
+                      min={0}
+                      max={86400}
+                      format={formatClock}
+                      parse={parseClock}
+                      onChange={(v) => updateCardio(pe, { target_duration_seconds: v || null })}
+                      hint="mm:ss, 0 = kein Zeitziel"
+                      inputId={`dur-${pe.id}`}
+                    />
+                    <Stepper
+                      label="Distanz je Einheit"
+                      unit="km"
+                      value={(pe.target_distance_m ?? 0) / 1000}
+                      step={0.5}
+                      min={0}
+                      max={1000}
+                      decimals={2}
+                      onChange={(v) => updateCardio(pe, { target_distance_m: Math.round(v * 1000) || null })}
+                      hint="0 = kein Distanzziel"
+                      inputId={`dist-${pe.id}`}
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 rounded-[var(--radius-control)] bg-subtle">
+                    <NumberCell label="Einheiten" value={pe.target_sets} onChange={(v) => updateTargets(pe, { target_sets: v })} min={1} max={10} />
+                  </div>
                 </div>
               ) : (
                 <div className="mt-3 grid grid-cols-3 divide-x divide-border border-t border-border">

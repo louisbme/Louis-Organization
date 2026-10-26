@@ -39,6 +39,8 @@ export interface LocalExercise {
   target_sets: number;
   rep_min: number;
   rep_max: number;
+  target_duration_seconds: number | null;
+  target_distance_m: number | null;
   sets: LocalSet[];
 }
 
@@ -103,7 +105,14 @@ function emptySet(n: number): LocalSet {
  * bei Double-Progression das Gewicht (bzw. Zusatzgewicht) um einen Schritt erhöhen.
  */
 function buildPlaceholders(
-  ex: { target_sets: number; rep_min: number; rep_max: number; exercise: ExerciseSummary },
+  ex: {
+    target_sets: number;
+    rep_min: number;
+    rep_max: number;
+    target_duration_seconds?: number | null;
+    target_distance_m?: number | null;
+    exercise: ExerciseSummary;
+  },
   existing: LocalSet[],
   last: ExerciseLastPerformance | undefined,
   weightStep: number,
@@ -119,8 +128,9 @@ function buildPlaceholders(
     const ref = lastWorking[n - 1] ?? lastWorking[lastWorking.length - 1];
     const set = emptySet(n);
     if (mode === "cardio") {
-      set.duration_seconds = ref?.durationSeconds ?? null;
-      set.distance_m = ref?.distanceM ?? null;
+      // Vorbelegung: letzte Leistung, sonst Ziel aus dem Plan
+      set.duration_seconds = ref?.durationSeconds ?? ex.target_duration_seconds ?? null;
+      set.distance_m = ref?.distanceM ?? ex.target_distance_m ?? null;
     } else if (mode === "bodyweight") {
       let extra = ref ? (ref.extraWeight ?? extraForLoad(ref.weight, ref.bodyWeight ?? bodyWeight, factor)) : 0;
       if (suggestion === "increase" && ref) extra = Math.round((extra + weightStep) * 100) / 100;
@@ -183,6 +193,8 @@ export function useWorkoutStore(
         target_sets: se.target_sets,
         rep_min: se.rep_min,
         rep_max: se.rep_max,
+        target_duration_seconds: se.target_duration_seconds ?? null,
+        target_distance_m: se.target_distance_m ?? null,
         sets: buildPlaceholders(se, merged, last, weightStep, initialBodyWeight),
       };
     });
@@ -371,6 +383,8 @@ export function useWorkoutStore(
             target_sets: row.target_sets,
             rep_min: row.rep_min,
             rep_max: row.rep_max,
+            target_duration_seconds: row.target_duration_seconds ?? null,
+            target_distance_m: row.target_distance_m ?? null,
             sets: buildPlaceholders({ ...row, exercise: item }, [], lastPerformance.get(item.id), weightStep, bodyWeight),
           },
         ]);

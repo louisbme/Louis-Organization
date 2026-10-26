@@ -20,6 +20,16 @@ export async function getSettings(db: DbClient, userId: string): Promise<UserSet
   return created;
 }
 
+/** Körperdaten im Profil (Größe, Geburtsdatum). Das Gewicht wird als Eintrag in body_weight_entries geführt. */
+export async function updateBodyData(
+  db: DbClient,
+  userId: string,
+  patch: { height_cm?: number | null; birth_date?: string | null }
+): Promise<void> {
+  const { error } = await db.from("profiles").update(patch).eq("id", userId);
+  if (error) throw error;
+}
+
 export async function updateNickname(db: DbClient, userId: string, nickname: string): Promise<void> {
   const { error } = await db.from("profiles").update({ nickname }).eq("id", userId);
   if (error) throw error;

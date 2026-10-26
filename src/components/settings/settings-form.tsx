@@ -7,9 +7,11 @@ import { LogOut } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useUser } from "@/lib/context/user-context";
 import type { ThemePreference, WeightUnit } from "@/lib/supabase/types";
-import { updateNickname, updateSettings } from "@/lib/services/profile";
+import { updateBodyData, updateNickname, updateSettings } from "@/lib/services/profile";
+import { upsertBodyWeight } from "@/lib/services/stats";
 import { emailSchema, nicknameSchema, passwordSchema } from "@/lib/validation/auth";
 import { friendlyError } from "@/lib/utils/errors";
+import { formatDate, toDateKey } from "@/lib/utils/format";
 import { applyTheme } from "@/components/theme/theme-sync";
 import { REST_PRESETS } from "@/components/workout/use-rest-timer";
 import { Button } from "@/components/ui/button";
@@ -19,10 +21,70 @@ import { Input, Select } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Segmented } from "@/components/ui/segmented";
 
-export function SettingsForm() {
+interface SettingsFormProps {
+  initialBodyWeight: { weight: number; entry_date: string } | null;
+}
+
+export function SettingsForm({ initialBodyWeight }: SettingsFormProps) {
   const router = useRouter();
   const { userId, email, profile, settings } = useUser();
   const db = React.useMemo(() => createClient(), []);
+
+  const [bodyWeight, setBodyWeight] = React.useState(initialBodyWeight ? String(initialBodyWeight.weight).replace(".", ",") : "");
+  const [bodyWeightSaved, setBodyWeightSaved] = React.useState(initialBodyWeight);
+  const [bwBusy, setBwBusy] = React.useState(false);
+  const [height, setHeight] = React.useState(profile.height_cm ? String(profile.height_cm).replace(".", ",") : "");
+  const [birthDate, setBirthDate] = React.useState(profile.birth_date ?? "");
+
+  const saveBodyWeight = async () => {
+    const v = parseFloat(bodyWeight.replace(",", "."));
+    if (!v || v <= 0 || v >= 500) {
+      toast.error("Bitte ein gültiges Gewicht eingeben (z. B. 82,5).");
+      return;
+    }
+    setBwBusy(true);
+    try {
+      const today = toDateKey(new Date());
+      await upsertBodyWeight(db, userId, today, Math.round(v * 100) / 100);
+      setBodyWeightSaved({ weight: Math.round(v * 100) / 100, entry_date: today });
+      toast.success("Körpergewicht gespeichert");
+      router.refresh();
+    } catch (e) {
+      toast.error(friendlyError(e));
+    } finally {
+      setBwBusy(false);
+    }
+  };
+
+  const saveHeight = async () => {
+    const raw = height.trim();
+    const v = raw ? parseFloat(raw.replace(",", ".")) : null;
+    if (v !== null && (Number.isNaN(v) || v < 100 || v > 250)) {
+      toast.error("Größe bitte in Zentimetern zwischen 100 und 250 angeben.");
+      setHeight(profile.height_cm ? String(profile.height_cm).replace(".", ",") : "");
+      return;
+    }
+    if ((v ?? null) === (profile.height_cm ?? null)) return;
+    try {
+      await updateBodyData(db, userId, { height_cm: v === null ? null : Math.round(v * 10) / 10 });
+      toast.success(v === null ? "Größe entfernt" : "Größe gespeichert");
+      router.refresh();
+    } catch (e) {
+      toast.error(friendlyError(e));
+    }
+  };
+
+  const saveBirthDate = async (value: string) => {
+    setBirthDate(value);
+    if ((value || null) === (profile.birth_date ?? null)) return;
+    try {
+      await updateBodyData(db, userId, { birth_date: value || null });
+      toast.success(value ? "Geburtsdatum gespeichert" : "Geburtsdatum entfernt");
+      router.refresh();
+    } catch (e) {
+      toast.error(friendlyError(e));
+    }
+  };
 
   const [nickname, setNickname] = React.useState(profile.nickname);
   const [nickBusy, setNickBusy] = React.useState(false);
@@ -165,6 +227,36 @@ export function SettingsForm() {
               </Button>
             </div>
           </Field>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardContent className="space-y-4 pt-5">
+          <SectionLabel>Körperdaten</SectionLabel>
+          <Field
+            label={`Körpergewicht (${settings.weight_unit})`}
+            htmlFor="bodyWeight"
+            hint={
+              bodyWeightSaved
+                ? `Zuletzt eingetragen am ${formatDate(bodyWeightSaved.entry_date)}. Wird für Körpergewichtsübungen verwendet (reale Last = Gewicht × Anteil + Zusatz).`
+                : "Noch kein Gewicht eingetragen. Wird für Körpergewichtsübungen wie Dips oder Hyperextensions benötigt."
+            }
+          >
+            <div className="flex gap-2">
+              <Input id="bodyWeight" inputMode="decimal" value={bodyWeight} onChange={(e) => setBodyWeight(e.target.value)} placeholder="z. B. 82,5" className="max-w-[10rem]" />
+              <Button variant="secondary" onClick={saveBodyWeight} loading={bwBusy} disabled={!bodyWeight.trim()}>
+                Heute eintragen
+              </Button>
+            </div>
+          </Field>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <Field label="Größe (cm)" htmlFor="height" hint="Für den BMI im Profil">
+              <Input id="height" inputMode="decimal" value={height} onChange={(e) => setHeight(e.target.value)} onBlur={saveHeight} placeholder="z. B. 182" />
+            </Field>
+            <Field label="Geburtsdatum" htmlFor="birthDate" hint="Optional, für das Alter im Profil">
+              <Input id="birthDate" type="date" value={birthDate} onChange={(e) => saveBirthDate(e.target.value)} max={toDateKey(new Date())} />
+            </Field>
+          </div>
         </CardContent>
       </Card>
 

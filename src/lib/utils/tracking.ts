@@ -61,10 +61,24 @@ export function setHasValues(mode: TrackingMode, set: SetValues): boolean {
   return set.reps > 0;
 }
 
-/** Zielvorgabe einer Übung im Plan: "3 × 8–12" oder "1 Einheit" (Cardio). */
-export function formatTarget(mode: TrackingMode, sets: number, repMin: number, repMax: number): string {
-  if (mode === "cardio") return sets === 1 ? "1 Einheit" : `${sets} Einheiten`;
-  return `${sets} × ${repMin}–${repMax}`;
+/**
+ * Zielvorgabe einer Übung im Plan: "3 × 8–12" oder bei Cardio "20:00 · 3,00 km"
+ * (mit "2 × " davor, wenn mehrere Einheiten geplant sind; ohne Ziele "1 Einheit").
+ */
+export function formatTarget(
+  mode: TrackingMode,
+  sets: number,
+  repMin: number,
+  repMax: number,
+  durationSeconds?: number | null,
+  distanceM?: number | null
+): string {
+  if (mode !== "cardio") return `${sets} × ${repMin}–${repMax}`;
+  const parts: string[] = [];
+  if (durationSeconds) parts.push(formatClock(durationSeconds));
+  if (distanceM) parts.push(formatDistance(distanceM));
+  if (parts.length === 0) return sets === 1 ? "1 Einheit" : `${sets} Einheiten`;
+  return `${sets > 1 ? `${sets} × ` : ""}${parts.join(" · ")}`;
 }
 
 /** Kompakte Darstellung eines Satzes, z. B. "80 kg × 10", "5,00 km · 25:00", "92 kg × 8". */

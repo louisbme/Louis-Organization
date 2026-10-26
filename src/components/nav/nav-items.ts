@@ -43,13 +43,13 @@ export const MOBILE_NAV: NavItem[] = [
   { href: "/dashboard", label: "Start", icon: LayoutGrid },
   { href: "/workout", label: "Training", icon: Dumbbell },
   { href: "/exercises", label: "Übungen", icon: BookOpen },
-  { href: "/history", label: "Verlauf", icon: History },
+  { href: "/calendar", label: "Kalender", icon: CalendarDays },
   { href: "/progress", label: "Fortschritt", icon: TrendingUp },
 ];
 
 export const MORE_NAV: NavItem[] = [
   { href: "/plans", label: "Trainingspläne", icon: ClipboardList },
-  { href: "/history?tab=calendar", label: "Kalender", icon: CalendarDays },
+  { href: "/history", label: "Verlauf", icon: History },
   { href: "/stats", label: "Stats", icon: Users },
   { href: "/profile", label: "Profil", icon: User },
   { href: "/settings", label: "Einstellungen", icon: Settings },
@@ -59,5 +59,7 @@ export function isActivePath(pathname: string, href: string): boolean {
   if (href === "/more") {
     return pathname === "/more" || [...MORE_NAV, ...ADMIN_NAV].some((i) => pathname === i.href || pathname.startsWith(i.href + "/"));
   }
+  // Kalender und Verlauf sind ein Bereich (Segment innerhalb der Seite)
+  if (href === "/calendar") return pathname === "/calendar" || pathname === "/history" || pathname.startsWith("/history/");
   return pathname === href || pathname.startsWith(href + "/");
 }

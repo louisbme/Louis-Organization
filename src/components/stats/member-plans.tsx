@@ -8,6 +8,7 @@ import { createClient } from "@/lib/supabase/client";
 import type { MemberPlan } from "@/lib/supabase/types";
 import { copyMemberPlan } from "@/lib/services/stats";
 import { friendlyError } from "@/lib/utils/errors";
+import { formatTarget } from "@/lib/utils/tracking";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/states";
@@ -55,7 +56,7 @@ export function MemberPlans({ plans, ownerName }: { plans: MemberPlan[]; ownerNa
                 <li key={e.exercise_id} className="flex justify-between gap-3">
                   <span className="truncate">{e.name}</span>
                   <span className="tnum shrink-0 text-faint">
-                    {e.target_sets} × {e.rep_min}–{e.rep_max}
+                    {formatTarget(e.tracking_mode ?? "weight_reps", e.target_sets, e.rep_min, e.rep_max, e.target_duration_seconds, e.target_distance_m)}
                   </span>
                 </li>
               ))}

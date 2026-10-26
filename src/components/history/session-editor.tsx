@@ -94,8 +94,8 @@ export function SessionEditor({ session: initial, bodyWeight: initialBodyWeight 
         reps: mode === "cardio" ? 0 : (last?.reps ?? exercise.rep_min),
         rir: last?.rir ?? null,
         is_warmup: false,
-        duration_seconds: last?.duration_seconds ?? null,
-        distance_m: last?.distance_m ?? null,
+        duration_seconds: last?.duration_seconds ?? exercise.target_duration_seconds ?? null,
+        distance_m: last?.distance_m ?? exercise.target_distance_m ?? null,
         body_weight: mode === "bodyweight" ? bw : null,
         extra_weight: mode === "bodyweight" ? extra : null,
       },
@@ -222,7 +222,8 @@ export function SessionEditor({ session: initial, bodyWeight: initialBodyWeight 
                   {se.exercise.name}
                 </Link>
                 <p className="tnum text-sm text-muted">
-                  Ziel {formatTarget(mode, se.target_sets, se.rep_min, se.rep_max)} · {working.length} {mode === "cardio" ? (working.length === 1 ? "Einheit" : "Einheiten") : "Arbeitssätze"}
+                  Ziel {formatTarget(mode, se.target_sets, se.rep_min, se.rep_max, se.target_duration_seconds, se.target_distance_m)} · {working.length}{" "}
+                  {mode === "cardio" ? (working.length === 1 ? "Einheit" : "Einheiten") : "Arbeitssätze"}
                 </p>
               </div>
               <div className="flex shrink-0 items-center gap-1">

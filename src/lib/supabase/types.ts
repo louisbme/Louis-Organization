@@ -80,6 +80,10 @@ export type ProfileRow = Timestamps & {
   id: string;
   nickname: string;
   role: UserRole;
+  /** Körpergröße in cm (optional) */
+  height_cm: number | null;
+  /** Geburtsdatum als YYYY-MM-DD (optional) */
+  birth_date: string | null;
 };
 
 export type UserSettingsRow = Timestamps & {
@@ -178,6 +182,10 @@ export type WorkoutPlanExerciseRow = Timestamps & {
   rep_min: number;
   rep_max: number;
   notes: string | null;
+  /** Cardio: Zieldauer je Einheit in Sekunden */
+  target_duration_seconds: number | null;
+  /** Cardio: Zieldistanz je Einheit in Metern */
+  target_distance_m: number | null;
 };
 
 export type WorkoutSessionRow = Timestamps & {
@@ -203,6 +211,8 @@ export type WorkoutSessionExerciseRow = {
   target_sets: number;
   rep_min: number;
   rep_max: number;
+  target_duration_seconds: number | null;
+  target_distance_m: number | null;
   created_at: string;
 };
 
@@ -278,7 +288,7 @@ type TableDef<Row, Insert, Rels extends Rel[] = [], Update = Partial<Insert>> = 
 export type Database = {
   public: {
     Tables: {
-      profiles: TableDef<ProfileRow, Insertable<ProfileRow, "role" | "created_at" | "updated_at">>;
+      profiles: TableDef<ProfileRow, Insertable<ProfileRow, "role" | "height_cm" | "birth_date" | "created_at" | "updated_at">>;
       user_settings: TableDef<
         UserSettingsRow,
         Insertable<
@@ -360,7 +370,7 @@ export type Database = {
         WorkoutPlanExerciseRow,
         Insertable<
           WorkoutPlanExerciseRow,
-          "id" | "sort_order" | "target_sets" | "rep_min" | "rep_max" | "notes" | "created_at" | "updated_at"
+          "id" | "sort_order" | "target_sets" | "rep_min" | "rep_max" | "notes" | "target_duration_seconds" | "target_distance_m" | "created_at" | "updated_at"
         >
       ,
         [
@@ -392,7 +402,7 @@ export type Database = {
       >;
       workout_session_exercises: TableDef<
         WorkoutSessionExerciseRow,
-        Insertable<WorkoutSessionExerciseRow, "id" | "sort_order" | "target_sets" | "rep_min" | "rep_max" | "created_at">
+        Insertable<WorkoutSessionExerciseRow, "id" | "sort_order" | "target_sets" | "rep_min" | "rep_max" | "target_duration_seconds" | "target_distance_m" | "created_at">
       ,
         [
           { foreignKeyName: "workout_session_exercises_session_id_fkey", columns: ["session_id"], isOneToOne: false, referencedRelation: "workout_sessions", referencedColumns: ["id"] },
@@ -636,10 +646,13 @@ export type MemberPlan = {
     exercise_id: string;
     name: string;
     slug: string;
+    tracking_mode: TrackingMode | null;
     sort_order: number;
     target_sets: number;
     rep_min: number;
     rep_max: number;
+    target_duration_seconds: number | null;
+    target_distance_m: number | null;
   }>;
 };
 

@@ -95,6 +95,8 @@ export async function duplicatePlan(db: DbClient, userId: string, planId: string
         rep_min: e.rep_min,
         rep_max: e.rep_max,
         notes: e.notes,
+        target_duration_seconds: e.target_duration_seconds ?? null,
+        target_distance_m: e.target_distance_m ?? null,
       }))
     );
     if (error) throw error;
@@ -106,6 +108,10 @@ export interface PlanExerciseTargets {
   target_sets: number;
   rep_min: number;
   rep_max: number;
+  /** Cardio: Zieldauer je Einheit in Sekunden */
+  target_duration_seconds?: number | null;
+  /** Cardio: Zieldistanz je Einheit in Metern */
+  target_distance_m?: number | null;
 }
 
 export async function addPlanExercise(

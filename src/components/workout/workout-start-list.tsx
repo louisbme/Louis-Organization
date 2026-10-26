@@ -77,7 +77,9 @@ export function WorkoutStartList({ plans, nextPlanId, preselectPlanId }: Props) 
                 {p.exercises.slice(0, 4).map((e) => (
                   <li key={e.id} className="flex justify-between gap-3">
                     <span className="truncate">{e.exercise.name}</span>
-                    <span className="tnum shrink-0 text-faint">{formatTarget(e.exercise.tracking_mode, e.target_sets, e.rep_min, e.rep_max)}</span>
+                    <span className="tnum shrink-0 text-faint">
+                      {formatTarget(e.exercise.tracking_mode, e.target_sets, e.rep_min, e.rep_max, e.target_duration_seconds, e.target_distance_m)}
+                    </span>
                   </li>
                 ))}
                 {p.exercises.length > 4 ? <li className="text-xs text-faint">+ {p.exercises.length - 4} weitere</li> : null}

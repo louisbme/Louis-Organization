@@ -56,6 +56,7 @@ export default async function MemberSessionPage({ params }: { params: Promise<{ 
                   </Link>
                   <p className="tnum text-sm text-muted">
                     Ziel {formatTarget(mode, se.target_sets, se.rep_min, se.rep_max)} · {working.length} {mode === "cardio" ? "Einheiten" : "Arbeitssätze"}
+                    {mode === "cardio" && working.length > 0 ? ` · ${describeSet(mode, { weight: 0, reps: 0, duration_seconds: working.reduce((s, x) => s + (x.duration_seconds ?? 0), 0) || null, distance_m: working.reduce((s, x) => s + (x.distance_m ?? 0), 0) || null, body_weight: null, extra_weight: null }, unit)}` : ""}
                   </p>
                 </div>
                 {mode !== "cardio" ? <span className="tnum shrink-0 text-sm text-muted">{formatVolume(volume, unit)}</span> : null}

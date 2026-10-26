@@ -167,6 +167,8 @@ export async function addSessionExercise(
     target_sets: number;
     rep_min: number;
     rep_max: number;
+    target_duration_seconds?: number | null;
+    target_distance_m?: number | null;
   }
 ): Promise<WorkoutSessionExerciseRow> {
   const { data, error } = await db.from("workout_session_exercises").insert(input).select("*").single();

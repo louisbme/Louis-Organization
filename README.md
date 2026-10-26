@@ -1,6 +1,6 @@
-# FORM
+# FORM YOURSELF
 
-Private Fitness-Tracking-Web-App für eine kleine Gruppe. Trainingspläne, satzgenaues Tracking mit Progressive Overload, Historie, Fortschrittsgrafiken, Übungsdatenbank mit Muskelkarte, Kalender und Gruppen-Stats. Dark Mode, Mobile First, keine KI, keine Social-Funktionen.
+Private Fitness-Tracking-Web-App für eine kleine Gruppe (Marke „FORM YOURSELF“, Bildmarke „FY“). Trainingspläne, satzgenaues Tracking mit Progressive Overload, Historie, Fortschrittsgrafiken, Übungsdatenbank mit Muskelkarte, Kalender und Gruppen-Stats. Dark Mode, Mobile First, keine KI, keine Social-Funktionen.
 
 ## Tech Stack
 
@@ -17,21 +17,21 @@ Keine OpenAI-/Claude-API, keine Analytics, keine Payments, keine externen Bildda
 
 ## Design
 
-Gestaltung nach Apple Human Interface Guidelines: semantische Farben mit Licht- und Dunkel-Variante (schwarzer gruppierter Hintergrund, Karten ohne Rahmen), iOS-Textstile (Body 17 pt, Subheadline 15 pt, Caption 12 pt, Large Title 34 pt), Neongrün als einzige Akzentfarbe für Auswahl und Aktionen (Rot bleibt den Muskeln in der Muskelkarte und destruktiven Aktionen vorbehalten), Systemschrift für Text und Bedienelemente, Montserrat nur für große Titel und Kennzahlen. Mobile Navigation als schwebende, durchscheinende Tab-Leiste mit fünf Bereichen (Start, Training, Übungen, Verlauf, Fortschritt); alles Weitere über den Avatar oben rechts. Sheets mit Griff, 44-pt-Tastziele, Reduced Motion und Reduced Transparency werden respektiert.
+Gestaltung nach Apple Human Interface Guidelines: semantische Farben mit Licht- und Dunkel-Variante (schwarzer gruppierter Hintergrund, Karten ohne Rahmen), iOS-Textstile (Body 17 pt, Subheadline 15 pt, Caption 12 pt, Large Title 34 pt), Neongrün als einzige Akzentfarbe für Auswahl und Aktionen (Rot bleibt den Muskeln in der Muskelkarte und destruktiven Aktionen vorbehalten), Systemschrift für Text und Bedienelemente, Montserrat nur für große Titel und Kennzahlen. Mobile Navigation als schwebende, durchscheinende Tab-Leiste mit fünf Bereichen (Start, Training, Übungen, Kalender, Fortschritt); alles Weitere über den Avatar oben rechts. Sheets mit Griff, 44-pt-Tastziele, Reduced Motion und Reduced Transparency werden respektiert.
 
 ## Funktionen
 
 - **Auth**: E-Mail + Passwort, Registrierung mit Nickname, Passwort vergessen, Logout, geschützte Routen (Middleware).
 - **Dashboard**: nächstes Training (Rotation A → B → C), letztes Training, Volumenverlauf, 7-Tage- und Gesamtstatistik, Schnellzugriffe.
-- **Trainingspläne**: drei vorkonfigurierte Pläne (Oberkörper A, Unterkörper, Oberkörper B) pro Benutzer aus Vorlagen kopiert; Übungen hinzufügen, entfernen, austauschen, sortieren, Sätze und Wiederholungsbereich ändern, umbenennen, duplizieren, neue Pläne.
+- **Trainingspläne**: drei vorkonfigurierte Pläne (Oberkörper A, Unterkörper, Oberkörper B) pro Benutzer aus Vorlagen kopiert; Übungen hinzufügen, entfernen, austauschen, sortieren, Sätze und Wiederholungsbereich ändern, umbenennen, duplizieren, neue Pläne. Cardio-Übungen bekommen im Plan Zieldauer und Zieldistanz je Einheit, die im Training vorbelegt und überall als Ziel angezeigt werden.
 - **Aktives Training**: große +/- Eingaben für Gewicht und Wiederholungen, optional RIR, Aufwärmsätze, vorherige Werte, Double-Progression-Vorschlag („Gewicht erhöhen/halten“), Trainingsdauer, Rest Timer (60/90/120/180 s oder eigene Zeit), Übung spontan hinzufügen, lokaler Zwischenstand (localStorage) mit Synchronisierung nach Verbindungsabbruch.
 - **Drei Tracking-Arten** (werden aus Kategorie und Equipment abgeleitet): Gewicht × Wiederholungen; **Cardio** mit Dauer und Distanz (Pace wird berechnet, eigene Bestleistungen und Verlaufsgrafiken); **Körpergewicht**: Körpergewicht × Anteil der Übung (z. B. Dips 100 %, Hyperextensions 60 %) + Zusatz- oder Gegengewicht ergibt sofort die reale Last, die in Volumen, 1RM und Bestleistungen einfließt. Das Körpergewicht wird im Training abgefragt und als Eintrag gespeichert.
 - **Historie**: Liste mit Filtern (Zeitraum, Training, Übung), Detailansicht mit allen Sätzen und Volumen, Notizen. Abgeschlossene Trainings lassen sich nachträglich bearbeiten: Satzwerte ändern, Sätze hinzufügen oder löschen, Übungen hinzufügen oder entfernen; Volumen und Satzanzahl werden in der Datenbank per Trigger neu berechnet.
 - **Fortschritt**: Zeiträume 1 W / 1 M / 6 M / 12 M / Gesamt; Volumen, Trainingsanzahl, Dauer, Körpergewicht (optional), Kraftentwicklung je Übung (Top-Satz, Wiederholungen, geschätztes 1RM, Volumen), Bestleistungen.
 - **Übungsdatenbank**: Übersicht als Muskelgruppen-Raster (Brust, Rücken, Beine, Schultern, Bizeps, Trizeps, Bauch, Rumpf, Unterarme, Cardio, Favoriten, Eigene) mit Figur je Gruppe, Suche über alle Übungen; 50 Standardübungen mit Setup, Ausführung, Bewegungsradius, Atmung, Fehlern, Tipps; Kabelübungen mit konkretem Griff (Griff-Icons oder eigene Griff-Fotos) und vollständigem Kabel-Setup; anatomische SVG-Muskelkarte (Front/Rück, primär rot, sekundär gelb); je Übung "So triffst du den Muskel" (sportwissenschaftlich begründet) und "Das brauchst du" (konkrete Ausstattung); Kabelübungen mit expliziter Rollenhöhe, empfohlenem Griff und Griff-Alternativen (eigene Griff-Illustrationen); optionales Gerätefoto nur auf der Detailseite und nur wo gewünscht; optionale Ausführungs-Animation; Favoriten; eigene Übungen. Zu fast allen Übungen führt ein Link „Ausführung als Animation ansehen“ auf die passende Übungsseite von modusx.de; die Animationen werden nur verlinkt, nicht kopiert oder eingebettet (Nutzungsbedingungen von MODUSX).
-- **Kalender**: Monatsansicht, ±10 Jahre, Tage als Training / Rest Day / Freizeit / Party / Anderer Tag markieren, Notizen; abgeschlossene Trainings werden automatisch eingetragen. Der Kalender ist im Bereich „Verlauf“ als zweite Ansicht neben der Liste erreichbar (die Wahl wird je Gerät gemerkt).
+- **Kalender**: eigener Tab in der mobilen Leiste, Monatsansicht, ±10 Jahre, Tage als Training / Rest Day / Freizeit / Party / Anderer Tag markieren, Notizen, Knopf „Heute eintragen“; abgeschlossene Trainings werden automatisch eingetragen. Die Trainingsliste (Verlauf) liegt als zweite Ansicht daneben.
 - **Stats**: private Übersicht aller Mitglieder (Nickname, Gesamtvolumen, Trainings, Zeit, letztes Training) mit Mitglieder-Detailansicht („Mehr sehen“): abgeschlossene Trainings nach Monat, Detail mit Übungen und Sätzen; nur lesend, nur für angemeldete Benutzer. In der Mitglieder-Detailansicht sind die Trainingspläne des Mitglieds sichtbar und lassen sich mit einem Tipp in die eigenen Pläne kopieren.
-- **Profil & Einstellungen**: Nickname, E-Mail, Passwort, Gewichtseinheit, Gewichtsschritt, Rest-Timer-Standard, RIR anzeigen, Theme.
+- **Profil & Einstellungen**: Nickname, E-Mail, Passwort, Körperdaten (Gewicht als Verlauf, Größe, Geburtsdatum; Profil zeigt BMI und Alter), Gewichtseinheit, Gewichtsschritt, Rest-Timer-Standard, RIR anzeigen, Theme. Das Körpergewicht wird für Körpergewichtsübungen verwendet.
 - **Verwaltung (nur Admins)**: Nutzerliste mit E-Mail, Registrierung, letztem Login, Trainings und Volumen; Nickname ändern; E-Mail und Passwort eines Nutzers direkt setzen (Route Handler mit Service-Zugang `SUPABASE_SECRET_KEY`, nur für angemeldete Admins; der Nutzer wird dabei abgemeldet); Passwort-Reset-Mail senden; Rolle setzen; Nutzer löschen; Trainingsdaten anderer Nutzer öffnen und bearbeiten (Trainings, Sätze, Pläne über RLS-Richtlinien für Admins); Standardübungen über das Bearbeiten-Formular pflegen.
 
 ## Lokale Installation
@@ -100,6 +100,7 @@ Migrationen:
 | `0016_admin_nickname.sql` | Admin: Nickname eines Nutzers ändern |
 | `0017_tracking_modes.sql` | Tracking-Arten (Gewicht × Wdh, Körpergewicht, Cardio) je Übung, Cardio-Felder (Dauer, Distanz) und Körpergewichts-Felder an Sätzen, Neuberechnung der Summen per Trigger (nachträgliches Bearbeiten), erweiterte Bestleistungen und Verläufe |
 | `0018_portfolio_admin_sharing.sql` | Eigene Übungen werden Standardübungen (`promote_custom_exercises`), Quelle der Ausführungs-Animation, RLS-Richtlinien für Admins (Trainings, Sätze, Pläne, Profile), Pläne anderer Mitglieder lesen und kopieren |
+| `0019_body_data_cardio_targets.sql` | Körperdaten im Profil (Größe, Geburtsdatum), Cardio-Ziele (Dauer, Distanz) in Plänen und Trainings, Übernahme beim Start und Kopieren |
 
 Die Migrationen sind idempotent bezüglich der Seed-Daten (Upsert) und können nach Anpassungen erneut ausgeführt werden.
 

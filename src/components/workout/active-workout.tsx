@@ -379,7 +379,9 @@ function ExerciseCard({
             <Link href={`/exercises/${ex.exercise.slug}`} className="block text-xl font-semibold text-fg hover:text-accent">
               {ex.exercise.name}
             </Link>
-            <p className="tnum mt-0.5 text-sm text-muted">Ziel: {formatTarget(mode, ex.target_sets, ex.rep_min, ex.rep_max)}</p>
+            <p className="tnum mt-0.5 text-sm text-muted">
+              Ziel: {formatTarget(mode, ex.target_sets, ex.rep_min, ex.rep_max, ex.target_duration_seconds, ex.target_distance_m)}
+            </p>
           </div>
           {progression && progression.suggestion !== "none" ? (
             <Badge tone={progression.suggestion === "increase" ? "accent" : "neutral"} className="shrink-0">

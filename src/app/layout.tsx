@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
-import { APP_DESCRIPTION, APP_NAME } from "@/lib/config";
+import { APP_DESCRIPTION, APP_NAME, APP_SHORT_NAME } from "@/lib/config";
 import "./globals.css";
 
 /** Montserrat nur für große Titel und Kennzahlen; Text und Bedienelemente nutzen die Systemschrift. */
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: APP_DESCRIPTION,
   applicationName: APP_NAME,
   manifest: "/manifest.webmanifest",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: APP_NAME },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: APP_SHORT_NAME },
   icons: {
     icon: [
       { url: "/icons/favicon-64.png", type: "image/png", sizes: "64x64" },

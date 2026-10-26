@@ -488,6 +488,41 @@ await test("Admin: Trainingsdaten anderer lesbar und bearbeitbar (Summen neu), N
   });
 });
 
+await test("Körperdaten im Profil und Cardio-Ziele (Plan → Training → Kopie)", async () => {
+  await asUser(USER_A, async () => {
+    await db.query("update profiles set height_cm = 182.5, birth_date = '1999-05-20' where id = $1", [USER_A]);
+    const p = await db.query("select height_cm::float as h, birth_date::text as b from profiles where id = $1", [USER_A]);
+    assert(p.rows[0].h === 182.5 && p.rows[0].b === "1999-05-20", "Körperdaten nicht gespeichert");
+    let invalid = false;
+    try {
+      await db.query("update profiles set height_cm = 50 where id = $1", [USER_A]);
+    } catch {
+      invalid = true;
+    }
+    assert(invalid, "unplausible Größe wurde akzeptiert");
+
+    const plan = await db.query("select id from workout_plans where user_id = $1 and name = 'Unterkörper'", [USER_A]);
+    const lauf = (await db.query("select id from exercises where slug = 'laufband' and owner_id is null")).rows[0].id;
+    await db.query(
+      "insert into workout_plan_exercises (plan_id, exercise_id, sort_order, target_sets, rep_min, rep_max, target_duration_seconds, target_distance_m) values ($1, $2, 50, 1, 1, 1, 1200, 3000)",
+      [plan.rows[0].id, lauf]
+    );
+    const started = await db.query("select start_workout_session($1) as id", [plan.rows[0].id]);
+    const se = await db.query("select target_duration_seconds, target_distance_m from workout_session_exercises where session_id = $1 and exercise_id = $2", [started.rows[0].id, lauf]);
+    assert(se.rows[0]?.target_duration_seconds === 1200 && se.rows[0]?.target_distance_m === 3000, `Cardio-Ziele nicht ins Training übernommen: ${JSON.stringify(se.rows)}`);
+    await db.query("select cancel_workout_session($1)", [started.rows[0].id]);
+  });
+  await asUser(USER_B, async () => {
+    const plans = (await db.query("select get_member_plans($1) as p", [USER_A])).rows[0].p;
+    const src = plans.find((p) => p.name === "Unterkörper");
+    const cardio = src.exercises.find((e) => e.slug === "laufband");
+    assert(cardio && cardio.target_duration_seconds === 1200 && cardio.tracking_mode === "cardio", "Cardio-Ziele fehlen in get_member_plans");
+    const copied = await db.query("select copy_member_plan($1, 'Kopie Cardio') as id", [src.id]);
+    const pe = await db.query("select target_duration_seconds, target_distance_m from workout_plan_exercises where plan_id = $1 and exercise_id = (select id from exercises where slug = 'laufband' and owner_id is null)", [copied.rows[0].id]);
+    assert(pe.rows[0]?.target_distance_m === 3000, "Cardio-Ziele nicht in die Kopie übernommen");
+  });
+});
+
 await test("Verwaltung: nur Admins dürfen Nutzer listen, Rolle setzen, löschen", async () => {
   let blocked = false;
   await asUser(USER_B, async () => {

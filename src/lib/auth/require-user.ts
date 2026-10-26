@@ -2,6 +2,7 @@ import { cache } from "react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getProfile, getSettings } from "@/lib/services/profile";
+import type { ProfileRow } from "@/lib/supabase/types";
 
 /**
  * Liefert den angemeldeten Benutzer samt Profil und Einstellungen oder leitet zum Login um.
@@ -22,7 +23,9 @@ export const requireUser = cache(async () => {
   return {
     supabase,
     user,
-    profile: profile ?? { id: user.id, nickname: "Benutzer", role: "user" as const, created_at: user.created_at, updated_at: user.created_at },
+    profile:
+      profile ??
+      ({ id: user.id, nickname: "Benutzer", role: "user", height_cm: null, birth_date: null, created_at: user.created_at, updated_at: user.created_at } satisfies ProfileRow),
     settings,
   };
 });
